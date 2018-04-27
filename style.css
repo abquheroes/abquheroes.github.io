@@ -37,5 +37,15 @@ body{
     position: absolute;
 }
 select {
-    width: 200px;
+    width: 300px;
+}
+
+.status {
+    float: left;
+    width: 10%;
+}
+
+#tabs {
+    width: 75%;
+    float: left;
 }
