@@ -124,9 +124,3 @@ $(document).ready(() => {
         player[loc+"start"] = Date.now();
     }
 });
-
-const imageReference = {
-    "Coin" : '<img src="PixelItem/CoinsGold5.png">',
-    "Ore" : '<img src="PixelItem/Ore.png">',
-    "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
-}
