@@ -3,11 +3,12 @@ function item(name) {
     this.count = 0;
 }
 
-const blueprints = {};
+const blueprints = [];
 
-blueprints["knife"] = new item("knife");
-blueprints["knife"].cost = {
-    ORE:15
+const knife = new item("Knife");
+knife.cost = {
+    "Ore":15,
 }
-blueprints["knife"].value = 15;
-blueprints["knife"].craftTime = 1500;
+knife.value = 15;
+knife.craftTime = 1500;
+blueprints.push(knife)
