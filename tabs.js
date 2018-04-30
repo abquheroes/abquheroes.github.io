@@ -1,4 +1,9 @@
 $(document).ready( () => {
+    $( "#c1pb" ).progressbar();
+    $( "#c2pb" ).progressbar();
+    $( "#c3pb" ).progressbar();
+
+
     $("#tabs").tabs({
         activate: function( evt, ui ) {
             if($(ui.newTab).index() === 2) {
@@ -30,38 +35,50 @@ $(document).ready( () => {
         });
     }
 
+
+    const $c1Image = $("#c1Image");
+    const $c2Image = $("#c2Image");
+    const $c3Image = $("#c3Image");
+
+    const $c1Name = $("#c1Name")
+    const $c2Name = $("#c2Name")
+    const $c3Name = $("#c3Name")
+
+    const $c1pb = $("#c1pb");
+    const $c2pb = $("#c2pb");
+    const $c3pb = $("#c3pb");
+
     function refreshCrafts() {
-        $craftTab.empty();
         if (player.craft1 === null) {
-            $craftTab.append("Crafting Slot 1: <a id='craft1' href='craft1'>Empty</a></br>");
+            $c1Image.empty();
+            $c1Name.html('<a id="craft1" href="craft1">Empty</a>');
+            $c1pb.addClass("hidden");
         }
         else {
-            let s = "Crafting Slot 1: " + imageReference[player.craft1]
-            s += " <a id='craft1' href='craft1'>" + player.craft1 + "</a>"
-            s += ' <div class="progressOuter" id="craftProgress1"><div class="progressText" id="craftTime1">10:00</div></div></br>'
-            $craftTab.append(s);
-            const $progressbar1 = $("#craftProgress1").progressbar();
+            $c1Image.html(imageReference[player.craft1]);
+            $c1Name.html('<a id="craft1 href="craft1">' + player.craft1 + '</a>');
+            $c1pb.removeClass("hidden");
         }   
         if (player.craft2 === null) {
-            $craftTab.append("Crafting Slot 2: <a id='craft2' href='craft2'>Empty</a></br>");
+            $c2Image.empty();
+            $c2Name.html('<a id="craft2" href="craft2">Empty</a>');
+            $c2pb.addClass("hidden");
         }
         else {
-            let s = "Crafting Slot 2: " + imageReference[player.craft2]
-            s += " <a id='craft2' href='craft2'>" + player.craft2 + "</a>"
-            s += ' <div class="progressOuter" id="craftProgress2"><div class="progressText" id="craftTime2">10:00</div></div></br>'
-            $craftTab.append(s);
-            const $progressbar2 = $("#craftProgress2").progressbar();
-        }   
+            $c2Image.html(imageReference[player.craft2]);
+            $c2Name.html('<a id="craft2 href="craft2">' + player.craft2 + '</a>');
+            $c2pb.removeClass("hidden");
+        }  
         if (player.craft3 === null) {
-            $craftTab.append("Crafting Slot 3: <a id='craft3' href='craft3'>Empty</a></br>");
+            $c3Image.empty();
+            $c3Name.html('<a id="craft3" href="craft3">Empty</a>');
+            $c3pb.addClass("hidden");
         }
         else {
-            let s = "Crafting Slot 3: " + imageReference[player.craft3]
-            s += " <a id='craft3' href='craft3'>" + player.craft3 + "</a>"
-            s += ' <div class="progressOuter" id="craftProgress3"><div class="progressText" id="craftTime3">10:00</div></div></br>'
-            $craftTab.append(s);
-            const $progressbar3 = $("#craftProgress3").progressbar();
-        }   
+            $c3Image.html(imageReference[player.craft3]);
+            $c3Name.html('<a id="craft3 href="craft3">' + player.craft3 + '</a>');
+            $c3pb.removeClass("hidden");
+        }    
     }
 
     function itemHTML(item) {

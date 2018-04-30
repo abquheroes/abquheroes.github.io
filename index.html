@@ -9,7 +9,7 @@
 <body>
         <h1>Abqu Heroes</h1>
         <div class="status">
-                Gold: 0 <img src="PixelItem/CoinsGold5.png"></br>
+                Gold: <span id="moneyAmt">0</span> <img src="PixelItem/CoinsGold5.png"></br>
                 Ore: <span id="oreAmt">0</span> <img src="PixelItem/Ore.png">
             </div>
         <div id="tabs">
@@ -19,10 +19,9 @@
                 <li><a href="#tabs-3">Recipes</a></li>
             </ul>
             <div id="tabs-1">
-                Crafting Slot 1: <a id="craft1" href="craft1">Empty</a></br>
-                Crafting Slot 2: <a id="craft2" href="craft2">Empty</a></br>
-                Crafting Slot 3: <a id="craft3" href="craft3">Empty</a></br>
-
+                Crafting Slot 1: <span id="c1Image"></span>&nbsp;&nbsp;<span id="c1Name"><a id="craft1" href="craft1">Empty</a></span><div id="c1pb" class="hidden"></div></br>
+                Crafting Slot 2: <span id="c2Image"></span>&nbsp;&nbsp;<span id="c2Name"><a id="craft2" href="craft2">Empty</a></span><div id="c2pb" class="hidden"></div></br>
+                Crafting Slot 3: <span id="c3Image"></span>&nbsp;&nbsp;<span id="c3Name"><a id="craft3" href="craft3">Empty</a></span><div id="c3pb" class="hidden"></div></br>
             </div>
             <div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
             <div id="tabs-3"></div>

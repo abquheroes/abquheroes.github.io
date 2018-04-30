@@ -9,7 +9,10 @@ const player = {
     craft1start : 0,
     craft3: null,
     craft1start : 0,
+    lastLoop : Date.now(),
 }
+
+let oreRemainder = 0;
 
 const GameState = {
     CRAFT1 : "craft1",
@@ -19,6 +22,7 @@ const GameState = {
 
 $(document).ready(() => {
     const $oreAmt = $('#oreAmt');
+    const $moneyAmt = $('#moneyAmt');
     
     $('#tabs-1').on("click", "#craft1", (e) => {
         e.preventDefault();
@@ -37,7 +41,6 @@ $(document).ready(() => {
     });
 
     $('#tabs-3').on("click", ".craft", (e) => {
-        console.log(player.status);
         e.preventDefault();
         
         if (player.status === GameState.CRAFT1) {
@@ -54,45 +57,75 @@ $(document).ready(() => {
     });
 
     function mainLoop() {
-        player.ore += 1;
-        if (canCraft("craft1")) {
-            deductCost("craft1");
-            startCraft("craft1");
+        const deltaT = Date.now() - player.lastLoop;
+        player.lastLoop = Date.now();
+        oreRemainder += deltaT;
+        player.ore += Math.floor(oreRemainder/1000);
+        oreRemainder = oreRemainder%1000;
+        const slots = ["craft1","craft2","craft3"];
+        const pbName = {
+            "craft1" : "#c1pb",
+            "craft2" : "#c2pb",
+            "craft3" : "#c3pb",
         }
-        if (canCraft("craft2")) {
-            deductCost("craft2");
-            startCraft("craft2");
-        }
-        if (canCraft("craft3")) {
-            deductCost("craft3");
-            startCraft("craft3");
-        }
+
+        slots.forEach(slot => {
+            if (player[slot] === null) return;
+            const slotStart = player[slot + "start"];
+            const slotCraft = nameToItem(player[slot]).craftTime
+            const slotValue = nameToItem(player[slot]).value;
+
+            if (slotStart > 0) {
+                if (Date.now() >= slotStart + slotCraft) {
+                    player[slot + "start"] = 0;
+                    player.money += slotValue;
+                    $(pbName[slot]).progressbar({
+                        value: 0
+                    })
+                }
+                else {
+                    const p1 = (slotStart + slotCraft - Date.now())/slotCraft;
+                    $(pbName[slot]).progressbar({
+                        value: 100-p1*100
+                    })
+                }
+            }
+
+            if (canCraft(slot)) {
+                deductCost(slot);
+                startCraft(slot);
+            }
+        });
         refreshResources();
     }
 
-    setInterval(mainLoop, 1000);
+    setInterval(mainLoop, 10);
 
     function refreshResources() {
         $oreAmt.text(player.ore);
+        $moneyAmt.text(player.money);
     }
 
     function canCraft(loc) {
-        if (player[loc] !== null) {
-            const itemCraft = player[loc];
-            if (itemCraft.cost["Ore"] >= player.ore) {
-                return true;
-            }
-        }
-        return false;
+        if (player[loc+"start"] > 0) return false;
+        const itemName = player[loc];
+        const itemFull = nameToItem(itemName);
+        return itemFull.cost["Ore"] <= player.ore
     }
 
     function deductCost(loc) {
-        
+        const itemName = player[loc];
+        const itemFull = nameToItem(itemName);
+        player.ore -= itemFull.cost["Ore"];
+    }
+
+    function startCraft(loc) {
+        player[loc+"start"] = Date.now();
     }
 });
 
 const imageReference = {
-    "Coin" : '<img src="PixelItem/CoinsGold5.png">n',
+    "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
 }
