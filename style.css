@@ -50,15 +50,15 @@ select {
     float: left;
 }
 
-.progressOuter {
+.ui-progressbar {
     width: 200px;
     height: 20px;
     padding: 0px;
     display: inline-block;
 }
 
-.innerProgress {
-    color: blue;
+.ui-progressbar-value {
+    background-color: #007fff;
 }
 
 .progressText {
@@ -71,4 +71,13 @@ select {
 
 .hidden {
     display:none;
+}
+
+#c1pbLabel {
+    width: 100%;
+    float: left;
+    line-height: 200%;
+    padding: 0px;
+    line-height: 20px;
+    padding-left: 2px;
 }

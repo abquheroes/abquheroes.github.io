@@ -98,7 +98,7 @@ $(document).ready( () => {
             s += imageReference[type];
         }
         s += " <i><b>Crafted</b></i>: "
-        s += item.count;
+        s += '<span id="' + item.name + "_count" + '">' + item.count + "</span>";
         s += "</div></br>"
         return s
     }

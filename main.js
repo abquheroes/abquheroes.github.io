@@ -85,7 +85,9 @@ $(document).ready(() => {
                     })
                 }
                 else {
+                    const pText = msToTime(slotStart + slotCraft - Date.now());
                     const p1 = (slotStart + slotCraft - Date.now())/slotCraft;
+                    $(pbName[slot]+"Label").text(pText);
                     $(pbName[slot]).progressbar({
                         value: 100-p1*100
                     })
@@ -98,6 +100,7 @@ $(document).ready(() => {
             }
         });
         refreshResources();
+        refreshCraftCount();
     }
 
     setInterval(mainLoop, 10);
@@ -105,6 +108,12 @@ $(document).ready(() => {
     function refreshResources() {
         $oreAmt.text(player.ore);
         $moneyAmt.text(player.money);
+    }
+
+    function refreshCraftCount() {
+        blueprints.forEach(item => {
+            $('#'+item.name+"_count").text(item.count);
+        });
     }
 
     function canCraft(loc) {
@@ -123,4 +132,16 @@ $(document).ready(() => {
     function startCraft(loc) {
         player[loc+"start"] = Date.now();
     }
+
+    function msToTime(s) {
+        const ms = s % 1000;
+        s = (s - ms) / 1000;
+        let secs = s % 60;
+        s = (s - secs) / 60;
+        let mins = s % 60;
+        if (secs < 10) secs = "0" + secs
+        if (mins < 10) mins = "0" + mins   
+        
+        return mins + ':' + secs;
+      }
 });
