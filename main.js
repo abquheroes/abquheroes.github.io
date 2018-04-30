@@ -79,6 +79,7 @@ $(document).ready(() => {
                 if (Date.now() >= slotStart + slotCraft) {
                     player[slot + "start"] = 0;
                     player.money += slotValue;
+                    nameToItem(player[slot]).count += 1;
                     $(pbName[slot]).progressbar({
                         value: 0
                     })
