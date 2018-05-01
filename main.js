@@ -6,9 +6,9 @@ const player = {
     craft1: null,
     craft1start : 0,
     craft2: null,
-    craft1start : 0,
+    craft2start : 0,
     craft3: null,
-    craft1start : 0,
+    craft3start : 0,
     lastLoop : Date.now(),
 }
 
@@ -21,6 +21,7 @@ const GameState = {
 }
 
 $(document).ready(() => {
+    loadGame();
     const $oreAmt = $('#oreAmt');
     const $moneyAmt = $('#moneyAmt');
     
@@ -101,6 +102,7 @@ $(document).ready(() => {
         });
         refreshResources();
         refreshCraftCount();
+        saveGame();
     }
 
     setInterval(mainLoop, 10);
@@ -143,5 +145,24 @@ $(document).ready(() => {
         if (mins < 10) mins = "0" + mins   
         
         return mins + ':' + secs;
-      }
+    }
+
+    function saveGame() {
+        localStorage.setItem('gameSave1', JSON.stringify(player));
+    }
+
+    function loadGame() {
+        var loadGame = JSON.parse(localStorage.getItem("gameSave1"));
+        if (loadGame !== null) {
+            if (typeof loadGame.money !== null) player.money = loadGame.money;
+            if (typeof loadGame.ore !== null) player.ore = loadGame.ore;
+            if (typeof loadGame.craft1 !== null) player.craft1 = loadGame.craft1;
+            if (typeof loadGame.craft1start !== null) player.craft1start = loadGame.craft1start;
+            if (typeof loadGame.craft2 !== null) player.craft2 = loadGame.craft2;
+            if (typeof loadGame.craft2start !== null) player.craft2start = loadGame.craft2start;
+            if (typeof loadGame.craft3 !== null) player.craft3 = loadGame.craft3;
+            if (typeof loadGame.craft3start !== null) player.craft3start = loadGame.craft3start;
+        }
+
+    }
 });
