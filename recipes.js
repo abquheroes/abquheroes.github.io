@@ -19,6 +19,7 @@ function nameToItem(name) {
 
 
 //this is where items go!!! copy these lines to add items, and add the image in the imageReference
+//Knives Category
 const knife = new item("Knife",5,7000);
 knife.cost = {
     "Ore":5,
@@ -79,6 +80,7 @@ theBloopinatorKnife.cost = {
 }
 blueprints.push(theBloopinatorKnife)
 
+//Maces Category
 const clubMace = new item("Club",7,10000);
 clubMace.cost = {
     "Wood":5,
