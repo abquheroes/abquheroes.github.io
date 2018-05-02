@@ -12,6 +12,8 @@ const player = {
     lastLoop : Date.now(),
 }
 
+const itemCount = {};
+
 let oreRemainder = 0;
 
 const GameState = {
@@ -22,6 +24,7 @@ const GameState = {
 
 $(document).ready(() => {
     loadGame();
+    refreshCrafts();
     const $oreAmt = $('#oreAmt');
     const $moneyAmt = $('#moneyAmt');
     
@@ -39,6 +42,34 @@ $(document).ready(() => {
         e.preventDefault();
         player.status = GameState.CRAFT3;
         $("#tabs").tabs({active:2});
+    });
+
+    //clear slots
+    $('#tabs-1').on("click", "#c1Close", (e) => {
+        e.preventDefault();
+        player.craft1 = null;
+        player.craft1start = 0;
+        refreshCrafts();
+    });
+    $('#tabs-1').on("click", "#c2Close", (e) => {
+        e.preventDefault();
+        player.craft2 = null;
+        player.craft2start = 0;
+        refreshCrafts();
+    });
+    $('#tabs-1').on("click", "#c3Close", (e) => {
+        e.preventDefault();
+        player.craft3 = null;
+        player.craft3start = 0;
+        refreshCrafts();
+    });
+
+    $('#increaseOreLevel').click( () => {
+        if (player.money >= getOreWorkerCost()) {
+            player.money -= getOreWorkerCost();
+            workerLevels["Ore"] += 1;
+            refreshWorkers();
+        }
     });
 
     $('#tabs-3').on("click", ".craft", (e) => {
@@ -60,7 +91,7 @@ $(document).ready(() => {
     function mainLoop() {
         const deltaT = Date.now() - player.lastLoop;
         player.lastLoop = Date.now();
-        oreRemainder += deltaT;
+        oreRemainder += deltaT*getOreInterval();
         player.ore += Math.floor(oreRemainder/1000);
         oreRemainder = oreRemainder%1000;
         const slots = ["craft1","craft2","craft3"];
@@ -80,7 +111,7 @@ $(document).ready(() => {
                 if (Date.now() >= slotStart + slotCraft) {
                     player[slot + "start"] = 0;
                     player.money += slotValue;
-                    nameToItem(player[slot]).count += 1;
+                    itemCount[player[slot]] += 1;
                     $(pbName[slot]).progressbar({
                         value: 0
                     })
@@ -113,9 +144,13 @@ $(document).ready(() => {
     }
 
     function refreshCraftCount() {
-        blueprints.forEach(item => {
-            $('#'+item.name+"_count").text(item.count);
-        });
+        /*blueprints.forEach(item => {
+
+            if ($('#'+item.name+"_count").length > 0) {
+                $('#'+item.name+"_count").text(itemCount[item.name]);
+                console.log(itemCount[item.name])
+            }
+        });*/
     }
 
     function canCraft(loc) {
@@ -149,6 +184,8 @@ $(document).ready(() => {
 
     function saveGame() {
         localStorage.setItem('gameSave1', JSON.stringify(player));
+        localStorage.setItem('itemCount1', JSON.stringify(itemCount));
+        localStorage.setItem('workerLevels1', JSON.stringify(workerLevels));
     }
 
     function loadGame() {
@@ -163,6 +200,19 @@ $(document).ready(() => {
             if (typeof loadGame.craft3 !== null) player.craft3 = loadGame.craft3;
             if (typeof loadGame.craft3start !== null) player.craft3start = loadGame.craft3start;
         }
-
+        const itemCountLoad = JSON.parse(localStorage.getItem("itemCount1"));
+        //populate itemCount with blueprints as a base
+        blueprints.forEach(bp => {
+            itemCount[bp.name] = 0;
+        })
+        if (itemCountLoad !== null) {
+            for (const [bp, _] of Object.entries(itemCount)) {
+                if (bp in itemCountLoad) itemCount[bp] = itemCountLoad[bp];
+            }
+        }
+        const workerLoad = JSON.parse(localStorage.getItem("workerLevels1"));
+        if (workerLoad !== null) {
+            if (typeof workerLoad["Ore"] !== null) workerLevels["Ore"] = workerLoad["Ore"];
+        }
     }
 });

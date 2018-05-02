@@ -37,7 +37,7 @@ kitchenKnife.cost = {
 }
 blueprints.push(kitchenKnife)
 
-const chefsKnife = new item("Chef's Knife",17,19000);
+const chefsKnife = new item("Chefs Knife",17,19000);
 chefsKnife.cost = {
     "Ore":17,
 }
@@ -49,13 +49,13 @@ fishingKnife.cost = {
 }
 blueprints.push(fishingKnife)
 
-const thatsNotAKnife = new item("That's Not A Knife",30,27000);
+const thatsNotAKnife = new item("Thats Not A Knife",30,27000);
 thatsNotAKnife.cost = {
     "Ore":30,
 }
 blueprints.push(thatsNotAKnife)
 
-const thatsAKnife = new item("That's A Knife",41,33000);
+const thatsAKnife = new item("Thats A Knife",41,33000);
 thatsAKnife.cost = {
     "Ore":41,
 }
@@ -85,10 +85,10 @@ const imageReference = {
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
     "Butter Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_149.png">',
     "Kitchen Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_1.png">',
-    "Chef's Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_6.png">',
+    "Chefs Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_6.png">',
     "Fishing Knife" : '<img src="PixelItem/Equip/Set/FineBlade0.png">',
-    "That's Not A Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/key_1.png">',
-    "That's A Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_42.png">',
+    "Thats Not A Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/key_1.png">',
+    "Thats A Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_42.png">',
     "Club Knife" : '<img src="PixelItem/Equip/Set/FineBlade2.png">',
     "Dark Is The Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_45.png">',
     "The Bloopinator" : '<img src="PixelItem/Equip/Set/FieryBlade3.png">',

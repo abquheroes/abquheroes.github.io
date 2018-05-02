@@ -73,7 +73,7 @@ select {
     display:none;
 }
 
-#c1pbLabel {
+#c1pbLabel,#c2pbLabel,#c3pbLabel {
     width: 100%;
     float: left;
     line-height: 200%;
