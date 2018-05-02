@@ -139,7 +139,79 @@ const knifeClubMace = new item("Knife Club",97,53000);
 knifeClubMace.cost = {
     "Wood":69,
 }
-blueprints.push(knifeClubMace)*/
+blueprints.push(knifeClubMace)
+
+//Axes Category
+const rageMakerAxe = new item("Rage Maker",12,17000);
+rageMakerAxe.cost = {
+    "Ore":5,
+    "Wood":5,
+}
+blueprints.push(rageMakerAxe)
+
+const furyBringerAxe = new item("Fury Bringer",22,29000);
+furyBringerAxe.cost = {
+    "Ore":8,
+    "Wood":10,
+}
+blueprints.push(furyBringerAxe)
+
+const venganceAxe = new item("Vengance",29,35000);
+venganceAxe.cost = {
+    "Ore":10,
+    "Wood":14,
+}
+blueprints.push(venganceAxe)
+
+const prideAxe = new item("Pride",39,43000);
+prideAxe.cost = {
+    "Ore":12,
+    "Wood":19,
+}
+blueprints.push(prideAxe)
+
+const greedyPickaxeAxe = new item("Greedy Pickaxe",53,52000);
+greedyPickaxeAxe.cost = {
+    "Ore":15,
+    "Wood":27,
+}
+blueprints.push(greedyPickaxeAxe)
+
+const slothslayerAxe = new item("Slothslayer",72,62000);
+slothslayerAxe.cost = {
+    "Ore":19,
+    "Wood":38,
+}
+blueprints.push(slothslayerAxe)
+
+const lustyHandaxeAxe = new item("Lusty Handaxe",98,75000);
+lustyHandaxeAxe.cost = {
+    "Ore":24,
+    "Wood":53,
+}
+blueprints.push(lustyHandaxeAxe)
+
+const envyAxe = new item("Envy",133,89000);
+envyAxe.cost = {
+    "Ore":30,
+    "Wood":74,
+}
+blueprints.push(envyAxe)
+
+const gluttonousAxeAxe = new item("Gluttonous Axe",182,108000);
+gluttonousAxeAxe.cost = {
+    "Ore":37,
+    "Wood":103,
+}
+blueprints.push(gluttonousAxeAxe)
+
+const wrathAxe = new item("Wrath",249,130000);
+wrathAxe.cost = {
+    "Ore":47,
+    "Wood":145,
+}
+blueprints.push(wrathAxe)
+*/
 
 const imageReference = {
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
@@ -154,14 +226,24 @@ const imageReference = {
     "Club Knife" : '<img src="PixelItem/Equip/Set/FineBlade2.png">',
     "Dark Is The Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_45.png">',
     "The Bloopinator" : '<img src="PixelItem/Equip/Set/FieryBlade3.png">',
-    "clubMace" : '<img src="PixelItem/Equip/Weapon/Club.png">',
-    "maulMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_12.png">',
-    "brawlerMace" : '<img src="PixelItem/Equip/Weapon/Mace1.png">',
-    "broomMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/broom_1.png">',
-    "blackjackMace" : '<img src="PixelItem/Equip/Weapon/Mace2.png">',
-    "bludgeonMace" : '<img src="PixelItem/Equip/Weapon/Mace0.png">',
-    "stripedClubMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_9.png">',
-    "nightClubMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_30.png">',
-    "factFinderMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_1.png">',
-    "knifeClubMace" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/magic-weapons/magicweapon_1.png">',
+    "Club" : '<img src="PixelItem/Equip/Weapon/Club.png">',
+    "Maul" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_12.png">',
+    "Brawler" : '<img src="PixelItem/Equip/Weapon/Mace1.png">',
+    "The Broominator" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/broom_1.png">',
+    "Blackjack" : '<img src="PixelItem/Equip/Weapon/Mace2.png">',
+    "Bludgeon" : '<img src="PixelItem/Equip/Weapon/Mace0.png">',
+    "Striped Club" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_9.png">',
+    "Night Club" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_30.png">',
+    "Fact Finder" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_1.png">',
+    "Knife Club" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/magic-weapons/magicweapon_1.png">',
+    "Rage Maker" : '<img src="PixelItem/Equip/Set/NormalAxe.png">',
+    "Fury Bringer" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_93.png">',
+    "Vengance" : '<img src="PixelItem/Equip/Set/IcyAxe.png">',
+    "Pride" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_100.png">',
+    "Greedy Pickaxe" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_25.png">',
+    "Slothslayer" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_51.png">',
+    "Lusty Handaxe" : '<img src="PixelItem/Equip/Weapon/Shovel.png">',
+    "Envy" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_105.png">',
+    "Gluttonous Axe" : '<img src="PixelItem/Equip/Set/GoldAxe.png">',
+    "Wrath" : '<img src="PixelItem/Equip/Set/BurningAxe.png">',
 }
