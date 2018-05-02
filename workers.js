@@ -3,7 +3,7 @@ const workerLevels = {
 }
 
 function getOreInterval() {
-    return Math.floor((1.5*Math.pow(workerLevels["Ore"],1.25)+1)*100,2)/100
+    return 1.5*Math.pow(workerLevels["Ore"],1.25)+1
 }
 
 function getOreWorkerCost() {

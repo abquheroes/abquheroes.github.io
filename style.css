@@ -85,12 +85,12 @@ select {
 
 #bottom-left {
     left: 0;
-    bottom: 0;
+    bottom: 25px;
     position: absolute;
 }
 
 #bottom-right {
-    right: 0;
-    bottom: 0;
+    right: 10px;
+    bottom: 25px;
     position: absolute;
 }

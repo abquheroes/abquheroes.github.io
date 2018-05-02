@@ -263,7 +263,6 @@ $(document).ready(() => {
     function ImportSaveButton() {
         stopSave = true;
         $('#importDialog').dialog({
-            open: function () {},
             buttons: {
                 "Import": function () {
                     const s = JSON.parse(atob($('#importSaveText').val()));
@@ -276,6 +275,7 @@ $(document).ready(() => {
                 }
             }
         });
+        $('#importDialog').dialog("open");
     }
 
     function b64Encode(str) {
