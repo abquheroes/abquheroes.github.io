@@ -79,7 +79,7 @@ theBloopinatorKnife.cost = {
     "Ore":101,
 }
 blueprints.push(theBloopinatorKnife)
-
+/*
 //Maces Category
 const clubMace = new item("Club",7,10000);
 clubMace.cost = {
@@ -139,7 +139,7 @@ const knifeClubMace = new item("Knife Club",97,53000);
 knifeClubMace.cost = {
     "Wood":69,
 }
-blueprints.push(knifeClubMace)
+blueprints.push(knifeClubMace)*/
 
 const imageReference = {
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',

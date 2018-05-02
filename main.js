@@ -22,7 +22,17 @@ const GameState = {
     CRAFT3 : "craft3",
 }
 
+let stopSave = false;
+
 $(document).ready(() => {
+
+    $("#exportDialog").dialog({
+        autoOpen: false,
+    });
+    $("#importDialog").dialog({
+        autoOpen: false,
+    });
+
     loadGame();
     refreshCrafts();
     const $oreAmt = $('#oreAmt');
@@ -71,6 +81,21 @@ $(document).ready(() => {
             refreshWorkers();
         }
     });
+
+    $("#clearSave").click((e) => {
+        e.preventDefault();
+        ClearSave();
+    });
+
+    $('#exportSave').click((e) => {
+        e.preventDefault();
+        ExportSave();
+    });
+
+    $('#importSave').click((e) => {
+        e.preventDefault();
+        ImportSaveButton();
+    })
 
     $('#tabs-3').on("click", ".craft", (e) => {
         e.preventDefault();
@@ -183,36 +208,86 @@ $(document).ready(() => {
     }
 
     function saveGame() {
-        localStorage.setItem('gameSave1', JSON.stringify(player));
-        localStorage.setItem('itemCount1', JSON.stringify(itemCount));
-        localStorage.setItem('workerLevels1', JSON.stringify(workerLevels));
-    }
+        if (stopSave) return;
+        const saveFile = {
+            playerSave : player,
+            itemSave : itemCount,
+            workerSave : workerLevels,
+        }
+        localStorage.setItem('gameSave2', JSON.stringify(saveFile));
+     }
 
     function loadGame() {
-        var loadGame = JSON.parse(localStorage.getItem("gameSave1"));
-        if (loadGame !== null) {
-            if (typeof loadGame.money !== null) player.money = loadGame.money;
-            if (typeof loadGame.ore !== null) player.ore = loadGame.ore;
-            if (typeof loadGame.craft1 !== null) player.craft1 = loadGame.craft1;
-            if (typeof loadGame.craft1start !== null) player.craft1start = loadGame.craft1start;
-            if (typeof loadGame.craft2 !== null) player.craft2 = loadGame.craft2;
-            if (typeof loadGame.craft2start !== null) player.craft2start = loadGame.craft2start;
-            if (typeof loadGame.craft3 !== null) player.craft3 = loadGame.craft3;
-            if (typeof loadGame.craft3start !== null) player.craft3start = loadGame.craft3start;
-        }
-        const itemCountLoad = JSON.parse(localStorage.getItem("itemCount1"));
         //populate itemCount with blueprints as a base
         blueprints.forEach(bp => {
             itemCount[bp.name] = 0;
         })
-        if (itemCountLoad !== null) {
+        console.log(JSON.parse(localStorage.getItem("gameSave2")));
+        const loadGame = JSON.parse(localStorage.getItem("gameSave2"));
+        if (loadGame !== null) {
+            //player variables
+            console.log(player.money, loadGame.playerSave)
+            if (typeof loadGame.playerSave.money !== null) player.money = loadGame.playerSave.money;
+            if (typeof loadGame.playerSave.ore !== null) player.ore = loadGame.playerSave.ore;
+            if (typeof loadGame.playerSave.craft1 !== null) player.craft1 = loadGame.playerSave.craft1;
+            if (typeof loadGame.playerSave.craft1start !== null) player.craft1start = loadGame.playerSave.craft1start;
+            if (typeof loadGame.playerSave.craft2 !== null) player.craft2 = loadGame.playerSave.craft2;
+            if (typeof loadGame.playerSave.craft2start !== null) player.craft2start = loadGame.playerSave.craft2start;
+            if (typeof loadGame.playerSave.craft3 !== null) player.craft3 = loadGame.playerSave.craft3;
+            if (typeof loadGame.playerSave.craft3start !== null) player.craft3start = loadGame.playerSave.craft3start;
+            //item variables
             for (const [bp, _] of Object.entries(itemCount)) {
-                if (bp in itemCountLoad) itemCount[bp] = itemCountLoad[bp];
+                if (bp in loadGame.itemSave) itemCount[bp] = loadGame.itemSave[bp];
             }
-        }
-        const workerLoad = JSON.parse(localStorage.getItem("workerLevels1"));
-        if (workerLoad !== null) {
-            if (typeof workerLoad["Ore"] !== null) workerLevels["Ore"] = workerLoad["Ore"];
+            //load workers
+            if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
         }
     }
+
+    function ClearSave() {
+        localStorage.removeItem("gameSave2");
+        stopSave = true;
+        location.reload();
+    }
+
+    function ExportSave() {
+        const saveFile = {
+            playerSave : player,
+            itemSave : itemCount,
+            workerSave : workerLevels,
+        }
+        $("#exportDialog").html("<p>Copy this code to import later:</p>"+btoa(JSON.stringify(saveFile)))
+        $("#exportDialog").dialog("open");
+    }
+
+    function ImportSaveButton() {
+        stopSave = true;
+        $('#importDialog').dialog({
+            open: function () {},
+            buttons: {
+                "Import": function () {
+                    const s = JSON.parse(atob($('#importSaveText').val()));
+                    localStorage.setItem('gameSave2', JSON.stringify(s));
+                    location.reload();
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                    stopSave = false;
+                }
+            }
+        });
+    }
+
+    function b64Encode(str) {
+        return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+            return String.fromCharCode(parseInt(p1, 16))
+        }))
+    }
+
+    function b64Decode(str) {
+        return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+        }).join(''))
+    }
+
 });

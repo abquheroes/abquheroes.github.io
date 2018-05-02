@@ -81,3 +81,16 @@ select {
     line-height: 20px;
     padding-left: 2px;
 }
+
+
+#bottom-left {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+#bottom-right {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}

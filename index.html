@@ -5,6 +5,7 @@
 	<title>Abqu Heroes</title>
     <link href="jquery-ui.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
 </head>
 <body>
         <h1>Abqu Heroes</h1>
@@ -27,8 +28,14 @@
             <div id="tabs-3"></div>
         </div>
 
-    
+        <div id="bottom-left"><a id="clearSave" href="clearSave">Clear Save</a> | <a id="exportSave" href="exportSave">Export Save</a> | <a id="importSave" href="importSave">Import Save</a></div>
+        <div id="bottom-right">v0.0.1 <a href="http://www.discord.gg/qGBAVNR">Discord</a></div>
+
+        <div id="exportDialog" title="Export Save"></div>
+        <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
+
 <script src="external/jquery/jquery.js"></script>
+<script src="base64.min.js"></script>
 <script src="jquery-ui.js"></script>
 <script src="tabs.js"></script>
 <script src="main.js"></script>
@@ -36,3 +43,4 @@
 <script src="workers.js"></script>
 </body>
 </html>
+
