@@ -124,9 +124,12 @@ $(document).ready( () => {
         s += item.name;
         s += "</a>&nbsp;";
         for (const [type, amt] of Object.entries(item.cost)) {
-            s += "&nbsp;&nbsp;"
-            s += amt;
-            s += imageReference[type];
+            if (amt > 0) {
+                s += "&nbsp;&nbsp;"
+                s += amt;
+                s += imageReference[type];
+            }
+
         }
         s += " <i><b>Crafted</b></i>: "
         s += '<span id="' + item.name + "_count" + '">' + itemCount[item.name] + "</span>";
