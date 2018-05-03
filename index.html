@@ -9,41 +9,44 @@
 </head>
 <body>
     <main id="content">
-        <h1>Abqu Heroes</h1>
         <section class="game-content">
             <div class="status">
-                    <P>Resources:</P>
+                <div id="game-logo"><h1>Abqu Heroes</h1></div>
+                <div id="side-content">
+                    <p class="heading">Resources:</p>
                     Gold: <span id="moneyAmt">0</span> <img src="PixelItem/CoinsGold5.png"></br>
                     Ore: <span id="oreAmt">0</span> <img src="PixelItem/Ore.png"></br>
                     Wood: <span id="woodAmt">0</span> <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">
-                    <p>Generation:</p>
+                    <p class="heading">Generation:</p>
                     <img src="PixelItem/Ore.png">&nbsp;&nbsp;<span id="orePerSecAmt">0</span>/s</br>
                     <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">&nbsp;&nbsp;<span id="woodPerSecAmt">0</span>/s
                 </div>
-            <div id="tabs">
-                <ul>
-                    <li><a href="#tabs-1">Crafts</a></li>
-                    <li><a href="#tabs-2">Workers</a></li>
-                    <li><a href="#tabs-3">Recipes</a></li>
-                </ul>
-                <div id="tabs-1">
-                    Crafting Slot 1: <span id="c1Image"></span>&nbsp;&nbsp;<span id="c1Name"><a id="craft1" href="craft1">Empty</a></span>&nbsp;<span id="craft1Clear" class="hidden"><a id="c1Close" href="c1Close">[x]</a></span>&nbsp;&nbsp;<div id="c1pb" class="hidden"><div id='c1pbLabel'>Waiting for Resources...</div></div></br>
-                    Crafting Slot 2: <span id="c2Image"></span>&nbsp;&nbsp;<span id="c2Name"><a id="craft2" href="craft2">Empty</a></span>&nbsp;<span id="craft2Clear" class="hidden"><a id="c2Close" href="c2Close">[x]</a></span>&nbsp;&nbsp;<div id="c2pb" class="hidden"><div id='c2pbLabel'>Waiting for Resources...</div></div></br>
-                    Crafting Slot 3: <span id="c3Image"></span>&nbsp;&nbsp;<span id="c3Name"><a id="craft3" href="craft3">Empty</a></span>&nbsp;<span id="craft3Clear" class="hidden"><a id="c3Close" href="c3Close">[x]</a></span>&nbsp;&nbsp;<div id="c3pb" class="hidden"><div id='c3pbLabel'>Waiting for Resources...</div></div></br>
+            </div>
+            <div class="game-wrapper">
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Crafts</a></li>
+                        <li><a href="#tabs-2">Workers</a></li>
+                        <li><a href="#tabs-3">Recipes</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        Crafting Slot 1: <span id="c1Image"></span>&nbsp;&nbsp;<span id="c1Name"><a id="craft1" href="craft1">Empty</a></span>&nbsp;<span id="craft1Clear" class="hidden"><a id="c1Close" href="c1Close">[x]</a></span>&nbsp;&nbsp;<div id="c1pb" class="hidden"><div id='c1pbLabel'>Waiting for Resources...</div></div></br>
+                        Crafting Slot 2: <span id="c2Image"></span>&nbsp;&nbsp;<span id="c2Name"><a id="craft2" href="craft2">Empty</a></span>&nbsp;<span id="craft2Clear" class="hidden"><a id="c2Close" href="c2Close">[x]</a></span>&nbsp;&nbsp;<div id="c2pb" class="hidden"><div id='c2pbLabel'>Waiting for Resources...</div></div></br>
+                        Crafting Slot 3: <span id="c3Image"></span>&nbsp;&nbsp;<span id="c3Name"><a id="craft3" href="craft3">Empty</a></span>&nbsp;<span id="craft3Clear" class="hidden"><a id="c3Close" href="c3Close">[x]</a></span>&nbsp;&nbsp;<div id="c3pb" class="hidden"><div id='c3pbLabel'>Waiting for Resources...</div></div></br>
+                    </div>
+                    <div id="tabs-2">
+                        <img src="PixelItem/Ore.png"> Worker Level: <span id="oreWorker">0</span>&nbsp;&nbsp;<button id="increaseOreLevel">Increase lvl - 0g</button></br>
+                        <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> Worker Level: <span id="woodWorker">0</span>&nbsp;&nbsp;<button id="increaseWoodLevel">Increase lvl - 0g</button>
+                    </div>
+                    <div id="tabs-3"><h2>Recipes</h2><p><i>Craft 100 of the previous item to unlock the next blueprint!</i></p><span id="craftFrom"></span><h3>Knives</h3><div id="Knives"></div><H3>Maces</H3><div id="Maces"></div><H3>Axes</H3><div id="Axes"></div></div>
                 </div>
-                <div id="tabs-2">
-                    <img src="PixelItem/Ore.png"> Worker Level: <span id="oreWorker">0</span>&nbsp;&nbsp;<button id="increaseOreLevel">Increase lvl - 0g</button></br>
-                    <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> Worker Level: <span id="woodWorker">0</span>&nbsp;&nbsp;<button id="increaseWoodLevel">Increase lvl - 0g</button>
-                </div>
-                <div id="tabs-3"><h2>Recipes</h2><p><i>Craft 100 of the previous item to unlock the next blueprint!</i></p><span id="craftFrom"></span><h3>Knives</h3><div id="Knives"></div><H3>Maces</H3><div id="Maces"></div><H3>Axes</H3><div id="Axes"></div></div>
+                <footer>
+                    <div id="bottom-left"><a id="clearSave" href="clearSave">Clear Save</a><a id="exportSave" href="exportSave">Export Save</a><a id="importSave" href="importSave">Import Save</a></div>
+                    <div id="bottom-right">v0.0.3 <a href="http://www.discord.gg/qGBAVNR">Discord</a></div>
+                </footer>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div id="bottom-left"><a id="clearSave" href="clearSave">Clear Save</a> | <a id="exportSave" href="exportSave">Export Save</a> | <a id="importSave" href="importSave">Import Save</a></div>
-        <div id="bottom-right">v0.0.3 <a href="http://www.discord.gg/qGBAVNR">Discord</a></div>
-    </footer>
 
         <div id="exportDialog" title="Export Save"></div>
         <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>

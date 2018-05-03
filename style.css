@@ -1,10 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
 }
 
 #content, footer {
-    padding: 10px 50px;
+    padding: 0;
+}
+
+.game-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-content .status {
+    flex-grow: 1;
+    max-width: 250px;
+    height: 100vh;
+    border-right: 1px solid #d1d1d1;
+}
+
+#game-logo {
+    display: flex; /* temp css until image or svg logo is implemented */
+    justify-content: center; /* temp css until image or svg logo is implemented */
+    align-items: center; /* temp css until image or svg logo is implemented */
+    background-color: #e1e1e1;
+    width: 100%;
+    height: 100px;
+}
+
+#game-logo h1 {
+    margin: 0;
+}
+
+#side-content {
+    padding: 0 20px;
+}
+
+#side-content .heading {
+    margin: 10px -20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #f3f3f3;
+}
+
+#side-content .heading:first-of-type {
+    margin-top: 0;
+}
+
+.game-wrapper {
+    flex-grow: 3;
+    height: 100%;
+}
+
+.game-content #tabs {
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 
 .demoHeaders {
@@ -45,23 +99,6 @@ select {
     width: 300px;
 }
 
-.game-content {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.game-content .status {
-    flex-grow: 1;
-    max-width: 150px;
-}
-
-.game-content #tabs {
-    flex-grow: 3;
-    max-width: 900px;
-    max-height: calc(100vh - 150px);
-    overflow-y: scroll;
-}
-
 .ui-progressbar {
     width: 200px;
     height: 20px;
@@ -98,14 +135,63 @@ select {
     padding-bottom: 100px;
 }
 
+.ui-tabs, .ui-tabs .ui-tabs-nav {
+    padding: 0;
+    border-radius: 0;
+    border-left: 1px solid transparent;
+}
+
+.ui-tabs .ui-tabs-nav li {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-widget.ui-widget-content, .ui-widget-content {
+    border: none;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     bottom: 0;
-    width: 100%;
-    min-height: 50px;
+    padding: 0;
+    width: calc(100% - 250px);
+    height: 50px;
     background-color: #fff;
-    box-sizing: border-box;
+    border-top: 1px solid #e1e1e1;
+}
+
+#bottom-left, #bottom-right {
+    height: inherit;
+}
+
+footer a {
+    display: inline-block;
+    height: 100%;
+    padding: 15px;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+    background-color: #e9e9e9;
+}
+
+#clearSave {
+    color: #c90000;
+}
+
+#clearSave:hover {
+    background-color: #c90000;
+    color: #fff;
+}
+
+footer a[href*="discord.gg"]:hover {
+    background-color: #7289DA;
+    color: #fff;
 }
