@@ -1,8 +1,12 @@
 body{
     font-family: "Trebuchet MS", sans-serif;
-    margin: 50px;
-    padding-bottom:200px;
+    margin: 0;
 }
+
+#content, footer {
+    padding: 10px 50px;
+}
+
 .demoHeaders {
     margin-top: 2em;
 }
@@ -41,14 +45,21 @@ select {
     width: 300px;
 }
 
-.status {
-    float: left;
-    width: 10%;
+.game-content {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#tabs {
-    width: 75%;
-    float: left;
+.game-content .status {
+    flex-grow: 1;
+    max-width: 150px;
+}
+
+.game-content #tabs {
+    flex-grow: 3;
+    max-width: 900px;
+    max-height: calc(100vh - 150px);
+    overflow-y: scroll;
 }
 
 .ui-progressbar {
@@ -83,19 +94,18 @@ select {
     padding-left: 2px;
 }
 
-
-#bottom-left {
-    left: 0;
-    bottom: 25px;
-    position: fixed;
-}
-
-#bottom-right {
-    right: 10px;
-    bottom: 25px;
-    position: fixed;
-}
-
 .ui-tabs .ui-corner-all .ui-widget .ui-widget-content {
     padding-bottom: 100px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: #fff;
+    box-sizing: border-box;
 }
