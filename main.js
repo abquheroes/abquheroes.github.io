@@ -266,6 +266,7 @@ $(document).ready(() => {
             //load workers
             if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
             if (typeof loadGame.workerSave["Wood"] !== null) workerLevels["Wood"] = loadGame.workerSave["Wood"];
+            else workerLevels["Wood"] = 0;
         }
     }
 
