@@ -152,6 +152,15 @@ select {
     border: none;
 }
 
+.ui-progressbar.ui-widget.ui-widget-content {
+    background-color: #f3f3f3;
+    border: 1px solid #d1d1d1;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    margin: 0;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
