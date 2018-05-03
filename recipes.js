@@ -93,7 +93,7 @@ maulMace.cost = {
 }
 blueprints.push(maulMace)
 
-const brawlerMace = new item("Mace",15,19000);
+const brawlerMace = new item("Brawler",15,19000);
 brawlerMace.cost = {
     "Wood":11,
 }
