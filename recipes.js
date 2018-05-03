@@ -124,7 +124,7 @@ maulMace.requires = {
 }
 blueprints.push(maulMace)
 
-const brawlerMace = new item("Mace",15,19000,"maces");
+const brawlerMace = new item("Brawler",15,19000,"maces");
 brawlerMace.cost = {
     "Wood":11,
 }
@@ -138,7 +138,7 @@ broomMace.cost = {
     "Wood":14,
 }
 broomMace.requires = {
-    "Mace" : 100,
+    "Brawler" : 100,
 }
 blueprints.push(broomMace)
 
@@ -311,7 +311,6 @@ const imageReference = {
     "Club" : '<img src="PixelItem/Equip/Weapon/Club.png">',
     "Maul" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_12.png">',
     "Brawler" : '<img src="PixelItem/Equip/Weapon/Mace1.png">',
-    
     "The Broominator" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/broom_1.png">',
     "Blackjack" : '<img src="PixelItem/Equip/Weapon/Mace2.png">',
     "Bludgeon" : '<img src="PixelItem/Equip/Weapon/Mace0.png">',
