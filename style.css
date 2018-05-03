@@ -1,6 +1,7 @@
 body{
     font-family: "Trebuchet MS", sans-serif;
     margin: 50px;
+    padding-bottom:200px;
 }
 .demoHeaders {
     margin-top: 2em;
@@ -86,11 +87,15 @@ select {
 #bottom-left {
     left: 0;
     bottom: 25px;
-    position: absolute;
+    position: fixed;
 }
 
 #bottom-right {
     right: 10px;
     bottom: 25px;
-    position: absolute;
+    position: fixed;
+}
+
+.ui-tabs .ui-corner-all .ui-widget .ui-widget-content {
+    padding-bottom: 100px;
 }

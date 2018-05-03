@@ -22,10 +22,14 @@ $(document).ready( () => {
     const $workerTab = $('#tabs-2');
     const $recipeTab = $('#tabs-3');
     
+    const $knife = $('#Knives');
+    const $mace = $('#Maces');
+    const $axe = $('#Axes');
 
     function refreshRecipes() {
-        $recipeTab.empty();
-        $recipeTab.append("<h3>Recipes</h3>");
+        $knife.empty();
+        $mace.empty();
+        $axe.empty();
         if (player.status === GameState.CRAFT1) {
             $recipeTab.append("(Assigning to Slot 1...)<p>")
         }
@@ -36,10 +40,11 @@ $(document).ready( () => {
             $recipeTab.append("(Assigning to Slot 3...)<p>")
         }
         for (let i=0;i<blueprints.length;i++) {
-            $recipeTab.append(itemHTML(blueprints[i]));
-            if (itemCount[blueprints[i].name] < 100) break;
+            console.log(blueprints[i].type);
+            if (blueprints[i].type === "knives") $knife.append(itemHTML(blueprints[i]));
+            else if (blueprints[i].type === "maces") $mace.append(itemHTML(blueprints[i]));
+            else if (blueprints[i].type === "axes") $axe.append(itemHTML(blueprints[i]));           
         }
-        $recipeTab.append("<p><i>Craft 100 of the previous item to unlock the next blueprint!</i></p>");
     }
     
     window.refreshWorkers = () => {
@@ -114,14 +119,12 @@ $(document).ready( () => {
         s += "'>";
         s += item.name;
         s += "</a>&nbsp;";
-        item.cost.for
         for (const [type, amt] of Object.entries(item.cost)) {
             s += "&nbsp;&nbsp;"
             s += amt;
             s += imageReference[type];
         }
         s += " <i><b>Crafted</b></i>: "
-        console.log(itemCount);
         s += '<span id="' + item.name + "_count" + '">' + itemCount[item.name] + "</span>";
         s += "</div>"
         return s
