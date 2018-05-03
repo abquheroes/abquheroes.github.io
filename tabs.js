@@ -26,30 +26,34 @@ $(document).ready( () => {
     const $mace = $('#Maces');
     const $axe = $('#Axes');
 
+    const $craftMsg = $('#craftFrom');
+
     function refreshRecipes() {
         $knife.empty();
         $mace.empty();
         $axe.empty();
+        $craftMsg.empty();
         if (player.status === GameState.CRAFT1) {
-            $recipeTab.append("(Assigning to Slot 1...)<p>")
+            $craftMsg.html("<p>(Assigning to Slot 1...)</p>")
         }
         if (player.status === GameState.CRAFT2) {
-            $recipeTab.append("(Assigning to Slot 2...)<p>")
+            $craftMsg.html("<p>(Assigning to Slot 2...)</p>")
         }
         if (player.status === GameState.CRAFT3) {
-            $recipeTab.append("(Assigning to Slot 3...)<p>")
+            $craftMsg.html("<p>(Assigning to Slot 3...)</p>")
         }
         for (let i=0;i<blueprints.length;i++) {
-            console.log(blueprints[i].type);
-            if (blueprints[i].type === "knives") $knife.append(itemHTML(blueprints[i]));
-            else if (blueprints[i].type === "maces") $mace.append(itemHTML(blueprints[i]));
-            else if (blueprints[i].type === "axes") $axe.append(itemHTML(blueprints[i]));           
+            if (blueprints[i].type === "knives" && requirement(blueprints[i])) $knife.append(itemHTML(blueprints[i]));
+            else if (blueprints[i].type === "maces" && requirement(blueprints[i])) $mace.append(itemHTML(blueprints[i]));
+            else if (blueprints[i].type === "axes" && requirement(blueprints[i])) $axe.append(itemHTML(blueprints[i]));           
         }
     }
     
     window.refreshWorkers = () => {
         $("#oreWorker").text(workerLevels["Ore"]);
-        $("#increaseOreLevel").text("Increase lvl - "+getOreWorkerCost()+"g")
+        $("#increaseOreLevel").text("Increase lvl - "+Math.floor(getOreWorkerCost())+"g")
+        $("#woodWorker").text(workerLevels["Wood"]);
+        $("#increaseWoodLevel").text("Increase lvl - "+Math.floor(getWoodWorkerCost())+"g")
     }
 
 
