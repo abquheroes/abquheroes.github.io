@@ -2,6 +2,7 @@ const player = {
     money: 0,
     workers: 0,
     ore : 0,
+    wood : 0,
     status : null,
     craft1: null,
     craft1start : 0,
@@ -15,6 +16,7 @@ const player = {
 const itemCount = {};
 
 let oreRemainder = 0;
+let woodRemainder = 0;
 
 const GameState = {
     CRAFT1 : "craft1",
@@ -36,7 +38,10 @@ $(document).ready(() => {
     loadGame();
     refreshCrafts();
     const $oreAmt = $('#oreAmt');
+    const $woodAmt = $('#woodAmt');
     const $moneyAmt = $('#moneyAmt');
+    const $orePSAmt = $('#orePerSecAmt');
+    const $woodPSAmt = $('#woodPerSecAmt');
     
     $('#tabs-1').on("click", "#craft1", (e) => {
         e.preventDefault();
@@ -82,6 +87,14 @@ $(document).ready(() => {
         }
     });
 
+    $('#increaseWoodLevel').click( () => {
+        if (player.money >= getWoodWorkerCost()) {
+            player.money -= getWoodWorkerCost();
+            workerLevels["Wood"] += 1;
+            refreshWorkers();
+        }
+    });
+
     $("#clearSave").click((e) => {
         e.preventDefault();
         ClearSave();
@@ -119,6 +132,9 @@ $(document).ready(() => {
         oreRemainder += deltaT*getOreInterval();
         player.ore += Math.floor(oreRemainder/1000);
         oreRemainder = oreRemainder%1000;
+        woodRemainder += deltaT*getWoodInterval();
+        player.wood += Math.floor(woodRemainder/1000);
+        woodRemainder = woodRemainder%1000;
         const slots = ["craft1","craft2","craft3"];
         const pbName = {
             "craft1" : "#c1pb",
@@ -165,7 +181,10 @@ $(document).ready(() => {
 
     function refreshResources() {
         $oreAmt.text(player.ore);
-        $moneyAmt.text(player.money);
+        $woodAmt.text(player.wood);
+        $moneyAmt.text(Math.floor(player.money));
+        $orePSAmt.text(getOreInterval().toFixed(2))
+        $woodPSAmt.text(getWoodInterval().toFixed(2))
     }
 
     function refreshCraftCount() {
@@ -182,13 +201,16 @@ $(document).ready(() => {
         if (player[loc+"start"] > 0) return false;
         const itemName = player[loc];
         const itemFull = nameToItem(itemName);
-        return itemFull.cost["Ore"] <= player.ore
+        if (!("Ore" in itemFull.cost)) itemFull.cost["Ore"] = 0;
+        if (!("Wood" in itemFull.cost)) itemFull.cost["Wood"] = 0;
+        return itemFull.cost["Ore"] <= player.ore && itemFull.cost["Wood"] <= player.wood
     }
 
     function deductCost(loc) {
         const itemName = player[loc];
         const itemFull = nameToItem(itemName);
         player.ore -= itemFull.cost["Ore"];
+        player.wood -= itemFull.cost["Wood"];
     }
 
     function startCraft(loc) {
@@ -229,6 +251,7 @@ $(document).ready(() => {
             console.log(player.money, loadGame.playerSave)
             if (typeof loadGame.playerSave.money !== null) player.money = loadGame.playerSave.money;
             if (typeof loadGame.playerSave.ore !== null) player.ore = loadGame.playerSave.ore;
+            if (typeof loadGame.playerSave.wood !== null) player.wood = loadGame.playerSave.wood;
             if (typeof loadGame.playerSave.craft1 !== null) player.craft1 = loadGame.playerSave.craft1;
             if (typeof loadGame.playerSave.craft1start !== null) player.craft1start = loadGame.playerSave.craft1start;
             if (typeof loadGame.playerSave.craft2 !== null) player.craft2 = loadGame.playerSave.craft2;
@@ -241,6 +264,7 @@ $(document).ready(() => {
             }
             //load workers
             if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
+            if (typeof loadGame.workerSave["Wood"] !== null) workerLevels["Wood"] = loadGame.workerSave["Wood"];
         }
     }
 
@@ -277,17 +301,4 @@ $(document).ready(() => {
         });
         $('#importDialog').dialog("open");
     }
-
-    function b64Encode(str) {
-        return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
-            return String.fromCharCode(parseInt(p1, 16))
-        }))
-    }
-
-    function b64Decode(str) {
-        return decodeURIComponent(Array.prototype.map.call(atob(str), function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
-        }).join(''))
-    }
-
 });

@@ -1,9 +1,12 @@
 function item(name,value,craftTime,type) {
     this.name = name;
-    this.count = 0;
     this.value = value;
     this.craftTime = craftTime; //this is in miliseconds
     this.type = type;
+    this.cost = {
+        "Ore" : 0,
+        "Wood" : 0,
+    }
 }
 
 const blueprints = [];
@@ -16,6 +19,13 @@ function nameToItem(name) {
         }
     }
     return null;
+}
+
+function requirement(item) {
+    for (let req in item.requires) {
+        if (itemCount[req] < item.requires[req]) return false;
+    }
+    return true;
 }
 
 
@@ -32,7 +42,7 @@ butterKnife.cost = {
     "Ore":9,
 }
 butterKnife.requires = {
-    "knife" : 100,
+    "Knife" : 100,
 }
 blueprints.push(butterKnife)
 
@@ -129,7 +139,7 @@ brawlerMace.cost = {
     "Wood":11,
 }
 brawlerMace.requires = {
-    "Mace" : 100,
+    "Maul" : 100,
 }
 blueprints.push(brawlerMace)
 
@@ -298,6 +308,7 @@ blueprints.push(wrathAxe)
 const imageReference = {
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
+    "Wood" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">',
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
     "Butter Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_149.png">',
     "Kitchen Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_1.png">',
