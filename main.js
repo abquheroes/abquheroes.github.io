@@ -37,6 +37,7 @@ $(document).ready(() => {
 
     loadGame();
     refreshCrafts();
+
     const $oreAmt = $('#oreAmt');
     const $woodAmt = $('#woodAmt');
     const $moneyAmt = $('#moneyAmt');
@@ -248,11 +249,14 @@ $(document).ready(() => {
         const loadGame = JSON.parse(localStorage.getItem("gameSave2"));
         if (loadGame !== null) {
             //player variables
-            console.log(player.money, loadGame.playerSave)
-            if (typeof loadGame.playerSave.money !== null) player.money = loadGame.playerSave.money;
-            if (typeof loadGame.playerSave.ore !== null) player.ore = loadGame.playerSave.ore;
-            if (typeof loadGame.playerSave.wood !== null) player.wood = loadGame.playerSave.wood;
-            else player.wood = 0;
+            if ($.type(loadGame.playerSave.money) !== null) player.money = loadGame.playerSave.money;
+            if (typeof loadGame.playerSave.ore != null) player.ore = loadGame.playerSave.ore;
+            if ($.type(loadGame.playerSave.wood) !== $.type(null)) {
+                player.wood = loadGame.playerSave.wood;
+            }
+            else {
+                console.log("wood not loaded");
+            }
             if (typeof loadGame.playerSave.craft1 !== null) player.craft1 = loadGame.playerSave.craft1;
             if (typeof loadGame.playerSave.craft1start !== null) player.craft1start = loadGame.playerSave.craft1start;
             if (typeof loadGame.playerSave.craft2 !== null) player.craft2 = loadGame.playerSave.craft2;
@@ -265,8 +269,13 @@ $(document).ready(() => {
             }
             //load workers
             if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
-            if (typeof loadGame.workerSave["Wood"] !== null) workerLevels["Wood"] = loadGame.workerSave["Wood"];
-            else workerLevels["Wood"] = 0;
+            console.log($.type(loadGame.workerSave["Wood"]), $.type(undefined));
+            if ($.type(loadGame.workerSave["Wood"]) !== $.type(undefined)) {
+                workerLevels["Wood"] = loadGame.workerSave["Wood"];
+            }
+            else {
+                console.log("worker level not loaded");
+            }
         }
     }
 
