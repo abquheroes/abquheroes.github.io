@@ -1,8 +1,9 @@
-function item(name,value,craftTime) {
+function item(name,value,craftTime,type) {
     this.name = name;
     this.count = 0;
     this.value = value;
     this.craftTime = craftTime; //this is in miliseconds
+    this.type = type;
 }
 
 const blueprints = [];
@@ -20,13 +21,13 @@ function nameToItem(name) {
 
 //this is where items go!!! copy these lines to add items, and add the image in the imageReference
 //Knives Category
-const knife = new item("Knife",5,7000);
+const knife = new item("Knife",5,7000,"knives");
 knife.cost = {
     "Ore":5,
 }
 blueprints.push(knife)
 
-const butterKnife = new item("Butter Knife",9,12000);
+const butterKnife = new item("Butter Knife",9,12000,"knives");
 butterKnife.cost = {
     "Ore":9,
 }
@@ -35,7 +36,7 @@ butterKnife.requires = {
 }
 blueprints.push(butterKnife)
 
-const kitchenKnife = new item("Kitchen Knife",12,15000);
+const kitchenKnife = new item("Kitchen Knife",12,15000,"knives");
 kitchenKnife.cost = {
     "Ore":12,
 }
@@ -44,7 +45,7 @@ kitchenKnife.requires = {
 }
 blueprints.push(kitchenKnife)
 
-const chefsKnife = new item("Chefs Knife",17,19000);
+const chefsKnife = new item("Chefs Knife",17,19000,"knives");
 chefsKnife.cost = {
     "Ore":17,
 }
@@ -53,7 +54,7 @@ chefsKnife.requires = {
 }
 blueprints.push(chefsKnife)
 
-const fishingKnife = new item("Fishing Knife",22,23000);
+const fishingKnife = new item("Fishing Knife",22,23000,"knives");
 fishingKnife.cost = {
     "Ore":22,
 }
@@ -62,7 +63,7 @@ fishingKnife.requires = {
 }
 blueprints.push(fishingKnife)
 
-const thatsNotAKnife = new item("Thats Not A Knife",30,27000);
+const thatsNotAKnife = new item("Thats Not A Knife",30,27000,"knives");
 thatsNotAKnife.cost = {
     "Ore":30,
 }
@@ -71,7 +72,7 @@ thatsNotAKnife.requires = {
 }
 blueprints.push(thatsNotAKnife)
 
-const thatsAKnife = new item("Thats A Knife",41,33000);
+const thatsAKnife = new item("Thats A Knife",41,33000,"knives");
 thatsAKnife.cost = {
     "Ore":41,
 }
@@ -80,7 +81,7 @@ thatsAKnife.requires = {
 }
 blueprints.push(thatsAKnife)
 
-const clubKnife = new item("Club Knife",55,39000);
+const clubKnife = new item("Club Knife",55,39000,"knives");
 clubKnife.cost = {
     "Ore":55,
 }
@@ -89,7 +90,7 @@ clubKnife.requires = {
 }
 blueprints.push(clubKnife)
 
-const darkIsTheKnife = new item("Dark Is The Knife",74,47000);
+const darkIsTheKnife = new item("Dark Is The Knife",74,47000,"knives");
 darkIsTheKnife.cost = {
     "Ore":74,
 }
@@ -98,7 +99,7 @@ darkIsTheKnife.requires = {
 }
 blueprints.push(darkIsTheKnife)
 
-const theBloopinatorKnife = new item("The Bloopinator",101,56000);
+const theBloopinatorKnife = new item("The Bloopinator",101,56000,"knives");
 theBloopinatorKnife.cost = {
     "Ore":101,
 }
@@ -108,13 +109,13 @@ theBloopinatorKnife.requires = {
 blueprints.push(theBloopinatorKnife)
 
 //Maces Category
-const clubMace = new item("Club",7,10000);
+const clubMace = new item("Club",7,10000,"maces");
 clubMace.cost = {
     "Wood":5,
 }
 blueprints.push(clubMace)
 
-const maulMace = new item("Maul",12,16000);
+const maulMace = new item("Maul",12,16000,"maces");
 maulMace.cost = {
     "Wood":8,
 }
@@ -123,7 +124,7 @@ maulMace.requires = {
 }
 blueprints.push(maulMace)
 
-const brawlerMace = new item("Mace",15,19000);
+const brawlerMace = new item("Mace",15,19000,"maces");
 brawlerMace.cost = {
     "Wood":11,
 }
@@ -132,7 +133,7 @@ brawlerMace.requires = {
 }
 blueprints.push(brawlerMace)
 
-const broomMace = new item("The Broominator",20,22000);
+const broomMace = new item("The Broominator",20,22000,"maces");
 broomMace.cost = {
     "Wood":14,
 }
@@ -141,7 +142,7 @@ broomMace.requires = {
 }
 blueprints.push(broomMace)
 
-const blackjackMace = new item("Blackjack",26,26000);
+const blackjackMace = new item("Blackjack",26,26000,"maces");
 blackjackMace.cost = {
     "Wood":19,
 }
@@ -150,7 +151,7 @@ blackjackMace.requires = {
 }
 blueprints.push(blackjackMace)
 
-const bludgeonMace = new item("Bludgeon",24,30000);
+const bludgeonMace = new item("Bludgeon",24,30000,"maces");
 bludgeonMace.cost = {
     "Wood":24,
 }
@@ -159,7 +160,7 @@ bludgeonMace.requires = {
 }
 blueprints.push(bludgeonMace)
 
-const stripedClubMace = new item("Striped Club",44,35000);
+const stripedClubMace = new item("Striped Club",44,35000,"maces");
 stripedClubMace.cost = {
     "Wood":31,
 }
@@ -168,7 +169,7 @@ stripedClubMace.requires = {
 }
 blueprints.push(stripedClubMace)
 
-const nightClubMace = new item("Night Club",57,40000);
+const nightClubMace = new item("Night Club",57,40000,"maces");
 nightClubMace.cost = {
     "Wood":41,
 }
@@ -177,7 +178,7 @@ nightClubMace.requires = {
 }
 blueprints.push(nightClubMace)
 
-const factFinderMace = new item("Fact Finder",74,46000);
+const factFinderMace = new item("Fact Finder",74,46000,"maces");
 factFinderMace.cost = {
     "Wood":53,
 }
@@ -186,7 +187,7 @@ factFinderMace.requires = {
 }
 blueprints.push(factFinderMace)
 
-const knifeClubMace = new item("Knife Club",97,53000);
+const knifeClubMace = new item("Knife Club",97,53000,"maces");
 knifeClubMace.cost = {
     "Wood":69,
 }
@@ -196,14 +197,14 @@ knifeClubMace.requires = {
 blueprints.push(knifeClubMace)
 
 //Axes Category
-const rageMakerAxe = new item("Rage Maker",12,17000);
+const rageMakerAxe = new item("Rage Maker",12,17000,"axes");
 rageMakerAxe.cost = {
     "Ore":5,
     "Wood":5,
 }
 blueprints.push(rageMakerAxe)
 
-const furyBringerAxe = new item("Fury Bringer",22,29000);
+const furyBringerAxe = new item("Fury Bringer",22,29000,"axes");
 furyBringerAxe.cost = {
     "Ore":8,
     "Wood":10,
@@ -213,7 +214,7 @@ furyBringerAxe.requires = {
 }
 blueprints.push(furyBringerAxe)
 
-const venganceAxe = new item("Vengance",29,35000);
+const venganceAxe = new item("Vengance",29,35000,"axes");
 venganceAxe.cost = {
     "Ore":10,
     "Wood":14,
@@ -223,7 +224,7 @@ venganceAxe.requires = {
 }
 blueprints.push(venganceAxe)
 
-const prideAxe = new item("Pride",39,43000);
+const prideAxe = new item("Pride",39,43000,"axes");
 prideAxe.cost = {
     "Ore":12,
     "Wood":19,
@@ -233,7 +234,7 @@ prideAxe.requires = {
 }
 blueprints.push(prideAxe)
 
-const greedyPickaxeAxe = new item("Greedy Pickaxe",53,52000);
+const greedyPickaxeAxe = new item("Greedy Pickaxe",53,52000,"axes");
 greedyPickaxeAxe.cost = {
     "Ore":15,
     "Wood":27,
@@ -243,7 +244,7 @@ greedyPickaxeAxe.requires = {
 }
 blueprints.push(greedyPickaxeAxe)
 
-const slothslayerAxe = new item("Slothslayer",72,62000);
+const slothslayerAxe = new item("Slothslayer",72,62000,"axes");
 slothslayerAxe.cost = {
     "Ore":19,
     "Wood":38,
@@ -253,7 +254,7 @@ slothslayerAxe.requires = {
 }
 blueprints.push(slothslayerAxe)
 
-const lustyHandaxeAxe = new item("Lusty Handaxe",98,75000);
+const lustyHandaxeAxe = new item("Lusty Handaxe",98,75000,"axes");
 lustyHandaxeAxe.cost = {
     "Ore":24,
     "Wood":53,
@@ -263,7 +264,7 @@ lustyHandaxeAxe.requires = {
 }
 blueprints.push(lustyHandaxeAxe)
 
-const envyAxe = new item("Envy",133,89000);
+const envyAxe = new item("Envy",133,89000,"axes");
 envyAxe.cost = {
     "Ore":30,
     "Wood":74,
@@ -273,7 +274,7 @@ envyAxe.requires = {
 }
 blueprints.push(envyAxe)
 
-const gluttonousAxeAxe = new item("Gluttonous Axe",182,108000);
+const gluttonousAxeAxe = new item("Gluttonous Axe",182,108000,"axes");
 gluttonousAxeAxe.cost = {
     "Ore":37,
     "Wood":103,
@@ -283,7 +284,7 @@ gluttonousAxeAxe.requires = {
 }
 blueprints.push(gluttonousAxeAxe)
 
-const wrathAxe = new item("Wrath",249,130000);
+const wrathAxe = new item("Wrath",249,130000,"axes");
 wrathAxe.cost = {
     "Ore":47,
     "Wood":145,
@@ -292,7 +293,7 @@ wrathAxe.requires = {
     "Gluttonous Axe" : 100,
 }
 blueprints.push(wrathAxe)
-*/
+
 
 const imageReference = {
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
@@ -310,6 +311,7 @@ const imageReference = {
     "Club" : '<img src="PixelItem/Equip/Weapon/Club.png">',
     "Maul" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/hammers/hammer_12.png">',
     "Brawler" : '<img src="PixelItem/Equip/Weapon/Mace1.png">',
+    
     "The Broominator" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc/broom_1.png">',
     "Blackjack" : '<img src="PixelItem/Equip/Weapon/Mace2.png">',
     "Bludgeon" : '<img src="PixelItem/Equip/Weapon/Mace0.png">',
