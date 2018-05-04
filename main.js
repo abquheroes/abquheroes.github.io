@@ -345,6 +345,7 @@ $(document).ready(() => {
                 }
             }
         });
+        $('#clearDialog').dialog("open");
     }
 
     function ExportSave() {
