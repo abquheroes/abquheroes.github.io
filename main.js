@@ -1,9 +1,10 @@
+"use strict";
+
 const player = {
     money: 0,
     workers: 0,
     ore : 0,
     wood : 0,
-    status : null,
     craft1: null,
     craft1start : 0,
     craft2: null,
@@ -18,12 +19,6 @@ const itemCount = {};
 let oreRemainder = 0;
 let woodRemainder = 0;
 
-const GameState = {
-    CRAFT1 : "craft1",
-    CRAFT2 : "craft2",
-    CRAFT3 : "craft3",
-}
-
 let stopSave = false;
 
 $(document).ready(() => {
@@ -32,6 +27,9 @@ $(document).ready(() => {
         autoOpen: false,
     });
     $("#importDialog").dialog({
+        autoOpen: false,
+    });
+    $("#clearDialog").dialog({
         autoOpen: false,
     });
 
@@ -43,7 +41,11 @@ $(document).ready(() => {
     const $moneyAmt = $('#moneyAmt');
     const $orePSAmt = $('#orePerSecAmt');
     const $woodPSAmt = $('#woodPerSecAmt');
-    
+    const $knifeSelector = $('#KnifeSelector');
+    const $axeSelector = $('#AxeSelector');
+    const $maceSelector = $('#MaceSelector');
+    const $RecipeResults = $('#RecipeResults');
+
     $('#tabs-1').on("click", "#craft1", (e) => {
         e.preventDefault();
         player.status = GameState.CRAFT1;
@@ -109,7 +111,28 @@ $(document).ready(() => {
     $('#importSave').click((e) => {
         e.preventDefault();
         ImportSaveButton();
-    })
+    });
+
+    $knifeSelector.click((e) => {
+        e.preventDefault();
+        populateRecipe("knives");
+    });
+
+    $axeSelector.click((e) => {
+        e.preventDefault();
+        populateRecipe("axes");
+    });
+
+    $maceSelector.click((e) => {
+        e.preventDefault();
+        populateRecipe("maces");
+    });
+
+
+    $('#tabs-1').on("click", "a.addCraft", (e) => {
+        e.preventDefault();
+        addCraft(e.target.text)
+    });
 
     $('#tabs-3').on("click", ".craft", (e) => {
         e.preventDefault();
@@ -174,7 +197,6 @@ $(document).ready(() => {
             }
         });
         refreshResources();
-        refreshCraftCount();
         saveGame();
     }
 
@@ -188,14 +210,44 @@ $(document).ready(() => {
         $woodPSAmt.text(getWoodInterval().toFixed(2))
     }
 
-    function refreshCraftCount() {
-        /*blueprints.forEach(item => {
-
-            if ($('#'+item.name+"_count").length > 0) {
-                $('#'+item.name+"_count").text(itemCount[item.name]);
-                console.log(itemCount[item.name])
+    function populateRecipe(type) {
+        $RecipeResults.empty();
+        const table = $('<table/>').addClass('recipeTable');
+        const hrow = $('<tr/>').addClass('recipeHeader');
+        const htd1 = $('<td/>').addClass('recipeHeadName').html("NAME");
+        const htd2 = $('<td/>').addClass('recipeHeadCost').html("COST");
+        const htd3 = $('<td/>').addClass('recipeHeadTime').html("TIME");
+        const htd4 = $('<td/>').addClass('recipeHeadCount').html("COUNT");
+        hrow.append(htd1);
+        hrow.append(htd2);
+        hrow.append(htd3);
+        hrow.append(htd4);
+        table.append(hrow);
+        for (let i=0;i<blueprints.length;i++) {
+            if (blueprints[i].type === type && requirement(blueprints[i])) {
+                const row = $('<tr/>').addClass('recipeRow');
+                const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
+                const td1 = $('<td/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
+                td1.append(name);
+                let s = ""
+                for (const [type, amt] of Object.entries(blueprints[i].cost)) {
+                    if (amt > 0) {
+                        s += "&nbsp;&nbsp;"
+                        s += amt;
+                        s += imageReference[type];
+                    }
+                }
+                const td2 = $('<td/>').addClass('recipeCost').html(s);
+                const td3 = $('<td/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
+                const td4 = $('<td/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
+                row.append(td1);
+                row.append(td2);
+                row.append(td3);
+                row.append(td4);
+                table.append(row);
             }
-        });*/
+        }
+        $RecipeResults.append(table);
     }
 
     function canCraft(loc) {
@@ -280,9 +332,19 @@ $(document).ready(() => {
     }
 
     function ClearSave() {
-        localStorage.removeItem("gameSave2");
         stopSave = true;
-        location.reload();
+        $('#clearDialog').dialog({
+            buttons: {
+                "Yes": function () {
+                    localStorage.removeItem("gameSave2");
+                    location.reload();
+                },
+                "No": function () {
+                    stopSave = false;
+                    $(this).dialog("close");
+                }
+            }
+        });
     }
 
     function ExportSave() {
@@ -311,5 +373,20 @@ $(document).ready(() => {
             }
         });
         $('#importDialog').dialog("open");
+    }
+
+    function addCraft(itemName) {
+        //find an empty craft slot and add this to it
+        console.log(player.craft1)
+        if (player.craft1 === null) {
+            player.craft1 = itemName;
+        }
+        else if (player.craft2 === null) {
+            player.craft2 = itemName;
+        }
+        else if (player.craft3 === null) {
+            player.craft3 = itemName;
+        }
+        refreshCrafts();
     }
 });

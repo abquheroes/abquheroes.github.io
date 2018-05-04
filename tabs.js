@@ -1,8 +1,9 @@
+"use strict";
+
 $(document).ready( () => {
     $( "#c1pb" ).progressbar();
     $( "#c2pb" ).progressbar();
     $( "#c3pb" ).progressbar();
-
 
     $("#tabs").tabs({
         activate: function( evt, ui ) {
@@ -12,42 +13,11 @@ $(document).ready( () => {
             else if($(ui.newTab).index() === 1) {
                 refreshWorkers();
             }
-            else if($(ui.newTab).index() === 2) {
-                refreshRecipes();
-            }
         }
     })
 
     const $craftTab = $('#tabs-1');
     const $workerTab = $('#tabs-2');
-    const $recipeTab = $('#tabs-3');
-    
-    const $knife = $('#Knives');
-    const $mace = $('#Maces');
-    const $axe = $('#Axes');
-
-    const $craftMsg = $('#craftFrom');
-
-    function refreshRecipes() {
-        $knife.empty();
-        $mace.empty();
-        $axe.empty();
-        $craftMsg.empty();
-        if (player.status === GameState.CRAFT1) {
-            $craftMsg.html("<p>(Assigning to Slot 1...)</p>")
-        }
-        if (player.status === GameState.CRAFT2) {
-            $craftMsg.html("<p>(Assigning to Slot 2...)</p>")
-        }
-        if (player.status === GameState.CRAFT3) {
-            $craftMsg.html("<p>(Assigning to Slot 3...)</p>")
-        }
-        for (let i=0;i<blueprints.length;i++) {
-            if (blueprints[i].type === "knives" && requirement(blueprints[i])) $knife.append(itemHTML(blueprints[i]));
-            else if (blueprints[i].type === "maces" && requirement(blueprints[i])) $mace.append(itemHTML(blueprints[i]));
-            else if (blueprints[i].type === "axes" && requirement(blueprints[i])) $axe.append(itemHTML(blueprints[i]));           
-        }
-    }
     
     window.refreshWorkers = () => {
         $("#oreWorker").text(workerLevels["Ore"]);
@@ -111,30 +81,6 @@ $(document).ready( () => {
             $c3pb.removeClass("hidden");
             $c3Clear.removeClass("hidden");
         }    
-    }
-
-    function itemHTML(item) {
-        let s = "<div id='";
-        s += item.name;
-        s += "'>";
-        s += imageReference[item.name];
-        s += "&nbsp;&nbsp;<a class='craft' href='#"
-        s += item.name;
-        s += "'>";
-        s += item.name;
-        s += "</a>&nbsp;";
-        for (const [type, amt] of Object.entries(item.cost)) {
-            if (amt > 0) {
-                s += "&nbsp;&nbsp;"
-                s += amt;
-                s += imageReference[type];
-            }
-
-        }
-        s += " <i><b>Crafted</b></i>: "
-        s += '<span id="' + item.name + "_count" + '">' + itemCount[item.name] + "</span>";
-        s += "</div>"
-        return s
     }
 });
 
