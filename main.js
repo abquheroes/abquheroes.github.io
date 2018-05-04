@@ -11,6 +11,7 @@ const player = {
     craft2start : 0,
     craft3: null,
     craft3start : 0,
+    currentType : null,
     lastLoop : Date.now(),
 }
 
@@ -115,16 +116,19 @@ $(document).ready(() => {
 
     $knifeSelector.click((e) => {
         e.preventDefault();
+        player.currentType = "knives";
         populateRecipe("knives");
     });
 
     $axeSelector.click((e) => {
         e.preventDefault();
+        player.currentType = "axes";
         populateRecipe("axes");
     });
 
     $maceSelector.click((e) => {
         e.preventDefault();
+        player.currentType = "maces";
         populateRecipe("maces");
     });
 
@@ -180,6 +184,7 @@ $(document).ready(() => {
                     $(pbName[slot]).progressbar({
                         value: 0
                     })
+                    populateRecipe(player.currentType);
                 }
                 else {
                     const pText = msToTime(slotStart + slotCraft - Date.now());
@@ -223,7 +228,9 @@ $(document).ready(() => {
         hrow.append(htd2);
         hrow.append(htd3);
         hrow.append(htd4);
+        hrow.append(htd5);
         table.append(hrow);
+        let bpUnlock = null;
         for (let i=0;i<blueprints.length;i++) {
             if (blueprints[i].type === type && requirement(blueprints[i])) {
                 const row = $('<tr/>').addClass('recipeRow');
@@ -249,8 +256,16 @@ $(document).ready(() => {
                 row.append(td5);
                 table.append(row);
             }
+            else if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
+                let s = ""
+                for (const [item, amt] of Object.entries(blueprints[i].requires)) {
+                    s += amt + " " + item + " "
+                }
+                bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next recipe by crafting " + s + "</i></p>");
+            }
         }
         $RecipeResults.append(table);
+        $RecipeResults.append(bpUnlock);
     }
 
     function canCraft(loc) {
@@ -381,7 +396,6 @@ $(document).ready(() => {
 
     function addCraft(itemName) {
         //find an empty craft slot and add this to it
-        console.log(player.craft1)
         if (player.craft1 === null) {
             player.craft1 = itemName;
         }

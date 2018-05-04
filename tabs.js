@@ -49,7 +49,6 @@ $(document).ready( () => {
             $c1Name.html('<a id="craft1" href="craft1">Empty</a>');
             $c1pb.addClass("hidden");
             $c1Clear.addClass("hidden");
-            
         }
         else {
             $c1Image.html(imageReference[player.craft1]);
