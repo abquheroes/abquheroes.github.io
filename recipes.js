@@ -1,3 +1,5 @@
+"use strict";
+
 function item(name,value,craftTime,type) {
     this.name = name;
     this.value = value;

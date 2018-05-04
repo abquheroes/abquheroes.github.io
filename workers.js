@@ -1,3 +1,5 @@
+"use strict";
+
 const workerLevels = {
     "Ore" : 0,
     "Wood" : 0,

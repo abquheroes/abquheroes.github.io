@@ -27,18 +27,20 @@
                     <ul>
                         <li><a href="#tabs-1">Crafts</a></li>
                         <li><a href="#tabs-2">Workers</a></li>
-                        <li><a href="#tabs-3">Recipes</a></li>
                     </ul>
                     <div id="tabs-1">
+                        <h1>Crafting Slots</h1>
                         Crafting Slot 1: <span id="c1Image"></span>&nbsp;&nbsp;<span id="c1Name"><a id="craft1" href="craft1">Empty</a></span>&nbsp;<span id="craft1Clear" class="hidden"><a id="c1Close" href="c1Close">[x]</a></span>&nbsp;&nbsp;<div id="c1pb" class="hidden"><div id='c1pbLabel'>Waiting for Resources...</div></div></br>
                         Crafting Slot 2: <span id="c2Image"></span>&nbsp;&nbsp;<span id="c2Name"><a id="craft2" href="craft2">Empty</a></span>&nbsp;<span id="craft2Clear" class="hidden"><a id="c2Close" href="c2Close">[x]</a></span>&nbsp;&nbsp;<div id="c2pb" class="hidden"><div id='c2pbLabel'>Waiting for Resources...</div></div></br>
                         Crafting Slot 3: <span id="c3Image"></span>&nbsp;&nbsp;<span id="c3Name"><a id="craft3" href="craft3">Empty</a></span>&nbsp;<span id="craft3Clear" class="hidden"><a id="c3Close" href="c3Close">[x]</a></span>&nbsp;&nbsp;<div id="c3pb" class="hidden"><div id='c3pbLabel'>Waiting for Resources...</div></div></br>
+                        <h1>Recipes</h1>
+                        <div id="RecipeFilter"><a id="KnifeSelector" href="KnifeSelector">Knives</a> | <a id="MaceSelector" href="MaceSelector">Maces</a> | <a id="AxeSelector" href="AxeSelector">Axes</a></div>
+                        <div id="RecipeResults"></div>
                     </div>
                     <div id="tabs-2">
                         <img src="PixelItem/Ore.png"> Worker Level: <span id="oreWorker">0</span>&nbsp;&nbsp;<button id="increaseOreLevel">Increase lvl - 0g</button></br>
                         <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> Worker Level: <span id="woodWorker">0</span>&nbsp;&nbsp;<button id="increaseWoodLevel">Increase lvl - 0g</button>
                     </div>
-                    <div id="tabs-3"><h2>Recipes</h2><p><i>Craft 100 of the previous item to unlock the next blueprint!</i></p><span id="craftFrom"></span><h3>Knives</h3><div id="Knives"></div><H3>Maces</H3><div id="Maces"></div><H3>Axes</H3><div id="Axes"></div></div>
                 </div>
                 <footer>
                     <div id="bottom-left">
@@ -51,6 +53,7 @@
         </section>
     </main>
 
+        <div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
         <div id="exportDialog" title="Export Save"></div>
         <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
 <script src="external/jquery/jquery.js"></script>
