@@ -308,6 +308,7 @@ blueprints.push(wrathAxe)
 
 
 const imageReference = {
+    "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
     "Wood" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">',

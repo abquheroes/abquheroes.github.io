@@ -218,6 +218,7 @@ $(document).ready(() => {
         const htd2 = $('<td/>').addClass('recipeHeadCost').html("COST");
         const htd3 = $('<td/>').addClass('recipeHeadTime').html("TIME");
         const htd4 = $('<td/>').addClass('recipeHeadCount').html("COUNT");
+        const htd5 = $('<td/>').addClass('recipeHeadValue').html("VALUE");
         hrow.append(htd1);
         hrow.append(htd2);
         hrow.append(htd3);
@@ -232,18 +233,20 @@ $(document).ready(() => {
                 let s = ""
                 for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                     if (amt > 0) {
-                        s += "&nbsp;&nbsp;"
                         s += amt;
                         s += imageReference[type];
+                        s += "&nbsp;&nbsp;"
                     }
                 }
                 const td2 = $('<td/>').addClass('recipeCost').html(s);
                 const td3 = $('<td/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
                 const td4 = $('<td/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
+                const td5 = $('<td/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
                 row.append(td1);
                 row.append(td2);
                 row.append(td3);
                 row.append(td4);
+                row.append(td5);
                 table.append(row);
             }
         }
