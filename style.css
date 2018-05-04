@@ -161,6 +161,50 @@ select {
     margin: 0;
 }
 
+#RecipeFilter {
+    background-color: #f3f3f3;
+    margin: 0 -1.4em;
+    padding: 10px 25px;
+}
+
+#RecipeResults {
+    margin-top: 15px;
+}
+
+.recipeTable {
+    width: 100%;
+    max-width: 750px;
+}
+
+.recipeHeader {
+    font-weight: bold;
+}
+
+.recipeHeader td {
+    padding: 5px;
+    background-color: #f3f3f3;
+}
+
+.recipeRow:hover {
+    background-color: #f3f3f3;
+}
+
+.recipeName {
+    display: flex;
+    align-items: center;
+}
+
+.recipeName>img {
+    max-height: 16px;
+    margin-left: 5px;
+}
+
+.recipeName>a {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+
 footer {
     display: flex;
     justify-content: space-between;
