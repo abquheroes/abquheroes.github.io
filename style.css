@@ -161,6 +161,13 @@ select {
     margin: 0;
 }
 
+.ui-dialog {
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
 #RecipeFilter {
     background-color: #f3f3f3;
     margin: 0 -1.4em;
@@ -203,7 +210,6 @@ select {
     flex-grow: 1;
     padding: 5px;
 }
-
 
 footer {
     display: flex;
