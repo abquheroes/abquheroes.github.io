@@ -306,11 +306,102 @@ wrathAxe.requires = {
 }
 blueprints.push(wrathAxe)
 
+//Potions Line
+const healingPotion = new item("Healing Potion",8,11000,"potions");
+healingPotion.cost = {
+    "Herb":5,
+}
+blueprints.push(healingPotion)
+
+const manaPotion = new item("Mana Potion",12,15000,"potions");
+manaPotion.cost = {
+    "Herb":7,
+}
+manaPotion.requires = {
+    "Healing Potion" : 100,
+}
+blueprints.push(manaPotion)
+
+const sleepingPotion = new item("Sleeping Potion",14,17000,"potions");
+sleepingPotion.cost = {
+    "Herb":9,
+}
+sleepingPotion.requires = {
+    "Mana Potion" : 100,
+}
+blueprints.push(sleepingPotion)
+
+const coughingPotion = new item("Coughing Potion",17,18000,"potions");
+coughingPotion.cost = {
+    "Herb":11,
+}
+coughingPotion.requires = {
+    "Sleeping Potion" : 100,
+}
+blueprints.push(coughingPotion)
+
+const invincibilityPotion = new item("Invincibility Potion",20,19000,"potions");
+invincibilityPotion.cost = {
+    "Herb":13,
+}
+invincibilityPotion.requires = {
+    "Coughing Potion" : 100,
+}
+blueprints.push(invincibilityPotion)
+
+const laughingPotion = new item("Laughing Potion",24,20000,"potions");
+laughingPotion.cost = {
+    "Herb":15,
+}
+laughingPotion.requires = {
+    "Invincibility Potion" : 100,
+}
+blueprints.push(laughingPotion)
+
+const rejuvinatingPotion = new item("Rejuvinating Potion",29,21000,"potions");
+rejuvinatingPotion.cost = {
+    "Herb":18,
+}
+rejuvinatingPotion.requires = {
+    "Laughing Potion" : 100,
+}
+blueprints.push(rejuvinatingPotion)
+
+const likePotion = new item("Like Potion",34,22000,"potions");
+likePotion.cost = {
+    "Herb":21
+}
+likePotion.requires = {
+    "Rejuvinating Potion" : 100,
+}
+blueprints.push(likePotion)
+
+const bitterPotion = new item("Bitter Potion",41,23000,"potions");
+bitterPotion.cost = {
+    "Herb":26,
+}
+bitterPotion.requires = {
+    "Like Potion" : 100,
+}
+blueprints.push(bitterPotion)
+
+const strengthPotion = new item("Strength Potion",50,25000,"potions");
+strengthPotion.cost = {
+    "Herb":31,
+}
+strengthPotion.requires = {
+    "Bitter Potion" : 100,
+}
+blueprints.push(strengthPotion)
+
 
 const imageReference = {
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
+    "Herb" : '<img src="PixelItem/Consume/Herb5.png">',
+    "Leather" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png">',
+    "Oren" : '<img src="workers/oren.gif">',
     "Wood" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">',
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
     "Butter Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_149.png">',
@@ -342,4 +433,14 @@ const imageReference = {
     "Envy" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_105.png">',
     "Gluttonous Axe" : '<img src="PixelItem/Equip/Set/GoldAxe.png">',
     "Wrath" : '<img src="PixelItem/Equip/Set/BurningAxe.png">',
+    "Healing Potion" : '<img src="PixelItem/Consume/Potion/TinyWhitePotion.png">',
+    "Mana Potion" : '<img src="PixelItem/Consume/Potion/PotionPurple.png">',
+    "Sleeping Potion" : '<img src="PixelItem/Consume/BeerMug.png">',
+    "Coughing Potion" : '<img src="PixelItem/Consume/Potion/TinyRedPotion.png">',
+    "Invincibility Potion" : '&nbsp;&nbsp;&nbsp;&nbsp;',
+    "Laughing Potion" : '<img src="PixelItem/Consume/Wine.png">',
+    "Rejuvinating Potion" : '<img src="PixelItem/Consume/Potion/PotionMulticolor.png">',
+    "Like Potion" : '<img src="PixelItem/Consume/Potion/PotionPink.png">',
+    "Bitter Potion" : '<img src="PixelItem/Consume/Whisky.png">',
+    "Strength Potion" : '<img src="PixelItem/Consume/Potion/PyramidPotion4.png">',
 }

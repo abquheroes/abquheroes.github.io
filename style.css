@@ -61,7 +61,7 @@ body{
 
 #game-logo {
     background-color: var(--theme-bg);
-    background-image: url(/images/site-logo.png);
+    background-image: url(images/site-logo.png);
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
@@ -164,7 +164,7 @@ select {
     display:none;
 }
 
-#c1pbLabel,#c2pbLabel,#c3pbLabel {
+.pbLabel {
     width: 100%;
     float: left;
     line-height: 200%;
