@@ -37,6 +37,7 @@ THEMES :: LIGHT AND DARK MODE
 /**/
 
 body{
+    color: var(--theme-text);
     background-color: var(--theme-bg);
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
@@ -83,6 +84,7 @@ body{
     margin: 10px -20px;
     padding: 5px 10px;
     font-weight: bold;
+    color: var(--theme-text);
     background-color: var(--theme-bg-2);
     border-top: 1px solid var(--theme-border);
     border-bottom: 1px solid var(--theme-border);
@@ -173,6 +175,14 @@ select {
     padding-left: 2px;
 }
 
+.ui-tabs .ui-tabs-panel {
+    color: var(--theme-text);
+}
+
+.ui-widget-content a {
+    color: var(--theme-text);
+}
+
 .ui-tabs .ui-corner-all .ui-widget .ui-widget-content {
     padding-bottom: 100px;
 }
@@ -180,7 +190,9 @@ select {
 .ui-tabs, .ui-tabs .ui-tabs-nav {
     padding: 0;
     border-radius: 0;
+    border: 1px solid var(--theme-border);
     border-left: 1px solid transparent;
+    background-color: var(--theme-bg-2);
 }
 
 .ui-tabs .ui-tabs-nav li {
@@ -190,7 +202,17 @@ select {
     padding: 0;
 }
 
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    padding: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active  {
+    border: none;
+    background: var(--theme-bg);
+}
+
 .ui-widget.ui-widget-content, .ui-widget-content {
+    background-color: var(--theme-bg-2);
     border: none;
 }
 
@@ -240,7 +262,7 @@ select {
 }
 
 .recipeRow:hover {
-    background-color: #e3f1ff;
+    background-color: var(--theme-border);
 }
 
 .recipeName {

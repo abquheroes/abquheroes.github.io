@@ -1,3 +1,5 @@
+//Scripting for Theme Selection
+
 var root = document.querySelector(":root");
 var darkButton = document.querySelector(".dm-btn");
 var lightButton = document.querySelector(".lm-btn");
@@ -24,13 +26,13 @@ function changeTheme() {
 
         themeIndex = 1;
         localStorage.setItem('themeChoice', themeIndex);
-        console.log("Switch to Light");
+        console.log("Switched to Light Theme");
     } else if (themeIndex == 1) {
         darkTheme();
 
         themeIndex = 0;
         localStorage.setItem('themeChoice', themeIndex);
-        console.log("Switch to Dark");
+        console.log("Switched to Dark Theme");
     }
 };
 
@@ -61,3 +63,5 @@ function darkTheme() {
     darkButton.style.display = "none";
     lightButton.style.display = "block";
 }
+
+//
