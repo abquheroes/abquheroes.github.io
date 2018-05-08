@@ -7,6 +7,10 @@ const player = {
     oreCap : 200,
     wood : 0,
     woodCap : 200,
+    leather: 0,
+    leatherCap : 200,
+    herb: 0,
+    herbCap : 200,
     actionSlots : [
         {
             actionType : "Empty",
@@ -34,8 +38,12 @@ const player = {
         //actionTime
     //},
     currentType : null,
-    inventoryCap : 20,
+    inventoryCap : 5,
     lastLoop : Date.now(),
+}
+
+const workerProgress = {
+
 }
 
 const inventory = [];
@@ -43,6 +51,8 @@ const itemCount = {};
 
 let oreRemainder = 0;
 let woodRemainder = 0;
+let herbRemainder = 0;
+let leatherRemainder = 0;
 
 let stopSave = false;
 
@@ -60,12 +70,19 @@ $(document).ready(() => {
 
     const $oreAmt = $('#oreAmt');
     const $woodAmt = $('#woodAmt');
+    const $leatherAmt = $('#leatherAmt');
+    const $herbAmt = $('#herbAmt');
+
     const $moneyAmt = $('#moneyAmt');
     const $orePSAmt = $('#orePerSecAmt');
     const $woodPSAmt = $('#woodPerSecAmt');
+    const $leatherPSAmt = $('#leatherPerSecAmt');
+    const $herbPSAmt = $('#herbPerSecAmt');
+
     const $RecipeResults = $('#RecipeResults');
     const $inventory = $('#inventory');
     const $actionSlots = $('#ActionSlots');
+    const $jobList = $('#joblist');
 
     loadGame();
     refreshInventory();
@@ -80,21 +97,13 @@ $(document).ready(() => {
         refreshActionSlots();
     });
 
-    $('#increaseOreLevel').click( () => {
+    /*$('#increaseOreLevel').click( () => {
         if (player.money >= getOreWorkerCost()) {
             player.money -= getOreWorkerCost();
             workerLevels["Ore"] += 1;
             refreshWorkers();
         }
-    });
-
-    $('#increaseWoodLevel').click( () => {
-        if (player.money >= getWoodWorkerCost()) {
-            player.money -= getWoodWorkerCost();
-            workerLevels["Wood"] += 1;
-            refreshWorkers();
-        }
-    });
+    });*/
 
     $("#clearSave").click((e) => {
         e.preventDefault();
@@ -135,14 +144,15 @@ $(document).ready(() => {
     function mainLoop() {
         const deltaT = Date.now() - player.lastLoop;
         player.lastLoop = Date.now();
-        oreRemainder += deltaT*getProduction("Ore");
-        player.ore += Math.floor(oreRemainder/1000);
-        player.ore = Math.min(200,player.ore);
-        oreRemainder = oreRemainder%1000;
-        woodRemainder += deltaT*getProduction("Wood");
-        player.wood += Math.floor(woodRemainder/1000);
-        player.wood = Math.min(200,player.wood);
-        woodRemainder = woodRemainder%1000;
+        const resources = ["Ore","Wood","Leather","Herb"];
+        const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
+        for (let i=0;i<resources.length;i++) {
+            const lowercaseName = resources[i].toLowerCase();
+            remainder[i] += deltaT*getProduction(resources[i]);
+            player[lowercaseName] += Math.floor(remainder[i]/1000);
+            player[lowercaseName] = Math.min(player[lowercaseName+"Cap"],player[lowercaseName]);
+            remainder[i] = remainder[i]%1000;
+        }
         for (let i=0;i<player.actionSlots.length;i++) {
             if (player.actionSlots[i].actionTime > 0) {
                 const item = nameToItem(player.actionSlots[i].actionName);
@@ -188,9 +198,17 @@ $(document).ready(() => {
     function refreshResources() {
         $oreAmt.text(player.ore + "/" + player.oreCap);
         $woodAmt.text(player.wood + "/" + player.woodCap);
+        $leatherAmt.text(player.leather + "/" + player.leatherCap);
+        $herbAmt.text(player.herb+"/"+player.herbCap);
         $moneyAmt.text(Math.floor(player.money));
-        $orePSAmt.text(getProduction("Ore").toFixed(2))
-        $woodPSAmt.text(getProduction("Wood").toFixed(2))
+        $orePSAmt.text(getProduction("Ore").toFixed(2));
+        $woodPSAmt.text(getProduction("Wood").toFixed(2));
+        $leatherPSAmt.text(getProduction("Leather").toFixed(2));
+        $herbPSAmt.text(getProduction("Herb").toFixed(2));
+    }
+
+    function populateJob() {
+        $
     }
 
     function populateRecipe(type) {
