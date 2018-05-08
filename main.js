@@ -414,7 +414,7 @@ $(document).ready(() => {
     function refreshInventory() {
         $inventory.empty();
         for (let i=0;i<inventory.length;i++) {
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell this Item").html(inventory[i]);
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]]+"&nbsp;")
             itemdiv.append(itemLink);
             $inventory.append(itemdiv);

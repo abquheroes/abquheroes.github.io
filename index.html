@@ -6,6 +6,7 @@
     <link href="jquery-ui.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
     <main id="content">
@@ -38,7 +39,7 @@
                         <li><a href="#tabs-4">Upgrades</a></li>
                     </ul>
                     <div id="tabs-1">
-                        <h1>Recipes</h1>
+                        <h1 class="tab-heading">All Recipes</h1>
                         <div id="RecipeFilter">
                             <a class="recipeSelect" href="KnifeSelector">Knives</a>
                             <a class="recipeSelect" href="MaceSelector">Maces</a>
@@ -60,7 +61,10 @@
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
                         <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a></div>
-                    <div id="bottom-right">v0.0.7 <a href="http://www.discord.gg/qGBAVNR">Discord</a></div>
+                    <div id="bottom-right">
+                        <p id="version-scale">v0.0.7</p>
+                        <a href="http://www.discord.gg/qGBAVNR">Discord</a>
+                    </div>
                 </footer>
                 </div>
             </div>
