@@ -208,7 +208,14 @@ $(document).ready(() => {
     }
 
     function populateJob() {
-        $
+        $jobList.empty();
+        const table = $('<table/>').addClass('jobTable'):
+        const hrow = $('<tr/>').addClass('jobHeader');
+        const htd1 = $('<td/>').addClass('jobHeadName').html("NAME");
+        const htd2 = $('<td/>').addClass('jobHeadWorker').html("WORKER");
+        const htd3 = $('<td/>').addClass('jobHeadTime').html("TIME");
+        const htd4 = $('<td/>').addClass('recipeHeadCount').html("COUNT");
+        const htd5 = $('<td/>').addClass('recipeHeadValue').html("VALUE");
     }
 
     function populateRecipe(type) {
