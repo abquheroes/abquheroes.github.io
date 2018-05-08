@@ -394,6 +394,94 @@ strengthPotion.requires = {
 }
 blueprints.push(strengthPotion)
 
+//Gloves Line
+const gardeningGloves = new item("Gardening Gloves",8,11000,"gloves");
+gardeningGloves.cost = {
+    "Leather":10,
+}
+blueprints.push(gardeningGloves)
+
+const runningGloves = new item("Running Gloves",12,15000,"gloves");
+runningGloves.cost = {
+    "Leather":15,
+}
+runningGloves.requires = {
+    "Gardening Gloves" : 100,
+}
+blueprints.push(runningGloves)
+
+const fightingGloves = new item("Fighting Gloves",17,20000,"gloves");
+fightingGloves.cost = {
+    "Leather":21,
+}
+fightingGloves.requires = {
+    "Running Gloves" : 100,
+}
+blueprints.push(fightingGloves)
+
+const cleaningGloves = new item("Cleaning Gloves",24,25000,"gloves");
+cleaningGloves.cost = {
+    "Leather":30,
+}
+cleaningGloves.requires = {
+    "Fighting Gloves" : 100,
+}
+blueprints.push(cleaningGloves)
+
+const punchingGloves = new item("Punching Gloves",35,32000,"gloves");
+punchingGloves.cost = {
+    "Leather":44,
+}
+punchingGloves.requires = {
+    "Cleaning Gloves" : 100,
+}
+blueprints.push(punchingGloves)
+
+const huggingGloves = new item("Hugging Gloves",51,40000,"gloves");
+huggingGloves.cost = {
+    "Leather":64,
+}
+huggingGloves.requires = {
+    "Punching Gloves" : 100,
+}
+blueprints.push(huggingGloves)
+
+const dancingGloves = new item("Dancing Gloves",74,50000,"gloves");
+dancingGloves.cost = {
+    "Leather":92,
+}
+dancingGloves.requires = {
+    "Hugging Gloves" : 100,
+}
+blueprints.push(dancingGloves)
+
+const lovingGloves = new item("Loving Gloves",108,63000,"gloves");
+lovingGloves.cost = {
+    "Leather":134,
+}
+lovingGloves.requires = {
+    "Dancing Gloves" : 100,
+}
+blueprints.push(lovingGloves)
+
+const otherGloves = new item("Other Gloves",156,76000,"gloves");
+otherGloves.cost = {
+    "Leather":195,
+}
+otherGloves.requires = {
+    "Loving Gloves" : 100,
+}
+blueprints.push(otherGloves)
+
+const boxingGloves = new item("Boxing Gloves",227,101000,"gloves");
+boxingGloves.cost = {
+    "Leather":283,
+}
+boxingGloves.requires = {
+    "Dancing Gloves" : 100,
+}
+blueprints.push(boxingGloves)
+
 
 const imageReference = {
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
@@ -443,4 +531,14 @@ const imageReference = {
     "Like Potion" : '<img src="PixelItem/Consume/Potion/PotionPink.png">',
     "Bitter Potion" : '<img src="PixelItem/Consume/Whisky.png">',
     "Strength Potion" : '<img src="PixelItem/Consume/Potion/PyramidPotion4.png">',
+    "Gardening Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_2.png">',
+    "Running Gloves" : '<img src="PixelItem/Equip/Hands/Gloves0.png">',
+    "Fighting Gloves" : '<img src="PixelItem/Equip/Hands/Gloves4.png">',
+    "Cleaning Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_10.png">',
+    "Punching Gloves" : '<img src="PixelItem/Equip/Hands/Gloves1.png">',
+    "Hugging Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_7.png">',
+    "Dancing Gloves" : '<img src="PixelItem/Equip/Hands/Gloves3.png">',
+    "Loving Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_8.png">',
+    "Other Gloves" : '<img src="PixelItem/Equip/Hands/Gloves2.png">',
+    "Boxing Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_1.png">',
 }

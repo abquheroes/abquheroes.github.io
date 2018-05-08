@@ -1,11 +1,12 @@
 "use strict";
 
-function Worker(name,baseValue,baseTime,unlockCost,produces) {
+function Worker(name,baseValue,baseTime,unlockCost,produces,description) {
     this.name = name;
     this.image = imageReference[name];
     this.baseValue = baseValue;
     this.baseTime = baseTime; //this is in miliseconds
     this.produces = produces;
+    this.description = description;
     this.lvl = 0;
     this.xp = 0;
     this.xpReq = [0,100,300,500,750,1000,1250,1750,2750,5000];
@@ -32,8 +33,8 @@ function getProduction(type) {
 }
 
 const workers = [];
-workers.push(new Worker("Oren",1,1,0,"Ore"));
-workers.push(new Worker("Woodra",0.75,1,300,"Wood"));
+workers.push(new Worker("Oren",1,1,0,"Ore","Job: Produces Ore"));
+workers.push(new Worker("Woodra",0.75,1,300,"Wood","Job: Produces Wood"));
 
 /*function nameToWorker(name) {
     for (let i=0;i<workers.length;i++) {
@@ -47,30 +48,22 @@ workers.push(new Worker("Woodra",0.75,1,300,"Wood"));
 const $workers = $('#workerList');
 
 function refreshWorkers() {
-    console.log("THEFUCK")
     $workers.empty();
     for (let i=0;i<workers.length;i++) {
         const worker = $('<div/>').addClass("Worker");
-        const unbought = $('<div/>').addClass("Unbought").attr("id",workers[i].name);
-        const p1 = $('<p/>').addClass("WorkerName").html("Worker: "+workers[i].name);
-        const p2 = $('<p/>').addClass("WorkerType").html("Produces: "+imageReference[workers[i].produces]);
-        const p3 = $('<p/>').addClass("InitialCost").html("Cost: "+workers[i].cost[0]+"&nbsp;"+imageReference["Gold"]);
-        const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE");
-        unbought.append(p1);
-        unbought.append(p2);
-        unbought.append(p3);
-        unbought.append(b1);
-        $workers.append(unbought);
-        const bought = $('<div/>').addClass("Bought").addClass("hidden").attr("id","Bought"+workers[i].name);
         const d1 = $("<div/>").addClass("WorkerImage").html(imageReference[workers[i].name]);
-        const d2 = $("<div/>").addClass("WorkerBoughtName").html("<h3>"+workers[i].name+"</h3>");
-        const d3 = $("<div/>").addClass("WorkerXP").html("XP: "+workers[i].xp+"/"+workers[i].xpReq[workers[i].lvl+1])
-        const d4 = $("<div/>").addClass("workerProduces").html("Produces: "+workers[i].production().toFixed(2)+"&nbsp;"+imageReference[workers[i].produces]+"/s");
-        bought.append(d1);
-        bought.append(d2);
-        bought.append(d3);
-        bought.append(d4);
-        $workers.append(bought);
+        const d2 = $("<div/>").addClass("WorkerName").html("<h3>"+workers[i].name+"</h3>");
+        const d3 = $("<div/>").addClass("WorkerDesc").html(workers[i].description);
+        const d4 = $("<div/>").addClass("WorkerXP").html("XP: "+workers[i].xp+"/"+workers[i].xpReq[workers[i].lvl+1])
+        const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[0]+"&nbsp;"+imageReference["Gold"]);
+        const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE"); 
+        worker.append(d1);
+        worker.append(d2);
+        worker.append(d3);
+        worker.append(d4);
+        worker.append(d5);
+        worker.append(b1);
+        $workers.append(worker);
     }
 }
 
