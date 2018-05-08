@@ -4,17 +4,41 @@ const player = {
     money: 0,
     workers: 0,
     ore : 0,
+    oreCap : 200,
     wood : 0,
-    craft1: null,
-    craft1start : 0,
-    craft2: null,
-    craft2start : 0,
-    craft3: null,
-    craft3start : 0,
+    woodCap : 200,
+    actionSlots : [
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+    ],
+    //actionSlots is a list of dictionaries in form
+    //{ 
+        //actionType
+        //actionName
+        //actionTime
+    //},
     currentType : null,
+    inventoryCap : 20,
     lastLoop : Date.now(),
 }
 
+const inventory = [];
 const itemCount = {};
 
 let oreRemainder = 0;
@@ -34,53 +58,26 @@ $(document).ready(() => {
         autoOpen: false,
     });
 
-    loadGame();
-    refreshCrafts();
-
     const $oreAmt = $('#oreAmt');
     const $woodAmt = $('#woodAmt');
     const $moneyAmt = $('#moneyAmt');
     const $orePSAmt = $('#orePerSecAmt');
     const $woodPSAmt = $('#woodPerSecAmt');
-    const $knifeSelector = $('#KnifeSelector');
-    const $axeSelector = $('#AxeSelector');
-    const $maceSelector = $('#MaceSelector');
     const $RecipeResults = $('#RecipeResults');
+    const $inventory = $('#inventory');
+    const $actionSlots = $('#ActionSlots');
 
-    $('#tabs-1').on("click", "#craft1", (e) => {
-        e.preventDefault();
-        player.status = GameState.CRAFT1;
-        $("#tabs").tabs({active:2});
-    });
-    $('#tabs-1').on("click", "#craft2", (e) => {
-        e.preventDefault();
-        player.status = GameState.CRAFT2;
-        $("#tabs").tabs({active:2});
-    });
-    $('#tabs-1').on("click", "#craft3", (e) => {
-        e.preventDefault();
-        player.status = GameState.CRAFT3;
-        $("#tabs").tabs({active:2});
-    });
+    loadGame();
+    refreshInventory();
+    refreshActionSlots();
 
-    //clear slots
-    $('#tabs-1').on("click", "#c1Close", (e) => {
+    $('#ActionSlots').on("click", "a.ASCancel", (e) => {
         e.preventDefault();
-        player.craft1 = null;
-        player.craft1start = 0;
-        refreshCrafts();
-    });
-    $('#tabs-1').on("click", "#c2Close", (e) => {
-        e.preventDefault();
-        player.craft2 = null;
-        player.craft2start = 0;
-        refreshCrafts();
-    });
-    $('#tabs-1').on("click", "#c3Close", (e) => {
-        e.preventDefault();
-        player.craft3 = null;
-        player.craft3start = 0;
-        refreshCrafts();
+        const slot = $(e.target).attr("href");
+        player.actionSlots[slot].actionType = "Empty";
+        player.actionSlots[slot].actionName = "Empty";
+        player.actionSlots[slot].actionTime = 0;
+        refreshActionSlots();
     });
 
     $('#increaseOreLevel').click( () => {
@@ -114,108 +111,90 @@ $(document).ready(() => {
         ImportSaveButton();
     });
 
-    $knifeSelector.click((e) => {
+    $('.recipeSelect').click((e) => {
         e.preventDefault();
-        player.currentType = "knives";
-        populateRecipe("knives");
-    });
-
-    $axeSelector.click((e) => {
-        e.preventDefault();
-        player.currentType = "axes";
-        populateRecipe("axes");
-    });
-
-    $maceSelector.click((e) => {
-        e.preventDefault();
-        player.currentType = "maces";
-        populateRecipe("maces");
-    });
-
+        const type = $(e.target).text();
+        player.currentType = type;
+        populateRecipe(type);
+    })
 
     $('#tabs-1').on("click", "a.addCraft", (e) => {
         e.preventDefault();
-        addCraft(e.target.text)
+        addCraft(e.target.text,"Craft");
     });
 
-    $('#tabs-3').on("click", ".craft", (e) => {
+    $('#inventory').on("click","a.inventoryLink",(e) => {
         e.preventDefault();
-        
-        if (player.status === GameState.CRAFT1) {
-            player.craft1 = $(e.target).text();
-        }
-        if (player.status === GameState.CRAFT2) {
-            player.craft2 = $(e.target).text();
-        }
-        if (player.status === GameState.CRAFT3) {
-            player.craft3 = $(e.target).text();
-        }
-        player.status = null;
-        $("#tabs").tabs({active:0});
-    });
+        const slot = $(e.target).attr("href");
+        item = inventory[slot];
+        player.money += nameToItem(item).value;
+        inventory.splice(slot, 1);
+        refreshInventory();
+    })
 
     function mainLoop() {
         const deltaT = Date.now() - player.lastLoop;
         player.lastLoop = Date.now();
-        oreRemainder += deltaT*getOreInterval();
+        oreRemainder += deltaT*getProduction("Ore");
         player.ore += Math.floor(oreRemainder/1000);
+        player.ore = Math.min(200,player.ore);
         oreRemainder = oreRemainder%1000;
-        woodRemainder += deltaT*getWoodInterval();
+        woodRemainder += deltaT*getProduction("Wood");
         player.wood += Math.floor(woodRemainder/1000);
+        player.wood = Math.min(200,player.wood);
         woodRemainder = woodRemainder%1000;
-        const slots = ["craft1","craft2","craft3"];
-        const pbName = {
-            "craft1" : "#c1pb",
-            "craft2" : "#c2pb",
-            "craft3" : "#c3pb",
-        }
-
-        slots.forEach(slot => {
-            if (player[slot] === null) return;
-            const slotStart = player[slot + "start"];
-            const slotCraft = nameToItem(player[slot]).craftTime
-            const slotValue = nameToItem(player[slot]).value;
-
-            if (slotStart > 0) {
-                if (Date.now() >= slotStart + slotCraft) {
-                    player[slot + "start"] = 0;
-                    player.money += slotValue;
-                    itemCount[player[slot]] += 1;
-                    $(pbName[slot]).progressbar({
+        for (let i=0;i<player.actionSlots.length;i++) {
+            if (player.actionSlots[i].actionTime > 0) {
+                const item = nameToItem(player.actionSlots[i].actionName);
+                const pb = "#c"+i+"pb";
+                if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
+                    progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
+                    player.actionSlots[i].actionTime = 0;
+                    $(pb).progressbar({
                         value: 0
                     })
                     populateRecipe(player.currentType);
                 }
                 else {
-                    const pText = msToTime(slotStart + slotCraft - Date.now());
-                    const p1 = (slotStart + slotCraft - Date.now())/slotCraft;
-                    $(pbName[slot]+"Label").text(pText);
-                    $(pbName[slot]).progressbar({
+                    const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
+                    const p1 = (player.actionSlots[i].actionTime + item.craftTime - Date.now())/item.craftTime;
+                    $(pb+"Label").text(pText);
+                    $(pb).progressbar({
                         value: 100-p1*100
                     })
                 }
             }
-
-            if (canCraft(slot)) {
-                deductCost(slot);
-                startCraft(slot);
+            if (canCraft(i)) {
+                deductCost(i);
+                startCraft(i);
             }
-        });
+        }
         refreshResources();
-        saveGame();
     }
 
     setInterval(mainLoop, 10);
+    //setInterval(saveGame, 5000);
+
+    function addToInventory(itemName) {
+        const item = nameToItem(itemName);
+        if (player.inventoryCap == inventory.length) {
+            player.money += item.value;
+            return;
+        }
+        inventory.push(itemName);
+        refreshInventory();
+    }
 
     function refreshResources() {
-        $oreAmt.text(player.ore);
-        $woodAmt.text(player.wood);
+        $oreAmt.text(player.ore + "/" + player.oreCap);
+        $woodAmt.text(player.wood + "/" + player.woodCap);
         $moneyAmt.text(Math.floor(player.money));
-        $orePSAmt.text(getOreInterval().toFixed(2))
-        $woodPSAmt.text(getWoodInterval().toFixed(2))
+        $orePSAmt.text(getProduction("Ore").toFixed(2))
+        $woodPSAmt.text(getProduction("Wood").toFixed(2))
     }
 
     function populateRecipe(type) {
+        type = type.toLowerCase();
         $RecipeResults.empty();
         const table = $('<table/>').addClass('recipeTable');
         const hrow = $('<tr/>').addClass('recipeHeader');
@@ -237,7 +216,7 @@ $(document).ready(() => {
                 const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
                 const td1 = $('<td/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
                 td1.append(name);
-                let s = ""
+                let s = "";
                 for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                     if (amt > 0) {
                         s += amt;
@@ -269,8 +248,10 @@ $(document).ready(() => {
     }
 
     function canCraft(loc) {
-        if (player[loc+"start"] > 0) return false;
-        const itemName = player[loc];
+        if (player.actionSlots[loc].actionName === "Empty") return false;
+        if (player.actionSlots[loc].actionTime > 0) return false;
+        if (player.actionSlots[loc].actionType === "Job") return true;
+        const itemName = player.actionSlots[loc].actionName
         const itemFull = nameToItem(itemName);
         if (!("Ore" in itemFull.cost)) itemFull.cost["Ore"] = 0;
         if (!("Wood" in itemFull.cost)) itemFull.cost["Wood"] = 0;
@@ -278,14 +259,14 @@ $(document).ready(() => {
     }
 
     function deductCost(loc) {
-        const itemName = player[loc];
+        const itemName = player.actionSlots[loc].actionName;
         const itemFull = nameToItem(itemName);
         player.ore -= itemFull.cost["Ore"];
         player.wood -= itemFull.cost["Wood"];
     }
 
     function startCraft(loc) {
-        player[loc+"start"] = Date.now();
+        player.actionSlots[loc].actionTime = Date.now();
     }
 
     function msToTime(s) {
@@ -315,7 +296,6 @@ $(document).ready(() => {
         blueprints.forEach(bp => {
             itemCount[bp.name] = 0;
         })
-        console.log(JSON.parse(localStorage.getItem("gameSave2")));
         const loadGame = JSON.parse(localStorage.getItem("gameSave2"));
         if (loadGame !== null) {
             //player variables
@@ -338,14 +318,14 @@ $(document).ready(() => {
                 if (bp in loadGame.itemSave) itemCount[bp] = loadGame.itemSave[bp];
             }
             //load workers
-            if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
-            console.log($.type(loadGame.workerSave["Wood"]), $.type(undefined));
-            if ($.type(loadGame.workerSave["Wood"]) !== $.type(undefined)) {
-                workerLevels["Wood"] = loadGame.workerSave["Wood"];
-            }
-            else {
-                console.log("worker level not loaded");
-            }
+            //if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
+            //console.log($.type(loadGame.workerSave["Wood"]), $.type(undefined));
+            //if ($.type(loadGame.workerSave["Wood"]) !== $.type(undefined)) {
+            //    workerLevels["Wood"] = loadGame.workerSave["Wood"];
+            //}
+            //else {
+            //    console.log("worker level not loaded");
+            //}
         }
     }
 
@@ -394,17 +374,69 @@ $(document).ready(() => {
         $('#importDialog').dialog("open");
     }
 
-    function addCraft(itemName) {
+    function addCraft(itemName,craft) {
         //find an empty craft slot and add this to it
-        if (player.craft1 === null) {
-            player.craft1 = itemName;
+        for (let i=0;i<player.actionSlots.length;i++) {
+            if (player.actionSlots[i].actionName === "Empty") {
+                player.actionSlots[i].actionName = itemName;
+                player.actionSlots[i].actionType = craft;
+                player.actionSlots[i].craftTime = 0;
+                break;
+            }
         }
-        else if (player.craft2 === null) {
-            player.craft2 = itemName;
+        refreshActionSlots();
+    }
+
+    function progressFinish(type,name) {
+        if (type === "Craft") {
+            addToInventory(name);
         }
-        else if (player.craft3 === null) {
-            player.craft3 = itemName;
+    }
+
+    function refreshInventory() {
+        $inventory.empty();
+        for (let i=0;i<inventory.length;i++) {
+            const itemLink = $('<a/>').addClass("inventoryLink").attr("href",i).html(inventory[i]);
+            const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]]+"&nbsp;")
+            itemdiv.append(itemLink);
+            $inventory.append(itemdiv);
         }
-        refreshCrafts();
+        for (let i=0;i<player.inventoryCap-inventory.length;i++) {
+            $inventory.append($("<div/>").addClass("inventoryItem").html("-Empty-"));
+        }
+    }
+
+    function refreshActionSlots() {
+        $actionSlots.empty();
+        const table = $('<table/>').addClass('ASTable');
+        const hrow = $('<tr/>').addClass('ASHeader');
+        const htd1 = $('<td/>').addClass('ASHeadType').html("TYPE");
+        const htd2 = $('<td/>').addClass('ASHeadName').html("NAME");
+        const htd3 = $('<td/>').addClass('ASHeadProgress').html("PROGRESS");
+        hrow.append(htd1);
+        hrow.append(htd2);
+        hrow.append(htd3);
+        table.append(hrow);
+        for (let i=0;i<player.actionSlots.length;i++) {
+            const row = $('<tr/>').addClass('ASRow');
+            const td1 = $('<td/>').addClass('ASType').html(player.actionSlots[i].actionType);
+            const td2 = $('<td/>').addClass('ASName').html(imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName + "&nbsp;");
+            
+            const td2cancel = $('<a/>').addClass("ASCancel").attr("href",i).html("[x]");
+            if (player.actionSlots[i].actionName === "Empty") td2.addClass("hidden")
+            td2.append(td2cancel);
+            const td3 = $('<td/>')
+            const tdPBOuter = $('<div/>').attr("id","c"+i+"pb");
+            $("id","c"+i+"pb").progressbar();
+            if (player.actionSlots[i].actionName === "Empty") tdPBOuter.addClass("hidden")
+            const tdPBtext = $('<div/>').addClass("pbLabel").attr("id","c"+i+"pbLabel").html("Waiting for Resources...");
+            tdPBOuter.append(tdPBtext);
+            td3.append(tdPBOuter);
+            row.append(td1);
+            row.append(td2);
+            row.append(td3);
+            table.append(row);
+        }
+        $actionSlots.append(table);
     }
 });
