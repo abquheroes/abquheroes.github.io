@@ -208,19 +208,26 @@ $(document).ready(() => {
     }
 
     function populateJob() {
-        $
+        $jobList.empty();
+        const table = $('<div/>').addClass('jobTable');
+        const hrow = $('<div/>').addClass('jobHeader');
+        const htd1 = $('<div/>').addClass('jobHeadName').html("NAME");
+        const htd2 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
+        const htd3 = $('<div/>').addClass('jobHeadTime').html("TIME");
+        const htd4 = $('<div/>').addClass('recipeHeadCount').html("COUNT");
+        const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
     }
 
     function populateRecipe(type) {
         type = type.toLowerCase();
         $RecipeResults.empty();
-        const table = $('<table/>').addClass('recipeTable');
-        const hrow = $('<tr/>').addClass('recipeHeader');
-        const htd1 = $('<td/>').addClass('recipeHeadName').html("NAME");
-        const htd2 = $('<td/>').addClass('recipeHeadCost').html("COST");
-        const htd3 = $('<td/>').addClass('recipeHeadTime').html("TIME");
-        const htd4 = $('<td/>').addClass('recipeHeadCount').html("COUNT");
-        const htd5 = $('<td/>').addClass('recipeHeadValue').html("VALUE");
+        const table = $('<div/>').addClass('recipeTable');
+        const hrow = $('<div/>').addClass('recipeHeader');
+        const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
+        const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
+        const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
+        const htd4 = $('<div/>').addClass('recipeHeadCount').html("COUNT");
+        const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
         hrow.append(htd1);
         hrow.append(htd2);
         hrow.append(htd3);
@@ -230,9 +237,9 @@ $(document).ready(() => {
         let bpUnlock = null;
         for (let i=0;i<blueprints.length;i++) {
             if (blueprints[i].type === type && requirement(blueprints[i])) {
-                const row = $('<tr/>').addClass('recipeRow');
+                const row = $('<div/>').addClass('recipeRow');
                 const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
-                const td1 = $('<td/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
+                const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
                 td1.append(name);
                 let s = "";
                 for (const [type, amt] of Object.entries(blueprints[i].cost)) {
@@ -242,10 +249,10 @@ $(document).ready(() => {
                         s += "&nbsp;&nbsp;"
                     }
                 }
-                const td2 = $('<td/>').addClass('recipeCost').html(s);
-                const td3 = $('<td/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
-                const td4 = $('<td/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
-                const td5 = $('<td/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
+                const td2 = $('<div/>').addClass('recipeCost').html(s);
+                const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
+                const td4 = $('<div/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
+                const td5 = $('<div/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
                 row.append(td1);
                 row.append(td2);
                 row.append(td3);
@@ -426,24 +433,24 @@ $(document).ready(() => {
 
     function refreshActionSlots() {
         $actionSlots.empty();
-        const table = $('<table/>').addClass('ASTable');
-        const hrow = $('<tr/>').addClass('ASHeader');
-        const htd1 = $('<td/>').addClass('ASHeadType').html("TYPE");
-        const htd2 = $('<td/>').addClass('ASHeadName').html("NAME");
-        const htd3 = $('<td/>').addClass('ASHeadProgress').html("PROGRESS");
+        const table = $('<div/>').addClass('ASTable');
+        const hrow = $('<div/>').addClass('ASHeader');
+        const htd1 = $('<div/>').addClass('ASHeadType').html("TYPE");
+        const htd2 = $('<div/>').addClass('ASHeadName').html("NAME");
+        const htd3 = $('<div/>').addClass('ASHeadProgress').html("PROGRESS");
         hrow.append(htd1);
         hrow.append(htd2);
         hrow.append(htd3);
         table.append(hrow);
         for (let i=0;i<player.actionSlots.length;i++) {
-            const row = $('<tr/>').addClass('ASRow');
-            const td1 = $('<td/>').addClass('ASType').html(player.actionSlots[i].actionType);
-            const td2 = $('<td/>').addClass('ASName').html(imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName + "&nbsp;");
+            const row = $('<div/>').addClass('ASRow');
+            const td1 = $('<div/>').addClass('ASType').html(player.actionSlots[i].actionType);
+            const td2 = $('<div/>').addClass('ASName').html(imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName + "&nbsp;");
             
             const td2cancel = $('<a/>').addClass("ASCancel").attr("href",i).html("[x]");
             if (player.actionSlots[i].actionName === "Empty") td2.addClass("hidden")
             td2.append(td2cancel);
-            const td3 = $('<td/>')
+            const td3 = $('<div/>')
             const tdPBOuter = $('<div/>').attr("id","c"+i+"pb");
             $("id","c"+i+"pb").progressbar();
             if (player.actionSlots[i].actionName === "Empty") tdPBOuter.addClass("hidden")
