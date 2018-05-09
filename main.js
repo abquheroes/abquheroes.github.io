@@ -43,7 +43,10 @@ const player = {
 }
 
 const workerProgress = {
-
+    "Oren" : 1,
+    "Eryn" : 0,
+    "Herbie" : 0,
+    "Lakur" : 0,
 }
 
 const inventory = [];
@@ -87,6 +90,7 @@ $(document).ready(() => {
     loadGame();
     refreshInventory();
     refreshActionSlots();
+    populateJob();
 
     $('#ActionSlots').on("click", "a.ASCancel", (e) => {
         e.preventDefault();
@@ -132,6 +136,11 @@ $(document).ready(() => {
         addCraft(e.target.text,"Craft");
     });
 
+    $('.jobName').on("click", "a.addJob", (e) => {
+        e.preventDefault();
+        addCraft(e.target.text,"Job");
+    });
+
     $('#inventory').on("click","a.inventoryLink",(e) => {
         e.preventDefault();
         const slot = $(e.target).attr("href");
@@ -155,7 +164,8 @@ $(document).ready(() => {
         }
         for (let i=0;i<player.actionSlots.length;i++) {
             if (player.actionSlots[i].actionTime > 0) {
-                const item = nameToItem(player.actionSlots[i].actionName);
+                let item = nameToItem(player.actionSlots[i].actionName);
+                if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
                 const pb = "#c"+i+"pb";
                 if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
                     progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
@@ -163,7 +173,7 @@ $(document).ready(() => {
                     $(pb).progressbar({
                         value: 0
                     })
-                    populateRecipe(player.currentType);
+                    if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
                 }
                 else {
                     const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
@@ -211,11 +221,37 @@ $(document).ready(() => {
         $jobList.empty();
         const table = $('<div/>').addClass('jobTable');
         const hrow = $('<div/>').addClass('jobHeader');
-        const htd1 = $('<div/>').addClass('jobHeadName').html("NAME");
-        const htd2 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
+        const htd1 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
+        const htd2 = $('<div/>').addClass('jobHeadName').html("JOB");
         const htd3 = $('<div/>').addClass('jobHeadTime').html("TIME");
-        const htd4 = $('<div/>').addClass('recipeHeadCount').html("COUNT");
-        const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
+        const htd4 = $('<div/>').addClass('jobHeadValue').html("VALUE");
+        hrow.append(htd1);
+        hrow.append(htd2);
+        hrow.append(htd3);
+        hrow.append(htd4);
+        table.append(hrow);
+        for (const [workerName,lvl] of Object.entries(workerProgress)) {
+            if (lvl > 0) {
+                const worker = nameToWorker(workerName);
+                const trow = $('<div/>').addClass('jobRow');
+                const td1 = $('<div/>').addClass('jobWorker').html(workerName);
+                const td2 = $('<div/>').addClass('jobName');
+                const td2a = $("<a/>").addClass('addJob').attr("href",workerName).html(workerName);
+                td2.append(td2a);
+                const td3 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
+                let s = "";
+                for (const [mat,amt] of Object.entries(worker.produces)) {
+                    s += amt + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
+                }
+                const td4 = $('<div/>').addClass('jobValue').html(s);
+                trow.append(td1);
+                trow.append(td2);
+                trow.append(td3);
+                trow.append(td4);
+                table.append(trow);
+            }
+        }
+        $jobList.append(table);
     }
 
     function populateRecipe(type) {
@@ -284,6 +320,7 @@ $(document).ready(() => {
     }
 
     function deductCost(loc) {
+        if (player.actionSlots[loc].actionType === "Job") return;
         const itemName = player.actionSlots[loc].actionName;
         const itemFull = nameToItem(itemName);
         player.ore -= itemFull.cost["Ore"];
@@ -415,6 +452,12 @@ $(document).ready(() => {
     function progressFinish(type,name) {
         if (type === "Craft") {
             addToInventory(name);
+        }
+        if (type === "Job") {
+            player.ore += 1;
+            player.leather += 1;
+            player.herb += 1;
+            player.wood += 1;
         }
     }
 
