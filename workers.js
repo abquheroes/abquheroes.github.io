@@ -1,11 +1,9 @@
 "use strict";
 
-function Worker(name,baseValue,baseTime,unlockCost,produces,description) {
+function Worker(name,baseTime,unlockCost,description) {
     this.name = name;
     this.image = imageReference[name];
-    this.baseValue = baseValue;
-    this.baseTime = baseTime; //this is in miliseconds
-    this.produces = produces;
+    this.craftTime = baseTime; //this is in miliseconds
     this.description = description;
     this.lvl = 0;
     this.xp = 0;
@@ -33,17 +31,39 @@ function getProduction(type) {
 }
 
 const workers = [];
-workers.push(new Worker("Oren",1,1,0,"Ore","Job: Produces Ore"));
-workers.push(new Worker("Woodra",0.75,1,300,"Wood","Job: Produces Wood"));
 
-/*function nameToWorker(name) {
+const oren = new Worker("Oren",5000,0,"Job: Produces Ore");
+oren.produces = {
+    "Ore" : 1,
+}
+workers.push(oren);
+
+const eryn = new Worker("Eryn",6500,300,"Job: Produces Wood");
+eryn.produces = {
+    "Wood" : 0.75,
+}
+workers.push(eryn);
+
+const lakur = new Worker("Lakur",5000,300,"Job: Produces Leather");
+lakur.produces = {
+    "Leather" : 1.25,
+}
+workers.push(lakur);
+
+const herbie = new Worker("Herbie",9000,300,"Job: Produces Herbs");
+herbie.produces = {
+    "Herb" : 1.25,
+}
+workers.push(herbie);
+
+function nameToWorker(name) {
     for (let i=0;i<workers.length;i++) {
         if (workers[i].name == name) {
             return workers[i];
         }
     }
     return null;
-}*/
+}
 
 const $workers = $('#workerList');
 
