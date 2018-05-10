@@ -532,7 +532,6 @@ $(document).ready(() => {
             const row = $('<div/>').addClass('ASRow');
             const td1 = $('<div/>').addClass('ASType').html(player.actionSlots[i].actionType);
             const td2 = $('<div/>').addClass('ASName').html(imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName + "&nbsp;");
-            
             const td2cancel = $('<a/>').addClass("ASCancel").attr("href",i).html("[x]");
             if (player.actionSlots[i].actionName === "Empty") td2.addClass("hidden")
             td2.append(td2cancel);
@@ -551,3 +550,11 @@ $(document).ready(() => {
         $actionSlots.append(table);
     }
 });
+
+function round(number, precision) {
+    var shift = function (number, precision) {
+      var numArray = ("" + number).split("e");
+      return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
+    };
+    return shift(Math.round(shift(number, +precision)), -precision);
+  }
