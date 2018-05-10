@@ -332,9 +332,17 @@ select {
     font-weight: bold;
 }
 
-.recipeHeader td {
-    padding: 10px;
-    border-bottom: 2px solid var(--theme-border);
+.recipeHeader {
+    background-color: var(--theme-bg-2);
+    height: 40px;
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.recipeHeader, .recipeRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .recipeRow:nth-of-type(odd) {
@@ -345,9 +353,16 @@ select {
     background-color: var(--theme-border);
 }
 
-.recipeName {
+.recipeHeadName {
+    padding-left: 10px;
+}
+
+.recipeHeadName, .recipeName {
     display: flex;
     align-items: center;
+    flex-grow: 2;
+    min-width: 200px;
+    max-width: 400px;
 }
 
 .recipeName>img {
@@ -357,11 +372,14 @@ select {
 
 .recipeName>a {
     flex-grow: 1;
-    padding: 5px;
+    padding: 10px 5px;
 }
 
-.recipeCost, .recipeTime, .recipeCount, .recipeValue {
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue {
     padding: 0 5px;
+    flex-grow: 1;
+    min-width: 100px;
+    max-width: 200px;
 }
 
 #workerList, #jobList {
@@ -443,7 +461,6 @@ footer a:hover {
     color: #fff;
     border: 1px solid #000;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif; /*font test*/
     font-size: .75rem;
     text-align: center;
     word-wrap: break-word;
