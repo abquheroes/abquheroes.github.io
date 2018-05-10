@@ -273,7 +273,6 @@ select {
 
 .ui-progressbar.ui-widget.ui-widget-content {
     background-color: var(--theme-bg-2);
-    border: 1px solid var(--theme-border);
 }
 
 .ui-progressbar .ui-progressbar-value {
@@ -295,9 +294,69 @@ select {
     padding: 0 20px 20px;
 }
 
+.ASTable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ASHeader {
+    display: none;
+}
+
+.ASRow {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--theme-border);
+    margin: 10px;
+    overflow: hidden;
+}
+
+.ASRow>div>.ui-progressbar {
+    position: relative;
+    display: block;
+    height: 25px;
+}
+
+.ASType {
+    text-align: center;
+    background-color: var(--theme-bg-2);
+    padding: 5px 20px;
+}
+
+.ASName {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.ASCancel {
+    position: absolute;
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+    padding: 5px 3px;
+    top: -30px;
+    right: 0;
+    text-decoration: none;
+}
+
+.pbLabel {
+    padding: 3px 10px;
+    color: var(--theme-text);
+}
+
 .tab-heading {
     text-align: center;
     text-transform: uppercase;
+}
+
+.ui-widget-header {
+    border: none;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-radius: 0;
 }
 
 #RecipeFilter {
@@ -324,11 +383,11 @@ select {
     background-color: var(--theme-bg);
 }
 
-.recipeTable, .ASTable {
+.recipeTable {
     width: 100%;
 }
 
-.recipeHeader, .ASHeader {
+.recipeHeader {
     font-weight: bold;
 }
 
