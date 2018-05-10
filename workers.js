@@ -71,7 +71,7 @@ function refreshWorkers() {
     $workers.empty();
     for (let i=0;i<workers.length;i++) {
         const worker = $('<div/>').addClass("Worker");
-        const d1 = $("<div/>").addClass("WorkerImage").html(imageReference[workers[i].name]);
+        const d1 = $("<div/>").addClass("WorkerImage").html(workerImageReference[workers[i].name]);
         const d2 = $("<div/>").addClass("WorkerName").html("<h3>"+workers[i].name+"</h3>");
         const d3 = $("<div/>").addClass("WorkerDesc").html(workers[i].description);
         const d4 = $("<div/>").addClass("WorkerXP").html("XP: "+workers[i].xp+"/"+workers[i].xpReq[workers[i].lvl+1])
@@ -104,3 +104,10 @@ $workers.on("click", ".BuyWorker", (e) => {
     console.log(showID);
     $(showID).removeClass("hidden");
 });
+
+const workerImageReference = {
+    "Oren" : '<img src="workers/oren.gif">',
+    "Eryn" : '<img src="workers/eryn.gif">',
+    "Herbie" : '<img src="workers/herbie.gif">',
+    "Lakur" : '<img src="workers/lakur.gif">',
+}

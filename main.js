@@ -30,6 +30,48 @@ const player = {
             actionTime : 0,
             actionEnd : 0,
         },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
+        {
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
+            actionEnd : 0,
+        },
     ],
     //actionSlots is a list of dictionaries in form
     //{ 
