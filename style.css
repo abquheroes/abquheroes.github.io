@@ -57,6 +57,7 @@ body{
     flex-direction: column;
     width: 250px;
     height: 100vh;
+    background-color: var(--theme-bg);
 }
 
 .game-content .status {
@@ -112,6 +113,10 @@ body{
     position: relative;
     border-bottom: 1px solid var(--theme-border);
     padding: 10px;
+}
+
+.inventoryItem:first-of-type {
+    border-top: 1px solid var(--theme-border);
 }
 
 .inventoryItem>img {
@@ -220,6 +225,7 @@ select {
 
 .ui-tabs .ui-tabs-panel {
     color: var(--theme-text);
+    padding: 0;
 }
 
 .ui-widget-content a {
@@ -281,10 +287,22 @@ select {
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
 
+#Actions>h1 {
+    padding: 0 20px;
+}
+
+#ActionSlots {
+    padding: 0 20px 20px;
+}
+
+.tab-heading {
+    text-align: center;
+    text-transform: uppercase;
+}
+
 #RecipeFilter {
     display: flex;
     background-color: var(--theme-bg-2);
-    margin: 0 -22px;
     padding: 0 25px 0 0;
     height: 40px;
     line-height: 40px;
@@ -306,21 +324,25 @@ select {
     background-color: var(--theme-bg);
 }
 
-#RecipeResults {
-    margin: 0 -22px;
-}
-
-.recipeTable {
+.recipeTable, .ASTable {
     width: 100%;
 }
 
-.recipeHeader {
+.recipeHeader, .ASHeader {
     font-weight: bold;
 }
 
-.recipeHeader td {
-    padding: 10px;
-    border-bottom: 2px solid var(--theme-border);
+.recipeHeader {
+    background-color: var(--theme-bg-2);
+    height: 40px;
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.recipeHeader, .recipeRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .recipeRow:nth-of-type(odd) {
@@ -331,9 +353,16 @@ select {
     background-color: var(--theme-border);
 }
 
-.recipeName {
+.recipeHeadName {
+    padding-left: 10px;
+}
+
+.recipeHeadName, .recipeName {
     display: flex;
     align-items: center;
+    flex-grow: 2;
+    min-width: 200px;
+    max-width: 400px;
 }
 
 .recipeName>img {
@@ -343,12 +372,25 @@ select {
 
 .recipeName>a {
     flex-grow: 1;
-    padding: 5px;
+    padding: 10px 5px;
 }
 
-.recipeCost, .recipeTime, .recipeCount, .recipeValue {
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue {
     padding: 0 5px;
+    flex-grow: 1;
+    min-width: 100px;
+    max-width: 200px;
 }
+
+#workerList, #jobList {
+    padding: 20px;
+}
+
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer {
+    font-family: 'Open Sans', sans-serif; /*font test*/
+    font-weight: normal;
+}
+
 
 footer {
     display: flex;
@@ -359,6 +401,7 @@ footer {
     padding: 0;
     width: calc(100% - 250px);
     height: 50px;
+    font-size: 14px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
 }
@@ -412,13 +455,13 @@ footer a:hover {
     top: -100%;
     left: -100%;
     right: -100%;
-    margin-top: -2px;
+    margin-top: -4px;
     content: attr(aria-label);
     background-color: #000;
     color: #fff;
     border: 1px solid #000;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: .75rem;
     text-align: center;
     word-wrap: break-word;
     padding: 5px 8px;
@@ -438,6 +481,11 @@ footer a:hover {
     margin-right: -4px;
     border-bottom-color: transparent;
     border-right-color: black;    
+}
+
+#version-scale {
+    display: inline-block;
+    padding: 0 15px;
 }
 
 footer a[href*="discord.gg"]:hover {
