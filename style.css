@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--theme-scroll-thumb);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--theme-scroll-track);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
 /* 
 THEMES :: LIGHT AND DARK MODE
 */
@@ -11,6 +25,9 @@ THEMES :: LIGHT AND DARK MODE
     --theme-bg-2: #f3f3f3;
     --theme-border: #d1d1d1;
     --theme-text: #000;
+
+    --theme-scroll-thumb: rgba(0,0,0,0.10);
+    --theme-scroll-track: rgba(0,0,0,0.10);
 }
 
 .lm-btn, .dm-btn {
@@ -146,12 +163,13 @@ body{
     flex-grow: 1;
     height: 100%;
     max-width: calc(100% - 500px);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 
 .game-content #tabs {
     background-color: var(--theme-bg);
     max-height: calc(100vh - 50px);
-    overflow-y: auto;
 }
 
 .demoHeaders {
@@ -212,7 +230,7 @@ select {
 }
 
 .hidden {
-    display:none;
+    display: none;
 }
 
 .pbLabel {
@@ -445,7 +463,44 @@ select {
 }
 
 #workerList, #jobList {
+    display: flex;
+    flex-wrap: wrap;
     padding: 20px;
+}
+
+.Worker {
+    position: relative;
+    min-width: 250px;
+    margin: 0 15px 10px 0;
+    padding: 15px 15px 50px;
+    background-color: var(--theme-bg-2);
+    border: 1px solid var(--theme-border);
+}
+
+.WorkerImage, .WorkerName {
+    text-align: center;
+}
+
+.Worker .BuyWorker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    width: 100%;
+    border: none;
+    background-color: var(--theme-bg);
+    border-top: 1px solid var(--theme-border);
+    color: var(--theme-text);
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.Worker .BuyWorker:hover {
+    background-color: var(--theme-bg-2);
 }
 
 #Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer {
