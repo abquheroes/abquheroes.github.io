@@ -87,6 +87,17 @@ function refreshWorkers() {
     }
 }
 
+function getJobValue(name) {
+    const workerObj = nameToWorker(name);
+    const lvl = workerProgress[name];
+    const toexport = {}
+    for (const [resource, amt] of Object.entries(workerObj.produces)) {
+        toexport[resource] = parseInt((amt*workerObj.multiplier[lvl]).toFixed(2));
+    };
+    return toexport;
+}
+
+
 $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     const showID = "#Bought"+e.target.id;

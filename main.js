@@ -454,10 +454,11 @@ $(document).ready(() => {
             addToInventory(name);
         }
         if (type === "Job") {
-            player.ore += 1;
-            player.leather += 1;
-            player.herb += 1;
-            player.wood += 1;
+            const resourceDist = getJobValue(name);
+            if ("Ore" in resourceDist) player.ore += resourceDist["Ore"];
+            if ("Leather" in resourceDist) player.leather += resourceDist["Leather"];
+            if ("Herb" in resourceDist) player.herb += resourceDist["Herb"];
+            if ("Wood" in resourceDist) player.wood += resourceDist["Wood"];
         }
     }
 
