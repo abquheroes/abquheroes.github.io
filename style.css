@@ -25,6 +25,8 @@ THEMES :: LIGHT AND DARK MODE
     --theme-bg-2: #f3f3f3;
     --theme-border: #d1d1d1;
     --theme-text: #000;
+    --theme-link: ;
+    --theme-link-h: ;
 
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
@@ -404,32 +406,29 @@ select {
     background-color: var(--theme-bg);
 }
 
-.recipeTable {
+.recipeTable, .jobTable {
     width: 100%;
 }
 
-.recipeHeader {
-    font-weight: bold;
-}
-
-.recipeHeader {
+.recipeHeader, .jobHeader {
     background-color: var(--theme-bg-2);
     height: 40px;
     border-bottom: 1px solid var(--theme-border);
+    font-weight: bold;
 }
 
-.recipeHeader, .recipeRow {
+.recipeHeader, .recipeRow, .jobHeader, .jobRow {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }
 
-.recipeRow:nth-of-type(odd) {
+.recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
     background-color: var(--theme-bg-2);
 }
 
-.recipeRow:hover {
+.recipeRow:hover, .jobRow:hover {
     background-color: var(--theme-border);
 }
 
@@ -455,16 +454,19 @@ select {
     padding: 10px 5px;
 }
 
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue {
-    padding: 0 5px;
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
+    padding: 0 10px;
     flex-grow: 1;
     min-width: 100px;
     max-width: 200px;
 }
 
-#workerList, #jobList {
+#workerList, #joblist {
     display: flex;
     flex-wrap: wrap;
+}
+
+#workerList {
     padding: 20px;
 }
 
@@ -501,6 +503,15 @@ select {
 
 .Worker .BuyWorker:hover {
     background-color: var(--theme-bg-2);
+}
+
+.jobName {
+    display: flex;
+}
+
+.jobName>a {
+    flex-grow: 1;
+    padding: 10px 0;
 }
 
 #Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer {
