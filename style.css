@@ -23,11 +23,13 @@ THEMES :: LIGHT AND DARK MODE
 :root {
     --theme-bg: #fff;
     --theme-bg-2: #f3f3f3;
+    --theme-bg-3: #f9f7f7;
     --theme-border: #d1d1d1;
+    --theme-border-2: #adadad;
     --theme-text: #000;
-    --theme-link: ;
-    --theme-link-h: ;
-
+    --theme-text-2: #fff;
+    --theme-text-3: #909090;
+    --theme-link: #218cff;
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
 }
@@ -57,9 +59,14 @@ THEMES :: LIGHT AND DARK MODE
 
 body{
     color: var(--theme-text);
-    background-color: var(--theme-bg);
+    background-color: var(--theme-bg-2);
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
+}
+
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker {
+    font-family: 'Open Sans', sans-serif; /*font test*/
+    font-weight: normal;
 }
 
 #content, footer {
@@ -170,7 +177,6 @@ body{
 }
 
 .game-content #tabs {
-    background-color: var(--theme-bg);
     max-height: calc(100vh - 50px);
 }
 
@@ -232,7 +238,8 @@ select {
 }
 
 .hidden {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
 }
 
 .pbLabel {
@@ -264,7 +271,7 @@ select {
     border: 1px solid var(--theme-border);
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg);
 }
 
 .ui-tabs .ui-tabs-nav li {
@@ -279,8 +286,20 @@ select {
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active  {
-    background-color: var(--theme-bg-2);
     border: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+    background: var(--theme-link);
+    color: var(--theme-text-2);
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    background-color: var(--theme-bg);
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    color: var(--theme-text-3);
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
@@ -293,7 +312,7 @@ select {
 }
 
 .ui-progressbar.ui-widget.ui-widget-content {
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg-3);
 }
 
 .ui-progressbar .ui-progressbar-value {
@@ -343,7 +362,8 @@ select {
 
 .ASType {
     text-align: center;
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg-3);
+    border-bottom: 1px solid var(--theme-border);
     padding: 5px 20px;
 }
 
@@ -352,11 +372,13 @@ select {
     text-align: center;
     flex-grow: 1;
     padding: 20px;
+    background-color: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-border);
 }
 
 .ASCancel {
     position: absolute;
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg-3);
     color: var(--theme-text);
     padding: 5px 3px;
     top: -30px;
@@ -384,7 +406,7 @@ select {
 
 #RecipeFilter {
     display: flex;
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg);
     padding: 0 25px 0 0;
     height: 40px;
     line-height: 40px;
@@ -403,7 +425,8 @@ select {
 }
 
 #RecipeFilter a.recipeSelect:hover {
-    background-color: var(--theme-bg);
+    background-color: var(--theme-link);
+    color: var(--theme-text-2);
 }
 
 .recipeTable, .jobTable {
@@ -411,7 +434,7 @@ select {
 }
 
 .recipeHeader, .jobHeader {
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg);
     height: 40px;
     border-bottom: 1px solid var(--theme-border);
     font-weight: bold;
@@ -425,7 +448,7 @@ select {
 }
 
 .recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg);
 }
 
 .recipeRow:hover, .jobRow:hover {
@@ -454,6 +477,23 @@ select {
     padding: 10px 5px;
 }
 
+.unlockReq>p {
+    padding: 15px 10px;
+    background-color: var(--theme-bg);
+    border-top: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.unlockReq>p:before {
+    display: inline-block;
+    position: relative;
+    content: "?";
+    font-weight: bold;
+    color: var(--theme-text);
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
     padding: 0 10px;
     flex-grow: 1;
@@ -475,8 +515,12 @@ select {
     min-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px 15px 50px;
-    background-color: var(--theme-bg-2);
+    background-color: var(--theme-bg);
     border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .WorkerImage, .WorkerName {
@@ -492,10 +536,9 @@ select {
     margin: 10px 0 0 0;
     width: 100%;
     border: none;
-    background-color: var(--theme-bg);
+    background-color: var(--theme-bg-3);
     border-top: 1px solid var(--theme-border);
     color: var(--theme-text);
-    font-weight: bold;
     font-size: 0.8em;
     text-transform: uppercase;
     cursor: pointer;
@@ -513,12 +556,6 @@ select {
     flex-grow: 1;
     padding: 10px 0;
 }
-
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer {
-    font-family: 'Open Sans', sans-serif; /*font test*/
-    font-weight: normal;
-}
-
 
 footer {
     display: flex;
