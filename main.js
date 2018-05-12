@@ -145,9 +145,10 @@ $(document).ready(() => {
         addCraft(e.target.text,"Craft");
     });
 
-    $('.jobName').on("click", "a.addJob", (e) => {
+    $('.jobWorker').on("click", "a.addJob", (e) => {
         e.preventDefault();
-        addCraft(e.target.text,"Job");
+        const name = $(e.target).attr("href");
+        addCraft(name,"Job");
     });
 
     $('#inventory').on("click","a.inventoryLink",(e) => {
