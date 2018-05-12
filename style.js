@@ -65,7 +65,7 @@ function darkTheme() {
     root.style.setProperty('--theme-bg', '#202020');
     root.style.setProperty('--theme-bg-2', '#151515');
     root.style.setProperty('--theme-bg-3', '#191919');
-    root.style.setProperty('--theme-border', '#000');
+    root.style.setProperty('--theme-border', '#2b2b2b');
     root.style.setProperty('--theme-border-2', '#adadad');
     root.style.setProperty('--theme-text', '#fff');
     root.style.setProperty('--theme-text-2', '#fff');
