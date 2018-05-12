@@ -456,7 +456,7 @@ select {
 }
 
 .recipeHeadName {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .recipeHeadName, .recipeName {
@@ -465,6 +465,7 @@ select {
     flex-grow: 2;
     min-width: 200px;
     max-width: 400px;
+    padding-left: 10px;
 }
 
 .recipeName>img {
@@ -546,6 +547,14 @@ select {
 
 .Worker .BuyWorker:hover {
     background-color: var(--theme-bg-2);
+}
+
+.jobHeadWorker {
+    padding-left: 15px;
+}
+
+.jobWorker {
+    margin-left: 5px;
 }
 
 .jobName {
