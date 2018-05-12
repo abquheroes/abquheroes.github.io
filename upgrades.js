@@ -51,27 +51,21 @@ $upgradelist = $("#upgradelist");
 
 function refreshUpgrades() {
     $upgradelist.empty();
-    const table = $('<div/>').addClass('upgradeTable');
-    const hrow = $('<div/>').addClass('upgradeHeader');
-    const htd1 = $('<div/>').addClass('upgradeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('upgradeHeadDesc').html("DESCRIPTION");
-    const htd3 = $('<div/>').addClass('upgradeHeadCost').html("COST");
-    hrow.append(htd1);
-    hrow.append(htd2);
-    hrow.append(htd3);
-    table.append(hrow);
     for (let i=0;i<upgrades.length;i++) {
         const lvl = upgradeProgress[upgrades[i].name];
-        const row = $('<div/>').addClass('upgradeRow');
-        const name = $('<a/>').addClass('buyUpgrade').attr("href",upgrades[i].name).html(upgrades[i].name);
-        const td1 = $('<div/>').addClass('upgradeName');
-        td1.append(name);
-        const td2 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
-        const td3 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].cost[lvl]+" "+imageReference["Gold"]);
-        row.append(td1);
-        row.append(td2);
-        row.append(td3);
-        table.append(row);
+        const upgrade = $('<div/>').addClass("Upgrade");
+        const d1 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>")
+        const d2 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
+        const d3 = $("<div/>").addClass("upgradeLvl").html("Lvl. " + lvl)
+        if (lvl === 0) d3.addClass("hidden");
+        const d4 = $('<div/>').addClass('upgradeDesc').html("Cost: "+upgrades[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
+        if (lvl === upgrades[i].cost.length) b1.addClass("hidden");
+        upgrade.append(d1);
+        upgrade.append(d2);
+        upgrade.append(d3);
+        upgrade.append(d4);
+        upgrade.append(b1);
+        $upgradelist.append(upgrade);
     }
-    $upgradelist.append(table);
 }

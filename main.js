@@ -177,12 +177,18 @@ $(document).ready(() => {
                 if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
                 const pb = "#c"+i+"pb";
                 if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
-                    progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
-                    player.actionSlots[i].actionTime = 0;
-                    $(pb).progressbar({
-                        value: 0
-                    })
-                    if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
+                    if (player.actionSlots[i].actionType === "Craft" && !canAddtoInventory(name)) {
+                        const pText = "Waiting for space...";
+                        $(pb+"Label").text(pText);
+                    }
+                    else {
+                        progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
+                        player.actionSlots[i].actionTime = 0;
+                        $(pb).progressbar({
+                            value: 0
+                        })
+                        if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
+                    }
                 }
                 else {
                     const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
@@ -285,9 +291,7 @@ $(document).ready(() => {
                 let s = "";
                 for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                     if (amt > 0) {
-                        s += amt;
-                        s += imageReference[type];
-                        s += "&nbsp;&nbsp;"
+                        s += amt + "&nbsp" + imageReference[type] + "&nbsp;&nbsp;"
                     }
                 }
                 const td2 = $('<div/>').addClass('recipeCost').html(s);
@@ -520,4 +524,8 @@ function round(number, precision) {
       return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
     };
     return shift(Math.round(shift(number, +precision)), -precision);
-  }
+}
+
+function canAddtoInventory(name) {
+    return player.inventoryCap > inventory.length;
+}
