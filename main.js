@@ -149,6 +149,7 @@ $(document).ready(() => {
         e.preventDefault();
         const name = $(e.target).attr("href");
         addCraft(name,"Job");
+        populateJob();
     });
 
     $('#inventory').on("click","a.inventoryLink",(e) => {
@@ -249,8 +250,16 @@ $(document).ready(() => {
                 const worker = nameToWorker(workerName);
                 const trow = $('<div/>').addClass('jobRow');
                 const td1 = $('<div/>').addClass('jobWorker');
-                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).html("Hire "+workerName);
-                td1.append(td1a);
+                console.log(actionSlotContainsWorker(workerName),workerName);
+                if (actionSlotContainsWorker(workerName)) {
+                    trow.addClass('jobDisable');
+                    td1.html("Hire "+workerName+" (Busy)");
+                }
+                else {
+                    const td1a = $("<a/>").addClass('addJob').attr("href",workerName).html("Hire "+workerName);
+                    td1.append(td1a);
+                }
+
                 const td2 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
                 let s = "";
                 for (const [mat,amt] of Object.entries(worker.produces)) {
@@ -264,6 +273,14 @@ $(document).ready(() => {
             }
         }
         $jobList.append(table);
+    }
+
+    function actionSlotContainsWorker(name) {
+        for (let i=0;i<player.actionSlots.length;i++) {
+            console.log(player.actionSlots[i].actionName)
+            if (player.actionSlots[i].actionName === name) return true;
+        }
+        return false;
     }
 
     function populateRecipe(type) {
@@ -422,9 +439,19 @@ $(document).ready(() => {
         const saveFile = {
             playerSave : player,
             itemSave : itemCount,
-            workerSave : workerLevels,
         }
-        $("#exportDialog").html("<p>Copy this code to import later:</p>"+btoa(JSON.stringify(saveFile)))
+        $("#exportDialog").html("<p>Copy this code to import later:</p><span id='copyme'>"+btoa(JSON.stringify(saveFile))+"</span>");
+        $("#exportDialog").dialog({
+            buttons: {
+                "Copy to Clipboard": () => {
+                    var $temp = $("<input>");
+                    $("body").append($temp);
+                    $temp.val($("#copyme").text()).select();
+                    document.execCommand("copy");
+                    $temp.remove();
+                }
+            }
+        })
         $("#exportDialog").dialog("open");
     }
 
