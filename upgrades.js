@@ -35,8 +35,8 @@ upgrades.push(maxHerb);
 const maxActionSlots = {
     name : "Max Action Slots",
     description : "Increases Maximum Action Slots",
-    cost : [100,200,300,400,500,600,700,800,900,1000],
-    value : [1,1,1,1,1,1,1,1,1,1],
+    cost : [100,200,300,400,500,600,700],
+    value : [1,1,1,1,1,1,1],
 }
 upgrades.push(maxActionSlots);
 
@@ -58,14 +58,54 @@ function refreshUpgrades() {
         const d2 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
         const d3 = $("<div/>").addClass("upgradeLvl").html("Lvl. " + lvl)
         if (lvl === 0) d3.addClass("hidden");
-        const d4 = $('<div/>').addClass('upgradeDesc').html("Cost: "+upgrades[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        const d4 = $('<div/>').addClass('upgradeCost').html("Cost: "+upgrades[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
-        if (lvl === upgrades[i].cost.length) b1.addClass("hidden");
+        if (lvl === upgrades[i].cost.length) {
+            d4.addClass("hidden");
+            b1.addClass("hidden");
+        }
         upgrade.append(d1);
         upgrade.append(d2);
         upgrade.append(d3);
         upgrade.append(d4);
         upgrade.append(b1);
         $upgradelist.append(upgrade);
+    }
+}
+
+$upgradelist.on("click", ".BuyUpgrade", (e) => {
+    e.preventDefault();
+    upgrade(e.target.id);
+    refreshUpgrades();
+});
+
+function upgrade(name) {
+    const upgrade = nameToUpgrade(name);
+    const cost = upgrade.cost[upgradeProgress[name]];
+    if (player.money >= cost) {
+        player.money -= cost;
+        if (name === "Max Ore") player.oreCap += upgrade.value[upgradeProgress[name]];
+        else if (name === "Max Wood") player.woodCap += upgrade.value[upgradeProgress[name]];
+        else if (name === "Max Leather") player.leatherCap += upgrade.value[upgradeProgress[name]];
+        else if (name === "Max Herb") player.herbCap += upgrade.value[upgradeProgress[name]];
+        else if (name === "Max Action Slots") {
+            player.actionSlots.push({
+                actionType : "Empty",
+                actionName : "Empty",
+                actionTime : 0,
+                actionEnd : 0,
+            });
+            refreshActionSlots();
+        }        
+        upgradeProgress[name] += 1;
+    }
+}
+
+function purchaseWorker(name) {
+    const worker = nameToWorker(name);
+    const cost = worker.cost[workerProgress[name]];
+    if (player.money >= cost) {
+        player.money -= cost;
+        workerProgress[name] += 1;
     }
 }
