@@ -60,6 +60,7 @@ function refreshUpgrades() {
         if (lvl === 0) d3.addClass("hidden");
         const d4 = $('<div/>').addClass('upgradeCost').html("Cost: "+upgrades[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
+        if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable");
         if (lvl === upgrades[i].cost.length) {
             d4.addClass("hidden");
             b1.addClass("hidden");

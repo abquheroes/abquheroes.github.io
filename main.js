@@ -150,6 +150,8 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
     player.money += nameToItem(item).value;
     inventory.splice(slot, 1);
     refreshInventory();
+    refreshUpgrades();
+    refreshWorkers();
 })
 
 function mainLoop() {
