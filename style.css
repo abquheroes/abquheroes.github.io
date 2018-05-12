@@ -408,6 +408,7 @@ select {
     display: flex;
     background-color: var(--theme-bg);
     padding: 0 25px 0 0;
+    margin-top: 10px;
     height: 40px;
     line-height: 40px;
     border-top: 1px solid var(--theme-border);
