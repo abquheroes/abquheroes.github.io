@@ -2,7 +2,7 @@ const upgrades = []
 
 const maxOre = {
     name : "Max Ore",
-    description : "Increases Maximum Ore",
+    description : "Increases the maximum capacity of Ore you can store.",
     cost : [100,200,300,400,500,600,700,800,900,1000],
     value : [5,5,10,10,15,15,20,20,30,50],
 }
@@ -10,7 +10,7 @@ upgrades.push(maxOre);
 
 const maxWood = {
     name : "Max Wood",
-    description : "Increases Maximum Wood",
+    description : "Increases the maximum capacity of Wood you can store.",
     cost : [100,200,300,400,500,600,700,800,900,1000],
     value : [5,5,10,10,15,15,20,20,30,50],
 }
@@ -18,7 +18,7 @@ upgrades.push(maxWood);
 
 const maxLeather = {
     name : "Max Leather",
-    description : "Increases Maximum Leather",
+    description : "Increases the maximum capacity of Leather you can store.",
     cost : [100,200,300,400,500,600,700,800,900,1000],
     value : [5,5,10,10,15,15,20,20,30,50],
 }
@@ -26,7 +26,7 @@ upgrades.push(maxLeather);
 
 const maxHerb = {
     name : "Max Herb",
-    description : "Increases Maximum Herb",
+    description : "Increases the maximum capacity of Herb you can store.",
     cost : [100,200,300,400,500,600,700,800,900,1000],
     value : [5,5,10,10,15,15,20,20,30,50],
 }
@@ -34,7 +34,7 @@ upgrades.push(maxHerb);
 
 const maxActionSlots = {
     name : "Max Action Slots",
-    description : "Increases Maximum Action Slots",
+    description : "Increases the number of Action Slots you can have.",
     cost : [100,200,300,400,500,600,700],
     value : [1,1,1,1,1,1,1],
 }

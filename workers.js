@@ -77,7 +77,7 @@ function refreshWorkers() {
         if (lvl === 0) d4.addClass("hidden");
         const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE"); 
-        if (player.money < workers[i].cost[lvl]) b1.addClass("jobDisable");
+        if (player.money < workers[i].cost[lvl]) b1.addClass("workerDisable");
         if (lvl === workers[i].cost.length) {
             d5.addClass("hidden");
             b1.addClass("hidden");

@@ -64,7 +64,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .upgradeName, .upgradeDesc {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -543,8 +543,11 @@ input#importSaveText {
 }
 
 .Worker, .Upgrade {
+    display: flex;
+    flex-direction: column;
     position: relative;
     min-width: 250px;
+    max-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px 15px 50px;
     background-color: var(--theme-bg);
@@ -557,6 +560,15 @@ input#importSaveText {
 
 .WorkerImage, .WorkerName, .upgradeName, .upgradeDesc{
     text-align: center;
+}
+
+.upgradeName {
+    font-size: .9em;
+}
+
+.upgradeDesc {
+    flex-grow: 1;
+    font-size: .9em;
 }
 
 .Worker .BuyWorker, .Upgrade .BuyUpgrade {
@@ -580,6 +592,17 @@ input#importSaveText {
     background-color: var(--theme-bg-2);
 }
 
+.BuyWorker.workerDisable, .BuyUpgrade.upgradeDisable {
+    color: #c90000;
+    background-color: rgba(255, 0, 0, 0.10);
+}
+
+.BuyWorker.workerDisable:hover, .BuyUpgrade.upgradeDisable:hover {
+    color: #c90000;
+    background-color: rgba(255, 0, 0, 0.10);
+    cursor: not-allowed;
+}
+
 .jobHeadWorker {
     padding-left: 15px;
 }
@@ -597,7 +620,7 @@ input#importSaveText {
 .jobRow.jobDisable {
     padding: 10px 0;
     color: var(--theme-text-3);
-    cursor: no-drop;
+    cursor: not-allowed;
     user-select: none;
 }
 
