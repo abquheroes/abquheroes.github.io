@@ -106,15 +106,8 @@ $('#ActionSlots').on("click", "a.ASCancel", (e) => {
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
     refreshActionSlots();
+    populateJob();
 });
-
-/*$('#increaseOreLevel').click( () => {
-    if (player.money >= getOreWorkerCost()) {
-        player.money -= getOreWorkerCost();
-        workerLevels["Ore"] += 1;
-        refreshWorkers();
-    }
-});*/
 
 $("#clearSave").click((e) => {
     e.preventDefault();
@@ -144,6 +137,7 @@ $('#tabs-1').on("click", "a.addCraft", (e) => {
 });
 
 $('.jobWorker').on("click", "a.addJob", (e) => {
+    console.log('trigger!');
     e.preventDefault();
     const name = $(e.target).attr("href");
     addCraft(name,"Job");
@@ -248,7 +242,6 @@ function populateJob() {
             const worker = nameToWorker(workerName);
             const trow = $('<div/>').addClass('jobRow');
             const td1 = $('<div/>').addClass('jobWorker');
-            console.log(actionSlotContainsWorker(workerName),workerName);
             if (actionSlotContainsWorker(workerName)) {
                 trow.addClass('jobDisable');
                 td1.html("Hire "+workerName+" (Busy)");
@@ -275,7 +268,6 @@ function populateJob() {
 
 function actionSlotContainsWorker(name) {
     for (let i=0;i<player.actionSlots.length;i++) {
-        console.log(player.actionSlots[i].actionName)
         if (player.actionSlots[i].actionName === name) return true;
     }
     return false;
