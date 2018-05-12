@@ -594,6 +594,13 @@ input#importSaveText {
     padding: 10px 0;
 }
 
+.jobRow.jobDisable {
+    padding: 10px 0;
+    color: var(--theme-text-3);
+    cursor: no-drop;
+    user-select: none;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
