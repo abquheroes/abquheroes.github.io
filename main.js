@@ -136,8 +136,7 @@ $('#tabs-1').on("click", "a.addCraft", (e) => {
     addCraft(e.target.text,"Craft");
 });
 
-$('.jobWorker').on("click", "a.addJob", (e) => {
-    console.log('trigger!');
+$(document).on("click", "a.addJob", (e) => {
     e.preventDefault();
     const name = $(e.target).attr("href");
     addCraft(name,"Job");
@@ -227,7 +226,7 @@ function refreshResources() {
 }
 
 function populateJob() {
-    $jobList.empty();
+    $('#joblist').empty();
     const table = $('<div/>').addClass('jobTable');
     const hrow = $('<div/>').addClass('jobHeader');
     const htd1 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
@@ -247,7 +246,7 @@ function populateJob() {
                 td1.html("Hire "+workerName+" (Busy)");
             }
             else {
-                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).html("Hire "+workerName);
+                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).attr("target","_blank").html("Hire "+workerName);
                 td1.append(td1a);
             }
 
@@ -263,7 +262,7 @@ function populateJob() {
             table.append(trow);
         }
     }
-    $jobList.append(table);
+    $('#joblist').append(table);
 }
 
 function actionSlotContainsWorker(name) {
