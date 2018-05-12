@@ -455,10 +455,6 @@ select {
     background-color: var(--theme-border);
 }
 
-.recipeHeadName {
-    padding-left: 15px;
-}
-
 .recipeHeadName, .recipeName {
     display: flex;
     align-items: center;
@@ -466,6 +462,10 @@ select {
     min-width: 200px;
     max-width: 400px;
     padding-left: 10px;
+}
+
+.recipeHeadName {
+    padding-left: 15px;
 }
 
 .recipeName>img {
@@ -554,14 +554,11 @@ select {
 }
 
 .jobWorker {
+    display: flex;
     margin-left: 5px;
 }
 
-.jobName {
-    display: flex;
-}
-
-.jobName>a {
+.jobWorker>a {
     flex-grow: 1;
     padding: 10px 0;
 }
