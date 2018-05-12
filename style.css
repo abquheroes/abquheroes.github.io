@@ -320,6 +320,8 @@ select {
 }
 
 .ui-dialog {
+    border: 1px solid var(--theme-border)!important;
+    background-color: var(--theme-bg-2)!important;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px rgba(0,0,0,0.25);
@@ -402,6 +404,34 @@ select {
 
 .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
     border-radius: 0;
+}
+
+.ui-dialog .ui-dialog-content {
+    color: var(--theme-text);
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: .5em .4em .5em 0;
+    cursor: pointer;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text-3);
+    border-radius: 3px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+    color: var(--theme-text);
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    background-color: var(--theme-bg);
+    color: var(--theme-text-3);
+}
+
+input#importSaveText {
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text);
 }
 
 #RecipeFilter {
@@ -562,6 +592,13 @@ select {
 .jobWorker>a {
     flex-grow: 1;
     padding: 10px 0;
+}
+
+.jobRow.jobDisable {
+    padding: 10px 0;
+    color: var(--theme-text-3);
+    cursor: no-drop;
+    user-select: none;
 }
 
 footer {
