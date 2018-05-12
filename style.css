@@ -64,7 +64,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -502,16 +502,16 @@ select {
     max-width: 200px;
 }
 
-#workerList, #joblist {
+#workerList, #joblist, #upgradelist {
     display: flex;
     flex-wrap: wrap;
 }
 
-#workerList {
+#workerList, #upgradelist {
     padding: 20px;
 }
 
-.Worker {
+.Worker, .Upgrade {
     position: relative;
     min-width: 250px;
     margin: 0 15px 10px 0;
@@ -524,11 +524,11 @@ select {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.WorkerImage, .WorkerName {
+.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc{
     text-align: center;
 }
 
-.Worker .BuyWorker {
+.Worker .BuyWorker, .Upgrade .BuyUpgrade {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -545,7 +545,7 @@ select {
     cursor: pointer;
 }
 
-.Worker .BuyWorker:hover {
+.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover {
     background-color: var(--theme-bg-2);
 }
 
