@@ -167,10 +167,10 @@ function mainLoop() {
         remainder[i] = remainder[i]%1000;
     }
     for (let i=0;i<player.actionSlots.length;i++) {
+        const pb = "#c"+i+"pb";
         if (player.actionSlots[i].actionTime > 0) {
             let item = nameToItem(player.actionSlots[i].actionName);
             if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
-            const pb = "#c"+i+"pb";
             if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
                 if (player.actionSlots[i].actionType === "Craft" && !canAddtoInventory(name)) {
                     const pText = "Waiting for space...";
@@ -193,6 +193,12 @@ function mainLoop() {
                     value: 100-p1*100
                 })
             }
+        }
+        else {
+            $(pb+"Label").text("Waiting for Resources...");
+            $(pb).progressbar({
+                value : 0
+            });
         }
         if (canCraft(i)) {
             deductCost(i);
