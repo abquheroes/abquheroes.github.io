@@ -30,48 +30,6 @@ const player = {
             actionTime : 0,
             actionEnd : 0,
         },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
-        {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
-        },
     ],
     //actionSlots is a list of dictionaries in form
     //{ 
@@ -89,6 +47,14 @@ const workerProgress = {
     "Eryn" : 0,
     "Herbie" : 0,
     "Lakur" : 0,
+}
+
+const upgradeProgress = {
+    "Max Ore" : 0,
+    "Max Wood" : 0,
+    "Max Leather" : 0,
+    "Max Herb" : 0,
+    "Max Action Slots" : 0,
 }
 
 const inventory = [];
@@ -133,6 +99,7 @@ $(document).ready(() => {
     refreshInventory();
     refreshActionSlots();
     populateJob();
+    refreshUpgrades();
 
     $('#ActionSlots').on("click", "a.ASCancel", (e) => {
         e.preventDefault();
@@ -264,32 +231,28 @@ $(document).ready(() => {
         const table = $('<div/>').addClass('jobTable');
         const hrow = $('<div/>').addClass('jobHeader');
         const htd1 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
-        const htd2 = $('<div/>').addClass('jobHeadName').html("JOB");
-        const htd3 = $('<div/>').addClass('jobHeadTime').html("TIME");
-        const htd4 = $('<div/>').addClass('jobHeadValue').html("VALUE");
+        const htd2 = $('<div/>').addClass('jobHeadTime').html("TIME");
+        const htd3 = $('<div/>').addClass('jobHeadValue').html("VALUE");
         hrow.append(htd1);
         hrow.append(htd2);
         hrow.append(htd3);
-        hrow.append(htd4);
         table.append(hrow);
         for (const [workerName,lvl] of Object.entries(workerProgress)) {
             if (lvl > 0) {
                 const worker = nameToWorker(workerName);
                 const trow = $('<div/>').addClass('jobRow');
-                const td1 = $('<div/>').addClass('jobWorker').html(workerName);
-                const td2 = $('<div/>').addClass('jobName');
-                const td2a = $("<a/>").addClass('addJob').attr("href",workerName).html(workerName);
-                td2.append(td2a);
-                const td3 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
+                const td1 = $('<div/>').addClass('jobWorker');
+                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).html("Hire "+workerName);
+                td1.append(td1a);
+                const td2 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
                 let s = "";
                 for (const [mat,amt] of Object.entries(worker.produces)) {
                     s += amt + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
                 }
-                const td4 = $('<div/>').addClass('jobValue').html(s);
+                const td3 = $('<div/>').addClass('jobValue').html(s);
                 trow.append(td1);
                 trow.append(td2);
                 trow.append(td3);
-                trow.append(td4);
                 table.append(trow);
             }
         }
