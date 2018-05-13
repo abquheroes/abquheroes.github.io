@@ -571,6 +571,18 @@ input#importSaveText {
     font-size: .9em;
 }
 
+.Worker .itemSac {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.Worker .itemToSac {
+    background-color: var(--theme-bg-3);
+    margin: 0 5px 0 0;
+    padding: 10px;
+}
+
 .Worker .BuyWorker, .Upgrade .BuyUpgrade {
     position: absolute;
     bottom: 0;
