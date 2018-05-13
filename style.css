@@ -619,7 +619,8 @@ input#importSaveText {
 
 .jobRow.jobDisable {
     padding: 10px 0;
-    color: var(--theme-text-3);
+    color: #c99a00;
+    background-color: rgba(255, 174, 0, 0.1);;
     cursor: not-allowed;
     user-select: none;
 }
