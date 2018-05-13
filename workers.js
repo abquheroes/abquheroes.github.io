@@ -34,24 +34,252 @@ const oren = new Worker("Oren",5000,"Job: Produces Ore");
 oren.produces = {
     "Ore" : 1,
 }
+oren.lvlreq = [
+    {//lv1
+        "Knife" : 50
+    },
+    {//lv2
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+    },
+    {//lv3
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv4
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv5
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv6
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv7
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv8
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv9
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv10
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+]
 workers.push(oren);
 
 const eryn = new Worker("Eryn",6500,"Job: Produces Wood");
 eryn.produces = {
     "Wood" : 0.75,
 }
+eryn.lvlreq = [
+    {//lv1
+        "Knife" : 50
+    },
+    {//lv2
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+    },
+    {//lv3
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv4
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv5
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv6
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv7
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv8
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv9
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv10
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+]
 workers.push(eryn);
 
 const lakur = new Worker("Lakur",5000,"Job: Produces Leather");
 lakur.produces = {
     "Leather" : 1.25,
 }
+lakur.lvlreq = [
+    {//lv1
+        "Knife" : 50
+    },
+    {//lv2
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+    },
+    {//lv3
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv4
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv5
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv6
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv7
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv8
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv9
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv10
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+]
 workers.push(lakur);
 
 const herbie = new Worker("Herbie",9000,"Job: Produces Herbs");
 herbie.produces = {
     "Herb" : 1.25,
 }
+herbie.lvlreq = [
+    {//lv1
+        "Knife" : 50
+    },
+    {//lv2
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+    },
+    {//lv3
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv4
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv5
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv6
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv7
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv8
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv9
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+    {//lv10
+        "Knife" : 100,
+        "Butter Knife" : 25,
+        "Chefs Knife" : 10,
+        "Dark Is The Knife" : 30,
+    },
+]
 workers.push(herbie);
 
 function nameToWorker(name) {
@@ -76,6 +304,13 @@ function refreshWorkers() {
         const d4 = $("<div/>").addClass("workerLvl").html("Lvl. " + lvl)
         if (lvl === 0) d4.addClass("hidden");
         const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        const d6 = $('<div/>').addClass("itemSac");
+        if (lvl < 10) {
+            for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
+                const d6a = $('<div/>').addClass("itemToSac").html(imageReference[itemName]+"<br>"+amt);
+                d6.append(d6a);
+            }
+        }
         const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE"); 
         if (player.money < workers[i].cost[lvl]) b1.addClass("workerDisable");
         if (lvl === workers[i].cost.length) {
@@ -87,6 +322,7 @@ function refreshWorkers() {
         worker.append(d3);
         worker.append(d4);
         worker.append(d5);
+        worker.append(d6);
         worker.append(b1);
         $workers.append(worker);
     }

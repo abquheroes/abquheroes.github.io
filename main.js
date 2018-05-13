@@ -49,6 +49,13 @@ const workerProgress = {
     "Lakur" : 0,
 }
 
+const workerSacProgress = {
+    "Oren" : [{},{},{},{},{},{},{},{},{},{}],
+    "Eryn" : [{},{},{},{},{},{},{},{},{},{}],
+    "Herbie" : [{},{},{},{},{},{},{},{},{},{}],
+    "Lakur" : [{},{},{},{},{},{},{},{},{},{}],
+}
+
 const upgradeProgress = {
     "Max Ore" : 0,
     "Max Wood" : 0,
