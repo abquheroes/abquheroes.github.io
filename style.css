@@ -579,6 +579,7 @@ input#importSaveText {
 
 .Worker .itemToSac {
     background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
     margin: 0 5px 0 0;
     padding: 10px;
 }
