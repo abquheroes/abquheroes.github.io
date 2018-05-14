@@ -42,6 +42,7 @@ blueprints.push(knife)
 const butterKnife = new item("Butter Knife",8,7000,"knives");
 butterKnife.cost = {
     "Ore":7,
+    "Knife":1,
 }
 butterKnife.requires = {
     "Knife" : 100,

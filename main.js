@@ -3,13 +3,13 @@
 const player = {
     money: 0,
     workers: 0,
-    ore : 0,
+    Ore : 0,
     oreCap : 200,
-    wood : 0,
+    Wood : 0,
     woodCap : 200,
-    leather: 0,
+    Leather : 0,
     leatherCap : 200,
-    herb: 0,
+    Herb : 0,
     herbCap : 200,
     actionSlots : [
         {
@@ -41,6 +41,8 @@ const player = {
     inventoryCap : 5,
     lastLoop : Date.now(),
 }
+
+const resources = ["Ore","Wood","Leather","Herb"];
 
 const workerProgress = {
     "Oren" : 1,
@@ -151,13 +153,12 @@ $(document).on("click", "a.addJob", (e) => {
 function mainLoop() {
     const deltaT = Date.now() - player.lastLoop;
     player.lastLoop = Date.now();
-    const resources = ["Ore","Wood","Leather","Herb"];
     const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
     for (let i=0;i<resources.length;i++) {
         const lowercaseName = resources[i].toLowerCase();
         remainder[i] += deltaT*getProduction(resources[i]);
-        player[lowercaseName] += Math.floor(remainder[i]/1000);
-        player[lowercaseName] = Math.min(player[lowercaseName+"Cap"],player[lowercaseName]);
+        player[resources[i]] += Math.floor(remainder[i]/1000);
+        player[resources[i]] = Math.min(player[lowercaseName+"Cap"],player[resources[i]]);
         remainder[i] = remainder[i]%1000;
     }
     for (let i=0;i<player.actionSlots.length;i++) {
@@ -166,7 +167,7 @@ function mainLoop() {
             let item = nameToItem(player.actionSlots[i].actionName);
             if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
             if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
-                if (player.actionSlots[i].actionType === "Craft" && !canAddtoInventory(name)) {
+                if (player.actionSlots[i].actionType === "Craft" && !canAddtoInventory(player.actionSlots[i].actionName)) {
                     const pText = "Waiting for space...";
                     $(pb+"Label").text(pText);
                 }
@@ -208,10 +209,10 @@ setInterval(mainLoop, 10);
 
 
 function refreshResources() {
-    $oreAmt.text(player.ore + "/" + player.oreCap);
-    $woodAmt.text(player.wood + "/" + player.woodCap);
-    $leatherAmt.text(player.leather + "/" + player.leatherCap);
-    $herbAmt.text(player.herb+"/"+player.herbCap);
+    $oreAmt.text(player["Ore"] + "/" + player.oreCap);
+    $woodAmt.text(player["Wood"] + "/" + player.woodCap);
+    $leatherAmt.text(player["Leather"] + "/" + player.leatherCap);
+    $herbAmt.text(player["Herb"] +"/"+player.herbCap);
     $moneyAmt.text(Math.floor(player.money));
     $orePSAmt.text(getProduction("Ore").toFixed(2));
     $woodPSAmt.text(getProduction("Wood").toFixed(2));
@@ -319,22 +320,31 @@ function populateRecipe(type) {
 }
 
 function canCraft(loc) {
+    if (player.actionSlots[loc].actionType === "Job") return true;
     if (player.actionSlots[loc].actionName === "Empty") return false;
     if (player.actionSlots[loc].actionTime > 0) return false;
-    if (player.actionSlots[loc].actionType === "Job") return true;
     const itemName = player.actionSlots[loc].actionName
     const itemFull = nameToItem(itemName);
-    if (!("Ore" in itemFull.cost)) itemFull.cost["Ore"] = 0;
-    if (!("Wood" in itemFull.cost)) itemFull.cost["Wood"] = 0;
-    return itemFull.cost["Ore"] <= player.ore && itemFull.cost["Wood"] <= player.wood
+    for (const [res, amt] of Object.entries(itemFull.cost)) {
+        if (resources.includes(res)) {
+            if (player[res] < amt) return false;
+        }
+        else {
+            console.log(numberInventory(res));
+            if (numberInventory(res) < amt) return false;
+        }
+    }
+    return true;
 }
 
 function deductCost(loc) {
     if (player.actionSlots[loc].actionType === "Job") return;
     const itemName = player.actionSlots[loc].actionName;
     const itemFull = nameToItem(itemName);
-    player.ore -= itemFull.cost["Ore"];
-    player.wood -= itemFull.cost["Wood"];
+    for (const [res,amt] of Object.entries(itemFull.cost)) {
+        if (resources.includes(res)) player[res] -= amt;
+        else removeLotsFromInventory(res,amt);
+    }
 }
 
 function startCraft(loc) {
@@ -472,13 +482,15 @@ function addCraft(itemName,craft) {
 function progressFinish(type,name) {
     if (type === "Craft") {
         addToInventory(name);
+        if (name in itemCount) itemCount[name] += 1;
+        else itemCount[name] = 1;
     }
     if (type === "Job") {
         const resourceDist = getJobValue(name);
-        if ("Ore" in resourceDist) player.ore += resourceDist["Ore"];
-        if ("Leather" in resourceDist) player.leather += resourceDist["Leather"];
-        if ("Herb" in resourceDist) player.herb += resourceDist["Herb"];
-        if ("Wood" in resourceDist) player.wood += resourceDist["Wood"];
+        if ("Ore" in resourceDist) player["Ore"]+= resourceDist["Ore"];
+        if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
+        if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
+        if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
     }
 }
 
