@@ -313,7 +313,7 @@ function refreshWorkers() {
                 const adjAmt = amt - workerProgress[slot];
                 if (adjAmt > 0) {
                     craftsLeft = true;
-                    const d6a = $('<div/>').addClass("itemToSacDiv");
+                    const d6a = $('<div/>').addClass("itemToSacDiv").addClass("itemToSac tooltip").attr("aria-label", itemName);
                     const d6b = $('<a/>').addClass("itemToSac").attr("href",slot).attr("item",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
                     d6a.append(d6b);
                     d6.append(d6a);
