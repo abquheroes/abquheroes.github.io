@@ -136,9 +136,9 @@ body{
 
 .inventoryItem {
     display: flex;
+    align-items: center;
     position: relative;
     border-bottom: 1px solid var(--theme-border);
-    padding: 10px;
 }
 
 .inventoryItem:first-of-type {
@@ -159,13 +159,26 @@ body{
     flex-grow: 1;
     color: var(--theme-text);
     text-decoration: none;
-    padding-left: 30px;
-    padding-top: 10px;
-    margin: -10px -10px -10px -15px;
+    padding: 10px 10px 10px 30px;
 }
 
 .inventoryItem a:hover {
     background-color: var(--theme-bg-2);
+}
+
+.inventoryItem .inventoryCount {
+    position: absolute;
+    right: 15px;
+    font-size: .9em;
+    padding: 3px 4px;
+    border-radius: 50%;
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    pointer-events: none;
+}
+
+#inventory .inventoryCount {
+    text-align: center;
 }
 
 .game-wrapper {
@@ -569,15 +582,19 @@ input#importSaveText {
 .upgradeDesc {
     flex-grow: 1;
     font-size: .9em;
+    margin-bottom: 10px;
 }
 
 .Worker .itemSac {
     display: flex;
+    position: relative;
     flex-direction: row;
     margin-top: 15px;
 }
 
 .Worker .itemToSac {
+    display: inline-block;
+    text-align: center;
     background-color: var(--theme-bg-3);
     border: 1px solid var(--theme-border);
     margin: 0 5px 0 0;
@@ -727,6 +744,17 @@ footer a:hover {
     margin-right: -4px;
     border-bottom-color: transparent;
     border-right-color: black;    
+}
+
+.itemToSacDiv a.tooltip:hover:after {
+    left: 0;
+    right: 0;
+    top: -60%;
+}
+
+.itemToSacDiv a.tooltip:hover:before {
+    left: unset;
+    right: unset;
 }
 
 #version-scale {
