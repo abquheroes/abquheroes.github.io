@@ -13,10 +13,12 @@ function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
     for (let i=0;i<blueprints.length;i++) {
-        const count = numberInventory(blueprints[i].name);
+        const name = blueprints[i].name;
+        const count = numberInventory(name);
         if (count > 0) {
-            const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]])
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
+            
+            const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Click to sell "+name).html(name);
             const itemCt = $("<div/>").addClass("inventoryCount").html(count+"x");
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
