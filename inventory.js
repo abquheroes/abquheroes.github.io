@@ -1,9 +1,8 @@
 $('#inventory').on("click","a.inventoryLink",(e) => {
     e.preventDefault();
-    const slot = $(e.target).attr("href");
-    item = inventory[slot];
-    player.money += nameToItem(item).value;
-    inventory.splice(slot, 1);
+    const name = $(e.target).attr("href");
+    removeFromInventory(name);
+    player.money += nameToItem(name).value;
     refreshInventory();
     refreshUpgrades();
     refreshWorkers();
@@ -51,8 +50,8 @@ function numberInventory(itemName) {
 }
 
 
-function removeFromInventory(itemName, amt) {
-    
+function removeFromInventory(itemName) {
+    const index = inventory.indexOf(itemName);
     if (index > -1) {
         inventory.splice(index, 1);
         refreshInventory();
