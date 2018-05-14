@@ -33,76 +33,76 @@ function requirement(item) {
 
 //this is where items go!!! copy these lines to add items, and add the image in the imageReference
 //Knives Category
-const knife = new item("Knife",5,7000,"knives");
+const knife = new item("Knife",6,5000,"knives");
 knife.cost = {
     "Ore":5,
 }
 blueprints.push(knife)
 
-const butterKnife = new item("Butter Knife",9,12000,"knives");
+const butterKnife = new item("Butter Knife",8,7000,"knives");
 butterKnife.cost = {
-    "Ore":9,
+    "Ore":7,
 }
 butterKnife.requires = {
     "Knife" : 100,
 }
 blueprints.push(butterKnife)
 
-const kitchenKnife = new item("Kitchen Knife",12,15000,"knives");
+const kitchenKnife = new item("Kitchen Knife",13,8000,"knives");
 kitchenKnife.cost = {
-    "Ore":12,
+    "Ore":10,
 }
 kitchenKnife.requires = {
     "Butter Knife" : 100,
 }
 blueprints.push(kitchenKnife)
 
-const chefsKnife = new item("Chefs Knife",17,19000,"knives");
+const chefsKnife = new item("Chefs Knife",20,11000,"knives");
 chefsKnife.cost = {
-    "Ore":17,
+    "Ore":14,
 }
 chefsKnife.requires = {
     "Kitchen Knife" : 100
 }
 blueprints.push(chefsKnife)
 
-const fishingKnife = new item("Fishing Knife",22,23000,"knives");
+const fishingKnife = new item("Fishing Knife",31,14000,"knives");
 fishingKnife.cost = {
-    "Ore":22,
+    "Ore":19,
 }
 fishingKnife.requires = {
     "Chefs Knife" : 100,
 }
 blueprints.push(fishingKnife)
 
-const thatsNotAKnife = new item("Thats Not A Knife",30,27000,"knives");
+const thatsNotAKnife = new item("Thats Not A Knife",48,19000,"knives");
 thatsNotAKnife.cost = {
-    "Ore":30,
+    "Ore":27,
 }
 thatsNotAKnife.requires = {
     "Fishing Knife" : 100,
 }
 blueprints.push(thatsNotAKnife)
 
-const thatsAKnife = new item("Thats A Knife",41,33000,"knives");
+const thatsAKnife = new item("Thats A Knife",73,24000,"knives");
 thatsAKnife.cost = {
-    "Ore":41,
+    "Ore":38,
 }
 thatsAKnife.requires = {
     "Thats Not A Knife" : 100,
 }
 blueprints.push(thatsAKnife)
 
-const clubKnife = new item("Club Knife",55,39000,"knives");
+const clubKnife = new item("Club Knife",113,31000,"knives");
 clubKnife.cost = {
-    "Ore":55,
+    "Ore":53,
 }
 clubKnife.requires = {
     "Thats A Knife" : 100,
 }
 blueprints.push(clubKnife)
 
-const darkIsTheKnife = new item("Dark Is The Knife",74,47000,"knives");
+const darkIsTheKnife = new item("Dark Is The Knife",174,41000,"knives");
 darkIsTheKnife.cost = {
     "Ore":74,
 }
@@ -111,9 +111,9 @@ darkIsTheKnife.requires = {
 }
 blueprints.push(darkIsTheKnife)
 
-const theBloopinatorKnife = new item("The Bloopinator",101,56000,"knives");
+const theBloopinatorKnife = new item("The Bloopinator",268,53000,"knives");
 theBloopinatorKnife.cost = {
-    "Ore":101,
+    "Ore":103,
 }
 theBloopinatorKnife.requires = {
     "Dark Is The Knife" : 100,
@@ -121,87 +121,87 @@ theBloopinatorKnife.requires = {
 blueprints.push(theBloopinatorKnife)
 
 //Maces Category
-const clubMace = new item("Club",7,10000,"maces");
+const clubMace = new item("Club",11,9000,"maces");
 clubMace.cost = {
-    "Wood":5,
+    "Wood":7,
 }
 blueprints.push(clubMace)
 
-const maulMace = new item("Maul",12,16000,"maces");
+const maulMace = new item("Maul",17,12000,"maces");
 maulMace.cost = {
-    "Wood":8,
+    "Wood":10,
 }
 maulMace.requires = {
     "Club" : 100,
 }
 blueprints.push(maulMace)
 
-const brawlerMace = new item("Brawler",15,19000,"maces");
+const brawlerMace = new item("Brawler",26,15000,"maces");
 brawlerMace.cost = {
-    "Wood":11,
+    "Wood":14,
 }
 brawlerMace.requires = {
     "Maul" : 100,
 }
 blueprints.push(brawlerMace)
 
-const broomMace = new item("The Broominator",20,22000,"maces");
+const broomMace = new item("The Broominator",39,20000,"maces");
 broomMace.cost = {
-    "Wood":14,
+    "Wood":19,
 }
 broomMace.requires = {
     "Brawler" : 100,
 }
 blueprints.push(broomMace)
 
-const blackjackMace = new item("Blackjack",26,26000,"maces");
+const blackjackMace = new item("Blackjack",61,26000,"maces");
 blackjackMace.cost = {
-    "Wood":19,
+    "Wood":27,
 }
 blackjackMace.requires = {
     "The Broominator" : 100,
 }
 blueprints.push(blackjackMace)
 
-const bludgeonMace = new item("Bludgeon",24,30000,"maces");
+const bludgeonMace = new item("Bludgeon",93,33000,"maces");
 bludgeonMace.cost = {
-    "Wood":24,
+    "Wood":38,
 }
 bludgeonMace.requires = {
     "Blackjack" : 100,
 }
 blueprints.push(bludgeonMace)
 
-const stripedClubMace = new item("Striped Club",44,35000,"maces");
+const stripedClubMace = new item("Striped Club",144,43000,"maces");
 stripedClubMace.cost = {
-    "Wood":31,
+    "Wood":53,
 }
 stripedClubMace.requires = {
     "Bludgeon" : 100,
 }
 blueprints.push(stripedClubMace)
 
-const nightClubMace = new item("Night Club",57,40000,"maces");
+const nightClubMace = new item("Night Club",221,56000,"maces");
 nightClubMace.cost = {
-    "Wood":41,
+    "Wood":74,
 }
 nightClubMace.requires = {
     "Striped Club" : 100,
 }
 blueprints.push(nightClubMace)
 
-const factFinderMace = new item("Fact Finder",74,46000,"maces");
+const factFinderMace = new item("Fact Finder",341,73000,"maces");
 factFinderMace.cost = {
-    "Wood":53,
+    "Wood":103,
 }
 factFinderMace.requires = {
     "Night Club" : 100,
 }
 blueprints.push(factFinderMace)
 
-const knifeClubMace = new item("Knife Club",97,53000,"maces");
+const knifeClubMace = new item("Knife Club",525,95000,"maces");
 knifeClubMace.cost = {
-    "Wood":69,
+    "Wood":145,
 }
 knifeClubMace.requires = {
     "Fact Finder" : 100,
@@ -209,97 +209,97 @@ knifeClubMace.requires = {
 blueprints.push(knifeClubMace)
 
 //Axes Category
-const rageMakerAxe = new item("Rage Maker",12,17000,"axes");
+const rageMakerAxe = new item("Rage Maker",13,15000,"axes");
 rageMakerAxe.cost = {
     "Ore":5,
     "Wood":5,
 }
 blueprints.push(rageMakerAxe)
 
-const furyBringerAxe = new item("Fury Bringer",22,29000,"axes");
+const furyBringerAxe = new item("Fury Bringer",20,19000,"axes");
 furyBringerAxe.cost = {
-    "Ore":8,
-    "Wood":10,
+    "Ore":7,
+    "Wood":7,
 }
 furyBringerAxe.requires = {
     "Rage Maker" : 100,
 }
 blueprints.push(furyBringerAxe)
 
-const venganceAxe = new item("Vengance",29,35000,"axes");
+const venganceAxe = new item("Vengance",32,23000,"axes");
 venganceAxe.cost = {
-    "Ore":10,
-    "Wood":14,
+    "Ore":9,
+    "Wood":11,
 }
 venganceAxe.requires = {
     "Fury Bringer" : 100,
 }
 blueprints.push(venganceAxe)
 
-const prideAxe = new item("Pride",39,43000,"axes");
+const prideAxe = new item("Pride",49,29000,"axes");
 prideAxe.cost = {
     "Ore":12,
-    "Wood":19,
+    "Wood":15,
 }
 prideAxe.requires = {
     "Vengance" : 100,
 }
 blueprints.push(prideAxe)
 
-const greedyPickaxeAxe = new item("Greedy Pickaxe",53,52000,"axes");
+const greedyPickaxeAxe = new item("Greedy Pickaxe",77,37000,"axes");
 greedyPickaxeAxe.cost = {
-    "Ore":15,
-    "Wood":27,
+    "Ore":17,
+    "Wood":22,
 }
 greedyPickaxeAxe.requires = {
     "Pride" : 100,
 }
 blueprints.push(greedyPickaxeAxe)
 
-const slothslayerAxe = new item("Slothslayer",72,62000,"axes");
+const slothslayerAxe = new item("Slothslayer",119,46000,"axes");
 slothslayerAxe.cost = {
-    "Ore":19,
-    "Wood":38,
+    "Ore":22,
+    "Wood":32,
 }
 slothslayerAxe.requires = {
     "Greedy Pickaxe" : 100,
 }
 blueprints.push(slothslayerAxe)
 
-const lustyHandaxeAxe = new item("Lusty Handaxe",98,75000,"axes");
+const lustyHandaxeAxe = new item("Lusty Handaxe",186,57000,"axes");
 lustyHandaxeAxe.cost = {
-    "Ore":24,
-    "Wood":53,
+    "Ore":30,
+    "Wood":46,
 }
 lustyHandaxeAxe.requires = {
     "Slothslayer" : 100,
 }
 blueprints.push(lustyHandaxeAxe)
 
-const envyAxe = new item("Envy",133,89000,"axes");
+const envyAxe = new item("Envy",290,72000,"axes");
 envyAxe.cost = {
-    "Ore":30,
-    "Wood":74,
+    "Ore":41,
+    "Wood":67,
 }
 envyAxe.requires = {
     "Lusty Handaxe" : 100,
 }
 blueprints.push(envyAxe)
 
-const gluttonousAxeAxe = new item("Gluttonous Axe",182,108000,"axes");
+const gluttonousAxeAxe = new item("Gluttonous Axe",453,89000,"axes");
 gluttonousAxeAxe.cost = {
-    "Ore":37,
-    "Wood":103,
+    "Ore":55,
+    "Wood":98,
 }
 gluttonousAxeAxe.requires = {
     "Envy" : 100,
 }
 blueprints.push(gluttonousAxeAxe)
 
-const wrathAxe = new item("Wrath",249,130000,"axes");
+const wrathAxe = new item("Wrath",708,112000,"axes");
 wrathAxe.cost = {
-    "Ore":47,
-    "Wood":145,
+    "Ore":74,
+    "Wood":142,
 }
 wrathAxe.requires = {
     "Gluttonous Axe" : 100,
@@ -307,87 +307,87 @@ wrathAxe.requires = {
 blueprints.push(wrathAxe)
 
 //Potions Line
-const healingPotion = new item("Healing Potion",8,11000,"potions");
+const healingPotion = new item("Healing Potion",18,15000,"potions");
 healingPotion.cost = {
-    "Herb":6,
+    "Herb":10,
 }
 blueprints.push(healingPotion)
 
-const manaPotion = new item("Mana Potion",12,15000,"potions");
+const manaPotion = new item("Mana Potion",27,20000,"potions");
 manaPotion.cost = {
-    "Herb":7,
+    "Herb":14,
 }
 manaPotion.requires = {
     "Healing Potion" : 100,
 }
 blueprints.push(manaPotion)
 
-const sleepingPotion = new item("Sleeping Potion",14,17000,"potions");
+const sleepingPotion = new item("Sleeping Potion",42,25000,"potions");
 sleepingPotion.cost = {
-    "Herb":9,
+    "Herb":20,
 }
 sleepingPotion.requires = {
     "Mana Potion" : 100,
 }
 blueprints.push(sleepingPotion)
 
-const coughingPotion = new item("Coughing Potion",17,18000,"potions");
+const coughingPotion = new item("Coughing Potion",64,33000,"potions");
 coughingPotion.cost = {
-    "Herb":11,
+    "Herb":27,
 }
 coughingPotion.requires = {
     "Sleeping Potion" : 100,
 }
 blueprints.push(coughingPotion)
 
-const invincibilityPotion = new item("Invincibility Potion",20,19000,"potions");
+const invincibilityPotion = new item("Invincibility Potion",99,43000,"potions");
 invincibilityPotion.cost = {
-    "Herb":13,
+    "Herb":38,
 }
 invincibilityPotion.requires = {
     "Coughing Potion" : 100,
 }
 blueprints.push(invincibilityPotion)
 
-const laughingPotion = new item("Laughing Potion",24,20000,"potions");
+const laughingPotion = new item("Laughing Potion",152,56000,"potions");
 laughingPotion.cost = {
-    "Herb":15,
+    "Herb":54,
 }
 laughingPotion.requires = {
     "Invincibility Potion" : 100,
 }
 blueprints.push(laughingPotion)
 
-const rejuvinatingPotion = new item("Rejuvinating Potion",29,21000,"potions");
+const rejuvinatingPotion = new item("Rejuvinating Potion",235,72000,"potions");
 rejuvinatingPotion.cost = {
-    "Herb":18,
+    "Herb":75,
 }
 rejuvinatingPotion.requires = {
     "Laughing Potion" : 100,
 }
 blueprints.push(rejuvinatingPotion)
 
-const likePotion = new item("Like Potion",34,22000,"potions");
+const likePotion = new item("Like Potion",362,94000,"potions");
 likePotion.cost = {
-    "Herb":21
+    "Herb":105
 }
 likePotion.requires = {
     "Rejuvinating Potion" : 100,
 }
 blueprints.push(likePotion)
 
-const bitterPotion = new item("Bitter Potion",41,23000,"potions");
+const bitterPotion = new item("Bitter Potion",557,122000,"potions");
 bitterPotion.cost = {
-    "Herb":26,
+    "Herb":148,
 }
 bitterPotion.requires = {
     "Like Potion" : 100,
 }
 blueprints.push(bitterPotion)
 
-const strengthPotion = new item("Strength Potion",50,25000,"potions");
+const strengthPotion = new item("Strength Potion",857,159000,"potions");
 strengthPotion.cost = {
-    "Herb":31,
+    "Herb":207,
 }
 strengthPotion.requires = {
     "Bitter Potion" : 100,
@@ -395,87 +395,87 @@ strengthPotion.requires = {
 blueprints.push(strengthPotion)
 
 //Gloves Line
-const gardeningGloves = new item("Gardening Gloves",8,11000,"gloves");
+const gardeningGloves = new item("Gardening Gloves",19,18000,"gloves");
 gardeningGloves.cost = {
-    "Leather":10,
+    "Leather":22,
 }
 blueprints.push(gardeningGloves)
 
-const runningGloves = new item("Running Gloves",12,15000,"gloves");
+const runningGloves = new item("Running Gloves",30,23000,"gloves");
 runningGloves.cost = {
-    "Leather":15,
+    "Leather":31,
 }
 runningGloves.requires = {
     "Gardening Gloves" : 100,
 }
 blueprints.push(runningGloves)
 
-const fightingGloves = new item("Fighting Gloves",17,20000,"gloves");
+const fightingGloves = new item("Fighting Gloves",46,30000,"gloves");
 fightingGloves.cost = {
-    "Leather":21,
+    "Leather":43,
 }
 fightingGloves.requires = {
     "Running Gloves" : 100,
 }
 blueprints.push(fightingGloves)
 
-const cleaningGloves = new item("Cleaning Gloves",24,25000,"gloves");
+const cleaningGloves = new item("Cleaning Gloves",71,40000,"gloves");
 cleaningGloves.cost = {
-    "Leather":30,
+    "Leather":60,
 }
 cleaningGloves.requires = {
     "Fighting Gloves" : 100,
 }
 blueprints.push(cleaningGloves)
 
-const punchingGloves = new item("Punching Gloves",35,32000,"gloves");
+const punchingGloves = new item("Punching Gloves",109,51000,"gloves");
 punchingGloves.cost = {
-    "Leather":44,
+    "Leather":85,
 }
 punchingGloves.requires = {
     "Cleaning Gloves" : 100,
 }
 blueprints.push(punchingGloves)
 
-const huggingGloves = new item("Hugging Gloves",51,40000,"gloves");
+const huggingGloves = new item("Hugging Gloves",168,67000,"gloves");
 huggingGloves.cost = {
-    "Leather":64,
+    "Leather":118,
 }
 huggingGloves.requires = {
     "Punching Gloves" : 100,
 }
 blueprints.push(huggingGloves)
 
-const dancingGloves = new item("Dancing Gloves",74,50000,"gloves");
+const dancingGloves = new item("Dancing Gloves",258,87000,"gloves");
 dancingGloves.cost = {
-    "Leather":92,
+    "Leather":166,
 }
 dancingGloves.requires = {
     "Hugging Gloves" : 100,
 }
 blueprints.push(dancingGloves)
 
-const lovingGloves = new item("Loving Gloves",108,63000,"gloves");
+const lovingGloves = new item("Loving Gloves",398,113000,"gloves");
 lovingGloves.cost = {
-    "Leather":134,
+    "Leather":232,
 }
 lovingGloves.requires = {
     "Dancing Gloves" : 100,
 }
 blueprints.push(lovingGloves)
 
-const otherGloves = new item("Other Gloves",156,76000,"gloves");
+const otherGloves = new item("Other Gloves",612,147000,"gloves");
 otherGloves.cost = {
-    "Leather":195,
+    "Leather":325,
 }
 otherGloves.requires = {
     "Loving Gloves" : 100,
 }
 blueprints.push(otherGloves)
 
-const boxingGloves = new item("Boxing Gloves",227,101000,"gloves");
+const boxingGloves = new item("Boxing Gloves",943,191000,"gloves");
 boxingGloves.cost = {
-    "Leather":283,
+    "Leather":455,
 }
 boxingGloves.requires = {
     "Dancing Gloves" : 100,

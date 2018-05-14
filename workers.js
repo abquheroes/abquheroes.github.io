@@ -6,7 +6,7 @@ function Worker(name,baseTime,description) {
     this.craftTime = baseTime; //this is in miliseconds
     this.description = description;
     this.lvl = 0;
-    this.cost = [300,400,500,750,1000,1500,2000,2500,3500,5000];
+    this.cost = [300,600,1000,1500,3000,6000,12000,20000,35000,50000];
     this.multiplier = [1,1.1,1.3,1.5,1.75,2,2.25,2.75,3.5,5];
 }
 
@@ -30,9 +30,9 @@ function getProduction(type) {
 
 const workers = [];
 
-const oren = new Worker("Oren",5000,"Job: Produces Ore");
+const oren = new Worker("Oren",10000,"Job: Produces Ore");
 oren.produces = {
-    "Ore" : 1,
+    "Ore" : 20,
 }
 oren.lvlreq = [
     {//lv1
@@ -93,9 +93,9 @@ oren.lvlreq = [
 ]
 workers.push(oren);
 
-const eryn = new Worker("Eryn",6500,"Job: Produces Wood");
+const eryn = new Worker("Eryn",18000,"Job: Produces Wood");
 eryn.produces = {
-    "Wood" : 0.75,
+    "Wood" : 28,
 }
 eryn.lvlreq = [
     {//lv1
@@ -156,9 +156,9 @@ eryn.lvlreq = [
 ]
 workers.push(eryn);
 
-const lakur = new Worker("Lakur",5000,"Job: Produces Leather");
+const lakur = new Worker("Lakur",12000,"Job: Produces Leather");
 lakur.produces = {
-    "Leather" : 1.25,
+    "Leather" : 45,
 }
 lakur.lvlreq = [
     {//lv1
@@ -219,9 +219,9 @@ lakur.lvlreq = [
 ]
 workers.push(lakur);
 
-const herbie = new Worker("Herbie",9000,"Job: Produces Herbs");
+const herbie = new Worker("Herbie",30000,"Job: Produces Herbs");
 herbie.produces = {
-    "Herb" : 1.25,
+    "Herb" : 40,
 }
 herbie.lvlreq = [
     {//lv1
