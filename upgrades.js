@@ -40,6 +40,14 @@ const maxActionSlots = {
 }
 upgrades.push(maxActionSlots);
 
+const maxInventory = {
+    name : "Max Inventory Slots",
+    description : "Increases the number of Inventory Slots you can have.",
+    cost : [100,200,300,400,500,600,700],
+    value : [1,1,1,1,1,1,1],
+}
+upgrades.push(maxInventory);
+
 function nameToUpgrade(name) {
     for (let i=0;i<upgrades.length;i++) {
         if (upgrades[i].name == name) return upgrades[i];
@@ -97,7 +105,10 @@ function upgrade(name) {
                 actionEnd : 0,
             });
             refreshActionSlots();
-        }        
+        }
+        else if (name === "Max Inventory Slots") {
+            player.inventoryCap += upgrade.value[upgradeProgress[name]];
+        }
         upgradeProgress[name] += 1;
     }
 }
