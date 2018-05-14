@@ -309,7 +309,7 @@ blueprints.push(wrathAxe)
 //Potions Line
 const healingPotion = new item("Healing Potion",8,11000,"potions");
 healingPotion.cost = {
-    "Herb":5,
+    "Herb":6,
 }
 blueprints.push(healingPotion)
 
