@@ -11,15 +11,18 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
 
 function refreshInventory() {
     $inventory.empty();
-    for (let i=0;i<inventory.length;i++) {
-        const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
-        const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]]+"&nbsp;")
-        itemdiv.append(itemLink);
-        $inventory.append(itemdiv);
+    //build the sorted inventory
+    for (let i=0;i<blueprints.length;i++) {
+        const count = numberInventory(blueprints[i].name);
+        if (count > 0) {
+            const itemdiv = $("<div/>").addClass("inventoryItem").html(count+"x&nbsp;"+imageReference[inventory[i]]+"&nbsp;")
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
+            itemdiv.append(itemLink);
+            $inventory.append(itemdiv);
+        }
     }
-    for (let i=0;i<player.inventoryCap-inventory.length;i++) {
-        $inventory.append($("<div/>").addClass("inventoryItem").html("-Empty-"));
-    }
+    const t1 = $("<p/>").addClass("inventoryCount").html(inventory.length + "/" + player.inventoryCap + " Slots Filled");
+    $inventory.append(t1);
 }
 
 function canAddtoInventory(name) {
