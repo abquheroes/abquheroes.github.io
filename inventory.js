@@ -40,9 +40,9 @@ function addToInventory(itemName) {
 function removeFromInventory(itemName) {
     const index = inventory.indexOf(itemName);
     if (index > -1) {
-      array.splice(index, 1);
-      refreshInventory();
-      return true;
+        inventory.splice(index, 1);
+        refreshInventory();
+        return true;
     }
     return false;
 }

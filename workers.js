@@ -99,7 +99,7 @@ eryn.produces = {
 }
 eryn.lvlreq = [
     {//lv1
-        "Knife" : 50
+        "Knife" : 3,
     },
     {//lv2
         "Butter Knife" : 25,
@@ -305,19 +305,23 @@ function refreshWorkers() {
         if (lvl === 0) d4.addClass("hidden");
         const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         const d6 = $('<div/>').addClass("itemSac");
+        let craftsLeft = false;
         if (lvl < 10) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
-                const d6a = $('<div/>').addClass("itemToSacDiv");
                 const slot = workers[i].name+"_"+lvl+"_"+itemName;
                 if (!(slot in workerProgress)) workerProgress[slot] = 0;
                 const adjAmt = amt - workerProgress[slot];
-                const d6b = $('<a/>').addClass("itemToSac").attr("href",slot).attr("item",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
-                d6a.append(d6b);
-                d6.append(d6a);
+                if (adjAmt > 0) {
+                    craftsLeft = true;
+                    const d6a = $('<div/>').addClass("itemToSacDiv");
+                    const d6b = $('<a/>').addClass("itemToSac").attr("href",slot).attr("item",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
+                    d6a.append(d6b);
+                    d6.append(d6a);
+                }
             }
         }
         const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE"); 
-        if (player.money < workers[i].cost[lvl]) b1.addClass("workerDisable");
+        if (player.money < workers[i].cost[lvl] || craftsLeft) b1.addClass("workerDisable");
         if (lvl === workers[i].cost.length) {
             d5.addClass("hidden");
             b1.addClass("hidden");
@@ -366,7 +370,7 @@ const workerImageReference = {
     "Lakur" : '<img src="workers/lakur.gif">',
 }
 
-$('#itemToSacDiv').on("click", "a.itemToSac", (e) => {
+$(document).on("click", "a.itemToSac", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href");
     const itemName = $(e.target).attr("item");
