@@ -15,9 +15,11 @@ function refreshInventory() {
     for (let i=0;i<blueprints.length;i++) {
         const count = numberInventory(blueprints[i].name);
         if (count > 0) {
-            const itemdiv = $("<div/>").addClass("inventoryItem").html(count+"x&nbsp;"+imageReference[inventory[i]]+"&nbsp;")
+            const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]])
             const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
+            const itemCt = $("<div/>").addClass("inventoryCount").html(count+"x");
             itemdiv.append(itemLink);
+            itemdiv.append(itemCt);
             $inventory.append(itemdiv);
         }
     }
