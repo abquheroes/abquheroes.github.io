@@ -33,76 +33,76 @@ function requirement(item) {
 
 //this is where items go!!! copy these lines to add items, and add the image in the imageReference
 //Knives Category
-const knife = new item("Knife",5,7000,"knives");
+const knife = new item("Knife",6,5000,"knives");
 knife.cost = {
     "Ore":5,
 }
 blueprints.push(knife)
 
-const butterKnife = new item("Butter Knife",9,12000,"knives");
+const butterKnife = new item("Butter Knife",8,7000,"knives");
 butterKnife.cost = {
-    "Ore":9,
+    "Ore":7,
 }
 butterKnife.requires = {
     "Knife" : 100,
 }
 blueprints.push(butterKnife)
 
-const kitchenKnife = new item("Kitchen Knife",12,15000,"knives");
+const kitchenKnife = new item("Kitchen Knife",13,8000,"knives");
 kitchenKnife.cost = {
-    "Ore":12,
+    "Ore":10,
 }
 kitchenKnife.requires = {
     "Butter Knife" : 100,
 }
 blueprints.push(kitchenKnife)
 
-const chefsKnife = new item("Chefs Knife",17,19000,"knives");
+const chefsKnife = new item("Chefs Knife",20,11000,"knives");
 chefsKnife.cost = {
-    "Ore":17,
+    "Ore":14,
 }
 chefsKnife.requires = {
     "Kitchen Knife" : 100
 }
 blueprints.push(chefsKnife)
 
-const fishingKnife = new item("Fishing Knife",22,23000,"knives");
+const fishingKnife = new item("Fishing Knife",31,14000,"knives");
 fishingKnife.cost = {
-    "Ore":22,
+    "Ore":19,
 }
 fishingKnife.requires = {
     "Chefs Knife" : 100,
 }
 blueprints.push(fishingKnife)
 
-const thatsNotAKnife = new item("Thats Not A Knife",30,27000,"knives");
+const thatsNotAKnife = new item("Thats Not A Knife",48,19000,"knives");
 thatsNotAKnife.cost = {
-    "Ore":30,
+    "Ore":27,
 }
 thatsNotAKnife.requires = {
     "Fishing Knife" : 100,
 }
 blueprints.push(thatsNotAKnife)
 
-const thatsAKnife = new item("Thats A Knife",41,33000,"knives");
+const thatsAKnife = new item("Thats A Knife",73,24000,"knives");
 thatsAKnife.cost = {
-    "Ore":41,
+    "Ore":38,
 }
 thatsAKnife.requires = {
     "Thats Not A Knife" : 100,
 }
 blueprints.push(thatsAKnife)
 
-const clubKnife = new item("Club Knife",55,39000,"knives");
+const clubKnife = new item("Club Knife",113,31000,"knives");
 clubKnife.cost = {
-    "Ore":55,
+    "Ore":53,
 }
 clubKnife.requires = {
     "Thats A Knife" : 100,
 }
 blueprints.push(clubKnife)
 
-const darkIsTheKnife = new item("Dark Is The Knife",74,47000,"knives");
+const darkIsTheKnife = new item("Dark Is The Knife",174,41000,"knives");
 darkIsTheKnife.cost = {
     "Ore":74,
 }
@@ -111,9 +111,9 @@ darkIsTheKnife.requires = {
 }
 blueprints.push(darkIsTheKnife)
 
-const theBloopinatorKnife = new item("The Bloopinator",101,56000,"knives");
+const theBloopinatorKnife = new item("The Bloopinator",268,53000,"knives");
 theBloopinatorKnife.cost = {
-    "Ore":101,
+    "Ore":103,
 }
 theBloopinatorKnife.requires = {
     "Dark Is The Knife" : 100,
@@ -121,87 +121,87 @@ theBloopinatorKnife.requires = {
 blueprints.push(theBloopinatorKnife)
 
 //Maces Category
-const clubMace = new item("Club",7,10000,"maces");
+const clubMace = new item("Club",11,9000,"maces");
 clubMace.cost = {
-    "Wood":5,
+    "Wood":7,
 }
 blueprints.push(clubMace)
 
-const maulMace = new item("Maul",12,16000,"maces");
+const maulMace = new item("Maul",17,12000,"maces");
 maulMace.cost = {
-    "Wood":8,
+    "Wood":10,
 }
 maulMace.requires = {
     "Club" : 100,
 }
 blueprints.push(maulMace)
 
-const brawlerMace = new item("Brawler",15,19000,"maces");
+const brawlerMace = new item("Brawler",26,15000,"maces");
 brawlerMace.cost = {
-    "Wood":11,
+    "Wood":14,
 }
 brawlerMace.requires = {
     "Maul" : 100,
 }
 blueprints.push(brawlerMace)
 
-const broomMace = new item("The Broominator",20,22000,"maces");
+const broomMace = new item("The Broominator",39,20000,"maces");
 broomMace.cost = {
-    "Wood":14,
+    "Wood":19,
 }
 broomMace.requires = {
     "Brawler" : 100,
 }
 blueprints.push(broomMace)
 
-const blackjackMace = new item("Blackjack",26,26000,"maces");
+const blackjackMace = new item("Blackjack",61,26000,"maces");
 blackjackMace.cost = {
-    "Wood":19,
+    "Wood":27,
 }
 blackjackMace.requires = {
     "The Broominator" : 100,
 }
 blueprints.push(blackjackMace)
 
-const bludgeonMace = new item("Bludgeon",24,30000,"maces");
+const bludgeonMace = new item("Bludgeon",93,33000,"maces");
 bludgeonMace.cost = {
-    "Wood":24,
+    "Wood":38,
 }
 bludgeonMace.requires = {
     "Blackjack" : 100,
 }
 blueprints.push(bludgeonMace)
 
-const stripedClubMace = new item("Striped Club",44,35000,"maces");
+const stripedClubMace = new item("Striped Club",144,43000,"maces");
 stripedClubMace.cost = {
-    "Wood":31,
+    "Wood":53,
 }
 stripedClubMace.requires = {
     "Bludgeon" : 100,
 }
 blueprints.push(stripedClubMace)
 
-const nightClubMace = new item("Night Club",57,40000,"maces");
+const nightClubMace = new item("Night Club",221,56000,"maces");
 nightClubMace.cost = {
-    "Wood":41,
+    "Wood":74,
 }
 nightClubMace.requires = {
     "Striped Club" : 100,
 }
 blueprints.push(nightClubMace)
 
-const factFinderMace = new item("Fact Finder",74,46000,"maces");
+const factFinderMace = new item("Fact Finder",341,73000,"maces");
 factFinderMace.cost = {
-    "Wood":53,
+    "Wood":103,
 }
 factFinderMace.requires = {
     "Night Club" : 100,
 }
 blueprints.push(factFinderMace)
 
-const knifeClubMace = new item("Knife Club",97,53000,"maces");
+const knifeClubMace = new item("Knife Club",525,95000,"maces");
 knifeClubMace.cost = {
-    "Wood":69,
+    "Wood":145,
 }
 knifeClubMace.requires = {
     "Fact Finder" : 100,
