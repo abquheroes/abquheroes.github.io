@@ -146,16 +146,7 @@ $(document).on("click", "a.addJob", (e) => {
     populateJob();
 });
 
-$('#inventory').on("click","a.inventoryLink",(e) => {
-    e.preventDefault();
-    const slot = $(e.target).attr("href");
-    item = inventory[slot];
-    player.money += nameToItem(item).value;
-    inventory.splice(slot, 1);
-    refreshInventory();
-    refreshUpgrades();
-    refreshWorkers();
-})
+
 
 function mainLoop() {
     const deltaT = Date.now() - player.lastLoop;
@@ -214,15 +205,7 @@ function mainLoop() {
 setInterval(mainLoop, 10);
 //setInterval(saveGame, 5000);
 
-function addToInventory(itemName) {
-    const item = nameToItem(itemName);
-    if (player.inventoryCap == inventory.length) {
-        player.money += item.value;
-        return;
-    }
-    inventory.push(itemName);
-    refreshInventory();
-}
+
 
 function refreshResources() {
     $oreAmt.text(player.ore + "/" + player.oreCap);
@@ -499,18 +482,7 @@ function progressFinish(type,name) {
     }
 }
 
-function refreshInventory() {
-    $inventory.empty();
-    for (let i=0;i<inventory.length;i++) {
-        const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",i).attr("aria-label", "Click to sell "+inventory[i]).html(inventory[i]);
-        const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[inventory[i]]+"&nbsp;")
-        itemdiv.append(itemLink);
-        $inventory.append(itemdiv);
-    }
-    for (let i=0;i<player.inventoryCap-inventory.length;i++) {
-        $inventory.append($("<div/>").addClass("inventoryItem").html("-Empty-"));
-    }
-}
+
 
 function refreshActionSlots() {
     $actionSlots.empty();
@@ -551,8 +523,4 @@ function round(number, precision) {
       return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
     };
     return shift(Math.round(shift(number, +precision)), -precision);
-}
-
-function canAddtoInventory(name) {
-    return player.inventoryCap > inventory.length;
 }

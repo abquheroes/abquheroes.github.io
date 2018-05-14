@@ -308,7 +308,10 @@ function refreshWorkers() {
         if (lvl < 10) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
                 const d6a = $('<div/>').addClass("itemToSacDiv");
-                const d6b = $('<a/>').addClass("itemToSac").attr("href",workers[i].name+"_"+lvl+"_"+itemName).html(imageReference[itemName]+"<br>"+amt);
+                const slot = workers[i].name+"_"+lvl+"_"+itemName;
+                if (!(slot in workerProgress)) workerProgress[slot] = 0;
+                const adjAmt = amt - workerProgress[slot];
+                const d6b = $('<a/>').addClass("itemToSac").attr("href",slot).attr("item",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
                 d6a.append(d6b);
                 d6.append(d6a);
             }
@@ -362,3 +365,14 @@ const workerImageReference = {
     "Herbie" : '<img src="workers/herbie.gif">',
     "Lakur" : '<img src="workers/lakur.gif">',
 }
+
+$('#itemToSacDiv').on("click", "a.itemToSac", (e) => {
+    e.preventDefault();
+    const slot = $(e.target).attr("href");
+    const itemName = $(e.target).attr("item");
+    const success = removeFromInventory(itemName);
+    if (success) {
+        workerProgress[slot] += 1;
+        refreshWorkers();
+    }
+});
