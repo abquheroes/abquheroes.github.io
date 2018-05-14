@@ -307,7 +307,9 @@ function refreshWorkers() {
         const d6 = $('<div/>').addClass("itemSac");
         if (lvl < 10) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
-                const d6a = $('<div/>').addClass("itemToSac").html(imageReference[itemName]+"<br>"+amt);
+                const d6a = $('<div/>').addClass("itemToSacDiv");
+                const d6b = $('<a/>').addClass("itemToSac").attr("href",workers[i].name+"_"+lvl+"_"+itemName).html(imageReference[itemName]+"<br>"+amt);
+                d6a.append(d6b);
                 d6.append(d6a);
             }
         }

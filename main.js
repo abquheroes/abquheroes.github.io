@@ -50,10 +50,6 @@ const workerProgress = {
 }
 
 const workerSacProgress = {
-    "Oren" : [{},{},{},{},{},{},{},{},{},{}],
-    "Eryn" : [{},{},{},{},{},{},{},{},{},{}],
-    "Herbie" : [{},{},{},{},{},{},{},{},{},{}],
-    "Lakur" : [{},{},{},{},{},{},{},{},{},{}],
 }
 
 const upgradeProgress = {
