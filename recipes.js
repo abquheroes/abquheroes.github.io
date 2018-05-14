@@ -209,97 +209,97 @@ knifeClubMace.requires = {
 blueprints.push(knifeClubMace)
 
 //Axes Category
-const rageMakerAxe = new item("Rage Maker",12,17000,"axes");
+const rageMakerAxe = new item("Rage Maker",13,13000,"axes");
 rageMakerAxe.cost = {
     "Ore":5,
     "Wood":5,
 }
 blueprints.push(rageMakerAxe)
 
-const furyBringerAxe = new item("Fury Bringer",22,29000,"axes");
+const furyBringerAxe = new item("Fury Bringer",19,16000,"axes");
 furyBringerAxe.cost = {
-    "Ore":8,
-    "Wood":10,
+    "Ore":7,
+    "Wood":7,
 }
 furyBringerAxe.requires = {
     "Rage Maker" : 100,
 }
 blueprints.push(furyBringerAxe)
 
-const venganceAxe = new item("Vengance",29,35000,"axes");
+const venganceAxe = new item("Vengance",29,20000,"axes");
 venganceAxe.cost = {
-    "Ore":10,
-    "Wood":14,
+    "Ore":9,
+    "Wood":11,
 }
 venganceAxe.requires = {
     "Fury Bringer" : 100,
 }
 blueprints.push(venganceAxe)
 
-const prideAxe = new item("Pride",39,43000,"axes");
+const prideAxe = new item("Pride",44,25000,"axes");
 prideAxe.cost = {
     "Ore":12,
-    "Wood":19,
+    "Wood":15,
 }
 prideAxe.requires = {
     "Vengance" : 100,
 }
 blueprints.push(prideAxe)
 
-const greedyPickaxeAxe = new item("Greedy Pickaxe",53,52000,"axes");
+const greedyPickaxeAxe = new item("Greedy Pickaxe",66,32000,"axes");
 greedyPickaxeAxe.cost = {
-    "Ore":15,
-    "Wood":27,
+    "Ore":17,
+    "Wood":22,
 }
 greedyPickaxeAxe.requires = {
     "Pride" : 100,
 }
 blueprints.push(greedyPickaxeAxe)
 
-const slothslayerAxe = new item("Slothslayer",72,62000,"axes");
+const slothslayerAxe = new item("Slothslayer",102,40000,"axes");
 slothslayerAxe.cost = {
-    "Ore":19,
-    "Wood":38,
+    "Ore":22,
+    "Wood":32,
 }
 slothslayerAxe.requires = {
     "Greedy Pickaxe" : 100,
 }
 blueprints.push(slothslayerAxe)
 
-const lustyHandaxeAxe = new item("Lusty Handaxe",98,75000,"axes");
+const lustyHandaxeAxe = new item("Lusty Handaxe",157,50000,"axes");
 lustyHandaxeAxe.cost = {
-    "Ore":24,
-    "Wood":53,
+    "Ore":30,
+    "Wood":46,
 }
 lustyHandaxeAxe.requires = {
     "Slothslayer" : 100,
 }
 blueprints.push(lustyHandaxeAxe)
 
-const envyAxe = new item("Envy",133,89000,"axes");
+const envyAxe = new item("Envy",243,62000,"axes");
 envyAxe.cost = {
-    "Ore":30,
-    "Wood":74,
+    "Ore":41,
+    "Wood":67,
 }
 envyAxe.requires = {
     "Lusty Handaxe" : 100,
 }
 blueprints.push(envyAxe)
 
-const gluttonousAxeAxe = new item("Gluttonous Axe",182,108000,"axes");
+const gluttonousAxeAxe = new item("Gluttonous Axe",378,77000,"axes");
 gluttonousAxeAxe.cost = {
-    "Ore":37,
-    "Wood":103,
+    "Ore":55,
+    "Wood":98,
 }
 gluttonousAxeAxe.requires = {
     "Envy" : 100,
 }
 blueprints.push(gluttonousAxeAxe)
 
-const wrathAxe = new item("Wrath",249,130000,"axes");
+const wrathAxe = new item("Wrath",589,97000,"axes");
 wrathAxe.cost = {
-    "Ore":47,
-    "Wood":145,
+    "Ore":74,
+    "Wood":142,
 }
 wrathAxe.requires = {
     "Gluttonous Axe" : 100,
