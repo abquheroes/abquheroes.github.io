@@ -573,6 +573,7 @@ input#importSaveText {
 
 .Worker .itemSac {
     display: flex;
+    position: relative;
     flex-direction: row;
     margin-top: 15px;
 }
@@ -729,6 +730,17 @@ footer a:hover {
     margin-right: -4px;
     border-bottom-color: transparent;
     border-right-color: black;    
+}
+
+.itemToSacDiv a.tooltip:hover:after {
+    left: 0;
+    right: 0;
+    top: -60%;
+}
+
+.itemToSacDiv a.tooltip:hover:before {
+    left: unset;
+    right: unset;
 }
 
 #version-scale {
