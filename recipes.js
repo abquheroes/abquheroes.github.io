@@ -98,6 +98,7 @@ blueprints.push(thatsAKnife)
 const clubKnife = new item("Club Knife",113,31000,"knives");
 clubKnife.cost = {
     "Ore":53,
+    "Club":2,
 }
 clubKnife.requires = {
     "Thats A Knife" : 100,
@@ -107,6 +108,7 @@ blueprints.push(clubKnife)
 const darkIsTheKnife = new item("Dark Is The Knife",174,41000,"knives");
 darkIsTheKnife.cost = {
     "Ore":74,
+    "Butter Knife":2,
 }
 darkIsTheKnife.requires = {
     "Club Knife" : 100,
@@ -116,6 +118,7 @@ blueprints.push(darkIsTheKnife)
 const theBloopinatorKnife = new item("The Bloopinator",268,53000,"knives");
 theBloopinatorKnife.cost = {
     "Ore":103,
+    "Thats Not A Knife":3,
 }
 theBloopinatorKnife.requires = {
     "Dark Is The Knife" : 100,
@@ -186,6 +189,7 @@ blueprints.push(stripedClubMace)
 const nightClubMace = new item("Night Club",221,56000,"maces");
 nightClubMace.cost = {
     "Wood":74,
+    "Maul":2,
 }
 nightClubMace.requires = {
     "Striped Club" : 100,
@@ -195,6 +199,7 @@ blueprints.push(nightClubMace)
 const factFinderMace = new item("Fact Finder",341,73000,"maces");
 factFinderMace.cost = {
     "Wood":103,
+    "Brawler":2,
 }
 factFinderMace.requires = {
     "Night Club" : 100,
@@ -204,6 +209,7 @@ blueprints.push(factFinderMace)
 const knifeClubMace = new item("Knife Club",525,95000,"maces");
 knifeClubMace.cost = {
     "Wood":145,
+    "Knife":5,
 }
 knifeClubMace.requires = {
     "Fact Finder" : 100,
@@ -274,6 +280,7 @@ blueprints.push(dancingGloves)
 const lovingGloves = new item("Loving Gloves",398,113000,"gloves");
 lovingGloves.cost = {
     "Leather":232,
+    "Healing Potion":2,
 }
 lovingGloves.requires = {
     "Dancing Gloves" : 100,
@@ -283,6 +290,7 @@ blueprints.push(lovingGloves)
 const otherGloves = new item("Other Gloves",612,147000,"gloves");
 otherGloves.cost = {
     "Leather":325,
+    "Running Gloves":2,
 }
 otherGloves.requires = {
     "Loving Gloves" : 100,
@@ -292,6 +300,7 @@ blueprints.push(otherGloves)
 const boxingGloves = new item("Boxing Gloves",943,191000,"gloves");
 boxingGloves.cost = {
     "Leather":455,
+    "Punching Gloves":3,
 }
 boxingGloves.requires = {
     "Dancing Gloves" : 100,
@@ -361,7 +370,8 @@ blueprints.push(rejuvinatingPotion)
 
 const likePotion = new item("Like Potion",362,94000,"potions");
 likePotion.cost = {
-    "Herb":105
+    "Herb":105,
+    "Mana Potion":2,
 }
 likePotion.requires = {
     "Rejuvinating Potion" : 100,
@@ -371,6 +381,7 @@ blueprints.push(likePotion)
 const bitterPotion = new item("Bitter Potion",557,122000,"potions");
 bitterPotion.cost = {
     "Herb":148,
+    "Gardening Gloves":2,
 }
 bitterPotion.requires = {
     "Like Potion" : 100,
@@ -380,6 +391,7 @@ blueprints.push(bitterPotion)
 const strengthPotion = new item("Strength Potion",857,159000,"potions");
 strengthPotion.cost = {
     "Herb":207,
+    "Invincibility Potion":3,
 }
 strengthPotion.requires = {
     "Bitter Potion" : 100,
