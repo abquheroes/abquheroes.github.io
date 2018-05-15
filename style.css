@@ -539,11 +539,17 @@ input#importSaveText {
     margin-left: 5px;
 }
 
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipeCost, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
     padding: 0 10px;
     flex-grow: 1;
     min-width: 100px;
     max-width: 200px;
+}
+
+.recipeCost {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
 }
 
 #workerList, #joblist, #upgradelist {
@@ -717,6 +723,7 @@ footer a:hover {
     border-bottom-color: black;
     transform: rotate(180deg);
     animation: fade-in 0.3s;
+    pointer-events: none;
 }
 
 .tooltip:hover:after {
@@ -736,6 +743,7 @@ footer a:hover {
     word-wrap: break-word;
     padding: 5px 8px;
     animation: fade-in 0.3s; 
+    pointer-events: none;
 }
 
 .inventoryItem a.tooltip:hover:after {
@@ -762,6 +770,14 @@ footer a:hover {
 .itemToSacDiv a.tooltip:hover:before {
     left: unset;
     right: unset;
+}
+
+.recipeCost.tooltip:hover:after {
+    margin-top: -15px;
+}
+.recipeCost.tooltip:hover:before {
+    margin-top: -10px;
+    margin-right: -12px;
 }
 
 #version-scale {
