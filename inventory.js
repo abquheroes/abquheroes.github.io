@@ -19,7 +19,7 @@ function refreshInventory() {
         if (count > 0) {
             
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Click to sell "+name).html(name);
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+blueprints[i].value+" Gold").html(name);
             const itemCt = $("<div/>").addClass("inventoryCount").html("x"+count);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
