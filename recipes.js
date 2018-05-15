@@ -1026,6 +1026,7 @@ stealthWard.cost = {
     "Ore":6,
     "Wood":8,
     "Herb":15,
+    "Basic Wand":1,
 }
 blueprints.push(stealthWard)
 
@@ -1034,6 +1035,7 @@ sentryWard.cost = {
     "Ore":8,
     "Wood":11,
     "Herb":22,
+    "Forest Wand":1,
 }
 sentryWard.requires = {
     "Stealth Ward" : 100,
@@ -1045,6 +1047,7 @@ spellWard.cost = {
     "Ore":11,
     "Wood":16,
     "Herb":32,
+    "Wind Wand":1,
 }
 spellWard.requires = {
     "Sentry Ward" : 100,
@@ -1056,6 +1059,7 @@ curseWard.cost = {
     "Ore":15,
     "Wood":22,
     "Herb":46,
+    "Soul Wand":1,
 }
 curseWard.requires = {
     "Spell Ward" : 100,
@@ -1067,6 +1071,7 @@ poisonWard.cost = {
     "Ore":20,
     "Wood":31,
     "Herb":66,
+    "Rain Wand":1,
 }
 poisonWard.requires = {
     "Curse Ward" : 100,
@@ -1078,6 +1083,7 @@ diseaseWard.cost = {
     "Ore":27,
     "Wood":43,
     "Herb":96,
+    "Stealth Ward":2,
 }
 diseaseWard.requires = {
     "Poison Ward" : 100,
@@ -1089,6 +1095,7 @@ infectionWard.cost = {
     "Ore":36,
     "Wood":60,
     "Herb":139,
+    "Sentry Ward":2,
 }
 infectionWard.requires = {
     "Disease Ward" : 100,
@@ -1100,6 +1107,7 @@ cancerWard.cost = {
     "Ore":49,
     "Wood":84,
     "Herb":202,
+    "Spell Ward":2
 }
 cancerWard.requires = {
     "Infection Ward" : 100,
@@ -1111,6 +1119,7 @@ maternityWard.cost = {
     "Ore":66,
     "Wood":118,
     "Herb":293,
+    "Love Wand":2,
 }
 maternityWard.requires = {
     "Cancer Ward" : 100,
@@ -1122,6 +1131,7 @@ burnUnitWard.cost = {
     "Ore":89,
     "Wood":165,
     "Herb":425,
+    "Hate Wand":3,
 }
 burnUnitWard.requires = {
     "Maternity Ward" : 100,
@@ -1134,6 +1144,7 @@ patienceShield.cost = {
     "Ore":7,
     "Wood":10,
     "Leather":19,
+    "Rage Maker":1,
 }
 blueprints.push(patienceShield)
 
@@ -1142,6 +1153,7 @@ faithfulShield.cost = {
     "Ore":10,
     "Wood":15,
     "Leather":26,
+    "Fury Bringer":1,
 }
 faithfulShield.requires = {
     "Patience" : 100,
@@ -1153,6 +1165,7 @@ defiantShield.cost = {
     "Ore":14,
     "Wood":21,
     "Leather":35,
+    "Vengance":1,
 }
 defiantShield.requires = {
     "Faithful Buckler" : 100,
@@ -1164,6 +1177,7 @@ fairShield.cost = {
     "Ore":19,
     "Wood":30,
     "Leather":47,
+    "Pride":1,
 }
 fairShield.requires = {
     "Defiant Targe" : 100,
@@ -1175,6 +1189,7 @@ wisdomShield.cost = {
     "Ore":27,
     "Wood":44,
     "Leather":63,
+    "Greedy Pickaxe":1,
 }
 wisdomShield.requires = {
     "Fair Shield" : 100,
@@ -1186,6 +1201,7 @@ generousShield.cost = {
     "Ore":38,
     "Wood":64,
     "Leather":85,
+    "Patience":2,
 }
 generousShield.requires = {
     "Wisdom" : 100,
@@ -1197,6 +1213,7 @@ loyalShield.cost = {
     "Ore":53,
     "Wood":93,
     "Leather":115,
+    "Faithful Buckler":2,
 }
 loyalShield.requires = {
     "Generous Blocker" : 100,
@@ -1208,6 +1225,7 @@ dignityShield.cost = {
     "Ore":74,
     "Wood":135,
     "Leather":155,
+    "Defiant Targe":2,
 }
 dignityShield.requires = {
     "Loyal Companion" : 100,
@@ -1219,6 +1237,7 @@ trustworthyShield.cost = {
     "Ore":103,
     "Wood":195,
     "Leather":210,
+    "Gluttonous Axe":2,
 }
 trustworthyShield.requires = {
     "Dignity" : 100,
@@ -1230,6 +1249,7 @@ truthTellerShield.cost = {
     "Ore":145,
     "Wood":283,
     "Leather":283,
+    "Wrath":3,
 }
 truthTellerShield.requires = {
     "Trustworthy Kite" : 100,
@@ -1242,6 +1262,7 @@ noviceCloak.cost = {
     "Wood":7,
     "Leather":23,
     "Herb":13,
+    "Simple Hat":1,
 }
 blueprints.push(noviceCloak)
 
@@ -1250,6 +1271,7 @@ apprenticeCloak.cost = {
     "Wood":9,
     "Leather":33,
     "Herb":18,
+    "Hidden Mask":1,
 }
 apprenticeCloak.requires = {
     "Novice Cloak" : 100,
@@ -1261,6 +1283,7 @@ practitionerCloak.cost = {
     "Wood":13,
     "Leather":48,
     "Herb":25,
+    "Black Hat":1,
 }
 practitionerCloak.requires = {
     "Apprentice Cloak" : 100,
@@ -1272,6 +1295,7 @@ journeymanCloak.cost = {
     "Wood":17,
     "Leather":70,
     "Herb":36,
+    "Beach Hat":1,
 }
 journeymanCloak.requires = {
     "Practitioner Cloak" : 100,
@@ -1283,6 +1307,7 @@ expertCloak.cost = {
     "Wood":23,
     "Leather":102,
     "Herb":50,
+    "Green Bay Beret":1,
 }
 expertCloak.requires = {
     "Journeyman Cloak" : 100,
@@ -1294,6 +1319,7 @@ frostflingerCloak.cost = {
     "Wood":31,
     "Leather":147,
     "Herb":70,
+    "Novice Cloak":2,
 }
 frostflingerCloak.requires = {
     "Expert Cloak" : 100,
@@ -1305,6 +1331,7 @@ waterbringerCloak.cost = {
     "Wood":42,
     "Leather":214,
     "Herb":98,
+    "Apprentice Cloak":2,
 }
 waterbringerCloak.requires = {
     "Frostflinger Cloak" : 100,
@@ -1316,6 +1343,7 @@ earthslingerCloak.cost = {
     "Wood":57,
     "Leather":310,
     "Herb":137,
+    "Practitioner Cloak":2,
 }
 earthslingerCloak.requires = {
     "Stormbringer Cloak" : 100,
@@ -1327,6 +1355,7 @@ lifegiverCloak.cost = {
     "Wood":77,
     "Leather":449,
     "Herb":192,
+    "Spoopy Mask":2,
 }
 lifegiverCloak.requires = {
     "Earthslinger Cloak" : 100,
@@ -1338,6 +1367,7 @@ deathcallerCloak.cost = {
     "Wood":104,
     "Leather":652,
     "Herb":269,
+    "All Folks Hat":3,
 }
 deathcallerCloak.requires = {
     "Lifegiver Cloak" : 100,
@@ -1350,6 +1380,7 @@ metalArmor.cost = {
     "Ore":9,
     "Leather":21,
     "Herb":9,
+    "Standard Helmet":1,
 }
 blueprints.push(metalArmor)
 
@@ -1359,6 +1390,7 @@ metallicArmor.cost = {
     "Ore":13,
     "Leather":29,
     "Herb":12,
+    "Shiny Gauntlets":1,
 }
 metallicArmor.requires = {
     "Metal Armor" : 100,
@@ -1370,6 +1402,7 @@ pantherArmor.cost = {
     "Ore":19,
     "Leather":41,
     "Herb":16,
+    "Plain Gauntlets":1,
 }
 pantherArmor.requires = {
     "Metallic Armor" : 100,
@@ -1381,6 +1414,7 @@ slayersArmor.cost = {
     "Ore":27,
     "Leather":58,
     "Herb":22,
+    "Pristine Gauntlets":1,
 }
 slayersArmor.requires = {
     "Panther Armor" : 100,
@@ -1392,6 +1426,7 @@ zeppelinArmor.cost = {
     "Ore":40,
     "Leather":81,
     "Herb":30,
+    "Challenge Gauntlets":1,
 }
 zeppelinArmor.requires = {
     "Slayers Plate" : 100,
@@ -1403,6 +1438,7 @@ acdChainmailArmor.cost = {
     "Ore":58,
     "Leather":113,
     "Herb":40,
+    "Metal Armor":2,
 }
 acdChainmailArmor.requires = {
     "Leaded Zeppelin Hull" : 100,
@@ -1414,6 +1450,7 @@ miBreastplateArmor.cost = {
     "Ore":84,
     "Leather":158,
     "Herb":54,
+    "Metallic Armor":2
 }
 miBreastplateArmor.requires = {
     "A Cool Dark Chainmail" : 100,
@@ -1425,6 +1462,7 @@ ipCuirassArmor.cost = {
     "Ore":121,
     "Leather":221,
     "Herb":74,
+    "Panther Armor":2,
 }
 ipCuirassArmor.requires = {
     "Maidens Iron Breastplate" : 100,
@@ -1436,6 +1474,7 @@ wsChainmailArmor.cost = {
     "Ore":176,
     "Leather":310,
     "Herb":99,
+    "Cool Gauntlets":2,
 }
 wsChainmailArmor.requires = {
     "Intense Purple Cuirass" : 100,
@@ -1447,6 +1486,7 @@ heavyMetalArmor.cost = {
     "Ore":255,
     "Leather":434,
     "Herb":134,
+    "Coal Helmut":3,
 }
 heavyMetalArmor.requires = {
     "White Serpent Chainmail" : 100,
@@ -1462,6 +1502,7 @@ lettucePendant.cost = {
     "Wood":28,
     "Leather":45,
     "Herb":40,
+    "Wisdom":1,
 }
 blueprints.push(lettucePendant)
 
@@ -1471,6 +1512,7 @@ jellyPeanutPendant.cost = {
     "Wood":39,
     "Leather":59,
     "Herb":54,
+    "Loyal Companion":1,
 }
 jellyPeanutPendant.requires = {
     "Pendant of Lactuca" : 100,
@@ -1483,6 +1525,8 @@ shirePendant.cost = {
     "Wood":55,
     "Leather":76,
     "Herb":73,
+    "Mage Moccasins":2,
+    "Lifegiver Cloak":1,
 }
 shirePendant.requires = {
     "Pendant of Gelata Eros" : 100,
@@ -1495,6 +1539,8 @@ silentPendant.cost = {
     "Wood":77,
     "Leather":99,
     "Herb":98,
+    "Fighting Stilettos":2,
+    "White Serpent Chainmail":1,
 }
 silentPendant.requires = {
     "Pendant of Comitatus" : 100,
@@ -1507,6 +1553,8 @@ friendDoorPendant.cost = {
     "Wood":108,
     "Leather":129,
     "Herb":133,
+    "Hairy Shoes":1,
+    "Trustworthy Kite":1,
 }
 friendDoorPendant.requires = {
     "Pendant of Tacet Gladio" : 100,
@@ -1519,6 +1567,8 @@ phoenixPendant.cost = {
     "Wood":151,
     "Leather":167,
     "Herb":179,
+    "The Bloopinator":3,
+    "Maternity Ward":1,
 }
 phoenixPendant.requires = {
     "Pendant of Ostium Amici" : 100,
@@ -1531,6 +1581,8 @@ katiePendant.cost = {
     "Wood":211,
     "Leather":217,
     "Herb":242,
+    "Druidic Boots":2,
+    "Burn Unit":2,
 }
 katiePendant.requires = {
     "Pendant of Ignis Pullum" : 100,
@@ -1543,6 +1595,8 @@ richardPendant.cost = {
     "Wood":295,
     "Leather":282,
     "Herb":327,
+    "Jay Walkers":1,
+    "Heavy Metal Armor":2,
 }
 richardPendant.requires = {
     "Pendant of Folium Strennus" : 100,
@@ -1555,6 +1609,8 @@ akersonPendant.cost = {
     "Wood":413,
     "Leather":367,
     "Herb":441,
+    "Master Loafers":1,
+    "Truth Teller":2,
 }
 akersonPendant.requires = {
     "Pendant of Magicae Criceta" : 100,
@@ -1567,6 +1623,8 @@ abquPendant.cost = {
     "Wood":579,
     "Leather":477,
     "Herb":596,
+    "Bardic Galoshes":2,
+    "Deathcaller Cloak":2,
 }
 abquPendant.requires = {
     "Pendant of Inpulsa Sciurus" : 100,
