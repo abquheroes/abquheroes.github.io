@@ -1,4 +1,4 @@
-//Scripting for Theme Selection
+// Theme Switching for Light and Dark Mode
 
 var root = document.querySelector(":root");
 var darkButton = document.querySelector(".dm-btn");
@@ -77,5 +77,20 @@ function darkTheme() {
     darkButton.style.display = "none";
     lightButton.style.display = "block";
 }
+
+// Tab Selection for Recipes List
+
+var recipeItem = document.querySelectorAll("#RecipeFilter a.recipeSelect");
+
+for (i = 0; i < recipeItem.length; i++) {
+    recipeItem[i].addEventListener("click", tabHighlight);
+};
+
+function tabHighlight() {
+    for (i = 0; i < recipeItem.length; i++) {
+        recipeItem[i].classList.remove("selected");
+    };
+    this.classList.add("selected");
+};
 
 //
