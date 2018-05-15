@@ -188,6 +188,7 @@ eryn.lvlreq = [
     },
     {//3
         "Club" : 10,
+        "Maul" : 5,
     },
     {//4
         "Club" : 10,
@@ -324,60 +325,142 @@ lakur.produces = {
     "Leather" : 45,
 }
 lakur.lvlreq = [
-    {//lv1
-        "Knife" : 50
+    {//1
+        "Club" : 5,
     },
-    {//lv2
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
+    {//2
+        "Gardening Gloves" : 10,
     },
-    {//lv3
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//3
+        "Gardening Gloves" : 10,
+        "Running Gloves" : 5,
     },
-    {//lv4
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//4
+        "Gardening Gloves" : 10,
+        "Running Gloves" : 10,
     },
-    {//lv5
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//5
+        "Gardening Gloves" : 10,
+        "Running Gloves" : 10,
+        "Fighting Gloves" : 5,
     },
-    {//lv6
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//6
+        "Gardening Gloves" : 15,
+        "Running Gloves" : 10,
+        "Fighting Gloves" : 5,
     },
-    {//lv7
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//7
+        "Gardening Gloves" : 15,
+        "Running Gloves" : 10,
+        "Fighting Gloves" : 10,
     },
-    {//lv8
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//8
+        "Gardening Gloves" : 15,
+        "Running Gloves" : 10,
+        "Fighting Gloves" : 10,
+        "Cleaning Gloves" : 5,
     },
-    {//lv9
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//9
+        "Gardening Gloves" : 20,
+        "Running Gloves" : 10,
+        "Fighting Gloves" : 10,
+        "Cleaning Gloves" : 5,
     },
-    {//lv10
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//10
+        "Gardening Gloves" : 25,
+        "Running Gloves" : 15,
+        "Fighting Gloves" : 15,
+        "Cleaning Gloves" : 10,
+    },
+    {//11
+        "Cleaning Gloves" : 15,
+        "Simple Hat" : 5,
+        "New Gauntlets" : 5,
+        "Hamster Clogs" : 5,
+    },
+    {//12
+        "Punching Gloves" : 5,
+        "Simple Hat" : 10,
+        "New Gauntlets" : 10,
+        "Hamster Clogs" : 10,
+    },
+    {//13
+        "Punching Gloves" : 10,
+        "Hidden Mask" : 5,
+        "Shiny Gauntlets" : 5,
+        "Mage Moccasins" : 5,
+    },
+    {//14
+        "Punching Gloves" : 15,
+        "Hidden Mask" : 10,
+        "Shiny Gauntlets" : 10,
+        "Mage Moccasins" : 10,
+    },
+    {//15
+        "Hugging Gloves" : 5,
+        "Black Hat" : 5,
+        "Plain Gauntlets" : 5,
+        "Druidic Boots" : 5,
+    },
+    {//16
+        "Hugging Gloves" : 10,
+        "Black Hat" : 10,
+        "Plain Gauntlets" : 10,
+        "Druidic Boots" : 10,
+    },
+    {//17
+        "Hugging Gloves" : 15,
+        "Beach Hat" : 5,
+        "Pristine Gauntlets" : 5,
+        "Fighting Stilettos" : 5,
+    },
+    {//18
+        "Dancing Gloves" : 10,
+        "Beach Hat" : 10,
+        "Pristine Gauntlets" : 10,
+        "Fighting Stilettos" : 10,
+    },
+    {//19
+        "Dancing Gloves" : 15,
+        "Green Bay Beret" : 5,
+        "Challenge Gauntlets" : 5,
+        "Bardic Galoshes" : 5,
+    },
+    {//20
+        "Loving Gloves" : 10,
+        "Green Bay Beret" : 10,
+        "Challenge Gauntlets" : 10,
+        "Bardic Galoshes" : 10,
+    },
+    {//21
+        "Loving Gloves" : 15,
+        "The Mind Cap" : 10,
+        "Fancy Gauntlets" : 10,
+        "Master Loafers" : 10,
+    },
+    {//22
+        "Other Gloves" : 10,
+        "Ornate Crown" : 10,
+        "Old Gauntlets" : 10,
+        "Foxy Slippers" : 10,
+    },
+    {//23
+        "Other Gloves" : 15,
+        "Spellcasting Hat" : 10,
+        "Dark Gauntlets" : 10,
+        "Hairy Shoes" : 10,
+    },
+    {//24
+        "Boxing Gloves" : 10,
+        "Spoopy Mask" : 10,
+        "Dandy Gauntlets" : 10,
+        "Lunar Whalers" : 10,
+    },
+    {//25
+        "Boxing Gloves" : 15,
+        "All Folks Hat" : 10,
+        "Cool Gauntlets" : 10,
+        "Jay Walkers" : 10,
     },
 ]
 workers.push(lakur);
