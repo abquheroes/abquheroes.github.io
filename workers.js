@@ -470,60 +470,142 @@ herbie.produces = {
     "Herb" : 40,
 }
 herbie.lvlreq = [
-    {//lv1
-        "Knife" : 50
+    {//1
+        "Gardening Gloves" : 5,
     },
-    {//lv2
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
+    {//2
+        "Healing Potion" : 10,
     },
-    {//lv3
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//3
+        "Healing Potion" : 10,
+        "Mana Potion": 5,
+        },
+    {//4
+        "Healing Potion" : 10,
+        "Mana Potion" : 10,
     },
-    {//lv4
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//5
+        "Healing Potion" : 10,
+        "Mana Potion" : 10,
+        "Sleeping Potion" : 5,
     },
-    {//lv5
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//6
+        "Healing Potion" : 15,
+        "Mana Potion" : 10,
+        "Sleeping Potion" : 5,
     },
-    {//lv6
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//7
+        "Healing Potion" : 15,
+        "Mana Potion" : 10,
+        "Sleeping Potion" : 10,
     },
-    {//lv7
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//8
+        "Healing Potion" : 15,
+        "Mana Potion" : 10,
+        "Sleeping Potion" : 10,
+        "Coughing Potion" : 5,
     },
-    {//lv8
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//9
+        "Healing Potion" : 20,
+        "Mana Potion" : 10,
+        "Sleeping Potion" : 10,
+        "Coughing Potion" : 5,
     },
-    {//lv9
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//10
+        "Healing Potion" : 25,
+        "Mana Potion" : 15,
+        "Sleeping Potion" : 15,
+        "Coughing Potion" : 10,
     },
-    {//lv10
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//11
+        "Coughing Potion" : 15,
+        "Simple Hat" : 5,
+        "Basic Wand" : 5,
+        "Standard Helmet" : 5,
+    },
+    {//12
+        "Invincibility Potion" : 5,
+        "Simple Hat" : 10,
+        "Basic Wand" : 10,
+        "Standard Helmet" : 10,
+    },
+    {//13
+        "Invincibility Potion" : 10,
+        "Hidden Mask" : 5,
+        "Forest Wand" : 5,
+        "Cobalt Helmet" : 5,
+    },
+    {//14
+        "Invincibility Potion" : 15,
+        "Hidden Mask" : 10,
+        "Forest Wand" : 10,
+        "Cobalt Helmet" : 10,
+    },
+    {//15
+        "Laughing Potion" : 5,
+        "Black Hat" : 5,
+        "Wind Wand" : 5,
+        "Regular Helmet" : 5,
+    },
+    {//16
+        "Laughing Potion" : 10,
+        "Black Hat" : 10,
+        "Wind Wand" : 10,
+        "Regular Helmet" : 10,
+    },
+    {//17
+        "Laughing Potion" : 15,
+        "Beach Hat" : 5,
+        "Soul Wand" : 5,
+        "Super Helmet" : 5,
+    },
+    {//18
+        "Rejuvinating Potion" : 10,
+        "Beach Hat" : 10,
+        "Soul Wand" : 10,
+        "Super Helmet" : 10,
+    },
+    {//19
+        "Rejuvinating Potion" : 15,
+        "Green Bay Beret" : 5,
+        "Rain Wand" : 5,
+        "Mega Helmet" : 5,
+    },
+    {//20
+        "Like Potion" : 10,
+        "Green Bay Beret" : 10,
+        "Rain Wand" : 10,
+        "Mega Helmet" : 10,
+    },
+    {//21
+        "Like Potion" : 15,
+        "The Mind Cap" : 10,
+        "Frozen Wand" : 10,
+        "Skull Helmet" : 10,
+    },
+    {//22
+        "Bitter Potion" : 10,
+        "Ornate Crown" : 10,
+        "Ocean Wand" : 10,
+        "Dark Helmet" : 10,
+    },
+    {//23
+        "Bitter Potion" : 15,
+        "Spellcasting Hat" : 10,
+        "Thunder Wand" : 10,
+        "Whimsical Helmet" : 10,
+    },
+    {//24
+        "Strength Potion" : 10,
+        "Spoopy Mask" : 10,
+        "Hate Wand" : 10,
+        "Magnetized Helmet" : 10,
+    },
+    {//25
+        "Strength Potion" : 15,
+        "All Folks Hat" : 10,
+        "Love Wand" : 10,
+        "Coal Helmut" : 10,
     },
 ]
 workers.push(herbie);
