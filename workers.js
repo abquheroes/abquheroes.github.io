@@ -152,8 +152,8 @@ oren.lvlreq = [
         "Dark Is The Knife" : 10,
         "Lusty Handaxe" : 10,
         "Old Gauntlets" : 10,
-        "Dark Helmet" : 10, r
-    },
+        "Dark Helmet" : 10,
+        },
     {//23
         "Dark Is The Knife" : 15,
         "Envy" : 10,
