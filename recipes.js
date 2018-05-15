@@ -781,6 +781,43 @@ coolGauntlets.requires = {
 blueprints.push(coolGauntlets)
 
 //helmets
+const standardHelmet = new item("Standard Helmet",31,29000,"helmets");
+standardHelmet.cost = {
+    "Ore":8,
+    "Herb":11,
+}
+blueprints.push(standardHelmet)
+
+const cobaltHelmet = new item("Cobalt Helmet",46,36000,"helmets");
+cobaltHelmet.cost = {
+    "Ore":12,
+    "Herb":15,
+}
+cobaltHelmet.requires = {
+    "Standard Helmet" : 100,
+}
+blueprints.push(cobaltHelmet)
+
+const regularHelmet = new item("Regular Helmet",70,45000,"helmets");
+regularHelmet.cost = {
+    "Ore":17,
+    "Herb":20,
+}
+regularHelmet.requires = {
+    "Cobalt Helmet" : 100,
+}
+blueprints.push(regularHelmet)
+
+const superHelmet = new item("Super Helmet",107,57000,"helmets");
+superHelmet.cost = {
+    "Ore":24,
+    "Herb":27,
+}
+superHelmet.requires = {
+    "Regular Helmet" : 100,
+}
+blueprints.push(superHelmet)
+
 const megaHelmet = new item("Mega Helmet",163,71000,"helmets");
 megaHelmet.cost = {
     "Ore":35,
