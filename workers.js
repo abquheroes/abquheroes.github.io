@@ -180,60 +180,141 @@ eryn.produces = {
     "Wood" : 28,
 }
 eryn.lvlreq = [
-    {//lv1
-        "Knife" : 3,
+    {//1
+        "Knife" : 5,
     },
-    {//lv2
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
+    {//2
+        "Club" : 10,
     },
-    {//lv3
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//3
+        "Club" : 10,
     },
-    {//lv4
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//4
+        "Club" : 10,
+        "Maul" : 10,
     },
-    {//lv5
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//5
+        "Club" : 10,
+        "Maul" : 10,
+        "Brawler" : 5,
     },
-    {//lv6
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//6
+        "Club" : 15,
+        "Maul" : 10,
+        "Brawler" : 5,
     },
-    {//lv7
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//7
+        "Club" : 15,
+        "Maul" : 10,
+        "Brawler" : 10,
     },
-    {//lv8
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//8
+        "Club" : 15,
+        "Maul" : 10,
+        "Brawler" : 10,
+        "The Broominator" : 5,
     },
-    {//lv9
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//9
+        "Club" : 20,
+        "Maul" : 10,
+        "Brawler" : 10,
+        "The Broominator" : 5,
     },
-    {//lv10
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//10
+        "Club" : 25,
+        "Maul" : 15,
+        "Brawler" : 15,
+        "The Broominator" : 10,
+    },
+    {//11
+        "The Broominator" : 15,
+        "Rage Maker" : 5,
+        "Basic Wand" : 5,
+        "Hamster Clogs" : 5,
+    },
+    {//12
+        "Blackjack" : 5,
+        "Rage Maker" : 10,
+        "Basic Wand" : 10,
+        "Hamster Clogs" : 10,
+    },
+    {//13
+        "Blackjack" : 10,
+        "Fury Bringer" : 5,
+        "Forest Wand" : 5,
+        "Mage Moccasins" : 5,
+    },
+    {//14
+        "Blackjack" : 15,
+        "Fury Bringer" : 10,
+        "Forest Wand" : 10,
+        "Mage Moccasins" : 10,
+    },
+    {//15
+        "Bludgeon" : 5,
+        "Vengance" : 5,
+        "Wind Wand" : 5,
+        "Druidic Boots" : 5,
+    },
+    {//16
+        "Bludgeon" : 10,
+        "Vengance" : 10,
+        "Wind Wand" : 10,
+        "Druidic Boots" : 10,
+    },
+    {//17
+        "Bludgeon" : 15,
+        "Pride" : 5,
+        "Soul Wand" : 5,
+        "Fighing Stilettos" : 5,
+    },
+    {//18
+        "Striped Club" : 10,
+        "Pride" : 10,
+        "Soul Wand" : 10,
+        "Fighing Stilettos" : 10,
+    },
+    {//19
+        "Striped Club" : 15,
+        "Greedy Pickaxe" : 5,
+        "Rain Wand" : 5,
+        "Bardic Galoshes" : 5,
+    },
+    {//20
+        "Night Club" : 10,
+        "Greedy Pickaxe" : 10,
+        "Rain Wand" : 10,
+        "Bardic Galoshes" : 10,
+    },
+    {//21
+        "Night Club" : 15,
+        "Slothslayer" : 10,
+        "Frozen Wand" : 10,
+        "Master Loafers" : 10,
+    },
+    {//22
+        "Fact Finder" : 10,
+        "Lusty Handaxe" : 10,
+        "Ocean Wand" : 10,
+        "Foxy Slippers" : 10,
+    },
+    {//23
+        "Fact Finder" : 15,
+        "Envy" : 10,
+        "Thunder Wand" : 10,
+        "Hairy Shoes" : 10,
+    },
+    {//24
+        "Knife Club" : 10,
+        "Gluttonous Axe" : 10,
+        "Hate Wand" : 10,
+        "Lunar Whalers" : 10,
+    },
+    {//25
+        "Knife Club" : 15,
+        "Wrath" : 10,
+        "Love Wand" : 10,
+        "Jay Walkers" : 10,
     },
 ]
 workers.push(eryn);
