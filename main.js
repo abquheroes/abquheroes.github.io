@@ -31,12 +31,6 @@ const player = {
             actionEnd : 0,
         },
     ],
-    //actionSlots is a list of dictionaries in form
-    //{ 
-        //actionType
-        //actionName
-        //actionTime
-    //},
     currentType : null,
     inventoryCap : 5,
     lastLoop : Date.now(),
@@ -204,7 +198,7 @@ function mainLoop() {
 }
 
 setInterval(mainLoop, 10);
-//setInterval(saveGame, 5000);
+setInterval(saveGame, 5000);
 
 
 
@@ -232,6 +226,7 @@ function populateJob() {
     hrow.append(htd3);
     table.append(hrow);
     for (const [workerName,lvl] of Object.entries(workerProgress)) {
+        console.log(workerName);
         if (lvl > 0) {
             const worker = nameToWorker(workerName);
             const trow = $('<div/>').addClass('jobRow');
@@ -320,9 +315,9 @@ function populateRecipe(type) {
 }
 
 function canCraft(loc) {
+    if (player.actionSlots[loc].actionTime > 0) return false;
     if (player.actionSlots[loc].actionType === "Job") return true;
     if (player.actionSlots[loc].actionName === "Empty") return false;
-    if (player.actionSlots[loc].actionTime > 0) return false;
     const itemName = player.actionSlots[loc].actionName
     const itemFull = nameToItem(itemName);
     for (const [res, amt] of Object.entries(itemFull.cost)) {
@@ -367,47 +362,26 @@ function saveGame() {
     if (stopSave) return;
     const saveFile = {
         playerSave : player,
-        itemSave : itemCount,
-        workerSave : workerLevels,
+        workerProgressSave : workerProgress,
+        workerSacProgressSave : workerSacProgress,
+        upgradeProgressSave : upgradeProgress,
+        inventorySave : inventory,
+        itemCountSave : itemCount,
     }
     localStorage.setItem('gameSave2', JSON.stringify(saveFile));
-    }
+}
 
 function loadGame() {
     //populate itemCount with blueprints as a base
-    blueprints.forEach(bp => {
-        itemCount[bp.name] = 0;
-    })
     const loadGame = JSON.parse(localStorage.getItem("gameSave2"));
     if (loadGame !== null) {
-        //player variables
-        if ($.type(loadGame.playerSave.money) !== null) player.money = loadGame.playerSave.money;
-        if (typeof loadGame.playerSave.ore != null) player.ore = loadGame.playerSave.ore;
-        if ($.type(loadGame.playerSave.wood) !== $.type(null)) {
-            player.wood = loadGame.playerSave.wood;
-        }
-        else {
-            console.log("wood not loaded");
-        }
-        if (typeof loadGame.playerSave.craft1 !== null) player.craft1 = loadGame.playerSave.craft1;
-        if (typeof loadGame.playerSave.craft1start !== null) player.craft1start = loadGame.playerSave.craft1start;
-        if (typeof loadGame.playerSave.craft2 !== null) player.craft2 = loadGame.playerSave.craft2;
-        if (typeof loadGame.playerSave.craft2start !== null) player.craft2start = loadGame.playerSave.craft2start;
-        if (typeof loadGame.playerSave.craft3 !== null) player.craft3 = loadGame.playerSave.craft3;
-        if (typeof loadGame.playerSave.craft3start !== null) player.craft3start = loadGame.playerSave.craft3start;
-        //item variables
-        for (const [bp, _] of Object.entries(itemCount)) {
-            if (bp in loadGame.itemSave) itemCount[bp] = loadGame.itemSave[bp];
-        }
-        //load workers
-        //if (typeof loadGame.workerSave["Ore"] !== null) workerLevels["Ore"] = loadGame.workerSave["Ore"];
-        //console.log($.type(loadGame.workerSave["Wood"]), $.type(undefined));
-        //if ($.type(loadGame.workerSave["Wood"]) !== $.type(undefined)) {
-        //    workerLevels["Wood"] = loadGame.workerSave["Wood"];
-        //}
-        //else {
-        //    console.log("worker level not loaded");
-        //}
+        //aka there IS a file
+        if (typeof loadGame.playerSave !== "undefined") $.extend(player,loadGame.playerSave);
+        if (typeof loadGame.workerProgressSave !== "undefined") $.extend(workerProgress,loadGame.workerProgressSave);
+        if (typeof loadGame.workerSacProgressSave !== "undefined") $.extend(workerSacProgress,loadGame.workerSacProgressSave);
+        if (typeof loadGame.upgradeProgressSave !== "undefined") $.extend(upgradeProgress,loadGame.upgradeProgressSave);
+        if (typeof loadGame.inventorySave !== "undefined") $.extend(inventory,loadGame.inventorySave);
+        if (typeof loadGame.itemCountSave !== "undefined") $.extend(itemCount,loadGame.itemCountSave);
     }
 }
 
