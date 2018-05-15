@@ -286,7 +286,7 @@ function populateRecipe(type) {
             const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
             td1.append(name);
             let s = "";
-            const td2 = $('<div/>').addClass('recipeCost');
+            const td2 = $('<div/>').addClass('recipecostdiv');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                 if (amt > 0) {
                     const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(amt + "&nbsp" + imageReference[type])
