@@ -267,13 +267,13 @@ eryn.lvlreq = [
         "Bludgeon" : 15,
         "Pride" : 5,
         "Soul Wand" : 5,
-        "Fighing Stilettos" : 5,
+        "Fighting Stilettos" : 5,
     },
     {//18
         "Striped Club" : 10,
         "Pride" : 10,
         "Soul Wand" : 10,
-        "Fighing Stilettos" : 10,
+        "Fighting Stilettos" : 10,
     },
     {//19
         "Striped Club" : 15,

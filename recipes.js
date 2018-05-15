@@ -906,7 +906,7 @@ druidicShoes.requires = {
 }
 blueprints.push(druidicShoes)
 
-const fightingShoes = new item("Fighing Stilettos",115,70000,"shoes");
+const fightingShoes = new item("Fighting Stilettos",115,70000,"shoes");
 fightingShoes.cost = {
     "Wood":20,
     "Leather":64,
@@ -922,7 +922,7 @@ bardicShoes.cost = {
     "Leather":93,
 }
 bardicShoes.requires = {
-    "Fighing Stilettos" : 100,
+    "Fighting Stilettos" : 100,
 }
 blueprints.push(bardicShoes)
 
@@ -1635,7 +1635,7 @@ const imageReference = {
     "Hamster Clogs" : '<img src="PixelItem/Equip/Feet/ShoesB0.png">',
     "Mage Moccasins" : '<img src="PixelItem/Equip/Feet/ShoesE3.png">',
     "Druidic Boots" : '<img src="PixelItem/Equip/Feet/SabatonsB1.png">',
-    "Fighing Stilettos" : '<img src="PixelItem/Equip/Feet/ShoesC0.png">',
+    "Fighting Stilettos" : '<img src="PixelItem/Equip/Feet/ShoesC0.png">',
     "Bardic Galoshes" : '<img src="PixelItem/Equip/Feet/ShoesH.png">',
     "Master Loafers" : '<img src="PixelItem/Equip/Feet/Sandals0.png">',
     "Foxy Slippers" : '<img src="PixelItem/Equip/Feet/ShoesA0.png">',
