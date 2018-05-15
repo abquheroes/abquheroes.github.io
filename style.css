@@ -465,7 +465,6 @@ input#importSaveText {
     width: 100%;
     max-width: 40px;
     overflow: hidden;
-    transition: width 0.2s ease-in-out;
     border-right: 1px solid var(--theme-border);
 }
 
@@ -493,7 +492,7 @@ input#importSaveText {
     margin-bottom: 2px;
     width: 32px;
     height: 32px;
-    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.pnguserpics/nopic.jpg');
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 16px;
