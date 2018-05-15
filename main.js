@@ -286,12 +286,14 @@ function populateRecipe(type) {
             const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
             td1.append(name);
             let s = "";
+            const td2 = $('<div/>').addClass('recipeCost');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                 if (amt > 0) {
-                    s += amt + "&nbsp" + imageReference[type] + "&nbsp;&nbsp;"
+                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(amt + "&nbsp" + imageReference[type])
+                    td2.append(td2a);
                 }
             }
-            const td2 = $('<div/>').addClass('recipeCost').html(s);
+            
             const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
             const td4 = $('<div/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
             const td5 = $('<div/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
