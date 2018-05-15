@@ -485,6 +485,300 @@ wrathAxe.requires = {
 }
 blueprints.push(wrathAxe)
 
+//hats category
+const simpleHat = new item("Simple Hat",45,54000,"hats");
+simpleHat.cost = {
+    "Herb":14,
+    "Leather":20,
+}
+blueprints.push(simpleHat)
+
+const hiddenHat = new item("Hidden Mask",70,68000,"hats");
+hiddenHat.cost = {
+    "Herb":20,
+    "Leather":27,
+}
+hiddenHat.requires = {
+    "Simple Hat" : 100,
+}
+blueprints.push(hiddenHat)
+
+const blackHat = new item("Black Hat",109,84000,"hats");
+blackHat.cost = {
+    "Herb":29,
+    "Leather":36,
+}
+blackHat.requires = {
+    "Hidden Mask" : 100,
+}
+blueprints.push(blackHat)
+
+const beachHat = new item("Beach Hat",170,105000,"hats");
+beachHat.cost = {
+    "Herb":42,
+    "Leather":49,
+}
+beachHat.requires = {
+    "Black Hat" : 100,
+}
+blueprints.push(beachHat)
+
+const greenBayHat = new item("Green Bay Beret",265,132000,"hats");
+greenBayHat.cost = {
+    "Herb":62,
+    "Leather":66,
+}
+greenBayHat.requires = {
+    "Beach Hat" : 100,
+}
+blueprints.push(greenBayHat)
+
+const theMindCapHat = new item("The Mind Cap",413,165000,"hats");
+theMindCapHat.cost = {
+    "Herb":90,
+    "Leather":90,
+}
+theMindCapHat.requires = {
+    "Green Bay Beret" : 100,
+}
+blueprints.push(theMindCapHat)
+
+const princessHat = new item("Ornate Crown",645,206000,"hats");
+princessHat.cost = {
+    "Herb":130,
+    "Leather":121,
+}
+princessHat.requires = {
+    "The Mind Cap" : 100,
+}
+blueprints.push(princessHat)
+
+const spellcasterHat = new item("Spellcasting Hat",1008,258000,"hats");
+spellcasterHat.cost = {
+    "Herb":189,
+    "Leather":163,
+}
+spellcasterHat.requires = {
+    "Ornate Crown" : 100,
+}
+blueprints.push(spellcasterHat)
+
+const spoopyHat = new item("Spoopy Mask",1577,322000,"hats");
+spoopyHat.cost = {
+    "Herb":274,
+    "Leather":221,
+}
+spoopyHat.requires = {
+    "Spellcasting Hat" : 100,
+}
+blueprints.push(spoopyHat)
+
+const allFolksHat = new item("All Folks Hats",2470,402000,"hats");
+allFolksHat.cost = {
+    "Herb":397,
+    "Leather":298,
+}
+allFolksHat.requires = {
+    "Spoopy Mask" : 100,
+}
+blueprints.push(allFolksHat)
+
+//wands category
+const basicWand = new item("Basic Wand",38,38000,"wands");
+basicWand.cost = {
+    "Wood":9,
+    "Herb":12,
+}
+blueprints.push(basicWand)
+
+const forestWand = new item("Forest Wand",57,48000,"wands");
+forestWand.cost = {
+    "Wood":13,
+    "Herb":16,
+}
+forestWand.requires = {
+    "Basic Wand" : 100,
+}
+blueprints.push(forestWand)
+
+const windWand = new item("Wind Wand",88,59000,"wands");
+windWand.cost = {
+    "Wood":19,
+    "Herb":22,
+}
+windWand.requires = {
+    "Forest Wand" : 100,
+}
+blueprints.push(windWand)
+
+const soulWand = new item("Soul Wand",134,74000,"wands");
+soulWand.cost = {
+    "Wood":27,
+    "Herb":30,
+}
+soulWand.requires = {
+    "Wind Wand" : 100,
+}
+blueprints.push(soulWand)
+
+const rainWand = new item("Rain Wand",205,93000,"wands");
+rainWand.cost = {
+    "Wood":40,
+    "Herb":40,
+}
+rainWand.requires = {
+    "Soul Wand" : 100,
+}
+blueprints.push(rainWand)
+
+const frozenWand = new item("Frozen Wand",315,116000,"wands");
+frozenWand.cost = {
+    "Wood":58,
+    "Herb":54,
+}
+frozenWand.requires = {
+    "Rain Wand" : 100,
+}
+blueprints.push(frozenWand)
+
+const oceanWand = new item("Ocean Wand",483,145000,"wands");
+oceanWand.cost = {
+    "Wood":84,
+    "Herb":73,
+}
+oceanWand.requires = {
+    "Frozen Wand" : 100,
+}
+blueprints.push(oceanWand)
+
+const thunderWand = new item("Thunder Wand",742,181000,"wands");
+thunderWand.cost = {
+    "Wood":121,
+    "Herb":98,
+}
+thunderWand.requires = {
+    "Ocean Wand" : 100,
+}
+blueprints.push(thunderWand)
+
+const hateWand = new item("Hate Wand",1142,226000,"wands");
+hateWand.cost = {
+    "Wood":176,
+    "Herb":132,
+}
+hateWand.requires = {
+    "Thunder Wand" : 100,
+}
+blueprints.push(hateWand)
+
+const loveWand = new item("Love Wand",1760,283000,"wands");
+loveWand.cost = {
+    "Wood":255,
+    "Herb":179,
+}
+loveWand.requires = {
+    "Hate Wand" : 100,
+}
+blueprints.push(loveWand)
+
+//gauntlets category
+
+const newGauntlets = new item("New Gauntlets",24,29000,"gauntlets");
+newGauntlets.cost = {
+    "Ore":7,
+    "Leather":18,
+}
+blueprints.push(newGauntlets)
+
+const shinyGauntlets = new item("Shiny Gauntlets",37,36000,"gauntlets");
+shinyGauntlets.cost = {
+    "Ore":9,
+    "Leather":26,
+}
+shinyGauntlets.requires = {
+    "New Gauntlets" : 100,
+}	
+blueprints.push(shinyGauntlets)
+
+const plainGauntlets = new item("Plain Gauntlets",57,45000,"gauntlets");
+plainGauntlets.cost = {
+    "Ore":13,
+    "Leather":38,
+}
+plainGauntlets.requires = {
+    "Shiny Gauntlets" : 100,
+}	
+blueprints.push(plainGauntlets)
+
+const pristineGauntlets = new item("Pristine Gauntlets",89,57000,"gauntlets");
+pristineGauntlets.cost = {
+    "Ore":17,
+    "Leather":55,
+}
+pristineGauntlets.requires = {
+    "Plain Gauntlets" : 100,
+}	
+blueprints.push(pristineGauntlets)
+
+const challengeGauntlets = new item("Challenge Gauntlets",140,71000,"gauntlets");
+challengeGauntlets.cost = {
+    "Ore":23,
+    "Leather":80,
+}
+challengeGauntlets.requires = {
+    "Pristine Gauntlets" : 100,
+}	
+blueprints.push(challengeGauntlets)
+
+const fancyGauntlets = new item("Fancy Gauntlets",219,89000,"gauntlets");
+fancyGauntlets.cost = {
+    "Ore":31,
+    "Leather":115,
+}
+fancyGauntlets.requires = {
+    "Challenge Gauntlets" : 100,
+}	
+blueprints.push(fancyGauntlets)
+
+const oldGauntlets = new item("Old Gauntlets",343,111000,"gauntlets");
+oldGauntlets.cost = {
+    "Ore":42,
+    "Leather":167,
+}
+oldGauntlets.requires = {
+    "Fancy Gauntlets" : 100,
+}	
+blueprints.push(oldGauntlets)
+
+const darkGauntlets = new item("Dark Gauntlets",539,138000,"gauntlets");
+darkGauntlets.cost = {
+    "Ore":57,
+    "Leather":243,
+}
+darkGauntlets.requires = {
+    "Old Gauntlets" : 100,
+}	
+blueprints.push(darkGauntlets)
+
+const dandyGauntlets = new item("Dandy Gauntlets",846,173000,"gauntlets");
+dandyGauntlets.cost = {
+    "Ore":77,
+    "Leather":352,
+}
+dandyGauntlets.requires = {
+    "Dark Gauntlets" : 100,
+}	
+blueprints.push(dandyGauntlets)
+
+const coolGauntlets = new item("Cool Gauntlets",1329,216000,"gauntlets");
+coolGauntlets.cost = {
+    "Ore":104,
+    "Leather":510,
+}
+coolGauntlets.requires = {
+    "Dandy Gauntlets" : 100,
+}	
+blueprints.push(coolGauntlets)
 
 const imageReference = {
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
@@ -547,4 +841,34 @@ const imageReference = {
     "Loving Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_8.png">',
     "Other Gloves" : '<img src="PixelItem/Equip/Hands/Gloves2.png">',
     "Boxing Gloves" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/gloves/glove_1.png">',
+    "Simple Hat" : '<img src="PixelItem/Equip/Head/Hat0.png">',
+    "Hidden Mask" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/helmets/helmet_97.png">',
+    "Black Hat" : '<img src="PixelItem/Equip/Head/Hat2.png">',
+    "Beach Hat" : '<img src="PixelItem/Equip/Head/Hat1.png">',
+    "Green Bay Beret" : '<img src="PixelItem/Consume/Cheese.png">',
+    "The Mind Cap" : '<img src="PixelItem/Equip/Head/Hat5.png">',
+    "Ornate Crown" : '<img src="PixelItem/Equip/Head/CrownEmrald.png">',
+    "Spellcasting Hat" : '<img src="PixelItem/Equip/Head/Hat3.png">',
+    "Spoopy Mask" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/helmets/helmet_102.png">',
+    "All Folks Hats" : '<img src="PixelItem/Equip/Head/Hat4.png">',
+    "Basic Wand" : '<img src="PixelItem/Equip/Weapon/Wand0.png">',
+    "Forest Wand" : '<img src="PixelItem/Equip/Weapon/Wand1.png">',
+    "Wind Wand" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_176.png			">',
+    "Soul Wand" : '<img src="Equip/Weapon/Wand6.png">',
+    "Rain Wand" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_177.png">',
+    "Frozen Wand" : '<img src="PixelItem/Equip/Weapon/Wand4.png">',
+    "Ocean Wand" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_189.png">',
+    "Thunder Wand" : '<img src="PixelItem/Equip/Weapon/Wand3.png">',
+    "Hate Wand" : '<img src="PixelItem/Equip/Weapon/Wand2.png">',
+    "Love Wand" : '<img src="PixelItem/Equip/Weapon/Wand5.png">',
+    "New Gauntlets" : '<img src="PixelItem/Equip/Set/CrusaderGauntlets.png">',
+    "Shiny Gauntlets" : '<img src="PixelItem/Equip/Set/BrassGauntlets.png">',
+    "Plain Gauntlets" : '<img src="PixelItem/Equip/Set/FineSteelGauntlets.png">',
+    "Pristine Gauntlets" : '<img src="PixelItem/Equip/Set/TitaniumGauntlets.png">',
+    "Challenge Gauntlets" : '<img src="PixelItem/Equip/Set/FieryGauntlets.png">',
+    "Fancy Gauntlets" : '<img src="PixelItem/Equip/Set/PoisonGauntlets.png">',
+    "Old Gauntlets" : '<img src="PixelItem/Equip/Hands/Gauntlets.png">',
+    "Dark Gauntlets" : '<img src="PixelItem/Equip/Set/DarkGauntlets.png">',
+    "Dandy Gauntlets" : '<img src="PixelItem/Equip/Set/GoldGauntlets.png">',
+    "Cool Gauntlets" : '<img src="PixelItem/Equip/Set/IcyGauntlets.png">',
 }
