@@ -29,10 +29,6 @@ function refreshInventory() {
 }
 
 function canAddtoInventory(name) {
-    const item = nameToItem(name);
-    for (const [res, amt] of Object.entries(item.cost)) {
-        if (!resources.includes(res)) return true;
-    }
     return player.inventoryCap > inventory.length;
 }
 

@@ -54,6 +54,7 @@ const upgradeProgress = {
     "Max Leather" : 0,
     "Max Herb" : 0,
     "Max Action Slots" : 0,
+    "Max Inventory Slots" : 0,
 }
 
 const inventory = [];
@@ -327,7 +328,6 @@ function canCraft(loc) {
             if (player[res] < amt) return false;
         }
         else {
-            console.log(numberInventory(res));
             if (numberInventory(res) < amt) return false;
         }
     }
