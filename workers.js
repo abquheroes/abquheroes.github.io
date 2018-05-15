@@ -6,8 +6,8 @@ function Worker(name,baseTime,description) {
     this.craftTime = baseTime; //this is in miliseconds
     this.description = description;
     this.lvl = 0;
-    this.cost = [300,600,1000,1500,3000,6000,12000,20000,35000,50000];
-    this.multiplier = [1,1.1,1.3,1.5,1.75,2,2.25,2.75,3.5,5];
+    this.cost = [500,625,781,977,1221,1526,1907,2384,2980,3725,4657,5821,7276,9095,11369,14211,17764,22204,27756,34694,43368,54210,67763,84703,105879];
+    this.multiplier = [1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.5,2.6,2.7,2.8,2.9,3,3.1,3.2,3.3,3.4,4,4.1,4.2,4.3,4.4,5];
 }
 
 Worker.prototype.production = function() {
