@@ -92,7 +92,7 @@ body{
 
 #game-logo {
     background-color: var(--theme-bg);
-    background-image: url(images/site-logo.png);
+    background-image: url('images/site-logo.png');
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
@@ -460,8 +460,20 @@ input#importSaveText {
 
 #RecipeFilter a.recipeSelect {
     color: var(--theme-text);
-    padding: 0 15px;
+    padding: 0 15px 0 3px;
     height: 100%;
+    width: 100%;
+    max-width: 40px;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out;
+    border-right: 1px solid var(--theme-border);
+}
+
+#RecipeFilter a.recipeSelect.selected {
+    width: auto;
+    max-width: 100%;
+    background-color: var(--theme-link);
+    color: var(--theme-text-2);
 }
 
 #RecipeFilter a.recipeSelect:first-of-type {
@@ -471,6 +483,81 @@ input#importSaveText {
 #RecipeFilter a.recipeSelect:hover {
     background-color: var(--theme-link);
     color: var(--theme-text-2);
+}
+
+#RecipeFilter a[href*="Selector"]:before {
+    display: inline-block;
+    position: relative;
+    content: "";
+    margin-right: 5px;
+    margin-bottom: 2px;
+    width: 32px;
+    height: 32px;
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.pnguserpics/nopic.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    vertical-align: middle;
+}
+
+#RecipeFilter a[href="KnifeSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="MaceSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="GloveSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="PotionSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="AxeSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="HatSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="WandSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="GauntletSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="HelmetSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="ShoeSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="WardSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="ShieldSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="CloakSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="ArmorSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
+}
+
+#RecipeFilter a[href="PendantSelector"]:before {
+    background-image: url('Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_100.png');
 }
 
 .recipeTable, .jobTable {
