@@ -10,6 +10,8 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
 
 function refreshInventory() {
     $inventory.empty();
+    const t1 = $("<p/>").addClass("inventoryCount").html(inventory.length + "/" + player.inventoryCap + " Slots Filled");
+    $inventory.append(t1);
     //build the sorted inventory
     for (let i=0;i<blueprints.length;i++) {
         const name = blueprints[i].name;
@@ -24,8 +26,6 @@ function refreshInventory() {
             $inventory.append(itemdiv);
         }
     }
-    const t1 = $("<p/>").addClass("inventoryCount").html(inventory.length + "/" + player.inventoryCap + " Slots Filled");
-    $inventory.append(t1);
 }
 
 function canAddtoInventory(name) {

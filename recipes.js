@@ -25,6 +25,7 @@ function nameToItem(name) {
 
 function requirement(item) {
     for (let req in item.requires) {
+        if (typeof itemCount[req] === "undefined") return false;
         if (itemCount[req] < item.requires[req]) return false;
     }
     return true;

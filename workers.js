@@ -309,8 +309,8 @@ function refreshWorkers() {
         if (lvl < 10) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
                 const slot = workers[i].name+"_"+lvl+"_"+itemName;
-                if (!(slot in workerProgress)) workerProgress[slot] = 0;
-                const adjAmt = amt - workerProgress[slot];
+                if (!(slot in workerSacProgress)) workerSacProgress[slot] = 0;
+                const adjAmt = amt - workerSacProgress[slot];
                 if (adjAmt > 0) {
                     craftsLeft = true;
                     const d6a = $('<div/>').addClass("itemToSacDiv");
@@ -376,7 +376,8 @@ $(document).on("click", "a.itemToSac", (e) => {
     const itemName = $(e.target).attr("item");
     const success = removeFromInventory(itemName);
     if (success) {
-        workerProgress[slot] += 1;
+        workerSacProgress[slot] += 1;
         refreshWorkers();
+        populateJob();
     }
 });
