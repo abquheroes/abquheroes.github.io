@@ -451,6 +451,7 @@ const slothslayerAxe = new item("Slothslayer",119,46000,"axes");
 slothslayerAxe.cost = {
     "Ore":22,
     "Wood":32,
+    "Kitchen Knife":2,
 }
 slothslayerAxe.requires = {
     "Greedy Pickaxe" : 100,
@@ -461,6 +462,7 @@ const lustyHandaxeAxe = new item("Lusty Handaxe",186,57000,"axes");
 lustyHandaxeAxe.cost = {
     "Ore":30,
     "Wood":46,
+    "The Broominator":2,
 }
 lustyHandaxeAxe.requires = {
     "Slothslayer" : 100,
@@ -471,6 +473,7 @@ const envyAxe = new item("Envy",290,72000,"axes");
 envyAxe.cost = {
     "Ore":41,
     "Wood":67,
+    "Hugging Gloves":2,
 }
 envyAxe.requires = {
     "Lusty Handaxe" : 100,
@@ -481,6 +484,7 @@ const gluttonousAxeAxe = new item("Gluttonous Axe",453,89000,"axes");
 gluttonousAxeAxe.cost = {
     "Ore":55,
     "Wood":98,
+    "Night Club":2,
 }
 gluttonousAxeAxe.requires = {
     "Envy" : 100,
@@ -491,6 +495,7 @@ const wrathAxe = new item("Wrath",708,112000,"axes");
 wrathAxe.cost = {
     "Ore":74,
     "Wood":142,
+    "Strength Potion":2,
 }
 wrathAxe.requires = {
     "Gluttonous Axe" : 100,
@@ -549,6 +554,7 @@ const theMindCapHat = new item("The Mind Cap",413,165000,"hats");
 theMindCapHat.cost = {
     "Herb":90,
     "Leather":90,
+    "Coughing Potion":2,
 }
 theMindCapHat.requires = {
     "Green Bay Beret" : 100,
@@ -559,6 +565,7 @@ const princessHat = new item("Ornate Crown",645,206000,"hats");
 princessHat.cost = {
     "Herb":130,
     "Leather":121,
+    "Thats A Knife":2,
 }
 princessHat.requires = {
     "The Mind Cap" : 100,
@@ -569,6 +576,7 @@ const spellcasterHat = new item("Spellcasting Hat",1008,258000,"hats");
 spellcasterHat.cost = {
     "Herb":189,
     "Leather":163,
+    "Fighting Gloves":2,
 }
 spellcasterHat.requires = {
     "Ornate Crown" : 100,
@@ -579,6 +587,7 @@ const spoopyHat = new item("Spoopy Mask",1577,322000,"hats");
 spoopyHat.cost = {
     "Herb":274,
     "Leather":221,
+    "Other Gloves":2,
 }
 spoopyHat.requires = {
     "Spellcasting Hat" : 100,
@@ -589,6 +598,7 @@ const allFolksHat = new item("All Folks Hats",2470,402000,"hats");
 allFolksHat.cost = {
     "Herb":397,
     "Leather":298,
+    "Dark Is The Knife":2,
 }
 allFolksHat.requires = {
     "Spoopy Mask" : 100,
@@ -647,6 +657,7 @@ const frozenWand = new item("Frozen Wand",315,116000,"wands");
 frozenWand.cost = {
     "Wood":58,
     "Herb":54,
+    "Cleaning Gloves":2
 }
 frozenWand.requires = {
     "Rain Wand" : 100,
@@ -657,6 +668,7 @@ const oceanWand = new item("Ocean Wand",483,145000,"wands");
 oceanWand.cost = {
     "Wood":84,
     "Herb":73,
+    "Rejuvinating Potion":2
 }
 oceanWand.requires = {
     "Frozen Wand" : 100,
@@ -667,6 +679,7 @@ const thunderWand = new item("Thunder Wand",742,181000,"wands");
 thunderWand.cost = {
     "Wood":121,
     "Herb":98,
+    "Striped Club":2
 }
 thunderWand.requires = {
     "Ocean Wand" : 100,
@@ -677,6 +690,7 @@ const hateWand = new item("Hate Wand",1142,226000,"wands");
 hateWand.cost = {
     "Wood":176,
     "Herb":132,
+    "Bitter Potion":2
 }
 hateWand.requires = {
     "Thunder Wand" : 100,
@@ -687,6 +701,7 @@ const loveWand = new item("Love Wand",1760,283000,"wands");
 loveWand.cost = {
     "Wood":255,
     "Herb":179,
+    "Knife Club":2
 }
 loveWand.requires = {
     "Hate Wand" : 100,
@@ -746,6 +761,7 @@ const fancyGauntlets = new item("Fancy Gauntlets",219,89000,"gauntlets");
 fancyGauntlets.cost = {
     "Ore":31,
     "Leather":115,
+    "New Gauntlets":2,
 }
 fancyGauntlets.requires = {
     "Challenge Gauntlets" : 100,
@@ -756,6 +772,7 @@ const oldGauntlets = new item("Old Gauntlets",343,111000,"gauntlets");
 oldGauntlets.cost = {
     "Ore":42,
     "Leather":167,
+    "Chefs Knife":2,
 }
 oldGauntlets.requires = {
     "Fancy Gauntlets" : 100,
@@ -766,6 +783,7 @@ const darkGauntlets = new item("Dark Gauntlets",539,138000,"gauntlets");
 darkGauntlets.cost = {
     "Ore":57,
     "Leather":243,
+    "Bludgeon":2
 }
 darkGauntlets.requires = {
     "Old Gauntlets" : 100,
@@ -776,6 +794,7 @@ const dandyGauntlets = new item("Dandy Gauntlets",846,173000,"gauntlets");
 dandyGauntlets.cost = {
     "Ore":77,
     "Leather":352,
+    "Like Potion":2
 }
 dandyGauntlets.requires = {
     "Dark Gauntlets" : 100,
@@ -786,6 +805,7 @@ const coolGauntlets = new item("Cool Gauntlets",1329,216000,"gauntlets");
 coolGauntlets.cost = {
     "Ore":104,
     "Leather":510,
+    "Boxing Gloves":2
 }
 coolGauntlets.requires = {
     "Dandy Gauntlets" : 100,
@@ -844,6 +864,7 @@ const skullHelmet = new item("Skull Helmet",248,89000,"helmets");
 skullHelmet.cost = {
     "Ore":51,
     "Herb":49,
+    "Blackjack":2,
 }
 skullHelmet.requires = {
     "Mega Helmet" : 100,
@@ -854,6 +875,7 @@ const darkHelmet = new item("Dark Helmet",378,111000,"helmets");
 darkHelmet.cost = {
     "Ore":74,
     "Herb":67,
+    "Sleeping Potion":2
 }
 darkHelmet.requires = {
     "Skull Helmet" : 100,
@@ -864,6 +886,7 @@ const whimsicalHelmet = new item("Whimsical Helmet",578,138000,"helmets");
 whimsicalHelmet.cost = {
     "Ore":108,
     "Herb":90,
+    "Fishing Knife":2
 }
 whimsicalHelmet.requires = {
     "Dark Helmet" : 100,
@@ -874,6 +897,7 @@ const magnetizedHelmet = new item("Magnetized Helmet",884,173000,"helmets");
 magnetizedHelmet.cost = {
     "Ore":156,
     "Herb":121,
+    "Mega Helmet":2,
 }
 magnetizedHelmet.requires = {
     "Whimsical Helmet" : 100,
@@ -884,6 +908,7 @@ const coalHelmutHelmet = new item("Coal Helmut",1353,216000,"helmets");
 coalHelmutHelmet.cost = {
     "Ore":227,
     "Herb":164,
+    "Fact Finder":2,
 }
 coalHelmutHelmet.requires = {
     "Magnetized Helmet" : 100,
@@ -942,6 +967,7 @@ const masterShoes = new item("Master Loafers",280,110000,"shoes");
 masterShoes.cost = {
     "Wood":36,
     "Leather":135,
+    "Laughing Potion":2
 }
 masterShoes.requires = {
     "Bardic Galoshes" : 100,
@@ -952,6 +978,7 @@ const foxyShoes = new item("Foxy Slippers",436,137000,"shoes");
 foxyShoes.cost = {
     "Wood":48,
     "Leather":195,
+    "Hamster Clogs":2,
 }
 foxyShoes.requires = {
     "Master Loafers" : 100,
@@ -962,6 +989,7 @@ const hairyShoes = new item("Hairy Shoes",682,172000,"shoes");
 hairyShoes.cost = {
     "Wood":65,
     "Leather":283,
+    "Dancing Gloves":2,
 }
 hairyShoes.requires = {
     "Foxy Slippers" : 100,
@@ -972,6 +1000,7 @@ const lunarShoes = new item("Lunar Whalers",1065,215000,"shoes");
 lunarShoes.cost = {
     "Wood":88,
     "Leather":410,
+    "Club Knife":2,
 }
 lunarShoes.requires = {
     "Hairy Shoes" : 100,
@@ -982,6 +1011,7 @@ const walkerShoes = new item("Jay Walkers",1667,268000,"shoes");
 walkerShoes.cost = {
     "Wood":119,
     "Leather":595,
+    "Loving Gloves":2,
 }
 walkerShoes.requires = {
     "Lunar Whalers" : 100,
