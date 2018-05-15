@@ -18,7 +18,7 @@ function refreshInventory() {
             
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
             const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Click to sell "+name).html(name);
-            const itemCt = $("<div/>").addClass("inventoryCount").html(count+"x");
+            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+count);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
             $inventory.append(itemdiv);

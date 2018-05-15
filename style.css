@@ -588,8 +588,14 @@ input#importSaveText {
 .Worker .itemSac {
     display: flex;
     position: relative;
+    justify-content: center;
     flex-direction: row;
     margin-top: 15px;
+}
+
+.itemToSacDiv {
+    min-width: 20%;
+    margin: 0 2px;
 }
 
 .Worker .itemToSac {
@@ -597,8 +603,9 @@ input#importSaveText {
     text-align: center;
     background-color: var(--theme-bg-3);
     border: 1px solid var(--theme-border);
-    margin: 0 5px 0 0;
     padding: 10px;
+    font-size: .9em;
+    width: 100%;
 }
 
 .Worker .BuyWorker, .Upgrade .BuyUpgrade {
