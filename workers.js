@@ -35,60 +35,142 @@ oren.produces = {
     "Ore" : 20,
 }
 oren.lvlreq = [
-    {//lv1
-        "Knife" : 50
+    {//1
+        "Knife" : 5,
     },
-    {//lv2
-        "Butter Knife" : 25,
+    {//2
+        "Knife" : 10,
+    },
+    {//3
+        "Knife" : 10,
+        "Butter Knife" : 5,
+    },
+    {//4
+        "Knife" : 10,
+        "Butter Knife" : 10,
+    },
+    {//5
+        "Knife" : 10,
+        "Butter Knife" : 10,
+        "Kitchen Knife" : 5,
+    },
+    {//6
+        "Knife" : 15,
+        "Butter Knife" : 10,
+        "Kitchen Knife" : 5,
+    },
+    {//7
+        "Knife" : 15,
+        "Butter Knife" : 10,
+        "Kitchen Knife" : 10,
+    },
+    {//8
+        "Knife" : 15,
+        "Butter Knife" : 10,
+        "Kitchen Knife" : 10,
+        "Chefs Knife" : 5,
+    },
+    {//9
+        "Knife" : 20,
+        "Butter Knife" : 10,
+        "Kitchen Knife" : 10,
+        "Chefs Knife" : 5,
+    },
+    {//10
+        "Knife" : 25,
+        "Butter Knife" : 15,
+        "Kitchen Knife" : 15,
         "Chefs Knife" : 10,
     },
-    {//lv3
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//11
+        "Chefs Knife" : 15,
+        "Rage Maker" : 5,
+        "New Gauntlets" : 5,
+        "Standard Helmet" : 5,
     },
-    {//lv4
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//12
+        "Fishing Knife" : 5,
+        "Rage Maker" : 10,
+        "New Gauntlets" : 10,
+        "Standard Helmet" : 10,
     },
-    {//lv5
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//13
+        "Fishing Knife" : 10,
+        "Fury Bringer" : 5,
+        "Shiny Gauntlets" : 5,
+        "Cobalt Helmet" : 5,
     },
-    {//lv6
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//14
+        "Fishing Knife" : 15,
+        "Fury Bringer" : 10,
+        "Shiny Gauntlets" : 10,
+        "Cobalt Helmet" : 10,
     },
-    {//lv7
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//15
+        "Thats Not A Knife" : 5,
+        "Vengance" : 5,
+        "Plain Gauntlets" : 5,
+        "Regular Helmet" : 5,
     },
-    {//lv8
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//16
+        "Thats Not A Knife" : 10,
+        "Vengance" : 10,
+        "Plain Gauntlets" : 10,
+        "Regular Helmet" : 10,
     },
-    {//lv9
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//17
+        "Thats Not A Knife" : 15,
+        "Pride" : 5,
+        "Pristine Gauntlets" : 5,
+        "Super Helmet" : 5,
     },
-    {//lv10
-        "Knife" : 100,
-        "Butter Knife" : 25,
-        "Chefs Knife" : 10,
-        "Dark Is The Knife" : 30,
+    {//18
+        "Thats A Knife" : 10,
+        "Pride" : 10,
+        "Pristine Gauntlets" : 10,
+        "Super Helmet" : 10,
+    },
+    {//19
+        "Thats A Knife" : 15,
+        "Greedy Pickaxe" :	5,
+        "Challenge Gauntlets" : 5,
+        "Mega Helmet" : 5,
+    },
+    {//20
+        "Club Knife" : 10,
+        "Greedy Pickaxe" : 10,
+        "Challenge Gauntlets" : 10,
+        "Mega Helmet" : 10,
+    },
+    {//21
+        "Club Knife" : 15,
+        "Slothslayer" : 10,
+        "Fancy Gauntlets" : 10,
+        "Skull Helmet" : 10,
+    },
+    {//22
+        "Dark Is The Knife" : 10,
+        "Lusty Handaxe" : 10,
+        "Old Gauntlets" : 10,
+        "Dark Helmet" : 10, r
+    },
+    {//23
+        "Dark Is The Knife" : 15,
+        "Envy" : 10,
+        "Dark Gauntlets" :	10,
+        "Whimsical Helmet" : 10,
+    },
+    {//24
+        "The Bloopinator" : 10,
+        "Gluttonous Axe" : 10,
+        "Dandy Gauntlets" : 10,
+        "Magnetized Helmet" : 10,
+    },
+    {//25
+        "The Bloopinator" : 15,
+        "Wrath" : 10,
+        "Cool Gauntlets" : 10,
+        "Coal Helmut" : 10,
     },
 ]
 workers.push(oren);
