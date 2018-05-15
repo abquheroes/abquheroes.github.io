@@ -780,6 +780,275 @@ coolGauntlets.requires = {
 }	
 blueprints.push(coolGauntlets)
 
+//helmets
+const megaHelmet = new item("Mega Helmet",163,71000,"helmets");
+megaHelmet.cost = {
+    "Ore":35,
+    "Herb":37,
+}
+megaHelmet.requires = {
+    "Super Helmet" : 100,
+}
+blueprints.push(megaHelmet)
+
+const skullHelmet = new item("Skull Helmet",248,89000,"helmets");
+skullHelmet.cost = {
+    "Ore":51,
+    "Herb":49,
+}
+skullHelmet.requires = {
+    "Mega Helmet" : 100,
+}
+blueprints.push(skullHelmet)
+
+const darkHelmet = new item("Dark Helmet",378,111000,"helmets");
+darkHelmet.cost = {
+    "Ore":74,
+    "Herb":67,
+}
+darkHelmet.requires = {
+    "Skull Helmet" : 100,
+}
+blueprints.push(darkHelmet)
+
+const whimsicalHelmet = new item("Whimsical Helmet",578,138000,"helmets");
+whimsicalHelmet.cost = {
+    "Ore":108,
+    "Herb":90,
+}
+whimsicalHelmet.requires = {
+    "Dark Helmet" : 100,
+}
+blueprints.push(whimsicalHelmet)
+
+const magnetizedHelmet = new item("Magnetized Helmet",884,173000,"helmets");
+magnetizedHelmet.cost = {
+    "Ore":156,
+    "Herb":121,
+}
+magnetizedHelmet.requires = {
+    "Whimsical Helmet" : 100,
+}
+blueprints.push(magnetizedHelmet)
+
+const coalHelmutHelmet = new item("Coal Helmut",1353,216000,"helmets");
+coalHelmutHelmet.cost = {
+    "Ore":227,
+    "Herb":164,
+}
+coalHelmutHelmet.requires = {
+    "Magnetized Helmet" : 100,
+}
+blueprints.push(coalHelmutHelmet)
+
+//shoes
+const hamsterShoes = new item("Hamster Clogs",31,36000,"shoes");
+hamsterShoes.cost = {
+    "Wood":8,
+    "Leather":21,
+}
+blueprints.push(hamsterShoes)
+
+const mageShoes = new item("Mage Moccasins",48,45000,"shoes");
+mageShoes.cost = {
+    "Wood":11,
+    "Leather":30,
+}
+mageShoes.requires = {
+    "Hamster Clogs" : 100,
+}
+blueprints.push(mageShoes)
+
+const druidicShoes = new item("Druidic Boots",74,56000,"shoes");
+druidicShoes.cost = {
+    "Wood":15,
+    "Leather":44,
+}
+druidicShoes.requires = {
+    "Mage Moccasins" : 100,
+}
+blueprints.push(druidicShoes)
+
+const fightingShoes = new item("Fighing Stilettos",115,70000,"shoes");
+fightingShoes.cost = {
+    "Wood":20,
+    "Leather":64,
+}
+fightingShoes.requires = {
+    "Druidic Boots" : 100,
+}
+blueprints.push(fightingShoes)
+
+const bardicShoes = new item("Bardic Galoshes",180,88000,"shoes");
+bardicShoes.cost = {
+    "Wood":27,
+    "Leather":93,
+}
+bardicShoes.requires = {
+    "Fighing Stilettos" : 100,
+}
+blueprints.push(bardicShoes)
+
+const masterShoes = new item("Master Loafers",280,110000,"shoes");
+masterShoes.cost = {
+    "Wood":36,
+    "Leather":135,
+}
+masterShoes.requires = {
+    "Bardic Galoshes" : 100,
+}
+blueprints.push(masterShoes)
+
+const foxyShoes = new item("Foxy Slippers",436,137000,"shoes");
+foxyShoes.cost = {
+    "Wood":48,
+    "Leather":195,
+}
+foxyShoes.requires = {
+    "Master Loafers" : 100,
+}
+blueprints.push(foxyShoes)
+
+const hairyShoes = new item("Hairy Shoes",682,172000,"shoes");
+hairyShoes.cost = {
+    "Wood":65,
+    "Leather":283,
+}
+hairyShoes.requires = {
+    "Foxy Slippers" : 100,
+}
+blueprints.push(hairyShoes)
+
+const lunarShoes = new item("Lunar Whalers",1065,215000,"shoes");
+lunarShoes.cost = {
+    "Wood":88,
+    "Leather":410,
+}
+lunarShoes.requires = {
+    "Hairy Shoes" : 100,
+}
+blueprints.push(lunarShoes)
+
+const walkerShoes = new item("Jay Walkers",1667,268000,"shoes");
+walkerShoes.cost = {
+    "Wood":119,
+    "Leather":595,
+}
+walkerShoes.requires = {
+    "Lunar Whalers" : 100,
+}
+blueprints.push(walkerShoes)
+
+//three resource items
+//wards
+
+const stealthWard = new item("Stealth Ward",49,45000,"wards");
+stealthWard.cost = {
+    "Ore":6,
+    "Wood":8,
+    "Herb":15,
+}
+blueprints.push(stealthWard)
+
+const sentryWard = new item("Sentry Ward",76,56000,"wards");
+sentryWard.cost = {
+    "Ore":8,
+    "Wood":11,
+    "Herb":22,
+}
+sentryWard.requires = {
+    "Stealth Ward" : 100,
+}
+blueprints.push(sentryWard)
+
+const spellWard = new item("Spell Ward",119,70000,"wards");
+spellWard.cost = {
+    "Ore":11,
+    "Wood":16,
+    "Herb":32,
+}
+spellWard.requires = {
+    "Sentry Ward" : 100,
+}
+blueprints.push(spellWard)
+
+const curseWard = new item("Curse Ward",187,88000,"wards");
+curseWard.cost = {
+    "Ore":15,
+    "Wood":22,
+    "Herb":46,
+}
+curseWard.requires = {
+    "Spell Ward" : 100,
+}
+blueprints.push(curseWard)
+
+const poisonWard = new item("Poison Ward",294,110000,"wards");
+poisonWard.cost = {
+    "Ore":20,
+    "Wood":31,
+    "Herb":66,
+}
+poisonWard.requires = {
+    "Curse Ward" : 100,
+}
+blueprints.push(poisonWard)
+
+const diseaseWard = new item("Disease Ward",461,137000,"wards");
+diseaseWard.cost = {
+    "Ore":27,
+    "Wood":43,
+    "Herb":96,
+}
+diseaseWard.requires = {
+    "Poison Ward" : 100,
+}
+blueprints.push(diseaseWard)
+
+const infectionWard = new item("Infection Ward",724,172000,"wards");
+infectionWard.cost = {
+    "Ore":36,
+    "Wood":60,
+    "Herb":139,
+}
+infectionWard.requires = {
+    "Disease Ward" : 100,
+}
+blueprints.push(infectionWard)
+
+const cancerWard = new item("Cancer Ward",1138,215000,"wards");
+cancerWard.cost = {
+    "Ore":49,
+    "Wood":84,
+    "Herb":202,
+}
+cancerWard.requires = {
+    "Infection Ward" : 100,
+}
+blueprints.push(cancerWard)
+
+const maternityWard = new item("Maternity Ward",1790,268000,"wards");
+maternityWard.cost = {
+    "Ore":66,
+    "Wood":118,
+    "Herb":293,
+}
+maternityWard.requires = {
+    "Cancer Ward" : 100,
+}
+blueprints.push(maternityWard)
+
+const burnUnitWard = new item("Burn Unit",2816,335000,"wards");
+burnUnitWard.cost = {
+    "Ore":89,
+    "Wood":165,
+    "Herb":425,
+}
+burnUnitWard.requires = {
+    "Maternity Ward" : 100,
+}
+blueprints.push(burnUnitWard)
+
 const imageReference = {
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
@@ -871,4 +1140,34 @@ const imageReference = {
     "Dark Gauntlets" : '<img src="PixelItem/Equip/Set/DarkGauntlets.png">',
     "Dandy Gauntlets" : '<img src="PixelItem/Equip/Set/GoldGauntlets.png">',
     "Cool Gauntlets" : '<img src="PixelItem/Equip/Set/IcyGauntlets.png">',
+    "Standard Helmet" : '<img src="PixelItem/Equip/Weapon/Wand0.png">',
+    "Cobalt Helmet" : '<img src="PixelItem/Equip/Weapon/Wand1.png">',
+    "Regular Helmet" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_176.png">',
+    "Super Helmet" : '<img src="Equip/Weapon/Wand6.png">',
+    "Mega Helmet" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_177.png">',
+    "Skull Helmet" : '<img src="PixelItem/Equip/Weapon/Wand4.png">',
+    "Dark Helmet" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_189.png">',
+    "Whimsical Helmet" : '<img src="PixelItem/Equip/Weapon/Wand3.png">',
+    "Magnetized Helmet" : '<img src="PixelItem/Equip/Weapon/Wand2.png">',
+    "Coal Helmut" : '<img src="PixelItem/Equip/Weapon/Wand5.png">',
+    "Hamster Clogs" : '<img src="PixelItem/Equip/Feet/ShoesB0.png">',
+    "Mage Moccasins" : '<img src="PixelItem/Equip/Feet/ShoesE3.png">',
+    "Druidic Boots" : '<img src="PixelItem/Equip/Feet/SabatonsB1.png">',
+    "Fighing Stilettos" : '<img src="PixelItem/Equip/Feet/ShoesC0.png">',
+    "Bardic Galoshes" : '<img src="PixelItem/Equip/Feet/ShoesH.png">',
+    "Master Loafers" : '<img src="PixelItem/Equip/Feet/Sandals0.png">',
+    "Foxy Slippers" : '<img src="PixelItem/Equip/Feet/ShoesA0.png">',
+    "Hairy Shoes" : '<img src="PixelItem/Equip/Feet/ShoesF1.png">',
+    "Lunar Whalers" : '<img src="PixelItem/Equip/Feet/ShoesE4.png">',
+    "Jay Walkers" : '<img src="PixelItem/Equip/Feet/ShoesF0.png">',
+    "Stealth Ward" : '<img src="PixelItem/Equip/Feet/ShoesB0.png">',
+    "Sentry Ward" : '<img src="PixelItem/Equip/Feet/ShoesE3.png">',
+    "Spell Ward" : '<img src="PixelItem/Equip/Feet/SabatonsB1.png">',
+    "Curse Ward" : '<img src="PixelItem/Equip/Feet/ShoesC0.png">',
+    "Poison Ward" : '<img src="PixelItem/Equip/Feet/ShoesH.png">',
+    "Disease Ward" : '<img src="PixelItem/Equip/Feet/Sandals0.png">',
+    "Infection Ward" : '<img src="PixelItem/Equip/Feet/ShoesA0.png">',
+    "Cancer Ward" : '<img src="PixelItem/Equip/Feet/ShoesF1.png">',
+    "Maternity Ward" : '<img src="PixelItem/Equip/Feet/ShoesE4.png">',
+    "Burn Unit" : '<img src="PixelItem/Equip/Feet/ShoesF0.png">',
 }
