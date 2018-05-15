@@ -1049,6 +1049,451 @@ burnUnitWard.requires = {
 }
 blueprints.push(burnUnitWard)
 
+//shields
+const patienceShield = new item("Patience",40,32000,"shields");
+patienceShield.cost = {
+    "Ore":7,
+    "Wood":10,
+    "Leather":19,
+}
+blueprints.push(patienceShield)
+
+const faithfulShield = new item("Faithful Buckler",61,40000,"shields");
+faithfulShield.cost = {
+    "Ore":10,
+    "Wood":15,
+    "Leather":26,
+}
+faithfulShield.requires = {
+    "Patience" : 100,
+}
+blueprints.push(faithfulShield)
+
+const defiantShield = new item("Defiant Targe",94,50000,"shields");
+defiantShield.cost = {
+    "Ore":14,
+    "Wood":21,
+    "Leather":35,
+}
+defiantShield.requires = {
+    "Faithful Buckler" : 100,
+}
+blueprints.push(defiantShield)
+
+const fairShield = new item("Fair Shield",145,63000,"shields");
+fairShield.cost = {
+    "Ore":19,
+    "Wood":30,
+    "Leather":47,
+}
+fairShield.requires = {
+    "Defiant Targe" : 100,
+}
+blueprints.push(fairShield)
+
+const wisdomShield = new item("Wisdom",224,78000,"shields");
+wisdomShield.cost = {
+    "Ore":27,
+    "Wood":44,
+    "Leather":63,
+}
+wisdomShield.requires = {
+    "Fair Shield" : 100,
+}
+blueprints.push(wisdomShield)
+
+const generousShield = new item("Generous Blocker",346,98000,"shields");
+generousShield.cost = {
+    "Ore":38,
+    "Wood":64,
+    "Leather":85,
+}
+generousShield.requires = {
+    "Wisdom" : 100,
+}
+blueprints.push(generousShield)
+
+const loyalShield = new item("Loyal Companion",536,122000,"shields");
+loyalShield.cost = {
+    "Ore":53,
+    "Wood":93,
+    "Leather":115,
+}
+loyalShield.requires = {
+    "Generous Blocker" : 100,
+}
+blueprints.push(loyalShield)
+
+const dignityShield = new item("Dignity",829,153000,"shields");
+dignityShield.cost = {
+    "Ore":74,
+    "Wood":135,
+    "Leather":155,
+}
+dignityShield.requires = {
+    "Loyal Companion" : 100,
+}
+blueprints.push(dignityShield)
+
+const trustworthyShield = new item("Trustworthy Kite",1284,191000,"shields");
+trustworthyShield.cost = {
+    "Ore":103,
+    "Wood":195,
+    "Leather":210,
+}
+trustworthyShield.requires = {
+    "Dignity" : 100,
+}
+blueprints.push(trustworthyShield)
+
+const truthTellerShield = new item("Truth Teller",1991,238000,"shields");
+truthTellerShield.cost = {
+    "Ore":145,
+    "Wood":283,
+    "Leather":283,
+}
+truthTellerShield.requires = {
+    "Trustworthy Kite" : 100,
+}
+blueprints.push(truthTellerShield)
+
+//cloaks
+const noviceCloak = new item("Novice Cloak",53,32000,"cloaks");
+noviceCloak.cost = {
+    "Wood":7,
+    "Leather":23,
+    "Herb":13,
+}
+blueprints.push(noviceCloak)
+
+const apprenticeCloak = new item("Apprentice Cloak",78,40000,"cloaks");
+apprenticeCloak.cost = {
+    "Wood":9,
+    "Leather":33,
+    "Herb":18,
+}
+apprenticeCloak.requires = {
+    "Novice Cloak" : 100,
+}
+blueprints.push(apprenticeCloak)
+
+const practitionerCloak = new item("Practitioner Cloak",115,50000,"cloaks");
+practitionerCloak.cost = {
+    "Wood":13,
+    "Leather":48,
+    "Herb":25,
+}
+practitionerCloak.requires = {
+    "Apprentice Cloak" : 100,
+}
+blueprints.push(practitionerCloak)
+
+const journeymanCloak = new item("Journeyman Cloak",170,63000,"cloaks");
+journeymanCloak.cost = {
+    "Wood":17,
+    "Leather":70,
+    "Herb":36,
+}
+journeymanCloak.requires = {
+    "Practitioner Cloak" : 100,
+}
+blueprints.push(journeymanCloak)
+
+const expertCloak = new item("Expert Cloak",253,78000,"cloaks");
+expertCloak.cost = {
+    "Wood":23,
+    "Leather":102,
+    "Herb":50,
+}
+expertCloak.requires = {
+    "Journeyman Cloak" : 100,
+}
+blueprints.push(expertCloak)
+
+const frostflingerCloak = new item("Frostflinger Cloak",379,98000,"cloaks");
+frostflingerCloak.cost = {
+    "Wood":31,
+    "Leather":147,
+    "Herb":70,
+}
+frostflingerCloak.requires = {
+    "Expert Cloak" : 100,
+}
+blueprints.push(frostflingerCloak)
+
+const waterbringerCloak = new item("Stormbringer Cloak",569,122000,"cloaks");
+waterbringerCloak.cost = {
+    "Wood":42,
+    "Leather":214,
+    "Herb":98,
+}
+waterbringerCloak.requires = {
+    "Frostflinger Cloak" : 100,
+}
+blueprints.push(waterbringerCloak)
+
+const earthslingerCloak = new item("Earthslinger Cloak",858,153000,"cloaks");
+earthslingerCloak.cost = {
+    "Wood":57,
+    "Leather":310,
+    "Herb":137,
+}
+earthslingerCloak.requires = {
+    "Stormbringer Cloak" : 100,
+}
+blueprints.push(earthslingerCloak)
+
+const lifegiverCloak = new item("Lifegiver Cloak",1301,191000,"cloaks");
+lifegiverCloak.cost = {
+    "Wood":77,
+    "Leather":449,
+    "Herb":192,
+}
+lifegiverCloak.requires = {
+    "Earthslinger Cloak" : 100,
+}
+blueprints.push(lifegiverCloak)
+
+const deathcallerCloak = new item("Deathcaller Cloak",1982,238000,"cloaks");
+deathcallerCloak.cost = {
+    "Wood":104,
+    "Leather":652,
+    "Herb":269,
+}
+deathcallerCloak.requires = {
+    "Lifegiver Cloak" : 100,
+}
+blueprints.push(deathcallerCloak)
+
+//armor
+const metalArmor = new item("Metal Armor",43,20000,"armor");
+metalArmor.cost = {
+    "Ore":9,
+    "Leather":21,
+    "Herb":9,
+}
+blueprints.push(metalArmor)
+
+
+const metallicArmor = new item("Metallic Armor",61,25000,"armor");
+metallicArmor.cost = {
+    "Ore":13,
+    "Leather":29,
+    "Herb":12,
+}
+metallicArmor.requires = {
+    "Metal Armor" : 100,
+}
+blueprints.push(metallicArmor)
+
+const pantherArmor = new item("Panther Armor",88,31000,"armor");
+pantherArmor.cost = {
+    "Ore":19,
+    "Leather":41,
+    "Herb":16,
+}
+pantherArmor.requires = {
+    "Metallic Armor" : 100,
+}
+blueprints.push(pantherArmor)
+
+const slayersArmor = new item("Slayers Plate",126,39000,"armor");
+slayersArmor.cost = {
+    "Ore":27,
+    "Leather":58,
+    "Herb":22,
+}
+slayersArmor.requires = {
+    "Panther Armor" : 100,
+}
+blueprints.push(slayersArmor)
+
+const zeppelinArmor = new item("Leaded Zeppelin Hull",182,49000,"armor");
+zeppelinArmor.cost = {
+    "Ore":40,
+    "Leather":81,
+    "Herb":30,
+}
+zeppelinArmor.requires = {
+    "Slayers Plate" : 100,
+}
+blueprints.push(zeppelinArmor)
+
+const acdChainmailArmor = new item("A Cool Dark Chainmail",265,61000,"armor");
+acdChainmailArmor.cost = {
+    "Ore":58,
+    "Leather":113,
+    "Herb":40,
+}
+acdChainmailArmor.requires = {
+    "Leaded Zeppelin Hull" : 100,
+}
+blueprints.push(acdChainmailArmor)
+
+const miBreastplateArmor = new item("Maidens Iron Breastplate",388,76000,"armor");
+miBreastplateArmor.cost = {
+    "Ore":84,
+    "Leather":158,
+    "Herb":54,
+}
+miBreastplateArmor.requires = {
+    "A Cool Dark Chainmail" : 100,
+}
+blueprints.push(miBreastplateArmor)
+
+const ipCuirassArmor = new item("Intense Purple Cuirass",569,95000,"armor");
+ipCuirassArmor.cost = {
+    "Ore":121,
+    "Leather":221,
+    "Herb":74,
+}
+ipCuirassArmor.requires = {
+    "Maidens Iron Breastplate" : 100,
+}
+blueprints.push(ipCuirassArmor)
+
+const wsChainmailArmor = new item("White Serpent Chainmail",841,119000,"armor");
+wsChainmailArmor.cost = {
+    "Ore":176,
+    "Leather":310,
+    "Herb":99,
+}
+wsChainmailArmor.requires = {
+    "Intense Purple Cuirass" : 100,
+}
+blueprints.push(wsChainmailArmor)
+
+const heavyMetalArmor = new item("Heavy Metal Armor",1250,149000,"armor");
+heavyMetalArmor.cost = {
+    "Ore":255,
+    "Leather":434,
+    "Herb":134,
+}
+heavyMetalArmor.requires = {
+    "White Serpent Chainmail" : 100,
+}
+blueprints.push(heavyMetalArmor)
+
+//four resource items
+//pendants
+
+const lettucePendant = new item("Pendant of Lactuca",184,90000,"pendants");
+lettucePendant.cost = {
+    "Ore":20,
+    "Wood":28,
+    "Leather":45,
+    "Herb":40,
+}
+blueprints.push(lettucePendant)
+
+const jellyPeanutPendant = new item("Pendant of Gelata Eros",276,113000,"pendants");
+jellyPeanutPendant.cost = {
+    "Ore":29,
+    "Wood":39,
+    "Leather":59,
+    "Herb":54,
+}
+jellyPeanutPendant.requires = {
+    "Pendant of Lactuca" : 100,
+}
+blueprints.push(jellyPeanutPendant)
+
+const shirePendant = new item("Pendant of Comitatus",414,141000,"pendants");
+shirePendant.cost = {
+    "Ore":42,
+    "Wood":55,
+    "Leather":76,
+    "Herb":73,
+}
+shirePendant.requires = {
+    "Pendant of Gelata Eros" : 100,
+}
+blueprints.push(shirePendant)
+
+const silentPendant = new item("Pendant of Tacet Gladio",622,176000,"pendants");
+silentPendant.cost = {
+    "Ore":61,
+    "Wood":77,
+    "Leather":99,
+    "Herb":98,
+}
+silentPendant.requires = {
+    "Pendant of Comitatus" : 100,
+}
+blueprints.push(silentPendant)
+
+const friendDoorPendant = new item("Pendant of Ostium Amici",936,220000,"pendants");
+friendDoorPendant.cost = {
+    "Ore":88,
+    "Wood":108,
+    "Leather":129,
+    "Herb":133,
+}
+friendDoorPendant.requires = {
+    "Pendant of Tacet Gladio" : 100,
+}
+blueprints.push(friendDoorPendant)
+
+const phoenixPendant = new item("Pendant of Ignis Pullum",1409,275000,"pendants");
+phoenixPendant.cost = {
+    "Ore":128,
+    "Wood":151,
+    "Leather":167,
+    "Herb":179,
+}
+phoenixPendant.requires = {
+    "Pendant of Ostium Amici" : 100,
+}
+blueprints.push(phoenixPendant)
+
+const katiePendant = new item("Pendant of Folium Strennus",2125,343000,"pendants");
+katiePendant.cost = {
+    "Ore":186,
+    "Wood":211,
+    "Leather":217,
+    "Herb":242,
+}
+katiePendant.requires = {
+    "Pendant of Ignis Pullum" : 100,
+}
+blueprints.push(katiePendant)
+
+const richardPendant = new item("Pendant of Magicae Criceta",3209,429000,"pendants");
+richardPendant.cost = {
+    "Ore":270,
+    "Wood":295,
+    "Leather":282,
+    "Herb":327,
+}
+richardPendant.requires = {
+    "Pendant of Folium Strennus" : 100,
+}
+blueprints.push(richardPendant)
+
+const akersonPendant = new item("Pendant of Inpulsa Sciurus",4851,536000,"pendants");
+akersonPendant.cost = {
+    "Ore":391,
+    "Wood":413,
+    "Leather":367,
+    "Herb":441,
+}
+akersonPendant.requires = {
+    "Pendant of Magicae Criceta" : 100,
+}
+blueprints.push(akersonPendant)
+
+const abquPendant = new item("Pendent of Adipem Pater",7342,671000,"pendants");
+abquPendant.cost = {
+    "Ore":567,
+    "Wood":579,
+    "Leather":477,
+    "Herb":596,
+}
+abquPendant.requires = {
+    "Pendant of Inpulsa Sciurus" : 100,
+}
+blueprints.push(abquPendant)
+
 const imageReference = {
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
@@ -1170,4 +1615,44 @@ const imageReference = {
     "Cancer Ward" : '<img src="PixelItem/Equip/Feet/ShoesF1.png">',
     "Maternity Ward" : '<img src="PixelItem/Equip/Feet/ShoesE4.png">',
     "Burn Unit" : '<img src="PixelItem/Equip/Feet/ShoesF0.png">',
+    "Patience" : '<img src="PixelItem/Equip/Shield/Shield25.png">',
+    "Faithful Buckler" : '<img src="PixelItem/Equip/Shield/Shield13.png">',
+    "Defiant Targe" : '<img src="PixelItem/Equip/Shield/Shield12.png">',
+    "Fair Shield" : '<img src="PixelItem/Equip/Shield/Shield3.png">',
+    "Wisdom" : '<img src="PixelItem/Equip/Shield/Shield20.png">',
+    "Generous Blocker" : '<img src="PixelItem/Equip/Shield/Shield9.png">',
+    "Loyal Companion" : '<img src="PixelItem/Equip/Shield/Shield8.png">',
+    "Dignity" : '<img src="PixelItem/Equip/Shield/Shield7.png">',
+    "Trustworthy Kite" : '<img src="PixelItem/Equip/Shield/Shield10.png">',
+    "Truth Teller" : '<img src="PixelItem/Equip/Shield/Shield11.png">',
+    "Novice Cloak" : '<img src="PixelItem/Equip/Back/CloakE3.png">',
+    "Apprentice Cloak" : '<img src="PixelItem/Equip/Back/CloakE4.png">',
+    "Practitioner Cloak" : '<img src="PixelItem/Equip/Back/CloakE1.png">',
+    "Journeyman Cloak" : '<img src="PixelItem/Equip/Back/CloakE2.png">',
+    "Expert Cloak" : '<img src="PixelItem/Equip/Back/CloakE0.png">',
+    "Frostflinger Cloak" : '<img src="PixelItem/Equip/Back/CloakA0.png">',
+    "Stormbringer Cloak" : '<img src="PixelItem/Equip/Back/CloakB7.png">',
+    "Earthslinger Cloak" : '<img src="PixelItem/Equip/Back/CloakA4.png">',
+    "Lifegiver Cloak" : '<img src="PixelItem/Equip/Back/CloakB0.png">',
+    "Deathcaller Cloak" : '<img src="PixelItem/Equip/Back/CloakC2.png">',
+    "Metal Armor" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_1.png">',
+    "Metallic Armor" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_74.png">',
+    "Panther Armor" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_48.png">',
+    "Slayers Plate" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_75.png">',
+    "Leaded Zeppelin Hull" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_3.png">',
+    "A Cool Dark Chainmail" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_51.png">',
+    "Maidens Iron Breastplate" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_41.png">',
+    "Intense Purple Cuirass" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_73.png">',
+    "White Serpent Chainmail" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_46.png">',
+    "Heavy Metal Armor" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_4.png">',
+    "Pendant of Lactuca" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_10.png">',
+    "Pendant of Gelata Eros" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_23.png">',
+    "Pendant of Comitatus" : '<img src="PixelItem/Equip/Neck/NeckSilver3.png">',
+    "Pendant of Tacet Gladio" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_37.png">',
+    "Pendant of Ostium Amici" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_13.png">',
+    "Pendant of Ignis Pullum" : '<img src="PixelItem/Equip/Neck/NeckSilver0.png">',
+    "Pendant of Folium Strennus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_18.png">',
+    "Pendant of Magicae Criceta" : '<img src="PixelItem/Equip/Neck/NeckSilver2.png">',
+    "Pendant of Inpulsa Sciurus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_30.png">',
+    "Pendent of Adipem Pater" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_35.png">',
 }
