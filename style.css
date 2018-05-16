@@ -392,6 +392,11 @@ select {
     border-bottom: 1px solid var(--theme-border);
 }
 
+.ASName img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
 .ASCancel {
     position: absolute;
     background-color: var(--theme-bg-3);
