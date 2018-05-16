@@ -71,6 +71,7 @@ body{
 
 #content, footer {
     padding: 0;
+    user-select: none;
 }
 
 .game-content {
@@ -282,7 +283,7 @@ select {
     padding: 0;
     border-radius: 0;
     border: 1px solid var(--theme-border);
-    border-left: 1px solid transparent;
+    border-left: none;
     border-right: 1px solid transparent;
     background-color: var(--theme-bg);
 }
@@ -391,9 +392,13 @@ select {
     border-bottom: 1px solid var(--theme-border);
 }
 
+.ASName img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
 .ASCancel {
     position: absolute;
-    background-color: var(--theme-bg-3);
     color: var(--theme-text);
     padding: 5px 3px;
     top: -30px;
@@ -495,7 +500,7 @@ input#importSaveText {
     background-image: url('images/userpics/nopic.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 16px;
+    background-size: 20px;
     vertical-align: middle;
 }
 
