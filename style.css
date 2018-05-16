@@ -399,7 +399,6 @@ select {
 
 .ASCancel {
     position: absolute;
-    background-color: var(--theme-bg-3);
     color: var(--theme-text);
     padding: 5px 3px;
     top: -30px;
