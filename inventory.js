@@ -18,7 +18,8 @@ function sellExpensiveItem() {
             itemToSell = inventory[i];
         }
     }
-    if (maxMoney > 0) removeFromInventory(itemToSell);    
+    if (maxMoney > 0) removeFromInventory(itemToSell);
+    player.money += maxMoney;
 }
 
 function refreshInventory() {
