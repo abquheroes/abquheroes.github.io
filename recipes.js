@@ -45,7 +45,7 @@ butterKnife.cost = {
     "Ore":7,
 }
 butterKnife.requires = {
-    "Knife" : 100,
+    "Knife" : 30,
 }
 blueprints.push(butterKnife)
 
@@ -54,7 +54,7 @@ kitchenKnife.cost = {
     "Ore":10,
 }
 kitchenKnife.requires = {
-    "Butter Knife" : 100,
+    "Butter Knife" : 40,
 }
 blueprints.push(kitchenKnife)
 
@@ -63,7 +63,7 @@ chefsKnife.cost = {
     "Ore":14,
 }
 chefsKnife.requires = {
-    "Kitchen Knife" : 100
+    "Kitchen Knife" : 50
 }
 blueprints.push(chefsKnife)
 
@@ -72,7 +72,7 @@ fishingKnife.cost = {
     "Ore":19,
 }
 fishingKnife.requires = {
-    "Chefs Knife" : 100,
+    "Chefs Knife" : 60,
 }
 blueprints.push(fishingKnife)
 
@@ -81,7 +81,7 @@ thatsNotAKnife.cost = {
     "Ore":27,
 }
 thatsNotAKnife.requires = {
-    "Fishing Knife" : 100,
+    "Fishing Knife" : 70,
 }
 blueprints.push(thatsNotAKnife)
 
@@ -90,7 +90,7 @@ thatsAKnife.cost = {
     "Ore":38,
 }
 thatsAKnife.requires = {
-    "Thats Not A Knife" : 100,
+    "Thats Not A Knife" : 80,
 }
 blueprints.push(thatsAKnife)
 
@@ -100,7 +100,7 @@ clubKnife.cost = {
     "Club":2,
 }
 clubKnife.requires = {
-    "Thats A Knife" : 100,
+    "Thats A Knife" : 90,
 }
 blueprints.push(clubKnife)
 
@@ -136,7 +136,7 @@ maulMace.cost = {
     "Wood":10,
 }
 maulMace.requires = {
-    "Club" : 100,
+    "Club" : 30,
 }
 blueprints.push(maulMace)
 
@@ -145,7 +145,7 @@ brawlerMace.cost = {
     "Wood":14,
 }
 brawlerMace.requires = {
-    "Maul" : 100,
+    "Maul" : 40,
 }
 blueprints.push(brawlerMace)
 
@@ -154,7 +154,7 @@ broomMace.cost = {
     "Wood":19,
 }
 broomMace.requires = {
-    "Brawler" : 100,
+    "Brawler" : 50,
 }
 blueprints.push(broomMace)
 
@@ -163,7 +163,7 @@ blackjackMace.cost = {
     "Wood":27,
 }
 blackjackMace.requires = {
-    "The Broominator" : 100,
+    "The Broominator" : 60,
 }
 blueprints.push(blackjackMace)
 
@@ -172,7 +172,7 @@ bludgeonMace.cost = {
     "Wood":38,
 }
 bludgeonMace.requires = {
-    "Blackjack" : 100,
+    "Blackjack" : 70,
 }
 blueprints.push(bludgeonMace)
 
@@ -181,7 +181,7 @@ stripedClubMace.cost = {
     "Wood":53,
 }
 stripedClubMace.requires = {
-    "Bludgeon" : 100,
+    "Bludgeon" : 80,
 }
 blueprints.push(stripedClubMace)
 
@@ -191,7 +191,7 @@ nightClubMace.cost = {
     "Maul":2,
 }
 nightClubMace.requires = {
-    "Striped Club" : 100,
+    "Striped Club" : 90,
 }
 blueprints.push(nightClubMace)
 
@@ -227,7 +227,7 @@ runningGloves.cost = {
     "Leather":31,
 }
 runningGloves.requires = {
-    "Gardening Gloves" : 100,
+    "Gardening Gloves" : 30,
 }
 blueprints.push(runningGloves)
 
@@ -236,7 +236,7 @@ fightingGloves.cost = {
     "Leather":43,
 }
 fightingGloves.requires = {
-    "Running Gloves" : 100,
+    "Running Gloves" : 40,
 }
 blueprints.push(fightingGloves)
 
@@ -245,7 +245,7 @@ cleaningGloves.cost = {
     "Leather":60,
 }
 cleaningGloves.requires = {
-    "Fighting Gloves" : 100,
+    "Fighting Gloves" : 50,
 }
 blueprints.push(cleaningGloves)
 
@@ -254,7 +254,7 @@ punchingGloves.cost = {
     "Leather":85,
 }
 punchingGloves.requires = {
-    "Cleaning Gloves" : 100,
+    "Cleaning Gloves" : 60,
 }
 blueprints.push(punchingGloves)
 
@@ -263,7 +263,7 @@ huggingGloves.cost = {
     "Leather":118,
 }
 huggingGloves.requires = {
-    "Punching Gloves" : 100,
+    "Punching Gloves" : 70,
 }
 blueprints.push(huggingGloves)
 
@@ -272,7 +272,7 @@ dancingGloves.cost = {
     "Leather":166,
 }
 dancingGloves.requires = {
-    "Hugging Gloves" : 100,
+    "Hugging Gloves" : 80,
 }
 blueprints.push(dancingGloves)
 
@@ -282,7 +282,7 @@ lovingGloves.cost = {
     "Healing Potion":2,
 }
 lovingGloves.requires = {
-    "Dancing Gloves" : 100,
+    "Dancing Gloves" : 90,
 }
 blueprints.push(lovingGloves)
 
@@ -318,7 +318,7 @@ manaPotion.cost = {
     "Herb":14,
 }
 manaPotion.requires = {
-    "Healing Potion" : 100,
+    "Healing Potion" : 30,
 }
 blueprints.push(manaPotion)
 
@@ -327,7 +327,7 @@ sleepingPotion.cost = {
     "Herb":20,
 }
 sleepingPotion.requires = {
-    "Mana Potion" : 100,
+    "Mana Potion" : 40,
 }
 blueprints.push(sleepingPotion)
 
@@ -336,7 +336,7 @@ coughingPotion.cost = {
     "Herb":27,
 }
 coughingPotion.requires = {
-    "Sleeping Potion" : 100,
+    "Sleeping Potion" : 50,
 }
 blueprints.push(coughingPotion)
 
@@ -345,7 +345,7 @@ invincibilityPotion.cost = {
     "Herb":38,
 }
 invincibilityPotion.requires = {
-    "Coughing Potion" : 100,
+    "Coughing Potion" : 60,
 }
 blueprints.push(invincibilityPotion)
 
@@ -354,7 +354,7 @@ laughingPotion.cost = {
     "Herb":54,
 }
 laughingPotion.requires = {
-    "Invincibility Potion" : 100,
+    "Invincibility Potion" : 70,
 }
 blueprints.push(laughingPotion)
 
@@ -363,7 +363,7 @@ rejuvinatingPotion.cost = {
     "Herb":75,
 }
 rejuvinatingPotion.requires = {
-    "Laughing Potion" : 100,
+    "Laughing Potion" : 80,
 }
 blueprints.push(rejuvinatingPotion)
 
@@ -373,7 +373,7 @@ likePotion.cost = {
     "Mana Potion":2,
 }
 likePotion.requires = {
-    "Rejuvinating Potion" : 100,
+    "Rejuvinating Potion" : 90,
 }
 blueprints.push(likePotion)
 
@@ -412,7 +412,7 @@ furyBringerAxe.cost = {
     "Wood":7,
 }
 furyBringerAxe.requires = {
-    "Rage Maker" : 100,
+    "Rage Maker" : 30,
 }
 blueprints.push(furyBringerAxe)
 
@@ -422,7 +422,7 @@ venganceAxe.cost = {
     "Wood":11,
 }
 venganceAxe.requires = {
-    "Fury Bringer" : 100,
+    "Fury Bringer" : 40,
 }
 blueprints.push(venganceAxe)
 
@@ -432,7 +432,7 @@ prideAxe.cost = {
     "Wood":15,
 }
 prideAxe.requires = {
-    "Vengance" : 100,
+    "Vengance" : 50,
 }
 blueprints.push(prideAxe)
 
@@ -442,7 +442,7 @@ greedyPickaxeAxe.cost = {
     "Wood":22,
 }
 greedyPickaxeAxe.requires = {
-    "Pride" : 100,
+    "Pride" : 60,
 }
 blueprints.push(greedyPickaxeAxe)
 
@@ -453,7 +453,7 @@ slothslayerAxe.cost = {
     "Kitchen Knife":2,
 }
 slothslayerAxe.requires = {
-    "Greedy Pickaxe" : 100,
+    "Greedy Pickaxe" : 70,
 }
 blueprints.push(slothslayerAxe)
 
@@ -464,7 +464,7 @@ lustyHandaxeAxe.cost = {
     "The Broominator":2,
 }
 lustyHandaxeAxe.requires = {
-    "Slothslayer" : 100,
+    "Slothslayer" : 80,
 }
 blueprints.push(lustyHandaxeAxe)
 
@@ -475,7 +475,7 @@ envyAxe.cost = {
     "Hugging Gloves":2,
 }
 envyAxe.requires = {
-    "Lusty Handaxe" : 100,
+    "Lusty Handaxe" : 90,
 }
 blueprints.push(envyAxe)
 
@@ -515,7 +515,7 @@ hiddenHat.cost = {
     "Leather":27,
 }
 hiddenHat.requires = {
-    "Simple Hat" : 100,
+    "Simple Hat" : 30,
 }
 blueprints.push(hiddenHat)
 
@@ -525,7 +525,7 @@ blackHat.cost = {
     "Leather":36,
 }
 blackHat.requires = {
-    "Hidden Mask" : 100,
+    "Hidden Mask" : 40,
 }
 blueprints.push(blackHat)
 
@@ -535,7 +535,7 @@ beachHat.cost = {
     "Leather":49,
 }
 beachHat.requires = {
-    "Black Hat" : 100,
+    "Black Hat" : 50,
 }
 blueprints.push(beachHat)
 
@@ -545,7 +545,7 @@ greenBayHat.cost = {
     "Leather":66,
 }
 greenBayHat.requires = {
-    "Beach Hat" : 100,
+    "Beach Hat" : 60,
 }
 blueprints.push(greenBayHat)
 
@@ -556,7 +556,7 @@ theMindCapHat.cost = {
     "Coughing Potion":2,
 }
 theMindCapHat.requires = {
-    "Green Bay Beret" : 100,
+    "Green Bay Beret" : 70,
 }
 blueprints.push(theMindCapHat)
 
@@ -567,7 +567,7 @@ princessHat.cost = {
     "Thats A Knife":2,
 }
 princessHat.requires = {
-    "The Mind Cap" : 100,
+    "The Mind Cap" : 80,
 }
 blueprints.push(princessHat)
 
@@ -578,7 +578,7 @@ spellcasterHat.cost = {
     "Fighting Gloves":2,
 }
 spellcasterHat.requires = {
-    "Ornate Crown" : 100,
+    "Ornate Crown" : 90,
 }
 blueprints.push(spellcasterHat)
 
@@ -618,7 +618,7 @@ forestWand.cost = {
     "Herb":16,
 }
 forestWand.requires = {
-    "Basic Wand" : 100,
+    "Basic Wand" : 30,
 }
 blueprints.push(forestWand)
 
@@ -628,7 +628,7 @@ windWand.cost = {
     "Herb":22,
 }
 windWand.requires = {
-    "Forest Wand" : 100,
+    "Forest Wand" : 40,
 }
 blueprints.push(windWand)
 
@@ -638,7 +638,7 @@ soulWand.cost = {
     "Herb":30,
 }
 soulWand.requires = {
-    "Wind Wand" : 100,
+    "Wind Wand" : 50,
 }
 blueprints.push(soulWand)
 
@@ -648,7 +648,7 @@ rainWand.cost = {
     "Herb":40,
 }
 rainWand.requires = {
-    "Soul Wand" : 100,
+    "Soul Wand" : 60,
 }
 blueprints.push(rainWand)
 
@@ -659,7 +659,7 @@ frozenWand.cost = {
     "Cleaning Gloves":2
 }
 frozenWand.requires = {
-    "Rain Wand" : 100,
+    "Rain Wand" : 70,
 }
 blueprints.push(frozenWand)
 
@@ -670,7 +670,7 @@ oceanWand.cost = {
     "Rejuvinating Potion":2
 }
 oceanWand.requires = {
-    "Frozen Wand" : 100,
+    "Frozen Wand" : 80,
 }
 blueprints.push(oceanWand)
 
@@ -681,7 +681,7 @@ thunderWand.cost = {
     "Striped Club":2
 }
 thunderWand.requires = {
-    "Ocean Wand" : 100,
+    "Ocean Wand" : 90,
 }
 blueprints.push(thunderWand)
 
@@ -722,7 +722,7 @@ shinyGauntlets.cost = {
     "Leather":26,
 }
 shinyGauntlets.requires = {
-    "New Gauntlets" : 100,
+    "New Gauntlets" : 30,
 }	
 blueprints.push(shinyGauntlets)
 
@@ -732,7 +732,7 @@ plainGauntlets.cost = {
     "Leather":38,
 }
 plainGauntlets.requires = {
-    "Shiny Gauntlets" : 100,
+    "Shiny Gauntlets" : 40,
 }	
 blueprints.push(plainGauntlets)
 
@@ -742,7 +742,7 @@ pristineGauntlets.cost = {
     "Leather":55,
 }
 pristineGauntlets.requires = {
-    "Plain Gauntlets" : 100,
+    "Plain Gauntlets" : 50,
 }	
 blueprints.push(pristineGauntlets)
 
@@ -752,7 +752,7 @@ challengeGauntlets.cost = {
     "Leather":80,
 }
 challengeGauntlets.requires = {
-    "Pristine Gauntlets" : 100,
+    "Pristine Gauntlets" : 60,
 }	
 blueprints.push(challengeGauntlets)
 
@@ -763,7 +763,7 @@ fancyGauntlets.cost = {
     "New Gauntlets":2,
 }
 fancyGauntlets.requires = {
-    "Challenge Gauntlets" : 100,
+    "Challenge Gauntlets" : 70,
 }	
 blueprints.push(fancyGauntlets)
 
@@ -774,7 +774,7 @@ oldGauntlets.cost = {
     "Chefs Knife":2,
 }
 oldGauntlets.requires = {
-    "Fancy Gauntlets" : 100,
+    "Fancy Gauntlets" : 80,
 }	
 blueprints.push(oldGauntlets)
 
@@ -785,7 +785,7 @@ darkGauntlets.cost = {
     "Bludgeon":2
 }
 darkGauntlets.requires = {
-    "Old Gauntlets" : 100,
+    "Old Gauntlets" : 90,
 }	
 blueprints.push(darkGauntlets)
 
@@ -825,7 +825,7 @@ cobaltHelmet.cost = {
     "Herb":15,
 }
 cobaltHelmet.requires = {
-    "Standard Helmet" : 100,
+    "Standard Helmet" : 30,
 }
 blueprints.push(cobaltHelmet)
 
@@ -835,7 +835,7 @@ regularHelmet.cost = {
     "Herb":20,
 }
 regularHelmet.requires = {
-    "Cobalt Helmet" : 100,
+    "Cobalt Helmet" : 40,
 }
 blueprints.push(regularHelmet)
 
@@ -845,7 +845,7 @@ superHelmet.cost = {
     "Herb":27,
 }
 superHelmet.requires = {
-    "Regular Helmet" : 100,
+    "Regular Helmet" : 50,
 }
 blueprints.push(superHelmet)
 
@@ -855,7 +855,7 @@ megaHelmet.cost = {
     "Herb":37,
 }
 megaHelmet.requires = {
-    "Super Helmet" : 100,
+    "Super Helmet" : 60,
 }
 blueprints.push(megaHelmet)
 
@@ -866,7 +866,7 @@ skullHelmet.cost = {
     "Blackjack":2,
 }
 skullHelmet.requires = {
-    "Mega Helmet" : 100,
+    "Mega Helmet" : 70,
 }
 blueprints.push(skullHelmet)
 
@@ -877,7 +877,7 @@ darkHelmet.cost = {
     "Sleeping Potion":2
 }
 darkHelmet.requires = {
-    "Skull Helmet" : 100,
+    "Skull Helmet" : 80,
 }
 blueprints.push(darkHelmet)
 
@@ -888,7 +888,7 @@ whimsicalHelmet.cost = {
     "Fishing Knife":2
 }
 whimsicalHelmet.requires = {
-    "Dark Helmet" : 100,
+    "Dark Helmet" : 90,
 }
 blueprints.push(whimsicalHelmet)
 
@@ -928,7 +928,7 @@ mageShoes.cost = {
     "Leather":30,
 }
 mageShoes.requires = {
-    "Hamster Clogs" : 100,
+    "Hamster Clogs" : 30,
 }
 blueprints.push(mageShoes)
 
@@ -938,7 +938,7 @@ druidicShoes.cost = {
     "Leather":44,
 }
 druidicShoes.requires = {
-    "Mage Moccasins" : 100,
+    "Mage Moccasins" : 40,
 }
 blueprints.push(druidicShoes)
 
@@ -948,7 +948,7 @@ fightingShoes.cost = {
     "Leather":64,
 }
 fightingShoes.requires = {
-    "Druidic Boots" : 100,
+    "Druidic Boots" : 50,
 }
 blueprints.push(fightingShoes)
 
@@ -958,7 +958,7 @@ bardicShoes.cost = {
     "Leather":93,
 }
 bardicShoes.requires = {
-    "Fighting Stilettos" : 100,
+    "Fighting Stilettos" : 60,
 }
 blueprints.push(bardicShoes)
 
@@ -969,7 +969,7 @@ masterShoes.cost = {
     "Laughing Potion":2
 }
 masterShoes.requires = {
-    "Bardic Galoshes" : 100,
+    "Bardic Galoshes" : 70,
 }
 blueprints.push(masterShoes)
 
@@ -980,7 +980,7 @@ foxyShoes.cost = {
     "Hamster Clogs":2,
 }
 foxyShoes.requires = {
-    "Master Loafers" : 100,
+    "Master Loafers" : 80,
 }
 blueprints.push(foxyShoes)
 
@@ -991,7 +991,7 @@ hairyShoes.cost = {
     "Dancing Gloves":2,
 }
 hairyShoes.requires = {
-    "Foxy Slippers" : 100,
+    "Foxy Slippers" : 90,
 }
 blueprints.push(hairyShoes)
 
@@ -1037,7 +1037,7 @@ sentryWard.cost = {
     "Forest Wand":1,
 }
 sentryWard.requires = {
-    "Stealth Ward" : 100,
+    "Stealth Ward" : 60,
 }
 blueprints.push(sentryWard)
 
@@ -1049,7 +1049,7 @@ spellWard.cost = {
     "Wind Wand":1,
 }
 spellWard.requires = {
-    "Sentry Ward" : 100,
+    "Sentry Ward" : 65,
 }
 blueprints.push(spellWard)
 
@@ -1061,7 +1061,7 @@ curseWard.cost = {
     "Soul Wand":1,
 }
 curseWard.requires = {
-    "Spell Ward" : 100,
+    "Spell Ward" : 70,
 }
 blueprints.push(curseWard)
 
@@ -1073,7 +1073,7 @@ poisonWard.cost = {
     "Rain Wand":1,
 }
 poisonWard.requires = {
-    "Curse Ward" : 100,
+    "Curse Ward" : 75,
 }
 blueprints.push(poisonWard)
 
@@ -1085,7 +1085,7 @@ diseaseWard.cost = {
     "Stealth Ward":2,
 }
 diseaseWard.requires = {
-    "Poison Ward" : 100,
+    "Poison Ward" : 80,
 }
 blueprints.push(diseaseWard)
 
@@ -1097,7 +1097,7 @@ infectionWard.cost = {
     "Sentry Ward":2,
 }
 infectionWard.requires = {
-    "Disease Ward" : 100,
+    "Disease Ward" : 85,
 }
 blueprints.push(infectionWard)
 
@@ -1109,7 +1109,7 @@ cancerWard.cost = {
     "Spell Ward":2
 }
 cancerWard.requires = {
-    "Infection Ward" : 100,
+    "Infection Ward" : 90,
 }
 blueprints.push(cancerWard)
 
@@ -1155,7 +1155,7 @@ faithfulShield.cost = {
     "Fury Bringer":1,
 }
 faithfulShield.requires = {
-    "Patience" : 100,
+    "Patience" : 60,
 }
 blueprints.push(faithfulShield)
 
@@ -1167,7 +1167,7 @@ defiantShield.cost = {
     "Vengance":1,
 }
 defiantShield.requires = {
-    "Faithful Buckler" : 100,
+    "Faithful Buckler" : 65,
 }
 blueprints.push(defiantShield)
 
@@ -1179,7 +1179,7 @@ fairShield.cost = {
     "Pride":1,
 }
 fairShield.requires = {
-    "Defiant Targe" : 100,
+    "Defiant Targe" : 70,
 }
 blueprints.push(fairShield)
 
@@ -1191,7 +1191,7 @@ wisdomShield.cost = {
     "Greedy Pickaxe":1,
 }
 wisdomShield.requires = {
-    "Fair Shield" : 100,
+    "Fair Shield" : 75,
 }
 blueprints.push(wisdomShield)
 
@@ -1203,7 +1203,7 @@ generousShield.cost = {
     "Patience":2,
 }
 generousShield.requires = {
-    "Wisdom" : 100,
+    "Wisdom" : 80,
 }
 blueprints.push(generousShield)
 
@@ -1215,7 +1215,7 @@ loyalShield.cost = {
     "Faithful Buckler":2,
 }
 loyalShield.requires = {
-    "Generous Blocker" : 100,
+    "Generous Blocker" : 85,
 }
 blueprints.push(loyalShield)
 
@@ -1227,7 +1227,7 @@ dignityShield.cost = {
     "Defiant Targe":2,
 }
 dignityShield.requires = {
-    "Loyal Companion" : 100,
+    "Loyal Companion" : 90,
 }
 blueprints.push(dignityShield)
 
@@ -1273,7 +1273,7 @@ apprenticeCloak.cost = {
     "Hidden Mask":1,
 }
 apprenticeCloak.requires = {
-    "Novice Cloak" : 100,
+    "Novice Cloak" : 60,
 }
 blueprints.push(apprenticeCloak)
 
@@ -1285,7 +1285,7 @@ practitionerCloak.cost = {
     "Black Hat":1,
 }
 practitionerCloak.requires = {
-    "Apprentice Cloak" : 100,
+    "Apprentice Cloak" : 65,
 }
 blueprints.push(practitionerCloak)
 
@@ -1297,7 +1297,7 @@ journeymanCloak.cost = {
     "Beach Hat":1,
 }
 journeymanCloak.requires = {
-    "Practitioner Cloak" : 100,
+    "Practitioner Cloak" : 70,
 }
 blueprints.push(journeymanCloak)
 
@@ -1309,7 +1309,7 @@ expertCloak.cost = {
     "Green Bay Beret":1,
 }
 expertCloak.requires = {
-    "Journeyman Cloak" : 100,
+    "Journeyman Cloak" : 75,
 }
 blueprints.push(expertCloak)
 
@@ -1321,7 +1321,7 @@ frostflingerCloak.cost = {
     "Novice Cloak":2,
 }
 frostflingerCloak.requires = {
-    "Expert Cloak" : 100,
+    "Expert Cloak" : 80,
 }
 blueprints.push(frostflingerCloak)
 
@@ -1333,7 +1333,7 @@ waterbringerCloak.cost = {
     "Apprentice Cloak":2,
 }
 waterbringerCloak.requires = {
-    "Frostflinger Cloak" : 100,
+    "Frostflinger Cloak" : 85,
 }
 blueprints.push(waterbringerCloak)
 
@@ -1345,7 +1345,7 @@ earthslingerCloak.cost = {
     "Practitioner Cloak":2,
 }
 earthslingerCloak.requires = {
-    "Stormbringer Cloak" : 100,
+    "Stormbringer Cloak" : 90,
 }
 blueprints.push(earthslingerCloak)
 
@@ -1392,7 +1392,7 @@ metallicArmor.cost = {
     "Shiny Gauntlets":1,
 }
 metallicArmor.requires = {
-    "Metal Armor" : 100,
+    "Metal Armor" : 60,
 }
 blueprints.push(metallicArmor)
 
@@ -1404,7 +1404,7 @@ pantherArmor.cost = {
     "Plain Gauntlets":1,
 }
 pantherArmor.requires = {
-    "Metallic Armor" : 100,
+    "Metallic Armor" : 65,
 }
 blueprints.push(pantherArmor)
 
@@ -1416,7 +1416,7 @@ slayersArmor.cost = {
     "Pristine Gauntlets":1,
 }
 slayersArmor.requires = {
-    "Panther Armor" : 100,
+    "Panther Armor" : 70,
 }
 blueprints.push(slayersArmor)
 
@@ -1428,7 +1428,7 @@ zeppelinArmor.cost = {
     "Challenge Gauntlets":1,
 }
 zeppelinArmor.requires = {
-    "Slayers Plate" : 100,
+    "Slayers Plate" : 75,
 }
 blueprints.push(zeppelinArmor)
 
@@ -1440,7 +1440,7 @@ acdChainmailArmor.cost = {
     "Metal Armor":2,
 }
 acdChainmailArmor.requires = {
-    "Leaded Zeppelin Hull" : 100,
+    "Leaded Zeppelin Hull" : 80,
 }
 blueprints.push(acdChainmailArmor)
 
@@ -1452,7 +1452,7 @@ miBreastplateArmor.cost = {
     "Metallic Armor":2
 }
 miBreastplateArmor.requires = {
-    "A Cool Dark Chainmail" : 100,
+    "A Cool Dark Chainmail" : 85,
 }
 blueprints.push(miBreastplateArmor)
 
@@ -1464,7 +1464,7 @@ ipCuirassArmor.cost = {
     "Panther Armor":2,
 }
 ipCuirassArmor.requires = {
-    "Maidens Iron Breastplate" : 100,
+    "Maidens Iron Breastplate" : 90,
 }
 blueprints.push(ipCuirassArmor)
 
