@@ -71,6 +71,7 @@ body{
 
 #content, footer {
     padding: 0;
+    user-select: none;
 }
 
 .game-content {
