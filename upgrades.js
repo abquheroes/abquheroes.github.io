@@ -86,6 +86,8 @@ $upgradelist.on("click", ".BuyUpgrade", (e) => {
     e.preventDefault();
     upgrade(e.target.id);
     refreshUpgrades();
+    refreshInventory();
+    refreshActionSlots();
 });
 
 function upgrade(name) {

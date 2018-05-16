@@ -43,6 +43,7 @@ const workerProgress = {
     "Eryn" : 0,
     "Herbie" : 0,
     "Lakur" : 0,
+    "Otto" : 0,
 }
 
 const workerSacProgress = {
@@ -462,11 +463,15 @@ function progressFinish(type,name) {
         else itemCount[name] = 1;
     }
     if (type === "Job") {
-        const resourceDist = getJobValue(name);
-        if ("Ore" in resourceDist) player["Ore"]+= resourceDist["Ore"];
-        if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
-        if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
-        if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
+        console.log(name);
+        if (name === "Otto") sellExpensiveItem();
+        else {
+            const resourceDist = getJobValue(name);
+            if ("Ore" in resourceDist) player["Ore"]+= resourceDist["Ore"];
+            if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
+            if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
+            if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
+        }
     }
 }
 

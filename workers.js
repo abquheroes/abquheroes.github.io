@@ -610,6 +610,15 @@ herbie.lvlreq = [
 ]
 workers.push(herbie);
 
+const otto = new Worker("Otto",30000,"Job: Sells your things");
+otto.produces = {
+    "Sell" : 1,
+}
+otto.cost = [1000,15000,5000];
+otto.multiplier = [1,2,3];
+otto.lvlreq = [{},{},{}];
+workers.push(otto);
+
 function nameToWorker(name) {
     for (let i=0;i<workers.length;i++) {
         if (workers[i].name == name) {
@@ -634,7 +643,7 @@ function refreshWorkers() {
         const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         const d6 = $('<div/>').addClass("itemSac");
         let craftsLeft = false;
-        if (lvl < 10) {
+        if (lvl < workers[i].lvlreq.length) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
                 const slot = workers[i].name+"_"+lvl+"_"+itemName;
                 if (!(slot in workerSacProgress)) workerSacProgress[slot] = 0;
@@ -680,6 +689,7 @@ $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     purchaseWorker(e.target.id);
     refreshWorkers();
+    populateJob();
 });
 
 function purchaseWorker(name) {
@@ -696,6 +706,7 @@ const workerImageReference = {
     "Eryn" : '<img src="workers/eryn.gif">',
     "Herbie" : '<img src="workers/herbie.gif">',
     "Lakur" : '<img src="workers/lakur.gif">',
+    "Otto" : '<img src="workers/lakur.gif">',
 }
 
 $(document).on("click", "a.itemToSac", (e) => {

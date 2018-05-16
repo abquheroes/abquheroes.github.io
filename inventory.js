@@ -8,6 +8,19 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
     refreshWorkers();
 })
 
+function sellExpensiveItem() {
+    let maxMoney = 0;
+    let itemToSell = "";
+    for (let i=0;i<inventory.length;i++) {
+        const item = nameToItem(inventory[i]);
+        if (item.value > maxMoney) {
+            maxMoney = item.value;
+            itemToSell = inventory[i];
+        }
+    }
+    if (maxMoney > 0) removeFromInventory(itemToSell);    
+}
+
 function refreshInventory() {
     $inventory.empty();
     const t1 = $("<p/>").addClass("inventoryCount").html(inventory.length + "/" + player.inventoryCap + " Slots Filled");
