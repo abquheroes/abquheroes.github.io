@@ -706,7 +706,7 @@ const workerImageReference = {
     "Eryn" : '<img src="workers/eryn.gif">',
     "Herbie" : '<img src="workers/herbie.gif">',
     "Lakur" : '<img src="workers/lakur.gif">',
-    "Otto" : '<img src="workers/lakur.gif">',
+    "Otto" : '<img src="workers/otto.gif">',
 }
 
 $(document).on("click", "a.itemToSac", (e) => {

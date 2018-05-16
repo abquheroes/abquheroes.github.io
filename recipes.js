@@ -1640,6 +1640,7 @@ const imageReference = {
     "Eryn" : '<img src="workers/heads/erynhead.png">',
     "Herbie" : '<img src="workers/heads/herbiehead.png">',
     "Lakur" : '<img src="workers/heads/lakurhead.png">',
+    "Otto" : '<img src="workers/heads/ottohead.png">',
     "Wood" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">',
     "Sell" : 'Item',
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
