@@ -283,7 +283,7 @@ select {
     padding: 0;
     border-radius: 0;
     border: 1px solid var(--theme-border);
-    border-left: none;
+    border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     background-color: var(--theme-bg);
 }
@@ -496,7 +496,7 @@ input#importSaveText {
     background-image: url('images/userpics/nopic.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20px;
+    background-size: 16px;
     vertical-align: middle;
 }
 
