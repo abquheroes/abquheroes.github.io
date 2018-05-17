@@ -569,7 +569,8 @@ function canSee(name) {
 function refreshProgress() {
     let recipeCt = 0;
     for (const [item,cnt] of Object.entries(itemCount)) {
-        if (cnt >= 1000) recipeCt += 1;
+        console.log(item,cnt);
+        if (cnt >= 100) recipeCt += 1;
     }
     const recipeMaxCt = blueprints.length;
     $("#plRecipeMastery").html(recipeCt + "/" + recipeMaxCt);
