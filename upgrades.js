@@ -43,8 +43,8 @@ upgrades.push(maxActionSlots);
 const maxInventory = {
     name : "Max Inventory Slots",
     description : "Increases the number of Inventory Slots you can have.",
-    cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000,30000],
-    value : [15,20,25,30,35,40,45,50,55,60,65,70,80,90,10],
+    cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000,30000,50000],
+    value : [10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,30],
 }
 upgrades.push(maxInventory);
 
