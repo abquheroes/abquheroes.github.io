@@ -652,7 +652,7 @@ input#importSaveText {
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist {
+#workerList, #upgradelist, #progresslist {
     padding: 20px;
 }
 
@@ -761,6 +761,10 @@ input#importSaveText {
     background-color: rgba(255, 174, 0, 0.1);;
     cursor: not-allowed;
     user-select: none;
+}
+
+.plProgressBar {
+    border: 1px solid var(--theme-border)!important;
 }
 
 footer {
