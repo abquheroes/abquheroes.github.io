@@ -34,7 +34,8 @@ function addToInventory(itemName) {
 }
 
 function removeFromInventory(itemName) {
-    if (!(item in inventory) || inventory[itemName] === 0) return false;
+    console.log(itemName,inventory);
+    if (!(itemName in inventory) || inventory[itemName] === 0) return false;
     inventory[itemName] -= 1;
     refreshInventory();
     return true;    
