@@ -890,6 +890,8 @@ span#copyme {
 
 .recipeCost.tooltip:hover:after {
     margin-top: -15px;
+    bottom: 150%;
+    top: unset;
 }
 .recipeCost.tooltip:hover:before {
     margin-top: -10px;
