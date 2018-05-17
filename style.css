@@ -160,8 +160,9 @@ body{
 .inventoryItem a {
     flex-grow: 1;
     color: var(--theme-text);
+    font-size: 14px;
     text-decoration: none;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 60px 10px 30px;
 }
 
 .inventoryItem a:hover {
@@ -854,6 +855,18 @@ span#copyme {
     margin-top: 8px;
     z-index: 2;
 }
+
+/* ALTERNATIVE TOOLTIP FOR INVENTORY
+.inventoryItem a.tooltip:hover:after {
+    left: 0;
+    right: 70px;
+    top: 0;
+    bottom: 0;
+    margin-top: 0;
+    border-radius: 0;
+    z-index: 2;
+}
+*/
 
 .inventoryItem a.tooltip:hover:before {
     display: none;
