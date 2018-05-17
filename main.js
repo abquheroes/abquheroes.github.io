@@ -43,7 +43,6 @@ const workerProgress = {
     "Eryn" : 0,
     "Herbie" : 0,
     "Lakur" : 0,
-    "Otto" : 0,
 }
 
 const workerSacProgress = {
@@ -56,9 +55,10 @@ const upgradeProgress = {
     "Max Herb" : 0,
     "Max Action Slots" : 0,
     "Max Inventory Slots" : 0,
+    "Auto Sell Value" : 0,
 }
 
-const inventory = [];
+const inventory = {};
 const itemCount = {};
 
 let oreRemainder = 0;
@@ -94,6 +94,7 @@ const $inventory = $('#inventory');
 const $actionSlots = $('#ActionSlots');
 const $jobList = $('#joblist');
 
+initializeInventory();
 loadGame();
 refreshInventory();
 refreshActionSlots();
@@ -163,18 +164,12 @@ function mainLoop() {
             let item = nameToItem(player.actionSlots[i].actionName);
             if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
             if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
-                if (player.actionSlots[i].actionType === "Craft" && !canAddtoInventory(player.actionSlots[i].actionName)) {
-                    const pText = "Waiting for space...";
-                    $(pb+"Label").text(pText);
-                }
-                else {
-                    progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
-                    player.actionSlots[i].actionTime = 0;
-                    $(pb).progressbar({
-                        value: 0
-                    })
-                    if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
-                }
+                progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
+                player.actionSlots[i].actionTime = 0;
+                $(pb).progressbar({
+                    value: 0
+                })
+                if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
             }
             else {
                 const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
@@ -327,9 +322,6 @@ function canCraft(loc) {
     for (const [res, amt] of Object.entries(itemFull.cost)) {
         if (resources.includes(res)) {
             if (player[res] < amt) return false;
-        }
-        else {
-            if (numberInventory(res) < amt) return false;
         }
     }
     return true;
@@ -516,4 +508,10 @@ function round(number, precision) {
       return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
     };
     return shift(Math.round(shift(number, +precision)), -precision);
+}
+
+function initializeInventory() {
+    for (let i=0;i<blueprints[i].length;i++) {
+        inventory[blueprints[i].name] = 0;
+    }
 }

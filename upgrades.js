@@ -44,9 +44,17 @@ const maxInventory = {
     name : "Max Inventory Slots",
     description : "Increases the number of Inventory Slots you can have.",
     cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000,30000],
-    value : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    value : [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],
 }
 upgrades.push(maxInventory);
+
+const autoSell = {
+    name : "Auto Sell Value",
+    description : "Increases autosell value",
+    cost : [750,1000,1500,2000,3000],
+    value : [0.5,0.6,0.7,0.8,0.9,1],
+}
+upgrades.push(autoSell);
 
 function nameToUpgrade(name) {
     for (let i=0;i<upgrades.length;i++) {
@@ -56,6 +64,10 @@ function nameToUpgrade(name) {
 }
 
 $upgradelist = $("#upgradelist");
+
+function getMaxInventory() {
+    return maxInventory.value[upgradeProgress["Max Inventory Slots"]]+10;
+}
 
 function refreshUpgrades() {
     $upgradelist.empty();
@@ -86,7 +98,7 @@ $upgradelist.on("click", ".BuyUpgrade", (e) => {
     e.preventDefault();
     upgrade(e.target.id);
     refreshUpgrades();
-    refreshInventory();
+    refreshWorkers();
     refreshActionSlots();
 });
 

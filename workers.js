@@ -610,15 +610,6 @@ herbie.lvlreq = [
 ]
 workers.push(herbie);
 
-const otto = new Worker("Otto",30000,"Job: Sells your things");
-otto.produces = {
-    "Sell" : 1,
-}
-otto.cost = [1000,15000,5000];
-otto.multiplier = [1,2,3];
-otto.lvlreq = [{},{},{}];
-workers.push(otto);
-
 function nameToWorker(name) {
     for (let i=0;i<workers.length;i++) {
         if (workers[i].name == name) {
@@ -632,16 +623,29 @@ const $workers = $('#workerList');
 
 function refreshWorkers() {
     $workers.empty();
+    let stopdisplay = false;
     for (let i=0;i<workers.length;i++) {
         const lvl = workerProgress[workers[i].name];
         const worker = $('<div/>').addClass("Worker");
-        const d1 = $("<div/>").addClass("WorkerImage").html(workerImageReference[workers[i].name]);
-        const d2 = $("<div/>").addClass("WorkerName").html("<h3>"+workers[i].name+"</h3>");
-        const d3 = $("<div/>").addClass("WorkerDesc").html(workers[i].description);
-        const d4 = $("<div/>").addClass("workerLvl").html("Lvl. " + lvl)
-        if (lvl === 0) d4.addClass("hidden");
-        const d5 = $('<div/>').addClass("InitialCost").html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        const d1 = $("<div/>").addClass("WorkerImage");
+        const d2 = $("<div/>").addClass("WorkerName");
+        const d3 = $("<div/>").addClass("WorkerDesc");
+        const d4 = $("<div/>").addClass("workerLvl");
+        const d5 = $('<div/>').addClass("InitialCost");
         const d6 = $('<div/>').addClass("itemSac");
+        if (lvl === 0) {
+            d1.html(workerImageReference["hidden"]);
+            d2.html("<h3>???</h3>");
+            d3.html("Job: ???")
+            d4.html("Purchase to unlock!")
+        }
+        else {
+            d1.html(workerImageReference[workers[i].name]);
+            d2.html("<h3>"+workers[i].name+"</h3>");
+            d3.html(workers[i].description);
+            d4.html("Lvl. " + lvl)
+        }
+        d5.html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
         let craftsLeft = false;
         if (lvl < workers[i].lvlreq.length) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
@@ -671,6 +675,7 @@ function refreshWorkers() {
         worker.append(d6);
         worker.append(b1);
         $workers.append(worker);
+        if (lvl === 0) break;
     }
 }
 
@@ -706,15 +711,16 @@ const workerImageReference = {
     "Eryn" : '<img src="workers/eryn.gif">',
     "Herbie" : '<img src="workers/herbie.gif">',
     "Lakur" : '<img src="workers/lakur.gif">',
-    "Otto" : '<img src="workers/otto.gif">',
+    "hidden" : '<img src="workers/blackoutline.png">',
 }
 
 $(document).on("click", "a.itemToSac", (e) => {
     e.preventDefault();
-    const slot = $(e.target).attr("href");
-    const itemName = $(e.target).attr("item");
+    const slot = $(e.currentTarget).attr("href");
+    const itemName = $(e.currentTarget).attr("item");
     const success = removeFromInventory(itemName);
     if (success) {
+        console.log(workerSacProgress[slot]);
         workerSacProgress[slot] += 1;
         refreshWorkers();
         populateJob();
