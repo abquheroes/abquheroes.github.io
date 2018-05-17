@@ -58,6 +58,25 @@ const upgradeProgress = {
     "Auto Sell Value" : 0,
 }
 
+const rSL = {
+    "Knives" : "KnifeSelector",
+    "Maces" : "MaceSelector",
+    "Gloves" : "GloveSelector",
+    "Potions" : "PotionSelector",
+    "Axes" : "AxeSelector",
+    "Hats" : "HatSelector",
+    "Wands" : "WandSelector",
+    "Gauntlets" : "GauntletSelector",
+    "Helmets" : "HelmetSelector",
+    "Shoes" : "ShoeSelector",
+    "Wards" : "WardSelector",
+    "Shields" : "ShieldSelector",
+    "Cloaks" : "CloakSelector",
+    "Armor" : "ArmorSelector",
+    "Pendants" : "PendantSelector",
+}
+
+
 const inventory = {};
 const itemCount = {};
 
@@ -94,12 +113,15 @@ const $inventory = $('#inventory');
 const $actionSlots = $('#ActionSlots');
 const $jobList = $('#joblist');
 
+const $recipeFilter = $("#RecipeFilter");
+
 initializeInventory();
 loadGame();
 refreshInventory();
 refreshActionSlots();
 populateJob();
 refreshUpgrades();
+refreshRecipeSelector();
 
 $('#ActionSlots').on("click", "a.ASCancel", (e) => {
     e.preventDefault();
@@ -455,16 +477,13 @@ function progressFinish(type,name) {
         else itemCount[name] = 1;
     }
     if (type === "Job") {
-        console.log(name);
-        if (name === "Otto") sellExpensiveItem();
-        else {
-            const resourceDist = getJobValue(name);
-            if ("Ore" in resourceDist) player["Ore"]+= resourceDist["Ore"];
-            if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
-            if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
-            if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
-        }
+        const resourceDist = getJobValue(name);
+        if ("Ore" in resourceDist) player["Ore"]+= resourceDist["Ore"];
+        if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
+        if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
+        if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
     }
+    refreshRecipeSelector();
 }
 
 
@@ -514,4 +533,31 @@ function initializeInventory() {
     for (let i=0;i<blueprints[i].length;i++) {
         inventory[blueprints[i].name] = 0;
     }
+}
+
+function refreshRecipeSelector() {
+    $recipeFilter.empty();
+    for (const [name, href] of Object.entries(rSL)) {
+        const a = $("<a/>").addClass("recipeSelect").attr("href",href).html(name);
+        if (!canSee(name)) a.addClass("hidden");
+        $recipeFilter.append(a);
+    }
+}
+
+function canSee(name) {
+    if (name === "Knives") return true;
+    if (name === "Maces") return workerProgress["Eryn"] > 0;
+    if (name === "Gloves") return workerProgress["Lakur"] > 0;
+    if (name === "Potions") return workerProgress["Herbie"] > 0;
+    if (name === "Axes") return itemCount["Chefs Knife"] >= 3 && itemCount["The Broominator"] >= 3;
+    if (name === "Hats") return itemCount["Cleaning Gloves"] >= 3 && itemCount["Sleeping Potion"] >= 3;
+    if (name === "Wands") return itemCount["Blackjack"] >= 3 && itemCount["Invincibility Potion"] >= 3;
+    if (name === "Gauntlets") return itemCount["Punching Gloves"] >= 3 && itemCount["Fishing Knife"] >= 3;
+    if (name === "Helmets") return itemCount["Club Knife"] >= 3 && itemCount["Like Potion"] >= 3;
+    if (name === "Shoes") return itemCount["Night Club"] >= 3 && itemCount["Loving Gloves"] >= 3;
+    if (name === "Wards") return itemCount["Vengance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
+    if (name === "Shields") return itemCount["Slothslayer"] >= 3 && itemCount["Bardic Galoshes"] >= 3 &&  itemCount["Plain Gauntlets"] >= 3;
+    if (name === "Cloaks") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
+    if (name === "Armor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
+    if (name === "Pendants") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
 }
