@@ -180,8 +180,11 @@ eryn.produces = {
     "Wood" : 28,
 }
 eryn.lvlreq = [
+    {//unlock
+        "Chefs Knife" : 5,
+    },
     {//1
-        "Knife" : 5,
+        "Club" : 5,
     },
     {//2
         "Club" : 10,
@@ -325,8 +328,11 @@ lakur.produces = {
     "Leather" : 45,
 }
 lakur.lvlreq = [
+    {//unlock
+        "The Broominator" : 5,
+    },
     {//1
-        "Club" : 5,
+        "Gardening Gloves" : 5,
     },
     {//2
         "Gardening Gloves" : 10,
@@ -470,8 +476,11 @@ herbie.produces = {
     "Herb" : 40,
 }
 herbie.lvlreq = [
+    {//unlock
+        "Cleaning Gloves" : 5,
+    },
     {//1
-        "Gardening Gloves" : 5,
+        "Healing Potion" : 5,
     },
     {//2
         "Healing Potion" : 10,
