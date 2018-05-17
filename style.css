@@ -253,9 +253,14 @@ select {
     width:100%;
 }
 
+/* Hide content while retaining the content's effects on elements, such as, its width and height. */
 .hidden {
-    /*display: none;*/
     visibility: hidden;
+}
+
+/* Hide content completely, removing both the content and its effect on elements */
+.none {
+    display: none;
 }
 
 .pbLabel {
