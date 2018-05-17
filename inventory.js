@@ -21,7 +21,7 @@ function refreshInventory() {
 }
 
 function addToInventory(itemName) {
-    if (inventory[itemName] > getMaxInventory()) {
+    if (inventory[itemName] >= getMaxInventory()) {
         const upgrade = nameToUpgrade("Auto Sell Value");
         const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]
         sellItem(itemName,mod);

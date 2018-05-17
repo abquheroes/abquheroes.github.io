@@ -44,7 +44,7 @@ const maxInventory = {
     name : "Max Inventory Slots",
     description : "Increases the number of Inventory Slots you can have.",
     cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000,30000],
-    value : [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5],
+    value : [15,20,25,30,35,40,45,50,55,60,65,70,80,90,10],
 }
 upgrades.push(maxInventory);
 
@@ -66,7 +66,7 @@ function nameToUpgrade(name) {
 $upgradelist = $("#upgradelist");
 
 function getMaxInventory() {
-    return maxInventory.value[upgradeProgress["Max Inventory Slots"]]+10;
+    return maxInventory.value[upgradeProgress["Max Inventory Slots"]];
 }
 
 function refreshUpgrades() {
