@@ -21,15 +21,14 @@ function refreshInventory() {
 }
 
 function addToInventory(itemName) {
-    console.log("knife");
     if (inventory[itemName] > getMaxInventory()) {
         const upgrade = nameToUpgrade("Auto Sell Value");
-        console.log(upgrade,upgradeProgress["Auto Sell Value"])
         const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]
         sellItem(itemName,mod);
     }
     else {
-        inventory[itemName] += 1;
+        if (itemName in inventory) inventory[itemName] += 1;
+        else inventory[itemName] = 1;
         refreshInventory();
     }
 }

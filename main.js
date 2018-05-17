@@ -245,7 +245,6 @@ function populateJob() {
     hrow.append(htd3);
     table.append(hrow);
     for (const [workerName,lvl] of Object.entries(workerProgress)) {
-        console.log(workerName);
         if (lvl > 0) {
             const worker = nameToWorker(workerName);
             const trow = $('<div/>').addClass('jobRow');
