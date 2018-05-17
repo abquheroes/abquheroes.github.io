@@ -36,7 +36,7 @@ const maxActionSlots = {
     name : "Max Action Slots",
     description : "Increases the number of Action Slots you can have.",
     cost : [1000,2000,4000,10000,20000,30000,50000],
-    value : [3,4,5,6,7,8,9,10],
+    value : [4,5,6,7,8,9,10],
 }
 upgrades.push(maxActionSlots);
 
