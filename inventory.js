@@ -1,7 +1,8 @@
 $('#inventory').on("click","a.inventoryLink",(e) => {
     e.preventDefault();
     const name = $(e.target).attr("href");
-    removeFromInventory(name);
+    if (e.shiftKey) removeAllFromInventory(name);
+    else removeFromInventory(name);
     sellItem(name,1);
 })
 
@@ -33,8 +34,17 @@ function addToInventory(itemName) {
     }
 }
 
+function removeAllFromInventory(itemName) {
+    if (!(itemName in inventory) || inventory[itemName] === 0) return false;
+    const toRemove = inventory[itemName];
+    for (let i=0;i<toRemove;i++) {
+        sellItem(itemName,1);
+        inventory[itemName] -= 1;
+    }
+    refreshInventory();
+}
+
 function removeFromInventory(itemName) {
-    console.log(itemName,inventory);
     if (!(itemName in inventory) || inventory[itemName] === 0) return false;
     inventory[itemName] -= 1;
     refreshInventory();
