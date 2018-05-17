@@ -358,7 +358,7 @@ laughingPotion.requires = {
 }
 blueprints.push(laughingPotion)
 
-const rejuvinatingPotion = new item("Rejuvinating Potion",235,72000,"potions");
+const rejuvinatingPotion = new item("Rejuvenating Potion",235,72000,"potions");
 rejuvinatingPotion.cost = {
     "Herb":75,
 }
@@ -373,7 +373,7 @@ likePotion.cost = {
     "Mana Potion":2,
 }
 likePotion.requires = {
-    "Rejuvinating Potion" : 90,
+    "Rejuvenating Potion" : 90,
 }
 blueprints.push(likePotion)
 
@@ -667,7 +667,7 @@ const oceanWand = new item("Ocean Wand",483,145000,"wands");
 oceanWand.cost = {
     "Wood":84,
     "Herb":73,
-    "Rejuvinating Potion":2
+    "Rejuvenating Potion":2
 }
 oceanWand.requires = {
     "Frozen Wand" : 80,
@@ -1444,7 +1444,7 @@ acdChainmailArmor.requires = {
 }
 blueprints.push(acdChainmailArmor)
 
-const miBreastplateArmor = new item("Maidens Iron Breastplate",388,76000,"armor");
+const miBreastplateArmor = new item("Maidens Plate",388,76000,"armor");
 miBreastplateArmor.cost = {
     "Ore":84,
     "Leather":158,
@@ -1464,11 +1464,11 @@ ipCuirassArmor.cost = {
     "Panther Armor":2,
 }
 ipCuirassArmor.requires = {
-    "Maidens Iron Breastplate" : 90,
+    "Maidens Plate" : 90,
 }
 blueprints.push(ipCuirassArmor)
 
-const wsChainmailArmor = new item("White Serpent Chainmail",841,119000,"armor");
+const wsChainmailArmor = new item("Serpent Mail",841,119000,"armor");
 wsChainmailArmor.cost = {
     "Ore":176,
     "Leather":310,
@@ -1488,14 +1488,14 @@ heavyMetalArmor.cost = {
     "Coal Helmut":3,
 }
 heavyMetalArmor.requires = {
-    "White Serpent Chainmail" : 100,
+    "Serpent Mail" : 100,
 }
 blueprints.push(heavyMetalArmor)
 
 //four resource items
 //pendants
 
-const lettucePendant = new item("Pendant of Lactuca",184,90000,"pendants");
+const lettucePendant = new item("Lactuca",184,90000,"pendants");
 lettucePendant.cost = {
     "Ore":20,
     "Wood":28,
@@ -1505,7 +1505,7 @@ lettucePendant.cost = {
 }
 blueprints.push(lettucePendant)
 
-const jellyPeanutPendant = new item("Pendant of Gelata Eros",276,113000,"pendants");
+const jellyPeanutPendant = new item("Gelata Eros",276,113000,"pendants");
 jellyPeanutPendant.cost = {
     "Ore":29,
     "Wood":39,
@@ -1514,11 +1514,11 @@ jellyPeanutPendant.cost = {
     "Loyal Companion":1,
 }
 jellyPeanutPendant.requires = {
-    "Pendant of Lactuca" : 100,
+    "Lactuca" : 100,
 }
 blueprints.push(jellyPeanutPendant)
 
-const shirePendant = new item("Pendant of Comitatus",414,141000,"pendants");
+const shirePendant = new item("Comitatus",414,141000,"pendants");
 shirePendant.cost = {
     "Ore":42,
     "Wood":55,
@@ -1528,25 +1528,25 @@ shirePendant.cost = {
     "Lifegiver Cloak":1,
 }
 shirePendant.requires = {
-    "Pendant of Gelata Eros" : 100,
+    "Gelata Eros" : 100,
 }
 blueprints.push(shirePendant)
 
-const silentPendant = new item("Pendant of Tacet Gladio",622,176000,"pendants");
+const silentPendant = new item("Tacet Gladio",622,176000,"pendants");
 silentPendant.cost = {
     "Ore":61,
     "Wood":77,
     "Leather":99,
     "Herb":98,
     "Fighting Stilettos":2,
-    "White Serpent Chainmail":1,
+    "Serpent Mail":1,
 }
 silentPendant.requires = {
-    "Pendant of Comitatus" : 100,
+    "Comitatus" : 100,
 }
 blueprints.push(silentPendant)
 
-const friendDoorPendant = new item("Pendant of Ostium Amici",936,220000,"pendants");
+const friendDoorPendant = new item("Ostium Amici",936,220000,"pendants");
 friendDoorPendant.cost = {
     "Ore":88,
     "Wood":108,
@@ -1556,11 +1556,11 @@ friendDoorPendant.cost = {
     "Trustworthy Kite":1,
 }
 friendDoorPendant.requires = {
-    "Pendant of Tacet Gladio" : 100,
+    "Tacet Gladio" : 100,
 }
 blueprints.push(friendDoorPendant)
 
-const phoenixPendant = new item("Pendant of Ignis Pullum",1409,275000,"pendants");
+const phoenixPendant = new item("Ignis Pullum",1409,275000,"pendants");
 phoenixPendant.cost = {
     "Ore":128,
     "Wood":151,
@@ -1570,11 +1570,11 @@ phoenixPendant.cost = {
     "Maternity Ward":1,
 }
 phoenixPendant.requires = {
-    "Pendant of Ostium Amici" : 100,
+    "Ostium Amici" : 100,
 }
 blueprints.push(phoenixPendant)
 
-const katiePendant = new item("Pendant of Folium Strennus",2125,343000,"pendants");
+const katiePendant = new item("Folium Strennus",2125,343000,"pendants");
 katiePendant.cost = {
     "Ore":186,
     "Wood":211,
@@ -1584,11 +1584,11 @@ katiePendant.cost = {
     "Burn Unit":2,
 }
 katiePendant.requires = {
-    "Pendant of Ignis Pullum" : 100,
+    "Ignis Pullum" : 100,
 }
 blueprints.push(katiePendant)
 
-const richardPendant = new item("Pendant of Magicae Criceta",3209,429000,"pendants");
+const richardPendant = new item("Magicae Criceta",3209,429000,"pendants");
 richardPendant.cost = {
     "Ore":270,
     "Wood":295,
@@ -1598,11 +1598,11 @@ richardPendant.cost = {
     "Heavy Metal Armor":2,
 }
 richardPendant.requires = {
-    "Pendant of Folium Strennus" : 100,
+    "Folium Strennus" : 100,
 }
 blueprints.push(richardPendant)
 
-const akersonPendant = new item("Pendant of Inpulsa Sciurus",4851,536000,"pendants");
+const akersonPendant = new item("Inpulsa Sciurus",4851,536000,"pendants");
 akersonPendant.cost = {
     "Ore":391,
     "Wood":413,
@@ -1612,11 +1612,11 @@ akersonPendant.cost = {
     "Truth Teller":2,
 }
 akersonPendant.requires = {
-    "Pendant of Magicae Criceta" : 100,
+    "Magicae Criceta" : 100,
 }
 blueprints.push(akersonPendant)
 
-const abquPendant = new item("Pendant of Adipem Pater",7342,671000,"pendants");
+const abquPendant = new item("Adipem Pater",7342,671000,"pendants");
 abquPendant.cost = {
     "Ore":567,
     "Wood":579,
@@ -1626,7 +1626,7 @@ abquPendant.cost = {
     "Deathcaller Cloak":2,
 }
 abquPendant.requires = {
-    "Pendant of Inpulsa Sciurus" : 100,
+    "Inpulsa Sciurus" : 100,
 }
 blueprints.push(abquPendant)
 
@@ -1679,7 +1679,7 @@ const imageReference = {
     "Coughing Potion" : '<img src="PixelItem/Consume/Potion/TinyRedPotion.png">',
     "Invincibility Potion" : '<img src="PixelAbqu/blank_tile.png">',
     "Laughing Potion" : '<img src="PixelItem/Consume/Wine.png">',
-    "Rejuvinating Potion" : '<img src="PixelItem/Consume/Potion/PotionMulticolor.png">',
+    "Rejuvenating Potion" : '<img src="PixelItem/Consume/Potion/PotionMulticolor.png">',
     "Like Potion" : '<img src="PixelItem/Consume/Potion/PotionPink.png">',
     "Bitter Potion" : '<img src="PixelItem/Consume/Whisky.png">',
     "Strength Potion" : '<img src="PixelItem/Consume/Potion/PyramidPotion4.png">',
@@ -1779,18 +1779,18 @@ const imageReference = {
     "Slayers Plate" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_75.png">',
     "Leaded Zeppelin Hull" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_3.png">',
     "A Cool Dark Chainmail" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_51.png">',
-    "Maidens Iron Breastplate" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_41.png">',
+    "Maidens Plate" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_41.png">',
     "Intense Purple Cuirass" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_73.png">',
-    "White Serpent Chainmail" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_46.png">',
+    "Serpent Mail" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_46.png">',
     "Heavy Metal Armor" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/armors/armor_4.png">',
-    "Pendant of Lactuca" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_10.png">',
-    "Pendant of Gelata Eros" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_23.png">',
-    "Pendant of Comitatus" : '<img src="PixelItem/Equip/Neck/NeckSilver3.png">',
-    "Pendant of Tacet Gladio" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_37.png">',
-    "Pendant of Ostium Amici" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_13.png">',
-    "Pendant of Ignis Pullum" : '<img src="PixelItem/Equip/Neck/NeckSilver0.png">',
-    "Pendant of Folium Strennus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_18.png">',
-    "Pendant of Magicae Criceta" : '<img src="PixelItem/Equip/Neck/NeckSilver2.png">',
-    "Pendant of Inpulsa Sciurus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_30.png">',
-    "Pendant of Adipem Pater" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_35.png">',
+    "Lactuca" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_10.png">',
+    "Gelata Eros" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_23.png">',
+    "Comitatus" : '<img src="PixelItem/Equip/Neck/NeckSilver3.png">',
+    "Tacet Gladio" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_37.png">',
+    "Ostium Amici" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_13.png">',
+    "Ignis Pullum" : '<img src="PixelItem/Equip/Neck/NeckSilver0.png">',
+    "Folium Strennus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_18.png">',
+    "Magicae Criceta" : '<img src="PixelItem/Equip/Neck/NeckSilver2.png">',
+    "Inpulsa Sciurus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_30.png">',
+    "Adipem Pater" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_35.png">',
 }
