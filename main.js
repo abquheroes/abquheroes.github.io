@@ -600,7 +600,7 @@ function refreshProgress() {
     }
     let upgradeMaxCt = 0;
     for (let i=0;i<upgrades.length;i++) {
-        upgradeMaxCt += upgrades[i].cost.length;
+        upgradeMaxCt += upgrades[i].value.length-1;
     }
     $('#plUpgradeLevel').html(upgradeCt + "/" + upgradeMaxCt);
     $('#pbUpgrade').progressbar({
