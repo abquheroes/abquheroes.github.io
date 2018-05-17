@@ -124,6 +124,7 @@ function upgrade(name) {
             player.inventoryCap += upgrade.value[upgradeProgress[name]];
         }
         upgradeProgress[name] += 1;
+        ga('send', 'event', 'Upgrades', 'upgrade', name);
     }
 }
 

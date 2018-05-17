@@ -388,6 +388,7 @@ function saveGame() {
         itemCountSave : itemCount,
     }
     localStorage.setItem('gameSave2', JSON.stringify(saveFile));
+    ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
 
 function loadGame() {
@@ -438,6 +439,7 @@ function ExportSave() {
             }
         }
     })
+    ga('send', 'event', 'Save', 'export', 'export');
     $("#exportDialog").dialog("open");
 }
 
