@@ -1616,7 +1616,7 @@ akersonPendant.requires = {
 }
 blueprints.push(akersonPendant)
 
-const abquPendant = new item("Pendent of Adipem Pater",7342,671000,"pendants");
+const abquPendant = new item("Pendant of Adipem Pater",7342,671000,"pendants");
 abquPendant.cost = {
     "Ore":567,
     "Wood":579,
@@ -1792,5 +1792,5 @@ const imageReference = {
     "Pendant of Folium Strennus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_18.png">',
     "Pendant of Magicae Criceta" : '<img src="PixelItem/Equip/Neck/NeckSilver2.png">',
     "Pendant of Inpulsa Sciurus" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_30.png">',
-    "Pendent of Adipem Pater" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_35.png">',
+    "Pendant of Adipem Pater" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/amulets/amulet_35.png">',
 }
