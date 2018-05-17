@@ -264,7 +264,7 @@ function populateJob() {
             const td2 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
             let s = "";
             for (const [mat,amt] of Object.entries(worker.produces)) {
-                s += amt + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
+                s += (amt*worker.multiplier[lvl]).toFixed(1) + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
             }
             const td3 = $('<div/>').addClass('jobValue').html(s);
             trow.append(td1);

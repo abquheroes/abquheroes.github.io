@@ -11,8 +11,9 @@ function refreshInventory() {
     //build the sorted inventory
     for (const [name,amt] of Object.entries(inventory)) {
         if (amt > 0) {
+            const item = nameToItem(name);
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+blueprints[i].value+" Gold").html(name);
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+item.value+" Gold").html(name);
             const itemCt = $("<div/>").addClass("inventoryCount").html("x"+amt);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
