@@ -43,26 +43,16 @@ upgrades.push(maxActionSlots);
 const maxInventory = {
     name : "Max Inventory Slots",
     description : "Increases the number of Inventory Slots you can have.",
-<<<<<<< HEAD
-    cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000],
-    value : [15,20,25,30,35,40,45,50,55,60,65,70,80,90,10],
-=======
     cost : [500,1000,1500,2000,2500,3000,4000,5000,6000,7000,8000,10000,15000,20000,30000,50000],
     value : [10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,30],
->>>>>>> 36ff22fead4af77076f70e892498b0a1d3bf6c74
 }
 upgrades.push(maxInventory);
 
 const autoSell = {
     name : "Auto Sell Value",
     description : "Increases autosell value",
-<<<<<<< HEAD
-    cost : [1000,2000,3000,5000,10000,20000,40000,60000,80000],
-    value : [0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,1],
-=======
     cost : [1000,2000,3000,5000,10000,20000,40000,60000,80000,100000],
     value : [0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95],
->>>>>>> 36ff22fead4af77076f70e892498b0a1d3bf6c74
 }
 upgrades.push(autoSell);
 
@@ -82,6 +72,9 @@ function getMaxInventory() {
 function refreshUpgrades() {
     $upgradelist.empty();
     for (let i=0;i<upgrades.length;i++) {
+        if (upgrades[i].name === "Max Wood" && workerProgress["Eryn"] === 0) continue;
+        if (upgrades[i].name === "Max Leather" && workerProgress["Lakur"] === 0) continue;
+        if (upgrades[i].name === "Max Herb" && workerProgress["Herbie"] === 0) continue;
         const lvl = upgradeProgress[upgrades[i].name];
         const upgrade = $('<div/>').addClass("Upgrade");
         const d1 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>")
