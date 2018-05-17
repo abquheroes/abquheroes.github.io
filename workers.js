@@ -712,6 +712,7 @@ function purchaseWorker(name) {
     if (player.money >= cost) {
         player.money -= cost;
         workerProgress[name] += 1;
+        ga('send', 'event', 'Workers', 'upgrade', name);
     }
 }
 
