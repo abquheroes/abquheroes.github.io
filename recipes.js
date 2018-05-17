@@ -593,7 +593,7 @@ spoopyHat.requires = {
 }
 blueprints.push(spoopyHat)
 
-const allFolksHat = new item("All Folks Hats",2470,402000,"hats");
+const allFolksHat = new item("All Folks Hat",2470,402000,"hats");
 allFolksHat.cost = {
     "Herb":397,
     "Leather":298,
@@ -1702,7 +1702,7 @@ const imageReference = {
     "Ornate Crown" : '<img src="PixelItem/Equip/Head/CrownEmrald.png">',
     "Spellcasting Hat" : '<img src="PixelItem/Equip/Head/Hat3.png">',
     "Spoopy Mask" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/helmets/helmet_102.png">',
-    "All Folks Hats" : '<img src="PixelItem/Equip/Head/Hat4.png">',
+    "All Folks Hat" : '<img src="PixelItem/Equip/Head/Hat4.png">',
     "Basic Wand" : '<img src="PixelItem/Equip/Weapon/Wand0.png">',
     "Forest Wand" : '<img src="PixelItem/Equip/Weapon/Wand1.png">',
     "Wind Wand" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/misc-weapons/weapon_176.png">',
