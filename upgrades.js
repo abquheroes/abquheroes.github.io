@@ -72,6 +72,9 @@ function getMaxInventory() {
 function refreshUpgrades() {
     $upgradelist.empty();
     for (let i=0;i<upgrades.length;i++) {
+        if (upgrades[i].name === "Max Wood" && workerProgress["Eryn"] === 0) continue;
+        if (upgrades[i].name === "Max Leather" && workerProgress["Lakur"] === 0) continue;
+        if (upgrades[i].name === "Max Herb" && workerProgress["Herbie"] === 0) continue;
         const lvl = upgradeProgress[upgrades[i].name];
         const upgrade = $('<div/>').addClass("Upgrade");
         const d1 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>")
