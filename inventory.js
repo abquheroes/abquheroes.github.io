@@ -45,9 +45,12 @@ function removeAllFromInventory(itemName) {
     refreshInventory();
 }
 
-function removeFromInventory(itemName) {
-    if (!(itemName in inventory) || inventory[itemName] === 0) return false;
-    inventory[itemName] -= 1;
+function removeFromInventory(itemName,amt) {
+    console.log(amt);
+    amt = amt || 1;
+    console.log(amt);
+    if (!(itemName in inventory) || inventory[itemName] < amt) return false;
+    inventory[itemName] -= amt;
     refreshInventory();
     return true;    
 }

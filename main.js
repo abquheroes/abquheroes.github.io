@@ -347,6 +347,10 @@ function canCraft(loc) {
         if (resources.includes(res)) {
             if (player[res] < amt) return false;
         }
+        else {
+            console.log(res,inventory[res],amt);
+            if (!(res in inventory) || inventory[res] < amt) return false;
+        }
     }
     return true;
 }
@@ -356,8 +360,9 @@ function deductCost(loc) {
     const itemName = player.actionSlots[loc].actionName;
     const itemFull = nameToItem(itemName);
     for (const [res,amt] of Object.entries(itemFull.cost)) {
+        console.log(amt);
         if (resources.includes(res)) player[res] -= amt;
-        else removeLotsFromInventory(res,amt);
+        else removeFromInventory(res,amt);
     }
 }
 
