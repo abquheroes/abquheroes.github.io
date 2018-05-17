@@ -368,6 +368,8 @@ select {
     flex-direction: column;
     border: 1px solid var(--theme-border);
     margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
     overflow: hidden;
 }
 
@@ -802,6 +804,13 @@ footer a:hover {
 #clearSave:hover {
     background-color: #c90000;
     color: #fff;
+}
+
+span#copyme {
+    display: block;
+    max-width: 220px;
+    max-height: 30px;
+    word-wrap: break-word;
 }
 
 .tooltip:hover:before {
