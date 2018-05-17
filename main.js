@@ -379,7 +379,12 @@ function msToTime(s) {
 
 function saveGame() {
     if (stopSave) return;
-    const saveFile = {
+    localStorage.setItem('gameSave2', JSON.stringify(createSave()));
+    ga('send', 'event', 'Save', 'savegame', 'savegame');
+}
+
+function createSave() {
+    return {
         playerSave : player,
         workerProgressSave : workerProgress,
         workerSacProgressSave : workerSacProgress,
@@ -387,8 +392,6 @@ function saveGame() {
         inventorySave : inventory,
         itemCountSave : itemCount,
     }
-    localStorage.setItem('gameSave2', JSON.stringify(saveFile));
-    ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
 
 function loadGame() {
@@ -423,10 +426,7 @@ function ClearSave() {
 }
 
 function ExportSave() {
-    const saveFile = {
-        playerSave : player,
-        itemSave : itemCount,
-    }
+    const saveFile = createSave();
     $("#exportDialog").html("<p>Copy this code to import later:</p><span id='copyme'>"+btoa(JSON.stringify(saveFile))+"</span>");
     $("#exportDialog").dialog({
         buttons: {
