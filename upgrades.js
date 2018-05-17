@@ -51,8 +51,8 @@ upgrades.push(maxInventory);
 const autoSell = {
     name : "Auto Sell Value",
     description : "Increases autosell value",
-    cost : [750,1000,1500,2000,3000],
-    value : [0.5,0.6,0.7,0.8,0.9,1],
+    cost : [1000,2000,3000,5000,10000,20000,40000,60000,80000,100000],
+    value : [0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,1],
 }
 upgrades.push(autoSell);
 
