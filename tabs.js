@@ -9,6 +9,9 @@ $(document).ready( () => {
             else if($(ui.newTab).index() === 1) {
                 refreshWorkers();
             }
+            else if ($(ui.newTab).index() === 4) {
+                refreshProgress();
+            }
         }
     })
 });

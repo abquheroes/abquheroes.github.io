@@ -148,7 +148,7 @@ $('#importSave').click((e) => {
     ImportSaveButton();
 });
 
-$('.recipeSelect').click((e) => {
+$(document).on("click",".recipeSelect", (e) => {
     e.preventDefault();
     const type = $(e.target).text();
     player.currentType = type;
@@ -231,6 +231,9 @@ function refreshResources() {
     $woodPSAmt.text(getProduction("Wood").toFixed(2));
     $leatherPSAmt.text(getProduction("Leather").toFixed(2));
     $herbPSAmt.text(getProduction("Herb").toFixed(2));
+    if (workerProgress["Eryn"] > 0) $("#woodResource").removeClass("hidden");
+    if (workerProgress["Lakur"] > 0) $("#leatherResource").removeClass("hidden");
+    if (workerProgress["Herbie"] > 0) $("#herbResource").removeClass("hidden");
 }
 
 function populateJob() {
@@ -559,4 +562,46 @@ function canSee(name) {
     if (name === "Cloaks") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
     if (name === "Armor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
     if (name === "Pendants") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
+}
+
+function refreshProgress() {
+    let recipeCt = 0;
+    for (const [item,cnt] of Object.entries(itemCount)) {
+        if (cnt >= 1000) recipeCt += 1;
+    }
+    const recipeMaxCt = blueprints.length;
+    $("#plRecipeMastery").html(recipeCt + "/" + recipeMaxCt);
+    $("#pbRecipe").progressbar({
+        value: recipeCt/recipeMaxCt*100
+    });
+    let workerCt = 0;
+    for (const [worker,lvl] of Object.entries(workerProgress)) {
+        workerCt += lvl;
+    }
+    let workerMaxCt = 0;
+    for (let i=0;i<workers.length;i++) {
+        workerMaxCt += workers[i].cost.length;
+    }
+    $("#plWorkerLevel").html(workerCt + "/" + workerMaxCt);
+    $("#pbWorker").progressbar({
+        value: workerCt/workerMaxCt*100
+    });
+    let upgradeCt = 0;
+    for (const [upgrade,lvl] of Object.entries(upgradeProgress)) {
+        upgradeCt += lvl;
+    }
+    let upgradeMaxCt = 0;
+    for (let i=0;i<upgrades.length;i++) {
+        upgradeMaxCt += upgrades[i].cost.length;
+    }
+    $('#plUpgradeLevel').html(upgradeCt + "/" + upgradeMaxCt);
+    $('#pbUpgrade').progressbar({
+        value: upgradeCt/upgradeMaxCt*100
+    })
+    const overallCt = recipeCt+workerCt+upgradeCt;
+    const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
+    $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
+    $('#pbOverall').progressbar({
+        value: overallCt/overallMaxCt*100
+    });
 }
