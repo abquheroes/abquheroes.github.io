@@ -35,8 +35,7 @@ oren.produces = {
     "Ore" : 20,
 }
 oren.lvlreq = [
-    {//1
-        "Knife" : 5,
+    {//unlock
     },
     {//2
         "Knife" : 10,
@@ -183,9 +182,6 @@ eryn.lvlreq = [
     {//unlock
         "Chefs Knife" : 5,
     },
-    {//1
-        "Club" : 5,
-    },
     {//2
         "Club" : 10,
     },
@@ -331,9 +327,6 @@ lakur.lvlreq = [
     {//unlock
         "The Broominator" : 5,
     },
-    {//1
-        "Gardening Gloves" : 5,
-    },
     {//2
         "Gardening Gloves" : 10,
     },
@@ -478,9 +471,6 @@ herbie.produces = {
 herbie.lvlreq = [
     {//unlock
         "Cleaning Gloves" : 5,
-    },
-    {//1
-        "Healing Potion" : 5,
     },
     {//2
         "Healing Potion" : 10,
