@@ -253,16 +253,6 @@ select {
     width:100%;
 }
 
-/* Hide content while retaining the content's effects on elements, such as, its width and height. */
-.hidden {
-    visibility: hidden;
-}
-
-/* Hide content completely, removing both the content and its effect on elements */
-.none {
-    display: none;
-}
-
 .pbLabel {
     width: 100%;
     float: left;
@@ -368,6 +358,7 @@ select {
 .ASBlock {
     display: flex;
     flex-direction: column;
+    position: relative;
     border: 1px solid var(--theme-border);
     margin: 10px;
     min-width: 200px;
@@ -404,11 +395,20 @@ select {
 
 .ASCancel {
     position: absolute;
-    color: var(--theme-text);
-    padding: 5px 3px;
-    top: -30px;
+    top: 0;
     right: 0;
+}
+
+.ASCancel a {
+    display: block;
+    padding: 5px 5px;
+    color: var(--theme-text);
     text-decoration: none;
+    background-color: var(--theme-bg-3);
+}
+
+.ASCancel a:hover {
+    background-color: var(--theme-bg-2);
 }
 
 .pbLabel {
@@ -955,4 +955,14 @@ footer a[href*="discord.gg"]:hover {
     to {
         opacity: 1;
     }
+}
+
+/* Hide content while retaining the content's effects on elements, such as, its width and height. */
+.hidden {
+    visibility: hidden;
+}
+
+/* Hide content completely, removing both the content and its effect on elements */
+.none {
+    display: none;
 }
