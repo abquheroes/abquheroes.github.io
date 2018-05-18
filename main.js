@@ -545,12 +545,10 @@ function initializeInventory() {
 }
 
 function refreshRecipeSelector() {
-    $recipeFilter.empty();
-    for (const [name, href] of Object.entries(rSL)) {
-        const a = $("<a/>").addClass("recipeSelect").attr("href",href).html(name);
-        if (!canSee(name)) a.addClass("hidden");
-        $recipeFilter.append(a);
-    }
+    $(".recipeSelect").each(() => {
+        const name = $(this).html();
+        if (canSee(name)) $(this).removeClass("none");
+    });
 }
 
 function canSee(name) {
