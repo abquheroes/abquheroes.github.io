@@ -239,9 +239,7 @@ function updatedActionSlots() {
             asState[i] = player.actionSlots[i].actionType;
         }
         if (pbValueCurrent[i] !== pbValue[i]) {
-            $asParts[i].pb.progressbar({
-                value: pbValue[i]
-            })
+            $asParts[i].pb.progressbar('option', 'value', pbValue[i]);
             pbValueCurrent[i] = pbValue[i];
         }
         if (pbLabelTextCurrent[i] !== pbLabelText[i]) {
