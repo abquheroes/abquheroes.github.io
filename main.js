@@ -31,7 +31,7 @@ const player = {
             actionEnd : 0,
         },
     ],
-    currentType : null,
+    currentType : "Knives",
     inventoryCap : 5,
     lastLoop : Date.now(),
 }
@@ -196,12 +196,20 @@ const $asParts = [
 ]
 
 const asState = ["Empty","Empty","Empty"];
+const pbValue = [0,0,0];
+const pbValueCurrent = [0,0,0];
+const pbLabelText = ["","",""];
+const pbLabelTextCurrent = ["","",""];
 
 function updatedActionSlots() {
     for (let i=0;i<player.actionSlots.length;i++) {
         if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
             console.log("TRIGGERED");
             asState.push("Empty");
+            pbValue.push(0);
+            pbValueCurrent.push(0);
+            pbLabelText.push("");
+            pbLabelTextCurrent.push("");
             $asParts[i].block.removeClass["none"];
         }
         if (player.actionSlots[i].actionType !== asState[i]) { //aka we changed states...
@@ -230,6 +238,16 @@ function updatedActionSlots() {
             }
             asState[i] = player.actionSlots[i].actionType;
         }
+        if (pbValueCurrent[i] !== pbValue[i]) {
+            $asParts[i].pb.progressbar({
+                value: pbValue[i]
+            })
+            pbValueCurrent[i] = pbValue[i];
+        }
+        if (pbLabelTextCurrent[i] !== pbLabelText[i]) {
+            $asParts[i].pbLabel.text(pbLabelText[i]);
+            pbLabelTextCurrent[i] = pbLabelText[i];
+        }      
     }
 }
 
@@ -251,7 +269,6 @@ initialize();
 refreshInventory();
 populateJob();
 refreshUpgrades();
-refreshRecipeSelector();
 
 $('#ActionSlots').on("click", "a.ASCancel", (e) => {
     e.preventDefault();
@@ -297,46 +314,39 @@ $(document).on("click", "a.addJob", (e) => {
 });
 
 const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
-const progressBars = [];
+
+
+
 
 function mainLoop() {
     const deltaT = Date.now() - player.lastLoop;
     player.lastLoop = Date.now();
     for (let i=0;i<resources.length;i++) {
-        const lowercaseName = resources[i].toLowerCase();
         remainder[i] += deltaT*getProduction(resources[i]);
         player[resources[i]] += Math.floor(remainder[i]/1000);
-        player[resources[i]] = Math.min(player[lowercaseName+"Cap"],player[resources[i]]);
+        player[resources[i]] = Math.min(getCap(resources[i]),player[resources[i]]);
         remainder[i] = remainder[i]%1000;
     }
     for (let i=0;i<player.actionSlots.length;i++) {
-        const pb = $asParts[i].pb;
-        const pbLabel = $asParts[i].pbLabel;
         if (player.actionSlots[i].actionTime > 0) {
-            let item = nameToItem(player.actionSlots[i].actionName);
-            if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
-            if (Date.now() >= player.actionSlots[i].actionTime + item.craftTime) {
+            let craftTime = null;
+            if (player.actionSlots[i].actionType === "Job") craftTime = nameToWorker(player.actionSlots[i].actionName).craftTime;
+            else craftTime = nameToItem(player.actionSlots[i].actionName).craftTime;
+            if (Date.now() >= player.actionSlots[i].actionTime + craftTime) {
                 progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
                 player.actionSlots[i].actionTime = 0;
-                $(pb).progressbar({
-                    value: 0
-                })
                 if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
+                pbValue[i] = 0;
             }
             else {
-                const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
-                const p1 = (player.actionSlots[i].actionTime + item.craftTime - Date.now())/item.craftTime;
-                $(pbLabel).text(pText);
-                $(pb).progressbar({
-                    value: 100-p1*100
-                })
+                pbLabelText[i] = msToTime(player.actionSlots[i].actionTime + craftTime - Date.now());
+                const p1 = (player.actionSlots[i].actionTime + craftTime - Date.now())/craftTime;
+                pbValue[i] = 100-p1*100;
             }
         }
         else {
-            $(pbLabel).text("Waiting for Resources...");
-            $(pb).progressbar({
-                value : 0
-            });
+            pbLabelText[i] = "Waiting for Resources...";
+            pbValue[i] = 0;
         }
         if (canCraft(i)) {
             deductCost(i);
@@ -362,7 +372,7 @@ function refreshResources() {
     }
     if (player.money !== displayedResources["Money"]) {
         $moneyAmt.text(Math.floor(player.money))
-        player.money = displayedResources["Money"];
+        displayedResources["Money"] = player.money;
     }
 }
 
@@ -631,7 +641,6 @@ function progressFinish(type,name) {
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
     }
-    refreshRecipeSelector();
 }
 
 
@@ -682,10 +691,6 @@ function initializeInventory() {
     for (let i=0;i<blueprints[i].length;i++) {
         inventory[blueprints[i].name] = 0;
     }
-}
-
-function refreshRecipeSelector() {
-    
 }
 
 function canSee(name) {
