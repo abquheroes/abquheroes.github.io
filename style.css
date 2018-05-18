@@ -858,32 +858,20 @@ span#copyme {
 }
 
 .inventoryItem a.tooltip:hover:after {
-    left: 5px;
-    right: 5px;
-    top: 0;
-    margin-top: 5px;
-    z-index: 2;
-}
-
-/* ALTERNATIVE TOOLTIP FOR INVENTORY
-.inventoryItem a.tooltip:hover:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 0;
-    right: 70px;
+    right: 0;
     top: 0;
     bottom: 0;
     margin-top: 0;
     border-radius: 0;
     z-index: 2;
 }
-*/
 
 .inventoryItem a.tooltip:hover:before {
     display: none;
-    /*margin-top: 4px;
-    right: 100%;
-    margin-right: -4px;
-    border-bottom-color: transparent;
-    border-right-color: black;*/
 }
 
 .itemToSacDiv a.tooltip:hover:after {
