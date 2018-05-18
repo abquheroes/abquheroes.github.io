@@ -128,6 +128,7 @@ body{
 #right-side-content {
     border-left: 1px solid var(--theme-border);
     height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 
 #right-side-content .heading {
@@ -159,8 +160,9 @@ body{
 .inventoryItem a {
     flex-grow: 1;
     color: var(--theme-text);
+    font-size: 14px;
     text-decoration: none;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 60px 10px 30px;
 }
 
 .inventoryItem a:hover {
@@ -251,9 +253,14 @@ select {
     width:100%;
 }
 
+/* Hide content while retaining the content's effects on elements, such as, its width and height. */
 .hidden {
-    /*display: none;*/
     visibility: hidden;
+}
+
+/* Hide content completely, removing both the content and its effect on elements */
+.none {
+    display: none;
 }
 
 .pbLabel {
@@ -367,6 +374,8 @@ select {
     flex-direction: column;
     border: 1px solid var(--theme-border);
     margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
     overflow: hidden;
 }
 
@@ -648,7 +657,7 @@ input#importSaveText {
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist {
+#workerList, #upgradelist, #progresslist {
     padding: 20px;
 }
 
@@ -759,6 +768,10 @@ input#importSaveText {
     user-select: none;
 }
 
+.plProgressBar {
+    border: 1px solid var(--theme-border)!important;
+}
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -803,6 +816,13 @@ footer a:hover {
     color: #fff;
 }
 
+span#copyme {
+    display: block;
+    max-width: 220px;
+    max-height: 30px;
+    word-wrap: break-word;
+}
+
 .tooltip:hover:before {
     display: inline-block;
     position: absolute;
@@ -838,18 +858,20 @@ footer a:hover {
 }
 
 .inventoryItem a.tooltip:hover:after {
-    left: -100%;
-    right: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
     top: 0;
-    margin-top: 8px;
+    bottom: 0;
+    margin-top: 0;
+    border-radius: 0;
+    z-index: 2;
 }
 
 .inventoryItem a.tooltip:hover:before {
-    margin-top: 4px;
-    right: 100%;
-    margin-right: -4px;
-    border-bottom-color: transparent;
-    border-right-color: black;    
+    display: none;
 }
 
 .itemToSacDiv a.tooltip:hover:after {
@@ -865,6 +887,8 @@ footer a:hover {
 
 .recipeCost.tooltip:hover:after {
     margin-top: -15px;
+    bottom: 150%;
+    top: unset;
 }
 .recipeCost.tooltip:hover:before {
     margin-top: -10px;

@@ -559,13 +559,13 @@ herbie.lvlreq = [
         "Super Helmet" : 5,
     },
     {//18
-        "Rejuvinating Potion" : 10,
+        "Rejuvenating Potion" : 10,
         "Beach Hat" : 10,
         "Soul Wand" : 10,
         "Super Helmet" : 10,
     },
     {//19
-        "Rejuvinating Potion" : 15,
+        "Rejuvenating Potion" : 15,
         "Green Bay Beret" : 5,
         "Rain Wand" : 5,
         "Mega Helmet" : 5,
