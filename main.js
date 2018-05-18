@@ -38,6 +38,40 @@ const player = {
 
 const resources = ["Ore","Wood","Leather","Herb"];
 
+const displayedResources = {}
+
+const hidden = {
+    "woodResource" : true,
+    "leatherResource" : true,
+    "herbResouce" : true,
+    "recipeMace" : true,
+    "recipeGlove" : true,
+    "recipePotion" : true,
+    "recipeAxe" : true,
+    "recipeHat" : true,
+    "recipeWand" : true,
+    "recipeGauntlet" : true,
+    "recipeHelmet" : true,
+    "recipeShoe" : true,
+    "recipeWard" : true,
+    "recipeShield" : true,
+    "recipeCloak" : true,
+    "recipeArmor" : true,
+    "recipePendant" : true,
+}
+
+function initialize() {
+    for (let i=0;i<resources.length;i++) {
+        displayedResources[resources[i]] = 0;
+    }
+    displayedResources["Money"] = 0;
+    for (let i=0;i<10;i++) {
+        $asParts[i].pb.progressbar();
+    }
+}
+
+
+
 const workerProgress = {
     "Oren" : 1,
     "Eryn" : 0,
@@ -57,25 +91,6 @@ const upgradeProgress = {
     "Max Inventory Slots" : 0,
     "Auto Sell Value" : 0,
 }
-
-const rSL = {
-    "Knives" : "KnifeSelector",
-    "Maces" : "MaceSelector",
-    "Gloves" : "GloveSelector",
-    "Potions" : "PotionSelector",
-    "Axes" : "AxeSelector",
-    "Hats" : "HatSelector",
-    "Wands" : "WandSelector",
-    "Gauntlets" : "GauntletSelector",
-    "Helmets" : "HelmetSelector",
-    "Shoes" : "ShoeSelector",
-    "Wards" : "WardSelector",
-    "Shields" : "ShieldSelector",
-    "Cloaks" : "CloakSelector",
-    "Armor" : "ArmorSelector",
-    "Pendants" : "PendantSelector",
-}
-
 
 const inventory = {};
 const itemCount = {};
@@ -97,16 +112,131 @@ $("#clearDialog").dialog({
     autoOpen: false,
 });
 
-const $oreAmt = $('#oreAmt');
-const $woodAmt = $('#woodAmt');
-const $leatherAmt = $('#leatherAmt');
-const $herbAmt = $('#herbAmt');
+const $asParts = [
+    {
+        block : $("ASBlock1"),
+        type : $("#ASType1"),
+        cancel : $("#ASCancel1"),
+        name : $("#ASName1"),
+        pb : $("#c1pb"),
+        pbLabel : $("#c1pbLabel"),
+    },
+    {
+        block : $("ASBlock2"),
+        type : $("#ASType2"),
+        cancel : $("#ASCancel2"),
+        name : $("#ASName2"),
+        pb : $("#c2pb"),
+        pbLabel : $("#c2pbLabel"),
+    },
+    {
+        block : $("ASBlock3"),
+        type : $("#ASType3"),
+        cancel : $("#ASCancel3"),
+        name : $("#ASName3"),
+        pb : $("#c3pb"),
+        pbLabel : $("#c3pbLabel"),
+    },
+    {
+        block : $("ASBlock4"),
+        type : $("#ASType4"),
+        cancel : $("#ASCancel4"),
+        name : $("#ASName4"),
+        pb : $("#c4pb"),
+        pbLabel : $("#c4pbLabel"),
+    },
+    {
+        block : $("ASBlock5"),
+        type : $("#ASType5"),
+        cancel : $("#ASCancel5"),
+        name : $("#ASName5"),
+        pb : $("#c5pb"),
+        pbLabel : $("#c5pbLabel"),
+    },
+    {
+        block : $("ASBlock6"),
+        type : $("#ASType6"),
+        cancel : $("#ASCancel6"),
+        name : $("#ASName6"),
+        pb : $("#c6pb"),
+        pbLabel : $("#c6pbLabel"),
+    },
+    {
+        block : $("ASBlock7"),
+        type : $("#ASType7"),
+        cancel : $("#ASCancel7"),
+        name : $("#ASName7"),
+        pb : $("#c7pb"),
+        pbLabel : $("#c7pbLabel"),
+    },
+    {
+        block : $("ASBlock8"),
+        type : $("#ASType8"),
+        cancel : $("#ASCancel8"),
+        name : $("#ASName8"),
+        pb : $("#c8pb"),
+        pbLabel : $("#c8pbLabel"),
+    },
+    {
+        block : $("ASBlock9"),
+        type : $("#ASType9"),
+        cancel : $("#ASCancel9"),
+        name : $("#ASName9"),
+        pb : $("#c9pb"),
+        pbLabel : $("#c9pbLabel"),
+    },
+    {
+        block : $("ASBlock10"),
+        type : $("#ASType10"),
+        cancel : $("#ASCancel10"),
+        name : $("#ASName10"),
+        pb : $("#c10pb"),
+        pbLabel : $("#c10pbLabel"),
+    },
+]
+
+const asState = ["Empty","Empty","Empty"];
+
+function updatedActionSlots() {
+    for (let i=0;i<player.actionSlots.length;i++) {
+        if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
+            console.log("TRIGGERED");
+            asState.push("Empty");
+            $asParts[i].block.removeClass["none"];
+        }
+        if (player.actionSlots[i].actionType !== asState[i]) { //aka we changed states...
+            if (player.actionSlots[i].actionType === "Empty") {
+                $asParts[i].type.html("Empty");
+                $asParts[i].cancel.addClass("hidden");
+                $asParts[i].name.addClass("hidden");
+                $asParts[i].pb.addClass("hidden");
+                $asParts[i].pbLabel.addClass("hidden")
+            }
+            else if (player.actionSlots[i].actionType === "Job") {
+                $asParts[i].type.html("Job");
+                $asParts[i].cancel.removeClass("hidden");
+                const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
+                $asParts[i].name.removeClass("hidden").html(name);
+                $asParts[i].pb.removeClass("hidden")
+                $asParts[i].pbLabel.removeClass("hidden")
+            }
+            else if (player.actionSlots[i].actionType === "Craft") {
+                $asParts[i].type.html("Craft");
+                $asParts[i].cancel.removeClass("hidden");
+                const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
+                $asParts[i].name.removeClass("hidden").html(name);
+                $asParts[i].pb.removeClass("hidden")
+                $asParts[i].pbLabel.removeClass("hidden")
+            }
+            asState[i] = player.actionSlots[i].actionType;
+        }
+    }
+}
+
+
+const $resAmts = [$('#oreAmt'),$('#woodAmt'),$('#leatherAmt'),$('#herbAmt')];
 
 const $moneyAmt = $('#moneyAmt');
-const $orePSAmt = $('#orePerSecAmt');
-const $woodPSAmt = $('#woodPerSecAmt');
-const $leatherPSAmt = $('#leatherPerSecAmt');
-const $herbPSAmt = $('#herbPerSecAmt');
 
 const $RecipeResults = $('#RecipeResults');
 const $inventory = $('#inventory');
@@ -117,8 +247,8 @@ const $recipeFilter = $("#RecipeFilter");
 
 initializeInventory();
 loadGame();
+initialize();
 refreshInventory();
-refreshActionSlots();
 populateJob();
 refreshUpgrades();
 refreshRecipeSelector();
@@ -129,7 +259,6 @@ $('#ActionSlots').on("click", "a.ASCancel", (e) => {
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
-    refreshActionSlots();
     populateJob();
 });
 
@@ -167,12 +296,12 @@ $(document).on("click", "a.addJob", (e) => {
     populateJob();
 });
 
-
+const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
+const progressBars = [];
 
 function mainLoop() {
     const deltaT = Date.now() - player.lastLoop;
     player.lastLoop = Date.now();
-    const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
     for (let i=0;i<resources.length;i++) {
         const lowercaseName = resources[i].toLowerCase();
         remainder[i] += deltaT*getProduction(resources[i]);
@@ -181,7 +310,8 @@ function mainLoop() {
         remainder[i] = remainder[i]%1000;
     }
     for (let i=0;i<player.actionSlots.length;i++) {
-        const pb = "#c"+i+"pb";
+        const pb = $asParts[i].pb;
+        const pbLabel = $asParts[i].pbLabel;
         if (player.actionSlots[i].actionTime > 0) {
             let item = nameToItem(player.actionSlots[i].actionName);
             if (player.actionSlots[i].actionType === "Job") item = nameToWorker(player.actionSlots[i].actionName);
@@ -196,14 +326,14 @@ function mainLoop() {
             else {
                 const pText = msToTime(player.actionSlots[i].actionTime + item.craftTime - Date.now());
                 const p1 = (player.actionSlots[i].actionTime + item.craftTime - Date.now())/item.craftTime;
-                $(pb+"Label").text(pText);
+                $(pbLabel).text(pText);
                 $(pb).progressbar({
                     value: 100-p1*100
                 })
             }
         }
         else {
-            $(pb+"Label").text("Waiting for Resources...");
+            $(pbLabel).text("Waiting for Resources...");
             $(pb).progressbar({
                 value : 0
             });
@@ -214,26 +344,35 @@ function mainLoop() {
         }
     }
     refreshResources();
+    unhideStuff();
+    updatedActionSlots();
 }
 
 setInterval(mainLoop, 10);
 setInterval(saveGame, 5000);
 
-
-
 function refreshResources() {
-    $oreAmt.text(player["Ore"] + "/" + player.oreCap);
-    $woodAmt.text(player["Wood"] + "/" + player.woodCap);
-    $leatherAmt.text(player["Leather"] + "/" + player.leatherCap);
-    $herbAmt.text(player["Herb"] +"/"+player.herbCap);
-    $moneyAmt.text(Math.floor(player.money));
-    $orePSAmt.text(getProduction("Ore").toFixed(2));
-    $woodPSAmt.text(getProduction("Wood").toFixed(2));
-    $leatherPSAmt.text(getProduction("Leather").toFixed(2));
-    $herbPSAmt.text(getProduction("Herb").toFixed(2));
-    if (workerProgress["Eryn"] > 0) $("#woodResource").removeClass("hidden");
-    if (workerProgress["Lakur"] > 0) $("#leatherResource").removeClass("hidden");
-    if (workerProgress["Herbie"] > 0) $("#herbResource").removeClass("hidden");
+    for (let i=0;i<resources.length;i++) {
+        const name = resources[i];
+        if (player[name] !== displayedResources[name]) {
+            console.log(name+"Cap");
+            $resAmts[i].text(player[name] + "/" + getCap(name));
+            displayedResources[name] = player[name];
+        }
+    }
+    if (player.money !== displayedResources["Money"]) {
+        $moneyAmt.text(Math.floor(player.money))
+        player.money = displayedResources["Money"];
+    }
+}
+
+function unhideStuff() {
+    for (const [name,isHidden] of Object.entries(hidden)) {
+        if (isHidden && canSee(name)) {
+            $("#"+name).removeClass("none");
+            hidden[name] = false;
+        }
+    }
 }
 
 function populateJob() {
@@ -389,6 +528,7 @@ function saveGame() {
 }
 
 function createSave() {
+    console.log(player);
     return {
         playerSave : player,
         workerProgressSave : workerProgress,
@@ -476,7 +616,6 @@ function addCraft(itemName,craft) {
             break;
         }
     }
-    refreshActionSlots();
 }
 
 function progressFinish(type,name) {
@@ -497,7 +636,8 @@ function progressFinish(type,name) {
 
 
 
-function refreshActionSlots() {
+
+/*function refreshActionSlots() {
     $actionSlots.empty();
     const table = $('<div/>').addClass('ASTable');
     const hrow = $('<div/>').addClass('ASHeader');
@@ -528,7 +668,7 @@ function refreshActionSlots() {
         table.append(row);
     }
     $actionSlots.append(table);
-}
+}*/
 
 function round(number, precision) {
     var shift = function (number, precision) {
@@ -549,21 +689,23 @@ function refreshRecipeSelector() {
 }
 
 function canSee(name) {
-    if (name === "Knives") return true;
-    if (name === "Maces") return workerProgress["Eryn"] > 0;
-    if (name === "Gloves") return workerProgress["Lakur"] > 0;
-    if (name === "Potions") return workerProgress["Herbie"] > 0;
-    if (name === "Axes") return itemCount["Chefs Knife"] >= 3 && itemCount["The Broominator"] >= 3;
-    if (name === "Hats") return itemCount["Cleaning Gloves"] >= 3 && itemCount["Sleeping Potion"] >= 3;
-    if (name === "Wands") return itemCount["Blackjack"] >= 3 && itemCount["Invincibility Potion"] >= 3;
-    if (name === "Gauntlets") return itemCount["Punching Gloves"] >= 3 && itemCount["Fishing Knife"] >= 3;
-    if (name === "Helmets") return itemCount["Club Knife"] >= 3 && itemCount["Like Potion"] >= 3;
-    if (name === "Shoes") return itemCount["Night Club"] >= 3 && itemCount["Loving Gloves"] >= 3;
-    if (name === "Wards") return itemCount["Vengance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
-    if (name === "Shields") return itemCount["Slothslayer"] >= 3 && itemCount["Bardic Galoshes"] >= 3 &&  itemCount["Plain Gauntlets"] >= 3;
-    if (name === "Cloaks") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
-    if (name === "Armor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
-    if (name === "Pendants") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
+    if (name === "woodResource") return workerProgress["Eryn"] > 0;
+    if (name === "leatherResource") return workerProgress["Lakur"] > 0;
+    if (name === "herbResource") return workerProgress["Herbie"] > 0; 
+    if (name === "recipeMace") return workerProgress["Eryn"] > 0;
+    if (name === "recipeGlove") return workerProgress["Lakur"] > 0;
+    if (name === "recipePotion") return workerProgress["Herbie"] > 0;
+    if (name === "recipeAxe") return itemCount["Chefs Knife"] >= 3 && itemCount["The Broominator"] >= 3;
+    if (name === "recipeHat") return itemCount["Cleaning Gloves"] >= 3 && itemCount["Sleeping Potion"] >= 3;
+    if (name === "recipeWand") return itemCount["Blackjack"] >= 3 && itemCount["Invincibility Potion"] >= 3;
+    if (name === "recipeGauntlet") return itemCount["Punching Gloves"] >= 3 && itemCount["Fishing Knife"] >= 3;
+    if (name === "recipeHelmet") return itemCount["Club Knife"] >= 3 && itemCount["Like Potion"] >= 3;
+    if (name === "recipeShoe") return itemCount["Night Club"] >= 3 && itemCount["Loving Gloves"] >= 3;
+    if (name === "recipeWard") return itemCount["Vengance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
+    if (name === "recipeShield") return itemCount["Slothslayer"] >= 3 && itemCount["Bardic Galoshes"] >= 3 &&  itemCount["Plain Gauntlets"] >= 3;
+    if (name === "recipeCloak") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
+    if (name === "recipeArmor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
+    if (name === "recipePendant") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
 }
 
 function refreshProgress() {
@@ -607,4 +749,11 @@ function refreshProgress() {
     $('#pbOverall').progressbar({
         value: overallCt/overallMaxCt*100
     });
+}
+
+function getCap(res) {
+    const name = "Max " + res;
+    const lvl = upgradeProgress[name]
+    const upgrade = nameToUpgrade(name);
+    return upgrade.value[lvl];
 }

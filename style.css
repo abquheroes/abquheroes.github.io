@@ -359,17 +359,13 @@ select {
     max-width: 1150px;
 }
 
-.ASTable {
+#ASTable {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.ASHeader {
-    display: none;
-}
-
-.ASRow {
+.ASBlock {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--theme-border);
@@ -379,7 +375,7 @@ select {
     overflow: hidden;
 }
 
-.ASRow>div>.ui-progressbar {
+.ASBlock>div>.ui-progressbar {
     position: relative;
     display: block;
     height: 25px;

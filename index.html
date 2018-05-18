@@ -33,8 +33,8 @@
                 <div id="side-content">
                     <p class="heading">Resources:</p>
                     <img src="PixelItem/CoinsGold5.png">&nbsp;&nbsp;<span id="moneyAmt">0</span></br>
-                    <img src="PixelItem/Ore.png">&nbsp;&nbsp;<span id="oreAmt">0</span></br>
-                    <div id="woodResource" class="hidden"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">&nbsp;&nbsp;<span id="woodAmt">0</span></br></div>
+                    <img src="PixelItem/Ore.png">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br>
+                    <div id="woodResource" class="hidden"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
                     <div id="leatherResource" class="hidden"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
                     <div id="herbResource" class="hidden"><img src="PixelItem/Consume/Herb5.png">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
                 </div>
@@ -47,7 +47,73 @@
             </div>
 
             <div class="game-wrapper">
-                <div id="Actions"><h1>Action Slots</h1><div id="ActionSlots"></div>
+                <div id="Actions">
+                    <h1>Action Slots</h1>
+                    <div id="ActionSlots">
+                        <div id="ASTable">
+                            <div class="ASBlock" id="ASBlock1">
+                                <div class="ASType" id="ASType1">Empty</div>
+                                <div class="ASCancel" id="ASCancel1"><a href="1" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName1"></div>
+                                <div><div id="c1pb" class="hidden"><div class="pbLabel hidden" id="c1pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock" id="ASBlock2">
+                                <div class="ASType" id="ASType2">Empty</div>
+                                <div class="ASCancel" id="ASCancel2"><a href="2" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName2"></div>
+                                <div><div id="c2pb" class="hidden"><div class="pbLabel hidden" id="c2pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock" id="ASBlock3">
+                                <div class="ASType" id="ASType3">Empty</div>
+                                <div class="ASCancel" id="ASCancel3"><a href="3" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName3"></div>
+                                <div><div id="c3pb" class="hidden"><div class="pbLabel hidden" id="c3pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock4">
+                                <div class="ASType" id="ASType4">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel4"><a href="4" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName4"></div>
+                                <div><div id="c4pb" class="hidden"><div class="pbLabel hidden" id="c4pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock5">
+                                <div class="ASType" id="ASType5">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel5"><a href="5" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName5"></div>
+                                <div><div id="c5pb" class="hidden"><div class="pbLabel hidden" id="c5pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock6">
+                                <div class="ASType" id="ASType6">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel6"><a href="6" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName6"></div>
+                                <div><div id="c6pb" class="hidden"><div class="pbLabel hidden" id="c6pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock7">
+                                <div class="ASType" id="ASType7">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel7"><a href="7" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName7"></div>
+                                <div><div id="c7pb" class="hidden"><div class="pbLabel hidden" id="c7pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock8">
+                                <div class="ASType" id="ASType8">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel8"><a href="8" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName8"></div>
+                                <div><div id="c8pb" class="hidden"><div class="pbLabel hidden" id="c8pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock9">
+                                <div class="ASType" id="ASType9">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel9"><a href="9" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName9"></div>
+                                <div><div id="c9pb" class="hidden"><div class="pbLabel hidden" id="c9pbLabel"></div></div></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock10">
+                                <div class="ASType" id="ASType10">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel10"><a href="10" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName10"></div>
+                                <div><div id="c10pb" class="hidden"><div class="pbLabel hidden" id="c10pbLabel"></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="tabs">
                     <ul>
                         <li><a href="#tabs-1">Blueprints</a></li>
@@ -58,21 +124,21 @@
                     </ul>
                     <div id="tabs-1">
                         <div id="RecipeFilter">
-                            <a class="recipeSelect" href="KnifeSelector">Knives</a>
-                            <a class="recipeSelect" href="MaceSelector">Maces</a>
-                            <a class="recipeSelect" href="GloveSelector">Gloves</a>
-                            <a class="recipeSelect" href="PotionSelector">Potions</a>
-                            <a class="recipeSelect" href="AxeSelector">Axes</a>
-                            <a class="recipeSelect" href="HatSelector">Hats</a>
-                            <a class="recipeSelect" href="WandSelector">Wands</a>
-                            <a class="recipeSelect" href="GauntletSelector">Gauntlets</a>
-                            <a class="recipeSelect" href="HelmetSelector">Helmets</a>
-                            <a class="recipeSelect" href="ShoeSelector">Shoes</a>
-                            <a class="recipeSelect" href="WardSelector">Wards</a>
-                            <a class="recipeSelect" href="ShieldSelector">Shields</a>
-                            <a class="recipeSelect" href="CloakSelector">Cloaks</a>
-                            <a class="recipeSelect" href="ArmorSelector">Armor</a>
-                            <a class="recipeSelect" href="PendantSelector">Pendants</a>
+                            <a class="recipeSelect" id="recipeKnife" href="KnifeSelector">Knives</a>
+                            <a class="recipeSelect none" id="recipeMace" href="MaceSelector">Maces</a>
+                            <a class="recipeSelect none" id="recipeGlove" href="GloveSelector">Gloves</a>
+                            <a class="recipeSelect none" id="recipePotion" href="PotionSelector">Potions</a>
+                            <a class="recipeSelect none" id="recipeAxe" href="AxeSelector">Axes</a>
+                            <a class="recipeSelect none" id="recipeHat" href="HatSelector">Hats</a>
+                            <a class="recipeSelect none" id="recipeWand" href="WandSelector">Wands</a>
+                            <a class="recipeSelect none" id="recipeGauntlet" href="GauntletSelector">Gauntlets</a>
+                            <a class="recipeSelect none" id="recipeHelmet" href="HelmetSelector">Helmets</a>
+                            <a class="recipeSelect none" id="recipeShoe" href="ShoeSelector">Shoes</a>
+                            <a class="recipeSelect none" id="recipeWard" href="WardSelector">Wards</a>
+                            <a class="recipeSelect none" id="recipeShield" href="ShieldSelector">Shields</a>
+                            <a class="recipeSelect none" id="recipeCloak" href="CloakSelector">Cloaks</a>
+                            <a class="recipeSelect none" id="recipeArmor" href="ArmorSelector">Armor</a>
+                            <a class="recipeSelect none" id="recipePendant" href="PendantSelector">Pendants</a>
                         </div>
                         <div id="RecipeResults"></div>
                     </div>
