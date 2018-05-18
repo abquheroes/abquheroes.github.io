@@ -545,10 +545,7 @@ function initializeInventory() {
 }
 
 function refreshRecipeSelector() {
-    $(".recipeSelect").each(() => {
-        const name = $(this).html();
-        if (canSee(name)) $(this).removeClass("none");
-    });
+    
 }
 
 function canSee(name) {
