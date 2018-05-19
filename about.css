@@ -32,6 +32,7 @@ nav {
 }
 
 .lm-btn, .dm-btn {
+    border-top: none;
     padding: 0 20px;
 }
 

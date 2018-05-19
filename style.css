@@ -16,9 +16,7 @@
     height: 8px;
 }
 
-/* 
-THEMES :: LIGHT AND DARK MODE
-*/
+/* LIGHT AND DARK MODE */
 
 :root {
     --theme-bg: #fff;
