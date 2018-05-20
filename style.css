@@ -964,3 +964,131 @@ footer a[href*="discord.gg"]:hover {
 .none {
     display: none;
 }
+
+@media screen and (max-width: 700px) {
+    .game-content {
+        flex-direction: column;
+    }
+
+    .game-content .status, #right-side-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .game-content .status {
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: row;
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        z-index: 2;
+    }
+
+    #theme-selection {
+        position: absolute;
+        top: 0;
+        right: 15px;
+    }
+
+    #right-side-content {
+        margin-bottom: 50px;
+        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        z-index: 2;
+    }
+
+    #game-logo {
+        height: 32px;
+        background-position: 15px center;
+        background-size: contain;
+        margin: 10px 0;
+    }
+
+    #side-content {
+        text-align: center;
+        padding: 20px;
+        overflow: auto;
+        max-height: 100px;
+        border-top: 1px solid var(--theme-border);
+    }
+
+    #side-content .heading {
+        display: none;
+    }
+
+    .game-content .game-wrapper {
+        max-width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--theme-border);
+    }
+
+    #Actions>h1 {
+        margin: 15px 0 0;
+    }
+
+    #workerList, #joblist, #upgradelist, #progresslist {
+        justify-content: center;
+    }
+
+    .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+        margin: 10px 0;
+    }
+
+    #progresslist>h3 {
+        text-align: center;
+    }
+
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+
+    #ASTable {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        margin: 0 -20px;
+    }
+
+    .ui-tabs-nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+        display: flex;
+        padding: 10px 12px;
+    }
+
+    #RecipeFilter {
+        padding: 0;
+        overflow: auto;
+    }
+
+    #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
+        min-width: 40px;
+        max-width: 40px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 3;
+    }
+
+    footer .tooltip:hover:before, footer .tooltip:hover:after {
+        display: none;
+    }
+
+    footer a {
+        max-width: 65px;
+        padding: 5px;
+    }
+
+    #version-scale {
+        display: none;
+    }
+
+}
