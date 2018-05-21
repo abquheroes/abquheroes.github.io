@@ -101,6 +101,7 @@ $upgradelist.on("click", ".BuyUpgrade", (e) => {
     e.preventDefault();
     upgrade(e.target.id);
     refreshWorkers();
+    refreshUpgrades();
 });
 
 function upgrade(name) {
