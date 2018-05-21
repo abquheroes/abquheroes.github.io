@@ -365,7 +365,7 @@ select {
     overflow: hidden;
 }
 
-.ASProgressBar {
+.ASProgressBar, .plProgressBar {
     position: relative;
     display: flex;
     align-items: center;
@@ -379,12 +379,16 @@ select {
     white-space: pre;
 }
 
-.ProgressBarFill {
+.ProgressBarFill, .plProgressBarPercent {
     display: block;
     position: relative;
     height: 25px;
     z-index: -1;
     background-color: var(--theme-progressbar);
+}
+
+.plProgressBarPercent {
+    z-index: 1;
 }
 
 .ASType {
