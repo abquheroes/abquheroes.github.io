@@ -692,18 +692,29 @@ function getJobValue(name) {
 $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     purchaseWorker(e.target.id);
-    refreshWorkers();
     populateJob();
+    refreshWorkers();
 });
 
 function purchaseWorker(name) {
     const worker = nameToWorker(name);
     const cost = worker.cost[workerProgress[name]];
-    if (player.money >= cost) {
+    if (player.money >= cost && sacrificeCheck(name)) {
         player.money -= cost;
         workerProgress[name] += 1;
         ga('send', 'event', 'Workers', 'upgrade', name);
     }
+}
+
+function sacrificeCheck(name) {
+    const worker = nameToWorker(name);
+    const lvl = workerProgress[name];
+    for (const [item,amt] of Object.entries(worker.lvlreq[lvl])) {
+        const slot = name+"_"+lvl+"_"+item;
+        console.log(slot);
+        if (workerSacProgress[slot] < amt) return false;
+    }
+    return true;
 }
 
 const workerImageReference = {
@@ -720,7 +731,6 @@ $(document).on("click", "a.itemToSac", (e) => {
     const itemName = $(e.currentTarget).attr("item");
     const success = removeFromInventory(itemName);
     if (success) {
-        console.log(workerSacProgress[slot]);
         workerSacProgress[slot] += 1;
         refreshWorkers();
         populateJob();

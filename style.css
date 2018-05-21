@@ -30,6 +30,7 @@
     --theme-link: #218cff;
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
+    --theme-progressbar: #218cff;
 }
 
 .lm-btn, .dm-btn {
@@ -93,7 +94,7 @@ body{
     background-color: var(--theme-bg);
     background-image: url('images/site-logo.png');
     background-position: center;
-    background-size: 75%;
+    background-size: 65%;
     background-repeat: no-repeat;
     width: 100%;
     height: 150px;
@@ -290,6 +291,15 @@ select {
     padding: 0;
 }
 
+.ui-tabs .ui-tabs-nav li a {
+    color: var(--theme-text-3);
+}
+
+.ui-tabs-nav li a:hover {
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+}
+
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
     padding: 0;
 }
@@ -305,10 +315,6 @@ select {
 
 .ui-state-default, .ui-widget-content .ui-state-default {
     background-color: var(--theme-bg);
-}
-
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    color: var(--theme-text-3);
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
@@ -364,10 +370,34 @@ select {
     overflow: hidden;
 }
 
-.ASBlock>div>.ui-progressbar {
+.ASProgressBar, .plProgressBar {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.plProgressBar {
+    background-color: var(--theme-bg-2);
+}
+
+.ASProgressBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.ProgressBarFill, .plProgressBarPercent {
     display: block;
-    height: 25px;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--theme-progressbar);
+}
+
+.plProgressBarPercent {
+    z-index: 1;
 }
 
 .ASType {
@@ -640,10 +670,17 @@ input#importSaveText {
     max-width: 200px;
 }
 
+.recipecostdiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .recipeCost {
     display: inline-block;
     position: relative;
-    margin-right: 10px;
+    margin-right: 5px;
+    min-width: 50px;
+    text-align: left;
 }
 
 #workerList, #joblist, #upgradelist {
@@ -675,7 +712,7 @@ input#importSaveText {
     text-align: center;
 }
 
-.upgradeName {
+.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost {
     font-size: .9em;
 }
 
@@ -774,7 +811,7 @@ input#importSaveText {
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 10px 0;
+    padding: 0 0 10px 0;
 }
 
 #progresslist>div>h2 {
@@ -811,6 +848,20 @@ input#importSaveText {
     border-top: 1px solid var(--theme-border)!important;
     width: 100%;
     margin: 0 -15px;
+}
+
+#gameTime {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: .9em;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 footer {
