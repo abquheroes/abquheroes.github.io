@@ -111,7 +111,7 @@ $("#clearDialog").dialog({
 
 const $asParts = [
     {
-        block : $("ASBlock1"),
+        block : $("#ASBlock1"),
         type : $("#ASType1"),
         cancel : $("#ASCancel1"),
         name : $("#ASName1"),
@@ -119,7 +119,7 @@ const $asParts = [
         pbLabel : $("#c1pbLabel"),
     },
     {
-        block : $("ASBlock2"),
+        block : $("#ASBlock2"),
         type : $("#ASType2"),
         cancel : $("#ASCancel2"),
         name : $("#ASName2"),
@@ -127,7 +127,7 @@ const $asParts = [
         pbLabel : $("#c2pbLabel"),
     },
     {
-        block : $("ASBlock3"),
+        block : $("#ASBlock3"),
         type : $("#ASType3"),
         cancel : $("#ASCancel3"),
         name : $("#ASName3"),
@@ -135,7 +135,7 @@ const $asParts = [
         pbLabel : $("#c3pbLabel"),
     },
     {
-        block : $("ASBlock4"),
+        block : $("#ASBlock4"),
         type : $("#ASType4"),
         cancel : $("#ASCancel4"),
         name : $("#ASName4"),
@@ -143,7 +143,7 @@ const $asParts = [
         pbLabel : $("#c4pbLabel"),
     },
     {
-        block : $("ASBlock5"),
+        block : $("#ASBlock5"),
         type : $("#ASType5"),
         cancel : $("#ASCancel5"),
         name : $("#ASName5"),
@@ -151,7 +151,7 @@ const $asParts = [
         pbLabel : $("#c5pbLabel"),
     },
     {
-        block : $("ASBlock6"),
+        block : $("#ASBlock6"),
         type : $("#ASType6"),
         cancel : $("#ASCancel6"),
         name : $("#ASName6"),
@@ -159,7 +159,7 @@ const $asParts = [
         pbLabel : $("#c6pbLabel"),
     },
     {
-        block : $("ASBlock7"),
+        block : $("#ASBlock7"),
         type : $("#ASType7"),
         cancel : $("#ASCancel7"),
         name : $("#ASName7"),
@@ -167,7 +167,7 @@ const $asParts = [
         pbLabel : $("#c7pbLabel"),
     },
     {
-        block : $("ASBlock8"),
+        block : $("#ASBlock8"),
         type : $("#ASType8"),
         cancel : $("#ASCancel8"),
         name : $("#ASName8"),
@@ -175,7 +175,7 @@ const $asParts = [
         pbLabel : $("#c8pbLabel"),
     },
     {
-        block : $("ASBlock9"),
+        block : $("#ASBlock9"),
         type : $("#ASType9"),
         cancel : $("#ASCancel9"),
         name : $("#ASName9"),
@@ -183,7 +183,7 @@ const $asParts = [
         pbLabel : $("#c9pbLabel"),
     },
     {
-        block : $("ASBlock10"),
+        block : $("#ASBlock10"),
         type : $("#ASType10"),
         cancel : $("#ASCancel10"),
         name : $("#ASName10"),
@@ -207,7 +207,8 @@ function updatedActionSlots() {
             pbValueCurrent.push(0);
             pbLabelText.push("");
             pbLabelTextCurrent.push("");
-            $asParts[i].block.removeClass["none"];
+            console.log($asParts[i].block.removeClass("none"));
+            $asParts[i].block.removeClass("none");
         }
         if (player.actionSlots[i].actionType !== asState[i]) { //aka we changed states...
             if (player.actionSlots[i].actionType === "Empty") {
@@ -288,7 +289,6 @@ function fakeSelect(name) {
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href")-1;
-    console.log(slot);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
@@ -382,7 +382,6 @@ function refreshResources() {
     for (let i=0;i<resources.length;i++) {
         const name = resources[i];
         if (player[name] !== displayedResources[name]) {
-            console.log(name+"Cap");
             $resAmts[i].text(player[name] + "/" + getCap(name));
             displayedResources[name] = player[name];
         }
@@ -526,7 +525,6 @@ function deductCost(loc) {
     const itemName = player.actionSlots[loc].actionName;
     const itemFull = nameToItem(itemName);
     for (const [res,amt] of Object.entries(itemFull.cost)) {
-        console.log(amt);
         if (resources.includes(res)) player[res] -= amt;
         else removeFromInventory(res,amt);
     }
@@ -555,7 +553,6 @@ function saveGame() {
 }
 
 function createSave() {
-    console.log(player);
     return {
         playerSave : player,
         workerProgressSave : workerProgress,

@@ -100,7 +100,6 @@ function refreshUpgrades() {
 $upgradelist.on("click", ".BuyUpgrade", (e) => {
     e.preventDefault();
     upgrade(e.target.id);
-    refreshUpgrades();
     refreshWorkers();
     refreshActionSlots();
 });
@@ -122,12 +121,10 @@ function upgrade(name) {
                 actionTime : 0,
                 actionEnd : 0,
             });
-            refreshActionSlots();
         }
         else if (name === "Max Inventory Slots") {
             player.inventoryCap = upgrade.value[upgradeProgress[name]];
         }
-        console.log(upgradeProgress[name],player.oreCap);
         refreshResources();
         ga('send', 'event', 'Upgrades', 'upgrade', name);
     }

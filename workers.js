@@ -692,7 +692,6 @@ function getJobValue(name) {
 $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     purchaseWorker(e.target.id);
-    refreshWorkers();
     populateJob();
 });
 
