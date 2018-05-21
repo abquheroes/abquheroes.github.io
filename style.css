@@ -700,7 +700,7 @@ input#importSaveText {
     text-align: center;
 }
 
-.upgradeName {
+.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost {
     font-size: .9em;
 }
 
@@ -709,10 +709,6 @@ input#importSaveText {
     font-size: .9em;
     color: var(--theme-text-3);
     margin-bottom: 10px;
-}
-
-.upgradeLvl, .upgradeCost, .upgradeText {
-    font-size: .9em;
 }
 
 .Worker .itemSac {
