@@ -291,6 +291,11 @@ select {
     padding: 0;
 }
 
+.ui-tabs-nav li a:hover {
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+}
+
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
     padding: 0;
 }
@@ -306,10 +311,6 @@ select {
 
 .ui-state-default, .ui-widget-content .ui-state-default {
     background-color: var(--theme-bg);
-}
-
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    color: var(--theme-text-3);
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
