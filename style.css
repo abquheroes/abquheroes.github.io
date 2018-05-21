@@ -382,7 +382,7 @@ select {
 .ProgressBarFill, .plProgressBarPercent {
     display: block;
     position: relative;
-    height: 25px;
+    height: 100%;
     z-index: -1;
     background-color: var(--theme-progressbar);
 }
