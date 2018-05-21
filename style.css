@@ -711,6 +711,10 @@ input#importSaveText {
     margin-bottom: 10px;
 }
 
+.upgradeLvl, .upgradeCost, .upgradeText {
+    font-size: .9em;
+}
+
 .Worker .itemSac {
     display: flex;
     position: relative;
@@ -799,7 +803,7 @@ input#importSaveText {
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 10px 0;
+    padding: 0 0 10px 0;
 }
 
 #progresslist>div>h2 {
