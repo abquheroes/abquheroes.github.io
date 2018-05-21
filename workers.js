@@ -693,6 +693,7 @@ $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     purchaseWorker(e.target.id);
     populateJob();
+    refreshWorkers();
 });
 
 function purchaseWorker(name) {
