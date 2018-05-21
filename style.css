@@ -291,6 +291,10 @@ select {
     padding: 0;
 }
 
+.ui-tabs .ui-tabs-nav li a {
+    color: var(--theme-text-3);
+}
+
 .ui-tabs-nav li a:hover {
     background-color: var(--theme-bg-2);
     color: var(--theme-text);
