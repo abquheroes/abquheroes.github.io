@@ -964,3 +964,8 @@ footer a[href*="discord.gg"]:hover {
 .none {
     display: none;
 }
+
+.ASProgressBar:before {
+    content: attr(data-label);
+    position: absolute;
+}

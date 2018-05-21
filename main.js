@@ -65,9 +65,6 @@ function initialize() {
         displayedResources[resources[i]] = 0;
     }
     displayedResources["Money"] = 0;
-    for (let i=0;i<10;i++) {
-        $asParts[i].pb.progressbar();
-    }
 }
 
 
@@ -217,15 +214,13 @@ function updatedActionSlots() {
                 $asParts[i].type.html("Empty");
                 $asParts[i].cancel.addClass("hidden");
                 $asParts[i].name.addClass("hidden");
-                $asParts[i].pb.addClass("hidden");
-                $asParts[i].pbLabel.addClass("hidden")
+                $asParts[i].pbLabel.addClass("hidden");
             }
             else if (player.actionSlots[i].actionType === "Job") {
                 $asParts[i].type.html("Job");
                 $asParts[i].cancel.removeClass("hidden");
                 const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
                 $asParts[i].name.removeClass("hidden").html(name);
-                $asParts[i].pb.removeClass("hidden")
                 $asParts[i].pbLabel.removeClass("hidden")
             }
             else if (player.actionSlots[i].actionType === "Craft") {
@@ -233,19 +228,18 @@ function updatedActionSlots() {
                 $asParts[i].cancel.removeClass("hidden");
                 const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
                 $asParts[i].name.removeClass("hidden").html(name);
-                $asParts[i].pb.removeClass("hidden")
                 $asParts[i].pbLabel.removeClass("hidden")
             }
             asState[i] = player.actionSlots[i].actionType;
         }
         if (pbValueCurrent[i] !== pbValue[i]) {
-            $asParts[i].pb.progressbar('option', 'value', pbValue[i]);
+            $asParts[i].pb.css('width', pbValue[i]);
             pbValueCurrent[i] = pbValue[i];
         }
         if (pbLabelTextCurrent[i] !== pbLabelText[i]) {
-            $asParts[i].pbLabel.text(pbLabelText[i]);
+            $asParts[i].pbLabel.attr("data-label",pbLabelText[i])
             pbLabelTextCurrent[i] = pbLabelText[i];
-        }      
+        }
     }
 }
 
@@ -259,18 +253,42 @@ const $inventory = $('#inventory');
 const $actionSlots = $('#ActionSlots');
 const $jobList = $('#joblist');
 
-const $recipeFilter = $("#RecipeFilter");
-
 initializeInventory();
 loadGame();
 initialize();
 refreshInventory();
 populateJob();
 refreshUpgrades();
+populateRecipe(player.currentType);
+fakeSelect(player.currentType);
+refreshWorkers();
 
-$('#ActionSlots').on("click", "a.ASCancel", (e) => {
+//used at the beginning to fake what tab you're on
+function fakeSelect(name) {
+    const janky = {
+        "Knives" : "#recipeKnife",
+        "Maces" : "#recipeMace",
+        "Gloves" : "#recipeGlove",
+        "Potions" : "#recipePotion",
+        "Axes" : "#recipeAxe",
+        "Hats" : "#recipeHat",
+        "Wands" : "#recipeWand",
+        "Gauntlets" : "#recipeGauntlet",
+        "Helmets" : "#recipeHelmet",
+        "Shoes" : "#recipeShoe",
+        "Wards" : "#recipeWard",
+        "Shields" : "#recipeShield",
+        "Cloaks" : "#recipeCloak",
+        "Armor" : "#recipeArmor",
+        "Pendants" : "#recipePendant",
+    }
+    $(janky[name]).addClass("selected");
+}
+
+$('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
-    const slot = $(e.target).attr("href");
+    const slot = $(e.target).attr("href")-1;
+    console.log(slot);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
@@ -339,7 +357,7 @@ function mainLoop() {
             else {
                 pbLabelText[i] = msToTime(player.actionSlots[i].actionTime + craftTime - Date.now());
                 const p1 = (player.actionSlots[i].actionTime + craftTime - Date.now())/craftTime;
-                pbValue[i] = 100-p1*100;
+                pbValue[i] = (100-p1*100).toFixed(1)+"%";
             }
         }
         else {
@@ -354,6 +372,7 @@ function mainLoop() {
     refreshResources();
     unhideStuff();
     updatedActionSlots();
+    refreshProgress();
 }
 
 setInterval(mainLoop, 10);
@@ -641,42 +660,6 @@ function progressFinish(type,name) {
     }
 }
 
-
-
-
-/*function refreshActionSlots() {
-    $actionSlots.empty();
-    const table = $('<div/>').addClass('ASTable');
-    const hrow = $('<div/>').addClass('ASHeader');
-    const htd1 = $('<div/>').addClass('ASHeadType').html("TYPE");
-    const htd2 = $('<div/>').addClass('ASHeadName').html("NAME");
-    const htd3 = $('<div/>').addClass('ASHeadProgress').html("PROGRESS");
-    hrow.append(htd1);
-    hrow.append(htd2);
-    hrow.append(htd3);
-    table.append(hrow);
-    for (let i=0;i<player.actionSlots.length;i++) {
-        const row = $('<div/>').addClass('ASRow');
-        const td1 = $('<div/>').addClass('ASType').html(player.actionSlots[i].actionType);
-        const td2 = $('<div/>').addClass('ASName').html(imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName + "&nbsp;");
-        const td2cancel = $('<a/>').addClass("ASCancel").attr("href",i).html("[x]");
-        if (player.actionSlots[i].actionName === "Empty") td2.addClass("hidden")
-        td2.append(td2cancel);
-        const td3 = $('<div/>')
-        const tdPBOuter = $('<div/>').attr("id","c"+i+"pb");
-        $("id","c"+i+"pb").progressbar();
-        if (player.actionSlots[i].actionName === "Empty") tdPBOuter.addClass("hidden")
-        const tdPBtext = $('<div/>').addClass("pbLabel").attr("id","c"+i+"pbLabel").html("Waiting for Resources...");
-        tdPBOuter.append(tdPBtext);
-        td3.append(tdPBOuter);
-        row.append(td1);
-        row.append(td2);
-        row.append(td3);
-        table.append(row);
-    }
-    $actionSlots.append(table);
-}*/
-
 function round(number, precision) {
     var shift = function (number, precision) {
       var numArray = ("" + number).split("e");
@@ -714,14 +697,11 @@ function canSee(name) {
 function refreshProgress() {
     let recipeCt = 0;
     for (const [item,cnt] of Object.entries(itemCount)) {
-        console.log(item,cnt);
         if (cnt >= 100) recipeCt += 1;
     }
     const recipeMaxCt = blueprints.length;
     $("#plRecipeMastery").html(recipeCt + "/" + recipeMaxCt);
-    $("#pbRecipe").progressbar({
-        value: recipeCt/recipeMaxCt*100
-    });
+    $("#pbRecipe").css('width', recipeCt/recipeMaxCt*100+"%");
     let workerCt = 0;
     for (const [worker,lvl] of Object.entries(workerProgress)) {
         workerCt += lvl;
@@ -731,9 +711,7 @@ function refreshProgress() {
         workerMaxCt += workers[i].cost.length;
     }
     $("#plWorkerLevel").html(workerCt + "/" + workerMaxCt);
-    $("#pbWorker").progressbar({
-        value: workerCt/workerMaxCt*100
-    });
+    $("#pbWorker").css('width', workerCt/workerMaxCt*100+"%");
     let upgradeCt = 0;
     for (const [upgrade,lvl] of Object.entries(upgradeProgress)) {
         upgradeCt += lvl;
@@ -743,15 +721,11 @@ function refreshProgress() {
         upgradeMaxCt += upgrades[i].value.length-1;
     }
     $('#plUpgradeLevel').html(upgradeCt + "/" + upgradeMaxCt);
-    $('#pbUpgrade').progressbar({
-        value: upgradeCt/upgradeMaxCt*100
-    })
+    $('#pbUpgrade').css('width', upgradeCt/upgradeMaxCt*100+"%");
     const overallCt = recipeCt+workerCt+upgradeCt;
     const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
     $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
-    $('#pbOverall').progressbar({
-        value: overallCt/overallMaxCt*100
-    });
+    $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
 }
 
 function getCap(res) {
