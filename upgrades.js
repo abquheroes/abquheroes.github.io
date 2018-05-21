@@ -131,7 +131,6 @@ function upgrade(name) {
                 actionType : "Empty",
                 actionName : "Empty",
                 actionTime : 0,
-                actionEnd : 0,
             });
         }
         else if (name === "Max Inventory Slots") {

@@ -13,22 +13,19 @@ const player = {
     herbCap : 200,
     actionSlots : [
         {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
+            actionType : "Job",
+            actionName : "Oren",
+            actionTime : Date.now(),
         },
         {
             actionType : "Empty",
             actionName : "Empty",
             actionTime : 0,
-            actionEnd : 0,
         },
         {
             actionType : "Empty",
             actionName : "Empty",
             actionTime : 0,
-            actionEnd : 0,
         },
     ],
     currentType : "Knives",
@@ -91,6 +88,8 @@ const upgradeProgress = {
     "Auto Sell Value" : 0,
 }
 
+const flags = {}
+
 const inventory = {};
 const itemCount = {};
 
@@ -110,6 +109,13 @@ $("#importDialog").dialog({
 $("#clearDialog").dialog({
     autoOpen: false,
 });
+$("#tipsDialog").dialog({
+    autoOpen: false,
+});
+$("#unlockDialog").dialog({
+    autoOpen: false,
+});
+
 
 const $asParts = [
     {
@@ -310,6 +316,11 @@ $('#importSave').click((e) => {
     ImportSaveButton();
 });
 
+$('#tips').click((e) => {
+    e.preventDefault();
+    $('#tipsDialog').dialog("open");
+});
+
 $(document).on("click",".recipeSelect", (e) => {
     e.preventDefault();
     const type = $(e.target).text();
@@ -394,13 +405,43 @@ function refreshResources() {
     }
 }
 
+const nameToUnlock = {
+    "recipeMace" : "Mace",
+    "recipeGlove" : "Glove",
+    "recipePotion" : "Potion",
+    "recipeAxe" : "Axe",
+    "recipeHat" : "Hat",
+    "recipeWand" : "Wand",
+    "recipeGauntlet" : "Gauntlet",
+    "recipeHelmet" : "Helmet",
+    "recipeShoe" : "Shoe",
+    "recipeWard" : "Ward",
+    "recipeShield" : "Shield",
+    "recipeCloak" : "Cloak",
+    "recipeArmor" : "Armor",
+    "recipePendant" : "Pendant",
+}
+
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResouce") {
+                $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
+                ga('send', 'event', 'Recipe', 'unlock', name);
+                $("#unlockDialog").dialog("open");
+                flags[name] = true;
+            }
             $("#"+name).removeClass("none");
             hidden[name] = false;
         }
     }
+}
+
+function isFlagged(name) {
+    if (!(name in flags)) {
+        flags[name] = false;
+    }
+    return flags[name];
 }
 
 function populateJob() {
@@ -561,6 +602,7 @@ function createSave() {
         upgradeProgressSave : upgradeProgress,
         inventorySave : inventory,
         itemCountSave : itemCount,
+        flagsSave : flags,
     }
 }
 
@@ -575,6 +617,7 @@ function loadGame() {
         if (typeof loadGame.upgradeProgressSave !== "undefined") $.extend(upgradeProgress,loadGame.upgradeProgressSave);
         if (typeof loadGame.inventorySave !== "undefined") $.extend(inventory,loadGame.inventorySave);
         if (typeof loadGame.itemCountSave !== "undefined") $.extend(itemCount,loadGame.itemCountSave);
+        if (typeof loadGame.flagsSave !== "undefined") $.extend(flags,loadGame.flagsSave);
     }
 }
 
