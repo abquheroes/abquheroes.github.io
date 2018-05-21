@@ -13,22 +13,19 @@ const player = {
     herbCap : 200,
     actionSlots : [
         {
-            actionType : "Empty",
-            actionName : "Empty",
-            actionTime : 0,
-            actionEnd : 0,
+            actionType : "Job",
+            actionName : "Oren",
+            actionTime : Date.now(),
         },
         {
             actionType : "Empty",
             actionName : "Empty",
             actionTime : 0,
-            actionEnd : 0,
         },
         {
             actionType : "Empty",
             actionName : "Empty",
             actionTime : 0,
-            actionEnd : 0,
         },
     ],
     currentType : "Knives",
@@ -91,6 +88,8 @@ const upgradeProgress = {
     "Auto Sell Value" : 0,
 }
 
+const flags = {}
+
 const inventory = {};
 const itemCount = {};
 
@@ -110,6 +109,13 @@ $("#importDialog").dialog({
 $("#clearDialog").dialog({
     autoOpen: false,
 });
+$("#tipsDialog").dialog({
+    autoOpen: false,
+});
+$("#unlockDialog").dialog({
+    autoOpen: false,
+});
+
 
 const $asParts = [
     {
@@ -310,6 +316,11 @@ $('#importSave').click((e) => {
     ImportSaveButton();
 });
 
+$('#tips').click((e) => {
+    e.preventDefault();
+    $('#tipsDialog').dialog("open");
+});
+
 $(document).on("click",".recipeSelect", (e) => {
     e.preventDefault();
     const type = $(e.target).text();
@@ -394,13 +405,43 @@ function refreshResources() {
     }
 }
 
+const nameToUnlock = {
+    "recipeMace" : "Mace",
+    "recipeGlove" : "Glove",
+    "recipePotion" : "Potion",
+    "recipeAxe" : "Axe",
+    "recipeHat" : "Hat",
+    "recipeWand" : "Wand",
+    "recipeGauntlet" : "Gauntlet",
+    "recipeHelmet" : "Helmet",
+    "recipeShoe" : "Shoe",
+    "recipeWard" : "Ward",
+    "recipeShield" : "Shield",
+    "recipeCloak" : "Cloak",
+    "recipeArmor" : "Armor",
+    "recipePendant" : "Pendant",
+}
+
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResouce") {
+                $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
+                ga('send', 'event', 'Recipe', 'unlock', name);
+                $("#unlockDialog").dialog("open");
+                flags[name] = true;
+            }
             $("#"+name).removeClass("none");
             hidden[name] = false;
         }
     }
+}
+
+function isFlagged(name) {
+    if (!(name in flags)) {
+        flags[name] = false;
+    }
+    return flags[name];
 }
 
 function populateJob() {
@@ -421,7 +462,7 @@ function populateJob() {
             const td1 = $('<div/>').addClass('jobWorker');
             if (actionSlotContainsWorker(workerName)) {
                 trow.addClass('jobDisable');
-                td1.html("Hire "+workerName+" (Busy)");
+                td1.html(workerName+" (busy)");
             }
             else {
                 const td1a = $("<a/>").addClass('addJob').attr("href",workerName).attr("target","_blank").html("Hire "+workerName);
@@ -477,14 +518,14 @@ function populateRecipe(type) {
             const td2 = $('<div/>').addClass('recipecostdiv');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                 if (amt > 0) {
-                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(amt + "&nbsp" + imageReference[type])
+                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(imageReference[type] + "&nbsp;" + amt)
                     td2.append(td2a);
                 }
             }
             
             const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
             const td4 = $('<div/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
-            const td5 = $('<div/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
+            const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
             row.append(td1);
             row.append(td2);
             row.append(td3);
@@ -561,6 +602,7 @@ function createSave() {
         upgradeProgressSave : upgradeProgress,
         inventorySave : inventory,
         itemCountSave : itemCount,
+        flagsSave : flags,
     }
 }
 
@@ -575,6 +617,7 @@ function loadGame() {
         if (typeof loadGame.upgradeProgressSave !== "undefined") $.extend(upgradeProgress,loadGame.upgradeProgressSave);
         if (typeof loadGame.inventorySave !== "undefined") $.extend(inventory,loadGame.inventorySave);
         if (typeof loadGame.itemCountSave !== "undefined") $.extend(itemCount,loadGame.itemCountSave);
+        if (typeof loadGame.flagsSave !== "undefined") $.extend(flags,loadGame.flagsSave);
     }
 }
 
@@ -583,7 +626,7 @@ function ClearSave() {
     $('#clearDialog').dialog({
         buttons: {
             "Yes": function () {
-                localStorage.removeItem("gameSave2");
+                localStorage.removeItem("gameSave3");
                 location.reload();
             },
             "No": function () {

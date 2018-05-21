@@ -166,11 +166,12 @@
                     <div id="bottom-left">
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
-                        <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a></div>
-
+                        <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a>
+                        <a id="tips" href="tips">Need a Tip?</a>
+                    </div>
                     <div id="bottom-right">
-                        <p id="version-scale">v0.1.0</p>
-                        <a href="about.html">About &amp; Crediting</a>
+                        <p id="version-scale">v0.1.1</p>
+                        <a href="about.html" target="_blank">About &amp; Crediting</a>
                         <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server</a>
                     </div>
                 </footer>
@@ -187,6 +188,12 @@
         <div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
         <div id="exportDialog" title="Export Save"></div>
         <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
+        <div id="tipsDialog" title="Tips 'N Trix"><p>Looking for some tips? Here's a short list!</p>
+            * No resources? Hiring a worker under the 'Jobs' tab allows them to take an action slot to collect resources. Be warned though, workers can only occupy one slot!</br>
+            * Can't level up workers? Try clicking on the item in their worker card to remove items from your inventory tab to pay the cost. Once you've cleared all the items, make sure you have enough gold and press the 'Purchase' Button to level them up!</br>
+            * Looking for more gold? Once you reach the inventory cap for an item, items begin auto-selling at 50% of their value. Make sure you sell your items before your inventory fills up for maximum gold!</br>
+            * Shift+Clicking on an inventory slot will sell all the copies of that item that you own, use it to speed up your gameplay!</div>
+        <div id="unlockDialog" title="New Recipe Unlocked!"></div>
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
 <script src="tabs.js"></script>
