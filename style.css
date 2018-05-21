@@ -2,13 +2,75 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar-thumb {
+    background-color: var(--theme-scroll-thumb);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--theme-scroll-track);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* LIGHT AND DARK MODE */
+
+:root {
+    --theme-bg: #fff;
+    --theme-bg-2: #f3f3f3;
+    --theme-bg-3: #f9f7f7;
+    --theme-border: #d1d1d1;
+    --theme-border-2: #adadad;
+    --theme-text: #000;
+    --theme-text-2: #fff;
+    --theme-text-3: #909090;
+    --theme-link: #218cff;
+    --theme-scroll-thumb: rgba(0,0,0,0.10);
+    --theme-scroll-track: rgba(0,0,0,0.10);
+    --theme-progressbar: #218cff;
+}
+
+.lm-btn, .dm-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-top: 1px solid var(--theme-border);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.lm-btn:hover, .dm-btn:hover {
+    background-color: var(--theme-bg-2);
+}
+
+.lm-btn {
+    display: none;
+}
+
+/**/
+
 body{
+    color: var(--theme-text);
+    background-color: var(--theme-bg-2);
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
 }
 
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+    font-family: 'Open Sans', sans-serif; /*font test*/
+    font-weight: normal;
+}
+
 #content, footer {
     padding: 0;
+    user-select: none;
 }
 
 .game-content {
@@ -16,20 +78,23 @@ body{
     flex-wrap: wrap;
 }
 
-.game-content .status {
+.game-content .status, #right-side-content {
+    display: flex;
+    flex-direction: column;
     width: 250px;
     height: 100vh;
-    border-right: 1px solid #d1d1d1;
+    background-color: var(--theme-bg);
+}
+
+.game-content .status {
+    border-right: 1px solid var(--theme-border);
 }
 
 #game-logo {
-    display: flex; /* temp css until image or svg logo is implemented */
-    justify-content: center; /* temp css until image or svg logo is implemented */
-    align-items: center; /* temp css until image or svg logo is implemented */
-    background-color: #e1e1e1;
-    background-image: url(/images/site-logo.png);
+    background-color: var(--theme-bg);
+    background-image: url('images/site-logo.png');
     background-position: center;
-    background-size: 75%;
+    background-size: 65%;
     background-repeat: no-repeat;
     width: 100%;
     height: 150px;
@@ -41,6 +106,7 @@ body{
 }
 
 #side-content {
+    flex-grow: 1;
     padding: 0 20px;
 }
 
@@ -48,23 +114,85 @@ body{
     margin: 10px -20px;
     padding: 5px 10px;
     font-weight: bold;
-    background-color: #f3f3f3;
-    border-top: 1px solid #d1d1d1;
-    border-bottom: 1px solid #d1d1d1;
+    color: var(--theme-text);
+    background-color: var(--theme-bg-2);
+    border-top: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-border);
 }
 
 #side-content .heading:first-of-type {
     margin-top: 0;
 }
 
+#right-side-content {
+    border-left: 1px solid var(--theme-border);
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+}
+
+#right-side-content .heading {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.inventoryItem {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.inventoryItem:first-of-type {
+    border-top: 1px solid var(--theme-border);
+}
+
+.inventoryItem>img {
+    display: inline-block;
+    height: 16px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.inventoryItem a {
+    flex-grow: 1;
+    color: var(--theme-text);
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 60px 10px 30px;
+}
+
+.inventoryItem a:hover {
+    background-color: var(--theme-bg-2);
+}
+
+.inventoryItem .inventoryCount {
+    position: absolute;
+    right: 10px;
+    font-size: .9em;
+    line-height: 25px;
+    width: 50px;
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    pointer-events: none;
+}
+
+#inventory .inventoryCount {
+    text-align: center;
+}
+
 .game-wrapper {
-    flex-grow: 3;
+    flex-grow: 1;
     height: 100%;
+    max-width: calc(100% - 500px);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 
 .game-content #tabs {
     max-height: calc(100vh - 50px);
-    overflow-y: auto;
 }
 
 .demoHeaders {
@@ -124,17 +252,23 @@ select {
     width:100%;
 }
 
-.hidden {
-    display:none;
-}
-
-#c1pbLabel,#c2pbLabel,#c3pbLabel {
+.pbLabel {
     width: 100%;
     float: left;
     line-height: 200%;
     padding: 0px;
     line-height: 20px;
     padding-left: 2px;
+}
+
+.ui-tabs .ui-tabs-panel {
+    color: var(--theme-text);
+    padding: 0;
+}
+
+.ui-widget-content a {
+    color: var(--theme-text);
+    text-decoration: none;
 }
 
 .ui-tabs .ui-corner-all .ui-widget .ui-widget-content {
@@ -144,7 +278,10 @@ select {
 .ui-tabs, .ui-tabs .ui-tabs-nav {
     padding: 0;
     border-radius: 0;
-    border-left: 1px solid transparent;
+    border: 1px solid var(--theme-border);
+    border-left: none;
+    border-right: 1px solid transparent;
+    background-color: var(--theme-bg);
 }
 
 .ui-tabs .ui-tabs-nav li {
@@ -154,13 +291,43 @@ select {
     padding: 0;
 }
 
+.ui-tabs .ui-tabs-nav li a {
+    color: var(--theme-text-3);
+}
+
+.ui-tabs-nav li a:hover {
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+    padding: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active  {
+    border: none;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+    background: var(--theme-link);
+    color: var(--theme-text-2);
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    background-color: var(--theme-bg);
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: var(--theme-text);
+}
+
 .ui-widget.ui-widget-content, .ui-widget-content {
+    background-color: var(--theme-bg-2);
     border: none;
 }
 
 .ui-progressbar.ui-widget.ui-widget-content {
-    background-color: #f3f3f3;
-    border: 1px solid #d1d1d1;
+    background-color: var(--theme-bg-3);
 }
 
 .ui-progressbar .ui-progressbar-value {
@@ -168,48 +335,305 @@ select {
 }
 
 .ui-dialog {
+    border: 1px solid var(--theme-border)!important;
+    background-color: var(--theme-bg-2)!important;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
 
+#Actions>h1 {
+    padding: 0 20px;
+}
+
+#ActionSlots {
+    padding: 0 20px 20px;
+    width: 100%;
+    max-width: 1150px;
+}
+
+#ASTable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ASBlock {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid var(--theme-border);
+    margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.ASProgressBar, .plProgressBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.plProgressBar {
+    background-color: var(--theme-bg-2);
+}
+
+.ASProgressBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.ProgressBarFill, .plProgressBarPercent {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--theme-progressbar);
+}
+
+.plProgressBarPercent {
+    z-index: 1;
+}
+
+.ASType {
+    text-align: center;
+    background-color: var(--theme-bg-3);
+    border-bottom: 1px solid var(--theme-border);
+    padding: 5px 20px;
+}
+
+.ASName {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.ASName img {
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.ASCancel {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.ASCancel a {
+    display: block;
+    padding: 5px 5px;
+    color: var(--theme-text);
+    text-decoration: none;
+    background-color: var(--theme-bg-3);
+}
+
+.ASCancel a:hover {
+    background-color: var(--theme-bg-2);
+}
+
+.pbLabel {
+    padding: 3px 14px;
+    color: var(--theme-text);
+}
+
+.tab-heading {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ui-widget-header {
+    border: none;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-radius: 0;
+}
+
+.ui-dialog .ui-dialog-content {
+    color: var(--theme-text);
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: .5em .4em .5em 0;
+    cursor: pointer;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text-3);
+    border-radius: 3px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+    color: var(--theme-text);
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    background-color: var(--theme-bg);
+    color: var(--theme-text-3);
+}
+
+input#importSaveText {
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    color: var(--theme-text);
+}
+
 #RecipeFilter {
-    background-color: #f3f3f3;
-    margin: 0 -1.4em;
-    padding: 10px 25px;
-    border-top: 1px solid #d1d1d1;
-    border-bottom: 1px solid #d1d1d1;
+    display: flex;
+    background-color: var(--theme-bg);
+    padding: 0 25px 0 0;
+    margin-top: 10px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-border);
 }
 
-#RecipeResults {
-    margin: 0 -22px;
+#RecipeFilter a.recipeSelect {
+    color: var(--theme-text);
+    padding: 0 15px 0 3px;
+    height: 100%;
+    width: 100%;
+    max-width: 40px;
+    overflow: hidden;
+    border-right: 1px solid var(--theme-border);
 }
 
-.recipeTable {
+#RecipeFilter a.recipeSelect.selected {
+    width: auto;
+    max-width: 100%;
+    background-color: var(--theme-link);
+    color: var(--theme-text-2);
+}
+
+#RecipeFilter a.recipeSelect:first-of-type {
+    margin-left: 0;
+}
+
+#RecipeFilter a.recipeSelect:hover {
+    background-color: var(--theme-link);
+    color: var(--theme-text-2);
+}
+
+#RecipeFilter a[href*="Selector"]:before {
+    display: inline-block;
+    position: relative;
+    content: "";
+    margin-right: 5px;
+    margin-bottom: 2px;
+    width: 32px;
+    height: 32px;
+    background-image: url('images/userpics/nopic.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    vertical-align: middle;
+}
+
+#RecipeFilter a[href="KnifeSelector"]:before {
+    background-image: url('PixelAbqu/Knife32.png');
+}
+
+#RecipeFilter a[href="MaceSelector"]:before {
+   background-image: url('PixelAbqu/Club32.png');
+}
+
+#RecipeFilter a[href="GloveSelector"]:before {
+    background-image: url('PixelAbqu/glove32.png');
+}
+
+#RecipeFilter a[href="PotionSelector"]:before {
+    background-image: url('PixelAbqu/Potion32.png');
+}
+
+#RecipeFilter a[href="AxeSelector"]:before {
+    background-image: url('PixelAbqu/Axe32.png');
+}
+
+#RecipeFilter a[href="HatSelector"]:before {
+    background-image: url('PixelAbqu/Hat32.png');
+}
+
+#RecipeFilter a[href="WandSelector"]:before {
+    background-image: url('PixelAbqu/Wand32.png');
+}
+
+#RecipeFilter a[href="GauntletSelector"]:before {
+    background-image: url('PixelAbqu/Gauntlets32.png');
+}
+
+#RecipeFilter a[href="HelmetSelector"]:before {
+    background-image: url('PixelAbqu/helmet32.png');
+}
+
+#RecipeFilter a[href="ShoeSelector"]:before {
+    background-image: url('PixelAbqu/Shoes32.png');
+}
+
+#RecipeFilter a[href="WardSelector"]:before {
+    background-image: url('PixelAbqu/Ward32.png');
+}
+
+#RecipeFilter a[href="ShieldSelector"]:before {
+    background-image: url('PixelAbqu/Shield32.png');
+}
+
+#RecipeFilter a[href="CloakSelector"]:before {
+    background-image: url('PixelAbqu/Cloak32.png');
+}
+
+#RecipeFilter a[href="ArmorSelector"]:before {
+    background-image: url('PixelAbqu/Armor32.png');
+}
+
+#RecipeFilter a[href="PendantSelector"]:before {
+    background-image: url('PixelAbqu/Pendant32.png');
+}
+
+.recipeTable, .jobTable {
     width: 100%;
 }
 
-.recipeHeader {
+.recipeHeader, .jobHeader {
+    background-color: var(--theme-bg);
+    height: 40px;
+    border-bottom: 1px solid var(--theme-border);
     font-weight: bold;
 }
 
-.recipeHeader td {
-    padding: 10px;
-    border-bottom: 2px solid #d1d1d1;
+.recipeHeader, .recipeRow, .jobHeader, .jobRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.recipeRow:nth-of-type(odd) {
-    background-color: #f3f3f3;
+.recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
+    background-color: var(--theme-bg);
 }
 
-.recipeRow:hover {
-    background-color: #e3f1ff;
+.recipeRow:hover, .jobRow:hover {
+    background-color: var(--theme-border);
 }
 
-.recipeName {
+.recipeHeadName, .recipeName {
     display: flex;
     align-items: center;
+    flex-grow: 2;
+    min-width: 200px;
+    max-width: 400px;
+    padding-left: 10px;
+}
+
+.recipeHeadName {
+    padding-left: 15px;
 }
 
 .recipeName>img {
@@ -219,11 +643,218 @@ select {
 
 .recipeName>a {
     flex-grow: 1;
-    padding: 5px;
+    padding: 10px 5px;
 }
 
-.recipeCost, .recipeTime, .recipeCount, .recipeValue {
-    padding: 0 5px;
+.unlockReq>p {
+    padding: 15px 10px;
+    background-color: var(--theme-bg);
+    border-top: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-border);
+}
+
+.unlockReq>p:before {
+    display: inline-block;
+    position: relative;
+    content: "?";
+    font-weight: bold;
+    color: var(--theme-text);
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
+    padding: 0 10px;
+    flex-grow: 1;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+.recipeCost {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+#workerList, #joblist, #upgradelist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#workerList, #upgradelist, #progresslist {
+    padding: 20px;
+}
+
+.Worker, .Upgrade {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 250px;
+    max-width: 250px;
+    margin: 0 15px 10px 0;
+    padding: 15px 15px 50px;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc{
+    text-align: center;
+}
+
+.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost {
+    font-size: .9em;
+}
+
+.upgradeDesc {
+    flex-grow: 1;
+    font-size: .9em;
+    color: var(--theme-text-3);
+    margin-bottom: 10px;
+}
+
+.Worker .itemSac {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.itemToSacDiv {
+    min-width: 20%;
+    margin: 0 2px;
+}
+
+.Worker .itemToSac {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    padding: 10px;
+    font-size: .9em;
+    width: 100%;
+}
+
+.Worker .BuyWorker, .Upgrade .BuyUpgrade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    width: 100%;
+    border: none;
+    background-color: var(--theme-bg-3);
+    border-top: 1px solid var(--theme-border);
+    color: var(--theme-text);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover {
+    background-color: var(--theme-bg-2);
+}
+
+.BuyWorker.workerDisable, .BuyUpgrade.upgradeDisable {
+    color: #c90000;
+    background-color: rgba(255, 0, 0, 0.10);
+}
+
+.BuyWorker.workerDisable:hover, .BuyUpgrade.upgradeDisable:hover {
+    color: #c90000;
+    background-color: rgba(255, 0, 0, 0.10);
+    cursor: not-allowed;
+}
+
+.jobHeadWorker {
+    padding-left: 15px;
+}
+
+.jobWorker {
+    display: flex;
+    margin-left: 5px;
+}
+
+.jobWorker>a {
+    flex-grow: 1;
+    padding: 10px 0;
+}
+
+.jobRow.jobDisable {
+    padding: 10px 0;
+    color: #c99a00;
+    background-color: rgba(255, 174, 0, 0.1);;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+#progresslist {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#progresslist>h3 {
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+#progresslist>div>h2 {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.progress-desc {
+    font-size: .9em;
+    color: var(--theme-text-3);
+    flex-grow: 1;
+}
+
+.progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    min-width: 250px;
+    max-width: 250px;
+    margin: 0 15px 10px 0;
+    padding: 15px 15px 30px 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#progresslist .plProgressBar {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid var(--theme-border)!important;
+    width: 100%;
+    margin: 0 -15px;
+}
+
+#gameTime {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: .9em;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 footer {
@@ -235,8 +866,9 @@ footer {
     padding: 0;
     width: calc(100% - 250px);
     height: 50px;
-    background-color: #fff;
-    border-top: 1px solid #e1e1e1;
+    font-size: 14px;
+    background-color: var(--theme-bg);
+    border-top: 1px solid var(--theme-border);
 }
 
 #bottom-left, #bottom-right {
@@ -247,13 +879,13 @@ footer a {
     display: inline-block;
     height: 100%;
     padding: 15px;
-    color: #000;
+    color: var(--theme-text);
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
-    background-color: #e9e9e9;
+    background-color: var(--theme-bg-2);
 }
 
 #clearSave, #exportSave, #importSave {
@@ -269,6 +901,13 @@ footer a:hover {
     color: #fff;
 }
 
+span#copyme {
+    display: block;
+    max-width: 220px;
+    max-height: 30px;
+    word-wrap: break-word;
+}
+
 .tooltip:hover:before {
     display: inline-block;
     position: absolute;
@@ -279,7 +918,8 @@ footer a:hover {
     border: 8px solid transparent;
     border-bottom-color: black;
     transform: rotate(180deg);
-    animation: fade-in 0.5s;
+    animation: fade-in 0.3s;
+    pointer-events: none;
 }
 
 .tooltip:hover:after {
@@ -288,17 +928,61 @@ footer a:hover {
     top: -100%;
     left: -100%;
     right: -100%;
-    margin-top: -2px;
+    margin-top: -4px;
     content: attr(aria-label);
     background-color: #000;
     color: #fff;
     border: 1px solid #000;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: .75rem;
     text-align: center;
     word-wrap: break-word;
     padding: 5px 8px;
-    animation: fade-in 0.5s; 
+    animation: fade-in 0.3s; 
+    pointer-events: none;
+}
+
+.inventoryItem a.tooltip:hover:after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 0;
+    border-radius: 0;
+    z-index: 2;
+}
+
+.inventoryItem a.tooltip:hover:before {
+    display: none;
+}
+
+.itemToSacDiv a.tooltip:hover:after {
+    left: 0;
+    right: 0;
+    top: -60%;
+}
+
+.itemToSacDiv a.tooltip:hover:before {
+    left: unset;
+    right: unset;
+}
+
+.recipeCost.tooltip:hover:after {
+    margin-top: -15px;
+    bottom: 150%;
+    top: unset;
+}
+.recipeCost.tooltip:hover:before {
+    margin-top: -10px;
+    margin-right: -12px;
+}
+
+#version-scale {
+    display: inline-block;
+    padding: 0 15px;
 }
 
 footer a[href*="discord.gg"]:hover {
@@ -313,4 +997,14 @@ footer a[href*="discord.gg"]:hover {
     to {
         opacity: 1;
     }
+}
+
+/* Hide content while retaining the content's effects on elements, such as, its width and height. */
+.hidden {
+    visibility: hidden;
+}
+
+/* Hide content completely, removing both the content and its effect on elements */
+.none {
+    display: none;
 }

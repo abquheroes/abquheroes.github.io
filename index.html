@@ -1,11 +1,29 @@
 <!doctype html>
 <html lang="us">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97625874-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-97625874-2');
+    </script>
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-97625874-2', 'auto');
+        ga('send', 'pageview');
+        </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
     <meta charset="utf-8">
 	<title>Abqu Heroes</title>
     <link href="jquery-ui.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
     <main id="content">
@@ -14,32 +32,134 @@
                 <div id="game-logo"><h1>Abqu Heroes</h1></div>
                 <div id="side-content">
                     <p class="heading">Resources:</p>
-                    Gold: <span id="moneyAmt">0</span> <img src="PixelItem/CoinsGold5.png"></br>
-                    Ore: <span id="oreAmt">0</span> <img src="PixelItem/Ore.png"></br>
-                    Wood: <span id="woodAmt">0</span> <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">
-                    <p class="heading">Generation:</p>
-                    <img src="PixelItem/Ore.png">&nbsp;&nbsp;<span id="orePerSecAmt">0</span>/s</br>
-                    <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">&nbsp;&nbsp;<span id="woodPerSecAmt">0</span>/s
+                    <img src="PixelItem/CoinsGold5.png">&nbsp;&nbsp;<span id="moneyAmt">0</span></br>
+                    <img src="PixelItem/Ore.png">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br>
+                    <div id="woodResource" class="none"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
+                    <div id="leatherResource" class="none"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
+                    <div id="herbResource" class="none"><img src="PixelItem/Consume/Herb5.png">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
                 </div>
+
+                <div id="theme-selection">
+                    <button class="lm-btn">Light Mode</button>
+                    <button class="dm-btn">Dark Mode</button>
+                </div>
+
             </div>
+
             <div class="game-wrapper">
+                <div id="Actions">
+                    <h1>Action Slots</h1>
+                    <div id="ActionSlots">
+                        <div id="ASTable">
+                            <div class="ASBlock" id="ASBlock1">
+                                <div class="ASType" id="ASType1">Empty</div>
+                                <div class="ASCancel" id="ASCancel1"><a href="1" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName1"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c1pbLabel"><span class="ProgressBarFill" id="c1pb"></span></div>
+                            </div>
+                            <div class="ASBlock" id="ASBlock2">
+                                <div class="ASType" id="ASType2">Empty</div>
+                                <div class="ASCancel" id="ASCancel2"><a href="2" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName2"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c2pbLabel"><span class="ProgressBarFill" id="c2pb"></span></div>
+                            </div>
+                            <div class="ASBlock" id="ASBlock3">
+                                <div class="ASType" id="ASType3">Empty</div>
+                                <div class="ASCancel" id="ASCancel3"><a href="3" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName3"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c3pbLabel"><span class="ProgressBarFill" id="c3pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock4">
+                                <div class="ASType" id="ASType4">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel4"><a href="4" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName4"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c4pbLabel"><span class="ProgressBarFill" id="c4pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock5">
+                                <div class="ASType" id="ASType5">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel5"><a href="5" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName5"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c5pbLabel"><span class="ProgressBarFill" id="c5pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock6">
+                                <div class="ASType" id="ASType6">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel6"><a href="6" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName6"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c6pbLabel"><span class="ProgressBarFill" id="c6pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock7">
+                                <div class="ASType" id="ASType7">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel7"><a href="7" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName7"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c7pbLabel"><span class="ProgressBarFill" id="c7pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock8">
+                                <div class="ASType" id="ASType8">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel8"><a href="8" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName8"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c8pbLabel"><span class="ProgressBarFill" id="c8pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock9">
+                                <div class="ASType" id="ASType9">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel9"><a href="9" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName9"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c9pbLabel"><span class="ProgressBarFill" id="c9pb"></span></div>
+                            </div>
+                            <div class="ASBlock none" id="ASBlock10">
+                                <div class="ASType" id="ASType10">Empty</div>
+                                <div class="ASCancel hidden" id="ASCancel10"><a href="10" class="ASCancelText">[x]</a></div>
+                                <div class="ASName hidden" id="ASName10"></div>
+                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c10pbLabel"><span class="ProgressBarFill" id="c10pb"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="tabs">
                     <ul>
-                        <li><a href="#tabs-1">Crafts</a></li>
+                        <li><a href="#tabs-1">Blueprints</a></li>
                         <li><a href="#tabs-2">Workers</a></li>
+                        <li><a href="#tabs-3">Jobs</a></li>
+                        <li><a href="#tabs-4">Upgrades</a></li>
+                        <li><a href="#tabs-5">Progress</a></li>
                     </ul>
                     <div id="tabs-1">
-                        <h1>Crafting Slots</h1>
-                        Crafting Slot 1: <span id="c1Image"></span>&nbsp;&nbsp;<span id="c1Name"><a id="craft1" href="craft1">Empty</a></span>&nbsp;<span id="craft1Clear" class="hidden"><a id="c1Close" href="c1Close">[x]</a></span>&nbsp;&nbsp;<div id="c1pb" class="hidden"><div id='c1pbLabel'>Waiting for Resources...</div></div></br>
-                        Crafting Slot 2: <span id="c2Image"></span>&nbsp;&nbsp;<span id="c2Name"><a id="craft2" href="craft2">Empty</a></span>&nbsp;<span id="craft2Clear" class="hidden"><a id="c2Close" href="c2Close">[x]</a></span>&nbsp;&nbsp;<div id="c2pb" class="hidden"><div id='c2pbLabel'>Waiting for Resources...</div></div></br>
-                        Crafting Slot 3: <span id="c3Image"></span>&nbsp;&nbsp;<span id="c3Name"><a id="craft3" href="craft3">Empty</a></span>&nbsp;<span id="craft3Clear" class="hidden"><a id="c3Close" href="c3Close">[x]</a></span>&nbsp;&nbsp;<div id="c3pb" class="hidden"><div id='c3pbLabel'>Waiting for Resources...</div></div></br>
-                        <h1>Recipes</h1>
-                        <div id="RecipeFilter"><a id="KnifeSelector" href="KnifeSelector">Knives</a> | <a id="MaceSelector" href="MaceSelector">Maces</a> | <a id="AxeSelector" href="AxeSelector">Axes</a></div>
+                        <div id="RecipeFilter">
+                            <a class="recipeSelect" id="recipeKnife" href="KnifeSelector">Knives</a>
+                            <a class="recipeSelect none" id="recipeMace" href="MaceSelector">Maces</a>
+                            <a class="recipeSelect none" id="recipeGlove" href="GloveSelector">Gloves</a>
+                            <a class="recipeSelect none" id="recipePotion" href="PotionSelector">Potions</a>
+                            <a class="recipeSelect none" id="recipeAxe" href="AxeSelector">Axes</a>
+                            <a class="recipeSelect none" id="recipeHat" href="HatSelector">Hats</a>
+                            <a class="recipeSelect none" id="recipeWand" href="WandSelector">Wands</a>
+                            <a class="recipeSelect none" id="recipeGauntlet" href="GauntletSelector">Gauntlets</a>
+                            <a class="recipeSelect none" id="recipeHelmet" href="HelmetSelector">Helmets</a>
+                            <a class="recipeSelect none" id="recipeShoe" href="ShoeSelector">Shoes</a>
+                            <a class="recipeSelect none" id="recipeWard" href="WardSelector">Wards</a>
+                            <a class="recipeSelect none" id="recipeShield" href="ShieldSelector">Shields</a>
+                            <a class="recipeSelect none" id="recipeCloak" href="CloakSelector">Cloaks</a>
+                            <a class="recipeSelect none" id="recipeArmor" href="ArmorSelector">Armor</a>
+                            <a class="recipeSelect none" id="recipePendant" href="PendantSelector">Pendants</a>
+                        </div>
                         <div id="RecipeResults"></div>
                     </div>
                     <div id="tabs-2">
-                        <img src="PixelItem/Ore.png"> Worker Level: <span id="oreWorker">0</span>&nbsp;&nbsp;<button id="increaseOreLevel">Increase lvl - 0g</button></br>
-                        <img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> Worker Level: <span id="woodWorker">0</span>&nbsp;&nbsp;<button id="increaseWoodLevel">Increase lvl - 0g</button>
+                        <div id="workerList"></div>
+                    </div>
+                    <div id="tabs-3">
+                        <div id="joblist"></div>
+                    </div>
+                    <div id="tabs-4">
+                        <div id="upgradelist"></div>
+                    </div>
+                    <div id="tabs-5">
+                        <div id="progresslist">
+                            <h3>Progress Tracker for v0.1x</h3>
+                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/150</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
+                            <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
+                            <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
+                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
+                            <div id="gameTime">You've been playing for 2 days, 12 hours, 21 minutes, 31 seconds</div>
+                        </div>
                     </div>
                 </div>
                 <footer>
@@ -47,8 +167,19 @@
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
                         <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a></div>
-                    <div id="bottom-right">v0.0.7 <a href="http://www.discord.gg/qGBAVNR">Discord</a></div>
+
+                    <div id="bottom-right">
+                        <p id="version-scale">v0.1.0</p>
+                        <a href="about.html">About &amp; Crediting</a>
+                        <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server</a>
+                    </div>
                 </footer>
+                </div>
+            </div>
+
+            <div id='right-side-content'>
+                <h2 class="heading">Inventory</h2>
+                <div id="inventory"></div>
             </div>
         </section>
     </main>
@@ -59,9 +190,14 @@
 <script src="external/jquery/jquery.js"></script>
 <script src="jquery-ui.js"></script>
 <script src="tabs.js"></script>
-<script src="main.js"></script>
 <script src="recipes.js"></script>
 <script src="workers.js"></script>
+<script src="upgrades.js"></script>
+<script src="inventory.js"></script>
+<script src="devtools.js"></script>
+<script src="main.js"></script>
+<script src="style.js"></script>
+
 </body>
 </html>
 
