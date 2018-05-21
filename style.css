@@ -30,6 +30,7 @@
     --theme-link: #218cff;
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
+    --theme-progressbar: #218cff;
 }
 
 .lm-btn, .dm-btn {
@@ -364,10 +365,26 @@ select {
     overflow: hidden;
 }
 
-.ASBlock>div>.ui-progressbar {
+.ASProgressBar {
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.ASProgressBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.ProgressBarFill {
     display: block;
+    position: relative;
     height: 25px;
+    z-index: -1;
+    background-color: var(--theme-progressbar);
 }
 
 .ASType {
@@ -963,9 +980,4 @@ footer a[href*="discord.gg"]:hover {
 /* Hide content completely, removing both the content and its effect on elements */
 .none {
     display: none;
-}
-
-.ASProgressBar:before {
-    content: attr(data-label);
-    position: absolute;
 }

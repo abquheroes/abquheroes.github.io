@@ -56,6 +56,7 @@ function lightTheme() {
     root.style.setProperty('--theme-link', '#218cff');
     root.style.setProperty('--theme-scroll-thumb', 'rgba(0,0,0,0.10)');
     root.style.setProperty('--theme-scroll-track', 'rgba(0,0,0,0.10)');
+    root.style.setProperty('--theme-progressbar', '#218cff;')
 
     lightButton.style.display = "none";
     darkButton.style.display = "block";
@@ -73,6 +74,7 @@ function darkTheme() {
     root.style.setProperty('--theme-link', '#191919');
     root.style.setProperty('--theme-scroll-thumb', 'rgba(255,255,255,0.10)');
     root.style.setProperty('--theme-scroll-track', 'rgba(0,0,0,0.30)');
+    root.style.setProperty('--theme-progressbar', '#218cff;')
 
     darkButton.style.display = "none";
     lightButton.style.display = "block";
