@@ -549,7 +549,7 @@ function msToTime(s) {
 
 function saveGame() {
     if (stopSave) return;
-    localStorage.setItem('gameSave2', JSON.stringify(createSave()));
+    localStorage.setItem('gameSave3', JSON.stringify(createSave()));
     ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
 
@@ -566,7 +566,7 @@ function createSave() {
 
 function loadGame() {
     //populate itemCount with blueprints as a base
-    const loadGame = JSON.parse(localStorage.getItem("gameSave2"));
+    const loadGame = JSON.parse(localStorage.getItem("gameSave3"));
     if (loadGame !== null) {
         //aka there IS a file
         if (typeof loadGame.playerSave !== "undefined") $.extend(player,loadGame.playerSave);
