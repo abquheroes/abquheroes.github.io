@@ -421,7 +421,7 @@ function populateJob() {
             const td1 = $('<div/>').addClass('jobWorker');
             if (actionSlotContainsWorker(workerName)) {
                 trow.addClass('jobDisable');
-                td1.html("Hire "+workerName+" (Busy)");
+                td1.html(workerName+" (busy)");
             }
             else {
                 const td1a = $("<a/>").addClass('addJob').attr("href",workerName).attr("target","_blank").html("Hire "+workerName);
@@ -477,14 +477,14 @@ function populateRecipe(type) {
             const td2 = $('<div/>').addClass('recipecostdiv');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
                 if (amt > 0) {
-                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(amt + "&nbsp" + imageReference[type])
+                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(imageReference[type] + "&nbsp;" + amt)
                     td2.append(td2a);
                 }
             }
             
             const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
             const td4 = $('<div/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
-            const td5 = $('<div/>').addClass('recipeValue').html(blueprints[i].value + "&nbsp;" + imageReference["Gold"]);
+            const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
             row.append(td1);
             row.append(td2);
             row.append(td3);
@@ -583,7 +583,7 @@ function ClearSave() {
     $('#clearDialog').dialog({
         buttons: {
             "Yes": function () {
-                localStorage.removeItem("gameSave2");
+                localStorage.removeItem("gameSave3");
                 location.reload();
             },
             "No": function () {

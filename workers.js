@@ -699,11 +699,22 @@ $workers.on("click", ".BuyWorker", (e) => {
 function purchaseWorker(name) {
     const worker = nameToWorker(name);
     const cost = worker.cost[workerProgress[name]];
-    if (player.money >= cost) {
+    if (player.money >= cost && sacrificeCheck(name)) {
         player.money -= cost;
         workerProgress[name] += 1;
         ga('send', 'event', 'Workers', 'upgrade', name);
     }
+}
+
+function sacrificeCheck(name) {
+    const worker = nameToWorker(name);
+    const lvl = workerProgress[name];
+    for (const [item,amt] of Object.entries(worker.lvlreq[lvl])) {
+        const slot = name+"_"+lvl+"_"+item;
+        console.log(slot);
+        if (workerSacProgress[slot] < amt) return false;
+    }
+    return true;
 }
 
 const workerImageReference = {

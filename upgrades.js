@@ -141,12 +141,3 @@ function upgrade(name) {
         ga('send', 'event', 'Upgrades', 'upgrade', name);
     }
 }
-
-function purchaseWorker(name) {
-    const worker = nameToWorker(name);
-    const cost = worker.cost[workerProgress[name]];
-    if (player.money >= cost) {
-        player.money -= cost;
-        workerProgress[name] += 1;
-    }
-}
