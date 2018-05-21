@@ -838,6 +838,20 @@ input#importSaveText {
     margin: 0 -15px;
 }
 
+#gameTime {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: .9em;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
 footer {
     display: flex;
     justify-content: space-between;
