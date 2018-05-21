@@ -720,7 +720,6 @@ $(document).on("click", "a.itemToSac", (e) => {
     const itemName = $(e.currentTarget).attr("item");
     const success = removeFromInventory(itemName);
     if (success) {
-        console.log(workerSacProgress[slot]);
         workerSacProgress[slot] += 1;
         refreshWorkers();
         populateJob();

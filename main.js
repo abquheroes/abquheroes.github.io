@@ -203,13 +203,11 @@ const pbLabelTextCurrent = ["","",""];
 function updatedActionSlots() {
     for (let i=0;i<player.actionSlots.length;i++) {
         if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
-            console.log("TRIGGERED");
             asState.push("Empty");
             pbValue.push(0);
             pbValueCurrent.push(0);
             pbLabelText.push("");
             pbLabelTextCurrent.push("");
-            console.log($asParts[i].block.removeClass("none"));
             $asParts[i].block.removeClass("none");
         }
         if (player.actionSlots[i].actionType !== asState[i]) { //aka we changed states...
@@ -517,7 +515,6 @@ function canCraft(loc) {
             if (player[res] < amt) return false;
         }
         else {
-            console.log(res,inventory[res],amt);
             if (!(res in inventory) || inventory[res] < amt) return false;
         }
     }
