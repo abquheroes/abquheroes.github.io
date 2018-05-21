@@ -42,7 +42,7 @@ const displayedResourcesCap = {};
 const hidden = {
     "woodResource" : true,
     "leatherResource" : true,
-    "herbResouce" : true,
+    "herbResource" : true,
     "recipeMace" : true,
     "recipeGlove" : true,
     "recipePotion" : true,
@@ -425,7 +425,7 @@ const nameToUnlock = {
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
-            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResouce") {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource") {
                 $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
                 ga('send', 'event', 'Recipe', 'unlock', name);
                 $("#unlockDialog").dialog("open");
@@ -662,7 +662,7 @@ function ImportSaveButton() {
         buttons: {
             "Import": function () {
                 const s = JSON.parse(atob($('#importSaveText').val()));
-                localStorage.setItem('gameSave2', JSON.stringify(s));
+                localStorage.setItem('gameSave3', JSON.stringify(s));
                 location.reload();
             },
             "Cancel": function () {
