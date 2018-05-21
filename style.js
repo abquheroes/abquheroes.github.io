@@ -95,4 +95,17 @@ function tabHighlight() {
     this.classList.add("selected");
 };
 
-//
+//logo easter egg
+
+const $gameLogo = $("#game-logo");
+let logoNum = 0;
+
+$gameLogo.click((e) => {
+    logoNum += 1;
+    if (logoNum === 1) $gameLogo.css("background-image","url('images/site-logo.png')");
+    else if (logoNum === 2) $gameLogo.css("background-image","url('images/site-logo2.png')");
+    else {
+        $gameLogo.css("background-image","none");
+        logoNum = 0;
+    }
+});
