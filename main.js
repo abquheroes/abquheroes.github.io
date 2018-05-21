@@ -34,6 +34,7 @@ const player = {
     currentType : "Knives",
     inventoryCap : 5,
     lastLoop : Date.now(),
+    saveStart : Date.now(),
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -377,6 +378,7 @@ function mainLoop() {
 }
 
 setInterval(mainLoop, 10);
+setInterval(gameTime, 1000);
 setInterval(saveGame, 5000);
 
 function refreshResources() {
@@ -732,4 +734,30 @@ function getCap(res) {
     const lvl = upgradeProgress[name]
     const upgrade = nameToUpgrade(name);
     return upgrade.value[lvl];
+}
+
+const $gameTime = $("#gameTime")
+
+function gameTime() {
+    $gameTime.html("You've been playing this save for: " + timeSince(player.saveStart));
+}
+
+function timeSince(startTime) {
+    let s = "";
+    let diff = Math.round((Date.now()-startTime)/1000);
+    const d = Math.floor(diff/(24*60*60))
+    diff = diff-d*24*60*60
+    if (d === 1) s += d + " day, ";
+    else s += d + " days, ";
+    const h = Math.floor(diff/(60*60));
+    diff = diff-h*60*60;
+    if (h === 1) s += h + " hour, ";
+    else s += h + " hours, ";
+    const m = Math.floor(diff/60);
+    diff = diff-m*60;
+    if (m === 1) s += m + " minute, ";
+    else s += m + " minutes, ";
+    if (diff === 1) s += diff + " second, ";
+    else s += diff + " seconds, ";
+    return s.slice(0, -2);
 }
