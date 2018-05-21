@@ -39,7 +39,7 @@ upgrades.push(maxHerb);
 const maxActionSlots = {
     name : "Max Action Slots",
     description : "Increases the number of Action Slots you can have.",
-    cost : [1000,2000,4000,10000,20000,30000,50000],
+    cost : [2000,4000,10000,25000,50000,75000,100000],
     value : [3,4,5,6,7,8,9,10],
     valueSuffix : " Action Slots"
 }
@@ -57,7 +57,7 @@ upgrades.push(maxInventory);
 const autoSell = {
     name : "Auto Sell Value",
     description : "Increases the value of item auto-selling.",
-    cost : [1000,2000,3000,5000,10000,20000,40000,60000,80000,100000],
+    cost : [2000,4000,8000,12000,16000,20000,40000,60000,80000,100000],
     value : [50,55,60,65,70,75,80,85,90,95],
     valueSuffix : "% Sell Value"
 }
