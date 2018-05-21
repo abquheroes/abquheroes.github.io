@@ -38,7 +38,8 @@ const player = {
 
 const resources = ["Ore","Wood","Leather","Herb"];
 
-const displayedResources = {}
+const displayedResources = {};
+const displayedResourcesCap = {};
 
 const hidden = {
     "woodResource" : true,
@@ -381,9 +382,10 @@ setInterval(saveGame, 5000);
 function refreshResources() {
     for (let i=0;i<resources.length;i++) {
         const name = resources[i];
-        if (player[name] !== displayedResources[name]) {
+        if (displayedResources[name] !== player[name] || getCap(name) !== displayedResourcesCap[name]) {
             $resAmts[i].text(player[name] + "/" + getCap(name));
             displayedResources[name] = player[name];
+            displayedResourcesCap[name] = getCap(name);
         }
     }
     if (player.money !== displayedResources["Money"]) {
