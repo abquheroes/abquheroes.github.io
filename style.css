@@ -291,6 +291,15 @@ select {
     padding: 0;
 }
 
+.ui-tabs .ui-tabs-nav li a {
+    color: var(--theme-text-3);
+}
+
+.ui-tabs-nav li a:hover {
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+}
+
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
     padding: 0;
 }
@@ -306,10 +315,6 @@ select {
 
 .ui-state-default, .ui-widget-content .ui-state-default {
     background-color: var(--theme-bg);
-}
-
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    color: var(--theme-text-3);
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
@@ -836,6 +841,20 @@ input#importSaveText {
     border-top: 1px solid var(--theme-border)!important;
     width: 100%;
     margin: 0 -15px;
+}
+
+#gameTime {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: .9em;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 footer {
