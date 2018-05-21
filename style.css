@@ -1054,8 +1054,9 @@ footer a[href*="discord.gg"]:hover {
     }
 
     #side-content {
+        display: flex;
         text-align: center;
-        padding: 20px;
+        padding: 10px;
         overflow: auto;
         max-height: 100px;
         border-top: 1px solid var(--theme-border);
@@ -1063,6 +1064,26 @@ footer a[href*="discord.gg"]:hover {
 
     #side-content .heading {
         display: none;
+    }
+
+    #side-content>div {
+        margin: 0 5px;
+    }
+
+    #herbResource {
+        position: relative;
+    }
+
+    #herbResource:after {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: -20px;
+        bottom: 0;
+        content: "";
+        background: transparent;
+        width: 1px;
+        pointer-events: none;
     }
 
     .game-content .game-wrapper {
