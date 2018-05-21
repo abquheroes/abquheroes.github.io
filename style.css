@@ -373,6 +373,10 @@ select {
     margin: 0;
 }
 
+.plProgressBar {
+    background-color: var(--theme-bg-2);
+}
+
 .ASProgressBar:before {
     content: " " attr(data-label);
     position: absolute;
