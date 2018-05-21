@@ -662,7 +662,7 @@ function ImportSaveButton() {
         buttons: {
             "Import": function () {
                 const s = JSON.parse(atob($('#importSaveText').val()));
-                localStorage.setItem('gameSave2', JSON.stringify(s));
+                localStorage.setItem('gameSave3', JSON.stringify(s));
                 location.reload();
             },
             "Cancel": function () {
