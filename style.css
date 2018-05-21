@@ -680,7 +680,7 @@ input#importSaveText {
     position: relative;
     margin-right: 5px;
     min-width: 50px;
-    text-align: right;
+    text-align: left;
 }
 
 #workerList, #joblist, #upgradelist {
