@@ -670,10 +670,17 @@ input#importSaveText {
     max-width: 200px;
 }
 
+.recipecostdiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .recipeCost {
     display: inline-block;
     position: relative;
-    margin-right: 10px;
+    margin-right: 5px;
+    min-width: 50px;
+    text-align: right;
 }
 
 #workerList, #joblist, #upgradelist {
