@@ -416,15 +416,15 @@ furyBringerAxe.requires = {
 }
 blueprints.push(furyBringerAxe)
 
-const venganceAxe = new item("Vengance",32,23000,"axes");
-venganceAxe.cost = {
+const vengeanceAxe = new item("Vengeance",32,23000,"axes");
+vengeanceAxe.cost = {
     "Ore":9,
     "Wood":11,
 }
-venganceAxe.requires = {
+vengeanceAxe.requires = {
     "Fury Bringer" : 40,
 }
-blueprints.push(venganceAxe)
+blueprints.push(vengeanceAxe)
 
 const prideAxe = new item("Pride",49,29000,"axes");
 prideAxe.cost = {
@@ -432,7 +432,7 @@ prideAxe.cost = {
     "Wood":15,
 }
 prideAxe.requires = {
-    "Vengance" : 50,
+    "Vengeance" : 50,
 }
 blueprints.push(prideAxe)
 
@@ -1164,7 +1164,7 @@ defiantShield.cost = {
     "Ore":14,
     "Wood":21,
     "Leather":35,
-    "Vengance":1,
+    "Vengeance":1,
 }
 defiantShield.requires = {
     "Faithful Buckler" : 65,
@@ -1665,7 +1665,7 @@ const imageReference = {
     "Knife Club" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/magic-weapons/magicweapon_1.png">',
     "Rage Maker" : '<img src="PixelItem/Equip/Set/NormalAxe.png">',
     "Fury Bringer" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_93.png">',
-    "Vengance" : '<img src="PixelItem/Equip/Set/IcyAxe.png">',
+    "Vengeance" : '<img src="PixelItem/Equip/Set/IcyAxe.png">',
     "Pride" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_100.png">',
     "Greedy Pickaxe" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_25.png">',
     "Slothslayer" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/axes/axe_51.png">',
