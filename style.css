@@ -124,6 +124,10 @@ body{
     margin-top: 0;
 }
 
+#side-content .resource {
+    position: relative;
+}
+
 #right-side-content {
     border-left: 1px solid var(--theme-border);
     height: calc(100vh - 50px);
@@ -987,6 +991,22 @@ span#copyme {
     margin-right: -12px;
 }
 
+.resource.tooltip:hover:before {
+    margin-top: -9px;
+    right: unset;
+    left: 0;
+    margin-right: 0;
+}
+
+.resource.tooltip:hover:after {
+    top: unset;
+    bottom: 130%;
+    left: -10px;
+    right: unset;
+    margin-top: 0;
+    padding: 
+}
+
 #version-scale {
     display: inline-block;
     padding: 0 15px;
@@ -1016,7 +1036,7 @@ footer a[href*="discord.gg"]:hover {
     display: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1130px) {
     .game-content {
         flex-direction: column;
     }
@@ -1140,6 +1160,45 @@ footer a[href*="discord.gg"]:hover {
     #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
         min-width: 40px;
         max-width: 40px;
+    }
+
+    .recipeHeader {
+        display: none;
+    }
+    
+    .recipeRow {
+        position: relative;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--theme-border);
+    }
+    
+    .recipeName {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .recipeName>a {
+        flex-grow: unset;
+        width: inherit;
+        height: inherit;
+    }
+    
+    .recipecostdiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
     }
 
     footer {
