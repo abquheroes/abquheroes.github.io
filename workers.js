@@ -107,13 +107,13 @@ oren.lvlreq = [
     },
     {//15
         "Thats Not A Knife" : 5,
-        "Vengance" : 5,
+        "Vengeance" : 5,
         "Plain Gauntlets" : 5,
         "Regular Helmet" : 5,
     },
     {//16
         "Thats Not A Knife" : 10,
-        "Vengance" : 10,
+        "Vengeance" : 10,
         "Plain Gauntlets" : 10,
         "Regular Helmet" : 10,
     },
@@ -252,13 +252,13 @@ eryn.lvlreq = [
     },
     {//15
         "Bludgeon" : 5,
-        "Vengance" : 5,
+        "Vengeance" : 5,
         "Wind Wand" : 5,
         "Druidic Boots" : 5,
     },
     {//16
         "Bludgeon" : 10,
-        "Vengance" : 10,
+        "Vengeance" : 10,
         "Wind Wand" : 10,
         "Druidic Boots" : 10,
     },
