@@ -302,7 +302,7 @@ boxingGloves.cost = {
     "Punching Gloves":3,
 }
 boxingGloves.requires = {
-    "Dancing Gloves" : 100,
+    "Other Gloves" : 100,
 }
 blueprints.push(boxingGloves)
 
