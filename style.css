@@ -1061,6 +1061,10 @@ span#copyme {
 
 .workerLvl.tooltip:hover:after {
     font-weight: normal;
+    top: unset;
+    left: -40%;
+    right: -40%;
+    bottom: 115%;
 }
 
 #version-scale {

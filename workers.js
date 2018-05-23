@@ -629,7 +629,7 @@ function refreshWorkers() {
         const d1 = $("<div/>").addClass("WorkerImage");
         const d2 = $("<div/>").addClass("WorkerName");
         const d3 = $("<div/>").addClass("WorkerDesc");
-        const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Your worker's current level.");
+        const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Worker Level");
         const d5 = $('<div/>').addClass("itemSac");
         /*const d6 = $('<div/>').addClass("InitialCost");*/
         if (lvl === 0) {
@@ -663,7 +663,7 @@ function refreshWorkers() {
         const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("Purchase for " + "&nbsp;" +imageReference["Gold"] + "&nbsp;" + workers[i].cost[lvl]); 
         if (player.money < workers[i].cost[lvl] || craftsLeft) b1.addClass("workerDisable");
         if (lvl === workers[i].cost.length) {
-            d6.addClass("hidden");
+            d5.addClass("hidden");
             b1.addClass("hidden");
         }
         worker.append(d1);
