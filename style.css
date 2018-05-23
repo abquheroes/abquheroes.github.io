@@ -766,7 +766,7 @@ input#importSaveText {
     position: relative;
     justify-content: center;
     flex-direction: row;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 .Worker .itemSac:before {
@@ -1104,7 +1104,7 @@ footer a[href*="discord.gg"]:hover {
     display: none;
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1100px) {
     .game-content {
         flex-direction: column;
     }
@@ -1150,6 +1150,10 @@ footer a[href*="discord.gg"]:hover {
         border-top: 1px solid var(--theme-border);
     }
 
+    #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
+        display: none;
+    }
+
     #side-content .heading {
         display: none;
     }
@@ -1189,7 +1193,7 @@ footer a[href*="discord.gg"]:hover {
     }
 
     .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
-        margin: 10px 0;
+        margin: 10px;
     }
 
     #progresslist>h3 {
@@ -1203,6 +1207,7 @@ footer a[href*="discord.gg"]:hover {
 
     #ASTable {
         flex-wrap: nowrap;
+        position: relative;
         overflow-x: auto;
         margin: 0 -20px;
     }
@@ -1242,31 +1247,69 @@ footer a[href*="discord.gg"]:hover {
     
     .recipeName {
         display: flex;
+        align-items: baseline;
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
+        left: 0;
         bottom: 0;
-        align-items: center;
         width: 100%;
         max-width: 100%;
         padding: 0;
-        justify-content: center;
+    }
+
+    .recipeName>img {
+        margin-left: 10px;
     }
     
     .recipeName>a {
         flex-grow: unset;
-        width: inherit;
-        height: inherit;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        margin-left: -30px;
     }
     
     .recipecostdiv {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-end;
         width: 100%;
-        max-width: 100%;
+        max-width: 200px;
         margin-bottom: 5px;
+        margin-left: 45%;
+        margin: 10px 0 5px 45%;
+    }
+
+    .recipeCost.tooltip:hover:after {
+        margin-top: -15px;
+        right: 0;
+        bottom: 150%;
+        top: unset;
+    }
+    .recipeCost.tooltip:hover:before {
+        margin-top: -10px;
+        margin-right: -12px;
+    }
+
+    .recipeTime:before, .recipeCount:before, .recipeValue:before {
+        display: inline-block;
+        position: relative;
+        margin-right: 5px;
+        margin-top: 15px;
+        margin: 10px 5px 10px 0;
+    }
+
+    .recipeTime:before {
+        content: "Time:";
+    }
+
+    .recipeCount:before {
+        content: "Count:";
+    }
+
+    .recipeValue:before {
+        content: "Value:";
     }
 
     footer {
@@ -1286,8 +1329,7 @@ footer a[href*="discord.gg"]:hover {
         padding: 5px;
     }
 
-    #version-scale {
+    #bottom-right a {
         display: none;
     }
-
 }
