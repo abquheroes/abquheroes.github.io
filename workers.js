@@ -29,7 +29,7 @@ function getProduction(type) {
 
 const workers = [];
 
-const oren = new Worker("Oren",10000,"Oren comes from a long family of miners and specializes in gathering <em>Ore</em>.");
+const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
     "Ore" : 20,
 }
@@ -727,7 +727,7 @@ function refreshWorkers() {
         const d1 = $("<div/>").addClass("WorkerImage");
         const d2 = $("<div/>").addClass("WorkerName");
         const d3 = $("<div/>").addClass("WorkerDesc");
-        const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Your worker's current level.");
+        const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Worker Level");
         const d5 = $('<div/>').addClass("itemSac");
         /*const d6 = $('<div/>').addClass("InitialCost");*/
         if (lvl === 0) {
