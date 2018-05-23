@@ -1059,12 +1059,18 @@ span#copyme {
     padding: 5px 10px;
 }
 
+.workerLvl.tooltip:hover:before {
+    margin-top: -28px;
+}
+
 .workerLvl.tooltip:hover:after {
     font-weight: normal;
     top: unset;
     left: -40%;
     right: -40%;
-    bottom: 115%;
+    bottom: 120%;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 #version-scale {
