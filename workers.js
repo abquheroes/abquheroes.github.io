@@ -30,7 +30,7 @@ function getProduction(type) {
 
 const workers = [];
 
-const oren = new Worker("Oren",10000,"Job: Produces Ore");
+const oren = new Worker("Oren",10000,"Oren comes from a long family of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
     "Ore" : 20,
 }
@@ -174,7 +174,7 @@ oren.lvlreq = [
 ]
 workers.push(oren);
 
-const eryn = new Worker("Eryn",18000,"Job: Produces Wood");
+const eryn = new Worker("Eryn",18000,"Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.");
 eryn.produces = {
     "Wood" : 28,
 }
@@ -319,7 +319,7 @@ eryn.lvlreq = [
 ]
 workers.push(eryn);
 
-const lakur = new Worker("Lakur",12000,"Job: Produces Leather");
+const lakur = new Worker("Lakur",12000,"Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.");
 lakur.produces = {
     "Leather" : 45,
 }
@@ -464,7 +464,7 @@ lakur.lvlreq = [
 ]
 workers.push(lakur);
 
-const herbie = new Worker("Herbie",30000,"Job: Produces Herbs");
+const herbie = new Worker("Herbie",30000,"Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.");
 herbie.produces = {
     "Herb" : 40,
 }
@@ -629,22 +629,22 @@ function refreshWorkers() {
         const d1 = $("<div/>").addClass("WorkerImage");
         const d2 = $("<div/>").addClass("WorkerName");
         const d3 = $("<div/>").addClass("WorkerDesc");
-        const d4 = $("<div/>").addClass("workerLvl");
-        const d5 = $('<div/>').addClass("InitialCost");
-        const d6 = $('<div/>').addClass("itemSac");
+        const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Your worker's current level.");
+        const d5 = $('<div/>').addClass("itemSac");
+        /*const d6 = $('<div/>').addClass("InitialCost");*/
         if (lvl === 0) {
             d1.html(workerImageReference["hidden"]);
             d2.html("<h3>???</h3>");
-            d3.html("Job: ???")
-            d4.html("Purchase to unlock!")
+            d3.html("Purchase this worker to unlock it and its effect!")
+            d4.html("?")
         }
         else {
             d1.html(workerImageReference[workers[i].name]);
             d2.html("<h3>"+workers[i].name+"</h3>");
             d3.html(workers[i].description);
-            d4.html("Lvl. " + lvl)
+            d4.html(lvl)
         }
-        d5.html("Cost: "+workers[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        /*d6.html(imageReference["Gold"]+workers[i].cost[lvl]);*/
         let craftsLeft = false;
         if (lvl < workers[i].lvlreq.length) {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
@@ -653,17 +653,17 @@ function refreshWorkers() {
                 const adjAmt = amt - workerSacProgress[slot];
                 if (adjAmt > 0) {
                     craftsLeft = true;
-                    const d6a = $('<div/>').addClass("itemToSacDiv");
-                    const d6b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
-                    d6a.append(d6b);
-                    d6.append(d6a);
+                    const d5a = $('<div/>').addClass("itemToSacDiv");
+                    const d5b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
+                    d5a.append(d5b);
+                    d5.append(d5a);
                 }
             }
         }
-        const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("PURCHASE"); 
+        const b1 = $("<button/>").addClass("BuyWorker").attr("id",workers[i].name).html("Purchase for " + "&nbsp;" +imageReference["Gold"] + "&nbsp;" + workers[i].cost[lvl]); 
         if (player.money < workers[i].cost[lvl] || craftsLeft) b1.addClass("workerDisable");
         if (lvl === workers[i].cost.length) {
-            d5.addClass("hidden");
+            d6.addClass("hidden");
             b1.addClass("hidden");
         }
         worker.append(d1);
@@ -671,7 +671,7 @@ function refreshWorkers() {
         worker.append(d3);
         worker.append(d4);
         worker.append(d5);
-        worker.append(d6);
+        /*worker.append(d6);*/
         worker.append(b1);
         $workers.append(worker);
         if (lvl === 0) break;
