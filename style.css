@@ -31,7 +31,7 @@
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
     --theme-progressbar: #218cff;
-    --theme-scheme: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    --theme-scheme: linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%);
 }
 
 .lm-btn, .dm-btn {
@@ -753,7 +753,9 @@ input#importSaveText {
     width: 50px;
     height: 50px;
     background: var(--theme-scheme);
+    color: var(--theme-text-2);
     border: 1px solid var(--theme-border);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
     font-weight: bold;
