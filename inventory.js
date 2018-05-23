@@ -48,10 +48,18 @@ function removeAllFromInventory(itemName) {
 
 function removeFromInventory(itemName,amt) {
     amt = amt || 1;
-    if (!(itemName in inventory) || inventory[itemName] < amt) return false;
-    inventory[itemName] -= amt;
-    refreshInventory();
-    return true;    
+    if (itemName === "Gold") {
+        const removeG = Math.min(player.money,amt);
+        player.money -= removeG;
+        return removeG;
+    }
+    else {
+        if (!(itemName in inventory)) return 0;
+        const remove = Math.min(inventory[itemName],amt);
+        inventory[itemName] -= remove;
+        refreshInventory();
+        return remove;    
+    }
 }
 
 function sellItem(itemName,modifier) {

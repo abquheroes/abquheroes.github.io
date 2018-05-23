@@ -264,7 +264,6 @@ initializeInventory();
 loadGame();
 initialize();
 refreshInventory();
-populateJob();
 refreshUpgrades();
 populateRecipe(player.currentType);
 fakeSelect(player.currentType);
@@ -298,7 +297,7 @@ $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
-    populateJob();
+    refreshWorkers();
 });
 
 $("#clearSave").click((e) => {
@@ -333,11 +332,11 @@ $('#tabs-1').on("click", "a.addCraft", (e) => {
     addCraft(e.target.text,"Craft");
 });
 
-$(document).on("click", "a.addJob", (e) => {
+$(document).on("click", ".HireWorker", (e) => {
     e.preventDefault();
-    const name = $(e.target).attr("href");
+    const name = $(e.target).attr("data-value");
     addCraft(name,"Job");
-    populateJob();
+    refreshWorkers();
 });
 
 const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
@@ -442,46 +441,6 @@ function isFlagged(name) {
         flags[name] = false;
     }
     return flags[name];
-}
-
-function populateJob() {
-    $('#joblist').empty();
-    const table = $('<div/>').addClass('jobTable');
-    const hrow = $('<div/>').addClass('jobHeader');
-    const htd1 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
-    const htd2 = $('<div/>').addClass('jobHeadTime').html("TIME");
-    const htd3 = $('<div/>').addClass('jobHeadValue').html("VALUE");
-    hrow.append(htd1);
-    hrow.append(htd2);
-    hrow.append(htd3);
-    table.append(hrow);
-    for (const [workerName,lvl] of Object.entries(workerProgress)) {
-        if (lvl > 0) {
-            const worker = nameToWorker(workerName);
-            const trow = $('<div/>').addClass('jobRow');
-            const td1 = $('<div/>').addClass('jobWorker');
-            if (actionSlotContainsWorker(workerName)) {
-                trow.addClass('jobDisable');
-                td1.html(workerName+" (busy)");
-            }
-            else {
-                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).attr("target","_blank").html("Hire "+workerName);
-                td1.append(td1a);
-            }
-
-            const td2 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
-            let s = "";
-            for (const [mat,amt] of Object.entries(worker.produces)) {
-                s += (amt*worker.multiplier[lvl]).toFixed(1) + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
-            }
-            const td3 = $('<div/>').addClass('jobValue').html(s);
-            trow.append(td1);
-            trow.append(td2);
-            trow.append(td3);
-            table.append(trow);
-        }
-    }
-    $('#joblist').append(table);
 }
 
 function actionSlotContainsWorker(name) {
@@ -749,7 +708,7 @@ function refreshProgress() {
     }
     let workerMaxCt = 0;
     for (let i=0;i<workers.length;i++) {
-        workerMaxCt += workers[i].cost.length;
+        workerMaxCt += workers[i].lvlreq.length-1;
     }
     $("#plWorkerLevel").html(workerCt + "/" + workerMaxCt);
     $("#pbWorker").css('width', workerCt/workerMaxCt*100+"%");

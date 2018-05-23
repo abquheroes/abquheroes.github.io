@@ -6,6 +6,4 @@ $("#tabs").tabs({
         $("#tabid").html('the tab id is ' + $("#tabs ul>li a").eq(active).attr("href"));
 
     }
-}
-
-);
+});
