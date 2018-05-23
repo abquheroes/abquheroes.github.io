@@ -30,7 +30,7 @@ function getProduction(type) {
 
 const workers = [];
 
-const oren = new Worker("Oren",10000,"Oren comes from a long family of miners and specializes in gathering <em>Ore</em>.");
+const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
     "Ore" : 20,
 }
