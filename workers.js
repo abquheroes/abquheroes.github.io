@@ -763,7 +763,7 @@ function refreshWorkers() {
         const b2 = $("<button/>").addClass("BuyWorker").attr("data-value",workers[i].name).html("Upgrade"); 
         if (lvl === 0) b2.html("Buy");
         else b2.html("Upgrade");
-        if (craftsLeft) b2.addClass("workerDisable tooltip").attr("aria-label","Click items above first");
+        if (craftsLeft) b2.addClass("workerDisable tooltip").attr("aria-label","You must first contribute the items above by clicking on them.");
         const d6 = $("<div/>").addClass("workerButtons");
         d6.append(b1);
         d6.append(b2);

@@ -732,6 +732,7 @@ input#importSaveText {
     color: var(--theme-text-3);
     text-align: center;
     flex-grow: 1;
+    max-height: 60px;
 }
 
 .WorkerDesc>em {
@@ -763,6 +764,7 @@ input#importSaveText {
 
 .Worker .itemSac {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     justify-content: center;
     flex-direction: row;
@@ -785,8 +787,13 @@ input#importSaveText {
 }
 
 .itemToSacDiv {
+    position: relative;
     min-width: 20%;
     margin: 0 2px;
+}
+
+.Worker .itemSac .itemToSacDiv:nth-of-type(5) {
+    margin-top: 10px;
 }
 
 .Worker .itemToSac {
@@ -799,14 +806,9 @@ input#importSaveText {
     width: 100%;
 }
 
-.Worker .BuyWorker, .Upgrade .BuyUpgrade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable {
     display: block;
     padding: 10px;
-    margin: 10px 0 0 0;
-    width: 100%;
     border: none;
     background-color: var(--theme-bg-3);
     border-top: 1px solid var(--theme-border);
@@ -816,12 +818,30 @@ input#importSaveText {
     cursor: pointer;
 }
 
+.Upgrade .BuyUpgrade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+.Worker .jobDisable {
+    background-color: rgba(255, 174, 0, 0.1);
+    color: #c99a00;
+    cursor: not-allowed;
+}
+
+.Worker .HireWorker, .Worker .jobDisable {
+    border-right: 1px solid var(--theme-border);
+}
+
 .Worker .BuyWorker>img {
     margin-bottom: -2px;
     margin-right: 1px;
 }
 
-.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover {
+.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover {
     background-color: var(--theme-bg-2);
 }
 
@@ -834,6 +854,20 @@ input#importSaveText {
     color: #c90000;
     background-color: rgba(255, 0, 0, 0.10);
     cursor: not-allowed;
+}
+
+.workerButtons {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.workerButtons>button {
+    position: relative;
+    width: 50%;
 }
 
 .jobHeadWorker {
@@ -853,7 +887,7 @@ input#importSaveText {
 .jobRow.jobDisable {
     padding: 10px 0;
     color: #c99a00;
-    background-color: rgba(255, 174, 0, 0.1);;
+    background-color: rgba(255, 174, 0, 0.1);
     cursor: not-allowed;
     user-select: none;
 }
@@ -934,6 +968,7 @@ footer {
     font-size: 14px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
+    z-index: 9999;
 }
 
 #bottom-left, #bottom-right {
@@ -1001,6 +1036,7 @@ span#copyme {
     border-radius: 5px;
     font-size: .75rem;
     text-align: center;
+    text-transform: none;
     word-wrap: break-word;
     padding: 5px 8px;
     animation: fade-in 0.3s; 
@@ -1025,9 +1061,10 @@ span#copyme {
 }
 
 .itemToSacDiv a.tooltip:hover:after {
-    left: 0;
-    right: 0;
-    top: -60%;
+    left: -100%;
+    right: -100%;
+    top: unset;
+    bottom: 120%;
 }
 
 .itemToSacDiv a.tooltip:hover:before {
@@ -1073,6 +1110,13 @@ span#copyme {
     bottom: 120%;
     margin-left: -5px;
     margin-right: -5px;
+}
+
+.BuyWorker.tooltip:hover:after {
+    top: unset;
+    left: -50%;
+    right: -50%;
+    bottom: 135%;
 }
 
 #version-scale {
