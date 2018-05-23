@@ -867,7 +867,8 @@ input#importSaveText {
 
 .workerButtons>button {
     position: relative;
-    width: 50%;
+    flex-grow: 1;
+    min-width: 50%;
 }
 
 .jobHeadWorker {
