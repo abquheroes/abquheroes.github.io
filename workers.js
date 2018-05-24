@@ -765,8 +765,8 @@ function refreshWorkers() {
         else b2.html("Upgrade");
         if (craftsLeft) b2.addClass("workerDisable tooltip").attr("aria-label","You must first contribute the items above by clicking on them.");
         const d6 = $("<div/>").addClass("workerButtons");
-        d6.append(b1);
-        d6.append(b2);
+        if (lvl > 0) d6.append(b1);
+        if (lvl < workers[i].lvlreq.length) d6.append(b2);
         worker.append(d1);
         worker.append(d2);
         worker.append(d3);
