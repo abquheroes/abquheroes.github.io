@@ -64,7 +64,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -1118,6 +1118,14 @@ span#copyme {
     left: -50%;
     right: -50%;
     bottom: 135%;
+}
+
+.jobDisable.tooltip:hover:after {
+    top: unset;
+    left: -10px;
+    right: -50%;
+    bottom: 135%;
+    max-width: 120px;
 }
 
 #version-scale {
