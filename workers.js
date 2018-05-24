@@ -758,7 +758,7 @@ function refreshWorkers() {
             }
         }
         const b1 = $("<button/>").attr("data-value",workers[i].name);
-        if (actionSlotContainsWorker(workers[i].name)) b1.addClass("jobDisable").html("Busy");
+        if (actionSlotContainsWorker(workers[i].name)) b1.addClass("jobDisable tooltip").attr("aria-label","Already assigned to an action slot.").html("Busy");
         else b1.addClass("HireWorker").html("Hire");
         const b2 = $("<button/>").addClass("BuyWorker").attr("data-value",workers[i].name).html("Upgrade"); 
         if (lvl === 0) b2.html("Buy");
