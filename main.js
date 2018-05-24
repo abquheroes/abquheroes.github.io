@@ -728,7 +728,7 @@ function canSee(name) {
     if (name === "recipeGauntlet") return itemCount["Punching Gloves"] >= 3 && itemCount["Fishing Knife"] >= 3;
     if (name === "recipeHelmet") return itemCount["Club Knife"] >= 3 && itemCount["Like Potion"] >= 3;
     if (name === "recipeShoe") return itemCount["Night Club"] >= 3 && itemCount["Loving Gloves"] >= 3;
-    if (name === "recipeWard") return itemCount["Vengance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
+    if (name === "recipeWard") return itemCount["Vengeance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
     if (name === "recipeShield") return itemCount["Slothslayer"] >= 3 && itemCount["Bardic Galoshes"] >= 3 &&  itemCount["Plain Gauntlets"] >= 3;
     if (name === "recipeCloak") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
     if (name === "recipeArmor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
