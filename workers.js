@@ -35,6 +35,7 @@ oren.produces = {
 }
 oren.lvlreq = [
     {//unlock
+        "Gold" : 500,
     },
     {//2
         "Knife" : 10,

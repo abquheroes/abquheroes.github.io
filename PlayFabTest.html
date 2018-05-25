@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PlayFab JavaScript Unit Tests</title>
+</head>
+<body>
+
+    <h2>Create Login Form Using jQuery</h2>
+    <p>Email :</p>
+    <input type="text" name="demail" id="email">
+    <p>Password :</p>
+    <input type="password" name="password" id="password">
+    <input type="button" name="register" id="register" value="register">
+    <p><span id="resultOutput" style="color:red"></span></p>
+    <p></p>
+    <h2>Login</h2>
+    <p>Email :</p>
+    <input type="text" name="demail" id="email2">
+    <p>Password :</p>
+    <input type="password" name="password" id="password2">
+    <input type="button" name="login" id="login" value="login">
+    <p><span id="resultOutput2" style="color:red"></span></p>
+
+    <h2>Loading Data</h2>
+    <input type="button" id="clear" value="clear"><input type="button" id="save" value="save"><input type="button" id="load" value="load">
+    <p><input type="text" id="data" name="data"></p>
+    <p><span id="resultOutput3" style="color:red"></span></p>
+    <script src="external/jquery/jquery.js"></script>
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script type="text/javascript" src="PlayFabGettingStarted.js"></script>
+</body>
+</html>
+
+<!--
+    PlayFab Getting Started Guide<br />
+    TitleID: <input type="text" id="titleId" value="144"><br />
+    CustomID: <input type="text" id="customId" value="GettingStartedGuide"><br />
+    <input type="button" value="Call LoginWithCustomID" onclick="DoExampleLoginWithCustomID()"><br />
+-->

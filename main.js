@@ -1,7 +1,7 @@
 "use strict";
 
 const player = {
-    money: 0,
+    money: 500,
     workers: 0,
     Ore : 0,
     oreCap : 200,
@@ -13,9 +13,9 @@ const player = {
     herbCap : 200,
     actionSlots : [
         {
-            actionType : "Job",
-            actionName : "Oren",
-            actionTime : Date.now(),
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
         },
         {
             actionType : "Empty",
@@ -32,6 +32,8 @@ const player = {
     inventoryCap : 5,
     lastLoop : Date.now(),
     saveStart : Date.now(),
+    percent : 0,
+    blueprintShow : false,
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -57,6 +59,12 @@ const hidden = {
     "recipeCloak" : true,
     "recipeArmor" : true,
     "recipePendant" : true,
+    "blueprints" : true,
+    "upgrades" : true,
+    "progress" : true,
+    "blueprintTab" : true,
+    "upgradeTab" : true,
+    "progressTab" : true,
 }
 
 function initialize() {
@@ -69,7 +77,7 @@ function initialize() {
 
 
 const workerProgress = {
-    "Oren" : 1,
+    "Oren" : 0,
     "Eryn" : 0,
     "Herbie" : 0,
     "Lakur" : 0,
@@ -424,7 +432,7 @@ const nameToUnlock = {
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
-            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource") {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource" && name !== "blueprintTab" && name !== "upgradeTab" && name !== "progressTab") {
                 $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
                 ga('send', 'event', 'Recipe', 'unlock', name);
                 $("#unlockDialog").dialog("open");
@@ -646,6 +654,7 @@ function addCraft(itemName,craft) {
 }
 
 function progressFinish(type,name) {
+    player.blueprintShow = true;
     if (type === "Craft") {
         addToInventory(name);
         if (name in itemCount) itemCount[name] += 1;
@@ -675,6 +684,9 @@ function initializeInventory() {
 }
 
 function canSee(name) {
+    if (name === "blueprintTab") return player.blueprintShow || workerProgress["Oren"] > 1;
+    if (name === "upgradeTab") return workerProgress["Eryn"] > 0;
+    if (name === "progressTab") return player.percent >= 15;
     if (name === "woodResource") return workerProgress["Eryn"] > 0;
     if (name === "leatherResource") return workerProgress["Lakur"] > 0;
     if (name === "herbResource") return workerProgress["Herbie"] > 0; 
@@ -725,6 +737,7 @@ function refreshProgress() {
     const overallCt = recipeCt+workerCt+upgradeCt;
     const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
     $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
+    player.percent = (overallCt/overallMaxCt*100).toFixed(1);
     $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
 }
 
