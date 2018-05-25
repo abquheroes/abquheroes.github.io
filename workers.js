@@ -748,7 +748,7 @@ function refreshWorkers() {
             for (const [itemName, amt] of Object.entries(workers[i].lvlreq[lvl])) {
                 const slot = workers[i].name+"_"+lvl+"_"+itemName;
                 if (!(slot in workerSacProgress)) workerSacProgress[slot] = 0;
-                const adjAmt = amt - workerSacProgress[slot];
+                const adjAmt = Math.floor(amt - workerSacProgress[slot]);
                 if (adjAmt > 0) {
                     craftsLeft = true;
                     const d5a = $('<div/>').addClass("itemToSacDiv");

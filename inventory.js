@@ -63,7 +63,7 @@ function removeFromInventory(itemName,amt) {
 }
 
 function sellItem(itemName,modifier) {
-    player.money += nameToItem(itemName).value*modifier
+    player.money += Math.floor(nameToItem(itemName).value*modifier);
     refreshWorkers();
     refreshUpgrades();
 }
