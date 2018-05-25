@@ -81,23 +81,23 @@ $sellAll = $("#sellAll");
 $sellOne.click((e) => {
     e.preventDefault();
     player.sellPref = 1;
-    $sellOne.addClass("selected");
-    $sellTen.removeClass("selected");
-    $sellAll.removeClass("selected");
+    $sellOne.addClass("itemSellPrefSelected");
+    $sellTen.removeClass("itemSellPrefSelected");
+    $sellAll.removeClass("itemSellPrefSelected");
 });
 
 $sellTen.click((e) => {
     e.preventDefault();
     player.sellPref = 10;
-    $sellOne.removeClass("selected");
-    $sellTen.addClass("selected");
-    $sellAll.removeClass("selected");
+    $sellOne.removeClass("itemSellPrefSelected");
+    $sellTen.addClass("itemSellPrefSelected");
+    $sellAll.removeClass("itemSellPrefSelected");
 });
 
 $sellAll.click((e) => {
     e.preventDefault();
     player.sellPref = 100;
-    $sellOne.removeClass("selected");
-    $sellTen.removeClass("selected");
-    $sellAll.addClass("selected");
+    $sellOne.removeClass("itemSellPrefSelected");
+    $sellTen.removeClass("itemSellPrefSelected");
+    $sellAll.addClass("itemSellPrefSelected");
 });
