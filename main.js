@@ -36,6 +36,7 @@ const player = {
     blueprintShow : false,
     sellPref : 1,
     lastSave : 0,
+    completeTime : 0,
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -726,7 +727,7 @@ function refreshProgress() {
     }
     let workerMaxCt = 0;
     for (let i=0;i<workers.length;i++) {
-        workerMaxCt += workers[i].lvlreq.length-1;
+        workerMaxCt += workers[i].lvlreq.length;
     }
     $("#plWorkerLevel").html(workerCt + "/" + workerMaxCt);
     $("#pbWorker").css('width', workerCt/workerMaxCt*100+"%");
@@ -744,6 +745,7 @@ function refreshProgress() {
     const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
     $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
     player.percent = (overallCt/overallMaxCt*100).toFixed(1);
+    if (player.percent >= 100 && player.completeTime === 0) player.completeTime = Date.now();
     $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
 }
 
@@ -755,14 +757,17 @@ function getCap(res) {
 }
 
 const $gameTime = $("#gameTime")
+const $completeTime = $("#completeTime");
 
 function gameTime() {
     $gameTime.html("You've been playing this save for: " + timeSince(player.saveStart));
+    if (player.completeTime > 0) $completeTime.html("You 100% completed this game in: " + timeSince(player.saveStart,player.completeTime));
 }
 
-function timeSince(startTime) {
+function timeSince(startTime,endTime) {
+    endTime = endTime || Date.now()
     let s = "";
-    let diff = Math.round((Date.now()-startTime)/1000);
+    let diff = Math.round((endTime-startTime)/1000);
     const d = Math.floor(diff/(24*60*60))
     diff = diff-d*24*60*60
     if (d === 1) s += d + " day, ";
