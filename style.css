@@ -1211,7 +1211,7 @@ a.workerDialog {
 
 .dialog_title {
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px 50px 10px 20px;
     background: var(--theme-scheme);
     color: var(--theme-text-2);
     text-transform: uppercase;
