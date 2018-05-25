@@ -1130,10 +1130,12 @@ span#copyme {
 
 .jobDisable.tooltip:hover:after {
     top: unset;
-    left: -10px;
+    left: -50%;
     right: -50%;
     bottom: 135%;
-    max-width: 120px;
+    max-width: 100px;
+    width: 100vw;
+    margin: 0 auto;
 }
 
 #version-scale {
