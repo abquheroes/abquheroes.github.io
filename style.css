@@ -1199,7 +1199,7 @@ a.workerDialog {
     text-decoration: none;
 }
 
-.dialog_workerName {
+.dialog_title {
     margin: -20px -20px 0;
     padding: 10px 20px;
     background: var(--theme-scheme);
@@ -1209,11 +1209,11 @@ a.workerDialog {
     text-shadow: 0 0 5px rgba(0,0,0,0.5)
 }
 
-.dialog_workerDesc {
+.dialog_description {
     text-align: center;
 }
 
-.dialog_workerDesc>em {
+.dialog_description>em {
     font-style: normal;
     font-weight: bold;
 }
