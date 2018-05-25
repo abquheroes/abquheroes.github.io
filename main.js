@@ -34,6 +34,7 @@ const player = {
     saveStart : Date.now(),
     percent : 0,
     blueprintShow : false,
+    sellPref : 1,
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];

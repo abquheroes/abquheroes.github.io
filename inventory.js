@@ -1,9 +1,12 @@
 $('#inventory').on("click","a.inventoryLink",(e) => {
     e.preventDefault();
     const name = $(e.target).attr("href");
-    if (e.shiftKey) removeAllFromInventory(name);
-    else removeFromInventory(name);
-    sellItem(name,1);
+    let amt = player.sellPref;
+    if (e.shiftKey) amt = 100;
+    for (let i=0;i<amt;i++) {
+        removeFromInventory(name);
+        sellItem(name,1);
+    }
 })
 
 function refreshInventory() {
@@ -23,16 +26,19 @@ function refreshInventory() {
     }
 }
 
-function addToInventory(itemName) {
-    if (inventory[itemName] >= getMaxInventory()) {
-        const upgrade = nameToUpgrade("Auto Sell Value");
-        const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]/100;
-        sellItem(itemName,mod);
-    }
-    else {
-        if (itemName in inventory) inventory[itemName] += 1;
-        else inventory[itemName] = 1;
-        refreshInventory();
+function addToInventory(itemName,amt) {
+    amt = amt || 1;
+    for (let i=0;i<amt;i++) {
+        if (inventory[itemName] >= getMaxInventory()) {
+            const upgrade = nameToUpgrade("Auto Sell Value");
+            const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]/100;
+            sellItem(itemName,mod);
+        }
+        else {
+            if (itemName in inventory) inventory[itemName] += 1;
+            else inventory[itemName] = 1;
+            refreshInventory();
+        }
     }
 }
 
@@ -67,3 +73,31 @@ function sellItem(itemName,modifier) {
     refreshWorkers();
     refreshUpgrades();
 }
+
+$sellOne = $("#sell1");
+$sellTen = $("#sell10");
+$sellAll = $("#sellAll");
+
+$sellOne.click((e) => {
+    e.preventDefault();
+    player.sellPref = 1;
+    $sellOne.addClass("selected");
+    $sellTen.removeClass("selected");
+    $sellAll.removeClass("selected");
+});
+
+$sellTen.click((e) => {
+    e.preventDefault();
+    player.sellPref = 10;
+    $sellOne.removeClass("selected");
+    $sellTen.addClass("selected");
+    $sellAll.removeClass("selected");
+});
+
+$sellAll.click((e) => {
+    e.preventDefault();
+    player.sellPref = 100;
+    $sellOne.removeClass("selected");
+    $sellTen.removeClass("selected");
+    $sellAll.addClass("selected");
+});
