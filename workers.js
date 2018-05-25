@@ -735,7 +735,8 @@ function refreshWorkers() {
             d1.html(workerImageReference["hidden"]);
             d2.html("<h3>???</h3>");
             d3.html("Purchase this worker to unlock them and their effect!")
-            d4.html("?")
+            d4.hide();
+            d7.hide();
         }
         else {
             d1.html(workerImageReference[workers[i].name]);
@@ -768,6 +769,7 @@ function refreshWorkers() {
         const d6 = $("<div/>").addClass("workerButtons");
         if (lvl > 0) d6.append(b1);
         if (lvl < workers[i].lvlreq.length) d6.append(b2);
+        else d5.hide();
         worker.append(d1);
         worker.append(d2);
         worker.append(d3);
