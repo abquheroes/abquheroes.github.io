@@ -3,22 +3,22 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
     const name = $(e.target).attr("href");
     let amt = player.sellPref;
     if (e.shiftKey) amt = 100;
-    for (let i=0;i<amt;i++) {
-        removeFromInventory(name);
-        sellItem(name,1);
-    }
+    amt = Math.min(inventory[name],amt)
+    removeFromInventory(name,amt);
+    sellItem(name,1,amt);
 })
 
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
-    for (const [name,amt] of Object.entries(inventory)) {
-        if (amt > 0) {
+    for (let i=0;i<blueprints.length;i++) {
+        const name = blueprints[i].name;
+        if (name in inventory && inventory[name] > 0) {
             const item = nameToItem(name);
             if (item == null) continue;
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
             const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+item.value+" Gold").html(name);
-            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+amt);
+            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+inventory[name]);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
             $inventory.append(itemdiv);
@@ -68,8 +68,9 @@ function removeFromInventory(itemName,amt) {
     }
 }
 
-function sellItem(itemName,modifier) {
-    player.money += Math.floor(nameToItem(itemName).value*modifier);
+function sellItem(itemName,modifier,amt) {
+    amt = amt || 1
+    player.money += Math.floor(nameToItem(itemName).value*modifier*amt);
     refreshWorkers();
     refreshUpgrades();
 }

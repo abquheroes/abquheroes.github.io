@@ -1,5 +1,37 @@
 PlayFab.settings.titleId = 7995;
 
+let sessionID = ""
+
+$pfLoginRegister = $("#pfLoginRegister");
+$pfImportExport = $("#pfImportExport");
+$reg
+$("#playfab").click((e) => {
+    validateSession();
+})
+
+function validateSession() {
+    const validateRequest = {
+        TitleId: PlayFab.settings.titleId,
+        SessionTicket: sessionID,
+    }
+    PlayFabClientSDK.AuthenticateSessionTicket(validateRequest,validateCallback);
+}
+
+const validateCallback = function (result, error) {
+    console.log(result);
+    if (error !== null) {
+        $pfLoginRegister.show();
+        $pfImportExport.hide();
+    }
+    else {
+        $pfLoginRegister.hide();
+        $pfImportExport.show();
+    }
+}
+
+
+
+
 function registerAcct(){
     const registerRequest = {
         // Currently, you need to look up the correct format for this object in the API-docs:

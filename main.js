@@ -73,7 +73,6 @@ function initialize() {
         displayedResources[resources[i]] = 0;
     }
     displayedResources["Money"] = 0;
-    console.log("hi!");
     if (player.sellPref === 1) $("#sell1").addClass("itemSellPrefSelected");
     else if (player.sellPref === 10) $("#sell10").addClass("itemSellPrefSelected");
     else if (player.sellPref === 100) $("#sellAll").addClass("itemSellPrefSelected");

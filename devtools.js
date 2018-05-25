@@ -11,7 +11,6 @@ const devtools = {
         for (let i=0;i<blueprints.length;i++) {
             inventory[blueprints[i].name] = 10;
         }
-        refreshRecipeSelector();
         refreshWorkers();
         refreshUpgrades();
         refreshInventory();

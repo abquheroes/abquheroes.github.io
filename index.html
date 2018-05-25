@@ -523,7 +523,36 @@
                             </div>
                         </div>
                 </div>
-
+                <div id="dialogPlayfab" class="dialog">
+                    <div class="dialog_content">
+                        <div class="dialog_header">
+                            <a href="#closeDialog" class="dialog_close">x</a>
+                            <h2 class="dialog_title">Playfab</h2>
+                        </div>
+                        <div class="dialog_body">
+                            <div id="pfLoginRegister">
+                                <div id="pfEmail">Email: <input type="text" name="demail" id="email"></div>
+                                <div id="pfPassword">Password: <input type="text" name="demail" id="email"></div>
+                                <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
+                                <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
+                            </div>
+                            <div id="pfImportExport">
+                                <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">
+                                <input type="button" name="Load from Cloud" id="pfLoad" value="Load from Cloud">
+                                <div id="pfLoadWarning">
+                                    <p>WARNING: It seems your cloud save isn't as far as your current save, are you sure you want to load?</p>
+                                    <input type="button" name="Load Confirm Yes" id="pfLoadYes" value="Yes">
+                                    <input type="button" name="Load Confirm No" id="pfLoadNo" value="No">
+                                </div>
+                                <div id="pfSaveWarning">
+                                    <p>WARNING: It seems your cloud save is further than your current save, are you sure you want to save?</p>
+                                    <input type="button" name="Save Confirm Yes" id="pfSaveYes" value="Yes">
+                                    <input type="button" name="Save Confirm No" id="pfSaveNo" value="No">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- End of Dialogs -->
                 <div id="Actions">
                     <h1>Action Slots</h1>
