@@ -349,6 +349,7 @@ select {
 }
 
 #Actions>h1 {
+    margin: 10px 0;
     padding: 0 20px;
 }
 
@@ -373,6 +374,10 @@ select {
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
+}
+
+.ASBlock:first-of-type {
+    margin-left: 0;
 }
 
 .ASProgressBar, .plProgressBar {
@@ -749,8 +754,8 @@ input#importSaveText {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
     width: 50px;
     height: 50px;
     background: var(--theme-scheme);
@@ -1125,10 +1130,12 @@ span#copyme {
 
 .jobDisable.tooltip:hover:after {
     top: unset;
-    left: -10px;
+    left: -50%;
     right: -50%;
     bottom: 135%;
-    max-width: 120px;
+    max-width: 100px;
+    width: 100vw;
+    margin: 0 auto;
 }
 
 #version-scale {
@@ -1141,6 +1148,41 @@ footer a[href*="discord.gg"]:hover {
     color: #fff;
 }
 
+/* Flex Tables */
+
+#flex-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid var(--theme-border);
+}
+
+#flex-table .table-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#flex-table .table-row:nth-of-type(odd) {
+    background-color: var(--theme-bg-2);
+}
+
+#flex-table .table-row.header-row {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+
+#flex-table .table-row>div {
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 3px 5px;
+}
+
+/**/
+
 /* Dialogs */
 
 .dialog {
@@ -1152,19 +1194,26 @@ footer a[href*="discord.gg"]:hover {
     background-color: rgba(0,0,0,0.8);
     opacity: 0;
     pointer-events: none;
+    transition: all 0.2s linear;
     z-index: 9999;
 }
 
 a.workerDialog {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 5px;
-    right: 5px;
-    content: "i";
-    background: var(--theme-scheme);
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--theme-link);
+    color: var(--theme-text-2);
+    border: 1px solid var(--theme-border);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .dialog:target {
@@ -1175,7 +1224,6 @@ a.workerDialog {
 .dialog_content {
     position: relative;
     margin: auto;
-    padding: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -1184,7 +1232,17 @@ a.workerDialog {
     max-height: 400px;
     background-color: var(--theme-bg);
     border: 1px solid var(--theme-border);
-    box-shadow: 0 0 15px 0 black;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+}
+
+.dialog_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .dialog_close {
@@ -1197,23 +1255,31 @@ a.workerDialog {
     color: var(--theme-text-2);
     font-size: 32px;
     text-decoration: none;
+    z-index: 2;
 }
 
-.dialog_workerName {
-    margin: -20px -20px 0;
-    padding: 10px 20px;
+.dialog_title {
+    margin: 0;
+    padding: 10px 50px 10px 20px;
     background: var(--theme-scheme);
     color: var(--theme-text-2);
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5)
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
-.dialog_workerDesc {
+.dialog_body {
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.dialog_description {
+    margin: 40px 0 15px 0;
     text-align: center;
 }
 
-.dialog_workerDesc>em {
+.dialog_description>em {
     font-style: normal;
     font-weight: bold;
 }
@@ -1344,7 +1410,7 @@ a.workerDialog {
         flex-wrap: nowrap;
         position: relative;
         overflow-x: auto;
-        margin: 0 -20px;
+        margin: 0;
     }
 
     .ui-tabs-nav {
