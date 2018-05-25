@@ -349,6 +349,7 @@ select {
 }
 
 #Actions>h1 {
+    margin: 10px 0;
     padding: 0 20px;
 }
 
@@ -373,6 +374,10 @@ select {
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
+}
+
+.ASBlock:first-of-type {
+    margin-left: 0;
 }
 
 .ASProgressBar, .plProgressBar {
@@ -1361,7 +1366,7 @@ a.workerDialog {
         flex-wrap: nowrap;
         position: relative;
         overflow-x: auto;
-        margin: 0 -20px;
+        margin: 0;
     }
 
     .ui-tabs-nav {
