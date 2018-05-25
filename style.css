@@ -1175,7 +1175,6 @@ a.workerDialog {
 .dialog_content {
     position: relative;
     margin: auto;
-    padding: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -1184,7 +1183,17 @@ a.workerDialog {
     max-height: 400px;
     background-color: var(--theme-bg);
     border: 1px solid var(--theme-border);
-    box-shadow: 0 0 15px 0 black;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+}
+
+.dialog_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .dialog_close {
@@ -1197,19 +1206,27 @@ a.workerDialog {
     color: var(--theme-text-2);
     font-size: 32px;
     text-decoration: none;
+    z-index: 2;
 }
 
 .dialog_title {
-    margin: -20px -20px 0;
+    margin: 0;
     padding: 10px 20px;
     background: var(--theme-scheme);
     color: var(--theme-text-2);
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5)
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.dialog_body {
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
 }
 
 .dialog_description {
+    margin: 40px 0 0 0;
     text-align: center;
 }
 
