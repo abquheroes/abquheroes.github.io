@@ -734,7 +734,7 @@ function refreshWorkers() {
         if (lvl === 0) {
             d1.html(workerImageReference["hidden"]);
             d2.html("<h3>???</h3>");
-            d3.html("Purchase this worker to unlock it and its effect!")
+            d3.html("Purchase this worker to unlock them and their effect!")
             d4.html("?")
         }
         else {
