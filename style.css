@@ -138,7 +138,37 @@ body{
 #right-side-content .heading {
     text-transform: uppercase;
     text-align: center;
+    margin: 10px 0;
 }
+
+#sellPref {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 10px 10px;
+}
+
+#sellPref>p {
+    margin: 0 0 5px 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+#sell1, #sell10, #sellAll {
+    background-color: var(--theme-bg-2);
+    border: 1px solid var(--theme-border);
+    padding: 3px 5px;
+    margin: 0 3px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+#sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+}
+
+
 
 .inventoryItem {
     display: flex;
