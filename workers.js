@@ -729,7 +729,7 @@ function refreshWorkers() {
         const d3 = $("<div/>").addClass("WorkerDesc");
         const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Worker Level");
         const d5 = $('<div/>').addClass("itemSac");
-        /*const d6 = $('<div/>').addClass("InitialCost");*/
+        const d7 = $('<a/>').addClass("workerDialog").attr("href", "#dialog"+ workers[i].name);
         if (lvl === 0) {
             d1.html(workerImageReference["hidden"]);
             d2.html("<h3>???</h3>");
@@ -773,6 +773,7 @@ function refreshWorkers() {
         worker.append(d4);
         worker.append(d5);
         worker.append(d6);
+        worker.append(d7);
         $workers.append(worker);
         if (lvl === 0) break;
     }

@@ -969,7 +969,7 @@ footer {
     font-size: 14px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
-    z-index: 9999;
+    z-index: 999;
 }
 
 #bottom-left, #bottom-right {
@@ -1118,6 +1118,9 @@ span#copyme {
     left: -50%;
     right: -50%;
     bottom: 135%;
+    max-width: 200px;
+    width: 100vw;
+    margin: 0 auto;
 }
 
 .jobDisable.tooltip:hover:after {
@@ -1137,6 +1140,85 @@ footer a[href*="discord.gg"]:hover {
     background-color: #7289DA;
     color: #fff;
 }
+
+/* Dialogs */
+
+.dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+a.workerDialog {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    content: "i";
+    background: var(--theme-scheme);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.dialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dialog_content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 400px;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 15px 0 black;
+}
+
+.dialog_close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: -2px 0 0 0;
+    padding: 5px 15px;
+    color: var(--theme-text-2);
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.dialog_workerName {
+    margin: -20px -20px 0;
+    padding: 10px 20px;
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5)
+}
+
+.dialog_workerDesc {
+    text-align: center;
+}
+
+.dialog_workerDesc>em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+/**/
 
 @keyframes fade-in {
     from {
