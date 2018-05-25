@@ -1,21 +1,53 @@
 PlayFab.settings.titleId = 7995;
 
 let sessionID = ""
+let saveFile = 0;
+
 
 $pfLoginRegister = $("#pfLoginRegister");
 $pfImportExport = $("#pfImportExport");
-$reg
-$("#playfab").click((e) => {
-    validateSession();
+$register = $("#register");
+$login = $("#login");
+$pfStatus = $("#pfStatus");
+$pfStatusSave = $("#pfStatusSave");
+$pfSave = $("#pfSave");
+$pfLoad = $("#pfLoad");
+$loadSure = $("#loadSure");
+$pfloadYes = $("#pfloadYes");
+$pfloadNo = $("#pfloadNo")
+
+$("#cloudSave").click((e) => {
+    $pfLoginRegister.show();
+    $pfImportExport.hide();
+    $loadSure.hide();
 })
 
-function validateSession() {
-    const validateRequest = {
-        TitleId: PlayFab.settings.titleId,
-        SessionTicket: sessionID,
-    }
-    PlayFabClientSDK.AuthenticateSessionTicket(validateRequest,validateCallback);
-}
+$register.click((e) => {
+    registerAcct();
+})
+
+$login.click((e) => {
+    loginAcct();
+})
+
+$pfSave.click((e) => {
+    saveToCloud();
+})
+
+$pfLoad.click((e) => {
+    $loadSure.show();
+    $pfImportExport.hide();
+})
+
+$pfloadYes.click(() => {
+    loadFromCloud();
+})
+
+$pfloadNo.click(() => {
+    $pfLoginRegister.show();
+    $pfImportExport.hide();
+    $loadSure.hide();
+})
 
 const validateCallback = function (result, error) {
     console.log(result);
@@ -29,101 +61,103 @@ const validateCallback = function (result, error) {
     }
 }
 
-
-
-
 function registerAcct(){
     const registerRequest = {
-        // Currently, you need to look up the correct format for this object in the API-docs:
-        // https://api.playfab.com/documentation/Client/method/LoginWithCustomID
         TitleId: PlayFab.settings.titleId,
         Email : $("#email").val(),
         Password : $("#password").val(),
         RequireBothUsernameAndEmail : false,
     };
-
     PlayFabClientSDK.RegisterPlayFabUser(registerRequest, registerCallback);
 }
 
 const registerCallback = function (result, error) {
     if (result !== null) {
-        $("#resultOutput").html("Registration Complete!");
+        loginAcct();
     } else if (error !== null) {
-        $("#resultOutput").html(PlayFab.GenerateErrorReport(error));
+        console.log(PlayFab.GenerateErrorReport(error));
+        $pfStatus.html(PlayFab.GenerateErrorReport(error));
     }
 }
 
 function loginAcct(){
-    console.log("success");
+    console.log("login attempt");
     const loginRequest = {
-        // Currently, you need to look up the correct format for this object in the API-docs:
-        // https://api.playfab.com/documentation/Client/method/LoginWithCustomID
         TitleId: PlayFab.settings.titleId,
-        Email : $("#email2").val(),
-        Password : $("#password2").val(),
+        Email : $("#email").val(),
+        Password : $("#password").val(),
     };
-
     PlayFabClientSDK.LoginWithEmailAddress(loginRequest, LoginCallback);
 }
 
 const LoginCallback = function (result, error) {
     console.log(result);
     if (result !== null) {
-        $("#resultOutput2").html("Login Success!");
+        sessionID = result.data.SessionTicket;
+        console.log(sessionID);
+        $pfLoginRegister.hide();
+        $pfImportExport.show();
+        getSaveFromCloud();       
+
     } else if (error !== null) {
-        $("#resultOutput2").html(PlayFab.GenerateErrorReport(error));
+        $pfStatus.html(PlayFab.GenerateErrorReport(error)+"<p>If you're having trouble logging in, email us at support@abquheroes.com and we'll help you out!");
     }
 }
 
-$("#register").click(() => {
-    registerAcct();
-});
-
-$("#login").click(() => {
-    loginAcct();
-});
-
-$("#clear").click(() => {
-    $("#data").val('');
-    $("#resultOutput3").empty();
-});
-
-$("#save").click(() => {
-    console.log('saving...');
+function saveToCloud() {
+    $pfStatusSave.html("Saving...");
+    saveGame();
+    const input =JSON.stringify(createSave());
+    var output = pako.gzip(input,{ to: 'string' });
     const requestData = {
         TitleId : PlayFab.settings.titleId,
         Data : {
-            "savestring" : $("#data").val(),
+            "savestring" : output,
         }
-    } 
+    }
     PlayFab.ClientApi.UpdateUserData(requestData,saveCallback);
-});
+};
 
 function saveCallback(result,error) {
-    console.log("this happened?")
     if (result !== null) {
-        $("#resultOutput3").html("Save Sucess!");
+        getSaveFromCloud();
     }
     if (error !== null) {
-        $("#resultOutput3").html(PlayFab.GenerateErrorReport(error));
+        $pfStatusSave.html(PlayFab.GenerateErrorReport(error));
     }
 }
 
-$("#load").click(() => {
-    console.log("load");
+function loadFromCloud() {
+    getSaveFromCloud()
+    console.log(saveFile);
+    if (saveFile) {
+        localStorage.setItem('gameSave3', JSON.stringify(saveFile));
+        location.reload();
+    }
+}
+
+function getSaveFromCloud() {
     const requestData = {
         Keys : ["savestring"],
     }
     PlayFab.ClientApi.GetUserData(requestData,loadCallback);
-})
+};
 
 function loadCallback(result,error) {
     if (error !== null) {
-        $("#resultOutput3").html(PlayFab.GenerateErrorReport(error));
+        $pfStatusSave.html(PlayFab.GenerateErrorReport(error));        
     }
     if (result) {
         console.log(result.data.Data);
-        $("#data").val(result.data.Data.savestring.Value);
-        $("#resultOutput3").html("Load Complete!");
+        if (result.data.Data !== null) {
+            saveFile = JSON.parse(pako.ungzip(result.data.Data.savestring.Value,{ to: 'string' }));
+            const date = saveFile.playerSave.lastSave;
+            const dateString = new Date(date).toString();
+            $pfStatusSave.html("Last save:</br>"+dateString);
+        }
+        else {
+            saveFile = null;
+            $pfStatusSave.text("No save uploaded");
+        }
     }
 }

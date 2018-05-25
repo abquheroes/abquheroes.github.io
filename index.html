@@ -530,25 +530,21 @@
                             <h2 class="dialog_title">Playfab</h2>
                         </div>
                         <div class="dialog_body">
+                            <p class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
                             <div id="pfLoginRegister">
                                 <div id="pfEmail">Email: <input type="text" name="demail" id="email"></div>
-                                <div id="pfPassword">Password: <input type="text" name="demail" id="email"></div>
+                                <div id="pfPassword">Password: <input type="password" name="password" id="password"></div>
                                 <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
                                 <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
                             </div>
                             <div id="pfImportExport">
                                 <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">
                                 <input type="button" name="Load from Cloud" id="pfLoad" value="Load from Cloud">
-                                <div id="pfLoadWarning">
-                                    <p>WARNING: It seems your cloud save isn't as far as your current save, are you sure you want to load?</p>
-                                    <input type="button" name="Load Confirm Yes" id="pfLoadYes" value="Yes">
-                                    <input type="button" name="Load Confirm No" id="pfLoadNo" value="No">
-                                </div>
-                                <div id="pfSaveWarning">
-                                    <p>WARNING: It seems your cloud save is further than your current save, are you sure you want to save?</p>
-                                    <input type="button" name="Save Confirm Yes" id="pfSaveYes" value="Yes">
-                                    <input type="button" name="Save Confirm No" id="pfSaveNo" value="No">
-                                </div>
+                                <div id="pfSaveStatus"><span id="pfStatusSave" style="color:red"></span></div>
+                            </div>
+                            <div id="loadSure">
+                                <p>Are you SURE you want to load this data? This action cannot be undone!!</p>
+                                <div id="pfLoadButtons"><input type="button" name="loadYes" id="pfloadYes" value="Yes"><input type="button" name="loadNo" id="pfloadNo" value="No"></div>
                             </div>
                         </div>
                     </div>
@@ -670,6 +666,7 @@
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
                         <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a>
+                        <a id="cloudSave" class="toolip" href="#dialogPlayfab" aria-label="Register a PlayFab account to cloud save">Cloud Save</a>
                         <a id="tips" href="tips">Need a Tip?</a>
                     </div>
                     <div id="bottom-right">
@@ -706,9 +703,11 @@
 <script src="upgrades.js"></script>
 <script src="inventory.js"></script>
 <script src="devtools.js"></script>
+<script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+<script src="PlayFabGettingStarted.js"></script>
+<script type="text/javascript" src="pako.min.js"></script>
 <script src="main.js"></script>
 <script src="style.js"></script>
-
 </body>
 </html>
 

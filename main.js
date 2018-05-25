@@ -35,6 +35,7 @@ const player = {
     percent : 0,
     blueprintShow : false,
     sellPref : 1,
+    lastSave : 0,
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -561,6 +562,7 @@ function msToTime(s) {
 
 function saveGame() {
     if (stopSave) return;
+    player.lastSave = Date.now();
     localStorage.setItem('gameSave3', JSON.stringify(createSave()));
     ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
