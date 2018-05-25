@@ -144,8 +144,10 @@ body{
 #sellPref {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     text-align: center;
     margin: 0 10px 10px;
+    min-height: 30px;
 }
 
 #sellPref>p {
@@ -167,8 +169,6 @@ body{
     background: var(--theme-scheme);
     color: var(--theme-text-2);
 }
-
-
 
 .inventoryItem {
     display: flex;
@@ -867,8 +867,8 @@ input#importSaveText {
     cursor: not-allowed;
 }
 
-.Worker .HireWorker, .Worker .jobDisable {
-    border-right: 1px solid var(--theme-border);
+.Worker .BuyWorker {
+    border-left: 1px solid var(--theme-border);
 }
 
 .Worker .BuyWorker>img {
@@ -1146,6 +1146,7 @@ span#copyme {
     bottom: 120%;
     margin-left: -5px;
     margin-right: -5px;
+    z-index: 999;
 }
 
 .BuyWorker.tooltip:hover:after {
@@ -1186,6 +1187,7 @@ footer a[href*="discord.gg"]:hover {
     flex-wrap: wrap;
     width: 100%;
     border: 1px solid var(--theme-border);
+    text-align: center;
 }
 
 #flex-table .table-row {
