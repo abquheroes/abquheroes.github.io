@@ -754,8 +754,8 @@ input#importSaveText {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
     width: 50px;
     height: 50px;
     background: var(--theme-scheme);
@@ -1146,6 +1146,41 @@ footer a[href*="discord.gg"]:hover {
     color: #fff;
 }
 
+/* Flex Tables */
+
+#flex-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid var(--theme-border);
+}
+
+#flex-table .table-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#flex-table .table-row:nth-of-type(odd) {
+    background-color: var(--theme-bg-2);
+}
+
+#flex-table .table-row.header-row {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+
+#flex-table .table-row>div {
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 3px 5px;
+}
+
+/**/
+
 /* Dialogs */
 
 .dialog {
@@ -1161,15 +1196,21 @@ footer a[href*="discord.gg"]:hover {
 }
 
 a.workerDialog {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 5px;
-    right: 5px;
-    content: "i";
-    background: var(--theme-scheme);
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--theme-link);
+    color: var(--theme-text-2);
+    border: 1px solid var(--theme-border);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .dialog:target {
@@ -1231,7 +1272,7 @@ a.workerDialog {
 }
 
 .dialog_description {
-    margin: 40px 0 0 0;
+    margin: 40px 0 15px 0;
     text-align: center;
 }
 

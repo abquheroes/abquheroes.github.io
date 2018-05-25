@@ -97,7 +97,7 @@ function tabHighlight() {
     this.classList.add("selected");
 };
 
-//logo easter egg
+// Logo Easter Egg
 
 const $gameLogo = $("#game-logo");
 let logoNum = 0;

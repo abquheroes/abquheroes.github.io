@@ -730,7 +730,7 @@ function refreshWorkers() {
         const d3 = $("<div/>").addClass("WorkerDesc");
         const d4 = $("<div/>").addClass("workerLvl tooltip").attr("aria-label", "Worker Level");
         const d5 = $('<div/>').addClass("itemSac");
-        const d7 = $('<a/>').addClass("workerDialog").attr("href", "#dialog"+ workers[i].name);
+        const d7 = $('<a/>').addClass("workerDialog").attr("href", "#dialog"+ workers[i].name).html("i");
         if (lvl === 0) {
             d1.html(workerImageReference["hidden"]);
             d2.html("<h3>???</h3>");
