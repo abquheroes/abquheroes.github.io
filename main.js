@@ -32,6 +32,8 @@ const player = {
     inventoryCap : 5,
     lastLoop : Date.now(),
     saveStart : Date.now(),
+    percent : 0,
+    completeTime : 0,
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -765,8 +767,10 @@ function refreshProgress() {
     $('#pbUpgrade').css('width', upgradeCt/upgradeMaxCt*100+"%");
     const overallCt = recipeCt+workerCt+upgradeCt;
     const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
-    $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
-    $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
+    player.percent = (overallCt/overallMaxCt*100).toFixed(1);
+    $('#plOverall').html(player.percent + "%")
+    $('#pbOverall').css('width', player.percent+"%");
+    if (player.percent >= 100 && player.completeTime === 0) player.completeTime = Date.now();
 }
 
 function getCap(res) {
