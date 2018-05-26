@@ -3,6 +3,13 @@
     outline: 0;
 }
 
+@media screen and (max-width: 1100px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 ::-webkit-scrollbar-thumb {
     background-color: var(--theme-scroll-thumb);
     border-radius: 20px;
@@ -401,7 +408,7 @@ select {
     flex-direction: column;
     position: relative;
     border: 1px solid var(--theme-border);
-    margin: 0 10px 10px 0;
+    margin: 0 4px 10px 0;
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
@@ -1198,6 +1205,7 @@ footer a[href*="discord.gg"]:hover {
     color: var(--theme-text);
     border: none;
     border-bottom: 2px solid var(--theme-border);
+    border-radius: 0;
 }
 
 #pfButtons, #pfImportExport {
@@ -1213,8 +1221,11 @@ footer a[href*="discord.gg"]:hover {
     background-color: var(--theme-bg-3);
     color: var(--theme-text);
     border: 1px solid var(--theme-border);
+    border-radius: 0;
     cursor: pointer;
     transition: all 0.2s linear;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 #pfButtons>input:hover {
