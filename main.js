@@ -220,7 +220,7 @@ const pbValueCurrent = [0,0,0];
 const pbLabelText = ["","",""];
 const pbLabelTextCurrent = ["","",""];
 
-function updatedActionSlots() {
+function refreshActionSlots() {
     for (let i=0;i<player.actionSlots.length;i++) {
         if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
             asState.push("Empty");
@@ -241,7 +241,13 @@ function updatedActionSlots() {
                 $asParts[i].type.html("Job");
                 $asParts[i].cancel.removeClass("hidden");
                 const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
+                const resourcesProduced = getJobValue(player.actionSlots[i].actionName);
+                let s = ""
+                for (const [name,value] of Object.entries(resourcesProduced)) {
+                    s += ""+imageReference[name]+value+" ";
+                }
                 $asParts[i].name.removeClass("hidden").html(name);
+                $asParts[i].name.append("</br>"+ s);
                 $asParts[i].pbLabel.removeClass("hidden")
             }
             else if (player.actionSlots[i].actionType === "Craft") {
@@ -395,7 +401,7 @@ function mainLoop() {
     }
     refreshResources();
     unhideStuff();
-    updatedActionSlots();
+    refreshActionSlots();
     refreshProgress();
 }
 
