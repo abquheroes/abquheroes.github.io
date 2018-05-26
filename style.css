@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    outline: 0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -384,7 +385,7 @@ select {
 }
 
 #ActionSlots {
-    padding: 0 20px 20px;
+    padding: 10px 20px 0;
     width: 100%;
     max-width: 1150px;
 }
@@ -400,14 +401,10 @@ select {
     flex-direction: column;
     position: relative;
     border: 1px solid var(--theme-border);
-    margin: 10px;
+    margin: 0 10px 10px 0;
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
-}
-
-.ASBlock:first-of-type {
-    margin-left: 0;
 }
 
 .ASProgressBar, .plProgressBar {
