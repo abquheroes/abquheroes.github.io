@@ -761,7 +761,10 @@ const $completeTime = $("#completeTime");
 
 function gameTime() {
     $gameTime.html("You've been playing this save for: " + timeSince(player.saveStart));
-    if (player.completeTime > 0) $completeTime.html("You 100% completed this game in: " + timeSince(player.saveStart,player.completeTime));
+    if (player.completeTime > 0) {
+        $completeTime.show();
+        $completeTime.html("You 100% completed this game in: " + timeSince(player.saveStart,player.completeTime));
+    }
 }
 
 function timeSince(startTime,endTime) {
