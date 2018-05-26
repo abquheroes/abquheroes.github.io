@@ -476,9 +476,10 @@ function populateRecipe(type) {
     const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
     hrow.append(htd1);
     hrow.append(htd2);
+    hrow.append(htd5);
     hrow.append(htd3);
     hrow.append(htd4);
-    hrow.append(htd5);
+    
     table.append(hrow);
     let bpUnlock = null;
     for (let i=0;i<blueprints.length;i++) {
@@ -504,7 +505,7 @@ function populateRecipe(type) {
             row.append(td5);
             row.append(td3);
             row.append(td4);
-            row.append(td5);
+            
             table.append(row);
         }
         else if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
