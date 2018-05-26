@@ -501,6 +501,7 @@ function populateRecipe(type) {
             const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
             row.append(td1);
             row.append(td2);
+            row.append(td5);
             row.append(td3);
             row.append(td4);
             row.append(td5);
