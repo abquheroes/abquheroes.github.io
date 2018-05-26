@@ -1222,6 +1222,14 @@ footer a[href*="discord.gg"]:hover {
     margin-right: 10px;
 }
 
+#pfImportExport {
+    flex-wrap: wrap;
+}
+
+#pfSaveStatus {
+    width: 100%;
+}
+
 /**/
 
 /* Flex Tables */
