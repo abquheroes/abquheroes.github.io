@@ -975,7 +975,7 @@ input#importSaveText {
     margin: 0 -15px;
 }
 
-#gameTime {
+#gameTime, #completeTime {
     width: 100%;
     margin-top: 20px;
     padding: 10px 20px;
@@ -987,6 +987,12 @@ input#importSaveText {
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#completeTime {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 footer {
