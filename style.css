@@ -1101,6 +1101,7 @@ span#copyme {
     right: -100%;
     top: unset;
     bottom: 120%;
+    z-index: 2;
 }
 
 .itemToSacDiv a.tooltip:hover:before {
@@ -1178,6 +1179,50 @@ footer a[href*="discord.gg"]:hover {
     background-color: #7289DA;
     color: #fff;
 }
+
+/* Playfab Dialog */
+
+#pfLoginRegister>div>h2 {
+    margin: 3px 0;
+    font-size: 1em;
+}
+
+#pfEmail>input, #pfPassword>input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 3px;
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+    border: none;
+    border-bottom: 2px solid var(--theme-border);
+}
+
+#pfButtons, #pfImportExport {
+    display: flex;
+    justify-content: center;
+}
+
+#pfButtons>input, #pfImportExport>input {
+    margin-top: 10px;
+    padding: 10px 25px;
+    flex-grow: 1;
+    text-transform: uppercase;
+    background-color: var(--theme-bg-3);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+#pfButtons>input:hover {
+    background-color: var(--theme-bg-2);
+}
+
+#pfButtons>input:first-of-type, #pfImportExport>input:first-of-type {
+    margin-right: 10px;
+}
+
+/**/
 
 /* Flex Tables */
 
