@@ -492,8 +492,9 @@ function populateRecipe(type) {
         if (blueprints[i].type === type && requirement(blueprints[i])) {
             const row = $('<div/>').addClass('recipeRow');
             const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
-            const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
-            td1.append(name);
+            const td1 = $('<div/>').addClass('recipeName');
+            if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
+            td1.append(imageReference[blueprints[i].name]+"&nbsp;"+blueprints[i].name);
             let s = "";
             const td2 = $('<div/>').addClass('recipecostdiv');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
