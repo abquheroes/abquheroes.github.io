@@ -81,6 +81,11 @@ function initialize() {
     $("#completeTime").hide();
     $("#pfImportExport").hide();
     $("#loadSure").hide();
+    //fix for new bin levels
+    const newMax = ["Max Ore","Max Wood","Max Leather","Max Herb"];
+    for (let i=0;i<newMax.length;i++) {
+        upgradeProgress[newMax[i]] = Math.min(upgradeProgress[newMax[i]],nameToUpgrade(newMax[i]).value.length-1)
+    }
 }
 
 
