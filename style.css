@@ -1213,7 +1213,7 @@ footer a[href*="discord.gg"]:hover {
     justify-content: center;
 }
 
-#pfButtons>input, #pfImportExport>input {
+#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input {
     margin-top: 10px;
     padding: 10px 25px;
     flex-grow: 1;
@@ -1228,7 +1228,7 @@ footer a[href*="discord.gg"]:hover {
     -webkit-appearance: none;
 }
 
-#pfButtons>input:hover {
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
     background-color: var(--theme-bg-2);
 }
 
