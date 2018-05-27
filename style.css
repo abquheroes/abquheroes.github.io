@@ -932,10 +932,16 @@ input#importSaveText {
 #progresslist {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     text-align: center;
 }
 
-#progresslist>h3 {
+#progress_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#progress_container>h3 {
     display: block;
     text-align: left;
     width: 100%;
@@ -943,7 +949,7 @@ input#importSaveText {
     padding: 0 0 10px 0;
 }
 
-#progresslist>div>h2 {
+#progress_container>div>h2 {
     font-size: 1em;
     margin-bottom: 0;
 }
@@ -997,6 +1003,35 @@ input#importSaveText {
     background: var(--theme-scheme);
     color: var(--theme-text-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#achievements>h3 {
+    width: 100%;
+}
+
+#achievements .ProgressCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px 20px;
+    min-width: 125px;
+    min-height: 100px;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 footer {
@@ -1177,6 +1212,14 @@ span#copyme {
     margin: 0 auto;
 }
 
+.ProgressCard.tooltip:hover:after {
+    top: unset;
+    left: -10%;
+    right: -10%;
+    bottom: 115%;
+}
+
+
 #version-scale {
     display: inline-block;
     padding: 0 15px;
@@ -1189,20 +1232,35 @@ footer a[href*="discord.gg"]:hover {
 
 /* Playfab Dialog */
 
-#pfLoginRegister>div>h2 {
-    margin: 3px 0;
+#pfLoginRegister>form>div>h2 {
+    margin: 10px 0 3px 0;
     font-size: 1em;
+    font-weight: normal;
 }
 
 #pfEmail>input, #pfPassword>input {
     width: 100%;
-    margin-bottom: 10px;
     padding: 10px 3px;
     background-color: var(--theme-bg-2);
     color: var(--theme-text);
     border: none;
-    border-bottom: 2px solid var(--theme-border);
+    border: 1px solid var(--theme-border);
     border-radius: 0;
+    transition: all 0.2s linear;
+}
+
+#pfEmail:after, #pfPassword:after {
+    display: block;
+    position: relative;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: var(--theme-border-2);
+    transition: all 0.2s linear;
+}
+
+#pfEmail:hover:after, #pfPassword:hover:after {
+    width: 100%;
 }
 
 #pfButtons, #pfImportExport {
@@ -1489,7 +1547,7 @@ a.workerDialog {
         margin: 15px 0 0;
     }
 
-    #workerList, #joblist, #upgradelist, #progresslist {
+    #workerList, #joblist, #upgradelist, #progress_container {
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
@@ -1500,7 +1558,7 @@ a.workerDialog {
         margin: 10px;
     }
 
-    #progresslist>h3 {
+    #progress_container>h3 {
         display: none;
         text-align: center;
     }
@@ -1514,7 +1572,7 @@ a.workerDialog {
         min-width: 250px;
     }
 
-    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progresslist::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
