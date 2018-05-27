@@ -1,5 +1,13 @@
 * {
     box-sizing: border-box;
+    outline: 0;
+}
+
+@media screen and (max-width: 1100px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
 }
 
 ::-webkit-scrollbar-thumb {
@@ -31,6 +39,7 @@
     --theme-scroll-thumb: rgba(0,0,0,0.10);
     --theme-scroll-track: rgba(0,0,0,0.10);
     --theme-progressbar: #218cff;
+    --theme-scheme: linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%);
 }
 
 .lm-btn, .dm-btn {
@@ -63,7 +72,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -124,6 +133,10 @@ body{
     margin-top: 0;
 }
 
+#side-content .resource {
+    position: relative;
+}
+
 #right-side-content {
     border-left: 1px solid var(--theme-border);
     height: calc(100vh - 50px);
@@ -133,6 +146,36 @@ body{
 #right-side-content .heading {
     text-transform: uppercase;
     text-align: center;
+    margin: 10px 0;
+}
+
+#sellPref {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: 0 10px 10px;
+    min-height: 30px;
+}
+
+#sellPref>p {
+    margin: 0 0 5px 0;
+    width: 100%;
+    font-weight: bold;
+}
+
+#sell1, #sell10, #sellAll {
+    background-color: var(--theme-bg-2);
+    border: 1px solid var(--theme-border);
+    padding: 3px 5px;
+    margin: 0 3px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+#sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
 }
 
 .inventoryItem {
@@ -344,11 +387,12 @@ select {
 }
 
 #Actions>h1 {
+    margin: 10px 0;
     padding: 0 20px;
 }
 
 #ActionSlots {
-    padding: 0 20px 20px;
+    padding: 10px 20px 0;
     width: 100%;
     max-width: 1150px;
 }
@@ -364,7 +408,7 @@ select {
     flex-direction: column;
     position: relative;
     border: 1px solid var(--theme-border);
-    margin: 10px;
+    margin: 0 4px 10px 0;
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
@@ -411,7 +455,7 @@ select {
     position: relative;
     text-align: center;
     flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--theme-bg);
     border-bottom: 1px solid var(--theme-border);
 }
@@ -723,15 +767,66 @@ input#importSaveText {
     margin-bottom: 10px;
 }
 
+.WorkerDesc {
+    color: var(--theme-text-3);
+    text-align: center;
+    flex-grow: 1;
+    max-height: 60px;
+}
+
+.WorkerDesc>em {
+    color: var(--theme-text);
+    font-style: normal;
+}
+
+.WorkerName>h3 {
+    margin: 0 0 10px 0;
+}
+
+.workerLvl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    border: 1px solid var(--theme-border);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 50%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .Worker .itemSac {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     justify-content: center;
     flex-direction: row;
-    margin-top: 15px;
+    margin-top: 40px;
+}
+
+.Worker .itemSac:before {
+    display: block;
+    position: absolute;
+    top: -30px;
+    content: "Required Contributions";
+    padding-bottom: 3px;
+    color: var(--theme-text-3);
+    font-size: .8em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid var(--theme-border);
 }
 
 .itemToSacDiv {
+    position: relative;
     min-width: 20%;
     margin: 0 2px;
 }
@@ -741,19 +836,15 @@ input#importSaveText {
     text-align: center;
     background-color: var(--theme-bg-3);
     border: 1px solid var(--theme-border);
+    margin-bottom: 5px;
     padding: 10px;
     font-size: .9em;
     width: 100%;
 }
 
-.Worker .BuyWorker, .Upgrade .BuyUpgrade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable {
     display: block;
     padding: 10px;
-    margin: 10px 0 0 0;
-    width: 100%;
     border: none;
     background-color: var(--theme-bg-3);
     border-top: 1px solid var(--theme-border);
@@ -763,7 +854,30 @@ input#importSaveText {
     cursor: pointer;
 }
 
-.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover {
+.Upgrade .BuyUpgrade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+.Worker .jobDisable {
+    background-color: rgba(255, 174, 0, 0.1);
+    color: #c99a00;
+    cursor: not-allowed;
+}
+
+.Worker .BuyWorker {
+    border-left: 1px solid var(--theme-border);
+}
+
+.Worker .BuyWorker>img {
+    margin-bottom: -2px;
+    margin-right: 1px;
+}
+
+.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover {
     background-color: var(--theme-bg-2);
 }
 
@@ -776,6 +890,21 @@ input#importSaveText {
     color: #c90000;
     background-color: rgba(255, 0, 0, 0.10);
     cursor: not-allowed;
+}
+
+.workerButtons {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.workerButtons>button {
+    position: relative;
+    flex-grow: 1;
+    min-width: 50%;
 }
 
 .jobHeadWorker {
@@ -795,7 +924,7 @@ input#importSaveText {
 .jobRow.jobDisable {
     padding: 10px 0;
     color: #c99a00;
-    background-color: rgba(255, 174, 0, 0.1);;
+    background-color: rgba(255, 174, 0, 0.1);
     cursor: not-allowed;
     user-select: none;
 }
@@ -803,10 +932,16 @@ input#importSaveText {
 #progresslist {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     text-align: center;
 }
 
-#progresslist>h3 {
+#progress_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#progress_container>h3 {
     display: block;
     text-align: left;
     width: 100%;
@@ -814,7 +949,7 @@ input#importSaveText {
     padding: 0 0 10px 0;
 }
 
-#progresslist>div>h2 {
+#progress_container>div>h2 {
     font-size: 1em;
     margin-bottom: 0;
 }
@@ -850,12 +985,47 @@ input#importSaveText {
     margin: 0 -15px;
 }
 
-#gameTime {
+#gameTime, #completeTime {
     width: 100%;
     margin-top: 20px;
     padding: 10px 20px;
     font-weight: bold;
     font-size: .9em;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#completeTime {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#achievements>h3 {
+    width: 100%;
+}
+
+#achievements .ProgressCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px 20px;
+    min-width: 125px;
+    min-height: 100px;
     background-color: var(--theme-bg);
     border: 1px solid var(--theme-border);
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -876,6 +1046,7 @@ footer {
     font-size: 14px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
+    z-index: 999;
 }
 
 #bottom-left, #bottom-right {
@@ -943,6 +1114,7 @@ span#copyme {
     border-radius: 5px;
     font-size: .75rem;
     text-align: center;
+    text-transform: none;
     word-wrap: break-word;
     padding: 5px 8px;
     animation: fade-in 0.3s; 
@@ -967,9 +1139,11 @@ span#copyme {
 }
 
 .itemToSacDiv a.tooltip:hover:after {
-    left: 0;
-    right: 0;
-    top: -60%;
+    left: -100%;
+    right: -100%;
+    top: unset;
+    bottom: 120%;
+    z-index: 2;
 }
 
 .itemToSacDiv a.tooltip:hover:before {
@@ -987,6 +1161,65 @@ span#copyme {
     margin-right: -12px;
 }
 
+.resource.tooltip:hover:before {
+    margin-top: -9px;
+    right: unset;
+    left: 0;
+    margin-right: 0;
+}
+
+.resource.tooltip:hover:after {
+    top: unset;
+    bottom: 130%;
+    left: -10px;
+    right: unset;
+    margin-top: 0;
+    padding: 5px 10px;
+}
+
+.workerLvl.tooltip:hover:before {
+    margin-top: -28px;
+}
+
+.workerLvl.tooltip:hover:after {
+    font-weight: normal;
+    top: unset;
+    left: -40%;
+    right: -40%;
+    bottom: 120%;
+    margin-left: -5px;
+    margin-right: -5px;
+    z-index: 999;
+}
+
+.BuyWorker.tooltip:hover:after {
+    top: unset;
+    left: -50%;
+    right: -50%;
+    bottom: 135%;
+    max-width: 200px;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.jobDisable.tooltip:hover:after {
+    top: unset;
+    left: -50%;
+    right: -50%;
+    bottom: 135%;
+    max-width: 100px;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.ProgressCard.tooltip:hover:after {
+    top: unset;
+    left: -10%;
+    right: -10%;
+    bottom: 115%;
+}
+
+
 #version-scale {
     display: inline-block;
     padding: 0 15px;
@@ -996,6 +1229,216 @@ footer a[href*="discord.gg"]:hover {
     background-color: #7289DA;
     color: #fff;
 }
+
+/* Playfab Dialog */
+
+#pfLoginRegister>form>div>h2 {
+    margin: 10px 0 3px 0;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+#pfEmail>input, #pfPassword>input {
+    width: 100%;
+    padding: 10px 3px;
+    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+    border: none;
+    border: 1px solid var(--theme-border);
+    border-radius: 0;
+    transition: all 0.2s linear;
+}
+
+#pfEmail:after, #pfPassword:after {
+    display: block;
+    position: relative;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: var(--theme-border-2);
+    transition: all 0.2s linear;
+}
+
+#pfEmail:hover:after, #pfPassword:hover:after {
+    width: 100%;
+}
+
+#pfButtons, #pfImportExport {
+    display: flex;
+    justify-content: center;
+}
+
+#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input {
+    margin-top: 10px;
+    padding: 10px 25px;
+    flex-grow: 1;
+    text-transform: uppercase;
+    background-color: var(--theme-bg-3);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
+    background-color: var(--theme-bg-2);
+}
+
+#pfButtons>input:first-of-type, #pfImportExport>input:first-of-type {
+    margin-right: 10px;
+}
+
+#pfImportExport {
+    flex-wrap: wrap;
+}
+
+#pfSaveStatus {
+    width: 100%;
+}
+
+/**/
+
+/* Flex Tables */
+
+#flex-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid var(--theme-border);
+    text-align: center;
+}
+
+#flex-table .table-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#flex-table .table-row:nth-of-type(odd) {
+    background-color: var(--theme-bg-2);
+}
+
+#flex-table .table-row.header-row {
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+
+#flex-table .table-row>div {
+    flex-grow: 1;
+    max-width: 50%;
+    padding: 3px 5px;
+}
+
+/**/
+
+/* Dialogs */
+
+.dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s linear;
+    z-index: 9999;
+}
+
+a.workerDialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--theme-link);
+    color: var(--theme-text-2);
+    border: 1px solid var(--theme-border);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 50%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.dialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dialog_content {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 400px;
+    background-color: var(--theme-bg);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+}
+
+.dialog_header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.dialog_close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: -2px 0 0 0;
+    padding: 5px 15px;
+    color: var(--theme-text-2);
+    font-size: 32px;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.dialog_title {
+    margin: 0;
+    padding: 10px 50px 10px 20px;
+    background: var(--theme-scheme);
+    color: var(--theme-text-2);
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.dialog_body {
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.dialog_description {
+    margin: 40px 0 15px 0;
+    text-align: center;
+}
+
+.dialog_description>em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+/**/
 
 @keyframes fade-in {
     from {
@@ -1014,4 +1457,258 @@ footer a[href*="discord.gg"]:hover {
 /* Hide content completely, removing both the content and its effect on elements */
 .none {
     display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .game-content {
+        flex-direction: column;
+    }
+
+    .game-content .status, #right-side-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .game-content .status {
+        position: relative;
+        flex-wrap: wrap;
+        flex-direction: row;
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        z-index: 2;
+    }
+
+    #theme-selection {
+        position: absolute;
+        top: 0;
+        right: 15px;
+    }
+
+    .lm-btn, .dm-btn {
+        border-top: none;
+    }
+
+    #right-side-content {
+        margin-bottom: 50px;
+        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        z-index: 2;
+    }
+
+    #game-logo {
+        height: 32px;
+        background-position: 15px center;
+        background-size: contain;
+        margin: 10px 0;
+    }
+
+    #side-content {
+        display: flex;
+        text-align: center;
+        padding: 10px;
+        overflow: auto;
+        max-height: 100px;
+        border-top: 1px solid var(--theme-border);
+    }
+
+    #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
+        display: none;
+    }
+
+    #side-content .heading {
+        display: none;
+    }
+
+    #side-content>div {
+        margin: 0 5px;
+    }
+
+    #herbResource {
+        position: relative;
+    }
+
+    #herbResource:after {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: -20px;
+        bottom: 0;
+        content: "";
+        background: transparent;
+        width: 1px;
+        pointer-events: none;
+    }
+
+    .game-content .game-wrapper {
+        max-width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--theme-border);
+    }
+
+    #Actions>h1 {
+        margin: 15px 0 0;
+    }
+
+    #workerList, #joblist, #upgradelist, #progress_container {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        margin-right: 20px;
+    }
+
+    .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+        margin: 10px;
+    }
+
+    #progress_container>h3 {
+        display: none;
+        text-align: center;
+    }
+
+    #gameTime, #completeTime {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: 100%;
+        min-width: 250px;
+    }
+
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+
+    #ASTable {
+        flex-wrap: nowrap;
+        position: relative;
+        overflow-x: auto;
+        margin: 0;
+    }
+
+    .ui-tabs-nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+        display: flex;
+        padding: 10px 12px;
+    }
+
+    #RecipeFilter {
+        padding: 0;
+        overflow: auto;
+    }
+
+    #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
+        min-width: 40px;
+        max-width: 40px;
+    }
+
+    .recipeHeader {
+        display: none;
+    }
+    
+    .recipeRow {
+        position: relative;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--theme-border);
+    }
+    
+    .recipeName {
+        display: flex;
+        align-items: baseline;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .recipeName>img {
+        margin-left: 10px;
+    }
+    
+    .recipeName>a {
+        flex-grow: unset;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        margin-left: -30px;
+    }
+    
+    .recipecostdiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 5px;
+        margin-left: 45%;
+        margin: 10px 0 5px 45%;
+    }
+
+    .recipeCost.tooltip:hover:after {
+        margin-top: -15px;
+        right: 0;
+        bottom: 150%;
+        top: unset;
+    }
+    .recipeCost.tooltip:hover:before {
+        margin-top: -10px;
+        margin-right: -12px;
+    }
+
+    .recipeTime:before, .recipeCount:before, .recipeValue:before {
+        display: inline-block;
+        position: relative;
+        margin-right: 5px;
+        margin-top: 15px;
+        margin: 10px 5px 10px 0;
+        pointer-events: none;
+    }
+
+    .recipeTime:before {
+        content: "Time:";
+    }
+
+    .recipeCount:before {
+        content: "Count:";
+    }
+
+    .recipeValue:before {
+        content: "Value:";
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 3;
+    }
+
+    footer .tooltip:hover:before, footer .tooltip:hover:after {
+        display: none;
+    }
+
+    footer a {
+        max-width: 65px;
+        padding: 5px;
+    }
+
+    #bottom-left, #bottom-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #bottom-right a {
+        display: none;
+    }
 }

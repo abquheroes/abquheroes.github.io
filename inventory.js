@@ -1,21 +1,24 @@
 $('#inventory').on("click","a.inventoryLink",(e) => {
     e.preventDefault();
     const name = $(e.target).attr("href");
-    if (e.shiftKey) removeAllFromInventory(name);
-    else removeFromInventory(name);
-    sellItem(name,1);
+    let amt = player.sellPref;
+    if (e.shiftKey) amt = 100;
+    amt = Math.min(inventory[name],amt)
+    removeFromInventory(name,amt);
+    sellItem(name,1,amt);
 })
 
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
-    for (const [name,amt] of Object.entries(inventory)) {
-        if (amt > 0) {
+    for (let i=0;i<blueprints.length;i++) {
+        const name = blueprints[i].name;
+        if (name in inventory && inventory[name] > 0) {
             const item = nameToItem(name);
             if (item == null) continue;
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
             const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+item.value+" Gold").html(name);
-            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+amt);
+            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+inventory[name]);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
             $inventory.append(itemdiv);
@@ -23,16 +26,19 @@ function refreshInventory() {
     }
 }
 
-function addToInventory(itemName) {
-    if (inventory[itemName] >= getMaxInventory()) {
-        const upgrade = nameToUpgrade("Auto Sell Value");
-        const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]/100;
-        sellItem(itemName,mod);
-    }
-    else {
-        if (itemName in inventory) inventory[itemName] += 1;
-        else inventory[itemName] = 1;
-        refreshInventory();
+function addToInventory(itemName,amt) {
+    amt = amt || 1;
+    for (let i=0;i<amt;i++) {
+        if (inventory[itemName] >= getMaxInventory()) {
+            const upgrade = nameToUpgrade("Auto Sell Value");
+            const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]/100;
+            sellItem(itemName,mod);
+        }
+        else {
+            if (itemName in inventory) inventory[itemName] += 1;
+            else inventory[itemName] = 1;
+            refreshInventory();
+        }
     }
 }
 
@@ -48,14 +54,63 @@ function removeAllFromInventory(itemName) {
 
 function removeFromInventory(itemName,amt) {
     amt = amt || 1;
-    if (!(itemName in inventory) || inventory[itemName] < amt) return false;
-    inventory[itemName] -= amt;
-    refreshInventory();
-    return true;    
+    if (itemName === "Gold") {
+        const removeG = Math.min(player.money,amt);
+        player.money -= removeG;
+        return removeG;
+    }
+    else {
+        if (!(itemName in inventory)) return 0;
+        const remove = Math.min(inventory[itemName],amt);
+        inventory[itemName] -= remove;
+        refreshInventory();
+        return remove;    
+    }
 }
 
-function sellItem(itemName,modifier) {
-    player.money += nameToItem(itemName).value*modifier
+function sellItem(itemName,modifier,amt) {
+    amt = amt || 1
+    player.money += Math.floor(nameToItem(itemName).value*modifier*amt);
     refreshWorkers();
     refreshUpgrades();
+}
+
+$sellOne = $("#sell1");
+$sellTen = $("#sell10");
+$sellAll = $("#sellAll");
+
+$sellOne.click((e) => {
+    e.preventDefault();
+    player.sellPref = 1;
+    $sellOne.addClass("itemSellPrefSelected");
+    $sellTen.removeClass("itemSellPrefSelected");
+    $sellAll.removeClass("itemSellPrefSelected");
+});
+
+$sellTen.click((e) => {
+    e.preventDefault();
+    player.sellPref = 10;
+    $sellOne.removeClass("itemSellPrefSelected");
+    $sellTen.addClass("itemSellPrefSelected");
+    $sellAll.removeClass("itemSellPrefSelected");
+});
+
+$sellAll.click((e) => {
+    e.preventDefault();
+    player.sellPref = 100;
+    $sellOne.removeClass("itemSellPrefSelected");
+    $sellTen.removeClass("itemSellPrefSelected");
+    $sellAll.addClass("itemSellPrefSelected");
+});
+
+function itemRefund(name) {
+    const item = nameToItem(name);
+    for (const [name,amt] of Object.entries(item.cost)) {
+        console.log(name,amt);
+        console.log(resources);
+        if (resources.includes(name)) {
+            player[name] += amt
+        }
+        else addToInventory(name,amt);
+    }
 }

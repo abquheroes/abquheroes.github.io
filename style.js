@@ -57,6 +57,7 @@ function lightTheme() {
     root.style.setProperty('--theme-scroll-thumb', 'rgba(0,0,0,0.10)');
     root.style.setProperty('--theme-scroll-track', 'rgba(0,0,0,0.10)');
     root.style.setProperty('--theme-progressbar', '#218cff;')
+    root.style.setProperty('--theme-scheme', 'linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%)')
 
     lightButton.style.display = "none";
     darkButton.style.display = "block";
@@ -75,6 +76,7 @@ function darkTheme() {
     root.style.setProperty('--theme-scroll-thumb', 'rgba(255,255,255,0.10)');
     root.style.setProperty('--theme-scroll-track', 'rgba(0,0,0,0.30)');
     root.style.setProperty('--theme-progressbar', '#218cff;')
+    root.style.setProperty('--theme-scheme', 'linear-gradient(-40deg, #353535 0%, #545454 51%, #636262 75%)')
 
     darkButton.style.display = "none";
     lightButton.style.display = "block";
@@ -95,7 +97,7 @@ function tabHighlight() {
     this.classList.add("selected");
 };
 
-//logo easter egg
+// Logo Easter Egg
 
 const $gameLogo = $("#game-logo");
 let logoNum = 0;

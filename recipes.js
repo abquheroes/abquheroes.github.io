@@ -1631,6 +1631,7 @@ abquPendant.requires = {
 blueprints.push(abquPendant)
 
 const imageReference = {
+    "Mastery" : '<img src="PixelItem/Star4.png" alt="Mastered!">',
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
@@ -1677,7 +1678,7 @@ const imageReference = {
     "Mana Potion" : '<img src="PixelItem/Consume/Potion/PotionPurple.png">',
     "Sleeping Potion" : '<img src="PixelItem/Consume/BeerMug.png">',
     "Coughing Potion" : '<img src="PixelItem/Consume/Potion/TinyRedPotion.png">',
-    "Invincibility Potion" : '<img src="PixelAbqu/blank_tile.png">',
+    "Invincibility Potion" : '<img src="PixelItem/Consume/Potion/invincibility.png">',
     "Laughing Potion" : '<img src="PixelItem/Consume/Wine.png">',
     "Rejuvenating Potion" : '<img src="PixelItem/Consume/Potion/PotionMulticolor.png">',
     "Like Potion" : '<img src="PixelItem/Consume/Potion/PotionPink.png">',

@@ -1,7 +1,7 @@
 "use strict";
 
 const player = {
-    money: 0,
+    money: 500,
     workers: 0,
     Ore : 0,
     oreCap : 200,
@@ -13,9 +13,9 @@ const player = {
     herbCap : 200,
     actionSlots : [
         {
-            actionType : "Job",
-            actionName : "Oren",
-            actionTime : Date.now(),
+            actionType : "Empty",
+            actionName : "Empty",
+            actionTime : 0,
         },
         {
             actionType : "Empty",
@@ -30,9 +30,11 @@ const player = {
     ],
     currentType : "Knives",
     inventoryCap : 5,
-    lastLoop : Date.now(),
     saveStart : Date.now(),
     percent : 0,
+    blueprintShow : false,
+    sellPref : 1,
+    lastSave : 0,
     completeTime : 0,
 }
 
@@ -59,6 +61,13 @@ const hidden = {
     "recipeCloak" : true,
     "recipeArmor" : true,
     "recipePendant" : true,
+    "blueprints" : true,
+    "upgrades" : true,
+    "progress" : true,
+    "blueprintTab" : true,
+    "upgradeTab" : true,
+    "progressTab" : true,
+    "fullProgress" : true,
 }
 
 function initialize() {
@@ -66,12 +75,23 @@ function initialize() {
         displayedResources[resources[i]] = 0;
     }
     displayedResources["Money"] = 0;
+    if (player.sellPref === 1) $("#sell1").addClass("itemSellPrefSelected");
+    else if (player.sellPref === 10) $("#sell10").addClass("itemSellPrefSelected");
+    else if (player.sellPref === 100) $("#sellAll").addClass("itemSellPrefSelected");
+    $("#completeTime").hide();
+    $("#pfImportExport").hide();
+    $("#loadSure").hide();
+    //fix for new bin levels
+    const newMax = ["Max Ore","Max Wood","Max Leather","Max Herb"];
+    for (let i=0;i<newMax.length;i++) {
+        upgradeProgress[newMax[i]] = Math.min(upgradeProgress[newMax[i]],nameToUpgrade(newMax[i]).value.length-1)
+    }
 }
 
 
 
 const workerProgress = {
-    "Oren" : 1,
+    "Oren" : 0,
     "Eryn" : 0,
     "Herbie" : 0,
     "Lakur" : 0,
@@ -208,7 +228,7 @@ const pbValueCurrent = [0,0,0];
 const pbLabelText = ["","",""];
 const pbLabelTextCurrent = ["","",""];
 
-function updatedActionSlots() {
+function refreshActionSlots() {
     for (let i=0;i<player.actionSlots.length;i++) {
         if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
             asState.push("Empty");
@@ -229,7 +249,13 @@ function updatedActionSlots() {
                 $asParts[i].type.html("Job");
                 $asParts[i].cancel.removeClass("hidden");
                 const name = imageReference[player.actionSlots[i].actionName] + "&nbsp;" + player.actionSlots[i].actionName;
+                const resourcesProduced = getJobValue(player.actionSlots[i].actionName);
+                let s = ""
+                for (const [name,value] of Object.entries(resourcesProduced)) {
+                    s += ""+imageReference[name]+value+" ";
+                }
                 $asParts[i].name.removeClass("hidden").html(name);
+                $asParts[i].name.append("</br>"+ s);
                 $asParts[i].pbLabel.removeClass("hidden")
             }
             else if (player.actionSlots[i].actionType === "Craft") {
@@ -262,11 +288,12 @@ const $inventory = $('#inventory');
 const $actionSlots = $('#ActionSlots');
 const $jobList = $('#joblist');
 
+const $achievements = $("#achievements");
+
 initializeInventory();
 loadGame();
 initialize();
 refreshInventory();
-populateJob();
 refreshUpgrades();
 populateRecipe(player.currentType);
 fakeSelect(player.currentType);
@@ -297,10 +324,11 @@ function fakeSelect(name) {
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href")-1;
+    if(player.actionSlots[slot].actionType === "Craft") itemRefund(player.actionSlots[slot].actionName);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
-    populateJob();
+    refreshWorkers();
 });
 
 $("#clearSave").click((e) => {
@@ -335,27 +363,18 @@ $('#tabs-1').on("click", "a.addCraft", (e) => {
     addCraft(e.target.text,"Craft");
 });
 
-$(document).on("click", "a.addJob", (e) => {
+$(document).on("click", ".HireWorker", (e) => {
     e.preventDefault();
-    const name = $(e.target).attr("href");
+    const name = $(e.target).attr("data-value");
     addCraft(name,"Job");
-    populateJob();
+    refreshWorkers();
 });
 
-const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
-
-
-
-
 function mainLoop() {
-    const deltaT = Date.now() - player.lastLoop;
-    player.lastLoop = Date.now();
-    for (let i=0;i<resources.length;i++) {
-        remainder[i] += deltaT*getProduction(resources[i]);
-        player[resources[i]] += Math.floor(remainder[i]/1000);
-        player[resources[i]] = Math.min(getCap(resources[i]),player[resources[i]]);
-        remainder[i] = remainder[i]%1000;
-    }
+    player.Ore = Math.min(player.Ore,player.oreCap);
+    player.Wood = Math.min(player.Wood,player.woodCap);
+    player.Leather = Math.min(player.Leather,player.leatherCap);
+    player.Herb = Math.min(player.Herb,player.herbCap);
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;
@@ -384,7 +403,7 @@ function mainLoop() {
     }
     refreshResources();
     unhideStuff();
-    updatedActionSlots();
+    refreshActionSlots();
     refreshProgress();
 }
 
@@ -427,12 +446,14 @@ const nameToUnlock = {
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
-            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource") {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource" && name !== "blueprintTab" && name !== "upgradeTab" && name !== "progressTab" && name !== "fullProgress") {
                 $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
                 ga('send', 'event', 'Recipe', 'unlock', name);
                 $("#unlockDialog").dialog("open");
                 flags[name] = true;
             }
+            if (name in nameToUnlock) starMe(nameToUnlock[name]);
+            if (name === "fullProgress") $("#completeTime").show();
             $("#"+name).removeClass("none");
             hidden[name] = false;
         }
@@ -444,46 +465,6 @@ function isFlagged(name) {
         flags[name] = false;
     }
     return flags[name];
-}
-
-function populateJob() {
-    $('#joblist').empty();
-    const table = $('<div/>').addClass('jobTable');
-    const hrow = $('<div/>').addClass('jobHeader');
-    const htd1 = $('<div/>').addClass('jobHeadWorker').html("WORKER");
-    const htd2 = $('<div/>').addClass('jobHeadTime').html("TIME");
-    const htd3 = $('<div/>').addClass('jobHeadValue').html("VALUE");
-    hrow.append(htd1);
-    hrow.append(htd2);
-    hrow.append(htd3);
-    table.append(hrow);
-    for (const [workerName,lvl] of Object.entries(workerProgress)) {
-        if (lvl > 0) {
-            const worker = nameToWorker(workerName);
-            const trow = $('<div/>').addClass('jobRow');
-            const td1 = $('<div/>').addClass('jobWorker');
-            if (actionSlotContainsWorker(workerName)) {
-                trow.addClass('jobDisable');
-                td1.html(workerName+" (busy)");
-            }
-            else {
-                const td1a = $("<a/>").addClass('addJob').attr("href",workerName).attr("target","_blank").html("Hire "+workerName);
-                td1.append(td1a);
-            }
-
-            const td2 = $('<div/>').addClass('jobTime').html(msToTime(worker.craftTime));
-            let s = "";
-            for (const [mat,amt] of Object.entries(worker.produces)) {
-                s += (amt*worker.multiplier[lvl]).toFixed(1) + "&nbsp;" + imageReference[mat] + "&nbsp;&nbsp;";
-            }
-            const td3 = $('<div/>').addClass('jobValue').html(s);
-            trow.append(td1);
-            trow.append(td2);
-            trow.append(td3);
-            table.append(trow);
-        }
-    }
-    $('#joblist').append(table);
 }
 
 function actionSlotContainsWorker(name) {
@@ -505,16 +486,18 @@ function populateRecipe(type) {
     const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
     hrow.append(htd1);
     hrow.append(htd2);
+    hrow.append(htd5);
     hrow.append(htd3);
     hrow.append(htd4);
-    hrow.append(htd5);
     table.append(hrow);
     let bpUnlock = null;
     for (let i=0;i<blueprints.length;i++) {
         if (blueprints[i].type === type && requirement(blueprints[i])) {
             const row = $('<div/>').addClass('recipeRow');
             const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
-            const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
+            const td1 = $('<div/>').addClass('recipeName');
+            if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
+            td1.append(imageReference[blueprints[i].name]+"&nbsp;");
             td1.append(name);
             let s = "";
             const td2 = $('<div/>').addClass('recipecostdiv');
@@ -530,9 +513,10 @@ function populateRecipe(type) {
             const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
             row.append(td1);
             row.append(td2);
+            row.append(td5);
             row.append(td3);
             row.append(td4);
-            row.append(td5);
+            
             table.append(row);
         }
         else if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
@@ -540,7 +524,7 @@ function populateRecipe(type) {
             for (const [item, amt] of Object.entries(blueprints[i].requires)) {
                 s += amt + " " + item + " "
             }
-            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next recipe by crafting " + s + "</i></p>");
+            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next by crafting " + s + "</i></p>");
         }
     }
     $RecipeResults.append(table);
@@ -592,6 +576,7 @@ function msToTime(s) {
 
 function saveGame() {
     if (stopSave) return;
+    player.lastSave = Date.now();
     localStorage.setItem('gameSave3', JSON.stringify(createSave()));
     ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
@@ -689,6 +674,7 @@ function addCraft(itemName,craft) {
 }
 
 function progressFinish(type,name) {
+    player.blueprintShow = true;
     if (type === "Craft") {
         addToInventory(name);
         if (name in itemCount) itemCount[name] += 1;
@@ -700,6 +686,7 @@ function progressFinish(type,name) {
         if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
+        console.log(player["Ore"]);
     }
 }
 
@@ -718,6 +705,9 @@ function initializeInventory() {
 }
 
 function canSee(name) {
+    if (name === "blueprintTab") return player.blueprintShow || workerProgress["Oren"] > 1;
+    if (name === "upgradeTab") return workerProgress["Eryn"] > 0;
+    if (name === "progressTab") return player.percent >= 7.5;
     if (name === "woodResource") return workerProgress["Eryn"] > 0;
     if (name === "leatherResource") return workerProgress["Lakur"] > 0;
     if (name === "herbResource") return workerProgress["Herbie"] > 0; 
@@ -735,6 +725,7 @@ function canSee(name) {
     if (name === "recipeCloak") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
     if (name === "recipeArmor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
     if (name === "recipePendant") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
+    if (name === "fullProgress") return player.percent >= 100;
 }
 
 function refreshProgress() {
@@ -751,7 +742,7 @@ function refreshProgress() {
     }
     let workerMaxCt = 0;
     for (let i=0;i<workers.length;i++) {
-        workerMaxCt += workers[i].cost.length;
+        workerMaxCt += workers[i].lvlreq.length;
     }
     $("#plWorkerLevel").html(workerCt + "/" + workerMaxCt);
     $("#pbWorker").css('width', workerCt/workerMaxCt*100+"%");
@@ -767,10 +758,14 @@ function refreshProgress() {
     $('#pbUpgrade').css('width', upgradeCt/upgradeMaxCt*100+"%");
     const overallCt = recipeCt+workerCt+upgradeCt;
     const overallMaxCt = recipeMaxCt+workerMaxCt+upgradeMaxCt;
+    $('#plOverall').html((overallCt/overallMaxCt*100).toFixed(1) + "%")
     player.percent = (overallCt/overallMaxCt*100).toFixed(1);
-    $('#plOverall').html(player.percent + "%")
-    $('#pbOverall').css('width', player.percent+"%");
     if (player.percent >= 100 && player.completeTime === 0) player.completeTime = Date.now();
+    $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
+}
+
+function starMe(name) {
+    $("#"+name+"Star").attr("src","images/star.png");
 }
 
 function getCap(res) {
@@ -781,14 +776,20 @@ function getCap(res) {
 }
 
 const $gameTime = $("#gameTime")
+const $completeTime = $("#completeTime");
 
 function gameTime() {
     $gameTime.html("You've been playing this save for: " + timeSince(player.saveStart));
+    if (player.completeTime > 0) {
+        $completeTime.show();
+        $completeTime.html("You 100% completed this game in: " + timeSince(player.saveStart,player.completeTime));
+    }
 }
 
-function timeSince(startTime) {
+function timeSince(startTime,endTime) {
+    endTime = endTime || Date.now()
     let s = "";
-    let diff = Math.round((Date.now()-startTime)/1000);
+    let diff = Math.round((endTime-startTime)/1000);
     const d = Math.floor(diff/(24*60*60))
     diff = diff-d*24*60*60
     if (d === 1) s += d + " day, ";
