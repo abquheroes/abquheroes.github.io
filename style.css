@@ -1425,6 +1425,10 @@ a.workerDialog {
         right: 15px;
     }
 
+    .lm-btn, .dm-btn {
+        border-top: none;
+    }
+
     #right-side-content {
         margin-bottom: 50px;
         box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
@@ -1486,7 +1490,10 @@ a.workerDialog {
     }
 
     #workerList, #joblist, #upgradelist, #progresslist {
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        margin-right: 20px;
     }
 
     .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
@@ -1494,10 +1501,20 @@ a.workerDialog {
     }
 
     #progresslist>h3 {
+        display: none;
         text-align: center;
     }
 
-    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar {
+    #gameTime, #completeTime {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: 100%;
+        min-width: 250px;
+    }
+
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progresslist::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
@@ -1625,6 +1642,12 @@ a.workerDialog {
     footer a {
         max-width: 65px;
         padding: 5px;
+    }
+
+    #bottom-left, #bottom-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #bottom-right a {
