@@ -67,6 +67,7 @@ const hidden = {
     "blueprintTab" : true,
     "upgradeTab" : true,
     "progressTab" : true,
+    "fullProgress" : true,
 }
 
 function initialize() {
@@ -77,6 +78,7 @@ function initialize() {
     if (player.sellPref === 1) $("#sell1").addClass("itemSellPrefSelected");
     else if (player.sellPref === 10) $("#sell10").addClass("itemSellPrefSelected");
     else if (player.sellPref === 100) $("#sellAll").addClass("itemSellPrefSelected");
+    $("#completeTime").hide();
 }
 
 
@@ -437,13 +439,14 @@ const nameToUnlock = {
 function unhideStuff() {
     for (const [name,isHidden] of Object.entries(hidden)) {
         if (isHidden && canSee(name)) {
-            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource" && name !== "blueprintTab" && name !== "upgradeTab" && name !== "progressTab") {
+            if (!isFlagged(name) && name !== "woodResource" && name !== "leatherResource" && name !== "herbResource" && name !== "blueprintTab" && name !== "upgradeTab" && name !== "progressTab" && name !== "fullProgress") {
                 $("#unlockDialog").html("You unlocked the " + nameToUnlock[name] + " recipe line!");
                 ga('send', 'event', 'Recipe', 'unlock', name);
                 $("#unlockDialog").dialog("open");
                 flags[name] = true;
             }
-            starMe(nameToUnlock[name]);
+            if (name in nameToUnlock) starMe(nameToUnlock[name]);
+            if (name === "fullProgress") $("#completeTime").show();
             $("#"+name).removeClass("none");
             hidden[name] = false;
         }
@@ -697,7 +700,7 @@ function initializeInventory() {
 function canSee(name) {
     if (name === "blueprintTab") return player.blueprintShow || workerProgress["Oren"] > 1;
     if (name === "upgradeTab") return workerProgress["Eryn"] > 0;
-    if (name === "progressTab") return player.percent >= 15;
+    if (name === "progressTab") return player.percent >= 7.5;
     if (name === "woodResource") return workerProgress["Eryn"] > 0;
     if (name === "leatherResource") return workerProgress["Lakur"] > 0;
     if (name === "herbResource") return workerProgress["Herbie"] > 0; 
@@ -715,6 +718,7 @@ function canSee(name) {
     if (name === "recipeCloak") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
     if (name === "recipeArmor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
     if (name === "recipePendant") return itemCount["Disease Ward"] >= 5 && itemCount["Generous Blocker"] >= 5 &&  itemCount["A Cool Dark Chainmail"] >= 5 &&  itemCount["Frostflinger Cloak"] >= 5;
+    if (name === "fullProgress") return player.percent >= 100;
 }
 
 function refreshProgress() {
