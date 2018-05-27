@@ -30,7 +30,6 @@ const player = {
     ],
     currentType : "Knives",
     inventoryCap : 5,
-    lastLoop : Date.now(),
     saveStart : Date.now(),
     percent : 0,
     blueprintShow : false,
@@ -314,6 +313,7 @@ function fakeSelect(name) {
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href")-1;
+    if(player.actionSlots[slot].actionType === "Craft") itemRefund(player.actionSlots[slot].actionName);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
@@ -359,20 +359,7 @@ $(document).on("click", ".HireWorker", (e) => {
     refreshWorkers();
 });
 
-const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
-
-
-
-
 function mainLoop() {
-    const deltaT = Date.now() - player.lastLoop;
-    player.lastLoop = Date.now();
-    for (let i=0;i<resources.length;i++) {
-        remainder[i] += deltaT*getProduction(resources[i]);
-        player[resources[i]] += Math.floor(remainder[i]/1000);
-        player[resources[i]] = Math.min(getCap(resources[i]),player[resources[i]]);
-        remainder[i] = remainder[i]%1000;
-    }
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;
@@ -486,7 +473,6 @@ function populateRecipe(type) {
     hrow.append(htd3);
     hrow.append(htd4);
     
-    table.append(hrow);
     let bpUnlock = null;
     for (let i=0;i<blueprints.length;i++) {
         if (blueprints[i].type === type && requirement(blueprints[i])) {
@@ -494,7 +480,8 @@ function populateRecipe(type) {
             const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
             const td1 = $('<div/>').addClass('recipeName');
             if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
-            td1.append(imageReference[blueprints[i].name]+"&nbsp;"+blueprints[i].name);
+            td1.append(imageReference[blueprints[i].name]+"&nbsp;");
+            td1.append(name);
             let s = "";
             const td2 = $('<div/>').addClass('recipecostdiv');
             for (const [type, amt] of Object.entries(blueprints[i].cost)) {
@@ -520,7 +507,7 @@ function populateRecipe(type) {
             for (const [item, amt] of Object.entries(blueprints[i].requires)) {
                 s += amt + " " + item + " "
             }
-            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next recipe by crafting " + s + "</i></p>");
+            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next by crafting " + s + "</i></p>");
         }
     }
     $RecipeResults.append(table);
