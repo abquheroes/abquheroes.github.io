@@ -324,7 +324,7 @@ function fakeSelect(name) {
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href")-1;
-    if(player.actionSlots[slot].actionType === "Craft") itemRefund(player.actionSlots[slot].actionName);
+    if(player.actionSlots[slot].actionType === "Craft" && player.actionSlots[slot].actionTime > 0) itemRefund(player.actionSlots[slot].actionName);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
@@ -686,7 +686,6 @@ function progressFinish(type,name) {
         if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
-        console.log(player["Ore"]);
     }
 }
 
