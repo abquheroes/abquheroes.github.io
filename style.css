@@ -394,12 +394,12 @@ select {
 #ActionSlots {
     padding: 10px 20px 0;
     width: 100%;
-    max-width: 1150px;
 }
 
 #ASTable {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -1579,6 +1579,7 @@ a.workerDialog {
 
     #ASTable {
         flex-wrap: nowrap;
+        justify-content: flex-start;
         position: relative;
         overflow-x: auto;
         margin: 0;
