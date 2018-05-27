@@ -371,10 +371,10 @@ $(document).on("click", ".HireWorker", (e) => {
 });
 
 function mainLoop() {
-    player.Ore = Math.min(player.Ore,player.oreCap);
-    player.Wood = Math.min(player.Wood,player.woodCap);
-    player.Leather = Math.min(player.Leather,player.leatherCap);
-    player.Herb = Math.min(player.Herb,player.herbCap);
+    player.Ore = Math.min(player.Ore,getCap("Ore"));
+    player.Wood = Math.min(player.Wood,getCap("Wood"));
+    player.Leather = Math.min(player.Leather,getCap("Leather"));
+    player.Herb = Math.min(player.Herb,getCap("Herb"));
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;
