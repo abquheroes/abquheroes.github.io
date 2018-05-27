@@ -360,6 +360,10 @@ $(document).on("click", ".HireWorker", (e) => {
 });
 
 function mainLoop() {
+    player.Ore = Math.min(player.Ore,player.oreCap);
+    player.Wood = Math.min(player.Wood,player.woodCap);
+    player.Leather = Math.min(player.Leather,player.leatherCap);
+    player.Herb = Math.min(player.Herb,player.herbCap);
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;
@@ -472,7 +476,7 @@ function populateRecipe(type) {
     hrow.append(htd5);
     hrow.append(htd3);
     hrow.append(htd4);
-    
+    table.append(hrow);
     let bpUnlock = null;
     for (let i=0;i<blueprints.length;i++) {
         if (blueprints[i].type === type && requirement(blueprints[i])) {
@@ -669,6 +673,7 @@ function progressFinish(type,name) {
         if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
+        console.log(player["Ore"]);
     }
 }
 
