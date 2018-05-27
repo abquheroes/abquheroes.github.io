@@ -30,7 +30,6 @@ const player = {
     ],
     currentType : "Knives",
     inventoryCap : 5,
-    lastLoop : Date.now(),
     saveStart : Date.now(),
     percent : 0,
     blueprintShow : false,
@@ -316,6 +315,7 @@ function fakeSelect(name) {
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
     const slot = $(e.target).attr("href")-1;
+    if(player.actionSlots[slot].actionType === "Craft") itemRefund(player.actionSlots[slot].actionName);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";
     player.actionSlots[slot].actionTime = 0;
@@ -361,20 +361,11 @@ $(document).on("click", ".HireWorker", (e) => {
     refreshWorkers();
 });
 
-const remainder = [oreRemainder,woodRemainder,leatherRemainder,herbRemainder];
-
-
-
-
 function mainLoop() {
-    const deltaT = Date.now() - player.lastLoop;
-    player.lastLoop = Date.now();
-    for (let i=0;i<resources.length;i++) {
-        remainder[i] += deltaT*getProduction(resources[i]);
-        player[resources[i]] += Math.floor(remainder[i]/1000);
-        player[resources[i]] = Math.min(getCap(resources[i]),player[resources[i]]);
-        remainder[i] = remainder[i]%1000;
-    }
+    player.Ore = Math.min(player.Ore,player.oreCap);
+    player.Wood = Math.min(player.Wood,player.woodCap);
+    player.Leather = Math.min(player.Leather,player.leatherCap);
+    player.Herb = Math.min(player.Herb,player.herbCap);
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;
@@ -488,14 +479,15 @@ function populateRecipe(type) {
     hrow.append(htd5);
     hrow.append(htd3);
     hrow.append(htd4);
-    
     table.append(hrow);
     let bpUnlock = null;
     for (let i=0;i<blueprints.length;i++) {
         if (blueprints[i].type === type && requirement(blueprints[i])) {
             const row = $('<div/>').addClass('recipeRow');
             const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
-            const td1 = $('<div/>').addClass('recipeName').html(imageReference[blueprints[i].name]+"&nbsp;");
+            const td1 = $('<div/>').addClass('recipeName');
+            if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
+            td1.append(imageReference[blueprints[i].name]+"&nbsp;");
             td1.append(name);
             let s = "";
             const td2 = $('<div/>').addClass('recipecostdiv');
@@ -522,7 +514,7 @@ function populateRecipe(type) {
             for (const [item, amt] of Object.entries(blueprints[i].requires)) {
                 s += amt + " " + item + " "
             }
-            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next recipe by crafting " + s + "</i></p>");
+            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next by crafting " + s + "</i></p>");
         }
     }
     $RecipeResults.append(table);
@@ -684,6 +676,7 @@ function progressFinish(type,name) {
         if ("Leather" in resourceDist) player["Leather"] += resourceDist["Leather"];
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
+        console.log(player["Ore"]);
     }
 }
 

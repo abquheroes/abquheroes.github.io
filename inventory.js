@@ -102,3 +102,15 @@ $sellAll.click((e) => {
     $sellTen.removeClass("itemSellPrefSelected");
     $sellAll.addClass("itemSellPrefSelected");
 });
+
+function itemRefund(name) {
+    const item = nameToItem(name);
+    for (const [name,amt] of Object.entries(item.cost)) {
+        console.log(name,amt);
+        console.log(resources);
+        if (resources.includes(name)) {
+            player[name] += amt
+        }
+        else addToInventory(name,amt);
+    }
+}

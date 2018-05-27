@@ -1631,6 +1631,7 @@ abquPendant.requires = {
 blueprints.push(abquPendant)
 
 const imageReference = {
+    "Mastery" : '<img src="PixelItem/Star4.png" alt="Mastered!">',
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',
     "Ore" : '<img src="PixelItem/Ore.png">',
