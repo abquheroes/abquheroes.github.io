@@ -532,10 +532,12 @@
                         <div class="dialog_body">
                             <p class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
                             <div id="pfLoginRegister">
-                                <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"></div>
-                                <div id="pfPassword"><h2>Password</h2> <input type="password" name="password" id="password"></div>
-                                <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
-                                <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
+                                <form>
+                                    <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"autocomplete="email"></div>
+                                    <div id="pfPassword"><h2>Password</h2> <input type="password" name="password" id="password" autocomplete="current-password"></div>
+                                    <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
+                                    <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
+                                </form>
                             </div>
                             <div id="pfImportExport">
                                 <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">

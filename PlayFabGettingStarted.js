@@ -132,7 +132,8 @@ function loadFromCloud() {
     console.log(saveFile);
     if (saveFile) {
         localStorage.setItem('gameSave3', JSON.stringify(saveFile));
-        location.reload();
+        location.href = 'index.html#closeDialog';
+        location.reload(true);
     }
 }
 

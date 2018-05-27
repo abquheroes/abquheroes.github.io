@@ -79,6 +79,8 @@ function initialize() {
     else if (player.sellPref === 10) $("#sell10").addClass("itemSellPrefSelected");
     else if (player.sellPref === 100) $("#sellAll").addClass("itemSellPrefSelected");
     $("#completeTime").hide();
+    $("#pfImportExport").hide();
+    $("#loadSure").hide();
 }
 
 
