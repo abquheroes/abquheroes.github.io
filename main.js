@@ -762,8 +762,6 @@ function refreshProgress() {
     player.percent = (overallCt/overallMaxCt*100).toFixed(1);
     if (player.percent >= 100 && player.completeTime === 0) player.completeTime = Date.now();
     $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
-    //achievements
-
 }
 
 function starMe(name) {
