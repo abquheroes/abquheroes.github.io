@@ -280,6 +280,8 @@ const $inventory = $('#inventory');
 const $actionSlots = $('#ActionSlots');
 const $jobList = $('#joblist');
 
+const $achievements = $("#achievements");
+
 initializeInventory();
 loadGame();
 initialize();
@@ -450,6 +452,7 @@ function unhideStuff() {
                 $("#unlockDialog").dialog("open");
                 flags[name] = true;
             }
+            starMe(nameToUnlock[name]);
             $("#"+name).removeClass("none");
             hidden[name] = false;
         }
@@ -714,7 +717,7 @@ function canSee(name) {
     if (name === "recipeGauntlet") return itemCount["Punching Gloves"] >= 3 && itemCount["Fishing Knife"] >= 3;
     if (name === "recipeHelmet") return itemCount["Club Knife"] >= 3 && itemCount["Like Potion"] >= 3;
     if (name === "recipeShoe") return itemCount["Night Club"] >= 3 && itemCount["Loving Gloves"] >= 3;
-    if (name === "recipeWard") return itemCount["Vengance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
+    if (name === "recipeWard") return itemCount["Vengeance"] >= 3 && itemCount["Regular Helmet"] >= 3 &&  itemCount["Wind Wand"] >= 3;
     if (name === "recipeShield") return itemCount["Slothslayer"] >= 3 && itemCount["Bardic Galoshes"] >= 3 &&  itemCount["Plain Gauntlets"] >= 3;
     if (name === "recipeCloak") return itemCount["Black Hat"] >= 3 && itemCount["Druidic Boots"] >= 3 &&  itemCount["Rain Wand"] >= 3;
     if (name === "recipeArmor") return itemCount["Mega Helmet"] >= 3 && itemCount["Green Bay Beret"] >= 3 &&  itemCount["Challenge Gauntlets"] >= 3;
@@ -755,6 +758,12 @@ function refreshProgress() {
     player.percent = (overallCt/overallMaxCt*100).toFixed(1);
     if (player.percent >= 100 && player.completeTime === 0) player.completeTime = Date.now();
     $('#pbOverall').css('width', overallCt/overallMaxCt*100+"%");
+    //achievements
+
+}
+
+function starMe(name) {
+    $("#"+name+"Star").attr("src","images/star.png");
 }
 
 function getCap(res) {
