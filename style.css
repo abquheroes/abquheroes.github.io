@@ -831,15 +831,12 @@ input#importSaveText {
     margin: 0 2px;
 }
 
-.Worker .itemSac .itemToSacDiv:nth-of-type(5) {
-    margin-top: 10px;
-}
-
 .Worker .itemToSac {
     display: inline-block;
     text-align: center;
     background-color: var(--theme-bg-3);
     border: 1px solid var(--theme-border);
+    margin-bottom: 5px;
     padding: 10px;
     font-size: .9em;
     width: 100%;
