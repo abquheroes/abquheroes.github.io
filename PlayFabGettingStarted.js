@@ -50,7 +50,6 @@ $pfloadNo.click(() => {
 })
 
 const validateCallback = function (result, error) {
-    console.log(result);
     if (error !== null) {
         $pfLoginRegister.show();
         $pfImportExport.hide();
@@ -75,13 +74,11 @@ const registerCallback = function (result, error) {
     if (result !== null) {
         loginAcct();
     } else if (error !== null) {
-        console.log(PlayFab.GenerateErrorReport(error));
         $pfStatus.html(PlayFab.GenerateErrorReport(error));
     }
 }
 
 function loginAcct(){
-    console.log("login attempt");
     const loginRequest = {
         TitleId: PlayFab.settings.titleId,
         Email : $("#email").val(),
@@ -91,10 +88,8 @@ function loginAcct(){
 }
 
 const LoginCallback = function (result, error) {
-    console.log(result);
     if (result !== null) {
         sessionID = result.data.SessionTicket;
-        console.log(sessionID);
         $pfLoginRegister.hide();
         $pfImportExport.show();
         getSaveFromCloud();       
@@ -129,7 +124,6 @@ function saveCallback(result,error) {
 
 function loadFromCloud() {
     getSaveFromCloud()
-    console.log(saveFile);
     if (saveFile) {
         localStorage.setItem('gameSave3', JSON.stringify(saveFile));
         location.href = 'index.html#closeDialog';
@@ -149,7 +143,6 @@ function loadCallback(result,error) {
         $pfStatusSave.html(PlayFab.GenerateErrorReport(error));        
     }
     if (result) {
-        console.log(result.data.Data);
         if (result.data.Data !== null) {
             saveFile = JSON.parse(pako.ungzip(result.data.Data.savestring.Value,{ to: 'string' }));
             const date = saveFile.playerSave.lastSave;

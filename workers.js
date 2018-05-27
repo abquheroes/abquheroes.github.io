@@ -811,7 +811,7 @@ function sacrificeCheck(name) {
     const lvl = workerProgress[name];
     for (const [item,amt] of Object.entries(worker.lvlreq[lvl])) {
         const slot = name+"_"+lvl+"_"+item;
-        if (workerSacProgress[slot] < amt) return false;
+        if (amt - workerSacProgress[slot] >= 1) return false;
     }
     return true;
 }
