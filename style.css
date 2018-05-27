@@ -455,7 +455,7 @@ select {
     position: relative;
     text-align: center;
     flex-grow: 1;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--theme-bg);
     border-bottom: 1px solid var(--theme-border);
 }
