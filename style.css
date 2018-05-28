@@ -394,12 +394,13 @@ select {
 #ActionSlots {
     padding: 10px 20px 0;
     width: 100%;
+    max-width: 1200px;
 }
 
 #ASTable {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -670,9 +671,9 @@ input#importSaveText {
 .recipeHeadName, .recipeName {
     display: flex;
     align-items: center;
-    flex-grow: 2;
+    width: 100%;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 300px;
     padding-left: 10px;
 }
 
@@ -709,7 +710,7 @@ input#importSaveText {
 
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
     padding: 0 10px;
-    flex-grow: 1;
+    width: 100%;
     min-width: 100px;
     max-width: 200px;
 }
