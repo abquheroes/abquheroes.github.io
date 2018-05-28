@@ -394,12 +394,13 @@ select {
 #ActionSlots {
     padding: 10px 20px 0;
     width: 100%;
+    max-width: 1200px;
 }
 
 #ASTable {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
