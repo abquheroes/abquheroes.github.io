@@ -254,7 +254,6 @@ function refreshActionSlots(hardRefresh) {
                 let s = ""
                 for (const [name,value] of Object.entries(resourcesProduced)) {
                     s += imageReference[name]+" "+value;
-                    console.log(value);
                 }
                 $asParts[i].name.removeClass("hidden").html(name);
                 $asParts[i].name.append("</br>"+ s);

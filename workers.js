@@ -10,7 +10,7 @@ const workers = [];
 
 const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
-    "Ore" : [0,20,24,26,28,30,32,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
+    "Ore" : [0,20,24,26,28,30,32,34,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
 }
 oren.lvlreq = [
     {//unlock
@@ -764,9 +764,11 @@ function refreshWorkers() {
 function getJobValue(name) {
     const workerObj = nameToWorker(name);
     const lvl = workerProgress[name];
+    console.log(lvl);
     const toexport = {}
     for (const [resource, amt] of Object.entries(workerObj.produces)) {
-        toexport[resource] =amt[lvl];
+        toexport[resource] = amt[lvl];
+        console.log(name,amt);
     };
     return toexport;
 }
