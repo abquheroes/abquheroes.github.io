@@ -1130,7 +1130,7 @@ burnUnitWard.cost = {
     "Ore":89,
     "Wood":165,
     "Herb":425,
-    "Hate Wand":3,
+    "Hate Wand":2,
 }
 burnUnitWard.requires = {
     "Maternity Ward" : 100,
@@ -1248,7 +1248,7 @@ truthTellerShield.cost = {
     "Ore":145,
     "Wood":283,
     "Leather":283,
-    "Wrath":3,
+    "Wrath":2,
 }
 truthTellerShield.requires = {
     "Trustworthy Kite" : 100,
@@ -1366,7 +1366,7 @@ deathcallerCloak.cost = {
     "Wood":104,
     "Leather":652,
     "Herb":269,
-    "All Folks Hat":3,
+    "All Folks Hat":2,
 }
 deathcallerCloak.requires = {
     "Lifegiver Cloak" : 100,
@@ -1485,7 +1485,7 @@ heavyMetalArmor.cost = {
     "Ore":255,
     "Leather":434,
     "Herb":134,
-    "Coal Helmut":3,
+    "Coal Helmut":2,
 }
 heavyMetalArmor.requires = {
     "Serpent Mail" : 100,
@@ -1580,8 +1580,8 @@ katiePendant.cost = {
     "Wood":211,
     "Leather":217,
     "Herb":242,
-    "Druidic Boots":2,
-    "Burn Unit":2,
+    "Druidic Boots":3,
+    "Burn Unit":1,
 }
 katiePendant.requires = {
     "Ignis Pullum" : 100,
@@ -1595,7 +1595,7 @@ richardPendant.cost = {
     "Leather":282,
     "Herb":327,
     "Jay Walkers":1,
-    "Heavy Metal Armor":2,
+    "Heavy Metal Armor":1,
 }
 richardPendant.requires = {
     "Folium Strennus" : 100,
@@ -1609,7 +1609,7 @@ akersonPendant.cost = {
     "Leather":367,
     "Herb":441,
     "Master Loafers":1,
-    "Truth Teller":2,
+    "Truth Teller":1,
 }
 akersonPendant.requires = {
     "Magicae Criceta" : 100,
@@ -1622,8 +1622,8 @@ abquPendant.cost = {
     "Wood":579,
     "Leather":477,
     "Herb":596,
-    "Bardic Galoshes":2,
-    "Deathcaller Cloak":2,
+    "Bardic Galoshes":3,
+    "Deathcaller Cloak":1,
 }
 abquPendant.requires = {
     "Inpulsa Sciurus" : 100,
