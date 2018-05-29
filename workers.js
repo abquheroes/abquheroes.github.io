@@ -2,36 +2,15 @@
 
 function Worker(name,baseTime,description) {
     this.name = name;
-    this.image = imageReference[name];
     this.craftTime = baseTime; //this is in miliseconds
     this.description = description;
-    this.lvl = 0;
-    this.multiplier = [1,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.5,2.6,2.7,2.8,2.9,3,3.1,3.2,3.3,3.4,4,4.1,4.2,4.3,4.4,5];
-}
-
-Worker.prototype.production = function() {
-    return this.baseValue*this.multiplier[this.lvl];
-}
-
-Worker.prototype.getCost = () => {
-    return this.cost[this.lvl+1];
-}
-
-function getProduction(type) {
-    let sum = 0;
-    for (let i=0;i<workers.length;i++) {
-        if (workers[i].produces === type) {
-            sum += workers[i].production();
-        }
-    }
-    return sum;
 }
 
 const workers = [];
 
 const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
-    "Ore" : 20,
+    "Ore" : [0,20,24,26,28,30,32,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
 }
 oren.lvlreq = [
     {//unlock
@@ -200,7 +179,7 @@ workers.push(oren);
 
 const eryn = new Worker("Eryn",18000,"Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.");
 eryn.produces = {
-    "Wood" : 28,
+    "Wood" : [0,31,34,36,92,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
 }
 eryn.lvlreq = [
     {//unlock
@@ -370,7 +349,7 @@ workers.push(eryn);
 
 const lakur = new Worker("Lakur",12000,"Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.");
 lakur.produces = {
-    "Leather" : 45,
+    "Leather" : [0,50,54,59,63,68,72,77,81,86,113,117,122,126,131,135,140,144,149,153,180,185,189,194,198,225],
 }
 lakur.lvlreq = [
     {//unlock
@@ -540,7 +519,7 @@ workers.push(lakur);
 
 const herbie = new Worker("Herbie",30000,"Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.");
 herbie.produces = {
-    "Herb" : 40,
+    "Herb" : [0,44,48,52,56,60,64,68,72,76,100,104,108,112,116,120,124,128,132,136,160,164,168,172,176,200],
 }
 herbie.lvlreq = [
     {//unlock
@@ -787,7 +766,7 @@ function getJobValue(name) {
     const lvl = workerProgress[name];
     const toexport = {}
     for (const [resource, amt] of Object.entries(workerObj.produces)) {
-        toexport[resource] = parseInt((amt*workerObj.multiplier[lvl]).toFixed(2));
+        toexport[resource] =amt[lvl];
     };
     return toexport;
 }
@@ -797,6 +776,8 @@ $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();
     purchaseWorker($(e.target).attr("data-value"));
     refreshWorkers();
+    refreshActionSlots(true);
+    refreshUpgrades();
 });
 
 function purchaseWorker(name) {
