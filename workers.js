@@ -179,7 +179,7 @@ workers.push(oren);
 
 const eryn = new Worker("Eryn",18000,"Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.");
 eryn.produces = {
-    "Wood" : [0,31,34,36,92,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
+    "Wood" : [0,31,34,36,39,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
 }
 eryn.lvlreq = [
     {//unlock
@@ -764,11 +764,9 @@ function refreshWorkers() {
 function getJobValue(name) {
     const workerObj = nameToWorker(name);
     const lvl = workerProgress[name];
-    console.log(lvl);
     const toexport = {}
     for (const [resource, amt] of Object.entries(workerObj.produces)) {
         toexport[resource] = amt[lvl];
-        console.log(name,amt);
     };
     return toexport;
 }
