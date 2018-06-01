@@ -56,10 +56,20 @@ nav {
     max-width: 700px;
 }
 
+.version-heading {
+    margin: 10px auto;
+    padding-bottom: 10px;
+    font-weight: normal;
+    border-bottom: 1px solid var(--theme-border-2);
+    width: 100%;
+    max-width: 150px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .user-card, .player-card {
