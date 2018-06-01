@@ -93,7 +93,7 @@ function refreshUpgrades() {
             d3.append(s);
         }
         if (lvl === 0) d3.addClass("hidden");
-        const d4 = $('<div/>').addClass('upgradeCost').html("Cost: "+upgrades[i].cost[lvl]+"&nbsp;"+imageReference["Gold"]);
+        const d4 = $('<div/>').addClass('upgradeCost').html("Cost:&nbsp;&nbsp;&nbsp;"+imageReference["Gold"]+"&nbsp;&nbsp;"+formatToUnits(upgrades[i].cost[lvl],2));
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
         if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable");
         if (lvl === upgrades[i].value.length-1) {

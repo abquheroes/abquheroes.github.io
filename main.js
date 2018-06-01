@@ -422,10 +422,20 @@ function refreshResources() {
         }
     }
     if (player.money !== displayedResources["Money"]) {
-        $moneyAmt.text(Math.floor(player.money))
+        $moneyAmt.text(formatToUnits(player.money, 2));
         displayedResources["Money"] = player.money;
     }
 }
+
+function formatToUnits(number, precision) {
+    const abbrev = ['', ' K', ' M', ' B', ' T'];
+    const unrangifiedOrder = Math.floor(Math.log10(Math.abs(number)) / 3)
+    const order = Math.max(0, Math.min(unrangifiedOrder, abbrev.length -1 ))
+    const suffix = abbrev[order];
+    
+    return parseFloat((number / Math.pow(10, order * 3)).toFixed(precision)) + suffix;
+}
+
 
 const nameToUnlock = {
     "recipeMace" : "Mace",

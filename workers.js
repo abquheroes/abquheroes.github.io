@@ -732,7 +732,7 @@ function refreshWorkers() {
                 if (adjAmt > 0) {
                     craftsLeft = true;
                     const d5a = $('<div/>').addClass("itemToSacDiv");
-                    const d5b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("data-value",adjAmt).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
+                    const d5b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("data-value",adjAmt).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+formatToUnits(adjAmt,2));
                     d5a.append(d5b);
                     d5.append(d5a);
                 }
