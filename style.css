@@ -131,7 +131,7 @@ body{
     margin-top: 0;
 }
 
-#side-content .resource {
+.resource {
     position: relative;
     display: flex;
     align-items: center;
