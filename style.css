@@ -120,13 +120,11 @@ body{
 }
 
 #side-content .heading {
-    margin: 10px -20px;
     padding: 5px 10px;
     font-weight: bold;
+    text-align: center;
     color: var(--theme-text);
-    background-color: var(--theme-bg-2);
-    border-top: 1px solid var(--theme-border);
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 2px solid var(--theme-border);
 }
 
 #side-content .heading:first-of-type {
@@ -135,6 +133,13 @@ body{
 
 #side-content .resource {
     position: relative;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    border-radius: 25px;
 }
 
 #right-side-content {
@@ -1163,23 +1168,25 @@ span#copyme {
 }
 
 .resource.tooltip:hover:before {
-    margin-top: -9px;
+    margin-top: -18px;
     right: unset;
-    left: 0;
+    left: unset;
     margin-right: 0;
 }
 
 .resource.tooltip:hover:after {
     top: unset;
     bottom: 130%;
-    left: -10px;
-    right: unset;
+    left: 0;
+    right: 0;
+    width: 50px;
     margin-top: 0;
     padding: 5px 10px;
 }
 
 .workerLvl.tooltip:hover:before {
     margin-top: -28px;
+    margin-right: -8px;
 }
 
 .workerLvl.tooltip:hover:after {
@@ -1230,6 +1237,18 @@ footer a[href*="discord.gg"]:hover {
     background-color: #7289DA;
     color: #fff;
 }
+
+/* Firefox-Specific Fixes */
+@-moz-document url-prefix() { 
+    .resource.tooltip:hover:before {
+        margin-top: -37px;
+    }
+
+    .workerLvl.tooltip:hover::before {
+        margin-top: -53px;
+    }
+  }
+/**/
 
 /* Playfab Dialog */
 
@@ -1519,6 +1538,10 @@ a.workerDialog {
     }
 
     #side-content>div {
+        margin: 0 5px;
+    }
+
+    #side-content .resource {
         margin: 0 5px;
     }
 
