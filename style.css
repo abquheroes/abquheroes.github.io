@@ -1238,6 +1238,18 @@ footer a[href*="discord.gg"]:hover {
     color: #fff;
 }
 
+/* Firefox-Specific Fixes */
+@-moz-document url-prefix() { 
+    .resource.tooltip:hover:before {
+        margin-top: -37px;
+    }
+
+    .workerLvl.tooltip:hover::before {
+        margin-top: -53px;
+    }
+  }
+/**/
+
 /* Playfab Dialog */
 
 #pfLoginRegister>form>div>h2 {
