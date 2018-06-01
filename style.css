@@ -1545,6 +1545,10 @@ a.workerDialog {
         margin: 0 5px;
     }
 
+    #side-content .resource>span {
+        white-space: nowrap;
+    }
+
     #herbResource {
         position: relative;
     }
