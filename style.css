@@ -1179,7 +1179,7 @@ span#copyme {
     bottom: 130%;
     left: 0;
     right: 0;
-    width: fit-content;
+    width: 50px;
     margin-top: 0;
     padding: 5px 10px;
 }
