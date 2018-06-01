@@ -1168,17 +1168,18 @@ span#copyme {
 }
 
 .resource.tooltip:hover:before {
-    margin-top: -9px;
+    margin-top: -18px;
     right: unset;
-    left: 0;
+    left: unset;
     margin-right: 0;
 }
 
 .resource.tooltip:hover:after {
     top: unset;
     bottom: 130%;
-    left: -10px;
-    right: unset;
+    left: 0;
+    right: 0;
+    width: fit-content;
     margin-top: 0;
     padding: 5px 10px;
 }
