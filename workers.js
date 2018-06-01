@@ -10,7 +10,7 @@ const workers = [];
 
 const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
 oren.produces = {
-    "Ore" : [0,20,24,26,28,30,32,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
+    "Ore" : [0,20,24,26,28,30,32,34,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
 }
 oren.lvlreq = [
     {//unlock
@@ -179,7 +179,7 @@ workers.push(oren);
 
 const eryn = new Worker("Eryn",18000,"Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.");
 eryn.produces = {
-    "Wood" : [0,31,34,36,92,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
+    "Wood" : [0,31,34,36,39,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
 }
 eryn.lvlreq = [
     {//unlock
@@ -732,7 +732,7 @@ function refreshWorkers() {
                 if (adjAmt > 0) {
                     craftsLeft = true;
                     const d5a = $('<div/>').addClass("itemToSacDiv");
-                    const d5b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("data-value",adjAmt).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+adjAmt);
+                    const d5b = $('<a/>').addClass("itemToSac tooltip").attr("href",slot).attr("item",itemName).attr("data-value",adjAmt).attr("aria-label",itemName).html(imageReference[itemName]+"<br>"+formatToUnits(adjAmt,2));
                     d5a.append(d5b);
                     d5.append(d5a);
                 }
@@ -766,7 +766,7 @@ function getJobValue(name) {
     const lvl = workerProgress[name];
     const toexport = {}
     for (const [resource, amt] of Object.entries(workerObj.produces)) {
-        toexport[resource] =amt[lvl];
+        toexport[resource] = amt[lvl];
     };
     return toexport;
 }
