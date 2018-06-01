@@ -120,13 +120,11 @@ body{
 }
 
 #side-content .heading {
-    margin: 10px -20px;
     padding: 5px 10px;
     font-weight: bold;
+    text-align: center;
     color: var(--theme-text);
-    background-color: var(--theme-bg-2);
-    border-top: 1px solid var(--theme-border);
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 2px solid var(--theme-border);
 }
 
 #side-content .heading:first-of-type {
@@ -135,6 +133,13 @@ body{
 
 #side-content .resource {
     position: relative;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: var(--theme-bg-3);
+    border: 1px solid var(--theme-border);
+    border-radius: 25px;
 }
 
 #right-side-content {
@@ -1520,6 +1525,10 @@ a.workerDialog {
     }
 
     #side-content>div {
+        margin: 0 5px;
+    }
+
+    #side-content .resource {
         margin: 0 5px;
     }
 
