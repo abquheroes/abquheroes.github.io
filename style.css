@@ -1180,6 +1180,7 @@ span#copyme {
 
 .workerLvl.tooltip:hover:before {
     margin-top: -28px;
+    margin-right: -8px;
 }
 
 .workerLvl.tooltip:hover:after {
