@@ -95,7 +95,7 @@ function refreshUpgrades() {
         if (lvl === 0) d3.addClass("hidden");
         const d4 = $('<div/>').addClass('upgradeCost').html("Cost:&nbsp;&nbsp;&nbsp;"+imageReference["Gold"]+"&nbsp;&nbsp;"+formatToUnits(upgrades[i].cost[lvl],2));
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
-        if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable");
+        if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable tooltip").attr("aria-label", "You do not have enough Gold to purchase this upgrade.");
         if (lvl === upgrades[i].value.length-1) {
             d4.addClass("hidden");
             b1.addClass("hidden");

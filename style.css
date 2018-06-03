@@ -1200,7 +1200,7 @@ span#copyme {
     z-index: 999;
 }
 
-.BuyWorker.tooltip:hover:after {
+.BuyWorker.tooltip:hover:after, .BuyUpgrade.tooltip:hover:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -1360,13 +1360,13 @@ footer a[href*="discord.gg"]:hover {
 /* Dialogs */
 
 .dialog {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.8);
-    opacity: 0;
     pointer-events: none;
     transition: all 0.2s linear;
     z-index: 9999;
@@ -1391,8 +1391,9 @@ a.workerDialog {
 }
 
 .dialog:target {
-    opacity: 1;
+    display: block;
     pointer-events: auto;
+    animation: 0.2s fade-in;
 }
 
 .dialog_content {
