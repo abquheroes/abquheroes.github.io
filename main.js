@@ -86,6 +86,8 @@ function initialize() {
     for (let i=0;i<newMax.length;i++) {
         upgradeProgress[newMax[i]] = Math.min(upgradeProgress[newMax[i]],nameToUpgrade(newMax[i]).value.length-1)
     }
+    //fix for Vengance
+    if ("Vengance" in itemCount) delete itemCount["Vengance"];
 }
 
 

@@ -42,10 +42,12 @@ const devtools = {
         }
         console.log(results);
         let profit = 0;
+        let negative = false;
         for (const [thing,amt] of Object.entries(results)) {
-            if (amt < 0) return "negative stream detected, no gps available";
+            if (amt < 0) negative = true;
             if (!resources.includes(thing)) profit += amt*nameToItem(thing).value;
         }
-        return "gold per second: " + profit.toFixed(5);
+        if (negative) return "Negatove flow, but wtf here's it anyway " + profit.toFixed(3);
+        return "gold per second: " + profit.toFixed(3);
     }
 }
