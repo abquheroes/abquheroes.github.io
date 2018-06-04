@@ -27,17 +27,17 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
-    <main id="content" role="main">
+    <main id="content">
         <section class="game-content">
             <div class="status">
                 <div id="game-logo"><h1>Abqu Heroes</h1></div>
                 <div id="side-content">
-                    <p class="heading">Gold &amp; Resources</p>
-                    <div id="goldResource" class="resource tooltip" aria-label="Gold"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
-                    <div id="oreResource" class="resource tooltip" aria-label="Ore"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
-                    <div id="woodResource" class="none resource tooltip" aria-label="Wood"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
-                    <div id="leatherResource" class="none resource tooltip" aria-label="Leather"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png" alt="Leather">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
-                    <div id="herbResource" class="none resource tooltip" aria-label="Herbs"><img src="PixelItem/Consume/Herb5.png" alt="Herbs">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
+                    <p id="comptitle1" class="heading">Gold &amp; Resources</p>
+                    <div id="goldResource" class="resource tooltip" aria-label="Gold" aria-describedby="moneyAmt"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
+                    <div id="oreResource" class="resource tooltip" aria-label="Ore" aria-describedby="oreAmt"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
+                    <div id="woodResource" class="none resource tooltip" aria-label="Wood" aria-describedby="woodAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
+                    <div id="leatherResource" class="none resource tooltip" aria-label="Leather" aria-describedby="leatherAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png" alt="Leather">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
+                    <div id="herbResource" class="none resource tooltip" aria-label="Herbs" aria-describedby="herbAmt"><img src="PixelItem/Consume/Herb5.png" alt="Herbs">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
                 </div>
 
                 <div id="theme-selection">
@@ -47,16 +47,16 @@
 
             </div>
 
-            <div class="game-wrapper">
+            <div class="game-wrapper" role="main">
                 <!-- Dialogs -->
-                <div id="dialogOren" class="dialog" role="dialog">
+                <div id="dialogOren" class="dialog" role="dialog" aria-labelledby="titleOren" aria-describedby="descOren">
                     <div class="dialog_content">
                         <div class="dialog_header">
                             <a href="#closeDialog" class="dialog_close">x</a>
-                            <h2 class="dialog_title">About Oren</h2>
+                            <h2 id="titleOren" class="dialog_title">About Oren</h2>
                         </div>
                         <div class="dialog_body">
-                            <p class="dialog_description">Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.</p>
+                            <p id="descOren" class="dialog_description">Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.</p>
                             <div id="flex-table">
                                 <div class="table-row header-row">
                                     <div class="header">Level</div>
@@ -166,14 +166,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="dialogEryn" class="dialog" role="dialog">
+                <div id="dialogEryn" class="dialog" role="dialog" aria-labelledby="titleEryn" aria-describedby="descEryn">
                         <div class="dialog_content">
                             <div class="dialog_header">
                                 <a href="#closeDialog" class="dialog_close">x</a>
-                                <h2 class="dialog_title">About Eryn</h2>
+                                <h2 id="titleEryn" class="dialog_title">About Eryn</h2>
                             </div>
                             <div class="dialog_body">
-                                <p class="dialog_description">Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.</p>
+                                <p id="descEryn" class="dialog_description">Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.</p>
                                 <div id="flex-table">
                                     <div class="table-row header-row">
                                         <div class="header">Level</div>
@@ -283,14 +283,14 @@
                             </div>
                         </div>
                 </div>
-                <div id="dialogLakur" class="dialog" role="dialog">
+                <div id="dialogLakur" class="dialog" role="dialog" aria-labelledby="titrleLakur" aria-describedby="descLakur">
                         <div class="dialog_content">
                             <div class="dialog_header">
                                 <a href="#closeDialog" class="dialog_close">x</a>
-                                <h2 class="dialog_title">About Lakur</h2>
+                                <h2 id="titleLakur" class="dialog_title">About Lakur</h2>
                             </div>
                             <div class="dialog_body">
-                                <p class="dialog_description">Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.</p>
+                                <p id="descLakur" class="dialog_description">Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.</p>
                                 <div id="flex-table">
                                     <div class="table-row header-row">
                                         <div class="header">Level</div>
@@ -400,14 +400,14 @@
                             </div>
                         </div>
                 </div>
-                <div id="dialogHerbie" class="dialog" role="dialog">
+                <div id="dialogHerbie" class="dialog" role="dialog" aria-labelledby="titleHerbie" aria-describedby="descHerbie">
                         <div class="dialog_content">
                             <div class="dialog_header">
                                 <a href="#closeDialog" class="dialog_close">x</a>
-                                <h2 class="dialog_title">About Herbie</h2>
+                                <h2 id="titleHerbie" class="dialog_title">About Herbie</h2>
                             </div>
                             <div class="dialog_body">
-                                <p class="dialog_description">Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.</p>
+                                <p id="descHerbie" class="dialog_description">Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.</p>
                                 <div id="flex-table">
                                     <div class="table-row header-row">
                                         <div class="header">Level</div>
@@ -517,14 +517,14 @@
                             </div>
                         </div>
                 </div>
-                <div id="dialogPlayfab" class="dialog" role="dialog">
+                <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
                     <div class="dialog_content">
                         <div class="dialog_header">
                             <a href="#closeDialog" class="dialog_close">x</a>
-                            <h2 class="dialog_title">Playfab</h2>
+                            <h2 id="titlePlayfab" class="dialog_title">Playfab</h2>
                         </div>
                         <div class="dialog_body">
-                            <p class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
+                            <p id="descPlayfab" class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
                             <div id="pfLoginRegister">
                                 <form>
                                     <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"autocomplete="email"></div>
@@ -677,7 +677,7 @@
                         </div>
                     </div>
                 </div>
-                <footer>
+                <footer role="contentinfo">
                     <div id="bottom-left">
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
@@ -693,8 +693,8 @@
                 </div>
             </div>
 
-            <div id='right-side-content'>
-                <h2 class="heading">Inventory</h2>
+            <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
+                <h2 id="comptitle2" class="heading">Inventory</h2>
                 <div id="sellPref"><div id="sell1">1x</div> <div id="sell10">10x</div> <div id="sellAll">All</div></div>
                 <div id="inventory"></div>
             </div>
