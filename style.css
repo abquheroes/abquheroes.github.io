@@ -739,7 +739,7 @@ input#importSaveText {
 }
 
 #workerList, #upgradelist, #progresslist {
-    padding: 20px;
+    padding: 20px 10px 20px 20px;
 }
 
 .Worker, .Upgrade {
@@ -1226,7 +1226,6 @@ span#copyme {
     right: -10%;
     bottom: 115%;
 }
-
 
 #version-scale {
     display: inline-block;
