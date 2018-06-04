@@ -1227,7 +1227,6 @@ span#copyme {
     bottom: 115%;
 }
 
-
 #version-scale {
     display: inline-block;
     padding: 0 15px;
@@ -1246,6 +1245,10 @@ footer a[href*="discord.gg"]:hover {
 
     .workerLvl.tooltip:hover::before {
         margin-top: -53px;
+    }
+
+    #workerList, #upgradelist, #progresslist {
+        padding: 20px 0px 20px 20px;
     }
   }
 /**/
