@@ -61,7 +61,7 @@ function lightTheme() {
 
     lightButton.style.display = "none";
     darkButton.style.display = "block";
-}
+};
 
 function darkTheme() {
     root.style.setProperty('--theme-bg', '#202020');
@@ -80,7 +80,72 @@ function darkTheme() {
 
     darkButton.style.display = "none";
     lightButton.style.display = "block";
-}
+};
+
+// View Selection for Compact and Comfortable
+
+const head = document.getElementsByTagName("head");
+const compactButton = document.querySelector(".cp-btn");
+const comfortButton = document.querySelector(".cf-btn");
+
+compactButton.addEventListener("click", changeView);
+comfortButton.addEventListener("click", changeView);
+
+let viewIndex = findView();
+
+function findView() {
+    if (localStorage.getItem("viewChoice") == null) {
+        return 1;
+    }
+    else {
+        return localStorage.getItem("viewChoice");
+    }
+};
+
+loadView();
+
+function changeView() {
+    if (viewIndex == 0) {
+        comfortView();
+
+        viewIndex = 1;
+        localStorage.setItem('viewChoice', viewIndex);
+        console.log("Switched to Comfortable View");
+    } else if (viewIndex == 1) {
+        compactView();
+
+        viewIndex = 0;
+        localStorage.setItem('viewChoice', viewIndex);
+        console.log("Switched to Compact View");
+    }
+};
+
+function loadView() {
+    if (viewIndex == 1) {
+        comfortView();
+    } else if (viewIndex == 0) {
+        compactView();
+    }
+};
+
+function comfortView() {
+    let compactCSS = document.querySelector("#injectedCSS");
+    if (compactCSS == null) {
+
+    } else {
+        compactCSS.remove();
+    }
+    
+    compactButton.style.display = "block";
+    comfortButton.style.display = "none";
+};
+
+function compactView() {
+    head[0].insertAdjacentHTML('afterend', '<link id="injectedCSS" href="compact.css" rel="stylesheet">')
+    
+    compactButton.style.display = "none";
+    comfortButton.style.display = "block";
+};
 
 // Tab Selection for Recipes List
 

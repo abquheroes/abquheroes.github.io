@@ -42,25 +42,21 @@
     --theme-scheme: linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%);
 }
 
-.lm-btn, .dm-btn {
+.lm-btn, .dm-btn, .cp-btn, .cf-btn {
+    margin-bottom: 5px;
+    padding: 7px 10px;
     width: 100%;
-    height: 50px;
     border: none;
-    border-top: 1px solid var(--theme-border);
+    border: 1px solid var(--theme-border);
+    border-radius: 25px;
     background-color: var(--theme-bg);
     color: var(--theme-text);
-    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
 }
 
-.lm-btn:hover, .dm-btn:hover {
+.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover {
     background-color: var(--theme-bg-2);
-}
-
-.lm-btn {
-    display: none;
 }
 
 /**/
@@ -72,7 +68,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -1504,11 +1500,16 @@ a.workerDialog {
     #theme-selection {
         position: absolute;
         top: 0;
-        right: 15px;
+        right: 0;
     }
 
     .lm-btn, .dm-btn {
-        border-top: none;
+        border: none;
+        height: 50px;
+    }
+
+    #view-selection {
+        display: none;
     }
 
     #right-side-content {
