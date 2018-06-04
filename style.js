@@ -141,7 +141,7 @@ function comfortView() {
 };
 
 function compactView() {
-    head[0].insertAdjacentHTML('afterend', '<link id="injectedCSS" href="compact.css" rel="stylesheet">')
+    head[0].insertAdjacentHTML('beforeend', '<link id="injectedCSS" href="compact.css" rel="stylesheet">')
     
     compactButton.style.display = "none";
     comfortButton.style.display = "block";
