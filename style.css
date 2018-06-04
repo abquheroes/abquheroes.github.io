@@ -740,6 +740,7 @@ input#importSaveText {
 
 #workerList, #upgradelist, #progresslist {
     padding: 20px;
+}
 
 .Worker, .Upgrade {
     display: flex;
