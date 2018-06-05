@@ -179,11 +179,11 @@ $gameLogo.click((e) => {
 
 // Status Container Expand and Collapse
 
-const resourcesHead = document.querySelector("#resources-container .heading");
-const settingsHead = document.querySelector("#settings-container .heading");
+const sideHeadings = document.querySelectorAll("#side-content .heading");
 
-resourcesHead.addEventListener("click", toggleState);
-settingsHead.addEventListener("click", toggleState);
+for (i = 0; i < sideHeadings.length; i++) {
+    sideHeadings[i].addEventListener("click", toggleState);
+};
 
 function toggleState(e) {
     if (e.currentTarget.parentNode.classList.contains("height-collapse")) {
