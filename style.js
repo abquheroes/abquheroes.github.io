@@ -176,3 +176,23 @@ $gameLogo.click((e) => {
         logoNum = 0;
     }
 });
+
+// Status Container Expand and Collapse
+
+const resourcesHead = document.querySelector("#resources-container .heading");
+const settingsHead = document.querySelector("#settings-container .heading");
+
+resourcesHead.addEventListener("click", toggleState);
+settingsHead.addEventListener("click", toggleState);
+
+function toggleState(e) {
+    if (e.currentTarget.parentNode.classList.contains("height-collapse")) {
+        e.currentTarget.parentNode.classList.remove("height-collapse");
+        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
+        arrow[0].classList.remove("arrow-rotate");
+    } else {
+        e.currentTarget.parentNode.classList.add("height-collapse");
+        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
+        arrow[0].classList.add("arrow-rotate");
+    }
+}

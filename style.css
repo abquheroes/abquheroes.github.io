@@ -115,9 +115,35 @@ body{
     padding: 0 20px;
 }
 
+#resources-container, #settings-container {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
+}
+
+.height-collapse {
+    max-height: 40px!important;
+}
+
+.heading-arrow {
+    display: inline-block;
+    position: absolute;
+    margin: 5px 0 0 0;
+    right: 10px;
+    color: var(--theme-text-3);
+    transform: rotateZ(90deg);
+    transition: all 0.3s ease;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.arrow-rotate {
+    transform: rotateZ(270deg);
+}
+
 #side-content .heading {
     padding: 5px 10px;
-    font-weight: bold;
     text-align: center;
     color: var(--theme-text);
     border-bottom: 2px solid var(--theme-border);
@@ -1507,6 +1533,7 @@ a.workerDialog {
 
     .lm-btn, .dm-btn {
         border: none;
+        border-radius: 0;
         height: 50px;
     }
 
@@ -1528,12 +1555,26 @@ a.workerDialog {
     }
 
     #side-content {
+        border-top: 1px solid var(--theme-border);
+        padding: 0;
+        overflow: auto;
+    }
+
+    #resources-container {
         display: flex;
         text-align: center;
         padding: 10px;
-        overflow: auto;
         max-height: 100px;
-        border-top: 1px solid var(--theme-border);
+        overflow: auto;
+        z-index: 99;
+    }
+
+    #settings-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
@@ -1544,7 +1585,7 @@ a.workerDialog {
         display: none;
     }
 
-    #side-content>div {
+    #side-content>div>div {
         margin: 0 5px;
     }
 
@@ -1607,7 +1648,7 @@ a.workerDialog {
         min-width: 250px;
     }
 
-    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
