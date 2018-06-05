@@ -694,6 +694,7 @@ input#importSaveText {
 
 .unlockReq {
     display: block;
+    margin-bottom: 10px;
     padding: 15px 10px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
