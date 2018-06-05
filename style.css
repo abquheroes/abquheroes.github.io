@@ -147,6 +147,7 @@ body{
     text-align: center;
     color: var(--theme-text);
     border-bottom: 2px solid var(--theme-border);
+    cursor: pointer;
 }
 
 #side-content .heading:first-of-type {

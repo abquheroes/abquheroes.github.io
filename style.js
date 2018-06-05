@@ -195,4 +195,4 @@ function toggleState(e) {
         let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
         arrow[0].classList.add("arrow-rotate");
     }
-}
+};
