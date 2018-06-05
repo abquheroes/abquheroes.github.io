@@ -90,8 +90,6 @@ function initialize() {
     if ("Vengance" in itemCount) delete itemCount["Vengance"];
 }
 
-
-
 const workerProgress = {
     "Oren" : 0,
     "Eryn" : 0,
@@ -296,6 +294,7 @@ const $achievements = $("#achievements");
 initializeInventory();
 loadGame();
 initialize();
+initializeRecipes();
 refreshInventory();
 refreshUpgrades();
 populateRecipe(player.currentType);
@@ -386,7 +385,6 @@ function mainLoop() {
             if (Date.now() >= player.actionSlots[i].actionTime + craftTime) {
                 progressFinish(player.actionSlots[i].actionType,player.actionSlots[i].actionName);
                 player.actionSlots[i].actionTime = 0;
-                if (player.actionSlots[i].actionType === "Craft") populateRecipe(player.currentType);
                 pbValue[i] = 0;
             }
             else {
@@ -488,60 +486,31 @@ function actionSlotContainsWorker(name) {
 }
 
 function populateRecipe(type) {
+    type = type || "knife";
     type = type.toLowerCase();
-    $RecipeResults.empty();
-    const table = $('<div/>').addClass('recipeTable');
-    const hrow = $('<div/>').addClass('recipeHeader');
-    const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
-    const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
-    const htd4 = $('<div/>').addClass('recipeHeadCount').html("COUNT");
-    const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    hrow.append(htd1);
-    hrow.append(htd2);
-    hrow.append(htd5);
-    hrow.append(htd3);
-    hrow.append(htd4);
-    table.append(hrow);
-    let bpUnlock = null;
+    let bpUnlock = false;
     for (let i=0;i<blueprints.length;i++) {
+        let recipeName = "#"+blueprints[i].name+"_row";
+        recipeName = recipeName.replace(/\s/g, '');
+        const $recipe = $(recipeName);
         if (blueprints[i].type === type && requirement(blueprints[i])) {
-            const row = $('<div/>').addClass('recipeRow');
-            const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
-            const td1 = $('<div/>').addClass('recipeName');
-            if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
-            td1.append(imageReference[blueprints[i].name]+"&nbsp;");
-            td1.append(name);
-            let s = "";
-            const td2 = $('<div/>').addClass('recipecostdiv');
-            for (const [type, amt] of Object.entries(blueprints[i].cost)) {
-                if (amt > 0) {
-                    const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(imageReference[type] + "&nbsp;" + amt)
-                    td2.append(td2a);
-                }
+            if ($recipe.hasClass("none")) {
+                $recipe.removeClass("none");
             }
-            
-            const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
-            const td4 = $('<div/>').addClass('recipeCount').html(itemCount[blueprints[i].name]);
-            const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
-            row.append(td1);
-            row.append(td2);
-            row.append(td5);
-            row.append(td3);
-            row.append(td4);
-            
-            table.append(row);
         }
-        else if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
-            let s = ""
-            for (const [item, amt] of Object.entries(blueprints[i].requires)) {
-                s += amt + " " + item + " "
+        else {
+            if (!bpUnlock) {
+                let s = ""
+                console.log(blueprints[i]);
+                for (const [item, amt] of Object.entries(blueprints[i].requires)) {
+                    s += amt + " " + item + " ";
+                }
+                $("#unlockRequirement").html("<i>Unlock next by crafting " + s + "</i>");
+                bpUnlock = true;
             }
-            bpUnlock = $('<span/>').addClass("unlockReq").html("<p><i>Unlock next by crafting " + s + "</i></p>");
+            if (!$recipe.hasClass("none")) $recipe.addClass("none");            
         }
     }
-    $RecipeResults.append(table);
-    $RecipeResults.append(bpUnlock);
 }
 
 function canCraft(loc) {
@@ -690,8 +659,7 @@ function progressFinish(type,name) {
     player.blueprintShow = true;
     if (type === "Craft") {
         addToInventory(name);
-        if (name in itemCount) itemCount[name] += 1;
-        else itemCount[name] = 1;
+        increaseItemCount(name);
     }
     if (type === "Job") {
         const resourceDist = getJobValue(name);
@@ -700,6 +668,13 @@ function progressFinish(type,name) {
         if ("Herb" in resourceDist) player["Herb"] += resourceDist["Herb"];
         if ("Wood" in resourceDist) player["Wood"] += resourceDist["Wood"];
     }
+}
+
+function increaseItemCount(name) {
+    if (name in itemCount) itemCount[name] += 1;
+    else itemCount[name] = 1;
+    const truncName = name.replace(/\s/g, '');
+    $("#"+truncName+"_count").html(itemCount[name]);
 }
 
 function round(number, precision) {
@@ -714,6 +689,52 @@ function initializeInventory() {
     for (let i=0;i<blueprints[i].length;i++) {
         inventory[blueprints[i].name] = 0;
     }
+}
+
+function initializeRecipes() {
+    //cycle through everything in bp's and make the div for it
+    const table = $('<div/>').addClass('recipeTable');
+    const hrow = $('<div/>').addClass('recipeHeader');
+    const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
+    const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
+    const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
+    const htd4 = $('<div/>').addClass('recipeHeadCount').html("COUNT");
+    const htd5 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
+    hrow.append(htd1);
+    hrow.append(htd2);
+    hrow.append(htd5);
+    hrow.append(htd3);
+    hrow.append(htd4);
+    table.append(hrow);
+    let bpUnlock = null;
+    for (let i=0;i<blueprints.length;i++) {
+        const truncName = blueprints[i].name.replace(/\s/g, '');
+        const row = $('<div/>').addClass('recipeRow').attr("id",truncName+"_row");
+        const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
+        const td1 = $('<div/>').addClass('recipeName');
+        if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
+        td1.append(imageReference[blueprints[i].name]+"&nbsp;");
+        td1.append(name);
+        let s = "";
+        const td2 = $('<div/>').addClass('recipecostdiv');
+        for (const [type, amt] of Object.entries(blueprints[i].cost)) {
+            if (amt > 0) {
+                const td2a = $('<div/>').addClass("recipeCost tooltip").attr("aria-label",type).html(imageReference[type] + "&nbsp;" + amt)
+                td2.append(td2a);
+            }
+        }
+        const td3 = $('<div/>').addClass('recipeTime').html(msToTime(blueprints[i].craftTime))
+        const td4 = $('<div/>').addClass('recipeCount').attr("id",truncName+"_count").html(itemCount[blueprints[i].name]);
+        const td5 = $('<div/>').addClass('recipeValue').html(imageReference["Gold"] + "&nbsp;" + blueprints[i].value);
+        row.append(td1);
+        row.append(td2);
+        row.append(td5);
+        row.append(td3);
+        row.append(td4);
+        row.addClass("none");
+        table.append(row);
+    }
+    $RecipeResults.append(table);
 }
 
 function canSee(name) {
