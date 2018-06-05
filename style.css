@@ -692,14 +692,15 @@ input#importSaveText {
     padding: 10px 5px;
 }
 
-.unlockReq>p {
+.unlockReq {
+    display: block;
     padding: 15px 10px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
     border-bottom: 1px solid var(--theme-border);
 }
 
-.unlockReq>p:before {
+.unlockReq>i:before {
     display: inline-block;
     position: relative;
     content: "?";
