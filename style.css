@@ -68,7 +68,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
