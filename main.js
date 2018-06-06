@@ -499,7 +499,7 @@ function populateRecipe(type) {
         else if (!$recipe.hasClass("none")) $recipe.addClass("none");       
         if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
             let s = ""
-            console.log(blueprints[i]);
+            //console.log(blueprints[i]);
             for (const [item, amt] of Object.entries(blueprints[i].requires)) {
                 s += amt + " " + item + " ";
             }

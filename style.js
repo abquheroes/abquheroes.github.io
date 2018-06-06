@@ -26,13 +26,13 @@ function changeTheme() {
 
         themeIndex = 1;
         localStorage.setItem('themeChoice', themeIndex);
-        console.log("Switched to Light Theme");
+        //console.log("Switched to Light Theme");
     } else if (themeIndex == 1) {
         darkTheme();
 
         themeIndex = 0;
         localStorage.setItem('themeChoice', themeIndex);
-        console.log("Switched to Dark Theme");
+        //console.log("Switched to Dark Theme");
     }
 };
 
@@ -110,13 +110,13 @@ function changeView() {
 
         viewIndex = 1;
         localStorage.setItem('viewChoice', viewIndex);
-        console.log("Switched to Comfortable View");
+        //console.log("Switched to Comfortable View");
     } else if (viewIndex == 1) {
         compactView();
 
         viewIndex = 0;
         localStorage.setItem('viewChoice', viewIndex);
-        console.log("Switched to Compact View");
+        //console.log("Switched to Compact View");
     }
 };
 
