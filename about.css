@@ -32,8 +32,12 @@ nav {
 }
 
 .lm-btn, .dm-btn {
-    border-top: none;
+    border: none;
+    border-radius: 0;
     padding: 0 20px;
+    margin: 0;
+    line-height: 47px;
+    transition: all 0.2s ease-in-out;
 }
 
 #wrapper {
@@ -72,7 +76,7 @@ nav {
     margin-bottom: 30px;
 }
 
-.user-card, .player-card {
+.user-card, .player-card, .asset-card {
     margin: 10px;
     padding: 20px;
     max-width: 350px;
@@ -145,6 +149,45 @@ nav {
     opacity: 0;
 }
 
+.asset-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.asset-card .asset-pic {
+    max-height: 200px;
+}
+
+.asset-card .asset-name, .asset-card .asset-desc {
+    margin-top: 5px;
+    padding: 0 20px;
+}
+
+.asset-card .asset-desc {
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: var(--theme-text-3);
+}
+
+.asset-card .asset-link {
+    bottom: 0;
+    display: block;
+    background-color: var(--theme-bg-3);
+    border-top: 1px solid var(--theme-border);
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: var(--theme-text);
+}
+
+.asset-card .asset-link:hover {
+    background-color: var(--theme-bg-2);
+}
+
 /* ANIMATIONS AND KEYFRAMING */
 
 @keyframes scale-in {
@@ -165,7 +208,7 @@ nav {
     }
 }
 
-.user-card, .player-card {
+.user-card, .player-card, .asset-card {
     animation: .7s scale-in;
 }
 

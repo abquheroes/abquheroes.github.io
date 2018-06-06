@@ -9,6 +9,7 @@ function item(name,value,craftTime,type) {
         "Ore" : 0,
         "Wood" : 0,
     }
+    this.requires = {};
 }
 
 const blueprints = [];

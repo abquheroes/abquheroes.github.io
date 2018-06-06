@@ -32,17 +32,25 @@
             <div class="status">
                 <div id="game-logo"><h1>Abqu Heroes</h1></div>
                 <div id="side-content">
-                    <p id="comptitle1" class="heading">Gold &amp; Resources</p>
-                    <div id="goldResource" class="resource tooltip" aria-label="Gold" aria-describedby="moneyAmt"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
-                    <div id="oreResource" class="resource tooltip" aria-label="Ore" aria-describedby="oreAmt"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
-                    <div id="woodResource" class="none resource tooltip" aria-label="Wood" aria-describedby="woodAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
-                    <div id="leatherResource" class="none resource tooltip" aria-label="Leather" aria-describedby="leatherAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png" alt="Leather">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
-                    <div id="herbResource" class="none resource tooltip" aria-label="Herbs" aria-describedby="herbAmt"><img src="PixelItem/Consume/Herb5.png" alt="Herbs">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
-                </div>
-
-                <div id="theme-selection">
-                    <button class="lm-btn">Light Mode</button>
-                    <button class="dm-btn">Dark Mode</button>
+                    <div id="resources-container">
+                    <p class="heading">Gold &amp; Resources <span class="heading-arrow">></span></p>
+                        <div id="goldResource" class="resource tooltip" aria-label="Gold" aria-describedby="moneyAmt"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
+                        <div id="oreResource" class="resource tooltip" aria-label="Ore" aria-describedby="oreAmt"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
+                        <div id="woodResource" class="none resource tooltip" aria-label="Wood" aria-describedby="woodAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
+                        <div id="leatherResource" class="none resource tooltip" aria-label="Leather" aria-describedby="leatherAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png" alt="Leather">&nbsp;&nbsp;<span id="leatherAmt">0/200</span> </br></div>
+                        <div id="herbResource" class="none resource tooltip" aria-label="Herbs" aria-describedby="herbAmt"><img src="PixelItem/Consume/Herb5.png" alt="Herbs">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
+                    </div>
+                    <div id="settings-container">
+                        <p class="heading">Settings <span class="heading-arrow">></span></p>
+                        <div id="theme-selection">
+                            <button class="lm-btn">Light Mode</button>
+                            <button class="dm-btn">Dark Mode</button>
+                        </div>
+                        <div id="view-selection">
+                            <button class="cp-btn">Compact View</button>
+                            <button class="cf-btn">Comfortable View</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -639,6 +647,7 @@
                             <a class="recipeSelect none" id="recipePendant" href="PendantSelector">Pendants</a>
                         </div>
                         <div id="RecipeResults"></div>
+                        <div><span class="unlockReq" id="unlockRequirement"></span></div>
                     </div>
                     <div id="tabs-2">
                         <div id="workerList"></div>
@@ -682,7 +691,7 @@
                         <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                         <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
                         <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a>
-                        <a id="cloudSave" class="toolip" href="#dialogPlayfab" aria-label="Register a PlayFab account to cloud save">Cloud Save</a>
+                        <a id="cloudSave" class="tooltip" href="#dialogPlayfab" aria-label="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
                     </div>
                     <div id="bottom-right">
                         <p id="version-scale">v0.1.3.7</p>

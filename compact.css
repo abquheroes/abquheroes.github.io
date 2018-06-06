@@ -1,0 +1,55 @@
+#ActionSlots {
+    padding: 3px;
+}
+
+.ASBlock {
+    margin: 2px;
+}
+
+.ASName {
+    padding: 3px 5px;
+}
+
+#RecipeFilter {
+    margin-top: 1px;
+}
+
+#workerList, #upgradelist, #progresslist {
+    padding: 3px;
+}
+
+.Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+    margin: 3px;
+}
+
+#progress_container>h3 {
+    padding: 0 5px;
+}
+
+#gameTime, #completeTime {
+    margin: 5px 2px 0;
+}
+
+#achievements>h3 {
+    margin: 5px 0;
+}
+
+#achievements .ProgressCard {
+    margin: 5px;
+}
+
+#right-side-content .heading {
+    margin: 2px 0;
+}
+
+#sellPref {
+    margin: 0 5px 3px;
+}
+
+.inventoryItem a {
+    padding: 5px 60px 5px 30px;
+}
+
+.inventoryItem .inventoryCount {
+    line-height: 18px;
+}

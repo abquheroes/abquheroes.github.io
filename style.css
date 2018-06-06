@@ -42,25 +42,21 @@
     --theme-scheme: linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%);
 }
 
-.lm-btn, .dm-btn {
+.lm-btn, .dm-btn, .cp-btn, .cf-btn {
+    margin-bottom: 5px;
+    padding: 7px 10px;
     width: 100%;
-    height: 50px;
     border: none;
-    border-top: 1px solid var(--theme-border);
+    border: 1px solid var(--theme-border);
+    border-radius: 25px;
     background-color: var(--theme-bg);
     color: var(--theme-text);
-    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
 }
 
-.lm-btn:hover, .dm-btn:hover {
+.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover {
     background-color: var(--theme-bg-2);
-}
-
-.lm-btn {
-    display: none;
 }
 
 /**/
@@ -72,7 +68,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -119,12 +115,39 @@ body{
     padding: 0 20px;
 }
 
+#resources-container, #settings-container {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s linear;
+}
+
+.height-collapse {
+    max-height: 40px!important;
+}
+
+.heading-arrow {
+    display: inline-block;
+    position: absolute;
+    margin: 5px 0 0 0;
+    right: 10px;
+    color: var(--theme-text-3);
+    transform: rotateZ(90deg);
+    transition: all 0.3s ease;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.arrow-rotate {
+    transform: rotateZ(270deg);
+}
+
 #side-content .heading {
     padding: 5px 10px;
-    font-weight: bold;
     text-align: center;
     color: var(--theme-text);
     border-bottom: 2px solid var(--theme-border);
+    cursor: pointer;
 }
 
 #side-content .heading:first-of-type {
@@ -696,14 +719,16 @@ input#importSaveText {
     padding: 10px 5px;
 }
 
-.unlockReq>p {
+.unlockReq {
+    display: block;
+    margin-bottom: 10px;
     padding: 15px 10px;
     background-color: var(--theme-bg);
     border-top: 1px solid var(--theme-border);
     border-bottom: 1px solid var(--theme-border);
 }
 
-.unlockReq>p:before {
+.unlockReq>i:before {
     display: inline-block;
     position: relative;
     content: "?";
@@ -1072,7 +1097,7 @@ footer a:hover {
     background-color: var(--theme-bg-2);
 }
 
-#clearSave, #exportSave, #importSave {
+#clearSave, #exportSave, #importSave, #cloudSave {
     position: relative;
 }
 
@@ -1504,11 +1529,17 @@ a.workerDialog {
     #theme-selection {
         position: absolute;
         top: 0;
-        right: 15px;
+        right: 0;
     }
 
     .lm-btn, .dm-btn {
-        border-top: none;
+        border: none;
+        border-radius: 0;
+        height: 50px;
+    }
+
+    #view-selection {
+        display: none;
     }
 
     #right-side-content {
@@ -1525,12 +1556,26 @@ a.workerDialog {
     }
 
     #side-content {
+        border-top: 1px solid var(--theme-border);
+        padding: 0;
+        overflow: auto;
+    }
+
+    #resources-container {
         display: flex;
         text-align: center;
         padding: 10px;
-        overflow: auto;
         max-height: 100px;
-        border-top: 1px solid var(--theme-border);
+        overflow: auto;
+        z-index: 99;
+    }
+
+    #settings-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
@@ -1541,7 +1586,7 @@ a.workerDialog {
         display: none;
     }
 
-    #side-content>div {
+    #side-content>div>div {
         margin: 0 5px;
     }
 
@@ -1604,7 +1649,7 @@ a.workerDialog {
         min-width: 250px;
     }
 
-    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
