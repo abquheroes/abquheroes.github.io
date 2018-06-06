@@ -208,7 +208,7 @@ nav {
     }
 }
 
-.user-card, .player-card {
+.user-card, .player-card, .asset-card {
     animation: .7s scale-in;
 }
 
