@@ -489,6 +489,7 @@ function populateRecipe(type) {
     type = type || "knife";
     type = type.toLowerCase();
     let bpUnlock = false;
+    $("#unlockRequirement").empty();
     for (let i=0;i<blueprints.length;i++) {
         let recipeName = "#"+blueprints[i].name+"_row";
         recipeName = recipeName.replace(/\s/g, '');
