@@ -494,21 +494,17 @@ function populateRecipe(type) {
         recipeName = recipeName.replace(/\s/g, '');
         const $recipe = $(recipeName);
         if (blueprints[i].type === type && requirement(blueprints[i])) {
-            if ($recipe.hasClass("none")) {
-                $recipe.removeClass("none");
-            }
+            if ($recipe.hasClass("none")) $recipe.removeClass("none");
         }
-        else {
-            if (!bpUnlock) {
-                let s = ""
-                console.log(blueprints[i]);
-                for (const [item, amt] of Object.entries(blueprints[i].requires)) {
-                    s += amt + " " + item + " ";
-                }
-                $("#unlockRequirement").html("<i>Unlock next by crafting " + s + "</i>");
-                bpUnlock = true;
+        else if (!$recipe.hasClass("none")) $recipe.addClass("none");       
+        if (blueprints[i].type === type && !requirement(blueprints[i]) && !bpUnlock) {
+            let s = ""
+            console.log(blueprints[i]);
+            for (const [item, amt] of Object.entries(blueprints[i].requires)) {
+                s += amt + " " + item + " ";
             }
-            if (!$recipe.hasClass("none")) $recipe.addClass("none");            
+            $("#unlockRequirement").html("<i>Unlock next by crafting " + s + "</i>");
+            bpUnlock = true;              
         }
     }
 }
