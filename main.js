@@ -657,6 +657,7 @@ function progressFinish(type,name) {
     if (type === "Craft") {
         addToInventory(name);
         increaseItemCount(name);
+        populateRecipe(player.currentType);
     }
     if (type === "Job") {
         const resourceDist = getJobValue(name);
