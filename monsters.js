@@ -7,18 +7,18 @@ class Monster {
         this.hp = hp;
         this.maxhp = hp;
     }
-    get atk() {
+    get Atk() {
         return this.atk;
     }
-    get name() {
+    get Name() {
         return this.name;
     }
-    get hp() {
+    get HP() {
         return this.hp;
     }
 }
 
 const monsters = [];
 
-const cat = new Hero("CatMonster",10,10,10);
+const cat = new Monster("CatMonster",10,10,10);
 monsters.push[cat];

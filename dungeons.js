@@ -18,15 +18,8 @@ class Dungeon {
     }
 }
 
-const monsters = [];
+const dungeon = {}
 
-const cat = new Hero("CatMonster",10,10,10);
-monsters.push[cat];
-
-const dungeon = {
-    "CatDungeon" : [cat,cat,cat],
-}
-
-dungeonImageReference = {
+const dungeonImageReference = {
     "ticket1" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/books/book_1.png">',
 }
