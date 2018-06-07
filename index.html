@@ -22,11 +22,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Abqu Heroes</title>
     <link href="jquery-ui.css" rel="stylesheet">
+    <link href="please-wait.css" rel="stylesheet">
+    <link href="spinner.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
+    <script type="text/javascript" src="please-wait.min.js"></script>
+    <script type="text/javascript">
+        window.loading_screen = window.pleaseWait({
+        logo: "images/loading-screen-logo.png",
+        backgroundColor: '#303030',
+        loadingHtml: "<p class='loading-message'>Spreading Misinformation...</p><div class='spinner'><div class='bounce1'></div><div class='bounce2'></div><div class='bounce3'></div></div>"
+        });
+    </script>
     <main id="content">
         <section class="game-content">
             <div class="status">
