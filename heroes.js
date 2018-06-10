@@ -21,6 +21,19 @@ class Hero {
     }
 }
 
+class HeroProgress {
+    constructor (name, id, role, lvl, xp, slot1, slot2, slot3, slot4) {
+        this.name = name;
+        this.id = id;
+        this.role = role;
+        this.lvl = lvl;
+        this.xp = xp;
+        this.slot1 = slot1;
+        this.slot2 = slot2;
+        this.slot3 = slot3;
+    }
+}
+
 const heroes = [];
 
 const Abqu = new Hero("Abqu",10,10,10);

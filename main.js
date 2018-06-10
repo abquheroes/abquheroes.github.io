@@ -36,6 +36,7 @@ const player = {
     sellPref : 1,
     lastSave : 0,
     completeTime : 0,
+    extraInventory : {}
 }
 
 const resources = ["Ore","Wood","Leather","Herb"];
@@ -109,6 +110,8 @@ const upgradeProgress = {
     "Max Inventory Slots" : 0,
     "Auto Sell Value" : 0,
 }
+
+const heroProgress = [];
 
 const flags = {}
 
