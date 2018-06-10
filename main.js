@@ -408,9 +408,11 @@ function mainLoop() {
     refreshProgress();
 }
 
+
 setInterval(mainLoop, 10);
 setInterval(gameTime, 1000);
 setInterval(saveGame, 5000);
+setTimeout(window.loading_screen.finish(),1500)
 
 function refreshResources() {
     for (let i=0;i<resources.length;i++) {

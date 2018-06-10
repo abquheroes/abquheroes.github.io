@@ -113,6 +113,7 @@ body{
 #side-content {
     flex-grow: 1;
     padding: 0 20px;
+    overflow: auto;
 }
 
 #resources-container, #settings-container {
@@ -683,9 +684,11 @@ input#importSaveText {
 
 .recipeHeader, .recipeRow, .jobHeader, .jobRow {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    min-height: 40px;
 }
 
 .recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
@@ -701,8 +704,13 @@ input#importSaveText {
     align-items: center;
     width: 100%;
     min-width: 200px;
-    max-width: 300px;
+    max-width: 100%;
     padding-left: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .recipeHeadName {
@@ -745,9 +753,14 @@ input#importSaveText {
     max-width: 200px;
 }
 
+.recipeHeadCost {
+    margin-left: 300px;
+}
+
 .recipecostdiv {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 300px;
 }
 
 .recipeCost {
