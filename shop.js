@@ -82,6 +82,10 @@ function addExtraInventory(name,amt) {
 }
 
 const $extraInv = $("#extraInv");
-function refreshExtraInventory() {
 
+function refreshExtraInventory() {
+    $extraInv.empty();
+    for (const [item, amt] of Object.entries(player.extraInventory)) {
+        const d1 = $("<div/>").addClass("")
+    }
 }
