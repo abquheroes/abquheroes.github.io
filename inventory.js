@@ -17,7 +17,11 @@ function refreshInventory() {
             const item = nameToItem(name);
             if (item == null) continue;
             const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+item.value+" Gold").html(name);
+            const count = Math.min(player.sellPref,inventory[name]);
+            let nameAndCount = name
+            if (count > 1) nameAndCount = count + " " + name; 
+            const amt = formatToUnits(count*item.value, 2)
+            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+nameAndCount+" for "+amt+" Gold").html(name);
             const itemCt = $("<div/>").addClass("inventoryCount").html("x"+inventory[name]);
             itemdiv.append(itemLink);
             itemdiv.append(itemCt);
@@ -85,6 +89,7 @@ $sellOne.click((e) => {
     $sellOne.addClass("itemSellPrefSelected");
     $sellTen.removeClass("itemSellPrefSelected");
     $sellAll.removeClass("itemSellPrefSelected");
+    refreshInventory();
 });
 
 $sellTen.click((e) => {
@@ -93,6 +98,7 @@ $sellTen.click((e) => {
     $sellOne.removeClass("itemSellPrefSelected");
     $sellTen.addClass("itemSellPrefSelected");
     $sellAll.removeClass("itemSellPrefSelected");
+    refreshInventory();
 });
 
 $sellAll.click((e) => {
@@ -101,6 +107,7 @@ $sellAll.click((e) => {
     $sellOne.removeClass("itemSellPrefSelected");
     $sellTen.removeClass("itemSellPrefSelected");
     $sellAll.addClass("itemSellPrefSelected");
+    refreshInventory();
 });
 
 function itemRefund(name) {
