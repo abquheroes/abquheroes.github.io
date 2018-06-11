@@ -459,6 +459,7 @@ select {
 .ASProgressBar:before {
     content: " " attr(data-label);
     position: absolute;
+    bottom: 2px;
     white-space: pre;
 }
 
@@ -1263,6 +1264,7 @@ span#copyme {
     left: -10%;
     right: -10%;
     bottom: 115%;
+    z-index: 99;
 }
 
 #version-scale {
