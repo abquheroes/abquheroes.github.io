@@ -1632,6 +1632,7 @@ abquPendant.requires = {
 blueprints.push(abquPendant)
 
 const imageReference = {
+    "DT1" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/books/book_1.png">',
     "Mastery" : '<img src="PixelItem/Star4.png" alt="Mastered!">',
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
     "Coin" : '<img src="PixelItem/CoinsGold5.png">',

@@ -303,6 +303,8 @@ refreshUpgrades();
 populateRecipe(player.currentType);
 fakeSelect(player.currentType);
 refreshWorkers();
+refreshTickets();
+refreshExtraInventory();
 
 //used at the beginning to fake what tab you're on
 function fakeSelect(name) {

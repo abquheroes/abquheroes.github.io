@@ -1,5 +1,7 @@
 "use strict";
 
+const $extraInv = $("#extraInv");
+
 class ShopItem {
     constructor(name,id,potentialCosts,count) {
         this.id = id;
@@ -38,9 +40,6 @@ const idToName = {
 
 const $tickets = $("#ticketShop");
 
-refreshTickets();
-
-
 function refreshTickets() {
     $tickets.empty();
     const ticket = $("<div/>").addClass("TicketCard");
@@ -48,7 +47,7 @@ function refreshTickets() {
     const d2 = $("<div/>").addClass("TicketImage").html(dungeonImageReference["ticket1"]);
     const d3 = $("<div/>").addClass("TicketCostHeader").html("Cost:");
     const d4 = $("<div/>").addClass("TicketCost").html("500G");
-    const b1 = $("<button/>").attr("data-value","buyTicket").html("BUY");
+    const b1 = $("<button/>").addClass("buyTicket").html("BUY");
     ticket.append(d1);
     ticket.append(d2);
     ticket.append(d3);
@@ -59,19 +58,12 @@ function refreshTickets() {
 
 $tickets.on("click", ".buyTicket", (e) => {
     e.preventDefault();
+    console.log('ticket bought');
     if (player.money > 500) {
         player.money -= 500;
         addExtraInventory("DT1",1);
     }
 });
-
-
-
-
-
-//<div id="herbResource" class="none resource tooltip" aria-label="Herbs" aria-describedby="herbAmt"><img src="PixelItem/Consume/Herb5.png" alt="Herbs">&nbsp;&nbsp;<span id="herbAmt">0/200</span></div>
-
-
 
 
 function addExtraInventory(name,amt) {
@@ -81,11 +73,10 @@ function addExtraInventory(name,amt) {
     refreshExtraInventory();
 }
 
-const $extraInv = $("#extraInv");
-
 function refreshExtraInventory() {
     $extraInv.empty();
     for (const [item, amt] of Object.entries(player.extraInventory)) {
-        const d1 = $("<div/>").addClass("")
+        const d1 = $("<div/>").addClass("extraItem").html(imageReference[item]+"&nbsp;&nbsp;"+amt);
+        $extraInv.append(d1);
     }
 }
