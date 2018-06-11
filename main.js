@@ -675,6 +675,7 @@ function increaseItemCount(name) {
     else itemCount[name] = 1;
     const truncName = name.replace(/\s/g, '');
     $("#"+truncName+"_count").html(itemCount[name]);
+    if (itemCount[name] >= 100) $("#"+truncName+"_star").removeClass("hidden");
 }
 
 function round(number, precision) {
@@ -712,7 +713,11 @@ function initializeRecipes() {
         const row = $('<div/>').addClass('recipeRow').attr("id",truncName+"_row");
         const name = $('<a/>').addClass('addCraft').attr("href",blueprints[i].name).html(blueprints[i].name)
         const td1 = $('<div/>').addClass('recipeName');
-        if (itemCount[blueprints[i].name] >= 100) td1.append(imageReference["Mastery"]);
+        const td1a = $('<div/>').addClass('recipeStar').attr("id",truncName+"_star").html(imageReference["Mastery"]);
+        if (!(blueprints[i].name in itemCount) || itemCount[blueprints[i].name] < 100) {
+            td1a.addClass("hidden");
+        }
+        td1.append(td1a);
         td1.append(imageReference[blueprints[i].name]+"&nbsp;");
         td1.append(name);
         let s = "";
