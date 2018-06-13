@@ -724,7 +724,7 @@ shinyGauntlets.cost = {
 }
 shinyGauntlets.requires = {
     "New Gauntlets" : 30,
-}	
+}
 blueprints.push(shinyGauntlets)
 
 const plainGauntlets = new item("Plain Gauntlets",57,45000,"gauntlets");
@@ -734,7 +734,7 @@ plainGauntlets.cost = {
 }
 plainGauntlets.requires = {
     "Shiny Gauntlets" : 40,
-}	
+}
 blueprints.push(plainGauntlets)
 
 const pristineGauntlets = new item("Pristine Gauntlets",89,57000,"gauntlets");
@@ -744,7 +744,7 @@ pristineGauntlets.cost = {
 }
 pristineGauntlets.requires = {
     "Plain Gauntlets" : 50,
-}	
+}
 blueprints.push(pristineGauntlets)
 
 const challengeGauntlets = new item("Challenge Gauntlets",140,71000,"gauntlets");
@@ -754,7 +754,7 @@ challengeGauntlets.cost = {
 }
 challengeGauntlets.requires = {
     "Pristine Gauntlets" : 60,
-}	
+}
 blueprints.push(challengeGauntlets)
 
 const fancyGauntlets = new item("Fancy Gauntlets",219,89000,"gauntlets");
@@ -765,7 +765,7 @@ fancyGauntlets.cost = {
 }
 fancyGauntlets.requires = {
     "Challenge Gauntlets" : 70,
-}	
+}
 blueprints.push(fancyGauntlets)
 
 const oldGauntlets = new item("Old Gauntlets",343,111000,"gauntlets");
@@ -776,7 +776,7 @@ oldGauntlets.cost = {
 }
 oldGauntlets.requires = {
     "Fancy Gauntlets" : 80,
-}	
+}
 blueprints.push(oldGauntlets)
 
 const darkGauntlets = new item("Dark Gauntlets",539,138000,"gauntlets");
@@ -787,7 +787,7 @@ darkGauntlets.cost = {
 }
 darkGauntlets.requires = {
     "Old Gauntlets" : 90,
-}	
+}
 blueprints.push(darkGauntlets)
 
 const dandyGauntlets = new item("Dandy Gauntlets",846,173000,"gauntlets");
@@ -798,7 +798,7 @@ dandyGauntlets.cost = {
 }
 dandyGauntlets.requires = {
     "Dark Gauntlets" : 100,
-}	
+}
 blueprints.push(dandyGauntlets)
 
 const coolGauntlets = new item("Cool Gauntlets",1329,216000,"gauntlets");
@@ -809,7 +809,7 @@ coolGauntlets.cost = {
 }
 coolGauntlets.requires = {
     "Dandy Gauntlets" : 100,
-}	
+}
 blueprints.push(coolGauntlets)
 
 //helmets
@@ -1632,6 +1632,7 @@ abquPendant.requires = {
 blueprints.push(abquPendant)
 
 const imageReference = {
+    //resources
     "DT1" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/books/book_1.png">',
     "Mastery" : '<img src="PixelItem/Star4.png" alt="Mastered!">',
     "Gold" : '<img src="PixelItem/CoinsGold5.png">',
@@ -1639,13 +1640,14 @@ const imageReference = {
     "Ore" : '<img src="PixelItem/Ore.png">',
     "Herb" : '<img src="PixelItem/Consume/Herb5.png">',
     "Leather" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png">',
+    //workers
     "Oren" : '<img src="workers/heads/orenhead.png">',
     "Eryn" : '<img src="workers/heads/erynhead.png">',
     "Herbie" : '<img src="workers/heads/herbiehead.png">',
     "Lakur" : '<img src="workers/heads/lakurhead.png">',
     "Otto" : '<img src="workers/heads/ottohead.png">',
     "Wood" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png">',
-    "Sell" : 'Item',
+    //recipes
     "Knife" : '<img src="PixelItem/Equip/Weapon/Knife.png">',
     "Butter Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_149.png">',
     "Kitchen Knife" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/swords/sword_1.png">',

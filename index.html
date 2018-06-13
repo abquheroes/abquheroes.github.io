@@ -666,7 +666,7 @@
                                 <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
                                 <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
                                 <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
-                                <div id="gameTime">You've been playing for 2 days, 12 hours, 21 minutes, 31 seconds</div>
+                                <div id="gameTime"></div>
                                 <div id="completeTime"></div>
                             </div>
                             <div id="achievements">
@@ -692,9 +692,12 @@
                         <div id="ticketShop"></div>
                     </div>
                     <div id="tabs-7">
+                        <button id="rollHero">Roll!</button><button id="hireHero">Hire!</button>
                         <div id="heroShop"></div>
+                        <h3>Hired Heroes</h3>
+                        <div id="hiredHeros"></div>
                     </div>
-                            
+
                 </div>
                 <footer role="contentinfo">
                     <div id="bottom-left">
@@ -719,7 +722,7 @@
             </div>
         </section>
     </main>
-    
+
         <div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
         <div id="exportDialog" title="Export Save"></div>
         <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
@@ -734,6 +737,7 @@
 <script src="shop.js"></script>
 <script src="upgrades.js"></script>
 <script src="inventory.js"></script>
+<script src="heroes.js"></script>
 <script src="devtools.js"></script>
 <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
 <script src="PlayFabGettingStarted.js"></script>
@@ -742,4 +746,3 @@
 <script src="style.js"></script>
 </body>
 </html>
-
