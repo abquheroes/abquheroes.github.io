@@ -2,22 +2,26 @@
 
 const $extraInv = $("#extraInv");
 
+const idToName = {
+    "DT1":"Dungeon Ticket 1",
+}
+
 class ShopItem {
-    constructor(name,id,potentialCosts,count) {
+    constructor(id,potentialCosts,count,goldCost) {
         this.id = id;
         this.costs = potentialCosts;
         this.count = count;
         this.currentCost = {};
+        this.goldCost = goldCost;
+        this.name = idToName[this.id];
+        this.image = dungeonImageReference[this.id];
     }
-    generateCost() {
+    /*generateCost() {
         const trim = generateUnique(this.costs,this.count);
         for (let i=0;i<trim.length;i++) {
             this.currentcost[trim[i][0]] = trim[i][1];
         }
-    }
-    get Name() {
-        return idToName[this.id];
-    }
+    }*/
 }
 
 function generateUnique(list,count) {
@@ -32,28 +36,29 @@ function generateUnique(list,count) {
 
 const shopItems = [];
 
-const dungeonTicket = new ShopItem("DT1",[["Knife",5],["Butter Knife",5],["Club",5]],2)
+const dungeonTicket = new ShopItem("DT1",[],0,500);
+shopItems.push(dungeonTicket);
 
-const idToName = {
-    "DT1":"Dungeon Ticket 1",
-}
+
 
 const $tickets = $("#ticketShop");
 
 function refreshTickets() {
     $tickets.empty();
-    const ticket = $("<div/>").addClass("TicketCard");
-    const d1 = $("<div/>").addClass("TicketName").html("Dungeon Ticket 1");
-    const d2 = $("<div/>").addClass("TicketImage").html(dungeonImageReference["ticket1"]);
-    const d3 = $("<div/>").addClass("TicketCostHeader").html("Cost:");
-    const d4 = $("<div/>").addClass("TicketCost").html("500G");
-    const b1 = $("<button/>").addClass("buyTicket").html("BUY");
-    ticket.append(d1);
-    ticket.append(d2);
-    ticket.append(d3);
-    ticket.append(d4);
-    ticket.append(b1);
-    $tickets.append(ticket);
+    console.log(shopItems);
+    for (let i=0;i<shopItems.length;i++) {
+        console.log(shopItems[i]);
+        const ticket = $("<div/>").addClass("TicketCard");
+        const d1 = $("<div/>").addClass("TicketName").html(shopItems[i].name);
+        const d2 = $("<div/>").addClass("TicketImage").html(shopItems[i].image);
+        const d3 = $("<div/>").addClass("TicketCost").html(imageReference["Gold"] + "&nbsp;&nbsp;" + shopItems[i].goldCost);
+        const b1 = $("<button/>").addClass("buyTicket").html("BUY");
+        ticket.append(d1);
+        ticket.append(d2);
+        ticket.append(d3);
+        ticket.append(b1);
+        $tickets.append(ticket);
+    }
 }
 
 $tickets.on("click", ".buyTicket", (e) => {
