@@ -14,11 +14,11 @@
     margin-top: 1px;
 }
 
-#workerList, #upgradelist, #progresslist {
+#workerList, #upgradelist, #progresslist, #ticketShop {
     padding: 3px;
 }
 
-.Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+.Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, .TicketCard {
     margin: 3px;
 }
 
