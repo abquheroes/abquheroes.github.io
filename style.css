@@ -758,16 +758,16 @@ input#importSaveText {
     text-align: left;
 }
 
-#workerList, #joblist, #upgradelist, #ticketShop, #hiredHeroes {
+#workerList, #joblist, #upgradelist, #ticketShop {
     display: flex;
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist, #progresslist, #ticketShop, #heroShop, #hiredHeroesContainer {
+#workerList, #upgradelist, #progresslist, #ticketShop, #heroCard {
     padding: 20px;
 }
 
-.Worker, .Upgrade, .TicketCard, .heroOwnCard {
+.Worker, .Upgrade, .TicketCard {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1068,6 +1068,46 @@ input#importSaveText {
 .TicketCard .TicketName {
     font-weight: bold;
     font-size: 1em;
+}
+
+#heroContainer {
+    display: flex;
+    position: relative;
+}
+
+#heroList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.heroOwnedCard {
+    background-color: var(--theme-bg);
+    border-right: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--theme-border);
+    flex-grow: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.heroOwnedCard:hover {
+    background-color: var(--theme-bg-2);
+    cursor: pointer;
+}
+
+.heroOwnedCard.highlight {
+    background: var(--theme-bg-3);
+}
+
+.heroOwnedCard.highlight:hover {
+    
+}
+
+#heroCard {
+    background-color: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-border);
+    flex-grow: 1;
+    min-width: 400px;
 }
 
 footer {
