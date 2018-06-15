@@ -19,8 +19,15 @@ class OwnedHero {
         this.mind = mind;
         this.moxie = moxie;
     }
+    get hp() {
+        return 10;
+    }
+    get atk() {
+        if (this.role == Class.FIGHTER) return this.might;
+        else if (this.role == Class.CASTER) return this.mind;
+        else if (this.role == Class.THIEF) return this.moxie;
+    }
 }
-
 
 //we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have
 
@@ -30,50 +37,87 @@ const heroImageReference = {
     "H003" : '<img src="workers/herbie.gif">',
 }
 
-let currentToHire = null;
+const $heroList = $("#heroList");
+const $heroCard = $("#heroCard");
 
-function generateHero() {
-  const heroNames = Object.keys(heroBase);
-  const id = heroNames[Math.floor(Math.random() * heroNames.length)];
-  const name = heroBase[id][0];
-  const role = heroBase[id][1];
-  const might = rollDice(3,6);
-  const mind = rollDice(3,6);
-  const moxie = rollDice(3,6);
-  return new OwnedHero(name,id,role,might,mind,moxie);
+function initializeHero() {
+    ownAllHeroes();
+    for (const [ID, props] of Object.entries(heroBase)) {
+        const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",ID);
+        const d1 = $("<div/>").addClass("heroOwnedImage").html(heroImageReference[ID]);
+        const d2 = $("<div/>").addClass("heroOwnedName").html(props[0]);
+        d.append(d1,d2);
+        if (!playerOwnsHero(ID)) d.hide();
+        $heroList.append(d);        
+    }
 }
 
-const $rollHero = $("#rollHero");
-const $hireHero = $("#hireHero");
-const $heroShop = $("#heroShop");
-const $hiredHeros = $("#hiredHeros");
+function playerOwnsHero(ID) {
+    for (let i=0;i<heroProgress.length;i++) {
+        if (heroProgress[i].id == ID) return true;
+    }
+    return false;
+}
 
-$rollHero.click((e) => {
+function heroOwnedbyID(ID) {
+    for (let i=0;i<heroProgress.length;i++) {
+        if (heroProgress[i].id == ID) return heroProgress[i];
+    }
+    console.log("ERROR: No hero for that ID found");
+    return null;
+}
+
+function ownAllHeroes() {
+    for (let i=0;i<Object.keys(heroBase).length;i++) {
+        heroProgress.push(generateHero());
+    }
+}
+
+function generateHero() {
+    const possibleID = generateHeroIDList();
+    const id = possibleID[Math.floor(Math.random() * possibleID.length)];
+    const name = heroBase[id][0];
+    const role = heroBase[id][1];
+    const might = rollDice(3,6);
+    const mind = rollDice(3,6);
+    const moxie = rollDice(3,6);
+    return new OwnedHero(name,id,role,might,mind,moxie);
+}
+
+function generateHeroIDList() {
+    //this is a list of all IDs the player doesn't own yet
+    const possibleIDs = Object.keys(heroBase);
+    const ownedIDs = [];
+    for (let i=0;i<heroProgress.length;i++) {
+        ownedIDs.push(heroProgress[i].id);
+    }
+    return possibleIDs.filter(x => !ownedIDs.includes(x));
+}
+
+$(document).on('click', "div.heroOwnedCard", (e) => {
     e.preventDefault();
-    currentToHire = generateHero();
-    $heroShop.empty();
-    const d1 = $("<div/>").addClass("heroHireName").html(currentToHire.name);
-    const d2 = $("<div/>").addClass("heroHireImage").html(heroImageReference[currentToHire.id]);
-    const d3 = $("<div/>").addClass("heroHireRole").html("Role: " + currentToHire.role);
-    const d4 = $("<div/>").addClass("heroHireMight").html("Might: " + currentToHire.might);
-    const d5 = $("<div/>").addClass("heroHireMind").html("Mind: " + currentToHire.mind);
-    const d6 = $("<div/>").addClass("heroHireMoxie").html("Moxie: " + currentToHire.moxie);
-    $heroShop.append(d1);
-    $heroShop.append(d2);
-    $heroShop.append(d3);
-    $heroShop.append(d4);
-    $heroShop.append(d5);
-    $heroShop.append(d6);
+    const ID = $(e.currentTarget).attr("data-value");
+    $(".heroOwnedCard").removeClass("highlight");
+    $(e.currentTarget).addClass("highlight");
+    displayHeroCard(ID);
 });
 
-$hireHero.click((e) => {
-    e.preventDefault();
-    if (!currentToHire) return;
-    heroProgress.push(currentToHire);
-    currentToHire = null;
-    $heroShop.empty();
-    refreshHeroes();
-});
+function displayHeroCard(ID) {
+    $heroCard.empty();
+    const hero = heroOwnedbyID(ID);
+    const d1 = $("<div/>").addClass("hcName").html(hero.name);
+    const d2 = $("<div/>").addClass("hcImage").html(heroImageReference[ID]);
+    const d3 = $("<div/>").addClass("hcClassLvl").html("L"+hero.lvl+" "+hero.role);
+    const d4 = $("<div/>").addClass("hcStats");
+    const d4a = $("<div/>").addClass("hcStatsHP").html("HP: "+hero.hp);
+    const d4b = $("<div/>").addClass("hcStatsATK").html("ATK: "+hero.atk);
+    const d4c = $("<div/>").addClass("hcStatsMight").html("MIGHT: "+hero.might);
+    const d4d = $("<div/>").addClass("hcStatsMind").html("MIND: "+hero.mind);
+    const d4e = $("<div/>").addClass("hcStatsMoxie").html("MOXIE: "+hero.moxie);
+    d4.append(d4a,d4b,d4c,d4d,d4e);
+    const d5 = $("<div/>").addClass("hcEquip").html("Equip goes here?");
+    $heroCard.append(d1,d2,d3,d4,d5);
+}
 
 function refreshHeroes() {
     $hiredHeros.empty();
