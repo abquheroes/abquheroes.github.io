@@ -46,7 +46,7 @@ function generateHero() {
 const $rollHero = $("#rollHero");
 const $hireHero = $("#hireHero");
 const $heroShop = $("#heroShop");
-const $hiredHeros = $("#hiredHeros");
+const $hiredHeroes = $("#hiredHeroes");
 
 $rollHero.click((e) => {
     e.preventDefault();
@@ -76,7 +76,7 @@ $hireHero.click((e) => {
 });
 
 function refreshHeroes() {
-    $hiredHeros.empty();
+    $hiredHeroes.empty();
     for (let i=0;i<heroProgress.length;i++) {
         const hero = heroProgress[i];
         console.log(hero);
@@ -89,7 +89,7 @@ function refreshHeroes() {
         const d6 = $("<div/>").addClass("heroOwnMind").html("Mind: " + hero.mind);
         const d7 = $("<div/>").addClass("heroOwnMoxie").html("Moxie: " + hero.moxie);
         d.append(d1,d2,d3,d4,d5,d6,d7)
-        $hiredHeros.append(d);
+        $hiredHeroes.append(d);
     }
 }
 

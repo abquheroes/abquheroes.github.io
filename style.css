@@ -68,7 +68,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, #progresslist, #upgradelist, #workerList {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop {
     font-family: 'Open Sans', sans-serif; /*font test*/
     font-weight: normal;
 }
@@ -758,16 +758,16 @@ input#importSaveText {
     text-align: left;
 }
 
-#workerList, #joblist, #upgradelist {
+#workerList, #joblist, #upgradelist, #ticketShop, #hiredHeroes {
     display: flex;
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist, #progresslist {
+#workerList, #upgradelist, #progresslist, #ticketShop, #heroShop, #hiredHeroesContainer {
     padding: 20px;
 }
 
-.Worker, .Upgrade {
+.Worker, .Upgrade, .TicketCard, .heroOwnCard {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -783,11 +783,11 @@ input#importSaveText {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc{
+.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc, .TicketName{
     text-align: center;
 }
 
-.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost {
+.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost, .TicketName {
     font-size: .9em;
 }
 
@@ -873,7 +873,7 @@ input#importSaveText {
     width: 100%;
 }
 
-.Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable {
+.Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
     display: block;
     padding: 10px;
     border: none;
@@ -885,7 +885,7 @@ input#importSaveText {
     cursor: pointer;
 }
 
-.Upgrade .BuyUpgrade {
+.Upgrade .BuyUpgrade, .TicketCard .buyTicket {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -908,7 +908,7 @@ input#importSaveText {
     margin-right: 1px;
 }
 
-.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover {
+.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
     background-color: var(--theme-bg-2);
 }
 
@@ -1063,6 +1063,11 @@ input#importSaveText {
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.TicketCard .TicketName {
+    font-weight: bold;
+    font-size: 1em;
 }
 
 footer {

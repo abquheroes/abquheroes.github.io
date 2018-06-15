@@ -52,7 +52,7 @@ function refreshTickets() {
         const d1 = $("<div/>").addClass("TicketName").html(shopItems[i].name);
         const d2 = $("<div/>").addClass("TicketImage").html(shopItems[i].image);
         const d3 = $("<div/>").addClass("TicketCost").html(imageReference["Gold"] + "&nbsp;&nbsp;" + shopItems[i].goldCost);
-        const b1 = $("<button/>").addClass("buyTicket").html("BUY");
+        const b1 = $("<button/>").addClass("buyTicket").html("Purchase");
         ticket.append(d1);
         ticket.append(d2);
         ticket.append(d3);
