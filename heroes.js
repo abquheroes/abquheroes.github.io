@@ -99,11 +99,11 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
     const ID = $(e.currentTarget).attr("data-value");
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
-    displayHeroCard(ID);
+    $heroCard.html(displayHeroCard(ID));
 });
 
 function displayHeroCard(ID) {
-    $heroCard.empty();
+    const heroCard = $("<div/>").addClass("heroCard");
     const hero = heroOwnedbyID(ID);
     const d1 = $("<div/>").addClass("hcName").html(hero.name);
     const d2 = $("<div/>").addClass("hcImage").html(heroImageReference[ID]);
@@ -116,7 +116,8 @@ function displayHeroCard(ID) {
     const d4e = $("<div/>").addClass("hcStatsMoxie").html("MOXIE: "+hero.moxie);
     d4.append(d4a,d4b,d4c,d4d,d4e);
     const d5 = $("<div/>").addClass("hcEquip").html("Equip goes here?");
-    $heroCard.append(d1,d2,d3,d4,d5);
+    heroCard.append(d1,d2,d3,d4,d5);
+    return heroCard;
 }
 
 function refreshHeroes() {
