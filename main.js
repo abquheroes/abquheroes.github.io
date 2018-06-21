@@ -378,11 +378,17 @@ $(document).on("click", ".HireWorker", (e) => {
     refreshWorkers();
 });
 
+let lastTime = Date.now();
+let timeWarp = 1;
+
 function mainLoop() {
     player.Ore = Math.min(player.Ore,getCap("Ore"));
     player.Wood = Math.min(player.Wood,getCap("Wood"));
     player.Leather = Math.min(player.Leather,getCap("Leather"));
     player.Herb = Math.min(player.Herb,getCap("Herb"));
+    const elapsedTime = (Date.now()-lastTime)*timeWarp;
+    lastTime = Date.now();
+    dungeonAdvance(elapsedTime);
     for (let i=0;i<player.actionSlots.length;i++) {
         if (player.actionSlots[i].actionTime > 0) {
             let craftTime = null;

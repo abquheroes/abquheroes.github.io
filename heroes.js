@@ -28,6 +28,12 @@ class OwnedHero {
         else if (this.role == Class.CASTER) return this.mind;
         else if (this.role == Class.THIEF) return this.moxie;
     }
+    roll(stat) {
+        let n = this.moxie;
+        if (stat == Stat.MIGHT) n = this.might;
+        else if (stat == Stat.MIND) n = this.mind;
+        return randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25));
+    }
 }
 
 //we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have
