@@ -6,6 +6,7 @@ const heroBase = {
   "H001" : ["Abqu",Class.FIGHTER],
   "H002" : ["Katie",Class.CASTER],
   "H003" : ["Bloop",Class.THIEF],
+  "H999" : ["Empty",null],
 }
 
 class OwnedHero {
@@ -35,6 +36,7 @@ const heroImageReference = {
     "H001" : '<img src="workers/oren.gif">',
     "H002" : '<img src="workers/eryn.gif">',
     "H003" : '<img src="workers/herbie.gif">',
+    "H999" : '<img src="workers/blackoutline.png">',
 }
 
 const $heroList = $("#heroList");
