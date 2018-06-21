@@ -127,19 +127,17 @@ body{
 }
 
 .heading-arrow {
-    display: inline-block;
     position: absolute;
-    margin: 5px 0 0 0;
-    right: 10px;
+    top: 4px;
+    right: 2px;
     color: var(--theme-text-3);
-    transform: rotateZ(90deg);
     transition: all 0.3s ease;
     font-family: monospace;
     font-weight: bold;
 }
 
 .arrow-rotate {
-    transform: rotateZ(270deg);
+    transform: rotateZ(180deg);
 }
 
 #side-content .heading {
@@ -1494,16 +1492,23 @@ a.workerDialog {
 }
 
 .dialog_close {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: -2px 0 0 0;
-    padding: 5px 15px;
+    top: 7px;
+    right: 5px;
+    padding: 5px;
     color: var(--theme-text-2);
     font-size: 32px;
     text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.2s ease;
     z-index: 2;
+}
+
+.dialog_close:hover {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .dialog_title {

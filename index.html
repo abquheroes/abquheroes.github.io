@@ -25,6 +25,7 @@
     <link href="style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <main id="content">
@@ -33,7 +34,7 @@
                 <div id="game-logo"><h1>Abqu Heroes</h1></div>
                 <div id="side-content">
                     <div id="resources-container">
-                    <p class="heading">Gold &amp; Resources <span class="heading-arrow">></span></p>
+                    <p class="heading">Gold &amp; Resources <span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
                         <div id="goldResource" class="resource tooltip" aria-label="Gold" aria-describedby="moneyAmt"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
                         <div id="oreResource" class="resource tooltip" aria-label="Ore" aria-describedby="oreAmt"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
                         <div id="woodResource" class="none resource tooltip" aria-label="Wood" aria-describedby="woodAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
@@ -42,7 +43,7 @@
                         <div id="extraInv"></div>
                     </div>
                     <div id="settings-container">
-                        <p class="heading">Settings <span class="heading-arrow">></span></p>
+                        <p class="heading">Settings <span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
                         <div id="theme-selection">
                             <button class="lm-btn">Light Mode</button>
                             <button class="dm-btn">Dark Mode</button>
@@ -61,7 +62,7 @@
                 <div id="dialogOren" class="dialog" role="dialog" aria-labelledby="titleOren" aria-describedby="descOren">
                     <div class="dialog_content">
                         <div class="dialog_header">
-                            <a href="#closeDialog" class="dialog_close">x</a>
+                            <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
                             <h2 id="titleOren" class="dialog_title">About Oren</h2>
                         </div>
                         <div class="dialog_body">
@@ -178,7 +179,7 @@
                 <div id="dialogEryn" class="dialog" role="dialog" aria-labelledby="titleEryn" aria-describedby="descEryn">
                         <div class="dialog_content">
                             <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close">x</a>
+                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
                                 <h2 id="titleEryn" class="dialog_title">About Eryn</h2>
                             </div>
                             <div class="dialog_body">
@@ -295,7 +296,7 @@
                 <div id="dialogLakur" class="dialog" role="dialog" aria-labelledby="titrleLakur" aria-describedby="descLakur">
                         <div class="dialog_content">
                             <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close">x</a>
+                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
                                 <h2 id="titleLakur" class="dialog_title">About Lakur</h2>
                             </div>
                             <div class="dialog_body">
@@ -412,7 +413,7 @@
                 <div id="dialogHerbie" class="dialog" role="dialog" aria-labelledby="titleHerbie" aria-describedby="descHerbie">
                         <div class="dialog_content">
                             <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close">x</a>
+                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
                                 <h2 id="titleHerbie" class="dialog_title">About Herbie</h2>
                             </div>
                             <div class="dialog_body">
@@ -529,7 +530,7 @@
                 <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
                     <div class="dialog_content">
                         <div class="dialog_header">
-                            <a href="#closeDialog" class="dialog_close">x</a>
+                            <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
                             <h2 id="titlePlayfab" class="dialog_title">Playfab</h2>
                         </div>
                         <div class="dialog_body">
@@ -561,7 +562,7 @@
                         <div id="ASTable">
                             <div class="ASBlock" id="ASBlock1">
                                 <div class="ASType" id="ASType1">Empty</div>
-                                <div class="ASCancel" id="ASCancel1"><a href="1" class="ASCancelText">[x]</a></div>
+                                <div class="ASCancel" id="ASCancel1"><a href="1" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
                                 <div class="ASName hidden" id="ASName1"></div>
                                 <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c1pbLabel"><span class="ProgressBarFill" id="c1pb"></span></div>
                             </div>
@@ -721,7 +722,7 @@
                         <a id="cloudSave" class="tooltip" href="#dialogPlayfab" aria-label="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
                     </div>
                     <div id="bottom-right">
-                        <p id="version-scale">v0.1.3.7</p>
+                        <p id="version-scale">v0.2.0.0-dev</p>
                         <a href="about.html" target="_blank">About &amp; Crediting</a>
                         <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server</a>
                     </div>
