@@ -331,7 +331,7 @@ function fakeSelect(name) {
 
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
-    const slot = $(e.target).attr("href")-1;
+    const slot = $(e.target).parent().attr("href")-1;
     if(player.actionSlots[slot].actionType === "Craft" && player.actionSlots[slot].actionTime > 0) itemRefund(player.actionSlots[slot].actionName);
     player.actionSlots[slot].actionType = "Empty";
     player.actionSlots[slot].actionName = "Empty";

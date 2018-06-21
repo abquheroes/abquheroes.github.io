@@ -496,18 +496,22 @@ select {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 10px;
 }
 
 .ASCancel a {
     display: block;
-    padding: 5px 5px;
-    color: var(--theme-text);
+    color: var(--theme-text-3);
     text-decoration: none;
-    background-color: var(--theme-bg-3);
+    transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
-    background-color: var(--theme-bg-2);
+    color: var(--theme-text);
+}
+
+.ASCancel>a>i.tiny.material-icons {
+    margin-top: 3px;
 }
 
 .pbLabel {
