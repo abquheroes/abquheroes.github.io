@@ -7,8 +7,6 @@ const PartyState = Object.freeze({"IDLE":0, "CLEARING":1,});
 
 const activeTeams = {};
 
-const maxDungeon = 5;
-
 $dungeonTeams = $("#dungeonLeft");
 let currentParty = null;
 
@@ -37,13 +35,6 @@ class Party {
         this.heroes.splice(location, 1);
         this.heroes.push("H999");
     }
-    heroSort() {
-        this.heroes.sort((a, b) => {
-            if (a !== "H999" && b === "H999") return -1;
-            if (a === "H999" && b !== "H999") return 1;
-            return 0;
-        });
-    }
     timePulse(t) {
         this.counter += t;
         if (this.counter >= 2000) {
@@ -52,10 +43,27 @@ class Party {
         }
         return false;
     }
-    trap(diff,stat) {
-        this.heroes.forEach((heroID) => {
-            heroProgress[]
+    partyRoll(stat) {
+        let total = 0;
+        this.heroList().forEach((hero) => {
+            total += hero.roll(stat);
         });
+        return total;
+    }
+    damageParty(dmg) {
+        this.heroList().forEach((hero) => {
+            hero.takeDamage(dmg);
+        })
+    }
+    heroList() {
+        const hList = [];
+        this.heroes.forEach((heroID) => {
+            if (heroID !== "H999") hList.push(heroOwnedbyID(heroID));
+        });
+        return hList
+    }
+    getFloor() {
+        return dungeons[this.id].floors[this.floor];
     }
 }
 
@@ -72,13 +80,13 @@ refreshDungeonSlots();
 
 function refreshDungeonSlots() {
     $dungeonTeams.empty();
-    for (let i=0;i<maxDungeon;i++) {
+    for (let i=0;i<dungeons.length;i++) {
         if (i in activeTeams) {
-            const d1 = $("<div/>").addClass("partyContainer").attr("id",i).html("Dungeon " + i);
+            const d1 = $("<div/>").addClass("partyContainer").attr("id",i).html(dungeons[i].name);
             $dungeonTeams.append(d1);
         }
         else {
-            const d1 = $("<div/>").addClass("partyContainer").attr("id",i).html("Dungeon " + i+ " (Empty)");
+            const d1 = $("<div/>").addClass("partyContainer").attr("id",i).html(dungeons[i].name+ " (Empty)");
             $dungeonTeams.append(d1);
         }
     }
@@ -151,9 +159,9 @@ $(document).on('click',"#dungeonTeamButton",(e)=> {
 
 //receives time passed from main loop and rock and rolls
 function dungeonAdvance(t) {
-    for (const [dungeon, party] of Object.entries(activeTeams)) {
+    for (const [_, party] of Object.entries(activeTeams)) {
         if (party.timePulse(t)) {
-
+            party.getFloor().attempt(party);
         }
     }
 }
@@ -162,22 +170,4 @@ function randomNormal(a,b) {
     const adj = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3
     const adjFull = (b*(1+adj)+a*(1-adj))/2
     return Math.round(adjFull);
-}
-
-const FloorType = Object.freeze({"FIGHT":0, "TRAP":1, "CHALLENGE":2, "TREASURE":3,});
-const Stat = Object.freeze({"MIGHT":0,"MIND":1,"MAGIC":2});
-
-class Floor {
-    constructor (type,difficulty,content) {
-        this.type = type;
-        this.difficulty = difficulty;
-        this.content = content;
-    }
-    attempt(party) {
-        if (this.type === FloorType.TRAP) {
-            //this floor rolls a check for each hero in party, if they fail they take 10-30% danage
-            const beat = 1.1^this.difficulty;
-            
-        }
-    }
 }

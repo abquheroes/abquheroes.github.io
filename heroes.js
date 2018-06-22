@@ -19,9 +19,7 @@ class OwnedHero {
         this.might = might;
         this.mind = mind;
         this.moxie = moxie;
-    }
-    get hp() {
-        return 10;
+        this.hp = 10;
     }
     get atk() {
         if (this.role == Class.FIGHTER) return this.might;
@@ -32,7 +30,11 @@ class OwnedHero {
         let n = this.moxie;
         if (stat == Stat.MIGHT) n = this.might;
         else if (stat == Stat.MIND) n = this.mind;
+        console.log(randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25)));
         return randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25));
+    }
+    takeDamage(dmg) {
+        this.hp -= dmg;
     }
 }
 
