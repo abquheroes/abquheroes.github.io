@@ -11,12 +11,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--theme-scroll-thumb);
+    background-color: var(--scroll-thumb);
     border-radius: 20px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--theme-scroll-track);
+    background-color: var(--scroll-track);
 }
 
 ::-webkit-scrollbar {
@@ -27,19 +27,19 @@
 /* LIGHT AND DARK MODE */
 
 :root {
-    --theme-bg: #fff;
-    --theme-bg-2: #f3f3f3;
-    --theme-bg-3: #f9f7f7;
-    --theme-border: #d1d1d1;
-    --theme-border-2: #adadad;
-    --theme-text: #000;
-    --theme-text-2: #fff;
-    --theme-text-3: #909090;
-    --theme-link: #218cff;
-    --theme-scroll-thumb: rgba(0,0,0,0.10);
-    --theme-scroll-track: rgba(0,0,0,0.10);
-    --theme-progressbar: #218cff;
-    --theme-scheme: linear-gradient(-40deg, #0fb898 0%, #1fdb96 51%, #2ce891 75%);
+    --bg: #202020;
+    --bg-2: #151515;
+    --bg-3: #191919;
+    --border: #2b2b2b;
+    --border-2: #adadad;
+    --text: #fff;
+    --text-2: #fff;
+    --text-3: #909090;
+    --link: #191919;
+    --scroll-thumb: rgba(255,255,255,0.10);
+    --scroll-track: rgba(0,0,0,0.30);
+    --progressbar: #218cff;
+    --scheme: linear-gradient(-40deg, #353535 0%, #545454 51%, #636262 75%);
 }
 
 .lm-btn, .dm-btn, .cp-btn, .cf-btn {
@@ -47,23 +47,23 @@
     padding: 7px 10px;
     width: 100%;
     border: none;
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--border);
     border-radius: 25px;
-    background-color: var(--theme-bg);
-    color: var(--theme-text);
+    background-color: var(--bg);
+    color: var(--text);
     text-transform: uppercase;
     cursor: pointer;
 }
 
 .lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 /**/
 
 body{
-    color: var(--theme-text);
-    background-color: var(--theme-bg-2);
+    color: var(--text);
+    background-color: var(--bg-2);
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
 }
@@ -88,15 +88,15 @@ body{
     flex-direction: column;
     width: 250px;
     height: 100vh;
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
 }
 
 .game-content .status {
-    border-right: 1px solid var(--theme-border);
+    border-right: 1px solid var(--border);
 }
 
 #game-logo {
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
     background-image: url('images/site-logo.png');
     background-position: center;
     background-size: 65%;
@@ -130,7 +130,7 @@ body{
     position: absolute;
     top: 4px;
     right: 2px;
-    color: var(--theme-text-3);
+    color: var(--text-3);
     transition: all 0.3s ease;
     font-family: monospace;
     font-weight: bold;
@@ -143,8 +143,8 @@ body{
 #side-content .heading {
     padding: 5px 10px;
     text-align: center;
-    color: var(--theme-text);
-    border-bottom: 2px solid var(--theme-border);
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
     cursor: pointer;
 }
 
@@ -158,13 +158,13 @@ body{
     align-items: center;
     margin: 5px 0;
     padding: 5px 10px;
-    background-color: var(--theme-bg-3);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
     border-radius: 25px;
 }
 
 #right-side-content {
-    border-left: 1px solid var(--theme-border);
+    border-left: 1px solid var(--border);
     height: calc(100vh - 50px);
     overflow-y: auto;
 }
@@ -191,8 +191,8 @@ body{
 }
 
 #sell1, #sell10, #sellAll {
-    background-color: var(--theme-bg-2);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
     padding: 3px 5px;
     margin: 0 3px;
     flex-grow: 1;
@@ -200,19 +200,19 @@ body{
 }
 
 #sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
-    background: var(--theme-scheme);
-    color: var(--theme-text-2);
+    background: var(--scheme);
+    color: var(--text-2);
 }
 
 .inventoryItem {
     display: flex;
     align-items: center;
     position: relative;
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--border);
 }
 
 .inventoryItem:first-of-type {
-    border-top: 1px solid var(--theme-border);
+    border-top: 1px solid var(--border);
 }
 
 .inventoryItem>img {
@@ -227,14 +227,14 @@ body{
 
 .inventoryItem a {
     flex-grow: 1;
-    color: var(--theme-text);
+    color: var(--text);
     font-size: 14px;
     text-decoration: none;
     padding: 10px 60px 10px 30px;
 }
 
 .inventoryItem a:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 .inventoryItem .inventoryCount {
@@ -243,8 +243,8 @@ body{
     font-size: .9em;
     line-height: 25px;
     width: 50px;
-    background-color: var(--theme-bg-3);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
     pointer-events: none;
 }
 
@@ -331,12 +331,12 @@ select {
 }
 
 .ui-tabs .ui-tabs-panel {
-    color: var(--theme-text);
+    color: var(--text);
     padding: 0;
 }
 
 .ui-widget-content a {
-    color: var(--theme-text);
+    color: var(--text);
     text-decoration: none;
 }
 
@@ -347,10 +347,10 @@ select {
 .ui-tabs, .ui-tabs .ui-tabs-nav {
     padding: 0;
     border-radius: 0;
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--border);
     border-left: none;
     border-right: 1px solid transparent;
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
 }
 
 .ui-tabs .ui-tabs-nav li {
@@ -361,12 +361,12 @@ select {
 }
 
 .ui-tabs .ui-tabs-nav li a {
-    color: var(--theme-text-3);
+    color: var(--text-3);
 }
 
 .ui-tabs-nav li a:hover {
-    background-color: var(--theme-bg-2);
-    color: var(--theme-text);
+    background-color: var(--bg-2);
+    color: var(--text);
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
@@ -378,25 +378,25 @@ select {
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
-    background: var(--theme-link);
-    color: var(--theme-text-2);
+    background: var(--link);
+    color: var(--text-2);
 }
 
 .ui-state-default, .ui-widget-content .ui-state-default {
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-    color: var(--theme-text);
+    color: var(--text);
 }
 
 .ui-widget.ui-widget-content, .ui-widget-content {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
     border: none;
 }
 
 .ui-progressbar.ui-widget.ui-widget-content {
-    background-color: var(--theme-bg-3);
+    background-color: var(--bg-3);
 }
 
 .ui-progressbar .ui-progressbar-value {
@@ -404,8 +404,8 @@ select {
 }
 
 .ui-dialog {
-    border: 1px solid var(--theme-border)!important;
-    background-color: var(--theme-bg-2)!important;
+    border: 1px solid var(--border)!important;
+    background-color: var(--bg-2)!important;
     box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px rgba(0,0,0,0.25);
@@ -434,7 +434,7 @@ select {
     display: flex;
     flex-direction: column;
     position: relative;
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--border);
     margin: 0 4px 10px 0;
     min-width: 200px;
     max-width: 200px;
@@ -450,7 +450,7 @@ select {
 }
 
 .plProgressBar {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 .ASProgressBar:before {
@@ -464,7 +464,7 @@ select {
     position: relative;
     height: 100%;
     z-index: -1;
-    background-color: var(--theme-progressbar);
+    background-color: var(--progressbar);
 }
 
 .plProgressBarPercent {
@@ -473,8 +473,8 @@ select {
 
 .ASType {
     text-align: center;
-    background-color: var(--theme-bg-3);
-    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--bg-3);
+    border-bottom: 1px solid var(--border);
     padding: 5px 20px;
 }
 
@@ -483,8 +483,8 @@ select {
     text-align: center;
     flex-grow: 1;
     padding: 10px;
-    background-color: var(--theme-bg);
-    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
 }
 
 .ASName img {
@@ -501,13 +501,13 @@ select {
 
 .ASCancel a {
     display: block;
-    color: var(--theme-text-3);
+    color: var(--text-3);
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
-    color: var(--theme-text);
+    color: var(--text);
 }
 
 .ASCancel>a>i.tiny.material-icons {
@@ -516,7 +516,7 @@ select {
 
 .pbLabel {
     padding: 3px 14px;
-    color: var(--theme-text);
+    color: var(--text);
 }
 
 .tab-heading {
@@ -533,59 +533,59 @@ select {
 }
 
 .ui-dialog .ui-dialog-content {
-    color: var(--theme-text);
+    color: var(--text);
 }
 
 .ui-dialog .ui-dialog-buttonpane button {
     margin: .5em .4em .5em 0;
     cursor: pointer;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
-    color: var(--theme-text-3);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-3);
     border-radius: 3px;
 }
 
 .ui-dialog .ui-dialog-buttonpane button:hover {
-    color: var(--theme-text);
+    color: var(--text);
 }
 
 .ui-draggable .ui-dialog-titlebar {
-    background-color: var(--theme-bg);
-    color: var(--theme-text-3);
+    background-color: var(--bg);
+    color: var(--text-3);
 }
 
 input#importSaveText {
-    background-color: var(--theme-bg-3);
-    border: 1px solid var(--theme-border);
-    color: var(--theme-text);
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
+    color: var(--text);
 }
 
 #RecipeFilter {
     display: flex;
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
     padding: 0 25px 0 0;
     margin-top: 10px;
     height: 40px;
     line-height: 40px;
-    border-top: 1px solid var(--theme-border);
-    border-bottom: 1px solid var(--theme-border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 #RecipeFilter a.recipeSelect {
-    color: var(--theme-text);
+    color: var(--text);
     padding: 0 15px 0 3px;
     height: 100%;
     width: 100%;
     max-width: 40px;
     overflow: hidden;
-    border-right: 1px solid var(--theme-border);
+    border-right: 1px solid var(--border);
 }
 
 #RecipeFilter a.recipeSelect.selected {
     width: auto;
     max-width: 100%;
-    background-color: var(--theme-link);
-    color: var(--theme-text-2);
+    background-color: var(--link);
+    color: var(--text-2);
 }
 
 #RecipeFilter a.recipeSelect:first-of-type {
@@ -593,8 +593,8 @@ input#importSaveText {
 }
 
 #RecipeFilter a.recipeSelect:hover {
-    background-color: var(--theme-link);
-    color: var(--theme-text-2);
+    background-color: var(--link);
+    color: var(--text-2);
 }
 
 #RecipeFilter a[href*="Selector"]:before {
@@ -677,9 +677,9 @@ input#importSaveText {
 }
 
 .recipeHeader, .jobHeader {
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
     height: 40px;
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
@@ -691,11 +691,11 @@ input#importSaveText {
 }
 
 .recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
-    background-color: var(--theme-bg);
+    background-color: var(--bg);
 }
 
 .recipeRow:hover, .jobRow:hover {
-    background-color: var(--theme-border);
+    background-color: var(--border);
 }
 
 .recipeHeadName, .recipeName {
@@ -725,9 +725,9 @@ input#importSaveText {
     display: block;
     margin-bottom: 10px;
     padding: 15px 10px;
-    background-color: var(--theme-bg);
-    border-top: 1px solid var(--theme-border);
-    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .unlockReq>i:before {
@@ -735,7 +735,7 @@ input#importSaveText {
     position: relative;
     content: "?";
     font-weight: bold;
-    color: var(--theme-text);
+    color: var(--text);
     margin-right: 10px;
     margin-left: 5px;
 }
@@ -777,8 +777,8 @@ input#importSaveText {
     max-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px 15px 50px;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -796,19 +796,19 @@ input#importSaveText {
 .upgradeDesc {
     flex-grow: 1;
     font-size: .9em;
-    color: var(--theme-text-3);
+    color: var(--text-3);
     margin-bottom: 10px;
 }
 
 .WorkerDesc {
-    color: var(--theme-text-3);
+    color: var(--text-3);
     text-align: center;
     flex-grow: 1;
     max-height: 60px;
 }
 
 .WorkerDesc>em {
-    color: var(--theme-text);
+    color: var(--text);
     font-style: normal;
 }
 
@@ -825,9 +825,9 @@ input#importSaveText {
     left: 10px;
     width: 50px;
     height: 50px;
-    background: var(--theme-scheme);
-    color: var(--theme-text-2);
-    border: 1px solid var(--theme-border);
+    background: var(--scheme);
+    color: var(--text-2);
+    border: 1px solid var(--border);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
@@ -849,13 +849,13 @@ input#importSaveText {
     top: -30px;
     content: "Required Contributions";
     padding-bottom: 3px;
-    color: var(--theme-text-3);
+    color: var(--text-3);
     font-size: .8em;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
-    border-bottom: 1px solid var(--theme-border);
+    border-bottom: 1px solid var(--border);
 }
 
 .itemToSacDiv {
@@ -867,8 +867,8 @@ input#importSaveText {
 .Worker .itemToSac {
     display: inline-block;
     text-align: center;
-    background-color: var(--theme-bg-3);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
     margin-bottom: 5px;
     padding: 10px;
     font-size: .9em;
@@ -879,9 +879,9 @@ input#importSaveText {
     display: block;
     padding: 10px;
     border: none;
-    background-color: var(--theme-bg-3);
-    border-top: 1px solid var(--theme-border);
-    color: var(--theme-text);
+    background-color: var(--bg-3);
+    border-top: 1px solid var(--border);
+    color: var(--text);
     font-size: 0.8em;
     text-transform: uppercase;
     cursor: pointer;
@@ -902,7 +902,7 @@ input#importSaveText {
 }
 
 .Worker .BuyWorker {
-    border-left: 1px solid var(--theme-border);
+    border-left: 1px solid var(--border);
 }
 
 .Worker .BuyWorker>img {
@@ -911,7 +911,7 @@ input#importSaveText {
 }
 
 .Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 .BuyWorker.workerDisable, .BuyUpgrade.upgradeDisable {
@@ -989,7 +989,7 @@ input#importSaveText {
 
 .progress-desc {
     font-size: .9em;
-    color: var(--theme-text-3);
+    color: var(--text-3);
     flex-grow: 1;
 }
 
@@ -997,8 +997,8 @@ input#importSaveText {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     min-width: 250px;
     max-width: 250px;
     margin: 0 15px 10px 0;
@@ -1013,7 +1013,7 @@ input#importSaveText {
     display: block;
     position: absolute;
     bottom: 0;
-    border-top: 1px solid var(--theme-border)!important;
+    border-top: 1px solid var(--border)!important;
     width: 100%;
     margin: 0 -15px;
 }
@@ -1024,8 +1024,8 @@ input#importSaveText {
     padding: 10px 20px;
     font-weight: bold;
     font-size: .9em;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -1033,8 +1033,8 @@ input#importSaveText {
 }
 
 #completeTime {
-    background: var(--theme-scheme);
-    color: var(--theme-text-2);
+    background: var(--scheme);
+    color: var(--text-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
@@ -1059,8 +1059,8 @@ input#importSaveText {
     padding: 10px 20px;
     min-width: 125px;
     min-height: 100px;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -1084,21 +1084,21 @@ input#importSaveText {
 }
 
 .heroOwnedCard {
-    background-color: var(--theme-bg);
-    border-right: 1px solid var(--theme-border);
-    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     flex-grow: 1;
     min-width: 300px;
     text-align: center;
 }
 
 .heroOwnedCard:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
     cursor: pointer;
 }
 
 .heroOwnedCard.highlight {
-    background: var(--theme-bg-3);
+    background: var(--bg-3);
 }
 
 .heroOwnedCard.highlight:hover {
@@ -1106,8 +1106,8 @@ input#importSaveText {
 }
 
 #heroCard {
-    background-color: var(--theme-bg);
-    border-bottom: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
     flex-grow: 1;
     min-width: 400px;
 }
@@ -1122,8 +1122,8 @@ footer {
     width: calc(100% - 250px);
     height: 50px;
     font-size: 14px;
-    background-color: var(--theme-bg);
-    border-top: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border-top: 1px solid var(--border);
     z-index: 999;
 }
 
@@ -1135,13 +1135,13 @@ footer a {
     display: inline-block;
     height: 100%;
     padding: 15px;
-    color: var(--theme-text);
+    color: var(--text);
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 #clearSave, #exportSave, #importSave, #cloudSave {
@@ -1336,10 +1336,10 @@ footer a[href*="discord.gg"]:hover {
 #pfEmail>input, #pfPassword>input {
     width: 100%;
     padding: 10px 3px;
-    background-color: var(--theme-bg-2);
-    color: var(--theme-text);
+    background-color: var(--bg-2);
+    color: var(--text);
     border: none;
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--border);
     border-radius: 0;
     transition: all 0.2s linear;
 }
@@ -1350,7 +1350,7 @@ footer a[href*="discord.gg"]:hover {
     content: "";
     height: 2px;
     width: 0;
-    background-color: var(--theme-border-2);
+    background-color: var(--border-2);
     transition: all 0.2s linear;
 }
 
@@ -1368,9 +1368,9 @@ footer a[href*="discord.gg"]:hover {
     padding: 10px 25px;
     flex-grow: 1;
     text-transform: uppercase;
-    background-color: var(--theme-bg-3);
-    color: var(--theme-text);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg-3);
+    color: var(--text);
+    border: 1px solid var(--border);
     border-radius: 0;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -1379,7 +1379,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 #pfButtons>input:first-of-type, #pfImportExport>input:first-of-type {
@@ -1403,7 +1403,7 @@ footer a[href*="discord.gg"]:hover {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    border: 1px solid var(--theme-border);
+    border: 1px solid var(--border);
     text-align: center;
 }
 
@@ -1414,12 +1414,12 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #flex-table .table-row:nth-of-type(odd) {
-    background-color: var(--theme-bg-2);
+    background-color: var(--bg-2);
 }
 
 #flex-table .table-row.header-row {
-    background: var(--theme-scheme);
-    color: var(--theme-text-2);
+    background: var(--scheme);
+    color: var(--text-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     font-weight: bold;
 }
@@ -1456,9 +1456,9 @@ a.workerDialog {
     right: 10px;
     width: 30px;
     height: 30px;
-    background: var(--theme-link);
-    color: var(--theme-text-2);
-    border: 1px solid var(--theme-border);
+    background: var(--link);
+    color: var(--text-2);
+    border: 1px solid var(--border);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
@@ -1480,8 +1480,8 @@ a.workerDialog {
     max-width: 500px;
     height: 100%;
     max-height: 400px;
-    background-color: var(--theme-bg);
-    border: 1px solid var(--theme-border);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
@@ -1503,7 +1503,7 @@ a.workerDialog {
     top: 7px;
     right: 5px;
     padding: 5px;
-    color: var(--theme-text-2);
+    color: var(--text-2);
     font-size: 32px;
     text-decoration: none;
     border-radius: 50%;
@@ -1518,8 +1518,8 @@ a.workerDialog {
 .dialog_title {
     margin: 0;
     padding: 10px 50px 10px 20px;
-    background: var(--theme-scheme);
-    color: var(--theme-text-2);
+    background: var(--scheme);
+    color: var(--text-2);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -1580,7 +1580,7 @@ a.workerDialog {
         z-index: 2;
     }
 
-    #theme-selection {
+    #selection {
         position: absolute;
         top: 0;
         right: 0;
@@ -1610,7 +1610,7 @@ a.workerDialog {
     }
 
     #side-content {
-        border-top: 1px solid var(--theme-border);
+        border-top: 1px solid var(--border);
         padding: 0;
         overflow: auto;
     }
@@ -1671,7 +1671,7 @@ a.workerDialog {
     .game-content .game-wrapper {
         max-width: 100%;
         padding-bottom: 10px;
-        border-bottom: 1px solid var(--theme-border);
+        border-bottom: 1px solid var(--border);
     }
 
     #Actions>h1 {
@@ -1746,7 +1746,7 @@ a.workerDialog {
     .recipeRow {
         position: relative;
         flex-wrap: wrap;
-        border-bottom: 1px solid var(--theme-border);
+        border-bottom: 1px solid var(--border);
     }
     
     .recipeName {

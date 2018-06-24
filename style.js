@@ -1,5 +1,5 @@
 // Theme Switching for Light and Dark Mode
-
+/*
 var root = document.querySelector(":root");
 var darkButton = document.querySelector(".dm-btn");
 var lightButton = document.querySelector(".lm-btn");
@@ -81,6 +81,7 @@ function darkTheme() {
     darkButton.style.display = "none";
     lightButton.style.display = "block";
 };
+*/
 
 // View Selection for Compact and Comfortable
 
