@@ -1090,6 +1090,7 @@ input#importSaveText {
     flex-grow: 1;
     min-width: 300px;
     text-align: center;
+    padding: 20px;
 }
 
 .heroOwnedCard:hover {
@@ -1110,6 +1111,23 @@ input#importSaveText {
     border-bottom: 1px solid var(--border);
     flex-grow: 1;
     min-width: 400px;
+}
+
+#dungeon-container {
+    display: flex;
+}
+
+#dungeonLeft {
+    flex-grow: 1;
+    max-width: 300px;
+    padding: 20px;
+    background-color: brown;
+}
+
+#dungeonRight {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: greenyellow;
 }
 
 footer {
