@@ -45,9 +45,7 @@ const $tickets = $("#ticketShop");
 
 function refreshTickets() {
     $tickets.empty();
-    console.log(shopItems);
     for (let i=0;i<shopItems.length;i++) {
-        console.log(shopItems[i]);
         const ticket = $("<div/>").addClass("TicketCard");
         const d1 = $("<div/>").addClass("TicketName").html(shopItems[i].name);
         const d2 = $("<div/>").addClass("TicketImage").html(shopItems[i].image);

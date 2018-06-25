@@ -1,6 +1,6 @@
 "use strict";
-const FloorType = Object.freeze({"FIGHT":0, "TRAP":1, "CHALLENGE":2, "TREASURE":3,});
-const Stat = Object.freeze({"MIGHT":0,"MIND":1,"MAGIC":2});
+const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", CHALLENGE:"Challenge", TREASURE:"Treasure",});
+const Stat = Object.freeze({MIGHT:"Might",MIND:"Mind",MOXIE:"Moxie"});
 
 class Floor {
     constructor (type,difficulty,content) {
@@ -15,8 +15,9 @@ class Floor {
             const pattempt = party.partyRoll(content);
             console.log("Attempted floor: " + pattempt + " vs " + beat);
             if (pattempt < beat) {
-                party.damageParty(5);
-                return false;
+                party.damageParty(2);
+                refreshDungeonRunHeroes(party);
+                return true;
             }
             return true;
         }
@@ -30,7 +31,7 @@ class Dungeon {
     }
 }
 
-const dungeon1 = new Dungeon("First Dungeon",[new Floor(FloorType.TRAP,20,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
+const dungeon1 = new Dungeon("First Dungeon",[new Floor(FloorType.TRAP,20,Stat.MIGHT),new Floor(FloorType.TRAP,30,Stat.MIGHT),new Floor(FloorType.TRAP,40,Stat.MIGHT)]);
 const dungeon2 = new Dungeon("Second Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
 const dungeon3 = new Dungeon("Third Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
 const dungeon4 = new Dungeon("Fourth Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
@@ -39,4 +40,5 @@ const dungeons = [dungeon1,dungeon2,dungeon3,dungeon4,dungeon5];
 
 const dungeonImageReference = {
     "ticket1" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/books/book_1.png">',
+    "Trap" : '<img src="PixelAbqu/trap.png">',
 }

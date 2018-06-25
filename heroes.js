@@ -30,7 +30,6 @@ class OwnedHero {
         let n = this.moxie;
         if (stat == Stat.MIGHT) n = this.might;
         else if (stat == Stat.MIND) n = this.mind;
-        console.log(randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25)));
         return randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25));
     }
     takeDamage(dmg) {
@@ -134,7 +133,6 @@ function refreshHeroes() {
     $hiredHeroes.empty();
     for (let i=0;i<heroProgress.length;i++) {
         const hero = heroProgress[i];
-        console.log(hero);
         const d = $("<div/>").addClass("heroOwnCard");
         const d1 = $("<div/>").addClass("heroOwnName").html(hero.name);
         const d2 = $("<div/>").addClass("heroOwneImage").html(heroImageReference[hero.id]);
