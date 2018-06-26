@@ -89,8 +89,16 @@ const head = document.getElementsByTagName("head");
 const compactButton = document.querySelector(".cp-btn");
 const comfortButton = document.querySelector(".cf-btn");
 
+if (compactButton) {
+    compactButton.addEventListener("click", changeView);
+}
+
+if (comfortButton) {
+    comfortButton.addEventListener("click", changeView);
+}
+/*
 compactButton.addEventListener("click", changeView);
-comfortButton.addEventListener("click", changeView);
+comfortButton.addEventListener("click", changeView);*/
 
 let viewIndex = findView();
 
@@ -103,7 +111,9 @@ function findView() {
     }
 };
 
-loadView();
+if (compactButton || comfortButton ) {
+    loadView();
+}
 
 function changeView() {
     if (viewIndex == 0) {
@@ -193,6 +203,24 @@ function toggleState(e) {
         arrow[0].classList.remove("arrow-rotate");
     } else {
         e.currentTarget.parentNode.classList.add("height-collapse");
+        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
+        arrow[0].classList.add("arrow-rotate");
+    }
+};
+
+const versionHeadings = document.querySelectorAll("#cc-container .version-heading");
+console.log(versionHeadings);
+for (i = 0; i < versionHeadings.length; i++) {
+    versionHeadings[i].addEventListener("click", toggleAboutState);
+};
+
+function toggleAboutState(e) {
+    if (e.currentTarget.nextElementSibling.classList.contains("expanded")) {
+        e.currentTarget.nextElementSibling.classList.remove("expanded");
+        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
+        arrow[0].classList.remove("arrow-rotate");
+    } else {
+        e.currentTarget.nextElementSibling.classList.add("expanded");
         let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
         arrow[0].classList.add("arrow-rotate");
     }
