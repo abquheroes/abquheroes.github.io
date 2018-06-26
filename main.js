@@ -303,8 +303,6 @@ refreshUpgrades();
 populateRecipe(player.currentType);
 fakeSelect(player.currentType);
 refreshWorkers();
-refreshTickets();
-refreshExtraInventory();
 initializeHero();
 
 //used at the beginning to fake what tab you're on
