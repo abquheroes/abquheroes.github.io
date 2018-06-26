@@ -24,6 +24,14 @@
     height: 8px;
 }
 
+#ActionSlots, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist {
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
 /* LIGHT AND DARK MODE */
 
 :root {
@@ -96,12 +104,13 @@ body{
 }
 
 #game-logo {
+    margin: 0 auto;
     background-color: var(--bg);
     background-image: url('images/site-logo.png');
     background-position: center;
-    background-size: 65%;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 90%;
     height: 150px;
 }
 
@@ -175,6 +184,14 @@ body{
     margin: 10px 0;
 }
 
+#inv-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 99;
+}
+
 #sellPref {
     display: flex;
     flex-wrap: wrap;
@@ -191,12 +208,17 @@ body{
 }
 
 #sell1, #sell10, #sellAll {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
     border: 1px solid var(--border);
+    border-radius: 20px;
     padding: 3px 5px;
     margin: 0 3px;
     flex-grow: 1;
     cursor: pointer;
+}
+
+#sell1:hover, #sell10:hover, #sellAll:hover {
+    background-color: var(--bg-2);
 }
 
 #sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
@@ -575,7 +597,6 @@ input#importSaveText {
     color: var(--text);
     padding: 0 15px 0 3px;
     height: 100%;
-    width: 100%;
     max-width: 40px;
     overflow: hidden;
     border-right: 1px solid var(--border);
@@ -825,9 +846,9 @@ input#importSaveText {
     left: 10px;
     width: 50px;
     height: 50px;
-    background: var(--scheme);
+    background: var(--bg);
     color: var(--text-2);
-    border: 1px solid var(--border);
+    border: 3px solid var(--bg-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
@@ -1041,13 +1062,15 @@ input#importSaveText {
 #achievements {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
 }
 
 #achievements>h3 {
+    margin: 20px 0 0 0;
     width: 100%;
+    text-align: left;
 }
 
 #achievements .ProgressCard {
@@ -1055,7 +1078,7 @@ input#importSaveText {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin: 10px 20px 10px 0;
     padding: 10px 20px;
     min-width: 125px;
     min-height: 100px;
@@ -1139,7 +1162,7 @@ input#importSaveText {
 }
 
 .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard {
-    border: 1px solid red;
+    border: 1px solid red; /* debug color */
     padding: 20px;
     text-align: center;
     min-width: 150px;
@@ -1147,7 +1170,7 @@ input#importSaveText {
 
 #dungeonTeamButton {
     width: 100%;
-    background-color: #886363;
+    background-color: #886363; /* debug color */
     cursor: pointer;
 }
 
@@ -1303,8 +1326,8 @@ span#copyme {
 .workerLvl.tooltip:hover:after {
     font-weight: normal;
     top: unset;
-    left: -40%;
-    right: -40%;
+    left: -45%;
+    right: -45%;
     bottom: 120%;
     margin-left: -5px;
     margin-right: -5px;
@@ -1740,6 +1763,14 @@ a.workerDialog {
         margin: 10px;
         width: 100%;
         min-width: 250px;
+    }
+
+    #achievements {
+        justify-content: center;
+    }
+
+    #achievements > h3 {
+        text-align: center;
     }
 
     #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
