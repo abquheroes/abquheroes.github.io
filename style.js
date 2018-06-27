@@ -209,7 +209,7 @@ function toggleState(e) {
 };
 
 const versionHeadings = document.querySelectorAll("#cc-container .version-heading");
-console.log(versionHeadings);
+
 for (i = 0; i < versionHeadings.length; i++) {
     versionHeadings[i].addEventListener("click", toggleAboutState);
 };

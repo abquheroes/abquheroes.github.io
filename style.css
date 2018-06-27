@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -38,6 +38,10 @@
     --bg: #202020;
     --bg-2: #151515;
     --bg-3: #191919;
+    --green-dark: #064a21;
+    --green-light: #089e42;
+    --blue-dark: #063a4a;
+    --blue-light: #087d9e;
     --border: #2b2b2b;
     --border-2: #adadad;
     --text: #fff;
@@ -77,7 +81,7 @@ body{
 }
 
 #Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop {
-    font-family: 'Open Sans', sans-serif; /*font test*/
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
 
@@ -461,6 +465,7 @@ select {
     min-width: 200px;
     max-width: 200px;
     overflow: hidden;
+    animation: 0.2s fade-in;
 }
 
 .ASProgressBar, .plProgressBar {
@@ -846,9 +851,11 @@ input#importSaveText {
     left: 10px;
     width: 50px;
     height: 50px;
-    background: var(--bg);
+    background: #25ca7e;
+    background: -moz-linear-gradient(-145deg, #25ca7e 0%, #1aaf78 50%, #0b9077 100%);
+    background: -webkit-linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
+    background: linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
     color: var(--text-2);
-    border: 3px solid var(--bg-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
@@ -1480,10 +1487,12 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #flex-table .table-row.header-row {
-    background: var(--scheme);
+    background: var(--border);
     color: var(--text-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 0;
 }
 
 #flex-table .table-row>div {
@@ -1518,13 +1527,16 @@ a.workerDialog {
     right: 10px;
     width: 30px;
     height: 30px;
-    background: var(--link);
+    background: var(--border);
     color: var(--text-2);
-    border: 1px solid var(--border);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     border-radius: 50%;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+a.workerDialog:hover {
+    background: var(--blue-light);
 }
 
 .dialog:target {
@@ -1579,12 +1591,13 @@ a.workerDialog {
 
 .dialog_title {
     margin: 0;
-    padding: 10px 50px 10px 20px;
-    background: var(--scheme);
+    padding: 10px;
+    background: var(--blue-light);
     color: var(--text-2);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .dialog_body {
@@ -1594,7 +1607,7 @@ a.workerDialog {
 }
 
 .dialog_description {
-    margin: 40px 0 15px 0;
+    margin: 50px 0 15px 0;
     text-align: center;
 }
 
