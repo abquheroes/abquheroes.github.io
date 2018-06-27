@@ -23,7 +23,7 @@
 }
 
 #progress_container>h3 {
-    padding: 0 5px;
+    padding: 5px;
 }
 
 #gameTime, #completeTime {
@@ -31,7 +31,8 @@
 }
 
 #achievements>h3 {
-    margin: 5px 0;
+    margin: 0;
+    padding: 5px;
 }
 
 #achievements .ProgressCard {
