@@ -3,17 +3,23 @@
 //then you assign heroes by clicking on the slot?
 //build adventure groups so dungeons.js can automate it
 
-const activeTeams = {};
+$dungeonLayout = $("#dungeonLayout");
+const $dungeonTeamSelect = $("#dungeonTeamSelect");
+const $dungeonRun = $("#dungeonRun");
+const $dungeonAfter = $("#dungeonAfter");
 
-$dungeonTeams = $("#dungeonLeft");
-let currentParty = null;
+const $dtsTop = $("#dtsTop");
+const $dtsBottom = $("#dtsBottom");
+const $drTop = $("#drTop");
+const $drBottom = $("#drBottom");
+const $daTop = $("#daTop");
+const $daBottom = $("#daBottom");
 
 class Party {
-    constructor (hero1,hero2,hero3,id) {
+    constructor (hero1,hero2,hero3) {
         this.heroes = [hero1,hero2,hero3];
-        this.floor = 0;
         this.counter = 0;
-        this.id = id;
+        this.floor = 0;
     }
     hasMember(member) {
         for (let i=0;i<this.heroes.length;i++) {
@@ -61,71 +67,66 @@ class Party {
         });
         return hList
     }
-    getFloor() {
-        return dungeons[this.id].floors[this.floor];
+    adventuring() {
+        return true;
     }
-    advanceFloor() {
-        this.floor += 1;
-    }
-    dungeonComplete() {
-        return dungeons[this.id].floors.length == this.floor;
+    validTeam() {
+        return this.heroList().length > 0;
     }
 }
+
+const party = new Party("H999","H999","H999");
+const dungeon = [];
+loadCorrectDungeonScreen()
+
+function loadCorrectDungeonScreen() {
+    if (party.floor === 0) {
+        $dungeonTeamSelect.show();
+        $dungeonRun.hide();
+        $dungeonAfter.hide();
+        refreshHeroSelect();
+    }
+    else if (party.adventuring()) {
+        $dungeonTeamSelect.hide();
+        $dungeonRun.show();
+        $dungeonAfter.hide();    
+    }
+    else {
+        $dungeonTeamSelect.hide();
+        $dungeonRun.hide();
+        $dungeonAfter.show();        
+    }
+}
+
+function generateDungeonFloor() {
+    const s = Math.seededRandom(0,4);
+    const f = [FloorType.FIGHT,FloorType.CHALLENGE,FloorType.TRAP,FloorType.TREASURE];
+    dungeon.push(new Floor(f[s],1,[]));
+}
+
+function generateDungeon() {
+    for (let i=0;i<20;i++) {
+        generateDungeonFloor();
+    }
+    refreshDungeonGrid();
+}
+
+function refreshDungeonGrid() {
+    $dungeonLayout.empty();
+    dungeon.forEach((floor,i) => {
+        const d = $("<div/>").addClass("dungeonFloor").html(floor.icon + "&nbsp;&nbsp;Floor "+(i+1));
+        if (party.floor < i) d.addClass("dungeonFloorClear");
+        else if (party.floor == i) d.addClass("dungeonFloorCurrent");
+        $dungeonLayout.append(d);
+    });
+}
+
+generateDungeon();
 
 function memberAvailable(member) {
     if (member === "H999") return false;
-    for (const [_, team] of Object.entries(activeTeams)) {
-        if (team.hasMember(member)) return false;
-    }
-    if (currentParty.hasMember(member)) return false;
+    if (party.hasMember(member)) return false;
     return true;
-}
-
-refreshDungeonSlots();
-
-function refreshDungeonSlots() {
-    $dungeonTeams.empty();
-    for (let i=0;i<dungeons.length;i++) {
-        if (i in activeTeams) {
-            const party = activeTeams[i];
-            if (party.dungeonComplete()) {
-                const d1a = $("<div/>").addClass("partyContainer").attr("id",i).html(dungeons[i].name+" (Complete!)");
-                $dungeonTeams.append(d1a);
-            }
-            else {
-                const d1b = $("<div/>").addClass("partyContainer").attr("id",i).html(dungeons[i].name);
-                $dungeonTeams.append(d1b);
-            }
-        }
-        else {
-            const d1 = $("<div/>").addClass("partyContainer").attr("id",i).html(dungeons[i].name+ " (Empty)");
-            $dungeonTeams.append(d1);
-        }
-    }
-}
-
-$dungeonTeams.on('click', '.partyContainer', (e) => {
-    const partyID = $(e.target).attr("id");
-    $(".partyContainer").removeClass("partyHighlight");
-    $(e.target).addClass("partyHighlight");
-    if (partyID in activeTeams) refreshDungeonRun(activeTeams[partyID]);
-    else refreshHeroSelect(partyID);
-})
-
-const $dungeonTeamSelect = $("#dungeonTeamSelect");
-const $dtsTop = $("#dtsTop");
-const $dtsBottom = $("#dtsBottom");
-const $drTop = $("#drTop");
-const $drBottom = $("#drBottom");
-
-function refreshDungeonRunHeroes(party) {
-    $drTop.empty();
-    const d1top = $("<div/>").addClass("drTopTitle").html("<h3>Current Team</h3>");
-    $drTop.append(d1top);
-    party.heroList().forEach((hero) => {
-        const d = characterCardHP(hero);
-        $drTop.append(d);
-    })
 }
 
 function refreshDungeonRunDungeon(party,floorID) {
@@ -169,30 +170,26 @@ function refreshDungeonRun(party) {
 }
 
 
-function refreshHeroSelect(partyID) {
-    $("#dungeonTeamSelect").show();
-    $("#dungeonRun").hide();
-    if (partyID) currentParty = new Party("H999","H999","H999",partyID);
-     //we need this for when we click stuff to know what we're modifying...
+function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
     $dtsTop.append(d1top);
-    for (let i=0;i<currentParty.heroes.length;i++) {
-        const d = characterCard(currentParty.heroes[i],"dungeonTeam",i);
+    party.heroes.forEach((hero,i) => {
+        const d = characterCard(hero,"dungeonTeam",i);
         $dtsTop.append(d);
-    }
+    });
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH");
     $dtsTop.append(dbutton);
     $dtsBottom.empty();
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Available Heroes:</h3>");
     $dtsBottom.append(d1bot);
-    for (const [heroID, heroProps] of Object.entries(heroBase)) {
+    for (const [heroID, _] of Object.entries(heroBase)) {
         if (memberAvailable(heroID)) {
             const d = characterCard(heroID,"dungeonAvailable",heroID);
             $dtsBottom.append(d);
         }
-    }
+    };
 }
 
 function characterCard(ID,prefix,dv) {
@@ -215,56 +212,33 @@ function characterCardHP(hero) {
 $(document).on('click', "div.dungeonTeamCard", (e) => {
     e.preventDefault();
     const arrayLocation = $(e.currentTarget).attr("data-value");
-    currentParty.removeMemberLocation(arrayLocation);
+    party.removeMemberLocation(arrayLocation);
     refreshHeroSelect();
 });
 
 $(document).on('click', "div.dungeonAvailableCard", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
-    currentParty.addMember(ID);
+    party.addMember(ID);
     refreshHeroSelect();
 });
 
-$(document).on('click',"#dungeonTeamButton",(e)=> {
+$(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
-    activeTeams[currentParty.id] = currentParty;
-    refreshDungeonRun(currentParty)
-    refreshDungeonSlots();
-})
-
-$(document).on('click','#partyCollect',(e)=> {
-    //delete the party and release everyone back in the wild! refresh dungeon, and also refresh party screen for nothing there
-    e.preventDefault();
-    const partyID = currentParty.id;
-    currentParty = null;
-    delete activeTeams[partyID];
-    refreshDungeonSlots();
-    refreshHeroSelect(partyID);
-})
-
-//code to look at other floors if you're so inclined....
-/*$(document).on('click',"div.floorCard",(e) => {
-    e.preventDefault();
-    const ID = $(e.currentTarget).attr("floor-id");
-    refreshDungeonRunDungeon(currentParty,ID);
-})*/
+    if (party.validTeam()) {
+        party.floor = 1;
+        loadCorrectDungeonScreen();
+    }
+});
 
 //receives time passed from main loop and rock and rolls
 function dungeonAdvance(t) {
-    for (const [_, party] of Object.entries(activeTeams)) {
-        if (party.timePulse(t)) {
-            if(party.getFloor().attempt(party)) { //attempts the floor, returns true if we proceed
-                party.advanceFloor();
-            }
-            if (currentParty === party) refreshDungeonRunDungeon(party);
-            refreshDungeonSlots();
+    return;
+    if (party.timePulse(t)) {
+        if(party.getFloor().attempt(party)) { //attempts the floor, returns true if we proceed
+            party.advanceFloor();
         }
+        refreshDungeonRunDungeon();
+        refreshDungeonSlots();
     }
-}
-
-function randomNormal(a,b) {
-    const adj = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3
-    const adjFull = (b*(1+adj)+a*(1-adj))/2
-    return Math.round(adjFull);
 }

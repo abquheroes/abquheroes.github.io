@@ -7,6 +7,7 @@ class Floor {
         this.type = type;
         this.difficulty = difficulty;
         this.content = content;
+        this.icon = dungeonIcons[[type]];
     }
     attempt(party) {
         if (this.type === FloorType.TRAP) {
@@ -24,21 +25,9 @@ class Floor {
     }
 }
 
-class Dungeon {
-    constructor (name,floors) {
-        this.name = name;
-        this.floors = floors;
-    }
-}
-
-const dungeon1 = new Dungeon("First Dungeon",[new Floor(FloorType.TRAP,20,Stat.MIGHT),new Floor(FloorType.TRAP,30,Stat.MIGHT),new Floor(FloorType.TRAP,40,Stat.MIGHT)]);
-const dungeon2 = new Dungeon("Second Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
-const dungeon3 = new Dungeon("Third Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
-const dungeon4 = new Dungeon("Fourth Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
-const dungeon5 = new Dungeon("Fifth Dungeon",[new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT),new Floor(FloorType.TRAP,5,Stat.MIGHT)]);
-const dungeons = [dungeon1,dungeon2,dungeon3,dungeon4,dungeon5];
-
-const dungeonImageReference = {
-    "ticket1" : '<img src="Pixeltiers_16x16_RPG_Pack_V1.35/books/book_1.png">',
-    "Trap" : '<img src="PixelAbqu/trap.png">',
+const dungeonIcons = {
+    [FloorType.FIGHT] : '<img src="DungeonIcons/fight.png" alt="Fight">',
+    [FloorType.TRAP] : '<img src="DungeonIcons/trap.png" alt="Trap">',
+    [FloorType.CHALLENGE] : '<img src="DungeonIcons/challenge.png" alt="Challenge">',
+    [FloorType.TREASURE] : '<img src="DungeonIcons/treasure.png" alt="Treasure">',
 }
