@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "abquheroes.github.io"
+    "liveServer.settings.multiRootWorkspaceName": "abquheroes.github.io",
+    "python.linting.pylintEnabled": false
 }

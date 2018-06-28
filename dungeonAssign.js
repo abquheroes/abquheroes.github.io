@@ -175,21 +175,25 @@ function refreshHeroSelect() {
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
     $dtsTop.append(d1top);
+    const d = $("<div/>").addClass("dungeonTeamCollection");
     party.heroes.forEach((hero,i) => {
-        const d = characterCard(hero,"dungeonTeam",i);
-        $dtsTop.append(d);
+        const d1 = characterCard(hero,"dungeonTeam",i);
+        d.append(d1);
     });
+    $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH");
     $dtsTop.append(dbutton);
     $dtsBottom.empty();
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Available Heroes:</h3>");
     $dtsBottom.append(d1bot);
+    const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     for (const [heroID, _] of Object.entries(heroBase)) {
         if (memberAvailable(heroID)) {
-            const d = characterCard(heroID,"dungeonAvailable",heroID);
-            $dtsBottom.append(d);
+            const d3 = characterCard(heroID,"dungeonAvailable",heroID);
+            d2.append(d3);
         }
     };
+    $dtsBottom.append(d2);
 }
 
 function characterCard(ID,prefix,dv) {

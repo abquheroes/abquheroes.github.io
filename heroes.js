@@ -3,9 +3,43 @@
 const Class = Object.freeze({"FIGHTER":"Fighter", "CASTER":"Caster", "THIEF":"Thief",})
 
 const heroBase = {
-  "H001" : ["Abqu",Class.FIGHTER],
-  "H002" : ["Katie",Class.CASTER],
-  "H003" : ["Bloop",Class.THIEF],
+  "H001" : ["Beorn",Class.FIGHTER],
+  "H002" : ["Cedric",Class.FIGHTER],
+  "H003" : ["Elda",Class.FIGHTER],
+  "H004" : ["Elle",Class.FIGHTER],
+  "H005" : ["Grim",Class.FIGHTER],
+  "H006" : ["Lambug",Class.FIGHTER],
+  "H007" : ["Luna",Class.FIGHTER],
+  "H008" : ["Rey",Class.FIGHTER],
+  "H009" : ["Rodney",Class.FIGHTER],
+  "H010" : ["Ruby",Class.FIGHTER],
+  "H011" : ["Shel",Class.FIGHTER],
+  "H012" : ["Slate",Class.FIGHTER],
+  "H013" : ["Viktor",Class.FIGHTER],
+  "H014" : ["Caeda",Class.CASTER],
+  "H015" : ["Fae",Class.CASTER],
+  "H016" : ["Finn",Class.CASTER],
+  "H017" : ["Gunther",Class.CASTER],
+  "H018" : ["Nambra",Class.CASTER],
+  "H019" : ["Neve",Class.CASTER],
+  "H020" : ["Reid",Class.CASTER],
+  "H021" : ["Rowan",Class.CASTER],
+  "H022" : ["Titus",Class.CASTER],
+  "H023" : ["Troy",Class.CASTER],
+  "H024" : ["Zarlica",Class.CASTER],
+  "H025" : ["Alok",Class.THIEF],
+  "H026" : ["Grogmar",Class.THIEF],
+  "H027" : ["Igor",Class.THIEF],
+  "H028" : ["Jasper",Class.THIEF],
+  "H029" : ["John",Class.THIEF],
+  "H030" : ["Lola",Class.THIEF],
+  "H031" : ["Maeve",Class.THIEF],
+  "H032" : ["Revere",Class.THIEF],
+  "H033" : ["Sebastian",Class.THIEF],
+  "H034" : ["Sophie",Class.THIEF],
+  "H035" : ["Soora",Class.THIEF],
+  "H036" : ["Teagan",Class.THIEF],
+  "H037" : ["Zoe",Class.THIEF],
   "H999" : ["Empty",null],
 }
 
@@ -40,10 +74,43 @@ class OwnedHero {
 //we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have
 
 const heroImageReference = {
-    "H001" : '<img src="workers/oren.gif">',
-    "H002" : '<img src="workers/eryn.gif">',
-    "H003" : '<img src="workers/herbie.gif">',
-    "H999" : '<img src="workers/blackoutline.png">',
+    "H001" : '<img src="heroes/beorn.gif">',
+    "H002" : '<img src="heroes/cedric.gif">',
+    "H003" : '<img src="heroes/elda.gif">',
+    "H004" : '<img src="heroes/elle.gif">',
+    "H005" : '<img src="heroes/grim.gif">',
+    "H006" : '<img src="heroes/lambug.gif">',
+    "H007" : '<img src="heroes/luna.gif">',
+    "H008" : '<img src="heroes/rey.gif">',
+    "H009" : '<img src="heroes/rodney.gif">',
+    "H010" : '<img src="heroes/ruby.gif">',
+    "H011" : '<img src="heroes/shel.gif">',
+    "H012" : '<img src="heroes/slate.gif">',
+    "H013" : '<img src="heroes/viktor.gif">',
+    "H014" : '<img src="heroes/caeda.gif">',
+    "H015" : '<img src="heroes/fae.gif">',
+    "H016" : '<img src="heroes/finn.gif">',
+    "H017" : '<img src="heroes/gunther.gif">',
+    "H018" : '<img src="heroes/nambra.gif">',
+    "H019" : '<img src="heroes/neve.gif">',
+    "H020" : '<img src="heroes/reid.gif">',
+    "H021" : '<img src="heroes/rowan.gif">',
+    "H022" : '<img src="heroes/titus.gif">',
+    "H023" : '<img src="heroes/troy.gif">',
+    "H024" : '<img src="heroes/zarlica.gif">',
+    "H025" : '<img src="heroes/alok.gif">',
+    "H026" : '<img src="heroes/grogmar.gif">',
+    "H027" : '<img src="heroes/igor.gif">',
+    "H028" : '<img src="heroes/jasper.gif">',
+    "H029" : '<img src="heroes/john.gif">',
+    "H030" : '<img src="heroes/lola.gif">',
+    "H031" : '<img src="heroes/maeve.gif">',
+    "H032" : '<img src="heroes/revere.gif">',
+    "H033" : '<img src="heroes/sebastian.gif">',
+    "H034" : '<img src="heroes/sophie.gif">',
+    "H035" : '<img src="heroes/soora.gif">',
+    "H036" : '<img src="heroes/teagan.gif">',
+    "H037" : '<img src="heroes/zoe.gif">',
 }
 
 const $heroList = $("#heroList");
@@ -52,6 +119,7 @@ const $heroCard = $("#heroCard");
 function initializeHero() {
     ownAllHeroes();
     for (const [ID, props] of Object.entries(heroBase)) {
+        if (ID === "H999") continue;
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",ID);
         const d1 = $("<div/>").addClass("heroOwnedImage").html(heroImageReference[ID]);
         const d2 = $("<div/>").addClass("heroOwnedName").html(props[0]);
