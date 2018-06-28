@@ -129,6 +129,12 @@ function initializeHero() {
     }
 }
 
+function memberAvailable(member) {
+    if (member === "H999") return false;
+    if (party.hasMember(member)) return false;
+    return true;
+}
+
 function playerOwnsHero(ID) {
     for (let i=0;i<heroProgress.length;i++) {
         if (heroProgress[i].id == ID) return true;
