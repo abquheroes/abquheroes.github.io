@@ -3,6 +3,7 @@
 const Class = Object.freeze({"FIGHTER":"Fighter", "CASTER":"Caster", "THIEF":"Thief",})
 
 const heroBase = {
+  // fighters
   "H001" : ["Beorn",Class.FIGHTER],
   "H002" : ["Cedric",Class.FIGHTER],
   "H003" : ["Elda",Class.FIGHTER],
@@ -16,30 +17,30 @@ const heroBase = {
   "H011" : ["Shel",Class.FIGHTER],
   "H012" : ["Slate",Class.FIGHTER],
   "H013" : ["Viktor",Class.FIGHTER],
-  "H014" : ["Caeda",Class.CASTER],
-  "H015" : ["Fae",Class.CASTER],
-  "H016" : ["Finn",Class.CASTER],
-  "H017" : ["Gunther",Class.CASTER],
-  "H018" : ["Nambra",Class.CASTER],
-  "H019" : ["Neve",Class.CASTER],
-  "H020" : ["Reid",Class.CASTER],
-  "H021" : ["Rowan",Class.CASTER],
-  "H022" : ["Titus",Class.CASTER],
-  "H023" : ["Troy",Class.CASTER],
-  "H024" : ["Zarlica",Class.CASTER],
-  "H025" : ["Alok",Class.THIEF],
-  "H026" : ["Grogmar",Class.THIEF],
-  "H027" : ["Igor",Class.THIEF],
-  "H028" : ["Jasper",Class.THIEF],
-  "H029" : ["John",Class.THIEF],
-  "H030" : ["Lola",Class.THIEF],
-  "H031" : ["Maeve",Class.THIEF],
-  "H032" : ["Revere",Class.THIEF],
-  "H033" : ["Sebastian",Class.THIEF],
-  "H034" : ["Sophie",Class.THIEF],
-  "H035" : ["Soora",Class.THIEF],
-  "H036" : ["Teagan",Class.THIEF],
-  "H037" : ["Zoe",Class.THIEF],
+  // casters
+  "H101" : ["Caeda",Class.CASTER],
+  "H102" : ["Zoe",Class.CASTER], // fae gif
+  "H103" : ["Finn",Class.CASTER],
+  "H104" : ["Gunther",Class.CASTER],
+  "H106" : ["Neve",Class.CASTER],
+  "H107" : ["Reid",Class.CASTER],
+  "H108" : ["Rowan",Class.CASTER],
+  "H109" : ["Titus",Class.CASTER],
+  "H110" : ["Troy",Class.CASTER],
+  "H111" : ["Zarlica",Class.CASTER],
+  // thieves
+  "H201" : ["Alok",Class.THIEF],
+  "H202" : ["Grogmar",Class.THIEF],
+  "H203" : ["Igor",Class.THIEF],
+  "H204" : ["Jasper",Class.THIEF],
+  "H205" : ["John",Class.THIEF],
+  "H206" : ["Lola",Class.THIEF],
+  "H207" : ["Maeve",Class.THIEF],
+  "H208" : ["Revere",Class.THIEF],
+  "H209" : ["Sebastian",Class.THIEF],
+  "H210" : ["Sophie",Class.THIEF],
+  "H211" : ["Teagan",Class.THIEF],
+  "H212" : ["Claudia",Class.THIEF], // zoe gif
   "H999" : ["Empty",null],
 }
 
@@ -74,6 +75,7 @@ class OwnedHero {
 //we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have
 
 const heroImageReference = {
+    // fighters
     "H001" : '<img src="heroes/beorn.gif">',
     "H002" : '<img src="heroes/cedric.gif">',
     "H003" : '<img src="heroes/elda.gif">',
@@ -87,30 +89,30 @@ const heroImageReference = {
     "H011" : '<img src="heroes/shel.gif">',
     "H012" : '<img src="heroes/slate.gif">',
     "H013" : '<img src="heroes/viktor.gif">',
-    "H014" : '<img src="heroes/caeda.gif">',
-    "H015" : '<img src="heroes/fae.gif">',
-    "H016" : '<img src="heroes/finn.gif">',
-    "H017" : '<img src="heroes/gunther.gif">',
-    "H018" : '<img src="heroes/nambra.gif">',
-    "H019" : '<img src="heroes/neve.gif">',
-    "H020" : '<img src="heroes/reid.gif">',
-    "H021" : '<img src="heroes/rowan.gif">',
-    "H022" : '<img src="heroes/titus.gif">',
-    "H023" : '<img src="heroes/troy.gif">',
-    "H024" : '<img src="heroes/zarlica.gif">',
-    "H025" : '<img src="heroes/alok.gif">',
-    "H026" : '<img src="heroes/grogmar.gif">',
-    "H027" : '<img src="heroes/igor.gif">',
-    "H028" : '<img src="heroes/jasper.gif">',
-    "H029" : '<img src="heroes/john.gif">',
-    "H030" : '<img src="heroes/lola.gif">',
-    "H031" : '<img src="heroes/maeve.gif">',
-    "H032" : '<img src="heroes/revere.gif">',
-    "H033" : '<img src="heroes/sebastian.gif">',
-    "H034" : '<img src="heroes/sophie.gif">',
-    "H035" : '<img src="heroes/soora.gif">',
-    "H036" : '<img src="heroes/teagan.gif">',
-    "H037" : '<img src="heroes/zoe.gif">',
+    // casters
+    "H101" : '<img src="heroes/caeda.gif">',
+    "H102" : '<img src="heroes/fae.gif">', // gif name is fae, char name is zoe
+    "H103" : '<img src="heroes/finn.gif">',
+    "H104" : '<img src="heroes/gunther.gif">',
+    "H106" : '<img src="heroes/neve.gif">',
+    "H107" : '<img src="heroes/reid.gif">',
+    "H108" : '<img src="heroes/rowan.gif">',
+    "H109" : '<img src="heroes/titus.gif">',
+    "H110" : '<img src="heroes/troy.gif">',
+    "H111" : '<img src="heroes/zarlica.gif">',
+    // thieves
+    "H201" : '<img src="heroes/alok.gif">',
+    "H202" : '<img src="heroes/grogmar.gif">',
+    "H203" : '<img src="heroes/igor.gif">',
+    "H204" : '<img src="heroes/jasper.gif">',
+    "H205" : '<img src="heroes/john.gif">',
+    "H206" : '<img src="heroes/lola.gif">',
+    "H207" : '<img src="heroes/maeve.gif">',
+    "H208" : '<img src="heroes/revere.gif">',
+    "H209" : '<img src="heroes/sebastian.gif">',
+    "H210" : '<img src="heroes/sophie.gif">',
+    "H211" : '<img src="heroes/teagan.gif">',
+    "H212" : '<img src="heroes/zoe.gif">', // gif name is zoe, char name is claudia
 }
 
 const $heroList = $("#heroList");
