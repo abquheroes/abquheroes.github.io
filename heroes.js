@@ -17,17 +17,21 @@ const heroBase = {
   "H011" : ["Shel",Class.FIGHTER],
   "H012" : ["Slate",Class.FIGHTER],
   "H013" : ["Viktor",Class.FIGHTER],
+  "H014" : ["Cora",Class.FIGHTER],
   // casters
   "H101" : ["Caeda",Class.CASTER],
   "H102" : ["Zoe",Class.CASTER], // fae gif
   "H103" : ["Finn",Class.CASTER],
   "H104" : ["Gunther",Class.CASTER],
+  "H105" : ["Hank",Class.CASTER],
   "H106" : ["Neve",Class.CASTER],
   "H107" : ["Reid",Class.CASTER],
   "H108" : ["Rowan",Class.CASTER],
   "H109" : ["Titus",Class.CASTER],
   "H110" : ["Troy",Class.CASTER],
   "H111" : ["Zarlica",Class.CASTER],
+  "H112" : ["Alora",Class.CASTER], // soora gif
+  "H113" : ["Thamior",Class.CASTER],
   // thieves
   "H201" : ["Alok",Class.THIEF],
   "H202" : ["Grogmar",Class.THIEF],
@@ -89,17 +93,21 @@ const heroImageReference = {
     "H011" : '<img src="heroes/shel.gif">',
     "H012" : '<img src="heroes/slate.gif">',
     "H013" : '<img src="heroes/viktor.gif">',
+    "H014" : '<img src="heroes/cora.gif">',
     // casters
     "H101" : '<img src="heroes/caeda.gif">',
     "H102" : '<img src="heroes/fae.gif">', // gif name is fae, char name is zoe
     "H103" : '<img src="heroes/finn.gif">',
     "H104" : '<img src="heroes/gunther.gif">',
+    "H105" : '<img src="heroes/hank.gif">',
     "H106" : '<img src="heroes/neve.gif">',
     "H107" : '<img src="heroes/reid.gif">',
     "H108" : '<img src="heroes/rowan.gif">',
     "H109" : '<img src="heroes/titus.gif">',
     "H110" : '<img src="heroes/troy.gif">',
     "H111" : '<img src="heroes/zarlica.gif">',
+    "H112" : '<img src="heroes/soora.gif">', // gif name soora, char name alora
+    "H113" : '<img src="heroes/thamior.gif">',
     // thieves
     "H201" : '<img src="heroes/alok.gif">',
     "H202" : '<img src="heroes/grogmar.gif">',
