@@ -49,5 +49,5 @@ function generateDungeonFloor() {
 }
 
 function getFloor(id) {
-    return dungeon[id];
+    return dungeon[id]
 }
