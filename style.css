@@ -44,6 +44,7 @@
     --blue-light: #087d9e;
     --border: #2b2b2b;
     --border-2: #adadad;
+    --border-3: #3b3b3b;
     --text: #fff;
     --text-2: #fff;
     --text-3: #909090;
@@ -1151,16 +1152,22 @@ input#importSaveText {
     display: flex;
 }
 
-#dungeonLeft {
-    flex-grow: 1;
-    max-width: 300px;
+#dungeonLayout {
+    min-width: 200px;
     padding: 20px;
-    background-color: #886363; /* debug color */
 }
 
-#dungeonRight {
-    flex-grow: 1;
-    background-color: #5a3e3e; /* debug color */
+.dungeonFloor {
+    border-bottom: 1px solid var(--border-3);
+    padding: 10px;
+}
+
+.dungeonFloor.dungeonFloorCurrent {
+    background-color: var(--bg);
+}
+
+.dungeonFloor > img {
+    vertical-align: text-bottom;
 }
 
 #dtsTop, #dtsBottom, #drTop, .dungeonTeamCollection, .dungeonAvailableCollection {
