@@ -32,6 +32,7 @@ const heroBase = {
   "H111" : ["Zarlica",Class.CASTER],
   "H112" : ["Alora",Class.CASTER], // soora gif
   "H113" : ["Thamior",Class.CASTER],
+  "H114" : ["Richard",Class.CASTER],
   // thieves
   "H201" : ["Alok",Class.THIEF],
   "H202" : ["Grogmar",Class.THIEF],
@@ -108,6 +109,7 @@ const heroImageReference = {
     "H111" : '<img src="heroes/zarlica.gif">',
     "H112" : '<img src="heroes/soora.gif">', // gif name soora, char name alora
     "H113" : '<img src="heroes/thamior.gif">',
+    "H114" : '<img src="heroes/richard.gif">',
     // thieves
     "H201" : '<img src="heroes/alok.gif">',
     "H202" : '<img src="heroes/grogmar.gif">',
