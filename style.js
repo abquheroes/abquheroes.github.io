@@ -226,7 +226,7 @@ function toggleAboutState(e) {
     }
 };
 
-
+// Calculate Actions height and apply to Dungeons container
 
 const actionSlotsContainer = document.getElementById('Actions');
 const dungeonContainer = document.getElementById('dungeon-container');
@@ -238,8 +238,8 @@ const setHeight = () => {
             dungeonContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
         }
     );
-    
 }
+
 setHeight();
 
 

@@ -1152,26 +1152,13 @@ input#importSaveText {
 
 #dungeon-container {
     display: flex;
-}
-
-#dungeonLayout {
-    min-width: 200px;
-    max-height: 100%;
-    padding: 0 20px 20px 20px;
-    margin-top: 20px;
-    overflow: auto;
-}
-
-#dungeon-container {
-    display: flex;
     height: calc(100vh - 250px);
     overflow: hidden;
 }
 
 #dungeonLayout {
     min-width: 200px;
-    padding: 0 20px 20px 20px;
-    margin-top: 20px;
+    padding: 20px;
     overflow: auto;
     position: sticky;
     top: 0;
