@@ -46,6 +46,7 @@ const heroBase = {
   "H210" : ["Sophie",Class.THIEF],
   "H211" : ["Teagan",Class.THIEF],
   "H212" : ["Claudia",Class.THIEF], // zoe gif
+  "H213" : ["Bloop",Class.THIEF],
   "H999" : ["Empty",null],
 }
 
@@ -123,6 +124,7 @@ const heroImageReference = {
     "H210" : '<img src="heroes/sophie.gif">',
     "H211" : '<img src="heroes/teagan.gif">',
     "H212" : '<img src="heroes/zoe.gif">', // gif name is zoe, char name is claudia
+    "H213" : '<img src="heroes/bloop.gif">',
 }
 
 const $heroList = $("#heroList");
