@@ -1118,7 +1118,7 @@ input#importSaveText {
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     flex-grow: 1;
-    min-width: 300px;
+    min-width: 100px;
     text-align: center;
     padding: 20px;
 }
@@ -1132,15 +1132,18 @@ input#importSaveText {
     background: var(--bg-3);
 }
 
-.heroOwnedCard.highlight:hover {
-    
-}
-
 #heroCard {
+    padding-top: 0;
     background-color: var(--bg);
     border-bottom: 1px solid var(--border);
     flex-grow: 1;
     min-width: 400px;
+}
+
+.heroCard {
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
 }
 
 #dungeon-container {
