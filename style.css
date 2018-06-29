@@ -1120,7 +1120,9 @@ input#importSaveText {
     background-color: var(--bg);
     border: 1px solid var(--border);
     min-width: 125px;
+    min-height: 128px;
     text-align: center;
+    justify-content: center;
     padding: 20px;
     margin: 1px;
 }
