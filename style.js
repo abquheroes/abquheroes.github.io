@@ -225,3 +225,21 @@ function toggleAboutState(e) {
         arrow[0].classList.add("arrow-rotate");
     }
 };
+
+
+
+const actionSlotsContainer = document.getElementById('Actions');
+const dungeonContainer = document.getElementById('dungeon-container');
+
+const setHeight = () => {
+    setInterval(
+        function() {
+            const ascHeight = actionSlotsContainer.offsetHeight;
+            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
+        }
+    );
+    
+}
+setHeight();
+
+
