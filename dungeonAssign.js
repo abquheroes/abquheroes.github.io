@@ -17,8 +17,7 @@ const $daBottom = $("#daBottom");
 
 class Party {
     constructor (hero1,hero2,hero3) {
-        this.heroes = [hero1,hero2,hero3];
-        this.counter = 0;
+        this.heroes = [hero1,hero2,hero3]
         this.floor = 0;
     }
     hasMember(member) {
@@ -38,14 +37,6 @@ class Party {
     removeMemberLocation(location) {
         this.heroes.splice(location, 1);
         this.heroes.push("H999");
-    }
-    timePulse(t) {
-        this.counter += t;
-        if (this.counter >= 2000) {
-            this.counter -= 2000;
-            return true;
-        }
-        return false;
     }
     partyRoll(stat) {
         let total = 0;
@@ -75,6 +66,7 @@ class Party {
     advanceFloor() {
         this.floor += 1;
         DungeonAssist.initFloor();
+        refreshDungeonGrid();
     }
 }
 
@@ -92,7 +84,7 @@ function loadCorrectDungeonScreen() {
     else if (party.adventuring()) {
         $dungeonTeamSelect.hide();
         $dungeonRun.show();
-        $dungeonAfter.hide();    
+        $dungeonAfter.hide();
     }
     else {
         $dungeonTeamSelect.hide();
@@ -182,15 +174,7 @@ function characterCard(ID,prefix,dv) {
     return d;
 }
 
-function characterCardHP(hero) {
-    const d = $("<div/>").addClass("drHeroCard").attr("data-value",hero.id);
-    const d1 = $("<div/>").addClass("drHeroName").html(hero.name);
-    const d2 = $("<div/>").addClass("drHeroImage").html(heroImageReference[hero.id]);
-    const d3 = $("<div/>").addClass("drHeroHP").html("HP: " + hero.hp);
-    d.append(d1,d2,d3);
-    return d;
-}
-
+//clicking a hero to remove them from your party
 $(document).on('click', "div.dungeonTeamCard", (e) => {
     e.preventDefault();
     const arrayLocation = $(e.currentTarget).attr("data-value");
@@ -198,6 +182,7 @@ $(document).on('click', "div.dungeonTeamCard", (e) => {
     refreshHeroSelect();
 });
 
+//clicking a hero to add them to your party
 $(document).on('click', "div.dungeonAvailableCard", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
@@ -205,31 +190,60 @@ $(document).on('click', "div.dungeonAvailableCard", (e) => {
     refreshHeroSelect();
 });
 
+//locking in a team to start a dungeon
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
     if (party.validTeam()) {
-        party.floor = 1;
+        party.advanceFloor();
         loadCorrectDungeonScreen();
     }
 });
 
 //receives time passed from main loop and rock and rolls
 function dungeonAdvance(t) {
-    if (party.timePulse(t)) {
-        if(getFloor(party.floor).attempt(party)) { //attempts the floor, returns true if we proceed
-            party.advanceFloor();
-        }
-        refreshDungeonRunDungeon();
-    }
+    if (party.floor === 0) return;
+    DungeonAssist.addTime(t);
 }
 
 const DungeonAssist = {
-    floor: 0,
+    time : 0,
+    beat : 0,
+    floor : null,
     initFloor : () => {
-        floor = party.floor;
-        if (floor > dungeon.length) {
-            generateDungeonFloor();
-            refreshDungeonGrid();
+        if (party.floor > dungeon.length) {
+            this.floor = generateDungeonFloor();
+            console.log(this.floor);
+        }
+        else {
+            console.log(dungeon[party.floor]);
+            this.floor = dungeon[party.floor-1];
+        }
+        this.beat = 0;
+        this.time = 0;
+    },
+    addTime : (t) => {
+        this.time += t
+        if (this.time >= this.floor.beatTime) {
+            this.time -= this.floor.beatTime;
+            floor.executeBeat(this.beat,party);
+            this.beat += 1;
+            if (this.beat === floor.beatTotal) party.advanceFloor();
         }
     }
 };
+
+const log = [];
+const $drLog = $("#drLog");
+
+function addLog(s) {
+    log.unshift(s);
+    console.log(log);
+    if (log.length >= 15) {
+        log.splice(-1,1)
+    }
+    $drLog.empty();
+    log.forEach((entry) => {
+        const d = $("<div/>").addClass("logEntry").html(entry);
+        $drLog.append(d);
+    })
+}

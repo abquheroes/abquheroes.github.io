@@ -3,25 +3,32 @@ const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", CHALLENGE:"Challeng
 const Stat = Object.freeze({MIGHT:"Might",MIND:"Mind",MOXIE:"Moxie"});
 
 class Floor {
-    constructor (type,difficulty,content) {
+    constructor (type,lvl,content) {
         this.type = type;
-        this.difficulty = difficulty;
+        this.lvl = lvl;
         this.content = content;
         this.icon = dungeonIcons[[type]];
+        this.beatTime = 2000;
+        this.beatTotal = 5;
     }
-    attempt(party) {
-        return false;
+    executeBeat(num,party) {
+        console.log(num);
         if (this.type === FloorType.TRAP) {
             //this floor rolls a check for each hero in party, if they fail they take 10-30% danage
-            const beat = Math.pow(1.1,this.difficulty);
-            const pattempt = party.partyRoll(content);
-            console.log("Attempted floor: " + pattempt + " vs " + beat);
-            if (pattempt < beat) {
-                party.damageParty(2);
-                refreshDungeonRunHeroes(party);
-                return true;
+            const challenge = Math.pow(1.1,this.lvl+5);
+            const heroes = party.heroList();
+            console.log(heroes);
+            if (num < heroes.length) {
+                //there is a valid hit
+                const hRoll = heroes[num].roll(Stat.MIGHT);
+                if (hRoll >= challenge) {
+                    addLog("Floor " + this.lvl + ": " + heroes[num].name + " outrolled the challenge.");
+                }
+                else {
+                    heroes[i].takeDamage(1);
+                    addLog("Floor " + this.lvl + ": " + heroes[num].name + " failed the challenge.");
+                }
             }
-            return true;
         }
     }
 }
@@ -36,16 +43,19 @@ const dungeonIcons = {
 const dungeon = [];
 
 function generateDungeon() {
-    for (let i=0;i<20;i++) {
+    //for (let i=0;i<20;i++) {
         generateDungeonFloor();
-    }
+    //}
     refreshDungeonGrid();
 }
 
 function generateDungeonFloor() {
     const s = Math.seededRandom(0,4);
     const f = [FloorType.FIGHT,FloorType.CHALLENGE,FloorType.TRAP,FloorType.TREASURE];
-    dungeon.push(new Floor(f[s],1,[]));
+    //const floor = new Floor(f[s],1,[])
+    const floor = new Floor(FloorType.TRAP,1,[])
+    dungeon.push(floor);
+    return floor;
 }
 
 function getFloor(id) {
