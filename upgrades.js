@@ -84,26 +84,30 @@ function refreshUpgrades() {
         if (upgrades[i].name === "Max Herb" && workerProgress["Herbie"] === 0) continue;
         const lvl = upgradeProgress[upgrades[i].name];
         const upgrade = $('<div/>').addClass("Upgrade");
-        const d1 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>")
-        const d2 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
-        const d3 = $("<div/>").addClass("upgradeLvl").html("Lvl. " + lvl)
+        const d1 = $("<div/>").addClass("upgradeImage").html(upgradeImageReference[upgrades[i].name]);
+        const d2 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>");
+        const d3 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
+        const d4 = $("<div/>").addClass("upgradeLvl tooltip").html(lvl).attr("aria-label", "Upgrade Level");
+        const d5 = $("<div/>").addClass("upgradeLvlDesc").html("");
         if (lvl !== upgrades[i].value.length-1) {
             const delta = upgrades[i].value[lvl+1] - upgrades[i].value[lvl]
-            const s = "&nbsp;&nbsp;&nbsp;(+" + delta + upgrades[i].valueSuffix + ")";
-            d3.append(s);
+            const s = "+" + delta + upgrades[i].valueSuffix;
+            d5.append(s);
         }
-        if (lvl === 0) d3.addClass("hidden");
-        const d4 = $('<div/>').addClass('upgradeCost').html("Cost:&nbsp;&nbsp;&nbsp;"+imageReference["Gold"]+"&nbsp;&nbsp;"+formatToUnits(upgrades[i].cost[lvl],2));
+        if (lvl === 0) d4.addClass("hidden");
+        const d6 = $('<div/>').addClass('upgradeCost').html("Cost:&nbsp;&nbsp;&nbsp;"+imageReference["Gold"]+"&nbsp;&nbsp;"+formatToUnits(upgrades[i].cost[lvl],2));
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
         if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable tooltip").attr("aria-label", "You do not have enough Gold to purchase this upgrade.");
         if (lvl === upgrades[i].value.length-1) {
-            d4.addClass("hidden");
+            d6.addClass("hidden");
             b1.addClass("hidden");
         }
         upgrade.append(d1);
         upgrade.append(d2);
         upgrade.append(d3);
         upgrade.append(d4);
+        upgrade.append(d5);
+        upgrade.append(d6);
         upgrade.append(b1);
         $upgradelist.append(upgrade);
     }
@@ -139,4 +143,14 @@ function upgrade(name) {
         refreshResources();
         ga('send', 'event', 'Upgrades', 'upgrade', name);
     }
+}
+
+const upgradeImageReference = {
+    "Max Ore" : '<img src="upgrades/max_ore.png">',
+    "Max Wood" : '<img src="upgrades/max_wood.png">',
+    "Max Leather" : '<img src="upgrades/max_leather.png">',
+    "Max Herb" : '<img src="upgrades/max_herbs.png">',
+    "Max Action Slots" : '<img src="upgrades/max_action_slots.png">',
+    "Max Inventory Slots" : '<img src="upgrades/max_inventory_slots.png">',
+    "Auto Sell Value" : '<img src="upgrades/auto_sell_value.png">',
 }
