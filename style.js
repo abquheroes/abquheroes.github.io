@@ -240,6 +240,15 @@ const setHeight = () => {
     );
 }
 
-setHeight();
+if (actionSlotsContainer && dungeonContainer) {
+    setHeight();
+}
+
+// Calculate Container height and apply to Container mac height
+
+const cardContainers = document.querySelectorAll('#cc-container .card-container');
+if (cardContainers) {
+    console.log(cardContainers);
+}
 
 
