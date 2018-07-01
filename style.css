@@ -1208,6 +1208,7 @@ input#importSaveText {
 #drContent {
     flex-grow: 1;
     padding: 20px;
+    overflow: auto;
 }
 
 #dungeonHeroList {
@@ -1263,7 +1264,7 @@ input#importSaveText {
     background-color: var(--green-light);
 }
 
-.hpBar {
+.hpBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -1272,10 +1273,18 @@ input#importSaveText {
     border: 1px solid rgb(134, 0, 0); /* temp color */
 }
 
+.hpBarDiv > img {
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    z-index: 1;
+}
+
 .hpBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
+    left: 15px;
     bottom: 2px;
     white-space: pre;
     z-index: 2;
