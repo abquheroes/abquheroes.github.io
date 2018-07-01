@@ -208,6 +208,7 @@ function dungeonAdvance(t) {
 
 const DungeonAssist = {
     time : 0,
+    totalTime : 0,
     beat : 0,
     floor : null,
     initFloor : () => {
@@ -221,15 +222,7 @@ const DungeonAssist = {
         }
         this.beat = 0;
         this.time = 0;
-    },
-    addTime : (t) => {
-        this.time += t
-        if (this.time >= this.floor.beatTime) {
-            this.time -= this.floor.beatTime;
-            floor.executeBeat(this.beat,party);
-            this.beat += 1;
-            if (this.beat === floor.beatTotal) party.advanceFloor();
-        }
+        this.totalTime = 0;
     },
     floorDescription : () => {
         if (floor !== null) return floor.getDescription();
@@ -237,7 +230,21 @@ const DungeonAssist = {
     },
     floorNumber : () => {
         return floor.lvl;
-    }
+    },
+    addTime : (t) => {
+        this.time += t
+        this.totalTime += t
+        const f = this.floor.getFloorTime()
+        floorBarProgressUpdate(this.totalTime,f);
+        if (this.time >= this.floor.beatTime) {
+            this.time -= this.floor.beatTime;
+            floor.executeBeat(this.beat,party);
+            this.beat += 1;
+            if (this.beat === floor.beatTotal) {
+                party.advanceFloor();
+            }
+        }
+    },
 };
 
 const log = [];
@@ -271,7 +278,6 @@ function createDungeonCard(hero) {
 
 function heroHPBar(heroID,current,max) {
     const hpPercent = current/max;
-    console.log()
     const width = (hpPercent*100).toFixed(1)+"%";
     const d = $("<div/>").addClass("hpBar").attr("data-label",current+"/"+max).attr("id","hp"+heroID);
     const s = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+heroID).css('width', width);
@@ -290,4 +296,14 @@ function refreshDungeonFloor() {
     party.heroList().forEach((hero) => {
         $dungeonHeroList.append(createDungeonCard(hero));
     })
+}
+
+const $floorProgressBar = $("#floorProgressBar");
+const $floorProgressBarFill = $("#floorProgressBarFill");
+
+function floorBarProgressUpdate(current,total) {
+    //get the time left on the floor, with how much passed
+    const p = current/total;
+    $floorProgressBar.attr("data-label",msToTime(total-current));
+    $floorProgressBarFill.css('width',(100-p*100).toFixed(1)+"%");
 }

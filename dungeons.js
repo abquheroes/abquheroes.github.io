@@ -14,13 +14,15 @@ class Floor {
     getDescription() {
         if (this.type === FloorType.TRAP) return "Trap Floor (Might)";
     }
+    getFloorTime() {
+        return this.beatTime*this.beatTotal;
+    }
     executeBeat(num,party) {
         console.log(num);
         if (this.type === FloorType.TRAP) {
             //this floor rolls a check for each hero in party, if they fail they take 10-30% danage
             const challenge = Math.pow(1.1,this.lvl+5);
             const heroes = party.heroList();
-            console.log(heroes);
             if (num < heroes.length) {
                 //there is a valid hit
                 const hRoll = heroes[num].roll(Stat.MIGHT);
@@ -28,7 +30,7 @@ class Floor {
                     addLog("Floor " + this.lvl + ": " + heroes[num].name + " outrolled the challenge.");
                 }
                 else {
-                    heroes[i].takeDamage(1);
+                    heroes[num].takeDamage(1);
                     addLog("Floor " + this.lvl + ": " + heroes[num].name + " failed the challenge.");
                 }
             }

@@ -2014,7 +2014,7 @@ a.workerDialog:hover {
     }
 }
 
-/*added by my sorry richard!*/
+/*added by me sorry richard! please fix it*/
 .hpBar {
     position: relative;
     display: flex;
@@ -2030,6 +2030,28 @@ a.workerDialog:hover {
 }
 
 .hpBarFill, {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--progressbar);
+}
+
+.floorProgressBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.floorProgressBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.floorProgressBarFill, {
     display: block;
     position: relative;
     height: 100%;
