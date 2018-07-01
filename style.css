@@ -1218,6 +1218,7 @@ input#importSaveText {
 .dhc {
     padding: 20px;
     margin: 1px;
+    min-width: 125px;
     background-color: var(--bg);
     border: 1px solid var(--border);
 }
@@ -1228,6 +1229,9 @@ input#importSaveText {
     background-color: var(--bg-3);
     padding: 20px;
     height: 100%;
+    width: 100%;
+    max-width: 350px;
+    overflow: auto;
 }
 
 .logEntry {
@@ -1257,6 +1261,72 @@ input#importSaveText {
 
 #dungeonTeamButton:hover {
     background-color: var(--green-light);
+}
+
+.hpBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.hpBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.hpBarFill, {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--progressbar);
+}
+
+#floorProgressBarContainer {
+    display: flex;
+    position: relative;
+    align-items: center;
+    max-width: 300px;
+    height: 23px;
+    margin: 5px 0;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+}
+
+#floorProgressBarContainer > img {
+    position: absolute;
+    left: 5px;
+    bottom: 2px;
+    z-index: 2;
+}
+
+#floorProgressBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    margin: 0;
+}
+
+#floorProgressBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+    font-size: 0.9em;
+    left: 20px;
+    bottom: 2px;
+    z-index: 2;
+}
+
+#floorProgressBarFill {
+    display: block;
+    position: relative;
+    height: 100%;
+    background-color: var(--progressbar);
 }
 
 footer {
@@ -2012,49 +2082,4 @@ a.workerDialog:hover {
     #bottom-right a {
         display: none;
     }
-}
-
-/*added by me sorry richard! please fix it*/
-.hpBar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 23px;
-    margin: 0;
-}
-
-.hpBar:before {
-    content: " " attr(data-label);
-    position: absolute;
-    white-space: pre;
-}
-
-.hpBarFill, {
-    display: block;
-    position: relative;
-    height: 100%;
-    z-index: -1;
-    background-color: var(--progressbar);
-}
-
-.floorProgressBar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 23px;
-    margin: 0;
-}
-
-.floorProgressBar:before {
-    content: " " attr(data-label);
-    position: absolute;
-    white-space: pre;
-}
-
-.floorProgressBarFill, {
-    display: block;
-    position: relative;
-    height: 100%;
-    z-index: -1;
-    background-color: var(--progressbar);
 }
