@@ -67,6 +67,7 @@ class Party {
         this.floor += 1;
         DungeonAssist.initFloor();
         refreshDungeonGrid();
+        refreshDungeonFloor();
     }
 }
 
@@ -229,6 +230,13 @@ const DungeonAssist = {
             this.beat += 1;
             if (this.beat === floor.beatTotal) party.advanceFloor();
         }
+    },
+    floorDescription : () => {
+        if (floor !== null) return floor.getDescription();
+        return "fuck this is broken";
+    },
+    floorNumber : () => {
+        return floor.lvl;
     }
 };
 
@@ -245,5 +253,41 @@ function addLog(s) {
     log.forEach((entry) => {
         const d = $("<div/>").addClass("logEntry").html(entry);
         $drLog.append(d);
+    })
+}
+
+function createDungeonCard(hero) {
+    const d = $("<div/>").addClass("dhc");
+    const d1 = $("<div/>").addClass("dhcName").html(hero.name);
+    const d2 = heroHPBar(hero.id,hero.hp,hero.hpmax);
+    const d3 = $("<div/>").addClass("dhcPic").html(hero.pic);
+    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.pow);
+    const d5 = $("<div/>").addClass("dhcMight").html(dungeonIcons[Stat.MIGHT]+"&nbsp;&nbsp;"+hero.might);
+    const d6 = $("<div/>").addClass("dhcMind").html(dungeonIcons[Stat.MIND]+"&nbsp;&nbsp;"+hero.mind);
+    const d7 = $("<div/>").addClass("dhcMoxie").html(dungeonIcons[Stat.MOXIE]+"&nbsp;&nbsp;"+hero.moxie);
+    d.append(d1,d2,d3,d4,d5,d6,d7)
+    return d;
+}
+
+function heroHPBar(heroID,current,max) {
+    const hpPercent = current/max;
+    console.log()
+    const width = (hpPercent*100).toFixed(1)+"%";
+    const d = $("<div/>").addClass("hpBar").attr("data-label",current+"/"+max).attr("id","hp"+heroID);
+    const s = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+heroID).css('width', width);
+    d.append(s);
+    return d;
+}
+
+$floorID = $("#floorID");
+$floorType = $("#floorType");
+$dungeonHeroList = $("#dungeonHeroList");
+
+function refreshDungeonFloor() {
+    $floorID.html("Floor "+DungeonAssist.floorNumber());
+    $floorType.html(DungeonAssist.floorDescription());
+    $dungeonHeroList.empty();
+    party.heroList().forEach((hero) => {
+        $dungeonHeroList.append(createDungeonCard(hero));
     })
 }

@@ -1959,3 +1959,26 @@ a.workerDialog:hover {
         display: none;
     }
 }
+
+/*added by my sorry richard!*/
+.hpBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin: 0;
+}
+
+.hpBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    white-space: pre;
+}
+
+.hpBarFill, {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--progressbar);
+}

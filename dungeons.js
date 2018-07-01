@@ -1,6 +1,6 @@
 "use strict";
 const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", CHALLENGE:"Challenge", TREASURE:"Treasure",});
-const Stat = Object.freeze({MIGHT:"Might",MIND:"Mind",MOXIE:"Moxie"});
+const Stat = Object.freeze({MIGHT:"Might",MIND:"Mind",MOXIE:"Moxie",HP:"HP",POW:"Power",});
 
 class Floor {
     constructor (type,lvl,content) {
@@ -10,6 +10,9 @@ class Floor {
         this.icon = dungeonIcons[[type]];
         this.beatTime = 2000;
         this.beatTotal = 5;
+    }
+    getDescription() {
+        if (this.type === FloorType.TRAP) return "Trap Floor (Might)";
     }
     executeBeat(num,party) {
         console.log(num);
@@ -38,6 +41,11 @@ const dungeonIcons = {
     [FloorType.TRAP] : '<img src="DungeonIcons/trap.png" alt="Trap">',
     [FloorType.CHALLENGE] : '<img src="DungeonIcons/challenge.png" alt="Challenge">',
     [FloorType.TREASURE] : '<img src="DungeonIcons/treasure.png" alt="Treasure">',
+    [Stat.MIGHT] : '<img src="PixelItem/Hammer.png" alt="Might">',
+    [Stat.MIND] : '<img src="PixelItem/ScrollSealed.png" alt="Mind">',
+    [Stat.MOXIE] : '<img src="PixelItem/Consume/Stein.png" alt="Moxie">',
+    [Stat.HP] : '<img src="PixelItem/Heart.png" alt="HP">',
+    [Stat.POW] : '<img src="PixelItem/Icosahedron.png" alt="POW">',
 }
 
 const dungeon = [];
@@ -53,11 +61,7 @@ function generateDungeonFloor() {
     const s = Math.seededRandom(0,4);
     const f = [FloorType.FIGHT,FloorType.CHALLENGE,FloorType.TRAP,FloorType.TREASURE];
     //const floor = new Floor(f[s],1,[])
-    const floor = new Floor(FloorType.TRAP,1,[])
+    const floor = new Floor(FloorType.TRAP,dungeon.length+1,[])
     dungeon.push(floor);
     return floor;
-}
-
-function getFloor(id) {
-    return dungeon[id]
 }

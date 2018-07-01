@@ -61,11 +61,15 @@ class OwnedHero {
         this.mind = mind;
         this.moxie = moxie;
         this.hp = 10;
+        this.hpmax = 10;
     }
-    get atk() {
+    get pow() {
         if (this.role == Class.FIGHTER) return this.might;
         else if (this.role == Class.CASTER) return this.mind;
         else if (this.role == Class.THIEF) return this.moxie;
+    }
+    get pic() {
+        return heroImageReference[this.id];
     }
     roll(stat) {
         let n = this.moxie;
