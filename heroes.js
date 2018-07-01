@@ -80,6 +80,9 @@ class OwnedHero {
     takeDamage(dmg) {
         this.hp -= dmg;
     }
+    dead() {
+        return this.hp === 0;
+    }
 }
 
 //we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have

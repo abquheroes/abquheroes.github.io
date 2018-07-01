@@ -19,12 +19,15 @@ class Floor {
         return this.beatTime*this.beatTotal;
     }
     executeBeat(num,party) {
-        console.log(num);
         if (this.type === FloorType.TRAP) {
             //this floor rolls a check for each hero in party, if they fail they take 10-30% danage
             const challenge = Math.pow(1.1,this.lvl+5);
             const heroes = party.heroList();
             if (num < heroes.length) {
+                if (heroes[num].dead()) {
+                    addLog("Floor " + this.lvl + ": " + heroes[num].name + " is dead already.");
+                    return "dead"
+                }
                 //there is a valid hit
                 const hRoll = heroes[num].roll(Stat.MIGHT);
                 if (hRoll >= challenge) {
@@ -34,8 +37,10 @@ class Floor {
                     heroes[num].takeDamage(1);
                     addLog("Floor " + this.lvl + ": " + heroes[num].name + " failed the challenge.");
                 }
+                return hRoll;
             }
         }
+        return null;
     }
 }
 

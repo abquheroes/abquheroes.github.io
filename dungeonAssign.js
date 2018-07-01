@@ -63,11 +63,23 @@ class Party {
     validTeam() {
         return this.heroList().length > 0;
     }
+    partyAlive() {
+        return this.heroList().some((hero) => !hero.dead());
+    }
     advanceFloor() {
-        this.floor += 1;
-        DungeonAssist.initFloor();
-        refreshDungeonGrid();
-        refreshDungeonFloor();
+        if (this.partyAlive()) {
+            this.floor += 1;
+            DungeonAssist.initFloor();
+            refreshDungeonGrid();
+            refreshDungeonFloor();
+        }
+        else {
+            this.damageParty(-10); //lol workaround
+            this.heroes = ["H999","H999","H999"]
+            this.floor = 0;
+            refreshDungeonGrid();
+            loadCorrectDungeonScreen();
+        }
     }
 }
 
@@ -211,12 +223,16 @@ const DungeonAssist = {
     totalTime : 0,
     beat : 0,
     floor : null,
+    floorLog : [],
     initFloor : () => {
-        if (party.floor > dungeon.length) this.floor = generateDungeonFloor();
-        else this.floor = dungeon[party.floor-1];
+        while (party.floor > dungeon.length) {
+            this.floor = generateDungeonFloor();
+        }
+        this.floor = dungeon[party.floor-1];
         this.beat = 0;
         this.time = 0;
         this.totalTime = 0;
+        this.floorLog = [];
     },
     floorDescription : () => {
         if (floor !== null) return floor.getDescription();
@@ -226,7 +242,6 @@ const DungeonAssist = {
         return floor.lvl;
     },
     floorDifficulty : () => {
-        console.log(floor);
         return floor.difficulty;
     },
     addTime : (t) => {
@@ -236,13 +251,22 @@ const DungeonAssist = {
         floorBarProgressUpdate(this.totalTime,f);
         if (this.time >= this.floor.beatTime) {
             this.time -= this.floor.beatTime;
-            floor.executeBeat(this.beat,party);
+            this.floorLog.push(floor.executeBeat(this.beat,party));
             this.beat += 1;
-            if (this.beat === floor.beatTotal) {
-                party.advanceFloor();
-            }
-        }
+            if (this.beat === floor.beatTotal) party.advanceFloor();
+            else refreshDungeonFloor();
+        };
     },
+    getFloorLog : () => {
+        return this.floorLog;
+    },
+    clear : () => {
+        time = 0;
+        totalTime = 0;
+        beat = 0;
+        floor = null;
+        floorLog = [];
+    }
 };
 
 const log = [];
@@ -276,10 +300,11 @@ function createDungeonCard(hero) {
 function heroHPBar(heroID,current,max) {
     const hpPercent = current/max;
     const width = (hpPercent*100).toFixed(1)+"%";
+    const da = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
     const d = $("<div/>").addClass("hpBar").attr("data-label",current+"/"+max).attr("id","hp"+heroID);
     const s = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+heroID).css('width', width);
-    d.append(s);
-    return d;
+    da.append(d,s);
+    return da;
 }
 
 $floorID = $("#floorID");
@@ -297,7 +322,13 @@ function refreshDungeonFloor() {
     $floorContent.empty();
     const d = $("<div/>").addClass("dungeonDifficulty").html("Dungeon Difficulty: "+DungeonAssist.floorDifficulty());
     $floorContent.append(d);
-
+    const fLog = DungeonAssist.getFloorLog();
+    party.heroList().forEach((hero,i) => {
+        const d1 = $("<div/>").addClass("heroRollTrapFloor").html(hero.name + ":&nbsp;");
+        if (fLog.length <= i) d1.append("Waiting...");
+        else d1.append(fLog[i]);
+        $floorContent.append(d1);
+    });
 }
 
 const $floorProgressBar = $("#floorProgressBar");
