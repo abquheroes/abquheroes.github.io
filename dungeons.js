@@ -10,6 +10,7 @@ class Floor {
         this.icon = dungeonIcons[[type]];
         this.beatTime = 2000;
         this.beatTotal = 5;
+        this.difficulty = Math.ceil(Math.pow(1.1,this.lvl+5));
     }
     getDescription() {
         if (this.type === FloorType.TRAP) return "Trap Floor (Might)";

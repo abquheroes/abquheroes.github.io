@@ -212,14 +212,8 @@ const DungeonAssist = {
     beat : 0,
     floor : null,
     initFloor : () => {
-        if (party.floor > dungeon.length) {
-            this.floor = generateDungeonFloor();
-            console.log(this.floor);
-        }
-        else {
-            console.log(dungeon[party.floor]);
-            this.floor = dungeon[party.floor-1];
-        }
+        if (party.floor > dungeon.length) this.floor = generateDungeonFloor();
+        else this.floor = dungeon[party.floor-1];
         this.beat = 0;
         this.time = 0;
         this.totalTime = 0;
@@ -230,6 +224,10 @@ const DungeonAssist = {
     },
     floorNumber : () => {
         return floor.lvl;
+    },
+    floorDifficulty : () => {
+        console.log(floor);
+        return floor.difficulty;
     },
     addTime : (t) => {
         this.time += t
@@ -252,7 +250,6 @@ const $drLog = $("#drLog");
 
 function addLog(s) {
     log.unshift(s);
-    console.log(log);
     if (log.length >= 15) {
         log.splice(-1,1)
     }
@@ -288,6 +285,7 @@ function heroHPBar(heroID,current,max) {
 $floorID = $("#floorID");
 $floorType = $("#floorType");
 $dungeonHeroList = $("#dungeonHeroList");
+$floorContent = $("#floorContent");
 
 function refreshDungeonFloor() {
     $floorID.html("Floor "+DungeonAssist.floorNumber());
@@ -295,7 +293,11 @@ function refreshDungeonFloor() {
     $dungeonHeroList.empty();
     party.heroList().forEach((hero) => {
         $dungeonHeroList.append(createDungeonCard(hero));
-    })
+    });
+    $floorContent.empty();
+    const d = $("<div/>").addClass("dungeonDifficulty").html("Dungeon Difficulty: "+DungeonAssist.floorDifficulty());
+    $floorContent.append(d);
+
 }
 
 const $floorProgressBar = $("#floorProgressBar");
