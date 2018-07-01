@@ -1179,6 +1179,7 @@ input#importSaveText {
 }
 
 #dungeonCloseup {
+    width: 100%;
     overflow: auto;
 }
 
@@ -1193,6 +1194,45 @@ input#importSaveText {
 
 .dungeonFloor > img {
     vertical-align: text-bottom;
+}
+
+#dungeonRun {
+    height: 100%;
+}
+
+#drContentWrapper {
+    display: flex;
+    height: 100%;
+}
+
+#drContent {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#dungeonHeroList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dhc {
+    padding: 20px;
+    margin: 1px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+#drLog {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-3);
+    padding: 20px;
+    height: 100%;
+}
+
+.logEntry {
+    border-bottom: 1px solid var(--border-3);
+    padding: 10px 5px;
 }
 
 #dtsTop, #dtsBottom, #drTop, .dungeonTeamCollection, .dungeonAvailableCollection {
