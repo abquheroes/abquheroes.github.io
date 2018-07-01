@@ -816,8 +816,22 @@ input#importSaveText {
     text-align: center;
 }
 
-.upgradeName, .upgradeLvl, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost, .TicketName {
+.upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost, .TicketName {
     font-size: .9em;
+}
+
+.upgradeName > h3 {
+    margin: 10px 0;
+}
+
+.upgradeImage {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.upgradeImage > img {
+    width: 100%;
 }
 
 .upgradeDesc {
@@ -843,7 +857,7 @@ input#importSaveText {
     margin: 0 0 10px 0;
 }
 
-.workerLvl {
+.workerLvl, .upgradeLvl {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1349,12 +1363,12 @@ span#copyme {
     padding: 5px 10px;
 }
 
-.workerLvl.tooltip:hover:before {
+.workerLvl.tooltip:hover:before, .upgradeLvl.tooltip:hover:before {
     margin-top: -28px;
     margin-right: -8px;
 }
 
-.workerLvl.tooltip:hover:after {
+.workerLvl.tooltip:hover:after, .upgradeLvl.tooltip:hover:after {
     font-weight: normal;
     top: unset;
     left: -45%;
