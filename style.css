@@ -1126,6 +1126,7 @@ input#importSaveText {
 #heroList {
     display: flex;
     flex-wrap: wrap;
+    align-self: flex-start;
     padding: 20px;
     overflow: auto;
 }
