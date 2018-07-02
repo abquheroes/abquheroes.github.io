@@ -230,17 +230,19 @@ function toggleAboutState(e) {
 
 const actionSlotsContainer = document.getElementById('Actions');
 const dungeonContainer = document.getElementById('dungeon-container');
+const heroContainer = document.getElementById('heroContainer');
 
 const setHeight = () => {
     setInterval(
         function() {
             const ascHeight = actionSlotsContainer.offsetHeight;
-            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
+            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 88}px)`;
+            heroContainer.style.height = `calc(100vh - ${ascHeight + 88}px)`;
         }
     );
 }
 
-if (actionSlotsContainer && dungeonContainer) {
+if (actionSlotsContainer || dungeonContainer || heroContainer) {
     setHeight();
 }
 
