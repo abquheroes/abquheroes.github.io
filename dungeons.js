@@ -45,13 +45,14 @@ class Floor {
 }
 
 const dungeonIcons = {
-    [FloorType.FIGHT] : '<img src="DungeonIcons/fight.png" alt="Fight">',
-    [FloorType.TRAP] : '<img src="DungeonIcons/trap.png" alt="Trap">',
-    [FloorType.CHALLENGE] : '<img src="DungeonIcons/challenge.png" alt="Challenge">',
-    [FloorType.TREASURE] : '<img src="DungeonIcons/treasure.png" alt="Treasure">',
-    [Stat.MIGHT] : '<img src="PixelItem/Hammer.png" alt="Might">',
-    [Stat.MIND] : '<img src="PixelItem/ScrollSealed.png" alt="Mind">',
-    [Stat.MOXIE] : '<img src="PixelItem/Consume/Stein.png" alt="Moxie">',
+    [FloorType.FIGHT] : '<img src="DungeonIcons/fight_floor.png" alt="Fight">',
+    [FloorType.TRAP] : '<img src="DungeonIcons/trap_floor.png" alt="Trap">',
+    [FloorType.CHALLENGE] : '<img src="DungeonIcons/challenge_floor.png" alt="Challenge">',
+    [FloorType.TREASURE] : '<img src="DungeonIcons/treasure_floor.png" alt="Treasure">',
+    [FloorType.HEAL] : '<img src="DungeonIcons/heal_floor.png" alt="Heal">',
+    [Stat.MIGHT] : '<img src="DungeonIcons/mighticon.png" alt="Might">',
+    [Stat.MIND] : '<img src="DungeonIcons/mindicon2.png" alt="Mind">',
+    [Stat.MOXIE] : '<img src="DungeonIcons/moxieicon.png" alt="Moxie">',
     [Stat.HP] : '<img src="PixelItem/Heart.png" alt="HP">',
     [Stat.POW] : '<img src="PixelItem/Icosahedron.png" alt="POW">',
 }
