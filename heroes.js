@@ -37,14 +37,14 @@ class OwnedHero {
         this.ap = 0;
         this.apmax = 5;
         this.act = 0;
-        this.actmax = 5;
+        this.actmax = 5000;
     }
-    get pow() {
+    pow() {
         if (this.role == Class.FIGHTER) return this.might;
         else if (this.role == Class.CASTER) return this.mind;
         else if (this.role == Class.THIEF) return this.moxie;
     }
-    waffle() {
+    pic() {
         return heroImageReference[this.id];
     }
     takeDamage(dmg) {
@@ -56,9 +56,18 @@ class OwnedHero {
     dead() {
         return this.hp === 0;
     }
+    alive() {
+        return this.hp > 0;
+    }
     addTime(t) {
+        if (this.dead()) {
+            this.act = 0;
+            this.ap = 0;
+            return false;
+        }
         this.act += t;
         if (this.act >= this.actmax) {
+            console.log("TIME TO ACT!!");
             this.act -= this.actmax;
             return true;
         }
@@ -67,7 +76,15 @@ class OwnedHero {
     attack(mobs) {
         //takes a list of mobs and executes an attack
         //this is just w/e right now...
-        mobs[0].takeDamage(this.pow());
+        if (this.ap === this.apmax) {
+            mobs[0].takeDamage(this.pow()*2);
+            this.ap = 0;
+        }
+        else {
+            this.ap += 1;
+            console.log(mobs[0]);
+            mobs[0].takeDamage(this.pow());
+        }
     }
 }
 

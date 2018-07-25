@@ -24,17 +24,17 @@ const DungeonAssist = {
     addTime(t) {
         if (this.status !== DungeonState.ADVENTURING) return;
         //add time to all combatants, if they're ready for combat execute their attack on the opposing team.
-        party.forEach((hero) => {
-            if (hero.addTime(t)) hero.attack(floor.mobs);
+        party.heroList().forEach((hero) => {
+            if (hero.addTime(t)) hero.attack(this.floor.monster);
         });
-        floor.mobs.forEach((mob) => {
+        this.floor.monster.forEach((mob) => {
             if (mob.addTime(t)) mob.attack(party.heroList());
         });
         if (party.isDead()) {
             this.status = DungeonState.DONE;
             loadCorrectDungeonScreen();
         }
-        if (floor.mobs.isDead()) {
+        if (this.floor.isDead()) {
             this.advanceFloor();
         }
         refreshDungeonFloor();
@@ -177,17 +177,13 @@ function addLog(f,s) {
 }
 
 function createDungeonCard(hero) {
-    console.log(hero);
     const d = $("<div/>").addClass("dhc");
     const d1 = $("<div/>").addClass("dhcName").html(hero.name);
     const d2 = heroBars(hero);
-    const s = hero.waffle();
+    const s = hero.pic();
     const d3 = $("<div/>").addClass("dhcPic").html(s);
-    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.pow);
-    const d5 = $("<div/>").addClass("dhcMight").html(dungeonIcons[Stat.MIGHT]+"&nbsp;&nbsp;"+hero.might);
-    const d6 = $("<div/>").addClass("dhcMind").html(dungeonIcons[Stat.MIND]+"&nbsp;&nbsp;"+hero.mind);
-    const d7 = $("<div/>").addClass("dhcMoxie").html(dungeonIcons[Stat.MOXIE]+"&nbsp;&nbsp;"+hero.moxie);
-    d.append(d1,d2,d3,d4,d5,d6,d7)
+    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.pow());
+    d.append(d1,d2,d3,d4)
     return d;
 }
 

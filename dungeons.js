@@ -8,7 +8,10 @@ class Floor {
         this.lvl = lvl;
         this.icon = dungeonIcons[[type]];
         this.difficulty = this.lvl*2+5;
-        this.monster = [getMonster()];
+        this.monster = [getMonster(lvl)];
+    }
+    isDead() {
+        return this.monster.every((mob) => mob.dead());
     }
 }
 
