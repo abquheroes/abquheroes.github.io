@@ -1218,6 +1218,7 @@ input#importSaveText {
     padding: 20px;
     margin: 1px;
     min-width: 125px;
+    max-width: 125px;
     background-color: var(--bg);
     border: 1px solid var(--border);
 }
@@ -1262,16 +1263,20 @@ input#importSaveText {
     background-color: var(--green-light);
 }
 
-.hpBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv {
     position: relative;
     display: flex;
     align-items: center;
     height: 23px;
     margin: 2px 0;
-    border: 1px solid rgb(134, 0, 0); /* temp color */
+    border: 1px solid rgb(100, 100, 100); /* default color when none is present */
 }
 
-.hpBarDiv > img {
+.hpBarDiv {
+    border: 1px solid rgb(134, 0, 0);
+}
+
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img  {
     position: absolute;
     left: 2px;
     bottom: 2px;
@@ -1288,11 +1293,15 @@ input#importSaveText {
     z-index: 2;
 }
 
-.hpBarFill {
+.hpBarFill, .apBarFill, .actBarFill {
     display: block;
     position: relative;
     height: 100%;
-    background-color: rgb(105, 2, 2); /* temp color */
+    background-color: rgb(75, 75, 75); /* default color when none is present */
+}
+
+.hpBarFill {
+    background-color: rgb(105, 2, 2);
 }
 
 #floorProgressBarContainer {
