@@ -205,7 +205,7 @@ function heroBars(hero) {
     const d2 = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
     const d2a = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.id);
     const s2 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.id).css('width', apWidth);
-    d2.append(d1a,s1);
+    d2.append(d2a,s2);
     //Act
     const actPercent = hero.act/hero.actmax;
     const actWidth = (actPercent*100).toFixed(1)+"%";
