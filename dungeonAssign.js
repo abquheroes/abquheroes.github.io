@@ -3,106 +3,76 @@
 //then you assign heroes by clicking on the slot?
 //build adventure groups so dungeons.js can automate it
 
+const DungeonState = Object.freeze({"TEAMSELECT":0,"ADVENTURING":1,"DONE":2});
+
 $dungeonLayout = $("#dungeonLayout");
+
 const $dungeonTeamSelect = $("#dungeonTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 const $dungeonAfter = $("#dungeonAfter");
 
 const $dtsTop = $("#dtsTop");
 const $dtsBottom = $("#dtsBottom");
-const $drTop = $("#drTop");
-const $drBottom = $("#drBottom");
 const $daTop = $("#daTop");
 const $daBottom = $("#daBottom");
 
-class Party {
-    constructor (hero1,hero2,hero3) {
-        this.heroes = [hero1,hero2,hero3]
-        this.floor = 0;
-    }
-    hasMember(member) {
-        for (let i=0;i<this.heroes.length;i++) {
-            if (this.heroes[i] === member) return true;
-        }
-        return false;
-    }
-    addMember(member) {
-        for (let i=0;i<this.heroes.length;i++) {
-            if (this.heroes[i] === "H999") {
-                this.heroes[i] = member;
-                return;
-            }
-        }
-    }
-    removeMemberLocation(location) {
-        this.heroes.splice(location, 1);
-        this.heroes.push("H999");
-    }
-    partyRoll(stat) {
-        let total = 0;
-        this.heroList().forEach((hero) => {
-            total += hero.roll(stat);
+
+const DungeonAssist = {
+    floorNum : 0,
+    floor : null,
+    status : DungeonState.TEAMSELECT,
+    addTime(t) {
+        if (this.status !== DungeonState.ADVENTURING) return;
+        //add time to all combatants, if they're ready for combat execute their attack on the opposing team.
+        party.forEach((hero) => {
+            if (hero.addTime(t)) hero.attack(floor.mobs);
         });
-        return total;
-    }
-    damageParty(dmg) {
-        this.heroList().forEach((hero) => {
-            hero.takeDamage(dmg);
-        })
-    }
-    heroList() {
-        const hList = [];
-        this.heroes.forEach((heroID) => {
-            if (heroID !== "H999") hList.push(heroOwnedbyID(heroID));
+        floor.mobs.forEach((mob) => {
+            if (mob.addTime(t)) mob.attack(party.heroList());
         });
-        return hList
-    }
-    adventuring() {
-        return true;
-    }
-    validTeam() {
-        return this.heroList().length > 0;
-    }
-    partyAlive() {
-        return this.heroList().some((hero) => !hero.dead());
-    }
-    advanceFloor() {
-        if (this.partyAlive()) {
-            this.floor += 1;
-            DungeonAssist.initFloor();
-            refreshDungeonGrid();
-            refreshDungeonFloor();
-        }
-        else {
-            this.damageParty(-10); //lol workaround
-            this.heroes = ["H999","H999","H999"]
-            this.floor = 0;
-            refreshDungeonGrid();
+        if (party.isDead()) {
+            this.status = DungeonState.DONE;
             loadCorrectDungeonScreen();
         }
-    }
-}
-
-const party = new Party("H999","H999","H999");
+        if (floor.mobs.isDead()) {
+            this.advanceFloor();
+        }
+        refreshDungeonFloor();
+    },
+    advanceFloor() {
+        console.log("advance floor", this.floorNum);
+        this.floorNum += 1;
+        console.log(this.floorNum, dungeon.length);
+        while (this.floorNum > dungeon.length) {
+            console.log("generateFloor");
+            generateDungeonFloor();
+        }
+        this.floor = dungeon[this.floorNum-1];
+        console.log("thisfloor: " + this.floor);
+        refreshDungeonGrid();
+        refreshDungeonFloor();
+    },
+};
 
 loadCorrectDungeonScreen();
 
 function loadCorrectDungeonScreen() {
-    if (party.floor === 0) {
+    if (DungeonAssist.status === DungeonState.TEAMSELECT) {
         $dungeonTeamSelect.show();
         $dungeonRun.hide();
         $dungeonAfter.hide();
         refreshHeroSelect();
     }
-    else if (party.adventuring()) {
+    else if (DungeonAssist.status === DungeonState.ADVENTURING) {
         $dungeonTeamSelect.hide();
         $dungeonRun.show();
         $dungeonAfter.hide();
+        refreshDungeonFloor();
     }
     else {
         $dungeonTeamSelect.hide();
         $dungeonRun.hide();
-        $dungeonAfter.show();        
+        $dungeonAfter.show();
     }
 }
 
@@ -116,27 +86,6 @@ function refreshDungeonGrid() {
     });
 }
 
-generateDungeon();
-
-function refreshDungeonRunDungeon(party,floorID) {
-    /*//make the fucking dungeon jesus
-    const dungeon = dungeons[party.id];
-    floorID = floorID || party.floor;
-    const floor =  dungeon.floors[floorID];
-    const d1bot = $("<div/>").addClass("drBottomTitle").html("<h3>"+dungeon.name+"</h3>");
-    $drBottom.empty();
-    $drBottom.append(d1bot);
-    dungeon.floors.forEach((floor,count) => {
-        const d = $("<div/>").addClass("floorCard").attr("floor-id",count).html(dungeonImageReference[floor.type]);
-        if (count === party.floor) d.addClass("floorCurrent");
-        else if (count > party.floor) d.addClass("floorPast");
-        $drBottom.append(d);
-    });
-    const d2bot = $("<div/>").addClass("drBottomFloorTitle").html("<h3>Floor "+floorID+" - " + floor.type+"</h3>");
-    const d3bot = $("<div/>").addClass("drBottomFloorDesc").html("Stat: "+floor.content+" Difficulty: "+floor.difficulty);
-    $drBottom.append(d2bot,d3bot);*/
-}
-
 function refreshDungeonComplete(party) {
     $drBottom.empty();
     const dungeon = dungeons[party.id];
@@ -144,13 +93,6 @@ function refreshDungeonComplete(party) {
     const d2 = $("<div/>").addClass("drBottomText").html("Eventually rewards go here but I haven't figured that out yet...");
     const b1 = $("<button/>").addClass("drBottomCompleteButton").attr("id","partyCollect").html("Collect your heroes!");
     $drBottom.append(d1,d2,b1);
-}
-
-function refreshDungeonRun(party) {
-    $("#dungeonTeamSelect").hide();
-    $("#dungeonRun").show();
-    refreshDungeonRunHeroes(party);
-    refreshDungeonRunDungeon(party);
 }
 
 function refreshHeroSelect() {
@@ -207,7 +149,8 @@ $(document).on('click', "div.dungeonAvailableCard", (e) => {
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
     if (party.validTeam()) {
-        party.advanceFloor();
+        DungeonAssist.status = DungeonState.ADVENTURING;
+        DungeonAssist.advanceFloor();
         loadCorrectDungeonScreen();
     }
 });
@@ -218,77 +161,28 @@ function dungeonAdvance(t) {
     DungeonAssist.addTime(t);
 }
 
-const DungeonAssist = {
-    time : 0,
-    totalTime : 0,
-    beat : 0,
-    floor : null,
-    floorLog : [],
-    initFloor : () => {
-        while (party.floor > dungeon.length) {
-            this.floor = generateDungeonFloor();
-        }
-        this.floor = dungeon[party.floor-1];
-        this.beat = 0;
-        this.time = 0;
-        this.totalTime = 0;
-        this.floorLog = [];
-    },
-    floorDescription : () => {
-        if (floor !== null) return floor.getDescription();
-        return "fuck this is broken";
-    },
-    floorNumber : () => {
-        return floor.lvl;
-    },
-    floorDifficulty : () => {
-        return floor.difficulty;
-    },
-    addTime : (t) => {
-        this.time += t
-        this.totalTime += t
-        const f = this.floor.getFloorTime()
-        floorBarProgressUpdate(this.totalTime,f);
-        if (this.time >= this.floor.beatTime) {
-            this.time -= this.floor.beatTime;
-            this.floorLog.push(floor.executeBeat(this.beat,party));
-            this.beat += 1;
-            if (this.beat === floor.beatTotal) party.advanceFloor();
-            else refreshDungeonFloor();
-        };
-    },
-    getFloorLog : () => {
-        return this.floorLog;
-    },
-    clear : () => {
-        time = 0;
-        totalTime = 0;
-        beat = 0;
-        floor = null;
-        floorLog = [];
-    }
-};
-
 const log = [];
 const $drLog = $("#drLog");
 
-function addLog(s) {
+function addLog(f,s) {
     log.unshift(s);
     if (log.length >= 15) {
         log.splice(-1,1)
     }
     $drLog.empty();
     log.forEach((entry) => {
-        const d = $("<div/>").addClass("logEntry").html(entry);
+        const d = $("<div/>").addClass("logEntry").html("Floor " + f + ": " + entry);
         $drLog.append(d);
     })
 }
 
 function createDungeonCard(hero) {
+    console.log(hero);
     const d = $("<div/>").addClass("dhc");
     const d1 = $("<div/>").addClass("dhcName").html(hero.name);
-    const d2 = heroHPBar(hero.id,hero.hp,hero.hpmax);
-    const d3 = $("<div/>").addClass("dhcPic").html(hero.pic);
+    const d2 = heroBars(hero);
+    const s = hero.waffle();
+    const d3 = $("<div/>").addClass("dhcPic").html(s);
     const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.pow);
     const d5 = $("<div/>").addClass("dhcMight").html(dungeonIcons[Stat.MIGHT]+"&nbsp;&nbsp;"+hero.might);
     const d6 = $("<div/>").addClass("dhcMind").html(dungeonIcons[Stat.MIND]+"&nbsp;&nbsp;"+hero.mind);
@@ -297,37 +191,44 @@ function createDungeonCard(hero) {
     return d;
 }
 
-function heroHPBar(heroID,current,max) {
-    const hpPercent = current/max;
-    const width = (hpPercent*100).toFixed(1)+"%";
-    const da = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d = $("<div/>").addClass("hpBar").attr("data-label",current+"/"+max).attr("id","hp"+heroID);
-    const s = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+heroID).css('width', width);
-    da.append(d,s);
-    return da;
+function heroBars(hero) {
+    //return a div with bars for HP, AP, and Time
+    const hpPercent = hero.hp/hero.hpmax;
+    const hpWidth = (hpPercent*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
+    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.hpmax).attr("id","hp"+hero.id);
+    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+hero.id).css('width', hpWidth);
+    d1.append(d1a,s1);
+    //AP
+    const apPercent = hero.ap/hero.apmax;
+    const apWidth = (apPercent*100).toFixed(1)+"%";
+    const d2 = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
+    const d2a = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.id);
+    const s2 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.id).css('width', apWidth);
+    d2.append(d1a,s1);
+    //Act
+    const actPercent = hero.act/hero.actmax;
+    const actWidth = (actPercent*100).toFixed(1)+"%";
+    const d3 = $("<div/>").addClass("actBarDiv").html(dungeonIcons[Stat.ACT]);
+    const d3a = $("<div/>").addClass("actBar").attr("data-label",hero.act+"/"+hero.actmax).attr("id","act"+hero.id);
+    const s3 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.id).css('width', actWidth);
+    d3.append(d3a,s3);
+    return $("<div/>").addClass("heroBars").append(d1,d2,d3);
 }
 
 $floorID = $("#floorID");
-$floorType = $("#floorType");
 $dungeonHeroList = $("#dungeonHeroList");
-$floorContent = $("#floorContent");
+$dungeonMonsterList = $("#dungeonMonsterList");
 
 function refreshDungeonFloor() {
-    $floorID.html("Floor "+DungeonAssist.floorNumber());
-    $floorType.html(DungeonAssist.floorDescription());
+    $floorID.html("Floor "+DungeonAssist.floorNum);
     $dungeonHeroList.empty();
     party.heroList().forEach((hero) => {
         $dungeonHeroList.append(createDungeonCard(hero));
     });
-    $floorContent.empty();
-    const d = $("<div/>").addClass("dungeonDifficulty").html("Dungeon Difficulty: "+DungeonAssist.floorDifficulty());
-    $floorContent.append(d);
-    const fLog = DungeonAssist.getFloorLog();
-    party.heroList().forEach((hero,i) => {
-        const d1 = $("<div/>").addClass("heroRollTrapFloor").html(hero.name + ":&nbsp;");
-        if (fLog.length <= i) d1.append("Waiting...");
-        else d1.append(fLog[i]);
-        $floorContent.append(d1);
+    $dungeonMonsterList.empty();
+    DungeonAssist.floor.monster.forEach((mob) => {
+        $dungeonMonsterList.append(createDungeonCard(mob));
     });
 }
 

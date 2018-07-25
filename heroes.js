@@ -1,52 +1,24 @@
 "use strict";
 
-const Class = Object.freeze({"FIGHTER":"Fighter", "CASTER":"Caster", "THIEF":"Thief",})
+const Class = Object.freeze({"FIGHTER":"Fighter", "CASTER":"Caster", "THIEF":"Thief",});
 
 const heroBase = {
   // fighters
   "H001" : ["Beorn",Class.FIGHTER],
   "H002" : ["Cedric",Class.FIGHTER],
-  "H003" : ["Elda",Class.FIGHTER],
-  "H004" : ["Elle",Class.FIGHTER],
-  "H005" : ["Grim",Class.FIGHTER],
-  "H006" : ["Lambug",Class.FIGHTER],
-  "H007" : ["Luna",Class.FIGHTER],
-  "H008" : ["Rey",Class.FIGHTER],
-  "H009" : ["Rodney",Class.FIGHTER],
-  "H010" : ["Ruby",Class.FIGHTER],
-  "H011" : ["Shel",Class.FIGHTER],
-  "H012" : ["Slate",Class.FIGHTER],
-  "H013" : ["Viktor",Class.FIGHTER],
-  "H014" : ["Cora",Class.FIGHTER],
+  "H003" : ["Grim",Class.FIGHTER],
+  "H004" : ["Lambug",Class.FIGHTER],
   // casters
-  "H101" : ["Caeda",Class.CASTER],
-  "H102" : ["Zoe",Class.CASTER], // fae gif
-  "H103" : ["Finn",Class.CASTER],
-  "H104" : ["Gunther",Class.CASTER],
-  "H105" : ["Hank",Class.CASTER],
-  "H106" : ["Neve",Class.CASTER],
-  "H107" : ["Reid",Class.CASTER],
-  "H108" : ["Rowan",Class.CASTER],
-  "H109" : ["Titus",Class.CASTER],
-  "H110" : ["Troy",Class.CASTER],
-  "H111" : ["Zarlica",Class.CASTER],
-  "H112" : ["Alora",Class.CASTER], // soora gif
-  "H113" : ["Thamior",Class.CASTER],
-  "H114" : ["Richard",Class.CASTER],
+  "H101" : ["Zoe",Class.CASTER], // fae gif
+  "H102" : ["Neve",Class.CASTER],
+  "H103" : ["Titus",Class.CASTER],
+  "H104" : ["Troy",Class.CASTER],
   // thieves
   "H201" : ["Alok",Class.THIEF],
   "H202" : ["Grogmar",Class.THIEF],
-  "H203" : ["Igor",Class.THIEF],
-  "H204" : ["Jasper",Class.THIEF],
-  "H205" : ["John",Class.THIEF],
-  "H206" : ["Lola",Class.THIEF],
-  "H207" : ["Maeve",Class.THIEF],
-  "H208" : ["Revere",Class.THIEF],
-  "H209" : ["Sebastian",Class.THIEF],
-  "H210" : ["Sophie",Class.THIEF],
-  "H211" : ["Teagan",Class.THIEF],
-  "H212" : ["Claudia",Class.THIEF], // zoe gif
-  "H213" : ["Bloop",Class.THIEF],
+  "H203" : ["Revere",Class.THIEF],
+  "H204" : ["Claudia",Class.THIEF], // zoe gif
+  // null!
   "H999" : ["Empty",null],
 }
 
@@ -62,26 +34,40 @@ class OwnedHero {
         this.moxie = moxie;
         this.hp = 10;
         this.hpmax = 10;
+        this.ap = 0;
+        this.apmax = 5;
+        this.act = 0;
+        this.actmax = 5;
     }
     get pow() {
         if (this.role == Class.FIGHTER) return this.might;
         else if (this.role == Class.CASTER) return this.mind;
         else if (this.role == Class.THIEF) return this.moxie;
     }
-    get pic() {
+    waffle() {
         return heroImageReference[this.id];
     }
-    roll(stat) {
-        let n = this.moxie;
-        if (stat == Stat.MIGHT) n = this.might;
-        else if (stat == Stat.MIND) n = this.mind;
-        return randomNormal(Math.floor(n*0.75),Math.ceil(n*1.25));
-    }
     takeDamage(dmg) {
-        this.hp -= dmg;
+        this.hp = Math.max(this.hp-dmg,0);
+    }
+    heal(hp) {
+        this.hp = Math.min(this.hp+hp,this.hpmax);
     }
     dead() {
         return this.hp === 0;
+    }
+    addTime(t) {
+        this.act += t;
+        if (this.act >= this.actmax) {
+            this.act -= this.actmax;
+            return true;
+        }
+        return false;
+    }
+    attack(mobs) {
+        //takes a list of mobs and executes an attack
+        //this is just w/e right now...
+        mobs[0].takeDamage(this.pow());
     }
 }
 
@@ -91,47 +77,18 @@ const heroImageReference = {
     // fighters
     "H001" : '<img src="heroes/beorn.gif">',
     "H002" : '<img src="heroes/cedric.gif">',
-    "H003" : '<img src="heroes/elda.gif">',
-    "H004" : '<img src="heroes/elle.gif">',
-    "H005" : '<img src="heroes/grim.gif">',
-    "H006" : '<img src="heroes/lambug.gif">',
-    "H007" : '<img src="heroes/luna.gif">',
-    "H008" : '<img src="heroes/rey.gif">',
-    "H009" : '<img src="heroes/rodney.gif">',
-    "H010" : '<img src="heroes/ruby.gif">',
-    "H011" : '<img src="heroes/shel.gif">',
-    "H012" : '<img src="heroes/slate.gif">',
-    "H013" : '<img src="heroes/viktor.gif">',
-    "H014" : '<img src="heroes/cora.gif">',
+    "H003" : '<img src="heroes/grim.gif">',
+    "H004" : '<img src="heroes/lambug.gif">',
     // casters
     "H101" : '<img src="heroes/caeda.gif">',
-    "H102" : '<img src="heroes/fae.gif">', // gif name is fae, char name is zoe
-    "H103" : '<img src="heroes/finn.gif">',
-    "H104" : '<img src="heroes/gunther.gif">',
-    "H105" : '<img src="heroes/hank.gif">',
-    "H106" : '<img src="heroes/neve.gif">',
-    "H107" : '<img src="heroes/reid.gif">',
-    "H108" : '<img src="heroes/rowan.gif">',
-    "H109" : '<img src="heroes/titus.gif">',
-    "H110" : '<img src="heroes/troy.gif">',
-    "H111" : '<img src="heroes/zarlica.gif">',
-    "H112" : '<img src="heroes/soora.gif">', // gif name soora, char name alora
-    "H113" : '<img src="heroes/thamior.gif">',
-    "H114" : '<img src="heroes/richard.gif">',
+    "H102" : '<img src="heroes/neve.gif">',
+    "H103" : '<img src="heroes/titus.gif">',
+    "H104" : '<img src="heroes/troy.gif">',
     // thieves
     "H201" : '<img src="heroes/alok.gif">',
     "H202" : '<img src="heroes/grogmar.gif">',
-    "H203" : '<img src="heroes/igor.gif">',
-    "H204" : '<img src="heroes/jasper.gif">',
-    "H205" : '<img src="heroes/john.gif">',
-    "H206" : '<img src="heroes/lola.gif">',
-    "H207" : '<img src="heroes/maeve.gif">',
-    "H208" : '<img src="heroes/revere.gif">',
-    "H209" : '<img src="heroes/sebastian.gif">',
-    "H210" : '<img src="heroes/sophie.gif">',
-    "H211" : '<img src="heroes/teagan.gif">',
-    "H212" : '<img src="heroes/zoe.gif">', // gif name is zoe, char name is claudia
-    "H213" : '<img src="heroes/bloop.gif">',
+    "H203" : '<img src="heroes/revere.gif">',
+    "H204" : '<img src="heroes/zoe.gif">', // gif name is zoe, char name is claudia
 }
 
 const $heroList = $("#heroList");
@@ -198,14 +155,6 @@ function generateHeroIDList() {
     return possibleIDs.filter(x => !ownedIDs.includes(x));
 }
 
-$(document).on('click', "div.heroOwnedCard", (e) => {
-    e.preventDefault();
-    const ID = $(e.currentTarget).attr("data-value");
-    $(".heroOwnedCard").removeClass("highlight");
-    $(e.currentTarget).addClass("highlight");
-    $heroCard.html(displayHeroCard(ID));
-});
-
 function displayHeroCard(ID) {
     const heroCard = $("<div/>").addClass("heroCard");
     const hero = heroOwnedbyID(ID);
@@ -247,3 +196,12 @@ function rollDice(number, sides) {
   while(number-- > 0) total += Math.floor(Math.random() * sides) + 1;
   return total;
 }
+
+
+$(document).on('click', "div.heroOwnedCard", (e) => {
+    e.preventDefault();
+    const ID = $(e.currentTarget).attr("data-value");
+    $(".heroOwnedCard").removeClass("highlight");
+    $(e.currentTarget).addClass("highlight");
+    $heroCard.html(displayHeroCard(ID));
+});
