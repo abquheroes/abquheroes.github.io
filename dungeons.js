@@ -23,6 +23,8 @@ const dungeonIcons = {
     [Stat.MOXIE] : '<img src="DungeonIcons/moxieicon.png" alt="Moxie">',
     [Stat.HP] : '<img src="PixelItem/Heart.png" alt="HP">',
     [Stat.POW] : '<img src="PixelItem/Icosahedron.png" alt="POW">',
+    [Stat.ACT] : '<img src="DungeonIcons/act.png" alt="Act">',
+    [Stat.AP] : '<img src="DungeonIcons/ap.png" alt="AP">',
 }
 
 const dungeon = [];
@@ -33,6 +35,5 @@ function generateDungeonFloor() {
     else ft = FloorType.FIGHT;
     const difficulty = dungeon.length+1;
     const floor = new Floor(ft,difficulty);
-    console.log(floor);
     dungeon.push(floor);
 }

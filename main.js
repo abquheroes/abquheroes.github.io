@@ -687,7 +687,7 @@ function round(number, precision) {
       var numArray = ("" + number).split("e");
       return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
     };
-    return shift(Math.round(shift(number, +precision)), -precision);
+    return shift(Math.round(shift(number, +precision)), -precision).toFixed(precision);
 }
 
 function initializeInventory() {

@@ -1283,7 +1283,7 @@ input#importSaveText {
     z-index: 1;
 }
 
-.hpBar:before {
+.hpBar:before, .apBar:before, .actBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;

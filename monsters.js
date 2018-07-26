@@ -22,6 +22,7 @@ alien.hpFactor  = 1.1;
 alien.powFactor = 1.5;
 alien.ap        = 3;
 alien.act       = 5000;
+alien.target    = TargetType.FIRST;
 monsterDB.push(alien);
 
 const badLady = new MonsterTemplate();
@@ -32,6 +33,7 @@ badLady.hpFactor  = 1.0;
 badLady.powFactor = 1.7;
 badLady.ap        = 4;
 badLady.act       = 3000;
+badLady.target    = TargetType.FIRST;
 monsterDB.push(badLady);
 
 const bat = new MonsterTemplate();
@@ -42,6 +44,7 @@ bat.hpFactor  = 0.7;
 bat.powFactor = 1.0;
 bat.ap        = 7;
 bat.act       = 1000;
+bat.target    = TargetType.FIRST;
 monsterDB.push(bat);
 
 const executioner = new MonsterTemplate();
@@ -52,6 +55,7 @@ executioner.hpFactor  = 2;
 executioner.powFactor = 1.1;
 executioner.ap        = 3;
 executioner.act       = 7000;
+executioner.target    = TargetType.FIRST;
 monsterDB.push(executioner);
 
 const knight = new MonsterTemplate();
@@ -62,6 +66,7 @@ knight.hpFactor  = 2;
 knight.powFactor = 1.5;
 knight.ap        = 2;
 knight.act       = 6000;
+knight.target    = TargetType.FIRST;
 monsterDB.push(knight);
 
 
@@ -120,11 +125,9 @@ function getMonster(floor) {
 }
 
 function getTarget(party,type) {
-    console.log(type);
     if (type === TargetType.FIRST) {
         for (let i=0;i<party.length;i++) {
             if (party[i].alive()) {
-                console.log(party[i].name, party[i].hp);
                 return party[i];
             }
         }

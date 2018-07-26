@@ -40,15 +40,11 @@ const DungeonAssist = {
         refreshDungeonFloor();
     },
     advanceFloor() {
-        console.log("advance floor", this.floorNum);
         this.floorNum += 1;
-        console.log(this.floorNum, dungeon.length);
         while (this.floorNum > dungeon.length) {
-            console.log("generateFloor");
             generateDungeonFloor();
         }
         this.floor = dungeon[this.floorNum-1];
-        console.log("thisfloor: " + this.floor);
         refreshDungeonGrid();
         refreshDungeonFloor();
     },
@@ -205,8 +201,9 @@ function heroBars(hero) {
     //Act
     const actPercent = hero.act/hero.actmax;
     const actWidth = (actPercent*100).toFixed(1)+"%";
+    const actText = round((hero.actmax-hero.act)/1000,1);
     const d3 = $("<div/>").addClass("actBarDiv").html(dungeonIcons[Stat.ACT]);
-    const d3a = $("<div/>").addClass("actBar").attr("data-label",hero.act+"/"+hero.actmax).attr("id","act"+hero.id);
+    const d3a = $("<div/>").addClass("actBar").attr("data-label",actText).attr("id","act"+hero.id);
     const s3 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.id).css('width', actWidth);
     d3.append(d3a,s3);
     return $("<div/>").addClass("heroBars").append(d1,d2,d3);
