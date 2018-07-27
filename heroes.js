@@ -43,7 +43,7 @@ class OwnedHero {
         this.target = TargetType.FIRST;
         this.slot1Type = [ItemType.KNIFE,ItemType.MACE,ItemType.AXE,ItemType.WAND];
         this.slot2Type = [ItemType.HAT,ItemType.HELMET,ItemType.ARMOR];
-        this.slot3Type = [];
+        this.slot3Type = [ItemType.WARD,ItemType.PENDANT];
     }
     power() {
         return this.pow;
@@ -88,10 +88,8 @@ class OwnedHero {
         }
     }
     takeDamage(type,dmg) {
-        console.log(dmg);
         if (type === DamageType.PHYSICAL) {
             dmg -= this.armor;
-            console.log(dmg);
             if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
         }
         else {

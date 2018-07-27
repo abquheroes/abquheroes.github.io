@@ -124,7 +124,7 @@ class Monster {
             target.takeDamage(DamageType.PHYSICAL,dmg);
         }
     }
-    takeDamage(dmg,type) {
+    takeDamage(type,dmg) {
         if (type === DamageType.PHYSICAL) {
             dmg -= this.armor;
             if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
