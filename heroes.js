@@ -23,32 +23,30 @@ const heroBase = {
 }
 
 class OwnedHero {
-    constructor (name, id, role, might, mind, moxie) {
+    constructor (name, id, role) {
         this.name = name;
         this.id = id;
         this.role = role;
         this.lvl = 1;
         this.xp = 0;
-        this.might = might;
-        this.mind = mind;
-        this.moxie = moxie;
-        this.hp = 10;
-        this.hpmax = 10;
+        this.hp = 100;
+        this.hpmax = 100;
+        this.pow = 10;
         this.ap = 0;
         this.apmax = 5;
         this.act = 0;
         this.actmax = 5000;
+        this.armor = 0;
+        this.crit = 5;
+        this.critdmg = 2;
+        this.dodgeChance = 0;
+        this.target = TargetType.FIRST;
     }
-    pow() {
-        if (this.role == Class.FIGHTER) return this.might;
-        else if (this.role == Class.CASTER) return this.mind;
-        else if (this.role == Class.THIEF) return this.moxie;
+    power() {
+        return this.pow;
     }
     pic() {
         return heroImageReference[this.id];
-    }
-    takeDamage(dmg) {
-        this.hp = Math.max(this.hp-dmg,0);
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.hpmax);
@@ -67,7 +65,6 @@ class OwnedHero {
         }
         this.act += t;
         if (this.act >= this.actmax) {
-            console.log("TIME TO ACT!!");
             this.act -= this.actmax;
             return true;
         }
@@ -76,15 +73,34 @@ class OwnedHero {
     attack(mobs) {
         //takes a list of mobs and executes an attack
         //this is just w/e right now...
+        const target = getTarget(mobs,this.target);
+        const dmg = this.critical(this.power());
         if (this.ap === this.apmax) {
-            mobs[0].takeDamage(this.pow()*2);
+            target.takeDamage(DamageType.MAGIC,dmg*2);
             this.ap = 0;
         }
         else {
             this.ap += 1;
-            console.log(mobs[0]);
-            mobs[0].takeDamage(this.pow());
+            target.takeDamage(DamageType.PHYSICAL,dmg);
         }
+    }
+    takeDamage(type,dmg) {
+        console.log(dmg);
+        if (type === DamageType.PHYSICAL) {
+            dmg -= this.armor;
+            console.log(dmg);
+            if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
+        }
+        else {
+            this.hp = Math.max(this.hp-dmg,0);
+        }
+    }
+    dodge() {
+        return this.dodgeChance > Math.floor(Math.random()*100) + 1;
+    }
+    critical(dmg) {
+        if (this.crit > Math.floor(Math.random()*100) + 1) dmg = dmg*this.critdmg
+        return dmg;
     }
 }
 
@@ -156,10 +172,7 @@ function generateHero() {
     const id = possibleID[Math.floor(Math.random() * possibleID.length)];
     const name = heroBase[id][0];
     const role = heroBase[id][1];
-    const might = rollDice(3,6);
-    const mind = rollDice(3,6);
-    const moxie = rollDice(3,6);
-    return new OwnedHero(name,id,role,might,mind,moxie);
+    return new OwnedHero(name,id,role);
 }
 
 function generateHeroIDList() {
@@ -181,9 +194,6 @@ function displayHeroCard(ID) {
     const d4 = $("<div/>").addClass("hcStats");
     const d4a = $("<div/>").addClass("hcStatsHP").html("HP: "+hero.hp);
     const d4b = $("<div/>").addClass("hcStatsATK").html("ATK: "+hero.atk);
-    const d4c = $("<div/>").addClass("hcStatsMight").html("MIGHT: "+hero.might);
-    const d4d = $("<div/>").addClass("hcStatsMind").html("MIND: "+hero.mind);
-    const d4e = $("<div/>").addClass("hcStatsMoxie").html("MOXIE: "+hero.moxie);
     d4.append(d4a,d4b,d4c,d4d,d4e);
     const d5 = $("<div/>").addClass("hcEquip").html("Equip goes here?");
     heroCard.append(d1,d2,d3,d4,d5);
@@ -199,10 +209,7 @@ function refreshHeroes() {
         const d2 = $("<div/>").addClass("heroOwneImage").html(heroImageReference[hero.id]);
         const d3 = $("<div/>").addClass('heroLvl').html("L"+hero.lvl + " (" +hero.xp +" xp)");
         const d4 = $("<div/>").addClass("heroOwneRole").html("Role: " + hero.role);
-        const d5 = $("<div/>").addClass("heroOwnMight").html("Might: " + hero.might);
-        const d6 = $("<div/>").addClass("heroOwnMind").html("Mind: " + hero.mind);
-        const d7 = $("<div/>").addClass("heroOwnMoxie").html("Moxie: " + hero.moxie);
-        d.append(d1,d2,d3,d4,d5,d6,d7)
+        d.append(d1,d2,d3,d4)
         $hiredHeroes.append(d);
     }
 }

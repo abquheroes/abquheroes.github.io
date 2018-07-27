@@ -1,6 +1,6 @@
 "use strict";
 const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", TRIAL:"Trial", TREASURE:"Treasure", HEAL:"Heal"});
-const Stat = Object.freeze({MIGHT:"Might",MIND:"Mind",MOXIE:"Moxie",HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
+const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 
 class Floor {
     constructor (type,lvl) {
@@ -18,9 +18,6 @@ class Floor {
 const dungeonIcons = {
     [FloorType.FIGHT] : '<img src="DungeonIcons/combat_floor.png" alt="Fight">',
     [FloorType.TREASURE] : '<img src="DungeonIcons/treasure_floor.png" alt="Treasure">',
-    [Stat.MIGHT] : '<img src="DungeonIcons/mighticon.png" alt="Might">',
-    [Stat.MIND] : '<img src="DungeonIcons/mindicon2.png" alt="Mind">',
-    [Stat.MOXIE] : '<img src="DungeonIcons/moxieicon.png" alt="Moxie">',
     [Stat.HP] : '<img src="PixelItem/Heart.png" alt="HP">',
     [Stat.POW] : '<img src="PixelItem/Icosahedron.png" alt="POW">',
     [Stat.ACT] : '<img src="DungeonIcons/act.png" alt="Act">',

@@ -178,7 +178,7 @@ function createDungeonCard(hero) {
     const d2 = heroBars(hero);
     const s = hero.pic();
     const d3 = $("<div/>").addClass("dhcPic").html(s);
-    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.pow());
+    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.power());
     d.append(d1,d2,d3,d4)
     return d;
 }

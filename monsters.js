@@ -1,6 +1,7 @@
 "use strict";
 
 const TargetType = Object.freeze({FIRST:0, REVERSE:1, RANDOM:3, HIGHP:4, LOWHP:5});
+const DamageType = Object.freeze({PHYSICAL:0,MAGIC:1});
 
 const monsterDB = [];
 function MonsterTemplate() {
@@ -77,20 +78,25 @@ class Monster {
         this.image = '<img src="enemies/' + img + '">';
         this.hp = hp;
         this.hpmax = hp;
-        this.power = pow;
+        this.pow = pow;
         this.ap = 0;
         this.apmax = ap;
         this.act = 0;
         this.actmax = act;
         this.target = target;
+        this.armor = 0;
+        this.crit = 5;
+        this.critdmg = 200;
+        this.dodgeChance = 0;
     }
-    pow() {
-        return this.power;
+    power() {
+        return this.pow;
     }
     pic() {
         return this.image;
     }
     addTime(t) {
+        if (this.dead()) return false;
         this.act += t;
         if (this.act >= this.actmax) {
             this.act -= this.actmax;
@@ -98,24 +104,43 @@ class Monster {
         }
         return false;
     }
+    dead() {
+        return this.hp === 0;
+    }
+    alive() {
+        return this.hp > 0;
+    }
     attack(party) {
-        //takes a list of mobs and executes an attack
-        //this is just w/e right now...
+        //takes a list of mobs and executes an attack on one of them
+        //todo: more than one...
         const target = getTarget(party,this.target);
+        const dmg = this.critical(this.power());
         if (this.ap === this.apmax) {
-            target.takeDamage(this.pow()*2);
+            target.takeDamage(DamageType.MAGIC,dmg*2);
             this.ap = 0;
         }
         else {
             this.ap += 1;
-            target.takeDamage(this.pow());
+            target.takeDamage(DamageType.PHYSICAL,dmg);
         }
     }
-    takeDamage(dmg) {
-        this.hp = Math.max(this.hp-dmg,0);
+    takeDamage(dmg,type) {
+        if (type === DamageType.PHYSICAL) {
+            dmg -= this.armor;
+            if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
+        }
+        else {
+            this.hp = Math.max(this.hp-dmg,0);
+        }
     }
-    dead() {
-        return this.hp === 0;
+    dodge() {
+        return this.dodgeChance > Math.floor(Math.random()*100) + 1;
+    }
+    critical(dmg) {
+        if (this.crit > Math.floor(Math.random()*100) + 1) {
+            dmg = dmg*this.critdmg
+        }
+        return dmg;
     }
 }
 
