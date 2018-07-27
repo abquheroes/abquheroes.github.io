@@ -42,7 +42,7 @@ badLady.armor     = 3;
 badLady.crit      = 10;
 badLady.critdmg   = 3;
 badLady.dodgeChance = 5;
-badLady.target    = TargetType.REVERSE;
+badLady.target    = TargetType.HIGHHP;
 monsterDB.push(badLady);
 
 const bat = new MonsterTemplate();
