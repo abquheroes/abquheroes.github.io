@@ -1,5 +1,7 @@
 "use strict";
 
+const ItemType = Object.freeze({KNIFE:"Knives", MACE:"Maces", GLOVE:"Gloves", POTION:"Potions", AXE:"Axes", HAT:"Hats", WAND:"Wands", GAUNTLET:"Gauntlets", HELMET:"Helmets", SHOES:"Shoes", WARD:"Wards", SHIELD:"Shields", CLOAK:"Cloaks", ARMOR:"Armor", PENDANT:"Pendants"});
+
 function item(name,value,craftTime,type) {
     this.name = name;
     this.value = value;
@@ -10,10 +12,12 @@ function item(name,value,craftTime,type) {
         "Wood" : 0,
     }
     this.requires = {};
+    this.act = 5;
+    this.dmg = 0;
+    this.hp = 0;
 }
 
 const blueprints = [];
-
 
 function nameToItem(name) {
     for (let i=0;i<blueprints.length;i++) {

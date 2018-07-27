@@ -8,8 +8,8 @@ function MonsterTemplate() {
     this.name = "Empty";
     this.image = ""
     this.id = "M999";
-    this.hpFactor = 1;
-    this.powFactor = 1;
+    this.hpFactor = [1,1];
+    this.powFactor = [1,1];
     this.ap = 5;
     this.act = 5;
     this.target = TargetType.FIRST;
@@ -19,8 +19,8 @@ const alien = new MonsterTemplate();
 alien.name      = "Alien";
 alien.image     = "alien.gif";
 alien.id        = "M001";
-alien.hpFactor  = 1.1;
-alien.powFactor = 1.5;
+alien.hpFactor  = [1.1,1];
+alien.powFactor = [1.5,1];
 alien.ap        = 3;
 alien.act       = 5000;
 alien.target    = TargetType.FIRST;
@@ -30,8 +30,8 @@ const badLady = new MonsterTemplate();
 badLady.name      = "Bad Lady";
 badLady.image     = "badlady.gif";
 badLady.id        = "M002";
-badLady.hpFactor  = 1.0;
-badLady.powFactor = 1.7;
+badLady.hpFactor  = [1.0,1];
+badLady.powFactor = [1.7,1];
 badLady.ap        = 4;
 badLady.act       = 3000;
 badLady.target    = TargetType.FIRST;
@@ -41,8 +41,8 @@ const bat = new MonsterTemplate();
 bat.name      = "Bat";
 bat.image     = "bat.gif";
 bat.id        = "M003";
-bat.hpFactor  = 0.7;
-bat.powFactor = 1.0;
+bat.hpFactor  = [0.7,1];
+bat.powFactor = [1.0,1];
 bat.ap        = 7;
 bat.act       = 1000;
 bat.target    = TargetType.FIRST;
@@ -52,8 +52,8 @@ const executioner = new MonsterTemplate();
 executioner.name      = "Executioner";
 executioner.image     = "execute.gif";
 executioner.id        = "M004";
-executioner.hpFactor  = 2;
-executioner.powFactor = 1.1;
+executioner.hpFactor  = [2,1];
+executioner.powFactor = [1.1,1];
 executioner.ap        = 3;
 executioner.act       = 7000;
 executioner.target    = TargetType.FIRST;
@@ -63,8 +63,8 @@ const knight = new MonsterTemplate();
 knight.name      = "Knight";
 knight.image     = "knight.gif";
 knight.id        = "M005";
-knight.hpFactor  = 2;
-knight.powFactor = 1.5;
+knight.hpFactor  = [2,1];
+knight.powFactor = [1.5,1];
 knight.ap        = 2;
 knight.act       = 6000;
 knight.target    = TargetType.FIRST;
@@ -86,7 +86,7 @@ class Monster {
         this.target = target;
         this.armor = 0;
         this.crit = 5;
-        this.critdmg = 200;
+        this.critdmg = 2;
         this.dodgeChance = 0;
     }
     power() {
@@ -146,7 +146,9 @@ class Monster {
 
 function getMonster(floor) {
     const mp = monsterDB[Math.floor(Math.random()*monsterDB.length)];
-    return new Monster(mp.name,mp.id,mp.image,Math.floor(10+floor*mp.hpFactor),Math.floor(1+floor*mp.powFactor),mp.ap,mp.act,mp.target);
+    const hp = Math.floor(floor*mp.hpFactor[0]+mp.hpFactor[1]);
+    const pow = Math.floor(floor*mp.powFactor[0]+mp.powFactor[1]);
+    return new Monster(mp.name,mp.id,mp.image,hp,pow,mp.ap,mp.act,mp.target);
 }
 
 function getTarget(party,type) {

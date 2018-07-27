@@ -41,6 +41,9 @@ class OwnedHero {
         this.critdmg = 2;
         this.dodgeChance = 0;
         this.target = TargetType.FIRST;
+        this.slot1Type = [ItemType.KNIFE,ItemType.MACE,ItemType.AXE,ItemType.WAND];
+        this.slot2Type = [ItemType.HAT,ItemType.HELMET,ItemType.ARMOR];
+        this.slot3Type = [];
     }
     power() {
         return this.pow;
@@ -194,7 +197,7 @@ function displayHeroCard(ID) {
     const d4 = $("<div/>").addClass("hcStats");
     const d4a = $("<div/>").addClass("hcStatsHP").html("HP: "+hero.hp);
     const d4b = $("<div/>").addClass("hcStatsATK").html("ATK: "+hero.atk);
-    d4.append(d4a,d4b,d4c,d4d,d4e);
+    d4.append(d4a,d4b);
     const d5 = $("<div/>").addClass("hcEquip").html("Equip goes here?");
     heroCard.append(d1,d2,d3,d4,d5);
     return heroCard;
