@@ -119,7 +119,7 @@ function refreshHeroSelect() {
 
 function characterCard(ID,prefix,dv) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
-    const d1 = $("<div/>").addClass(prefix+"Image").html(heroImageReference[ID]);
+    const d1 = $("<div/>").addClass(prefix+"Image").html(heroOwnedbyID(ID).image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(heroBase[ID][0]);
     d.append(d1,d2);
     return d;

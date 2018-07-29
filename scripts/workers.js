@@ -1,17 +1,35 @@
 "use strict";
 
-function Worker(name,baseTime,description) {
-    this.name = name;
-    this.craftTime = baseTime; //this is in miliseconds
-    this.description = description;
+class Worker {
+    constructor(name,id,resources) {
+        this.name = name;
+        this.id = id;
+        this.resources = resources;
+        this.lvl = 0;
+        this.pic = '<img src="workers/'+this.name+'.gif">';
+    }
+    produces(resource) {
+        if (resource in this.resources) return this.resources[resource] * this.lvl;
+        return 0;
+    }
 }
 
-const workers = [];
-
-const oren = new Worker("Oren",10000,"Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.");
-oren.produces = {
-    "Ore" : [0,20,24,26,28,30,32,34,36,38,50,52,54,56,58,60,62,64,66,68,80,82,84,86,88,100],
+const WorkerManager = {
+    workers : [],
+    addWorker(worker) {
+        this.workers.push(worker);
+    },
+    resourceCount(resource) {
+        return this.workers.reduce((total,worker) => total + worker.produces(resource))
+    },
+    workerByID(id) {
+        for (let i=0;i<workers.length;i++) {
+            if (workers[i].id === id) return workers[i];
+        }
+    },
 }
+
+const oren = new Worker("Oren","W001",{"ore":5});
 oren.lvlreq = [
     {//unlock
         "Gold" : 500,
@@ -175,12 +193,9 @@ oren.lvlreq = [
         "Gold" : 105879,
     },
 ]
-workers.push(oren);
+WorkerManager.addWorker(oren);
 
-const eryn = new Worker("Eryn",18000,"Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.");
-eryn.produces = {
-    "Wood" : [0,31,34,36,39,42,45,48,50,53,70,73,76,78,81,84,87,90,92,95,112,115,118,120,123,140],
-}
+const eryn = new Worker("Eryn","W002",{"wood":5});
 eryn.lvlreq = [
     {//unlock
         "Chefs Knife" : 5,
@@ -345,12 +360,9 @@ eryn.lvlreq = [
         "Gold" : 105879,
     },
 ]
-workers.push(eryn);
+WorkerManager.addWorker(eryn);
 
-const lakur = new Worker("Lakur",12000,"Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.");
-lakur.produces = {
-    "Leather" : [0,50,54,59,63,68,72,77,81,86,113,117,122,126,131,135,140,144,149,153,180,185,189,194,198,225],
-}
+const lakur = new Worker("Lakur","W003",{"leather":5});
 lakur.lvlreq = [
     {//unlock
         "The Broominator" : 5,
@@ -515,12 +527,9 @@ lakur.lvlreq = [
         "Gold" : 105879,
     },
 ]
-workers.push(lakur);
+WorkerManager.addWorker(lakur);
 
-const herbie = new Worker("Herbie",30000,"Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.");
-herbie.produces = {
-    "Herb" : [0,44,48,52,56,60,64,68,72,76,100,104,108,112,116,120,124,128,132,136,160,164,168,172,176,200],
-}
+const herbie = new Worker("Herbie","W004",{"herb":5});
 herbie.lvlreq = [
     {//unlock
         "Cleaning Gloves" : 5,
@@ -685,16 +694,7 @@ herbie.lvlreq = [
         "Gold" : 105879,
     },
 ]
-workers.push(herbie);
-
-function nameToWorker(name) {
-    for (let i=0;i<workers.length;i++) {
-        if (workers[i].name == name) {
-            return workers[i];
-        }
-    }
-    return null;
-}
+WorkerManager.addWorker(herbie);
 
 const $workers = $('#workerList');
 
@@ -760,17 +760,6 @@ function refreshWorkers() {
         if (lvl === 0) break;
     }
 }
-
-function getJobValue(name) {
-    const workerObj = nameToWorker(name);
-    const lvl = workerProgress[name];
-    const toexport = {}
-    for (const [resource, amt] of Object.entries(workerObj.produces)) {
-        toexport[resource] = amt[lvl];
-    };
-    return toexport;
-}
-
 
 $workers.on("click", ".BuyWorker", (e) => {
     e.preventDefault();

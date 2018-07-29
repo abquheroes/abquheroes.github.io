@@ -15,14 +15,13 @@
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
         ga('create', 'UA-97625874-2', 'auto');
         ga('send', 'pageview');
-        </script>
+    </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Abqu Heroes</title>
-    <link href="jquery-ui.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="scripts/style.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -34,7 +33,7 @@
                 <div id="game-logo"><h1>Abqu Heroes</h1></div>
                 <div id="side-content">
                     <div id="resources-container">
-                    <p class="heading">Gold &amp; Resources <span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
+                        <p class="heading">Gold &amp; Resources <span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
                         <div id="goldResource" class="resource tooltip" aria-label="Gold" aria-describedby="moneyAmt"><img src="PixelItem/CoinsGold5.png" alt="Gold">&nbsp;&nbsp;<span id="moneyAmt">0</span></br></div>
                         <div id="oreResource" class="resource tooltip" aria-label="Ore" aria-describedby="oreAmt"><img src="PixelItem/Ore.png" alt="Ore">&nbsp;&nbsp;<span id="oreAmt">0/200</span></br></div>
                         <div id="woodResource" class="none resource tooltip" aria-label="Wood" aria-describedby="woodAmt"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png" alt="Wood">&nbsp;&nbsp;<span id="woodAmt">0/200</span></br></div>
@@ -56,479 +55,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <div class="game-wrapper" role="main">
                 <!-- Dialogs -->
-                <div id="dialogOren" class="dialog" role="dialog" aria-labelledby="titleOren" aria-describedby="descOren">
-                    <div class="dialog_content">
-                        <div class="dialog_header">
-                            <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                            <h2 id="titleOren" class="dialog_title">About Oren</h2>
-                        </div>
-                        <div class="dialog_body">
-                            <p id="descOren" class="dialog_description">Oren comes from a long line of miners and specializes in gathering <em>Ore</em>.</p>
-                            <div id="flex-table">
-                                <div class="table-row header-row">
-                                    <div class="header">Level</div>
-                                    <div class="header">Regen Rate</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">1</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 20</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">2</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 24</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">3</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 26</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">4</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 28</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">5</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 30</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">6</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 32</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">7</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 34</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">8</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 36</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">9</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 38</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">10</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 50</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">11</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 52</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">12</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 54</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">13</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 56</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">14</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 58</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">15</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 60</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">16</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 62</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">17</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 64</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">18</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 66</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">19</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 68</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">20</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 80</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">21</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 82</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">22</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 84</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">23</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 86</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">24</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 88</div>
-                                </div>
-                                <div class="table-row data-row">
-                                    <div class="data">25</div>
-                                    <div class="data"><img src="PixelItem/Ore.png"> 100</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="dialogEryn" class="dialog" role="dialog" aria-labelledby="titleEryn" aria-describedby="descEryn">
-                        <div class="dialog_content">
-                            <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                                <h2 id="titleEryn" class="dialog_title">About Eryn</h2>
-                            </div>
-                            <div class="dialog_body">
-                                <p id="descEryn" class="dialog_description">Eryn carefully chooses which trees to chop down to produce <em>Wood</em>.</p>
-                                <div id="flex-table">
-                                    <div class="table-row header-row">
-                                        <div class="header">Level</div>
-                                        <div class="header">Regen Rate</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">1</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 31</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">2</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 34</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">3</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 36</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">4</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 39</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">5</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 42</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">6</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 45</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">7</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 48</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">8</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 50</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">9</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 53</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">10</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 70</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">11</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 73</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">12</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 76</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">13</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 78</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">14</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 81</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">15</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 84</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">16</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 87</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">17</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 90</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">18</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 92</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">19</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 95</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">20</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 112</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">21</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 115</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">22</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 118</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">23</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 120</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">24</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 123</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">25</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/logs_6.png"> 140</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div id="dialogLakur" class="dialog" role="dialog" aria-labelledby="titrleLakur" aria-describedby="descLakur">
-                        <div class="dialog_content">
-                            <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                                <h2 id="titleLakur" class="dialog_title">About Lakur</h2>
-                            </div>
-                            <div class="dialog_body">
-                                <p id="descLakur" class="dialog_description">Lakur is a skilled hunter and earns her living by producing <em>Leather</em>.</p>
-                                <div id="flex-table">
-                                    <div class="table-row header-row">
-                                        <div class="header">Level</div>
-                                        <div class="header">Regen Rate</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">1</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 50</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">2</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 54</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">3</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 59</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">4</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 63</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">5</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 68</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">6</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 72</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">7</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 77</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">8</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 81</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">9</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 86</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">10</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 113</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">11</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 117</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">12</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 122</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">13</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 126</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">14</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 131</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">15</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 135</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">16</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 140</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">17</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 144</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">18</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 149</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">19</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 153</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">20</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 180</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">21</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 185</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">22</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 189</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">23</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 194</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">24</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 198</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">25</div>
-                                        <div class="data"><img src="Pixeltiers_16x16_RPG_Pack_V1.35/materials/fabric_9.png"> 225</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-                <div id="dialogHerbie" class="dialog" role="dialog" aria-labelledby="titleHerbie" aria-describedby="descHerbie">
-                        <div class="dialog_content">
-                            <div class="dialog_header">
-                                <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                                <h2 id="titleHerbie" class="dialog_title">About Herbie</h2>
-                            </div>
-                            <div class="dialog_body">
-                                <p id="descHerbie" class="dialog_description">Herbie is a fledgling botanist and spends his days collecting <em>Herbs</em>.</p>
-                                <div id="flex-table">
-                                    <div class="table-row header-row">
-                                        <div class="header">Level</div>
-                                        <div class="header">Regen Rate</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">1</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 44</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">2</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 48</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">3</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 52</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">4</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 56</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">5</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 60</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">6</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 64</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">7</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 68</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">8</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 72</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">9</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 76</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">10</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 100</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">11</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 104</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">12</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 108</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">13</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 112</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">14</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 116</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">15</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 120</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">16</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 124</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">17</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 128</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">18</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 132</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">19</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 136</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">20</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 160</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">21</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 164</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">22</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 168</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">23</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 172</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">24</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 176</div>
-                                    </div>
-                                    <div class="table-row data-row">
-                                        <div class="data">25</div>
-                                        <div class="data"><img src="PixelItem/Consume/Herb5.png"> 200</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
                 <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
                     <div class="dialog_content">
                         <div class="dialog_header">
@@ -568,178 +97,119 @@
                                 <div class="ASName hidden" id="ASName1"></div>
                                 <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c1pbLabel"><span class="ProgressBarFill" id="c1pb"></span></div>
                             </div>
-                            <div class="ASBlock" id="ASBlock2">
-                                <div class="ASType" id="ASType2">Empty</div>
-                                <div class="ASCancel" id="ASCancel2"><a href="2" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName2"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c2pbLabel"><span class="ProgressBarFill" id="c2pb"></span></div>
-                            </div>
-                            <div class="ASBlock" id="ASBlock3">
-                                <div class="ASType" id="ASType3">Empty</div>
-                                <div class="ASCancel" id="ASCancel3"><a href="3" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName3"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c3pbLabel"><span class="ProgressBarFill" id="c3pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock4">
-                                <div class="ASType" id="ASType4">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel4"><a href="4" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName4"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c4pbLabel"><span class="ProgressBarFill" id="c4pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock5">
-                                <div class="ASType" id="ASType5">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel5"><a href="5" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName5"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c5pbLabel"><span class="ProgressBarFill" id="c5pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock6">
-                                <div class="ASType" id="ASType6">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel6"><a href="6" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName6"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c6pbLabel"><span class="ProgressBarFill" id="c6pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock7">
-                                <div class="ASType" id="ASType7">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel7"><a href="7" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName7"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c7pbLabel"><span class="ProgressBarFill" id="c7pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock8">
-                                <div class="ASType" id="ASType8">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel8"><a href="8" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName8"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c8pbLabel"><span class="ProgressBarFill" id="c8pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock9">
-                                <div class="ASType" id="ASType9">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel9"><a href="9" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName9"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c9pbLabel"><span class="ProgressBarFill" id="c9pb"></span></div>
-                            </div>
-                            <div class="ASBlock none" id="ASBlock10">
-                                <div class="ASType" id="ASType10">Empty</div>
-                                <div class="ASCancel hidden" id="ASCancel10"><a href="10" class="ASCancelText"><i class="tiny material-icons">close</i></a></div>
-                                <div class="ASName hidden" id="ASName10"></div>
-                                <div class="ASProgressBar hidden" data-label="Waiting for Resources..." id="c10pbLabel"><span class="ProgressBarFill" id="c10pb"></span></div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="tabs">
-                    <ul>
-                        <li id="blueprintTab" class="none"><a href="#tabs-1">Blueprints</a></li>
-                        <li><a href="#tabs-2">Workers</a></li>
-                        <li id="upgradeTab" class="none"><a href="#tabs-4">Upgrades</a></li>
-                        <li id="progressTab" class="none"><a href="#tabs-5">Progress</a></li>
-                        <li di="heroTab"><a href="#tabs-6">Heroes</a></li>
-                        <li di="dungeonTab"><a href="#tabs-7">Dungeon</a></li>
-                    </ul>
-                    <div id="tabs-1">
-                        <div id="RecipeFilter">
-                            <a class="recipeSelect" id="recipeKnife" href="KnifeSelector">Knives</a>
-                            <a class="recipeSelect none" id="recipeMace" href="MaceSelector">Maces</a>
-                            <a class="recipeSelect none" id="recipeGlove" href="GloveSelector">Gloves</a>
-                            <a class="recipeSelect none" id="recipePotion" href="PotionSelector">Potions</a>
-                            <a class="recipeSelect none" id="recipeAxe" href="AxeSelector">Axes</a>
-                            <a class="recipeSelect none" id="recipeHat" href="HatSelector">Hats</a>
-                            <a class="recipeSelect none" id="recipeWand" href="WandSelector">Wands</a>
-                            <a class="recipeSelect none" id="recipeGauntlet" href="GauntletSelector">Gauntlets</a>
-                            <a class="recipeSelect none" id="recipeHelmet" href="HelmetSelector">Helmets</a>
-                            <a class="recipeSelect none" id="recipeShoe" href="ShoeSelector">Shoes</a>
-                            <a class="recipeSelect none" id="recipeWard" href="WardSelector">Wards</a>
-                            <a class="recipeSelect none" id="recipeShield" href="ShieldSelector">Shields</a>
-                            <a class="recipeSelect none" id="recipeCloak" href="CloakSelector">Cloaks</a>
-                            <a class="recipeSelect none" id="recipeArmor" href="ArmorSelector">Armor</a>
-                            <a class="recipeSelect none" id="recipePendant" href="PendantSelector">Pendants</a>
-                        </div>
-                        <div id="RecipeResults"></div>
-                        <div><span class="unlockReq" id="unlockRequirement"></span></div>
+                <div id="tabs" class="tab">
+                    <button class="tablinks" onclick="openTab('inventoryTab')">Inventory</button>
+                    <button class="tablinks" onclick="openTab('recipesTab')">Recipes</button>
+                    <button class="tablinks" onclick="openTab('workersTab')">Workers</button>
+                    <button class="tablinks" onclick="openTab('heroesTab')">Heroes</button>
+                    <button class="tablinks" onclick="openTab('dungeonsTab')">Dungeons</button>
+                    <button class="tablinks" onclick="openTab('progressTab')">Progress</button>
+                </div>
+                <div id="inventoryTab" class="tabcontent">
+                    <div id="inventory"></div>
+                </div>
+                <div id="recipesTab" class="tabcontent">
+                    <div id="RecipeFilter">
+                        <a class="recipeSelect" id="recipeKnife" href="KnifeSelector">Knives</a>
+                        <a class="recipeSelect" id="recipeMace" href="MaceSelector">Maces</a>
+                        <a class="recipeSelect" id="recipeGlove" href="GloveSelector">Gloves</a>
+                        <a class="recipeSelect" id="recipePotion" href="PotionSelector">Potions</a>
+                        <a class="recipeSelect" id="recipeAxe" href="AxeSelector">Axes</a>
+                        <a class="recipeSelect" id="recipeHat" href="HatSelector">Hats</a>
+                        <a class="recipeSelect" id="recipeWand" href="WandSelector">Wands</a>
+                        <a class="recipeSelect" id="recipeGauntlet" href="GauntletSelector">Gauntlets</a>
+                        <a class="recipeSelect" id="recipeHelmet" href="HelmetSelector">Helmets</a>
+                        <a class="recipeSelect" id="recipeShoe" href="ShoeSelector">Shoes</a>
+                        <a class="recipeSelect" id="recipeWard" href="WardSelector">Wards</a>
+                        <a class="recipeSelect" id="recipeShield" href="ShieldSelector">Shields</a>
+                        <a class="recipeSelect" id="recipeCloak" href="CloakSelector">Cloaks</a>
+                        <a class="recipeSelect" id="recipeArmor" href="ArmorSelector">Armor</a>
+                        <a class="recipeSelect" id="recipePendant" href="PendantSelector">Pendants</a>
                     </div>
-                    <div id="tabs-2">
-                        <div id="workerList"></div>
+                    <div id="RecipeResults"></div>
+                    <div><span class="unlockReq" id="unlockRequirement"></span></div>
+                </div>
+                <div id="workersTab" class="tabcontent">
+                    <div id="workerList"></div>
+                </div>
+                <div id="heroesTab" class="tabcontent">
+                    <div id="heroContainer">
+                        <div id="heroList"></div>
+                        <div id="heroCard">Click on a hero to get its sweet deets</div>
                     </div>
-                    <div id="tabs-4">
-                        <div id="upgradelist"></div>
-                    </div>
-                    <div id="tabs-5">
-                        <div id="progresslist">
-                            <div id="progress_container">
-                                <h3>Progress Tracker for v0.1x</h3>
-                                <div class="progressRecipe"><h2><img src="PixelItem/Star4.png" alt="Mastered!"> Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/150</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
-                                <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
-                                <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
-                                <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
-                                <div id="gameTime"></div>
-                                <div id="completeTime"></div>
+                </div>
+                <div id="dungeonsTab" class="tabcontent">
+                    <div id="dungeon-container">
+                        <div id="dungeonLayout"></div>
+                        <div id="dungeonCloseup">
+                            <div id="dungeonTeamSelect">
+                                <div id="dtsTop"></div>
+                                <div id="dtsBottom"></div>
                             </div>
-                            <div id="achievements">
-                                <h3>Milestones</h3>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Eyrn"><img id="MaceStar" src="images/star_incomplete.png"><br/>Maces</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Lakur"><img id="GloveStar" src="images/star_incomplete.png"><br/>Gloves</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Herbie"><img id="PotionStar" src="images/star_incomplete.png"><br/>Potions</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Chef's Knife' and 3 'The Broominator'"><img id="AxeStar" src="images/star_incomplete.png"><br/>Axes</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Cleaning Gloves' and 3 'Sleeping Potion'"><img id="HatStar" src="images/star_incomplete.png"><br/>Hats</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Blackjack' and 3 'Invincibility Potion'"><img id="WandStar" src="images/star_incomplete.png"><br/>Wands</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Punching Gloves' and 3 'Fishing Knife'"><img id="GauntletStar" src="images/star_incomplete.png"><br/>Gauntlets</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Club Knife' and 3 'Like Potion'"><img id="HelmetStar" src="images/star_incomplete.png"><br/>Helmets</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Night Club' and 3 'Loving Gloves'"><img id="ShoeStar" src="images/star_incomplete.png"><br/>Shoes</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Vengeance' and 3 'Regular Helmet'"><img id="WardStar" src="images/star_incomplete.png"><br/>Wards</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Slothslayer', 3 'Bardic Galoshes', and 3 'Plain Gauntlets'"><img id="ShieldStar" src="images/star_incomplete.png"><br/>Shields</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Black Hat', 3 'Druidic Boots', and 3 'Rain Wand'"><img id="CloakStar" src="images/star_incomplete.png"><br/>Cloaks</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Mega Helmet', 3 'Green Bay Beret', and 3 'Challenge Gauntlets'"><img id="ArmorStar" src="images/star_incomplete.png"><br/>Armor</div></div>
-                                <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 5 'Disease Ward', 5 'Generous Blocker', 5 'A Cool Dark Chainmail' and 5 'Frostflinger Cloak'"><img id="PendantStar" src="images/star_incomplete.png"><br/>Pendants</div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tabs-6">
-                        <div id="heroContainer">
-                            <div id="heroList"></div>
-                            <div id="heroCard">Click on a hero to get its sweet deets</div>
-                        </div>
-                    </div>
-                    <div id="tabs-7">
-                        <div id="dungeon-container">
-                            <div id="dungeonLayout"></div>
-                            <div id="dungeonCloseup">
-                                <div id="dungeonTeamSelect">
-                                    <div id="dtsTop"></div>
-                                    <div id="dtsBottom"></div>
-                                </div>
-                                <div id="dungeonRun">
-                                    <div id="drContentWrapper">
-                                        <div id="drContent">
-                                            <h3><div id="floorID">Floor 1</div></h3>
-                                            <div id="dungeonHeroList"></div>
-                                            <div id="dungeonMonsterList"></div>
-                                        </div>
-                                        <div id="drLog"></div>
+                            <div id="dungeonRun">
+                                <div id="drContentWrapper">
+                                    <div id="drContent">
+                                        <h3><div id="floorID">Floor 1</div></h3>
+                                        <div id="dungeonHeroList"></div>
+                                        <div id="dungeonMonsterList"></div>
                                     </div>
+                                    <div id="drLog"></div>
                                 </div>
-                                <div id="dungeonAfter">
-                                    <div id="daTop"></div>
-                                    <div id="daBottom"></div>
-                                </div>
+                            </div>
+                            <div id="dungeonAfter">
+                                <div id="daTop"></div>
+                                <div id="daBottom"></div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <footer role="contentinfo">
-                    <div id="bottom-left">
-                        <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
-                        <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
-                        <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a>
-                        <a id="cloudSave" class="tooltip" href="#dialogPlayfab" aria-label="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
+                <div id="progressTab" class="tabcontent">
+                    <div id="progresslist">
+                        <div id="progress_container">
+                            <h3>Progress Tracker for v0.1x</h3>
+                            <div class="progressRecipe"><h2><img src="PixelItem/Star4.png" alt="Mastered!"> Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/150</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
+                            <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
+                            <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
+                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
+                            <div id="gameTime"></div>
+                            <div id="completeTime"></div>
+                        </div>
+                        <div id="achievements">
+                            <h3>Milestones</h3>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Eyrn"><img id="MaceStar" src="images/star_incomplete.png"><br/>Maces</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Lakur"><img id="GloveStar" src="images/star_incomplete.png"><br/>Gloves</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Purchase Herbie"><img id="PotionStar" src="images/star_incomplete.png"><br/>Potions</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Chef's Knife' and 3 'The Broominator'"><img id="AxeStar" src="images/star_incomplete.png"><br/>Axes</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Cleaning Gloves' and 3 'Sleeping Potion'"><img id="HatStar" src="images/star_incomplete.png"><br/>Hats</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Blackjack' and 3 'Invincibility Potion'"><img id="WandStar" src="images/star_incomplete.png"><br/>Wands</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Punching Gloves' and 3 'Fishing Knife'"><img id="GauntletStar" src="images/star_incomplete.png"><br/>Gauntlets</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Club Knife' and 3 'Like Potion'"><img id="HelmetStar" src="images/star_incomplete.png"><br/>Helmets</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Night Club' and 3 'Loving Gloves'"><img id="ShoeStar" src="images/star_incomplete.png"><br/>Shoes</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Vengeance' and 3 'Regular Helmet'"><img id="WardStar" src="images/star_incomplete.png"><br/>Wards</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Slothslayer', 3 'Bardic Galoshes', and 3 'Plain Gauntlets'"><img id="ShieldStar" src="images/star_incomplete.png"><br/>Shields</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Black Hat', 3 'Druidic Boots', and 3 'Rain Wand'"><img id="CloakStar" src="images/star_incomplete.png"><br/>Cloaks</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 3 'Mega Helmet', 3 'Green Bay Beret', and 3 'Challenge Gauntlets'"><img id="ArmorStar" src="images/star_incomplete.png"><br/>Armor</div></div>
+                            <div class="ProgressDiv"><div class="ProgressCard tooltip" aria-label="Craft 5 'Disease Ward', 5 'Generous Blocker', 5 'A Cool Dark Chainmail' and 5 'Frostflinger Cloak'"><img id="PendantStar" src="images/star_incomplete.png"><br/>Pendants</div></div>
+                        </div>
                     </div>
-                    <div id="bottom-right">
-                        <p id="version-scale">v0.2.0.0-dev</p>
-                        <a href="about.html" target="_blank">About &amp; Crediting</a>
-                        <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server</a>
-                    </div>
-                </footer>
                 </div>
             </div>
-
+            <footer role="contentinfo">
+                <div id="bottom-left">
+                    <a id="clearSave" class="tooltip" href="clearSave" aria-label="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
+                    <a id="exportSave" class="tooltip" href="exportSave" aria-label="Export your current game data for sharing or importing at a later time.">Export Save</a>
+                    <a id="importSave" class="tooltip" href="importSave" aria-label="Import your own previously exported data or shared game data.">Import Save</a>
+                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" aria-label="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
+                </div>
+                <div id="bottom-right">
+                    <p id="version-scale">v0.2.0.0-dev</p>
+                    <a href="about.html" target="_blank">About &amp; Crediting</a>
+                    <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server</a>
+                </div>
+            </footer>
             <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
                 <div id="inv-header">
                     <h2 id="comptitle2" class="heading">Inventory</h2>
@@ -749,31 +219,31 @@
             </div>
         </section>
     </main>
-
-        <div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
-        <div id="exportDialog" title="Export Save"></div>
-        <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
-        <div id="unlockDialog" title="New Recipe Unlocked!"></div>
+    <div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
+    <div id="exportDialog" title="Export Save"></div>
+    <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
+    <div id="unlockDialog" title="New Recipe Unlocked!"></div>
 
 <script src="external/jquery/jquery.js"></script>
-<script src="jquery-ui.js"></script>
-<script src="tabs.js"></script>
-<script src="fauxRandom.js"></script>
-<script src="recipes.js"></script>
-<script src="monsters.js"></script>
-<script src="heroes.js"></script>
-<script src="party.js"></script>
-<script src="dungeons.js"></script>
-<script src="dungeonAssign.js"></script>
-<script src="workers.js"></script>
-<script src="upgrades.js"></script>
-<script src="inventory.js"></script>
-
-<script src="devtools.js"></script>
+<script src="scripts/jsonDataLoader.js"></script>
+<script src="scripts/tabs.js"></script>
+<script src="scripts/fauxRandom.js"></script>
+<script src="scripts/recipes.js"></script>
+<!--<script src="scripts/monsters.js"></script>
+<script src="scripts/heroes.js"></script>
+<script src="scripts/party.js"></script>
+<script src="scripts/dungeons.js"></script>
+<script src="scripts/dungeonAssign.js"></script>-->
+<script src="scripts/workers.js"></script>
+<script src="scripts/upgrades.js"></script>
+<script src="scripts/inventory.js"></script>
+<script src="scripts/actionslots.js"></script>
+<script src="scripts/devtools.js"></script>
+<script src="scripts/misc.js"></script>
 <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
-<script src="PlayFabGettingStarted.js"></script>
-<script type="text/javascript" src="pako.min.js"></script>
-<script src="main.js"></script>
-<script src="style.js"></script>
+<script src="scripts/PlayFabGettingStarted.js"></script>
+<script type="text/javascript" src="scripts/pako.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/style.js"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@ const heroBase = {
   "H999" : ["Empty",null],
 }
 
-class OwnedHero {
+class Hero {
     constructor (name, id, role) {
         this.name = name;
         this.id = id;
@@ -44,6 +44,12 @@ class OwnedHero {
         this.slot1Type = [ItemType.KNIFE,ItemType.MACE,ItemType.AXE,ItemType.WAND];
         this.slot2Type = [ItemType.HAT,ItemType.HELMET,ItemType.ARMOR];
         this.slot3Type = [ItemType.WARD,ItemType.PENDANT];
+        this.slot1 = null;
+        this.slot2 = null;
+        this.slot3 = null;
+        this.image = '<img src="heroes/'+this.name+'.gif">';
+        this.head = '<img src="heroes/head/'+"oren"+'head.png">';
+        this.owned = true;
     }
     power() {
         return this.pow;
@@ -105,31 +111,28 @@ class OwnedHero {
     }
 }
 
-//we need code to generate heroes, purchase heroes and add them to your progress. Progress is going to have
+const heroManager = {
+    heroes = [],
 
-const heroImageReference = {
-    // fighters
-    "H001" : '<img src="heroes/beorn.gif">',
-    "H002" : '<img src="heroes/cedric.gif">',
-    "H003" : '<img src="heroes/grim.gif">',
-    "H004" : '<img src="heroes/lambug.gif">',
-    // casters
-    "H101" : '<img src="heroes/caeda.gif">',
-    "H102" : '<img src="heroes/neve.gif">',
-    "H103" : '<img src="heroes/titus.gif">',
-    "H104" : '<img src="heroes/troy.gif">',
-    // thieves
-    "H201" : '<img src="heroes/alok.gif">',
-    "H202" : '<img src="heroes/grogmar.gif">',
-    "H203" : '<img src="heroes/revere.gif">',
-    "H204" : '<img src="heroes/zoe.gif">', // gif name is zoe, char name is claudia
+    ownAllHeroes() {
+        this.heroes.forEach(hero => {
+            hero.owned = true;
+        });
+    },
+    heroOwned(ID) {
+        if (member === "H999") return false;
+        if (party.hasMember(member)) return false;
+        return true;
+    }
+
 }
+
 
 const $heroList = $("#heroList");
 const $heroCard = $("#heroCard");
 
 function initializeHero() {
-    ownAllHeroes();
+    heroManager.ownAllHeroes();
     for (const [ID, props] of Object.entries(heroBase)) {
         if (ID === "H999") continue;
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",ID);
@@ -141,11 +144,7 @@ function initializeHero() {
     }
 }
 
-function memberAvailable(member) {
-    if (member === "H999") return false;
-    if (party.hasMember(member)) return false;
-    return true;
-}
+
 
 function playerOwnsHero(ID) {
     for (let i=0;i<heroProgress.length;i++) {
@@ -216,11 +215,7 @@ function refreshHeroes() {
 }
 
 
-function rollDice(number, sides) {
-  let total = 0;
-  while(number-- > 0) total += Math.floor(Math.random() * sides) + 1;
-  return total;
-}
+
 
 
 $(document).on('click', "div.heroOwnedCard", (e) => {

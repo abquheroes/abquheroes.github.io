@@ -1,0 +1,1919 @@
+[
+  {
+    "id": "R0001",
+    "name": "Knife",
+    "value": 6,
+    "bpcost": 1,
+    "craftTime": 5000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 5
+    }
+  },
+  {
+    "id": "R0002",
+    "name": "Butter Knife",
+    "value": 8,
+    "bpcost": 5,
+    "craftTime": 7000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 7
+    }
+  },
+  {
+    "id": "R0003",
+    "name": "Kitchen Knife",
+    "value": 13,
+    "bpcost": 11,
+    "craftTime": 8000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 10
+    }
+  },
+  {
+    "id": "R0004",
+    "name": "Chefs Knife",
+    "value": 20,
+    "bpcost": 17,
+    "craftTime": 11000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 14
+    }
+  },
+  {
+    "id": "R0005",
+    "name": "Fishing Knife",
+    "value": 31,
+    "bpcost": 28,
+    "craftTime": 14000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 19
+    }
+  },
+  {
+    "id": "R0006",
+    "name": "Thats Not A Knife",
+    "value": 48,
+    "bpcost": 39,
+    "craftTime": 19000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 27
+    }
+  },
+  {
+    "id": "R0007",
+    "name": "Thats A Knife",
+    "value": 73,
+    "bpcost": 48,
+    "craftTime": 24000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 38
+    }
+  },
+  {
+    "id": "R0008",
+    "name": "Club Knife",
+    "value": 113,
+    "bpcost": 60,
+    "craftTime": 31000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 53
+    }
+  },
+  {
+    "id": "R0009",
+    "name": "Dark Is The Knife",
+    "value": 174,
+    "bpcost": 72,
+    "craftTime": 41000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 74
+    }
+  },
+  {
+    "id": "R0010",
+    "name": "The Bloopinator",
+    "value": 268,
+    "bpcost": 100,
+    "craftTime": 53000,
+    "type": "Knives",
+    "cost": {
+      "Ore": 103
+    }
+  },
+  {
+    "id": "R0101",
+    "name": "Club",
+    "value": 11,
+    "bpcost": 1,
+    "craftTime": 9000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 7
+    }
+  },
+  {
+    "id": "R0102",
+    "name": "Maul",
+    "value": 17,
+    "bpcost": 5,
+    "craftTime": 12000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 10
+    }
+  },
+  {
+    "id": "R0103",
+    "name": "Brawler",
+    "value": 26,
+    "bpcost": 11,
+    "craftTime": 15000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 14
+    }
+  },
+  {
+    "id": "R0104",
+    "name": "The Broominator",
+    "value": 39,
+    "bpcost": 17,
+    "craftTime": 20000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 19
+    }
+  },
+  {
+    "id": "R0105",
+    "name": "Blackjack",
+    "value": 61,
+    "bpcost": 28,
+    "craftTime": 26000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 27
+    }
+  },
+  {
+    "id": "R0106",
+    "name": "Bludgeon",
+    "value": 93,
+    "bpcost": 39,
+    "craftTime": 33000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 38
+    }
+  },
+  {
+    "id": "R0107",
+    "name": "Striped Club",
+    "value": 144,
+    "bpcost": 48,
+    "craftTime": 43000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 53
+    }
+  },
+  {
+    "id": "R0108",
+    "name": "Night Club",
+    "value": 221,
+    "bpcost": 60,
+    "craftTime": 56000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 74,
+      "Maul": 2
+    }
+  },
+  {
+    "id": "R0109",
+    "name": "Fact Finder",
+    "value": 341,
+    "bpcost": 72,
+    "craftTime": 73000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 103,
+      "Brawler": 2
+    }
+  },
+  {
+    "id": "R0110",
+    "name": "Knife Club",
+    "value": 525,
+    "bpcost": 100,
+    "craftTime": 95000,
+    "type": "Maces",
+    "cost": {
+      "Wood": 145,
+      "Knife": 5
+    }
+  },
+  {
+    "id": "R0201",
+    "name": "Gardening Gloves",
+    "value": 19,
+    "bpcost": 1,
+    "craftTime": 18000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 22
+    }
+  },
+  {
+    "id": "R0202",
+    "name": "Running Gloves",
+    "value": 30,
+    "bpcost": 5,
+    "craftTime": 23000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 31
+    }
+  },
+  {
+    "id": "R0203",
+    "name": "Fighting Gloves",
+    "value": 46,
+    "bpcost": 11,
+    "craftTime": 30000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 43
+    }
+  },
+  {
+    "id": "R0204",
+    "name": "Cleaning Gloves",
+    "value": 71,
+    "bpcost": 17,
+    "craftTime": 40000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 60
+    }
+  },
+  {
+    "id": "R0205",
+    "name": "Punching Gloves",
+    "value": 109,
+    "bpcost": 28,
+    "craftTime": 51000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 85
+    }
+  },
+  {
+    "id": "R0206",
+    "name": "Hugging Gloves",
+    "value": 168,
+    "bpcost": 39,
+    "craftTime": 67000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 118
+    }
+  },
+  {
+    "id": "R0207",
+    "name": "Dancing Gloves",
+    "value": 258,
+    "bpcost": 48,
+    "craftTime": 87000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 166
+    }
+  },
+  {
+    "id": "R0208",
+    "name": "Loving Gloves",
+    "value": 398,
+    "bpcost": 60,
+    "craftTime": 113000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 232,
+      "Healing Potion": 2
+    }
+  },
+  {
+    "id": "R0209",
+    "name": "Other Gloves",
+    "value": 612,
+    "bpcost": 72,
+    "craftTime": 147000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 325,
+      "Running Gloves": 2
+    }
+  },
+  {
+    "id": "R0210",
+    "name": "Boxing Gloves",
+    "value": 943,
+    "bpcost": 100,
+    "craftTime": 191000,
+    "type": "Gloves",
+    "cost": {
+      "Leather": 455,
+      "Punching Gloves": 3
+    }
+  },
+  {
+    "id": "R0301",
+    "name": "Healing Potion",
+    "value": 18,
+    "bpcost": 1,
+    "craftTime": 15000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 10
+    }
+  },
+  {
+    "id": "R0302",
+    "name": "Mana Potion",
+    "value": 27,
+    "bpcost": 5,
+    "craftTime": 20000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 14
+    }
+  },
+  {
+    "id": "R0303",
+    "name": "Sleeping Potion",
+    "value": 42,
+    "bpcost": 11,
+    "craftTime": 25000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 20
+    }
+  },
+  {
+    "id": "R0304",
+    "name": "Coughing Potion",
+    "value": 64,
+    "bpcost": 17,
+    "craftTime": 33000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 27
+    }
+  },
+  {
+    "id": "R0305",
+    "name": "Invincibility Potion",
+    "value": 99,
+    "bpcost": 28,
+    "craftTime": 43000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 38
+    }
+  },
+  {
+    "id": "R0306",
+    "name": "Laughing Potion",
+    "value": 152,
+    "bpcost": 39,
+    "craftTime": 56000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 54
+    }
+  },
+  {
+    "id": "R0307",
+    "name": "Rejuvenating Potion",
+    "value": 235,
+    "bpcost": 48,
+    "craftTime": 72000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 75
+    }
+  },
+  {
+    "id": "R0308",
+    "name": "Like Potion",
+    "value": 362,
+    "bpcost": 60,
+    "craftTime": 94000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 105,
+      "Mana Potion": 2
+    }
+  },
+  {
+    "id": "R0309",
+    "name": "Bitter Potion",
+    "value": 557,
+    "bpcost": 72,
+    "craftTime": 122000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 148,
+      "Gardening Gloves": 2
+    }
+  },
+  {
+    "id": "R0310",
+    "name": "Strength Potion",
+    "value": 857,
+    "bpcost": 100,
+    "craftTime": 159000,
+    "type": "Potions",
+    "cost": {
+      "Herb": 207,
+      "Invincibility Potion": 3
+    }
+  },
+  {
+    "id": "R0401",
+    "name": "Rage Maker",
+    "value": 13,
+    "bpcost": 1,
+    "craftTime": 15000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 5,
+      "Wood": 5
+    }
+  },
+  {
+    "id": "R0402",
+    "name": "Fury Bringer",
+    "value": 20,
+    "bpcost": 5,
+    "craftTime": 19000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 7,
+      "Wood": 7
+    }
+  },
+  {
+    "id": "R0403",
+    "name": "Vengeance",
+    "value": 32,
+    "bpcost": 11,
+    "craftTime": 23000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 9,
+      "Wood": 11
+    }
+  },
+  {
+    "id": "R0404",
+    "name": "Pride",
+    "value": 49,
+    "bpcost": 17,
+    "craftTime": 29000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 12,
+      "Wood": 15
+    }
+  },
+  {
+    "id": "R0405",
+    "name": "Greedy Pickaxe",
+    "value": 77,
+    "bpcost": 28,
+    "craftTime": 37000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 17,
+      "Wood": 22
+    }
+  },
+  {
+    "id": "R0406",
+    "name": "Slothslayer",
+    "value": 119,
+    "bpcost": 39,
+    "craftTime": 46000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 22,
+      "Wood": 32,
+      "Kitchen Knife": 2
+    }
+  },
+  {
+    "id": "R0407",
+    "name": "Lusty Handaxe",
+    "value": 186,
+    "bpcost": 48,
+    "craftTime": 57000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 30,
+      "Wood": 46,
+      "The Broominator": 2
+    }
+  },
+  {
+    "id": "R0408",
+    "name": "Envy",
+    "value": 290,
+    "bpcost": 60,
+    "craftTime": 72000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 41,
+      "Wood": 67,
+      "Hugging Gloves": 2
+    }
+  },
+  {
+    "id": "R0409",
+    "name": "Gluttonous Axe",
+    "value": 453,
+    "bpcost": 72,
+    "craftTime": 89000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 55,
+      "Wood": 98,
+      "Night Club": 2
+    }
+  },
+  {
+    "id": "R0410",
+    "name": "Wrath",
+    "value": 708,
+    "bpcost": 100,
+    "craftTime": 112000,
+    "type": "Axes",
+    "cost": {
+      "Ore": 74,
+      "Wood": 142,
+      "Strength Potion": 2
+    }
+  },
+  {
+    "id": "R0501",
+    "name": "Simple Hat",
+    "value": 45,
+    "bpcost": 1,
+    "craftTime": 54000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 14,
+      "Leather": 20
+    }
+  },
+  {
+    "id": "R0502",
+    "name": "Hidden Mask",
+    "value": 70,
+    "bpcost": 5,
+    "craftTime": 68000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 20,
+      "Leather": 27
+    }
+  },
+  {
+    "id": "R0503",
+    "name": "Black Hat",
+    "value": 109,
+    "bpcost": 11,
+    "craftTime": 84000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 29,
+      "Leather": 36
+    }
+  },
+  {
+    "id": "R0504",
+    "name": "Beach Hat",
+    "value": 170,
+    "bpcost": 17,
+    "craftTime": 105000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 42,
+      "Leather": 49
+    }
+  },
+  {
+    "id": "R0505",
+    "name": "Green Bay Beret",
+    "value": 265,
+    "bpcost": 28,
+    "craftTime": 132000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 62,
+      "Leather": 66
+    }
+  },
+  {
+    "id": "R0506",
+    "name": "The Mind Cap",
+    "value": 413,
+    "bpcost": 39,
+    "craftTime": 165000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 90,
+      "Leather": 90,
+      "Coughing Potion": 2
+    }
+  },
+  {
+    "id": "R0507",
+    "name": "Ornate Crown",
+    "value": 645,
+    "bpcost": 48,
+    "craftTime": 206000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 130,
+      "Leather": 121,
+      "Thats A Knife": 2
+    }
+  },
+  {
+    "id": "R0508",
+    "name": "Spellcasting Hat",
+    "value": 1008,
+    "bpcost": 60,
+    "craftTime": 258000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 189,
+      "Leather": 163,
+      "Fighting Gloves": 2
+    }
+  },
+  {
+    "id": "R0509",
+    "name": "Spoopy Mask",
+    "value": 1577,
+    "bpcost": 72,
+    "craftTime": 322000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 274,
+      "Leather": 221,
+      "Other Gloves": 2
+    }
+  },
+  {
+    "id": "R0510",
+    "name": "All Folks Hat",
+    "value": 2470,
+    "bpcost": 100,
+    "craftTime": 402000,
+    "type": "Hats",
+    "cost": {
+      "Herb": 397,
+      "Leather": 298,
+      "Dark Is The Knife": 2
+    }
+  },
+  {
+    "id": "R0601",
+    "name": "Basic Wand",
+    "value": 38,
+    "bpcost": 1,
+    "craftTime": 38000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 9,
+      "Herb": 12
+    }
+  },
+  {
+    "id": "R0602",
+    "name": "Forest Wand",
+    "value": 57,
+    "bpcost": 5,
+    "craftTime": 48000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 13,
+      "Herb": 16
+    }
+  },
+  {
+    "id": "R0603",
+    "name": "Wind Wand",
+    "value": 88,
+    "bpcost": 11,
+    "craftTime": 59000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 19,
+      "Herb": 22
+    }
+  },
+  {
+    "id": "R0604",
+    "name": "Soul Wand",
+    "value": 134,
+    "bpcost": 17,
+    "craftTime": 74000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 27,
+      "Herb": 30
+    }
+  },
+  {
+    "id": "R0605",
+    "name": "Rain Wand",
+    "value": 205,
+    "bpcost": 28,
+    "craftTime": 93000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 40,
+      "Herb": 40
+    }
+  },
+  {
+    "id": "R0606",
+    "name": "Frozen Wand",
+    "value": 315,
+    "bpcost": 39,
+    "craftTime": 116000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 58,
+      "Herb": 54,
+      "Cleaning Gloves": 2
+    }
+  },
+  {
+    "id": "R0607",
+    "name": "Ocean Wand",
+    "value": 483,
+    "bpcost": 48,
+    "craftTime": 145000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 84,
+      "Herb": 73,
+      "Rejuvenating Potion": 2
+    }
+  },
+  {
+    "id": "R0608",
+    "name": "Thunder Wand",
+    "value": 742,
+    "bpcost": 60,
+    "craftTime": 181000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 121,
+      "Herb": 98,
+      "Striped Club": 2
+    }
+  },
+  {
+    "id": "R0609",
+    "name": "Hate Wand",
+    "value": 1142,
+    "bpcost": 72,
+    "craftTime": 226000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 176,
+      "Herb": 132,
+      "Bitter Potion": 2
+    }
+  },
+  {
+    "id": "R0610",
+    "name": "Love Wand",
+    "value": 1760,
+    "bpcost": 100,
+    "craftTime": 283000,
+    "type": "Wands",
+    "cost": {
+      "Wood": 255,
+      "Herb": 179,
+      "Knife Club": 2
+    }
+  },
+  {
+    "id": "R0701",
+    "name": "New Gauntlets",
+    "value": 24,
+    "bpcost": 1,
+    "craftTime": 29000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 7,
+      "Leather": 18
+    }
+  },
+  {
+    "id": "R0702",
+    "name": "Shiny Gauntlets",
+    "value": 37,
+    "bpcost": 5,
+    "craftTime": 36000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 9,
+      "Leather": 26
+    }
+  },
+  {
+    "id": "R0703",
+    "name": "Plain Gauntlets",
+    "value": 57,
+    "bpcost": 11,
+    "craftTime": 45000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 13,
+      "Leather": 38
+    }
+  },
+  {
+    "id": "R0704",
+    "name": "Pristine Gauntlets",
+    "value": 89,
+    "bpcost": 17,
+    "craftTime": 57000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 17,
+      "Leather": 55
+    }
+  },
+  {
+    "id": "R0705",
+    "name": "Challenge Gauntlets",
+    "value": 140,
+    "bpcost": 28,
+    "craftTime": 71000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 23,
+      "Leather": 80
+    }
+  },
+  {
+    "id": "R0706",
+    "name": "Fancy Gauntlets",
+    "value": 219,
+    "bpcost": 39,
+    "craftTime": 89000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 31,
+      "Leather": 115,
+      "New Gauntlets": 2
+    }
+  },
+  {
+    "id": "R0707",
+    "name": "Old Gauntlets",
+    "value": 343,
+    "bpcost": 48,
+    "craftTime": 111000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 42,
+      "Leather": 167,
+      "Chefs Knife": 2
+    }
+  },
+  {
+    "id": "R0708",
+    "name": "Dark Gauntlets",
+    "value": 539,
+    "bpcost": 60,
+    "craftTime": 138000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 57,
+      "Leather": 243,
+      "Bludgeon": 2
+    }
+  },
+  {
+    "id": "R0709",
+    "name": "Dandy Gauntlets",
+    "value": 846,
+    "bpcost": 72,
+    "craftTime": 173000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 77,
+      "Leather": 352,
+      "Like Potion": 2
+    }
+  },
+  {
+    "id": "R0710",
+    "name": "Cool Gauntlets",
+    "value": 1329,
+    "bpcost": 100,
+    "craftTime": 216000,
+    "type": "Gauntlets",
+    "cost": {
+      "Ore": 104,
+      "Leather": 510,
+      "Boxing Gloves": 2
+    }
+  },
+  {
+    "id": "R0801",
+    "name": "Standard Helmet",
+    "value": 31,
+    "bpcost": 1,
+    "craftTime": 29000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 8,
+      "Herb": 11
+    }
+  },
+  {
+    "id": "R0802",
+    "name": "Cobalt Helmet",
+    "value": 46,
+    "bpcost": 5,
+    "craftTime": 36000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 12,
+      "Herb": 15
+    }
+  },
+  {
+    "id": "R0803",
+    "name": "Regular Helmet",
+    "value": 70,
+    "bpcost": 11,
+    "craftTime": 45000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 17,
+      "Herb": 20
+    }
+  },
+  {
+    "id": "R0804",
+    "name": "Super Helmet",
+    "value": 107,
+    "bpcost": 17,
+    "craftTime": 57000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 24,
+      "Herb": 27
+    }
+  },
+  {
+    "id": "R0805",
+    "name": "Mega Helmet",
+    "value": 163,
+    "bpcost": 28,
+    "craftTime": 71000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 35,
+      "Herb": 37
+    }
+  },
+  {
+    "id": "R0806",
+    "name": "Skull Helmet",
+    "value": 248,
+    "bpcost": 39,
+    "craftTime": 89000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 51,
+      "Herb": 49,
+      "Blackjack": 2
+    }
+  },
+  {
+    "id": "R0807",
+    "name": "Dark Helmet",
+    "value": 378,
+    "bpcost": 48,
+    "craftTime": 111000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 74,
+      "Herb": 67,
+      "Sleeping Potion": 2
+    }
+  },
+  {
+    "id": "R0808",
+    "name": "Whimsical Helmet",
+    "value": 578,
+    "bpcost": 60,
+    "craftTime": 138000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 108,
+      "Herb": 90,
+      "Fishing Knife": 2
+    }
+  },
+  {
+    "id": "R0809",
+    "name": "Magnetized Helmet",
+    "value": 884,
+    "bpcost": 72,
+    "craftTime": 173000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 156,
+      "Herb": 121,
+      "Mega Helmet": 2
+    }
+  },
+  {
+    "id": "R0810",
+    "name": "Coal Helmut",
+    "value": 1353,
+    "bpcost": 100,
+    "craftTime": 216000,
+    "type": "Helmets",
+    "cost": {
+      "Ore": 227,
+      "Herb": 164,
+      "Fact Finder": 2
+    }
+  },
+  {
+    "id": "R0901",
+    "name": "Hamster Clogs",
+    "value": 31,
+    "bpcost": 1,
+    "craftTime": 36000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 8,
+      "Leather": 21
+    }
+  },
+  {
+    "id": "R0902",
+    "name": "Mage Moccasins",
+    "value": 48,
+    "bpcost": 5,
+    "craftTime": 45000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 11,
+      "Leather": 30
+    }
+  },
+  {
+    "id": "R0903",
+    "name": "Druidic Boots",
+    "value": 74,
+    "bpcost": 11,
+    "craftTime": 56000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 15,
+      "Leather": 44
+    }
+  },
+  {
+    "id": "R0904",
+    "name": "Fighting Stilettos",
+    "value": 115,
+    "bpcost": 17,
+    "craftTime": 70000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 20,
+      "Leather": 64
+    }
+  },
+  {
+    "id": "R0905",
+    "name": "Bardic Galoshes",
+    "value": 180,
+    "bpcost": 28,
+    "craftTime": 88000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 27,
+      "Leather": 93
+    }
+  },
+  {
+    "id": "R0906",
+    "name": "Master Loafers",
+    "value": 280,
+    "bpcost": 39,
+    "craftTime": 110000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 36,
+      "Leather": 135,
+      "Laughing Potion": 2
+    }
+  },
+  {
+    "id": "R0907",
+    "name": "Foxy Slippers",
+    "value": 436,
+    "bpcost": 48,
+    "craftTime": 137000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 48,
+      "Leather": 195,
+      "Hamster Clogs": 2
+    }
+  },
+  {
+    "id": "R0908",
+    "name": "Hairy Shoes",
+    "value": 682,
+    "bpcost": 60,
+    "craftTime": 172000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 65,
+      "Leather": 283,
+      "Dancing Gloves": 2
+    }
+  },
+  {
+    "id": "R0909",
+    "name": "Lunar Whalers",
+    "value": 1065,
+    "bpcost": 72,
+    "craftTime": 215000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 88,
+      "Leather": 410,
+      "Club Knife": 2
+    }
+  },
+  {
+    "id": "R0910",
+    "name": "Jay Walkers",
+    "value": 1667,
+    "bpcost": 100,
+    "craftTime": 268000,
+    "type": "Shoes",
+    "cost": {
+      "Wood": 119,
+      "Leather": 595,
+      "Loving Gloves": 2
+    }
+  },
+  {
+    "id": "R1001",
+    "name": "Stealth Ward",
+    "value": 49,
+    "bpcost": 1,
+    "craftTime": 45000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 6,
+      "Wood": 8,
+      "Herb": 15,
+      "Basic Wand": 1
+    }
+  },
+  {
+    "id": "R1002",
+    "name": "Sentry Ward",
+    "value": 76,
+    "bpcost": 5,
+    "craftTime": 56000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 8,
+      "Wood": 11,
+      "Herb": 22,
+      "Forest Wand": 1
+    }
+  },
+  {
+    "id": "R1003",
+    "name": "Spell Ward",
+    "value": 119,
+    "bpcost": 11,
+    "craftTime": 70000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 11,
+      "Wood": 16,
+      "Herb": 32,
+      "Wind Wand": 1
+    }
+  },
+  {
+    "id": "R1004",
+    "name": "Curse Ward",
+    "value": 187,
+    "bpcost": 17,
+    "craftTime": 88000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 15,
+      "Wood": 22,
+      "Herb": 46,
+      "Soul Wand": 1
+    }
+  },
+  {
+    "id": "R1005",
+    "name": "Poison Ward",
+    "value": 294,
+    "bpcost": 28,
+    "craftTime": 110000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 20,
+      "Wood": 31,
+      "Herb": 66,
+      "Rain Wand": 1
+    }
+  },
+  {
+    "id": "R1006",
+    "name": "Disease Ward",
+    "value": 461,
+    "bpcost": 39,
+    "craftTime": 137000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 27,
+      "Wood": 43,
+      "Herb": 96,
+      "Stealth Ward": 2
+    }
+  },
+  {
+    "id": "R1007",
+    "name": "Infection Ward",
+    "value": 724,
+    "bpcost": 48,
+    "craftTime": 172000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 36,
+      "Wood": 60,
+      "Herb": 139,
+      "Sentry Ward": 2
+    }
+  },
+  {
+    "id": "R1008",
+    "name": "Cancer Ward",
+    "value": 1138,
+    "bpcost": 60,
+    "craftTime": 215000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 49,
+      "Wood": 84,
+      "Herb": 202,
+      "Spell Ward": 2
+    }
+  },
+  {
+    "id": "R1009",
+    "name": "Maternity Ward",
+    "value": 1790,
+    "bpcost": 72,
+    "craftTime": 268000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 66,
+      "Wood": 118,
+      "Herb": 293,
+      "Love Wand": 2
+    }
+  },
+  {
+    "id": "R1010",
+    "name": "Burn Unit",
+    "value": 2816,
+    "bpcost": 100,
+    "craftTime": 335000,
+    "type": "Wards",
+    "cost": {
+      "Ore": 89,
+      "Wood": 165,
+      "Herb": 425,
+      "Hate Wand": 2
+    }
+  },
+  {
+    "id": "R1101",
+    "name": "Patience",
+    "value": 40,
+    "bpcost": 1,
+    "craftTime": 32000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 7,
+      "Wood": 10,
+      "Leather": 19,
+      "Rage Maker": 1
+    }
+  },
+  {
+    "id": "R1102",
+    "name": "Faithful Buckler",
+    "value": 61,
+    "bpcost": 5,
+    "craftTime": 40000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 10,
+      "Wood": 15,
+      "Leather": 26,
+      "Fury Bringer": 1
+    }
+  },
+  {
+    "id": "R1103",
+    "name": "Defiant Targe",
+    "value": 94,
+    "bpcost": 11,
+    "craftTime": 50000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 14,
+      "Wood": 21,
+      "Leather": 35,
+      "Vengeance": 1
+    }
+  },
+  {
+    "id": "R1104",
+    "name": "Fair Shield",
+    "value": 145,
+    "bpcost": 17,
+    "craftTime": 63000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 19,
+      "Wood": 30,
+      "Leather": 47,
+      "Pride": 1
+    }
+  },
+  {
+    "id": "R1105",
+    "name": "Wisdom",
+    "value": 224,
+    "bpcost": 28,
+    "craftTime": 78000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 27,
+      "Wood": 44,
+      "Leather": 63,
+      "Greedy Pickaxe": 1
+    }
+  },
+  {
+    "id": "R1106",
+    "name": "Generous Blocker",
+    "value": 346,
+    "bpcost": 39,
+    "craftTime": 98000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 38,
+      "Wood": 64,
+      "Leather": 85,
+      "Patience": 2
+    }
+  },
+  {
+    "id": "R1107",
+    "name": "Loyal Companion",
+    "value": 536,
+    "bpcost": 48,
+    "craftTime": 122000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 53,
+      "Wood": 93,
+      "Leather": 115,
+      "Faithful Buckler": 2
+    }
+  },
+  {
+    "id": "R1108",
+    "name": "Dignity",
+    "value": 829,
+    "bpcost": 60,
+    "craftTime": 153000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 74,
+      "Wood": 135,
+      "Leather": 155,
+      "Defiant Targe": 2
+    }
+  },
+  {
+    "id": "R1109",
+    "name": "Trustworthy Kite",
+    "value": 1284,
+    "bpcost": 72,
+    "craftTime": 191000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 103,
+      "Wood": 195,
+      "Leather": 210,
+      "Gluttonous Axe": 2
+    }
+  },
+  {
+    "id": "R1110",
+    "name": "Truth Teller",
+    "value": 1991,
+    "bpcost": 100,
+    "craftTime": 238000,
+    "type": "Shields",
+    "cost": {
+      "Ore": 145,
+      "Wood": 283,
+      "Leather": 283,
+      "Wrath": 2
+    }
+  },
+  {
+    "id": "R1201",
+    "name": "Novice Cloak",
+    "value": 53,
+    "bpcost": 1,
+    "craftTime": 32000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 7,
+      "Leather": 23,
+      "Herb": 13,
+      "Simple Hat": 1
+    }
+  },
+  {
+    "id": "R1202",
+    "name": "Apprentice Cloak",
+    "value": 78,
+    "bpcost": 5,
+    "craftTime": 40000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 9,
+      "Leather": 33,
+      "Herb": 18,
+      "Hidden Mask": 1
+    }
+  },
+  {
+    "id": "R1203",
+    "name": "Practitioner Cloak",
+    "value": 115,
+    "bpcost": 11,
+    "craftTime": 50000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 13,
+      "Leather": 48,
+      "Herb": 25,
+      "Black Hat": 1
+    }
+  },
+  {
+    "id": "R1204",
+    "name": "Journeyman Cloak",
+    "value": 170,
+    "bpcost": 17,
+    "craftTime": 63000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 17,
+      "Leather": 70,
+      "Herb": 36,
+      "Beach Hat": 1
+    }
+  },
+  {
+    "id": "R1205",
+    "name": "Expert Cloak",
+    "value": 253,
+    "bpcost": 28,
+    "craftTime": 78000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 23,
+      "Leather": 102,
+      "Herb": 50,
+      "Green Bay Beret": 1
+    }
+  },
+  {
+    "id": "R1206",
+    "name": "Frostflinger Cloak",
+    "value": 379,
+    "bpcost": 39,
+    "craftTime": 98000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 31,
+      "Leather": 147,
+      "Herb": 70,
+      "Novice Cloak": 2
+    }
+  },
+  {
+    "id": "R1207",
+    "name": "Stormbringer Cloak",
+    "value": 569,
+    "bpcost": 48,
+    "craftTime": 122000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 42,
+      "Leather": 214,
+      "Herb": 98,
+      "Apprentice Cloak": 2
+    }
+  },
+  {
+    "id": "R1208",
+    "name": "Earthslinger Cloak",
+    "value": 858,
+    "bpcost": 60,
+    "craftTime": 153000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 57,
+      "Leather": 310,
+      "Herb": 137,
+      "Practitioner Cloak": 2
+    }
+  },
+  {
+    "id": "R1209",
+    "name": "Lifegiver Cloak",
+    "value": 1301,
+    "bpcost": 72,
+    "craftTime": 191000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 77,
+      "Leather": 449,
+      "Herb": 192,
+      "Spoopy Mask": 2
+    }
+  },
+  {
+    "id": "R1210",
+    "name": "Deathcaller Cloak",
+    "value": 1982,
+    "bpcost": 100,
+    "craftTime": 238000,
+    "type": "Cloaks",
+    "cost": {
+      "Wood": 104,
+      "Leather": 652,
+      "Herb": 269,
+      "All Folks Hat": 2
+    }
+  },
+  {
+    "id": "R1301",
+    "name": "Metal Armor",
+    "value": 43,
+    "bpcost": 1,
+    "craftTime": 20000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 9,
+      "Leather": 21,
+      "Herb": 9,
+      "Standard Helmet": 1
+    }
+  },
+  {
+    "id": "R1302",
+    "name": "Metallic Armor",
+    "value": 61,
+    "bpcost": 5,
+    "craftTime": 25000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 13,
+      "Leather": 29,
+      "Herb": 12,
+      "Shiny Gauntlets": 1
+    }
+  },
+  {
+    "id": "R1303",
+    "name": "Panther Armor",
+    "value": 88,
+    "bpcost": 11,
+    "craftTime": 31000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 19,
+      "Leather": 41,
+      "Herb": 16,
+      "Plain Gauntlets": 1
+    }
+  },
+  {
+    "id": "R1304",
+    "name": "Slayers Plate",
+    "value": 126,
+    "bpcost": 17,
+    "craftTime": 39000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 27,
+      "Leather": 58,
+      "Herb": 22,
+      "Pristine Gauntlets": 1
+    }
+  },
+  {
+    "id": "R1305",
+    "name": "Leaded Zeppelin Hull",
+    "value": 182,
+    "bpcost": 28,
+    "craftTime": 49000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 40,
+      "Leather": 81,
+      "Herb": 30,
+      "Challenge Gauntlets": 1
+    }
+  },
+  {
+    "id": "R1306",
+    "name": "A Cool Dark Chainmail",
+    "value": 265,
+    "bpcost": 39,
+    "craftTime": 61000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 58,
+      "Leather": 113,
+      "Herb": 40,
+      "Metal Armor": 2
+    }
+  },
+  {
+    "id": "R1307",
+    "name": "Maidens Plate",
+    "value": 388,
+    "bpcost": 48,
+    "craftTime": 76000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 84,
+      "Leather": 158,
+      "Herb": 54,
+      "Metallic Armor": 2
+    }
+  },
+  {
+    "id": "R1308",
+    "name": "Intense Purple Cuirass",
+    "value": 569,
+    "bpcost": 60,
+    "craftTime": 95000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 121,
+      "Leather": 221,
+      "Herb": 74,
+      "Panther Armor": 2
+    }
+  },
+  {
+    "id": "R1309",
+    "name": "Serpent Mail",
+    "value": 841,
+    "bpcost": 72,
+    "craftTime": 119000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 176,
+      "Leather": 310,
+      "Herb": 99,
+      "Cool Gauntlets": 2
+    }
+  },
+  {
+    "id": "R1310",
+    "name": "Heavy Metal Armor",
+    "value": 1250,
+    "bpcost": 100,
+    "craftTime": 149000,
+    "type": "Armor",
+    "cost": {
+      "Ore": 255,
+      "Leather": 434,
+      "Herb": 134,
+      "Coal Helmut": 2
+    }
+  },
+  {
+    "id": "R1401",
+    "name": "Lactuca",
+    "value": 184,
+    "bpcost": 1,
+    "craftTime": 90000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 20,
+      "Wood": 28,
+      "Leather": 45,
+      "Herb": 40,
+      "Wisdom": 1
+    }
+  },
+  {
+    "id": "R1402",
+    "name": "Gelata Eros",
+    "value": 276,
+    "bpcost": 5,
+    "craftTime": 113000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 29,
+      "Wood": 39,
+      "Leather": 59,
+      "Herb": 54,
+      "Loyal Companion": 1
+    }
+  },
+  {
+    "id": "R1403",
+    "name": "Comitatus",
+    "value": 414,
+    "bpcost": 11,
+    "craftTime": 141000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 42,
+      "Wood": 55,
+      "Leather": 76,
+      "Herb": 73,
+      "Mage Moccasins": 2,
+      "Lifegiver Cloak": 1
+    }
+  },
+  {
+    "id": "R1404",
+    "name": "Tacet Gladio",
+    "value": 622,
+    "bpcost": 17,
+    "craftTime": 176000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 61,
+      "Wood": 77,
+      "Leather": 99,
+      "Herb": 98,
+      "Fighting Stilettos": 2,
+      "Serpent Mail": 1
+    }
+  },
+  {
+    "id": "R1405",
+    "name": "Ostium Amici",
+    "value": 936,
+    "bpcost": 28,
+    "craftTime": 220000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 88,
+      "Wood": 108,
+      "Leather": 129,
+      "Herb": 133,
+      "Hairy Shoes": 1,
+      "Trustworthy Kite": 1
+    }
+  },
+  {
+    "id": "R1406",
+    "name": "Ignis Pullum",
+    "value": 1409,
+    "bpcost": 39,
+    "craftTime": 275000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 128,
+      "Wood": 151,
+      "Leather": 167,
+      "Herb": 179,
+      "The Bloopinator": 3,
+      "Maternity Ward": 1
+    }
+  },
+  {
+    "id": "R1407",
+    "name": "Folium Strennus",
+    "value": 2125,
+    "bpcost": 48,
+    "craftTime": 343000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 186,
+      "Wood": 211,
+      "Leather": 217,
+      "Herb": 242,
+      "Druidic Boots": 3,
+      "Burn Unit": 1
+    }
+  },
+  {
+    "id": "R1408",
+    "name": "Magicae Criceta",
+    "value": 3209,
+    "bpcost": 60,
+    "craftTime": 429000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 270,
+      "Wood": 295,
+      "Leather": 282,
+      "Herb": 327,
+      "Jay Walkers": 1,
+      "Heavy Metal Armor": 1
+    }
+  },
+  {
+    "id": "R1409",
+    "name": "Inpulsa Sciurus",
+    "value": 4851,
+    "bpcost": 72,
+    "craftTime": 536000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 391,
+      "Wood": 413,
+      "Leather": 367,
+      "Herb": 441,
+      "Master Loafers": 1,
+      "Truth Teller": 1
+    }
+  },
+  {
+    "id": "R1410",
+    "name": "Adipem Pater",
+    "value": 7342,
+    "bpcost": 100,
+    "craftTime": 671000,
+    "type": "Pendants",
+    "cost": {
+      "Ore": 567,
+      "Wood": 579,
+      "Leather": 477,
+      "Herb": 596,
+      "Bardic Galoshes": 3,
+      "Deathcaller Cloak": 1
+    }
+  }
+]

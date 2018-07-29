@@ -8,6 +8,39 @@ $('#inventory').on("click","a.inventoryLink",(e) => {
     sellItem(name,1,amt);
 })
 
+class itemContainer {
+    constructor(id,rarity,amt) {
+        this.id = id;
+        this.rarity = rarity;
+        this.amt = amt;
+    }
+    match(id,rarity) {
+        return this.id === id && this.rarity === rarity;
+    }
+}
+
+const Inventory = {
+    inv : [],
+    addToInventory(id,rarity,amt) {
+        for (let i=0;i<inv.length;i++) {
+            if (inv[i].match(id,rarity)) {
+                inv[i].amt += amt;
+                return;
+            }
+        }
+        inv.push(new itemContainer(id,rarity,amt));
+    },
+    removeFromInventory(id,rarity,amt) {
+        for (let i=0;i<inv.length;i++) {
+            if (inv[i].match(id,rarity)) {
+                inv[i].amt -= amt;
+                if (inv[i].amt <= 0) inv.splice(i, 1);
+            }
+        }
+    },
+}
+
+
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
@@ -24,55 +57,6 @@ function refreshInventory() {
             $inventory.append(itemdiv);
         }
     }
-}
-
-function addToInventory(itemName,amt) {
-    amt = amt || 1;
-    for (let i=0;i<amt;i++) {
-        if (inventory[itemName] >= getMaxInventory()) {
-            const upgrade = nameToUpgrade("Auto Sell Value");
-            const mod = upgrade.value[upgradeProgress["Auto Sell Value"]]/100;
-            sellItem(itemName,mod);
-        }
-        else {
-            if (itemName in inventory) inventory[itemName] += 1;
-            else inventory[itemName] = 1;
-            refreshInventory();
-        }
-    }
-}
-
-function removeAllFromInventory(itemName) {
-    if (!(itemName in inventory) || inventory[itemName] === 0) return false;
-    const toRemove = inventory[itemName];
-    for (let i=0;i<toRemove;i++) {
-        sellItem(itemName,1);
-        inventory[itemName] -= 1;
-    }
-    refreshInventory();
-}
-
-function removeFromInventory(itemName,amt) {
-    amt = amt || 1;
-    if (itemName === "Gold") {
-        const removeG = Math.min(player.money,amt);
-        player.money -= removeG;
-        return removeG;
-    }
-    else {
-        if (!(itemName in inventory)) return 0;
-        const remove = Math.min(inventory[itemName],amt);
-        inventory[itemName] -= remove;
-        refreshInventory();
-        return remove;    
-    }
-}
-
-function sellItem(itemName,modifier,amt) {
-    amt = amt || 1
-    player.money += Math.floor(nameToItem(itemName).value*modifier*amt);
-    refreshWorkers();
-    refreshUpgrades();
 }
 
 $sellOne = $("#sell1");
@@ -102,13 +86,3 @@ $sellAll.click((e) => {
     $sellTen.removeClass("itemSellPrefSelected");
     $sellAll.addClass("itemSellPrefSelected");
 });
-
-function itemRefund(name) {
-    const item = nameToItem(name);
-    for (const [name,amt] of Object.entries(item.cost)) {
-        if (resources.includes(name)) {
-            player[name] += amt
-        }
-        else addToInventory(name,amt);
-    }
-}
