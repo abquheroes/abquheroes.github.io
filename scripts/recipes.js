@@ -17,7 +17,14 @@ class Item{
         return this.name;
     }
     imageValue() {
-        return this.value;
+        return ResourceManager.formatCost(Resources.GOLD,this.value);
+    }
+    visualizeCost() {
+        const d = $("<div/>").addClass("itemCost")
+        for (const [resource, amt] of Object.entries(this.cost)) {
+            d.append($("<div/>").addClass("indvCost").html(ResourceManager.formatCost(resource,amt)));
+        }
+        return d;
     }
 }
 
@@ -59,7 +66,7 @@ function initializeRecipes() {
     recipeList.recipes.forEach((recipe) => {
         const name = $('<a/>').addClass('addCraft').attr("href",recipe.id).html(recipe.name)
         const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipecostdiv').html("lol");
+        const td2 = $('<div/>').addClass('recipecostdiv').html(recipe.visualizeCost());
         const td3 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td4 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
         const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4);

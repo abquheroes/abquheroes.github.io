@@ -5,7 +5,7 @@ class Worker {
         this.name = name;
         this.id = id;
         this.resources = resources;
-        this.lvl = 0;
+        this.lvl = 1;
         this.pic = '<img src="workers/'+this.name+'.gif">';
     }
     produces(resource) {
@@ -20,13 +20,16 @@ const WorkerManager = {
         this.workers.push(worker);
     },
     resourceCount(resource) {
-        return this.workers.reduce((total,worker) => total + worker.produces(resource))
+        return this.workers.map(el=>el.produces(resource)).reduce((total,amt) => total + amt)
     },
     workerByID(id) {
         for (let i=0;i<workers.length;i++) {
             if (workers[i].id === id) return workers[i];
         }
     },
+    resourceDisplay(res) {
+        return this.resourceCount(res) + "/" + this.resourceCount(res);
+    }
 }
 
 const oren = new Worker("Oren","W001",{"ore":5});

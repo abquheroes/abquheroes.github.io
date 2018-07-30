@@ -18,20 +18,29 @@ const ResourceManager = {
         for (const [resource, amt] of Object.entries(costs)) {
             this[resource] -= amt;
         }
+    },
+    materialIcon(type) {
+        return "<img src='/images/resources/"+type+".png' alt='"+type+"'>";
+    },
+    formatCost(res,amt) {
+        return this.materialIcon(res)+"&nbsp;"+amt;
+    },
+    output(res) {
+        if (this.hasOwnProperty(res)) {
+            return this.materialIcon(res) + "&nbsp;&nbsp" + this[res];
+        }
+        else {
+            return this.materialIcon(res) + "&nbsp;&nbsp" + WorkerManager.resourceDisplay(res);
+        }
     }
 }
 
+const $resources = $("#resources");
+
 function refreshResources() {
-    for (let i=0;i<resources.length;i++) {
-        const name = resources[i];
-        if (displayedResources[name] !== player[name] || getCap(name) !== displayedResourcesCap[name]) {
-            $resAmts[i].text(player[name] + "/" + getCap(name));
-            displayedResources[name] = player[name];
-            displayedResourcesCap[name] = getCap(name);
-        }
-    }
-    if (player.money !== displayedResources["Money"]) {
-        $moneyAmt.text(formatToUnits(player.money, 2));
-        displayedResources["Money"] = player.money;
-    }
+    $resources.empty();
+    $.each(Resources , function(_, resource) {
+        const d = $("<div/>").addClass("resource tooltip").attr("id",resource+"resource").html(ResourceManager.output(resource));
+        $resources.append(d);
+    });
 }
