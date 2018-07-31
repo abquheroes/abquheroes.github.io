@@ -5,6 +5,7 @@ const player = {
     completeTime : 0,
     lastTime : Date.now(),
     timeWarp : 1,
+    sellPref : 1,
 }
 
 function initialize() {

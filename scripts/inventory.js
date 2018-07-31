@@ -1,62 +1,68 @@
-$('#inventory').on("click","a.inventoryLink",(e) => {
+$('#inventory').on("click",".inventoryItem",(e) => {
     e.preventDefault();
-    const name = $(e.target).attr("href");
+    console.log("hellyeha");
+    const id = $(e.target).attr("id");
+    const rarity = $(e.target).attr("r");
     let amt = player.sellPref;
-    if (e.shiftKey) amt = 100;
-    amt = Math.min(inventory[name],amt)
-    removeFromInventory(name,amt);
-    sellItem(name,1,amt);
+//  if (e.shiftKey) amt = 100
+    Inventory.sellItem(id,rarity,1);
 })
 
 class itemContainer {
-    constructor(id,rarity,amt) {
+    constructor(id,rarity) {
         this.id = id;
+        this.item = recipeList.idToItem(id);
+        this.name = this.item.name;
+        this.picName = this.item.itemPicName();
         this.rarity = rarity;
-        this.amt = amt;
+        this.amt = 1;
     }
     match(id,rarity) {
-        return this.id === id && this.rarity === rarity;
+        return id+rarity === this.id + this.rarity;
     }
 }
 
 const Inventory = {
     inv : [],
     addToInventory(id,rarity,amt) {
-        for (let i=0;i<inv.length;i++) {
-            if (inv[i].match(id,rarity)) {
-                inv[i].amt += amt;
+        amt = amt || 1;
+        for (let i=0;i<this.inv.length;i++) {
+            if (this.inv[i].match(id,rarity)) {
+                this.inv[i].amt += amt;
+                refreshInventory();
                 return;
             }
         }
-        inv.push(new itemContainer(id,rarity,amt));
+        this.inv.push(new itemContainer(id,rarity,amt));
+        refreshInventory();
     },
     removeFromInventory(id,rarity,amt) {
-        for (let i=0;i<inv.length;i++) {
-            if (inv[i].match(id,rarity)) {
-                inv[i].amt -= amt;
-                if (inv[i].amt <= 0) inv.splice(i, 1);
+        for (let i=0;i<this.inv.length;i++) {
+            if (this.inv[i].match(id,rarity)) {
+                this.inv[i].amt -= amt;
+                if (this.inv[i].amt <= 0) this.inv.splice(i, 1);
             }
         }
+        refreshInventory();
     },
+    sellItem(id,rarity,amt) {
+        this.removeFromInventory(id,rarity,amt);
+        recipeList.sellItem(id,rarity);
+    }
 }
 
+$inventory = $("#inventory");
 
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
-    for (let i=0;i<blueprints.length;i++) {
-        const name = blueprints[i].name;
-        if (name in inventory && inventory[name] > 0) {
-            const item = nameToItem(name);
-            if (item == null) continue;
-            const itemdiv = $("<div/>").addClass("inventoryItem").html(imageReference[name])
-            const itemLink = $('<a/>').addClass("inventoryLink tooltip").attr("href",name).attr("aria-label", "Sell "+name+" for "+item.value+" Gold").html(name);
-            const itemCt = $("<div/>").addClass("inventoryCount").html("x"+inventory[name]);
-            itemdiv.append(itemLink);
-            itemdiv.append(itemCt);
-            $inventory.append(itemdiv);
-        }
-    }
+    Inventory.inv.forEach(item => {
+        const itemdiv = $("<div/>").addClass("inventoryItem").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        itemdiv.addClass("R"+item.rarity)
+        const itemCt = $("<div/>").addClass("inventoryCount").html("x"+item.amt);
+        itemdiv.append(itemCt);
+        $inventory.append(itemdiv);
+    });
 }
 
 $sellOne = $("#sell1");

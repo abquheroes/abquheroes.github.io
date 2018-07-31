@@ -31,6 +31,9 @@ class Item{
         if (resource in this.cost) return this.cost[resource];
         return 0;
     }
+    sellItem(rarity) {
+        ResourceManager.addResource("gold",this.value);
+    }
 }
 
 const recipeList = {
@@ -46,6 +49,10 @@ const recipeList = {
     },
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
+    },
+    sellItem(id,rarity) {
+        console.log(id);
+        this.idToItem(id).sellItem(rarity);
     }
 }
 

@@ -6,6 +6,7 @@ const ResourceManager = {
     gold : 0,
     addResource(resource,amt) {
         this[resource] += amt;
+        refreshResources();
     },
     canAfford(item) {
         console.log(item);

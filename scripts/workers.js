@@ -5,7 +5,7 @@ class Worker {
         this.name = name;
         this.id = id;
         this.resources = resources;
-        this.lvl = 1;
+        this.lvl = 100;
         this.pic = '<img src="workers/'+this.name+'.gif">';
     }
     produces(resource) {
