@@ -14,7 +14,7 @@ class Item{
         return Resources.canAfford(this.cost);
     }
     itemPicName() {
-        return this.name;
+        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>&nbsp;"+this.name;
     }
     imageValue() {
         return ResourceManager.formatCost(Resources.GOLD,this.value);
@@ -25,6 +25,11 @@ class Item{
             d.append($("<div/>").addClass("indvCost").html(ResourceManager.formatCost(resource,amt)));
         }
         return d;
+    }
+    getCost(resource) {
+        console.log(this.cost);
+        if (resource in this.cost) return this.cost[resource];
+        return 0;
     }
 }
 
@@ -40,10 +45,9 @@ const recipeList = {
         return this.recipes.filter(recipe => types.includes(recipe.type));
     },
     idToItem(id) {
-        return this.recipes.filter(recipe => recipe.id === id);
+        return this.recipes.find(recipe => recipe.id === id);
     }
 }
-
 
 function populateRecipe(type) {
     type = type || ItemType.KNIFE;
@@ -64,8 +68,7 @@ function initializeRecipes() {
     const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {
-        const name = $('<a/>').addClass('addCraft').attr("href",recipe.id).html(recipe.name)
-        const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
+        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td2 = $('<div/>').addClass('recipecostdiv').html(recipe.visualizeCost());
         const td3 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td4 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
@@ -75,9 +78,11 @@ function initializeRecipes() {
     $RecipeResults.append(table);
 }
 
-$(document).on("click",".recipeSelect", (e) => {
+$(document).on('click', '.recipeName', (e) => {
     e.preventDefault();
-    const type = $(e.target).text();
-    player.currentType = type;
-    populateRecipe(type);
-})
+    const type = $(e.target).attr("id");
+    const item = recipeList.idToItem(type);
+    if (!ResourceManager.canAfford(item)) return;
+    actionSlotManager.addSlot(type);
+    refreshResources();
+});

@@ -9,6 +9,8 @@ const player = {
 
 function initialize() {
     loadRecipes();
+    initializeActionSlots();
+    refreshResources();
 }
 
 initialize();
@@ -17,7 +19,7 @@ function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
     player.lastTime = Date.now();
     //dungeonAdvance(elapsedTime);
-    craftAdvance(elapsedTime);
+    actionSlotManager.craftAdvance(elapsedTime);
 }
 
 setInterval(mainLoop, 10);

@@ -640,63 +640,63 @@ input#importSaveText {
 }
 
 #RecipeFilter a[href="KnifeSelector"]:before {
-    background-image: url('../PixelAbqu/Knife32.png');
+    background-image: url('../images/recipeFilter/Knife32.png');
 }
 
 #RecipeFilter a[href="MaceSelector"]:before {
-   background-image: url('../PixelAbqu/Club32.png');
+   background-image: url('../images/recipeFilter/Club32.png');
 }
 
 #RecipeFilter a[href="GloveSelector"]:before {
-    background-image: url('../PixelAbqu/glove32.png');
+    background-image: url('../images/recipeFilter/glove32.png');
 }
 
 #RecipeFilter a[href="PotionSelector"]:before {
-    background-image: url('../PixelAbqu/Potion32.png');
+    background-image: url('../images/recipeFilter/Potion32.png');
 }
 
 #RecipeFilter a[href="AxeSelector"]:before {
-    background-image: url('../PixelAbqu/Axe32.png');
+    background-image: url('../images/recipeFilter/Axe32.png');
 }
 
 #RecipeFilter a[href="HatSelector"]:before {
-    background-image: url('../PixelAbqu/Hat32.png');
+    background-image: url('../images/recipeFilter/Hat32.png');
 }
 
 #RecipeFilter a[href="WandSelector"]:before {
-    background-image: url('../PixelAbqu/Wand32.png');
+    background-image: url('../images/recipeFilter/Wand32.png');
 }
 
 #RecipeFilter a[href="GauntletSelector"]:before {
-    background-image: url('../PixelAbqu/Gauntlets32.png');
+    background-image: url('../images/recipeFilter/Gauntlets32.png');
 }
 
 #RecipeFilter a[href="HelmetSelector"]:before {
-    background-image: url('../PixelAbqu/helmet32.png');
+    background-image: url('../images/recipeFilter/helmet32.png');
 }
 
 #RecipeFilter a[href="ShoeSelector"]:before {
-    background-image: url('../PixelAbqu/Shoes32.png');
+    background-image: url('../images/recipeFilter/Shoes32.png');
 }
 
 #RecipeFilter a[href="WardSelector"]:before {
-    background-image: url('../PixelAbqu/Ward32.png');
+    background-image: url('../images/recipeFilter/Ward32.png');
 }
 
 #RecipeFilter a[href="ShieldSelector"]:before {
-    background-image: url('../PixelAbqu/Shield32.png');
+    background-image: url('../images/recipeFilter/Shield32.png');
 }
 
 #RecipeFilter a[href="CloakSelector"]:before {
-    background-image: url('../PixelAbqu/Cloak32.png');
+    background-image: url('../images/recipeFilter/Cloak32.png');
 }
 
 #RecipeFilter a[href="ArmorSelector"]:before {
-    background-image: url('../PixelAbqu/Armor32.png');
+    background-image: url('../images/recipeFilter/Armor32.png');
 }
 
 #RecipeFilter a[href="PendantSelector"]:before {
-    background-image: url('../PixelAbqu/Pendant32.png');
+    background-image: url('../images/recipeFilter/Pendant32.png');
 }
 
 .recipeTable, .jobTable {

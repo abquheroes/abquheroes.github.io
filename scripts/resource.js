@@ -7,9 +7,10 @@ const ResourceManager = {
     addResource(resource,amt) {
         this[resource] += amt;
     },
-    canAfford(costs) {
-        for (const [resource, amt] of Object.entries(costs)) {
-            if (amt > this[resource]) return false;
+    canAfford(item) {
+        console.log(item);
+        for (const [resource, amt] of Object.entries(item.cost)) {
+            if (amt > this.resourceAvailable(resource)) return false;
         }
         return true;
     },
@@ -30,8 +31,11 @@ const ResourceManager = {
             return this.materialIcon(res) + "&nbsp;&nbsp" + this[res];
         }
         else {
-            return this.materialIcon(res) + "&nbsp;&nbsp" + WorkerManager.resourceDisplay(res);
+            return this.materialIcon(res) + "&nbsp;&nbsp" + this.resourceAvailable(res) + "/" + WorkerManager.totalProduction(res);
         }
+    },
+    resourceAvailable(res) {
+        return WorkerManager.totalProduction(res)-actionSlotManager.totalCost(res);
     }
 }
 

@@ -27,8 +27,8 @@ const WorkerManager = {
             if (workers[i].id === id) return workers[i];
         }
     },
-    resourceDisplay(res) {
-        return this.resourceCount(res) + "/" + this.resourceCount(res);
+    totalProduction(res) {
+        return this.resourceCount(res);
     }
 }
 

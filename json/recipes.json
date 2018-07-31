@@ -7,7 +7,7 @@
     "craftTime": 5000,
     "type": "Knives",
     "cost": {
-      "Ore": 5
+      "ore": 5
     }
   },
   {
@@ -18,7 +18,7 @@
     "craftTime": 7000,
     "type": "Knives",
     "cost": {
-      "Ore": 7
+      "ore": 7
     }
   },
   {
@@ -29,7 +29,7 @@
     "craftTime": 8000,
     "type": "Knives",
     "cost": {
-      "Ore": 10
+      "ore": 10
     }
   },
   {
@@ -40,7 +40,7 @@
     "craftTime": 11000,
     "type": "Knives",
     "cost": {
-      "Ore": 14
+      "ore": 14
     }
   },
   {
@@ -51,7 +51,7 @@
     "craftTime": 14000,
     "type": "Knives",
     "cost": {
-      "Ore": 19
+      "ore": 19
     }
   },
   {
@@ -62,7 +62,7 @@
     "craftTime": 19000,
     "type": "Knives",
     "cost": {
-      "Ore": 27
+      "ore": 27
     }
   },
   {
@@ -73,7 +73,7 @@
     "craftTime": 24000,
     "type": "Knives",
     "cost": {
-      "Ore": 38
+      "ore": 38
     }
   },
   {
@@ -84,7 +84,7 @@
     "craftTime": 31000,
     "type": "Knives",
     "cost": {
-      "Ore": 53
+      "ore": 53
     }
   },
   {
@@ -95,7 +95,7 @@
     "craftTime": 41000,
     "type": "Knives",
     "cost": {
-      "Ore": 74
+      "ore": 74
     }
   },
   {
@@ -106,7 +106,7 @@
     "craftTime": 53000,
     "type": "Knives",
     "cost": {
-      "Ore": 103
+      "ore": 103
     }
   },
   {
@@ -117,7 +117,7 @@
     "craftTime": 9000,
     "type": "Maces",
     "cost": {
-      "Wood": 7
+      "wood": 7
     }
   },
   {
@@ -128,7 +128,7 @@
     "craftTime": 12000,
     "type": "Maces",
     "cost": {
-      "Wood": 10
+      "wood": 10
     }
   },
   {
@@ -139,7 +139,7 @@
     "craftTime": 15000,
     "type": "Maces",
     "cost": {
-      "Wood": 14
+      "wood": 14
     }
   },
   {
@@ -150,7 +150,7 @@
     "craftTime": 20000,
     "type": "Maces",
     "cost": {
-      "Wood": 19
+      "wood": 19
     }
   },
   {
@@ -161,7 +161,7 @@
     "craftTime": 26000,
     "type": "Maces",
     "cost": {
-      "Wood": 27
+      "wood": 27
     }
   },
   {
@@ -172,7 +172,7 @@
     "craftTime": 33000,
     "type": "Maces",
     "cost": {
-      "Wood": 38
+      "wood": 38
     }
   },
   {
@@ -183,7 +183,7 @@
     "craftTime": 43000,
     "type": "Maces",
     "cost": {
-      "Wood": 53
+      "wood": 53
     }
   },
   {
@@ -194,8 +194,7 @@
     "craftTime": 56000,
     "type": "Maces",
     "cost": {
-      "Wood": 74,
-      "Maul": 2
+      "wood": 74
     }
   },
   {
@@ -206,8 +205,7 @@
     "craftTime": 73000,
     "type": "Maces",
     "cost": {
-      "Wood": 103,
-      "Brawler": 2
+      "wood": 103
     }
   },
   {
@@ -218,8 +216,7 @@
     "craftTime": 95000,
     "type": "Maces",
     "cost": {
-      "Wood": 145,
-      "Knife": 5
+      "wood": 145
     }
   },
   {
@@ -230,7 +227,7 @@
     "craftTime": 18000,
     "type": "Gloves",
     "cost": {
-      "Leather": 22
+      "leather": 22
     }
   },
   {
@@ -241,7 +238,7 @@
     "craftTime": 23000,
     "type": "Gloves",
     "cost": {
-      "Leather": 31
+      "leather": 31
     }
   },
   {
@@ -252,7 +249,7 @@
     "craftTime": 30000,
     "type": "Gloves",
     "cost": {
-      "Leather": 43
+      "leather": 43
     }
   },
   {
@@ -263,7 +260,7 @@
     "craftTime": 40000,
     "type": "Gloves",
     "cost": {
-      "Leather": 60
+      "leather": 60
     }
   },
   {
@@ -274,7 +271,7 @@
     "craftTime": 51000,
     "type": "Gloves",
     "cost": {
-      "Leather": 85
+      "leather": 85
     }
   },
   {
@@ -285,7 +282,7 @@
     "craftTime": 67000,
     "type": "Gloves",
     "cost": {
-      "Leather": 118
+      "leather": 118
     }
   },
   {
@@ -296,7 +293,7 @@
     "craftTime": 87000,
     "type": "Gloves",
     "cost": {
-      "Leather": 166
+      "leather": 166
     }
   },
   {
@@ -307,8 +304,7 @@
     "craftTime": 113000,
     "type": "Gloves",
     "cost": {
-      "Leather": 232,
-      "Healing Potion": 2
+      "leather": 232
     }
   },
   {
@@ -319,8 +315,7 @@
     "craftTime": 147000,
     "type": "Gloves",
     "cost": {
-      "Leather": 325,
-      "Running Gloves": 2
+      "leather": 325
     }
   },
   {
@@ -331,8 +326,7 @@
     "craftTime": 191000,
     "type": "Gloves",
     "cost": {
-      "Leather": 455,
-      "Punching Gloves": 3
+      "leather": 455
     }
   },
   {
@@ -343,7 +337,7 @@
     "craftTime": 15000,
     "type": "Potions",
     "cost": {
-      "Herb": 10
+      "herb": 10
     }
   },
   {
@@ -354,7 +348,7 @@
     "craftTime": 20000,
     "type": "Potions",
     "cost": {
-      "Herb": 14
+      "herb": 14
     }
   },
   {
@@ -365,7 +359,7 @@
     "craftTime": 25000,
     "type": "Potions",
     "cost": {
-      "Herb": 20
+      "herb": 20
     }
   },
   {
@@ -376,7 +370,7 @@
     "craftTime": 33000,
     "type": "Potions",
     "cost": {
-      "Herb": 27
+      "herb": 27
     }
   },
   {
@@ -387,7 +381,7 @@
     "craftTime": 43000,
     "type": "Potions",
     "cost": {
-      "Herb": 38
+      "herb": 38
     }
   },
   {
@@ -398,7 +392,7 @@
     "craftTime": 56000,
     "type": "Potions",
     "cost": {
-      "Herb": 54
+      "herb": 54
     }
   },
   {
@@ -409,7 +403,7 @@
     "craftTime": 72000,
     "type": "Potions",
     "cost": {
-      "Herb": 75
+      "herb": 75
     }
   },
   {
@@ -420,8 +414,7 @@
     "craftTime": 94000,
     "type": "Potions",
     "cost": {
-      "Herb": 105,
-      "Mana Potion": 2
+      "herb": 105
     }
   },
   {
@@ -432,8 +425,7 @@
     "craftTime": 122000,
     "type": "Potions",
     "cost": {
-      "Herb": 148,
-      "Gardening Gloves": 2
+      "herb": 148
     }
   },
   {
@@ -444,8 +436,7 @@
     "craftTime": 159000,
     "type": "Potions",
     "cost": {
-      "Herb": 207,
-      "Invincibility Potion": 3
+      "herb": 207
     }
   },
   {
@@ -456,8 +447,8 @@
     "craftTime": 15000,
     "type": "Axes",
     "cost": {
-      "Ore": 5,
-      "Wood": 5
+      "ore": 5,
+      "wood": 5
     }
   },
   {
@@ -468,8 +459,8 @@
     "craftTime": 19000,
     "type": "Axes",
     "cost": {
-      "Ore": 7,
-      "Wood": 7
+      "ore": 7,
+      "wood": 7
     }
   },
   {
@@ -480,8 +471,8 @@
     "craftTime": 23000,
     "type": "Axes",
     "cost": {
-      "Ore": 9,
-      "Wood": 11
+      "ore": 9,
+      "wood": 11
     }
   },
   {
@@ -492,8 +483,8 @@
     "craftTime": 29000,
     "type": "Axes",
     "cost": {
-      "Ore": 12,
-      "Wood": 15
+      "ore": 12,
+      "wood": 15
     }
   },
   {
@@ -504,8 +495,8 @@
     "craftTime": 37000,
     "type": "Axes",
     "cost": {
-      "Ore": 17,
-      "Wood": 22
+      "ore": 17,
+      "wood": 22
     }
   },
   {
@@ -516,9 +507,8 @@
     "craftTime": 46000,
     "type": "Axes",
     "cost": {
-      "Ore": 22,
-      "Wood": 32,
-      "Kitchen Knife": 2
+      "ore": 22,
+      "wood": 32
     }
   },
   {
@@ -529,9 +519,8 @@
     "craftTime": 57000,
     "type": "Axes",
     "cost": {
-      "Ore": 30,
-      "Wood": 46,
-      "The Broominator": 2
+      "ore": 30,
+      "wood": 46
     }
   },
   {
@@ -542,9 +531,8 @@
     "craftTime": 72000,
     "type": "Axes",
     "cost": {
-      "Ore": 41,
-      "Wood": 67,
-      "Hugging Gloves": 2
+      "ore": 41,
+      "wood": 67
     }
   },
   {
@@ -555,9 +543,8 @@
     "craftTime": 89000,
     "type": "Axes",
     "cost": {
-      "Ore": 55,
-      "Wood": 98,
-      "Night Club": 2
+      "ore": 55,
+      "wood": 98
     }
   },
   {
@@ -568,9 +555,8 @@
     "craftTime": 112000,
     "type": "Axes",
     "cost": {
-      "Ore": 74,
-      "Wood": 142,
-      "Strength Potion": 2
+      "ore": 74,
+      "wood": 142
     }
   },
   {
@@ -581,8 +567,8 @@
     "craftTime": 54000,
     "type": "Hats",
     "cost": {
-      "Herb": 14,
-      "Leather": 20
+      "herb": 14,
+      "leather": 20
     }
   },
   {
@@ -593,8 +579,8 @@
     "craftTime": 68000,
     "type": "Hats",
     "cost": {
-      "Herb": 20,
-      "Leather": 27
+      "herb": 20,
+      "leather": 27
     }
   },
   {
@@ -605,8 +591,8 @@
     "craftTime": 84000,
     "type": "Hats",
     "cost": {
-      "Herb": 29,
-      "Leather": 36
+      "herb": 29,
+      "leather": 36
     }
   },
   {
@@ -617,8 +603,8 @@
     "craftTime": 105000,
     "type": "Hats",
     "cost": {
-      "Herb": 42,
-      "Leather": 49
+      "herb": 42,
+      "leather": 49
     }
   },
   {
@@ -629,8 +615,8 @@
     "craftTime": 132000,
     "type": "Hats",
     "cost": {
-      "Herb": 62,
-      "Leather": 66
+      "herb": 62,
+      "leather": 66
     }
   },
   {
@@ -641,9 +627,8 @@
     "craftTime": 165000,
     "type": "Hats",
     "cost": {
-      "Herb": 90,
-      "Leather": 90,
-      "Coughing Potion": 2
+      "herb": 90,
+      "leather": 90
     }
   },
   {
@@ -654,9 +639,8 @@
     "craftTime": 206000,
     "type": "Hats",
     "cost": {
-      "Herb": 130,
-      "Leather": 121,
-      "Thats A Knife": 2
+      "herb": 130,
+      "leather": 121
     }
   },
   {
@@ -667,9 +651,8 @@
     "craftTime": 258000,
     "type": "Hats",
     "cost": {
-      "Herb": 189,
-      "Leather": 163,
-      "Fighting Gloves": 2
+      "herb": 189,
+      "leather": 163
     }
   },
   {
@@ -680,9 +663,8 @@
     "craftTime": 322000,
     "type": "Hats",
     "cost": {
-      "Herb": 274,
-      "Leather": 221,
-      "Other Gloves": 2
+      "herb": 274,
+      "leather": 221
     }
   },
   {
@@ -693,9 +675,8 @@
     "craftTime": 402000,
     "type": "Hats",
     "cost": {
-      "Herb": 397,
-      "Leather": 298,
-      "Dark Is The Knife": 2
+      "herb": 397,
+      "leather": 298
     }
   },
   {
@@ -706,8 +687,8 @@
     "craftTime": 38000,
     "type": "Wands",
     "cost": {
-      "Wood": 9,
-      "Herb": 12
+      "wood": 9,
+      "herb": 12
     }
   },
   {
@@ -718,8 +699,8 @@
     "craftTime": 48000,
     "type": "Wands",
     "cost": {
-      "Wood": 13,
-      "Herb": 16
+      "wood": 13,
+      "herb": 16
     }
   },
   {
@@ -730,8 +711,8 @@
     "craftTime": 59000,
     "type": "Wands",
     "cost": {
-      "Wood": 19,
-      "Herb": 22
+      "wood": 19,
+      "herb": 22
     }
   },
   {
@@ -742,8 +723,8 @@
     "craftTime": 74000,
     "type": "Wands",
     "cost": {
-      "Wood": 27,
-      "Herb": 30
+      "wood": 27,
+      "herb": 30
     }
   },
   {
@@ -754,8 +735,8 @@
     "craftTime": 93000,
     "type": "Wands",
     "cost": {
-      "Wood": 40,
-      "Herb": 40
+      "wood": 40,
+      "herb": 40
     }
   },
   {
@@ -766,9 +747,8 @@
     "craftTime": 116000,
     "type": "Wands",
     "cost": {
-      "Wood": 58,
-      "Herb": 54,
-      "Cleaning Gloves": 2
+      "wood": 58,
+      "herb": 54
     }
   },
   {
@@ -779,9 +759,8 @@
     "craftTime": 145000,
     "type": "Wands",
     "cost": {
-      "Wood": 84,
-      "Herb": 73,
-      "Rejuvenating Potion": 2
+      "wood": 84,
+      "herb": 73
     }
   },
   {
@@ -792,9 +771,8 @@
     "craftTime": 181000,
     "type": "Wands",
     "cost": {
-      "Wood": 121,
-      "Herb": 98,
-      "Striped Club": 2
+      "wood": 121,
+      "herb": 98
     }
   },
   {
@@ -805,9 +783,8 @@
     "craftTime": 226000,
     "type": "Wands",
     "cost": {
-      "Wood": 176,
-      "Herb": 132,
-      "Bitter Potion": 2
+      "wood": 176,
+      "herb": 132
     }
   },
   {
@@ -818,9 +795,8 @@
     "craftTime": 283000,
     "type": "Wands",
     "cost": {
-      "Wood": 255,
-      "Herb": 179,
-      "Knife Club": 2
+      "wood": 255,
+      "herb": 179
     }
   },
   {
@@ -831,8 +807,8 @@
     "craftTime": 29000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 7,
-      "Leather": 18
+      "ore": 7,
+      "leather": 18
     }
   },
   {
@@ -843,8 +819,8 @@
     "craftTime": 36000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 9,
-      "Leather": 26
+      "ore": 9,
+      "leather": 26
     }
   },
   {
@@ -855,8 +831,8 @@
     "craftTime": 45000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 13,
-      "Leather": 38
+      "ore": 13,
+      "leather": 38
     }
   },
   {
@@ -867,8 +843,8 @@
     "craftTime": 57000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 17,
-      "Leather": 55
+      "ore": 17,
+      "leather": 55
     }
   },
   {
@@ -879,8 +855,8 @@
     "craftTime": 71000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 23,
-      "Leather": 80
+      "ore": 23,
+      "leather": 80
     }
   },
   {
@@ -891,9 +867,8 @@
     "craftTime": 89000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 31,
-      "Leather": 115,
-      "New Gauntlets": 2
+      "ore": 31,
+      "leather": 115
     }
   },
   {
@@ -904,9 +879,8 @@
     "craftTime": 111000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 42,
-      "Leather": 167,
-      "Chefs Knife": 2
+      "ore": 42,
+      "leather": 167
     }
   },
   {
@@ -917,9 +891,8 @@
     "craftTime": 138000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 57,
-      "Leather": 243,
-      "Bludgeon": 2
+      "ore": 57,
+      "leather": 243
     }
   },
   {
@@ -930,9 +903,8 @@
     "craftTime": 173000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 77,
-      "Leather": 352,
-      "Like Potion": 2
+      "ore": 77,
+      "leather": 352
     }
   },
   {
@@ -943,9 +915,8 @@
     "craftTime": 216000,
     "type": "Gauntlets",
     "cost": {
-      "Ore": 104,
-      "Leather": 510,
-      "Boxing Gloves": 2
+      "ore": 104,
+      "leather": 510
     }
   },
   {
@@ -956,8 +927,8 @@
     "craftTime": 29000,
     "type": "Helmets",
     "cost": {
-      "Ore": 8,
-      "Herb": 11
+      "ore": 8,
+      "herb": 11
     }
   },
   {
@@ -968,8 +939,8 @@
     "craftTime": 36000,
     "type": "Helmets",
     "cost": {
-      "Ore": 12,
-      "Herb": 15
+      "ore": 12,
+      "herb": 15
     }
   },
   {
@@ -980,8 +951,8 @@
     "craftTime": 45000,
     "type": "Helmets",
     "cost": {
-      "Ore": 17,
-      "Herb": 20
+      "ore": 17,
+      "herb": 20
     }
   },
   {
@@ -992,8 +963,8 @@
     "craftTime": 57000,
     "type": "Helmets",
     "cost": {
-      "Ore": 24,
-      "Herb": 27
+      "ore": 24,
+      "herb": 27
     }
   },
   {
@@ -1004,8 +975,8 @@
     "craftTime": 71000,
     "type": "Helmets",
     "cost": {
-      "Ore": 35,
-      "Herb": 37
+      "ore": 35,
+      "herb": 37
     }
   },
   {
@@ -1016,9 +987,8 @@
     "craftTime": 89000,
     "type": "Helmets",
     "cost": {
-      "Ore": 51,
-      "Herb": 49,
-      "Blackjack": 2
+      "ore": 51,
+      "herb": 49
     }
   },
   {
@@ -1029,9 +999,8 @@
     "craftTime": 111000,
     "type": "Helmets",
     "cost": {
-      "Ore": 74,
-      "Herb": 67,
-      "Sleeping Potion": 2
+      "ore": 74,
+      "herb": 67
     }
   },
   {
@@ -1042,9 +1011,8 @@
     "craftTime": 138000,
     "type": "Helmets",
     "cost": {
-      "Ore": 108,
-      "Herb": 90,
-      "Fishing Knife": 2
+      "ore": 108,
+      "herb": 90
     }
   },
   {
@@ -1055,9 +1023,8 @@
     "craftTime": 173000,
     "type": "Helmets",
     "cost": {
-      "Ore": 156,
-      "Herb": 121,
-      "Mega Helmet": 2
+      "ore": 156,
+      "herb": 121
     }
   },
   {
@@ -1068,9 +1035,8 @@
     "craftTime": 216000,
     "type": "Helmets",
     "cost": {
-      "Ore": 227,
-      "Herb": 164,
-      "Fact Finder": 2
+      "ore": 227,
+      "herb": 164
     }
   },
   {
@@ -1081,8 +1047,8 @@
     "craftTime": 36000,
     "type": "Shoes",
     "cost": {
-      "Wood": 8,
-      "Leather": 21
+      "wood": 8,
+      "leather": 21
     }
   },
   {
@@ -1093,8 +1059,8 @@
     "craftTime": 45000,
     "type": "Shoes",
     "cost": {
-      "Wood": 11,
-      "Leather": 30
+      "wood": 11,
+      "leather": 30
     }
   },
   {
@@ -1105,8 +1071,8 @@
     "craftTime": 56000,
     "type": "Shoes",
     "cost": {
-      "Wood": 15,
-      "Leather": 44
+      "wood": 15,
+      "leather": 44
     }
   },
   {
@@ -1117,8 +1083,8 @@
     "craftTime": 70000,
     "type": "Shoes",
     "cost": {
-      "Wood": 20,
-      "Leather": 64
+      "wood": 20,
+      "leather": 64
     }
   },
   {
@@ -1129,8 +1095,8 @@
     "craftTime": 88000,
     "type": "Shoes",
     "cost": {
-      "Wood": 27,
-      "Leather": 93
+      "wood": 27,
+      "leather": 93
     }
   },
   {
@@ -1141,9 +1107,8 @@
     "craftTime": 110000,
     "type": "Shoes",
     "cost": {
-      "Wood": 36,
-      "Leather": 135,
-      "Laughing Potion": 2
+      "wood": 36,
+      "leather": 135
     }
   },
   {
@@ -1154,9 +1119,8 @@
     "craftTime": 137000,
     "type": "Shoes",
     "cost": {
-      "Wood": 48,
-      "Leather": 195,
-      "Hamster Clogs": 2
+      "wood": 48,
+      "leather": 195
     }
   },
   {
@@ -1167,9 +1131,8 @@
     "craftTime": 172000,
     "type": "Shoes",
     "cost": {
-      "Wood": 65,
-      "Leather": 283,
-      "Dancing Gloves": 2
+      "wood": 65,
+      "leather": 283
     }
   },
   {
@@ -1180,9 +1143,8 @@
     "craftTime": 215000,
     "type": "Shoes",
     "cost": {
-      "Wood": 88,
-      "Leather": 410,
-      "Club Knife": 2
+      "wood": 88,
+      "leather": 410
     }
   },
   {
@@ -1193,9 +1155,8 @@
     "craftTime": 268000,
     "type": "Shoes",
     "cost": {
-      "Wood": 119,
-      "Leather": 595,
-      "Loving Gloves": 2
+      "wood": 119,
+      "leather": 595
     }
   },
   {
@@ -1206,10 +1167,9 @@
     "craftTime": 45000,
     "type": "Wards",
     "cost": {
-      "Ore": 6,
-      "Wood": 8,
-      "Herb": 15,
-      "Basic Wand": 1
+      "ore": 6,
+      "wood": 8,
+      "herb": 15
     }
   },
   {
@@ -1220,10 +1180,9 @@
     "craftTime": 56000,
     "type": "Wards",
     "cost": {
-      "Ore": 8,
-      "Wood": 11,
-      "Herb": 22,
-      "Forest Wand": 1
+      "ore": 8,
+      "wood": 11,
+      "herb": 22
     }
   },
   {
@@ -1234,10 +1193,9 @@
     "craftTime": 70000,
     "type": "Wards",
     "cost": {
-      "Ore": 11,
-      "Wood": 16,
-      "Herb": 32,
-      "Wind Wand": 1
+      "ore": 11,
+      "wood": 16,
+      "herb": 32
     }
   },
   {
@@ -1248,10 +1206,9 @@
     "craftTime": 88000,
     "type": "Wards",
     "cost": {
-      "Ore": 15,
-      "Wood": 22,
-      "Herb": 46,
-      "Soul Wand": 1
+      "ore": 15,
+      "wood": 22,
+      "herb": 46
     }
   },
   {
@@ -1262,10 +1219,9 @@
     "craftTime": 110000,
     "type": "Wards",
     "cost": {
-      "Ore": 20,
-      "Wood": 31,
-      "Herb": 66,
-      "Rain Wand": 1
+      "ore": 20,
+      "wood": 31,
+      "herb": 66
     }
   },
   {
@@ -1276,10 +1232,9 @@
     "craftTime": 137000,
     "type": "Wards",
     "cost": {
-      "Ore": 27,
-      "Wood": 43,
-      "Herb": 96,
-      "Stealth Ward": 2
+      "ore": 27,
+      "wood": 43,
+      "herb": 96
     }
   },
   {
@@ -1290,10 +1245,9 @@
     "craftTime": 172000,
     "type": "Wards",
     "cost": {
-      "Ore": 36,
-      "Wood": 60,
-      "Herb": 139,
-      "Sentry Ward": 2
+      "ore": 36,
+      "wood": 60,
+      "herb": 139
     }
   },
   {
@@ -1304,10 +1258,9 @@
     "craftTime": 215000,
     "type": "Wards",
     "cost": {
-      "Ore": 49,
-      "Wood": 84,
-      "Herb": 202,
-      "Spell Ward": 2
+      "ore": 49,
+      "wood": 84,
+      "herb": 202
     }
   },
   {
@@ -1318,10 +1271,9 @@
     "craftTime": 268000,
     "type": "Wards",
     "cost": {
-      "Ore": 66,
-      "Wood": 118,
-      "Herb": 293,
-      "Love Wand": 2
+      "ore": 66,
+      "wood": 118,
+      "herb": 293
     }
   },
   {
@@ -1332,10 +1284,9 @@
     "craftTime": 335000,
     "type": "Wards",
     "cost": {
-      "Ore": 89,
-      "Wood": 165,
-      "Herb": 425,
-      "Hate Wand": 2
+      "ore": 89,
+      "wood": 165,
+      "herb": 425
     }
   },
   {
@@ -1346,10 +1297,9 @@
     "craftTime": 32000,
     "type": "Shields",
     "cost": {
-      "Ore": 7,
-      "Wood": 10,
-      "Leather": 19,
-      "Rage Maker": 1
+      "ore": 7,
+      "wood": 10,
+      "leather": 19
     }
   },
   {
@@ -1360,10 +1310,9 @@
     "craftTime": 40000,
     "type": "Shields",
     "cost": {
-      "Ore": 10,
-      "Wood": 15,
-      "Leather": 26,
-      "Fury Bringer": 1
+      "ore": 10,
+      "wood": 15,
+      "leather": 26
     }
   },
   {
@@ -1374,10 +1323,9 @@
     "craftTime": 50000,
     "type": "Shields",
     "cost": {
-      "Ore": 14,
-      "Wood": 21,
-      "Leather": 35,
-      "Vengeance": 1
+      "ore": 14,
+      "wood": 21,
+      "leather": 35
     }
   },
   {
@@ -1388,10 +1336,9 @@
     "craftTime": 63000,
     "type": "Shields",
     "cost": {
-      "Ore": 19,
-      "Wood": 30,
-      "Leather": 47,
-      "Pride": 1
+      "ore": 19,
+      "wood": 30,
+      "leather": 47
     }
   },
   {
@@ -1402,10 +1349,9 @@
     "craftTime": 78000,
     "type": "Shields",
     "cost": {
-      "Ore": 27,
-      "Wood": 44,
-      "Leather": 63,
-      "Greedy Pickaxe": 1
+      "ore": 27,
+      "wood": 44,
+      "leather": 63
     }
   },
   {
@@ -1416,10 +1362,9 @@
     "craftTime": 98000,
     "type": "Shields",
     "cost": {
-      "Ore": 38,
-      "Wood": 64,
-      "Leather": 85,
-      "Patience": 2
+      "ore": 38,
+      "wood": 64,
+      "leather": 85
     }
   },
   {
@@ -1430,10 +1375,9 @@
     "craftTime": 122000,
     "type": "Shields",
     "cost": {
-      "Ore": 53,
-      "Wood": 93,
-      "Leather": 115,
-      "Faithful Buckler": 2
+      "ore": 53,
+      "wood": 93,
+      "leather": 115
     }
   },
   {
@@ -1444,10 +1388,9 @@
     "craftTime": 153000,
     "type": "Shields",
     "cost": {
-      "Ore": 74,
-      "Wood": 135,
-      "Leather": 155,
-      "Defiant Targe": 2
+      "ore": 74,
+      "wood": 135,
+      "leather": 155
     }
   },
   {
@@ -1458,10 +1401,9 @@
     "craftTime": 191000,
     "type": "Shields",
     "cost": {
-      "Ore": 103,
-      "Wood": 195,
-      "Leather": 210,
-      "Gluttonous Axe": 2
+      "ore": 103,
+      "wood": 195,
+      "leather": 210
     }
   },
   {
@@ -1472,10 +1414,9 @@
     "craftTime": 238000,
     "type": "Shields",
     "cost": {
-      "Ore": 145,
-      "Wood": 283,
-      "Leather": 283,
-      "Wrath": 2
+      "ore": 145,
+      "wood": 283,
+      "leather": 283
     }
   },
   {
@@ -1486,10 +1427,9 @@
     "craftTime": 32000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 7,
-      "Leather": 23,
-      "Herb": 13,
-      "Simple Hat": 1
+      "wood": 7,
+      "leather": 23,
+      "herb": 13
     }
   },
   {
@@ -1500,10 +1440,9 @@
     "craftTime": 40000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 9,
-      "Leather": 33,
-      "Herb": 18,
-      "Hidden Mask": 1
+      "wood": 9,
+      "leather": 33,
+      "herb": 18
     }
   },
   {
@@ -1514,10 +1453,9 @@
     "craftTime": 50000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 13,
-      "Leather": 48,
-      "Herb": 25,
-      "Black Hat": 1
+      "wood": 13,
+      "leather": 48,
+      "herb": 25
     }
   },
   {
@@ -1528,10 +1466,9 @@
     "craftTime": 63000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 17,
-      "Leather": 70,
-      "Herb": 36,
-      "Beach Hat": 1
+      "wood": 17,
+      "leather": 70,
+      "herb": 36
     }
   },
   {
@@ -1542,10 +1479,9 @@
     "craftTime": 78000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 23,
-      "Leather": 102,
-      "Herb": 50,
-      "Green Bay Beret": 1
+      "wood": 23,
+      "leather": 102,
+      "herb": 50
     }
   },
   {
@@ -1556,10 +1492,9 @@
     "craftTime": 98000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 31,
-      "Leather": 147,
-      "Herb": 70,
-      "Novice Cloak": 2
+      "wood": 31,
+      "leather": 147,
+      "herb": 70
     }
   },
   {
@@ -1570,10 +1505,9 @@
     "craftTime": 122000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 42,
-      "Leather": 214,
-      "Herb": 98,
-      "Apprentice Cloak": 2
+      "wood": 42,
+      "leather": 214,
+      "herb": 98
     }
   },
   {
@@ -1584,10 +1518,9 @@
     "craftTime": 153000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 57,
-      "Leather": 310,
-      "Herb": 137,
-      "Practitioner Cloak": 2
+      "wood": 57,
+      "leather": 310,
+      "herb": 137
     }
   },
   {
@@ -1598,10 +1531,9 @@
     "craftTime": 191000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 77,
-      "Leather": 449,
-      "Herb": 192,
-      "Spoopy Mask": 2
+      "wood": 77,
+      "leather": 449,
+      "herb": 192
     }
   },
   {
@@ -1612,10 +1544,9 @@
     "craftTime": 238000,
     "type": "Cloaks",
     "cost": {
-      "Wood": 104,
-      "Leather": 652,
-      "Herb": 269,
-      "All Folks Hat": 2
+      "wood": 104,
+      "leather": 652,
+      "herb": 269
     }
   },
   {
@@ -1626,10 +1557,9 @@
     "craftTime": 20000,
     "type": "Armor",
     "cost": {
-      "Ore": 9,
-      "Leather": 21,
-      "Herb": 9,
-      "Standard Helmet": 1
+      "ore": 9,
+      "leather": 21,
+      "herb": 9
     }
   },
   {
@@ -1640,10 +1570,9 @@
     "craftTime": 25000,
     "type": "Armor",
     "cost": {
-      "Ore": 13,
-      "Leather": 29,
-      "Herb": 12,
-      "Shiny Gauntlets": 1
+      "ore": 13,
+      "leather": 29,
+      "herb": 12
     }
   },
   {
@@ -1654,10 +1583,9 @@
     "craftTime": 31000,
     "type": "Armor",
     "cost": {
-      "Ore": 19,
-      "Leather": 41,
-      "Herb": 16,
-      "Plain Gauntlets": 1
+      "ore": 19,
+      "leather": 41,
+      "herb": 16
     }
   },
   {
@@ -1668,10 +1596,9 @@
     "craftTime": 39000,
     "type": "Armor",
     "cost": {
-      "Ore": 27,
-      "Leather": 58,
-      "Herb": 22,
-      "Pristine Gauntlets": 1
+      "ore": 27,
+      "leather": 58,
+      "herb": 22
     }
   },
   {
@@ -1682,10 +1609,9 @@
     "craftTime": 49000,
     "type": "Armor",
     "cost": {
-      "Ore": 40,
-      "Leather": 81,
-      "Herb": 30,
-      "Challenge Gauntlets": 1
+      "ore": 40,
+      "leather": 81,
+      "herb": 30
     }
   },
   {
@@ -1696,10 +1622,9 @@
     "craftTime": 61000,
     "type": "Armor",
     "cost": {
-      "Ore": 58,
-      "Leather": 113,
-      "Herb": 40,
-      "Metal Armor": 2
+      "ore": 58,
+      "leather": 113,
+      "herb": 40
     }
   },
   {
@@ -1710,10 +1635,9 @@
     "craftTime": 76000,
     "type": "Armor",
     "cost": {
-      "Ore": 84,
-      "Leather": 158,
-      "Herb": 54,
-      "Metallic Armor": 2
+      "ore": 84,
+      "leather": 158,
+      "herb": 54
     }
   },
   {
@@ -1724,10 +1648,9 @@
     "craftTime": 95000,
     "type": "Armor",
     "cost": {
-      "Ore": 121,
-      "Leather": 221,
-      "Herb": 74,
-      "Panther Armor": 2
+      "ore": 121,
+      "leather": 221,
+      "herb": 74
     }
   },
   {
@@ -1738,10 +1661,9 @@
     "craftTime": 119000,
     "type": "Armor",
     "cost": {
-      "Ore": 176,
-      "Leather": 310,
-      "Herb": 99,
-      "Cool Gauntlets": 2
+      "ore": 176,
+      "leather": 310,
+      "herb": 99
     }
   },
   {
@@ -1752,10 +1674,9 @@
     "craftTime": 149000,
     "type": "Armor",
     "cost": {
-      "Ore": 255,
-      "Leather": 434,
-      "Herb": 134,
-      "Coal Helmut": 2
+      "ore": 255,
+      "leather": 434,
+      "herb": 134
     }
   },
   {
@@ -1766,11 +1687,10 @@
     "craftTime": 90000,
     "type": "Pendants",
     "cost": {
-      "Ore": 20,
-      "Wood": 28,
-      "Leather": 45,
-      "Herb": 40,
-      "Wisdom": 1
+      "ore": 20,
+      "wood": 28,
+      "leather": 45,
+      "herb": 40
     }
   },
   {
@@ -1781,11 +1701,10 @@
     "craftTime": 113000,
     "type": "Pendants",
     "cost": {
-      "Ore": 29,
-      "Wood": 39,
-      "Leather": 59,
-      "Herb": 54,
-      "Loyal Companion": 1
+      "ore": 29,
+      "wood": 39,
+      "leather": 59,
+      "herb": 54
     }
   },
   {
@@ -1796,12 +1715,10 @@
     "craftTime": 141000,
     "type": "Pendants",
     "cost": {
-      "Ore": 42,
-      "Wood": 55,
-      "Leather": 76,
-      "Herb": 73,
-      "Mage Moccasins": 2,
-      "Lifegiver Cloak": 1
+      "ore": 42,
+      "wood": 55,
+      "leather": 76,
+      "herb": 73
     }
   },
   {
@@ -1812,12 +1729,10 @@
     "craftTime": 176000,
     "type": "Pendants",
     "cost": {
-      "Ore": 61,
-      "Wood": 77,
-      "Leather": 99,
-      "Herb": 98,
-      "Fighting Stilettos": 2,
-      "Serpent Mail": 1
+      "ore": 61,
+      "wood": 77,
+      "leather": 99,
+      "herb": 98
     }
   },
   {
@@ -1828,12 +1743,10 @@
     "craftTime": 220000,
     "type": "Pendants",
     "cost": {
-      "Ore": 88,
-      "Wood": 108,
-      "Leather": 129,
-      "Herb": 133,
-      "Hairy Shoes": 1,
-      "Trustworthy Kite": 1
+      "ore": 88,
+      "wood": 108,
+      "leather": 129,
+      "herb": 133
     }
   },
   {
@@ -1844,12 +1757,10 @@
     "craftTime": 275000,
     "type": "Pendants",
     "cost": {
-      "Ore": 128,
-      "Wood": 151,
-      "Leather": 167,
-      "Herb": 179,
-      "The Bloopinator": 3,
-      "Maternity Ward": 1
+      "ore": 128,
+      "wood": 151,
+      "leather": 167,
+      "herb": 179
     }
   },
   {
@@ -1860,12 +1771,10 @@
     "craftTime": 343000,
     "type": "Pendants",
     "cost": {
-      "Ore": 186,
-      "Wood": 211,
-      "Leather": 217,
-      "Herb": 242,
-      "Druidic Boots": 3,
-      "Burn Unit": 1
+      "ore": 186,
+      "wood": 211,
+      "leather": 217,
+      "herb": 242
     }
   },
   {
@@ -1876,12 +1785,10 @@
     "craftTime": 429000,
     "type": "Pendants",
     "cost": {
-      "Ore": 270,
-      "Wood": 295,
-      "Leather": 282,
-      "Herb": 327,
-      "Jay Walkers": 1,
-      "Heavy Metal Armor": 1
+      "ore": 270,
+      "wood": 295,
+      "leather": 282,
+      "herb": 327
     }
   },
   {
@@ -1892,12 +1799,10 @@
     "craftTime": 536000,
     "type": "Pendants",
     "cost": {
-      "Ore": 391,
-      "Wood": 413,
-      "Leather": 367,
-      "Herb": 441,
-      "Master Loafers": 1,
-      "Truth Teller": 1
+      "ore": 391,
+      "wood": 413,
+      "leather": 367,
+      "herb": 441
     }
   },
   {
@@ -1908,12 +1813,10 @@
     "craftTime": 671000,
     "type": "Pendants",
     "cost": {
-      "Ore": 567,
-      "Wood": 579,
-      "Leather": 477,
-      "Herb": 596,
-      "Bardic Galoshes": 3,
-      "Deathcaller Cloak": 1
+      "ore": 567,
+      "wood": 579,
+      "leather": 477,
+      "herb": 596
     }
   }
 ]

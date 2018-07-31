@@ -1,48 +1,69 @@
 "use strict";
 
-function craftAdvance() {
-    
-}
-
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
-    const slot = $(e.target).parent().attr("href")-1;
-    if(player.actionSlots[slot].actionType === "Craft" && player.actionSlots[slot].actionTime > 0) itemRefund(player.actionSlots[slot].actionName);
-    player.actionSlots[slot].actionTime = 0;
-    refreshWorkers();
+    const slot = $(e.target).parent().attr("href");
+    actionSlotManager.removeSlot(slot);
 });
 
 class actionSlot {
-    constructor(id,itemid) {
-        this.id = id;
+    constructor(itemid) {
         this.itemid = itemid;
-        this.item = recipeList.idToItem(id);
+        this.item = recipeList.idToItem(itemid);
         this.itemname = this.item.name;
         this.craftTime = 0;
         this.maxCraft = this.item.craftTime;
-    }    
+    }
+    itemPicName() {
+        return this.item.itemPicName();
+    }
+    craftAdvance(t) {
+        this.craftTime += t;
+        if (this.craftTime > this.maxCraft) {
+            this.craftTime = 0;
+        }
+        this.progress = (this.craftTime/this.maxCraft).toFixed(3)*100+"%";
+    }
+    timeRemaining() {
+        return this.maxCraft-this.craftTime;
+    }
+    getCost(resource) {
+        return this.item.getCost(resource);
+    }
 }
 
+
+
 const actionSlotManager = {
-    maxSlots : 1,
+    maxSlots : 2,
     slots : [],
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) return;
-        slots.push(new actionSlot("A"+lots.length,itemid));
+        this.slots.push(new actionSlot(itemid));
+        initializeActionSlots();
+        refreshResources();
     },
-    removeSlot(slotid) {
-        for (let i=0;i<slots.length;i++) {
-            if (slots[i].id === slotid) {
-                slots.splice(i,1);
-                return;
-            }
-        }
+    removeSlot(slot) {
+        this.slots.splice(slot,1);
+        initializeActionSlots();
+        refreshResources();
     },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
     },
-    asName(slotnum) {
-        return this.slots[slotnum].itemname;
+    asPicName(slotnum) {
+        return this.slots[slotnum].itemPicName();
+    },
+    craftAdvance(t) {
+        $.each(this.slots, (i,slot) => {
+            slot.craftAdvance(t)
+            $("#ASBarFill"+i).css('width', slot.progress);
+            $("#ASBar"+i).attr("data-label",msToTime(slot.timeRemaining()));
+        });
+    },
+    totalCost(resource) {
+        if (this.slots.length === 0) return 0;
+        return this.slots.map(slot => slot.getCost(resource)).reduce((total,amt) => total + amt);
     }
 }
 
@@ -58,30 +79,24 @@ const $ActionSlots = $("#ActionSlots");
 function initializeActionSlots() {
     $ActionSlots.empty();
     for (let i=0;i<actionSlotManager.maxSlots;i++) {
-        const d = $("<div/>").addClass("ASBlock").attr("id","ASBlock"+i);
-        const d1 = $("<div/>").addClass("ASName").attr("id","ASName"+i);
-        if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asName(i));
+        const d = $("<div/>").addClass("ASBlock");
+        const d1 = $("<div/>").addClass("ASName");
+        if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
         else d1.html("Empty");
-        const d2 = $("<div/>").addClass("ASCancel").attr("id","ASCancel"+i);
+        const d2 = $("<div/>").addClass("ASCancel").attr("id",i);
         const a2 = $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="tiny material-icons">close</i>')
-        const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","Idle");
-        const s3 = $("<span/>").addClass("ASProgressBarFill").attr("id","ASBarFill"+i);
-        d.append(d1,d2.append(a2),d3.append(d3));
+        if (!actionSlotManager.hasSlot(i)) d2.hide();
+        const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
+        const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
+        d.append(d1,d2.append(a2),d3.append(s3));
         $ActionSlots.append(d);
     }
 }
 
 
-$('#tabs-1').on("click", "a.addCraft", (e) => {
-    e.preventDefault();
-    addCraft(e.target.text);
-});
 
-function visualActionSlot() {
 
-}
-
-function refreshActionSlots() {
+/*function refreshActionSlots() {
     for (let i=0;i<actionSlotManager.maxSlots;i++) {
 
         if (i === asState.length) { //aka we dn't have a state for a slot, probably just bought...
@@ -130,4 +145,4 @@ function refreshActionSlots() {
             pbLabelTextCurrent[i] = pbLabelText[i];
         }
     }
-}
+}*/
