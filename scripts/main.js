@@ -9,9 +9,9 @@ const player = {
 }
 
 function initialize() {
+    loadWorkers();
     loadRecipes();
     initializeActionSlots();
-    refreshResources();
 }
 
 initialize();

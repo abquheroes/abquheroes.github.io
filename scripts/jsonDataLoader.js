@@ -9,3 +9,13 @@ function loadRecipes() {
         initializeRecipes();
     });
 }
+
+function loadWorkers() {
+    $.getJSON("json/workers.json", function(data){
+        $.each(data, function(i,props){
+            const worker = new Worker(props);
+            WorkerManager.addWorker(worker);
+        });
+        refreshResources();
+    });
+}
