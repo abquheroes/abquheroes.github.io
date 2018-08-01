@@ -93,3 +93,9 @@ $(document).on('click', '.recipeName', (e) => {
     actionSlotManager.addSlot(type);
     refreshResources();
 });
+
+$(document).on('click', '.recipeSelect', (e) => {
+    e.preventDefault();
+    const type = $(e.target).attr("id");
+    populateRecipe(type);
+})
