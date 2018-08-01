@@ -289,6 +289,21 @@ body{
 
 .game-content #tabs {
     max-height: calc(100vh - 50px);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+button.tablinks {
+    background-color: var(--bg);
+    color: white;
+    border: none;
+    margin: 0 -3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button.tablinks:hover {
+    background-color: var(--bg-2);
 }
 
 .demoHeaders {
@@ -445,16 +460,13 @@ select {
 }
 
 #ActionSlots {
-    padding: 10px 10px 0 20px;
-    width: 100%;
-    max-width: 1200px;
-}
-
-#ASTable {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
+    padding: 10px 10px 0 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .ASBlock {
@@ -510,7 +522,7 @@ select {
     position: relative;
     text-align: center;
     flex-grow: 1;
-    padding: 10px;
+    padding: 5px;
     background-color: var(--bg);
     border-bottom: 1px solid var(--border);
 }
@@ -606,6 +618,7 @@ input#importSaveText {
     max-width: 40px;
     overflow: hidden;
     border-right: 1px solid var(--border);
+    text-decoration: none;
 }
 
 #RecipeFilter a.recipeSelect.selected {
@@ -715,6 +728,7 @@ input#importSaveText {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    min-height: 40px;
 }
 
 .recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
@@ -779,7 +793,7 @@ input#importSaveText {
     flex-wrap: wrap;
 }
 
-.recipeCost {
+.indvCost {
     display: inline-block;
     position: relative;
     margin-right: 5px;
@@ -1353,6 +1367,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    right: 0;
     bottom: 0;
     padding: 0;
     width: calc(100% - 250px);
@@ -1465,12 +1480,12 @@ span#copyme {
     right: unset;
 }
 
-.recipeCost.tooltip:hover:after {
+.indvCost.tooltip:hover:after {
     margin-top: -15px;
     bottom: 150%;
     top: unset;
 }
-.recipeCost.tooltip:hover:before {
+.indvCost.tooltip:hover:before {
     margin-top: -10px;
     margin-right: -12px;
 }
@@ -2043,13 +2058,13 @@ a.workerDialog:hover {
         margin: 10px 0 5px 45%;
     }
 
-    .recipeCost.tooltip:hover:after {
+    .indvCost.tooltip:hover:after {
         margin-top: -15px;
         right: 0;
         bottom: 150%;
         top: unset;
     }
-    .recipeCost.tooltip:hover:before {
+    .indvCost.tooltip:hover:before {
         margin-top: -10px;
         margin-right: -12px;
     }

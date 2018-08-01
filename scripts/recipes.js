@@ -22,7 +22,8 @@ class Item{
     visualizeCost() {
         const d = $("<div/>").addClass("itemCost")
         for (const [resource, amt] of Object.entries(this.cost)) {
-            d.append($("<div/>").addClass("indvCost").html(ResourceManager.formatCost(resource,amt)));
+            const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
+            d.append($("<div/>").addClass("indvCost tooltip").attr("aria-label",resourceNameForTooltips).html(ResourceManager.formatCost(resource,amt)));
         }
         return d;
     }
