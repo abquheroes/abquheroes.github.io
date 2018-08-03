@@ -74,7 +74,8 @@ const $resources = $("#resources");
 function refreshResources() {
     $resources.empty();
     $.each(Resources , function(_, resource) {
-        const d = $("<div/>").addClass("resource tooltip").attr("id",resource+"resource").html(ResourceManager.output(resource));
+        const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
+        const d = $("<div/>").addClass("resource tooltip").attr("id",resource+"resource").attr("aria-label",resourceNameForTooltips).html(ResourceManager.output(resource));
         $resources.append(d);
     });
     ResourceManager.materials.map(m => m.id).forEach(material => {
