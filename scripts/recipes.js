@@ -16,6 +16,9 @@ class Item{
     itemPicName() {
         return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>&nbsp;"+this.name;
     }
+    itemPic() {
+        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>";
+    }
     imageValue() {
         return ResourceManager.formatCost(Resources.GOLD,this.value);
     }

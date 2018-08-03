@@ -140,7 +140,6 @@ function upgrade(name) {
         else if (name === "Max Inventory Slots") {
             player.inventoryCap = upgrade.value[upgradeProgress[name]];
         }
-        refreshResources();
         ga('send', 'event', 'Upgrades', 'upgrade', name);
     }
 }

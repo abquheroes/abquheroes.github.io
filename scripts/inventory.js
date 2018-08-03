@@ -48,6 +48,12 @@ const Inventory = {
     sellItem(id,rarity,amt) {
         this.removeFromInventory(id,rarity,amt);
         recipeList.sellItem(id,rarity);
+    },
+    itemCount(id,rarity) {
+        for (let i=0;i<this.inv.length;i++) {
+            if (this.inv[i].match(id,rarity)) return this.inv[i].amt;
+        }
+        return 0;
     }
 }
 

@@ -9,12 +9,19 @@ const player = {
 }
 
 function initialize() {
-    loadWorkers();
+    loadMaterials();
     loadRecipes();
+    loadWorkers();
+}
+
+function afterLoad() {
+    refreshInventory(); //the others are loaded in order
+    refreshWorkers();
+    refreshResources();
     initializeActionSlots();
 }
 
-initialize();
+loadMaterials(); //the others are loaded in order
 
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
