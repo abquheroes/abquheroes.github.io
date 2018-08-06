@@ -1,32 +1,8 @@
 "use strict";
 
-const Class = Object.freeze({"FIGHTER":"Fighter", "CASTER":"Caster", "THIEF":"Thief",});
-
-const heroBase = {
-  // fighters
-  "H001" : ["Beorn",Class.FIGHTER],
-  "H002" : ["Cedric",Class.FIGHTER],
-  "H003" : ["Grim",Class.FIGHTER],
-  "H004" : ["Lambug",Class.FIGHTER],
-  // casters
-  "H101" : ["Zoe",Class.CASTER], // fae gif
-  "H102" : ["Neve",Class.CASTER],
-  "H103" : ["Titus",Class.CASTER],
-  "H104" : ["Troy",Class.CASTER],
-  // thieves
-  "H201" : ["Alok",Class.THIEF],
-  "H202" : ["Grogmar",Class.THIEF],
-  "H203" : ["Revere",Class.THIEF],
-  "H204" : ["Claudia",Class.THIEF], // zoe gif
-  // null!
-  "H999" : ["Empty",null],
-}
-
 class Hero {
-    constructor (name, id, role) {
-        this.name = name;
-        this.id = id;
-        this.role = role;
+    constructor (props) {
+        Object.assign(this, props);
         this.lvl = 1;
         this.xp = 0;
         this.hp = 100;
@@ -40,22 +16,19 @@ class Hero {
         this.crit = 5;
         this.critdmg = 2;
         this.dodgeChance = 0;
-        this.target = TargetType.FIRST;
+        //this.target = TargetType.FIRST;
         this.slot1Type = [ItemType.KNIFE,ItemType.MACE,ItemType.AXE,ItemType.WAND];
         this.slot2Type = [ItemType.HAT,ItemType.HELMET,ItemType.ARMOR];
         this.slot3Type = [ItemType.WARD,ItemType.PENDANT];
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
-        this.image = '<img src="heroes/'+this.name+'.gif">';
-        this.head = '<img src="heroes/head/'+"oren"+'head.png">';
+        this.image = '<img src="images/heroes/'+this.id+'.gif">';
+        this.head = '<img src="images/heroes/head/'+"oren"+'head.png">';
         this.owned = true;
     }
     power() {
         return this.pow;
-    }
-    pic() {
-        return heroImageReference[this.id];
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.hpmax);
@@ -109,95 +82,51 @@ class Hero {
         if (this.crit > Math.floor(Math.random()*100) + 1) dmg = dmg*this.critdmg
         return dmg;
     }
+    getEquipSlots() {
+        //return an object with 
+        const equip = {};
+        equip["HEAD"] = this.slot1 || "Empty";
+        equip["WEAPON"] = this.slot2 || "Empty";
+        equip["FEET"] = this.slot3 || "Empty";
+        return equip;
+    }
 }
 
-const heroManager = {
-    heroes = [],
-
+const HeroManager = {
+    heroes : [],
+    addHero(hero) {
+        this.heroes.push(hero);
+    },
     ownAllHeroes() {
         this.heroes.forEach(hero => {
             hero.owned = true;
         });
     },
     heroOwned(ID) {
-        if (member === "H999") return false;
         if (party.hasMember(member)) return false;
         return true;
+    },
+    idToHero(ID) {
+        for (let i=0;i<this.heroes.length;i++) {
+            if (this.heroes[i].id === ID) return this.heroes[i];
+        }
+        return null;
     }
 
 }
-
 
 const $heroList = $("#heroList");
-const $heroCard = $("#heroCard");
 
-function initializeHero() {
-    heroManager.ownAllHeroes();
-    for (const [ID, props] of Object.entries(heroBase)) {
-        if (ID === "H999") continue;
-        const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",ID);
-        const d1 = $("<div/>").addClass("heroOwnedImage").html(heroImageReference[ID]);
-        const d2 = $("<div/>").addClass("heroOwnedName").html(props[0]);
+function initializeHeroList() {
+    HeroManager.ownAllHeroes();
+    HeroManager.heroes.forEach(hero => {
+        const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
+        const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.image);
+        const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
         d.append(d1,d2);
-        if (!playerOwnsHero(ID)) d.hide();
-        $heroList.append(d);        
-    }
-}
-
-
-
-function playerOwnsHero(ID) {
-    for (let i=0;i<heroProgress.length;i++) {
-        if (heroProgress[i].id == ID) return true;
-    }
-    return false;
-}
-
-function heroOwnedbyID(ID) {
-    for (let i=0;i<heroProgress.length;i++) {
-        if (heroProgress[i].id == ID) return heroProgress[i];
-    }
-    console.log("ERROR: No hero for that ID found");
-    return null;
-}
-
-function ownAllHeroes() {
-    for (let i=0;i<Object.keys(heroBase).length;i++) {
-        heroProgress.push(generateHero());
-    }
-}
-
-function generateHero() {
-    const possibleID = generateHeroIDList();
-    const id = possibleID[Math.floor(Math.random() * possibleID.length)];
-    const name = heroBase[id][0];
-    const role = heroBase[id][1];
-    return new OwnedHero(name,id,role);
-}
-
-function generateHeroIDList() {
-    //this is a list of all IDs the player doesn't own yet
-    const possibleIDs = Object.keys(heroBase);
-    const ownedIDs = [];
-    for (let i=0;i<heroProgress.length;i++) {
-        ownedIDs.push(heroProgress[i].id);
-    }
-    return possibleIDs.filter(x => !ownedIDs.includes(x));
-}
-
-function displayHeroCard(ID) {
-    const heroCard = $("<div/>").addClass("heroCard");
-    const hero = heroOwnedbyID(ID);
-    const d1 = $("<div/>").addClass("hcName").html(hero.name);
-    const d2 = $("<div/>").addClass("hcImage").html(heroImageReference[ID]);
-    const d3 = $("<div/>").addClass("hcClassLvl").html("L"+hero.lvl+" "+hero.role);
-    const d4 = $("<div/>").addClass("hcStats");
-    const d4a = $("<div/>").addClass("hcStatsHP").html("HP: "+hero.hp);
-    const d4b = $("<div/>").addClass("hcStatsATK").html("ATK: "+hero.atk);
-    d4.append(d4a,d4b);
-    const d5 = $("<div/>").addClass("hcEquip").html("Equip goes here?");
-    heroCard.append(d1,d2,d3,d4,d5);
-    return heroCard;
+        if (!hero.owned) d.hide();
+        $heroList.append(d);
+    })
 }
 
 function refreshHeroes() {
@@ -206,7 +135,7 @@ function refreshHeroes() {
         const hero = heroProgress[i];
         const d = $("<div/>").addClass("heroOwnCard");
         const d1 = $("<div/>").addClass("heroOwnName").html(hero.name);
-        const d2 = $("<div/>").addClass("heroOwneImage").html(heroImageReference[hero.id]);
+        const d2 = $("<div/>").addClass("heroOwneImage").html(hero.image);
         const d3 = $("<div/>").addClass('heroLvl').html("L"+hero.lvl + " (" +hero.xp +" xp)");
         const d4 = $("<div/>").addClass("heroOwneRole").html("Role: " + hero.role);
         d.append(d1,d2,d3,d4)
@@ -214,14 +143,63 @@ function refreshHeroes() {
     }
 }
 
+const $heroCard = $("#heroCard");
 
-
-
+function examineHero(ID) {
+    const hero = HeroManager.idToHero(ID);
+    $heroCard.empty();
+    const upperDiv = $("<div/>").addClass("heroExamineTop");
+    const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
+    const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
+    const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
+    const d4 = $("<div/>").addClass("heroExamineExp").html("Exp: "+hero.xp);
+    upperDiv.append(d1,d2,d3,d4);
+    const middleDiv = $("<div/>").addClass("heroExamineStats");
+    const htd = $("<div/>").addClass("heroExamineHeading");
+    const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
+    const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
+    middleDiv.append(htd.append(htd1,htd2));
+    const stats = [hero.hpmax,hero.pow, hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
+    const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
+    for (let i=0;i<stats.length;i++) {
+        middleDiv.append(statRow(statName[i],stats[i]));
+    }
+    const lowerDiv = $("<div/>").addClass("heroExamineEquip");
+    const slots = hero.getEquipSlots();
+    $.each(slots, (slotName,equip) => {
+        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName);
+        const d5a = $("<div/>").addClass("heroExamineEquipmanetSlot").html(slotName);
+        const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
+        lowerDiv.append(d5.append(d5a,d5b));
+    });
+    $heroCard.append(upperDiv,middleDiv,lowerDiv);
+    //const lowestDiv = $("<div/>").addClass("heroExamineEquipmentSelector");
+}
+function statRow(name,value) {
+    const d1 = $("<div/>").addClass("heroExamineStatRow");
+    const d2 = $("<div/>").addClass("heroExamineStatRowName").html(name);
+    const d3 = $("<div/>").addClass("heroExamineStatRowValue").html(value);
+    return d1.append(d2,d3);
+}
 
 $(document).on('click', "div.heroOwnedCard", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
-    $heroCard.html(displayHeroCard(ID));
+    examineHero(ID);
 });
+
+
+
+
+
+/*function generateHeroIDList() {
+    //this is a list of all IDs the player doesn't own yet
+    const possibleIDs = Object.keys(heroBase);
+    const ownedIDs = [];
+    for (let i=0;i<heroProgress.length;i++) {
+        ownedIDs.push(heroProgress[i].id);
+    }
+    return possibleIDs.filter(x => !ownedIDs.includes(x));
+}*/

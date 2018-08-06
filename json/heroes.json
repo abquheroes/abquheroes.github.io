@@ -1,0 +1,74 @@
+[
+  {
+    "id": "H001",
+    "name": "Beorn",
+    "class": "Fighter",
+    "type": "Might"
+  },
+  {
+    "id": "H002",
+    "name": "Cedric",
+    "class": "Fighter",
+    "type": "Might"
+  },
+  {
+    "id": "H003",
+    "name": "Grim",
+    "class": "Fighter",
+    "type": "Might"
+  },
+  {
+    "id": "H004",
+    "name": "Lambug",
+    "class": "Fighter",
+    "type": "Might"
+  },
+  {
+    "id": "H101",
+    "name": "Zoe",
+    "class": "Caster",
+    "type": "Mind"
+  },
+  {
+    "id": "H102",
+    "name": "Neve",
+    "class": "Caster",
+    "type": "Mind"
+  },
+  {
+    "id": "H103",
+    "name": "Titus",
+    "class": "Caster",
+    "type": "Mind"
+  },
+  {
+    "id": "H104",
+    "name": "Troy",
+    "class": "Caster",
+    "type": "Mind"
+  },
+  {
+    "id": "H201",
+    "name": "Alok",
+    "class": "Thief",
+    "type": "Magic"
+  },
+  {
+    "id": "H202",
+    "name": "Grogmar",
+    "class": "Thief",
+    "type": "Magic"
+  },
+  {
+    "id": "H203",
+    "name": "Revere",
+    "class": "Thief",
+    "type": "Magic"
+  },
+  {
+    "id": "H204",
+    "name": "Claudia",
+    "class": "Thief",
+    "type": "Magic"
+  }
+]

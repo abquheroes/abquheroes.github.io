@@ -20,6 +20,7 @@ function afterLoad() {
     refreshResources();
     initializeRecipes();
     initializeActionSlots();
+    initializeHeroList();
 }
 
 loadMaterials(); //the others are loaded in order

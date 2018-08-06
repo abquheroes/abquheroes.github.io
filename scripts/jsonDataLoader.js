@@ -35,6 +35,19 @@ function loadWorkers() {
             const worker = new Worker(props);
             WorkerManager.addWorker(worker);
         });
+        loadHeroes();
+    });
+}
+
+function loadHeroes() {
+    $.ajax({
+        url: "json/heroes.json",
+    }).done((data) => {
+        console.log("hero load complete");
+        $.each(data, function(i,props){
+            const hero = new Hero(props);
+            HeroManager.addHero(hero);
+        });
         afterLoad();
     });
 }
