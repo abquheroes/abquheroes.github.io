@@ -20,9 +20,11 @@ const ResourceManager = {
         for (let i=0;i<this.materials.length;i++) {
             if (this.materials[i].id === res) {
                 this.materials[i].amt += amt;
-                return;
+                break;
             }
         }
+        refreshResources();
+        refreshWorkers();
     },
     canAfford(item) {
         for (const [resource, amt] of Object.entries(item.cost)) {
@@ -30,14 +32,7 @@ const ResourceManager = {
         }
         return true;
     },
-    deductCost(costs) {
-        if (!this.canAfford(costs)) return;
-        for (const [resource, amt] of Object.entries(costs)) {
-            this[resource] -= amt;
-        }
-    },
     materialIcon(type) {
-        console.log(type);
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
         return "<img src='/images/resources/"+type+".png' alt='"+type+"'>";
     },
@@ -53,10 +48,9 @@ const ResourceManager = {
     available(res,amt) {
         const item = recipeList.idToItem(res);
         if (item === undefined) {
-            if (!this.hasOwnProperty(res)) return false;
-            return this[res] >= amt;
+            return this.idToMaterial(res).amt >= amt;
         }
-        return Inventory.itemCount(res,0);
+        return Inventory.itemCount(res,0) >= amt;
     },
     resourceAvailable(res) {
         if (res[0] === "R") return Inventory
@@ -66,6 +60,19 @@ const ResourceManager = {
         const item = recipeList.idToItem(res);
         if (item === undefined) return res;
         return item.name;
+    },
+    deductUpgradeCosts(resArray) {
+        $.each(resArray, (id,amt) => {
+            const item = recipeList.idToItem(id);
+            if (item === undefined) this.idToMaterial(id).amt -= amt;
+            else Inventory.removeFromInventory(id,0,amt);
+        })
+    },
+    idToMaterial(matID) {
+        for (let i=0;i<this.materials.length;i++) {
+            if (this.materials[i].id === matID) return this.materials[i];
+        }
+        return null;
     }
 }
 

@@ -1,11 +1,10 @@
 $('#inventory').on("click",".inventoryItem",(e) => {
     e.preventDefault();
-    console.log("hellyeha");
     const id = $(e.target).attr("id");
     const rarity = $(e.target).attr("r");
-    let amt = player.sellPref;
+    let amt = player.sellPref || 1;
 //  if (e.shiftKey) amt = 100
-    Inventory.sellItem(id,rarity,1);
+    Inventory.sellItem(id,rarity,amt);
 })
 
 class itemContainer {
@@ -35,6 +34,7 @@ const Inventory = {
         }
         this.inv.push(new itemContainer(id,rarity,amt));
         refreshInventory();
+        refreshWorkers();
     },
     removeFromInventory(id,rarity,amt) {
         for (let i=0;i<this.inv.length;i++) {
@@ -47,7 +47,9 @@ const Inventory = {
     },
     sellItem(id,rarity,amt) {
         this.removeFromInventory(id,rarity,amt);
-        recipeList.sellItem(id,rarity);
+        const gold = recipeList.idToItem(id).value;
+        console.log(gold);
+        ResourceManager.addMaterial("M001",gold);
     },
     itemCount(id,rarity) {
         for (let i=0;i<this.inv.length;i++) {

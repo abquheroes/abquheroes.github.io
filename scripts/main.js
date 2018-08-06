@@ -18,6 +18,7 @@ function afterLoad() {
     refreshInventory(); //the others are loaded in order
     refreshWorkers();
     refreshResources();
+    initializeRecipes();
     initializeActionSlots();
 }
 

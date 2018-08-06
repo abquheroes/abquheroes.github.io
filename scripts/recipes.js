@@ -20,7 +20,7 @@ class Item{
         return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>";
     }
     imageValue() {
-        return ResourceManager.formatCost(Resources.GOLD,this.value);
+        return ResourceManager.formatCost("M001",this.value);
     }
     visualizeCost() {
         const d = $("<div/>").addClass("itemCost")
@@ -31,12 +31,8 @@ class Item{
         return d;
     }
     getCost(resource) {
-        console.log(this.cost);
         if (resource in this.cost) return this.cost[resource];
         return 0;
-    }
-    sellItem(rarity) {
-        ResourceManager.addResource("gold",this.value);
     }
 }
 
@@ -54,10 +50,6 @@ const recipeList = {
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
-    sellItem(id,rarity) {
-        console.log(id);
-        this.idToItem(id).sellItem(rarity);
-    }
 }
 
 function populateRecipe(type) {

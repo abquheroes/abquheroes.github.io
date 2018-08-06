@@ -3,7 +3,7 @@
 class Worker {
     constructor(props) {
         Object.assign(this, props);
-        this.lvl = 2;
+        this.lvl = 1;
         this.pic = '<img src="images/workers/'+this.name+'.gif">';
         this.owned = true;
     }
@@ -17,6 +17,30 @@ class Worker {
     thislvlreq() {
         return this.lvlreq[this.lvl];
     }
+    canUpgrade() {
+        let result = true;
+        $.each(this.thislvlreq(),(item,amt) => {
+            if (!ResourceManager.available(item,amt)) {
+                console.log("fail: ",item,amt);
+                result = false;
+            }
+        })
+        return result;
+    }
+    upgrade() {
+        if (!this.canUpgrade()) return;
+        console.log("we're upgrading!");
+        ResourceManager.deductUpgradeCosts(this.thislvlreq());
+        this.lvl += 1;
+        refreshWorkers();
+    }
+    productionText() {
+        let s = "Produces:&nbsp;&nbsp;";
+        $.each(this.production, (res,amt) => {
+            s += ResourceManager.materialIcon(res) + ","
+        })
+        return s.slice(0, -1)
+    }
 }
 
 const WorkerManager = {
@@ -28,12 +52,17 @@ const WorkerManager = {
         return this.workers.map(el=>el.produces(resource)).reduce((total,amt) => total + amt)
     },
     workerByID(id) {
-        for (let i=0;i<workers.length;i++) {
-            if (workers[i].id === id) return workers[i];
+        for (let i=0;i<this.workers.length;i++) {
+            if (this.workers[i].workerID === id) return this.workers[i];
         }
     },
     totalProduction(res) {
         return this.resourceCount(res);
+    },
+    upgrade(workerID) {
+        const worker = this.workerByID(workerID);
+        console.log(worker);
+        worker.upgrade();
     }
 }
 
@@ -44,52 +73,27 @@ function refreshWorkers() {
     WorkerManager.workers.forEach(worker => {
         const workerDiv = $('<div/>').addClass("Worker");
         const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
-        const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
-        const d3 = $('<div/>').addClass("itemSac");
+        const d2 = $("<div/>").addClass("WorkerName").html(worker.name + "&nbsp;&nbsp;(Lv&nbsp;" + worker.lvl + ")");
+        const d4 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
+        const d5 = $('<div/>').addClass("itemSac");
         if (!worker.maxlevel()) {
             for (const [res, amt] of Object.entries(worker.thislvlreq())) {
-                const d3a = $("<div/>").addClass("itemToSacDiv");
-                if (!ResourceManager.available(res,amt)) d3a.addClass("cantAfford");
+                const d5a = $("<div/>").addClass("itemToSacDiv");
+                if (!ResourceManager.available(res,amt)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
-                const d3b = $('<div/>').addClass("itemToSac tooltip").attr("worker",worker.workerID).attr("item",res).attr("aria-label",ResourceManager.name(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
-                d3.append(d3a.append(d3b));
+                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("aria-label",ResourceManager.name(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
+                d5.append(d5a.append(d5b));
             }
         }
-        $workers.append(workerDiv.append(d1,d2,d3))
+        const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
+        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable")
+        $workers.append(workerDiv.append(d1,d2,d4,d5,b1))
     });
 }
 
-$workers.on("click", ".BuyWorker", (e) => {
+$(document).on("click", ".WorkerUpgrade", (e) => {
+    console.log('trigger')
     e.preventDefault();
-    purchaseWorker($(e.target).attr("data-value"));
-    refreshWorkers();
-    refreshActionSlots(true);
-    refreshUpgrades();
-});
-
-function purchaseWorker(name) {
-    if (sacrificeCheck(name)) {
-        workerProgress[name] += 1;
-        ga('send', 'event', 'Workers', 'upgrade', name);
-    }
-}
-
-function sacrificeCheck(name) {
-    const worker = nameToWorker(name);
-    const lvl = workerProgress[name];
-    for (const [item,amt] of Object.entries(worker.lvlreq[lvl])) {
-        const slot = name+"_"+lvl+"_"+item;
-        if (amt - workerSacProgress[slot] >= 1) return false;
-    }
-    return true;
-}
-
-$(document).on("click", "a.itemToSac", (e) => {
-    e.preventDefault();
-    const slot = $(e.currentTarget).attr("href");
-    const itemName = $(e.currentTarget).attr("item");
-    let needed = $(e.currentTarget).attr("data-value");
-    if (e.shiftKey) needed = 1;
-    workerSacProgress[slot] += removeFromInventory(itemName,needed);
-    refreshWorkers();
+    const worker = $(e.currentTarget).attr("data-value");
+    WorkerManager.upgrade(worker);
 });

@@ -49,5 +49,11 @@ const devtools = {
         }
         if (negative) return "Negatove flow, but wtf here's it anyway " + profit.toFixed(3);
         return "gold per second: " + profit.toFixed(3);
+    },
+    addGold(amt) {
+        ResourceManager.addMaterial("M001",amt);
+    },
+    speed(amt) {
+        player.timeWarp = amt;
     }
 }
