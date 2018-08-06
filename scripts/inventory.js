@@ -65,7 +65,7 @@ function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
     Inventory.inv.forEach(item => {
-        const itemdiv = $("<div/>").addClass("inventoryItem").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        const itemdiv = $("<div/>").addClass("inventoryItem tooltip").attr("id",item.id).attr("r",item.rarity).html(item.picName);
         itemdiv.addClass("R"+item.rarity)
         const itemCt = $("<div/>").addClass("inventoryCount").html("x"+item.amt);
         itemdiv.append(itemCt);

@@ -236,6 +236,11 @@ body{
     align-items: center;
     position: relative;
     border-bottom: 1px solid var(--border);
+    flex-grow: 1;
+    color: var(--text);
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 60px 10px 30px;
 }
 
 .inventoryItem:first-of-type {
@@ -252,15 +257,7 @@ body{
     pointer-events: none;
 }
 
-.inventoryItem a {
-    flex-grow: 1;
-    color: var(--text);
-    font-size: 14px;
-    text-decoration: none;
-    padding: 10px 60px 10px 30px;
-}
-
-.inventoryItem a:hover {
+.inventoryItem:hover {
     background-color: var(--bg-2);
 }
 
@@ -712,30 +709,31 @@ input#importSaveText {
     background-image: url('../images/recipeFilter/Pendant32.png');
 }
 
-.recipeTable, .jobTable {
+.recipeTable {
     width: 100%;
 }
 
-.recipeHeader, .jobHeader {
+.recipeHeader {
     background-color: var(--bg);
     height: 40px;
     border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
-.recipeHeader, .recipeRow, .jobHeader, .jobRow {
+.recipeHeader, .recipeRow{
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     min-height: 40px;
 }
 
-.recipeRow:nth-of-type(odd), .jobRow:nth-of-type(odd) {
+.recipeRow:nth-of-type(odd) {
     background-color: var(--bg);
 }
 
-.recipeRow:hover, .jobRow:hover {
+.recipeRow:hover {
     background-color: var(--border);
 }
 
@@ -743,23 +741,27 @@ input#importSaveText {
     display: flex;
     align-items: center;
     width: 100%;
-    min-width: 200px;
-    max-width: 300px;
+    min-width: 300px;
     padding-left: 10px;
 }
 
 .recipeHeadName {
     padding-left: 15px;
+    max-width: 300px;
+}
+
+.recipeName {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    cursor: pointer;
 }
 
 .recipeName>img {
     max-height: 16px;
     margin-left: 5px;
-}
-
-.recipeName>a {
-    flex-grow: 1;
-    padding: 10px 5px;
 }
 
 .unlockReq {
@@ -791,6 +793,7 @@ input#importSaveText {
 .recipecostdiv {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 300px;
 }
 
 .indvCost {
@@ -1450,7 +1453,7 @@ span#copyme {
     pointer-events: none;
 }
 
-.inventoryItem a.tooltip:hover:after {
+.inventoryItem.tooltip:hover:after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1463,7 +1466,7 @@ span#copyme {
     z-index: 2;
 }
 
-.inventoryItem a.tooltip:hover:before {
+.inventoryItem.tooltip:hover:before {
     display: none;
 }
 
@@ -1806,6 +1809,15 @@ a.workerDialog:hover {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
     }
 }
 
