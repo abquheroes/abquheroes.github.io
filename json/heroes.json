@@ -3,72 +3,252 @@
     "id": "H001",
     "name": "Beorn",
     "class": "Fighter",
-    "type": "Might"
+    "type": "Might",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H002",
     "name": "Cedric",
     "class": "Fighter",
-    "type": "Might"
+    "type": "Might",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H003",
     "name": "Grim",
     "class": "Fighter",
-    "type": "Might"
+    "type": "Might",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H004",
     "name": "Lambug",
     "class": "Fighter",
-    "type": "Might"
+    "type": "Might",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H101",
     "name": "Zoe",
     "class": "Caster",
-    "type": "Mind"
+    "type": "Mind",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H102",
     "name": "Neve",
     "class": "Caster",
-    "type": "Mind"
+    "type": "Mind",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H103",
     "name": "Titus",
     "class": "Caster",
-    "type": "Mind"
+    "type": "Mind",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H104",
     "name": "Troy",
     "class": "Caster",
-    "type": "Mind"
+    "type": "Mind",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H201",
     "name": "Alok",
     "class": "Thief",
-    "type": "Magic"
+    "type": "Magic",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H202",
     "name": "Grogmar",
     "class": "Thief",
-    "type": "Magic"
+    "type": "Magic",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H203",
     "name": "Revere",
     "class": "Thief",
-    "type": "Magic"
+    "type": "Magic",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   },
   {
     "id": "H204",
     "name": "Claudia",
     "class": "Thief",
-    "type": "Magic"
+    "type": "Magic",
+    "slot1Type": [
+      "Knives",
+      "Maces",
+      "Axes",
+      "Wands"
+    ],
+    "slot2Type": [
+      "Hats",
+      "Helmets",
+      "Armor"
+    ],
+    "slot3Type": [
+      "Wards",
+      "Pendants"
+    ]
   }
 ]

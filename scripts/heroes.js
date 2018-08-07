@@ -17,14 +17,11 @@ class Hero {
         this.critdmg = 2;
         this.dodgeChance = 0;
         //this.target = TargetType.FIRST;
-        this.slot1Type = [ItemType.KNIFE,ItemType.MACE,ItemType.AXE,ItemType.WAND];
-        this.slot2Type = [ItemType.HAT,ItemType.HELMET,ItemType.ARMOR];
-        this.slot3Type = [ItemType.WARD,ItemType.PENDANT];
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
         this.image = '<img src="images/heroes/'+this.id+'.gif">';
-        this.head = '<img src="images/heroes/head/'+"oren"+'head.png">';
+        this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = true;
     }
     power() {
@@ -85,9 +82,9 @@ class Hero {
     getEquipSlots() {
         //return an object with 
         const equip = {};
-        equip["HEAD"] = this.slot1 || "Empty";
-        equip["WEAPON"] = this.slot2 || "Empty";
-        equip["FEET"] = this.slot3 || "Empty";
+        equip["WEAPON"] = this.slot1 || "Empty";
+        equip["ARMOR"] = this.slot2 || "Empty";
+        equip["ACCESSORY"] = this.slot3 || "Empty";
         return equip;
     }
 }
@@ -121,12 +118,12 @@ function initializeHeroList() {
     HeroManager.ownAllHeroes();
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
-        const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.image);
+        const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
         const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
         d.append(d1,d2);
         if (!hero.owned) d.hide();
         $heroList.append(d);
-    })
+    });
 }
 
 function refreshHeroes() {
@@ -148,21 +145,21 @@ const $heroCard = $("#heroCard");
 function examineHero(ID) {
     const hero = HeroManager.idToHero(ID);
     $heroCard.empty();
-    const upperDiv = $("<div/>").addClass("heroExamineTop");
+    const upperLeftDiv = $("<div/>").addClass("heroExamineTop");
     const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
     const d4 = $("<div/>").addClass("heroExamineExp").html("Exp: "+hero.xp);
-    upperDiv.append(d1,d2,d3,d4);
-    const middleDiv = $("<div/>").addClass("heroExamineStats");
+    upperLeftDiv.append(d1,d2,d3,d4);
+    const upperRightDive = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
     const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
-    middleDiv.append(htd.append(htd1,htd2));
+    upperRightDive.append(htd.append(htd1,htd2));
     const stats = [hero.hpmax,hero.pow, hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
-        middleDiv.append(statRow(statName[i],stats[i]));
+        upperRightDive.append(statRow(statName[i],stats[i]));
     }
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
@@ -170,10 +167,11 @@ function examineHero(ID) {
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmanetSlot").html(slotName);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
-        lowerDiv.append(d5.append(d5a,d5b));
+        const d6 = $("<div/>").addClass("heroExamineEquipmentList");
+        lowerDiv.append(d5.append(d5a,d5b),d6);
     });
-    $heroCard.append(upperDiv,middleDiv,lowerDiv);
-    //const lowestDiv = $("<div/>").addClass("heroExamineEquipmentSelector");
+    $heroCard.append(upperLeftDiv,upperRightDive,lowerDiv);
+    $heroEquipmentList.empty();
 }
 
 function statRow(name,value) {
@@ -198,16 +196,25 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     displayEquipChoices(heroID,slot);
 });
 
+const $heroEquipmentList = $("#heroEquipmentList");
 
-
-
-
-/*function generateHeroIDList() {
-    //this is a list of all IDs the player doesn't own yet
-    const possibleIDs = Object.keys(heroBase);
-    const ownedIDs = [];
-    for (let i=0;i<heroProgress.length;i++) {
-        ownedIDs.push(heroProgress[i].id);
-    }
-    return possibleIDs.filter(x => !ownedIDs.includes(x));
-}*/
+function examineHeroPossibleEquip() {
+    $heroEquipmentList.empty();
+    //cycle through everything in bp's and make the div for it
+    const table = $('<div/>').addClass('recipeTable');
+    const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
+    const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
+    const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
+    const htd4 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
+    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4);
+    table.append(hrow);
+    recipeList.recipes.forEach((recipe) => {
+        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
+        const td2 = $('<div/>').addClass('recipecostdiv').html(recipe.visualizeCost());
+        const td3 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+        const td4 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
+        const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4);
+        table.append(row);
+    });
+    $RecipeResults.append(table);
+}
