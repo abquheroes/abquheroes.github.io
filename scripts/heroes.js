@@ -167,7 +167,7 @@ function examineHero(ID) {
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
     $.each(slots, (slotName,equip) => {
-        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName);
+        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmanetSlot").html(slotName);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
         lowerDiv.append(d5.append(d5a,d5b));
@@ -175,6 +175,7 @@ function examineHero(ID) {
     $heroCard.append(upperDiv,middleDiv,lowerDiv);
     //const lowestDiv = $("<div/>").addClass("heroExamineEquipmentSelector");
 }
+
 function statRow(name,value) {
     const d1 = $("<div/>").addClass("heroExamineStatRow");
     const d2 = $("<div/>").addClass("heroExamineStatRowName").html(name);
@@ -188,6 +189,13 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
     examineHero(ID);
+});
+
+$(document).on('click', "div.heroExamineEquipment", (e) => {
+    e.preventDefault();
+    const slot = $(e.currentTarget).attr("data-value");
+    const heroID = $(e.currentTarget).attr("heroID");
+    displayEquipChoices(heroID,slot);
 });
 
 
