@@ -165,7 +165,7 @@ function examineHero(ID) {
     const slots = hero.getEquipSlots();
     $.each(slots, (slotName,equip) => {
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName).attr("heroID",ID);
-        const d5a = $("<div/>").addClass("heroExamineEquipmanetSlot").html(slotName);
+        const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);

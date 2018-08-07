@@ -809,7 +809,7 @@ input#importSaveText {
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist, #progresslist, #ticketShop, #heroCard {
+#workerList, #upgradelist, #progresslist, #ticketShop {
     padding: 20px;
 }
 
@@ -1144,11 +1144,11 @@ input#importSaveText {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    padding: 20px;
+    max-width: 300px;
     overflow: auto;
 }
 
-.heroOwnedCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard {
+.dungeonTeamCard, .dungeonAvailableCard, .drHeroCard {
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
@@ -1161,6 +1161,17 @@ input#importSaveText {
     margin: 1px;
 }
 
+.heroOwnedCard {
+    display: flex;
+    background-color: var(--bg);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
 .heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
     background-color: var(--bg-2);
     cursor: pointer;
@@ -1170,13 +1181,53 @@ input#importSaveText {
     background: var(--bg-3);
 }
 
+.heroOwnedName {
+    flex: 1;
+}
+
 #heroCard {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
     background-color: var(--bg);
     border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    margin-bottom: -1px;
-    min-width: 400px;
-    overflow: auto;
+}
+
+.heroExamineTop, .heroExamineStats, .heroExamineEquip {
+    padding: 20px;
+}
+
+.heroExamineTop, .heroExamineStats {
+    flex: 1;
+}
+
+.heroExamineStats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+}
+
+.heroExamineHeading {
+    display: none;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.heroExamineStatRow {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
+    margin: 3px;
+    padding: 10px;
+}
+
+.heroExamineEquip {
+    width: 100%; /* temp styling until complete */
 }
 
 #dungeon-container {
