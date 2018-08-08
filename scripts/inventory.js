@@ -7,6 +7,8 @@ $('#inventory').on("click",".inventoryItem",(e) => {
     Inventory.sellItem(id,rarity,amt);
 })
 
+let containerid = 0;
+
 class itemContainer {
     constructor(id,rarity) {
         this.id = id;
@@ -16,6 +18,8 @@ class itemContainer {
         this.picName = this.item.itemPicName();
         this.rarity = rarity;
         this.amt = 1;
+        this.containerID = containerid;
+        containerid += 1;
     }
     match(id,rarity) {
         return id+rarity === this.id + this.rarity;
@@ -62,10 +66,22 @@ const Inventory = {
         const filtered = [];
         this.inv.forEach(item => {
             if (types.includes(item.type)) {
-                filtered.push(item.id);
+                filtered.push(item);
             }
         });
         return filtered;
+    },
+    equipItem(containerID) {
+        for (let i=0;i<this.inv.length;i++) {
+            console.log(typeof(containerID));
+            console.log(typeof(this.inv[i].containerID));
+            if (this.inv[i].containerID === containerID) {
+                const id = this.inv[i].id;
+                const rarity = this.inv[i].rarity;
+                this.removeFromInventory(id,rarity,1);
+                return new itemContainer(id,rarity);
+            }
+        }
     }
 }
 

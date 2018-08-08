@@ -87,6 +87,12 @@ class Hero {
         equip["ACCESSORY"] = this.slot3 || "Empty";
         return equip;
     }
+    equip(item) {
+        const type = item.type;
+        if (this.slot1Type.includes(type)) this.slot1 = item;
+        else if (this.slot2Type.includes(type)) this.slot2 = item;
+        else if (this.slot3Type.includes(type)) this.slot3 = item;
+    }
 }
 
 const HeroManager = {
@@ -108,6 +114,13 @@ const HeroManager = {
             if (this.heroes[i].id === ID) return this.heroes[i];
         }
         return null;
+    },
+    equipItem(containerID,heroID) {
+        console.log(heroID);
+        const item = Inventory.equipItem(containerID);
+        console.log(item);
+        const hero = this.idToHero(heroID);
+        hero.equip(item);
     }
 
 }
@@ -182,6 +195,7 @@ function statRow(name,value) {
 }
 
 $(document).on('click', "div.heroOwnedCard", (e) => {
+    //pop up the detailed character card
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
     $(".heroOwnedCard").removeClass("highlight");
@@ -190,15 +204,32 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
 });
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
+    //select an item type to 
     e.preventDefault();
     const slot = $(e.currentTarget).attr("data-value");
     const heroID = $(e.currentTarget).attr("heroID");
-    examineHeroPossibleEquip(["Knives"]);
+    examineHeroPossibleEquip(["Knives"],heroID);
+    
+});
+
+$(document).on('click', "div.EHPErow", (e) => {
+    //equip the clicked item
+    e.preventDefault();
+    const heroID = $(e.currentTarget).attr("heroID");
+    const itemCOntainerID = parseInt($(e.currentTarget).attr("id"));
+    HeroManager.equipItem(itemCOntainerID,heroID);
 });
 
 const $heroEquipmentList = $("#heroEquipmentList");
 
-function examineHeroPossibleEquip(types) {
+let filterTypeCache = null;
+let filterIDCache = null;
+
+function examineHeroPossibleEquip(types,heroID) {
+    types = types || filterTypeCache;
+    heroID = heroID || filterIDCache;
+    filterTypeCache = types;
+    filterIDCache = heroID;
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
@@ -206,12 +237,10 @@ function examineHeroPossibleEquip(types) {
     const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2);
     table.append(hrow);
-    console.log(Inventory.listbyType(types))
-    Inventory.listbyType(types).forEach((itemID) => {
-        const item = recipeList.idToItem(itemID);
-        const td1 = $('<div/>').addClass('EHPEname').html(item.itemPicName());
+    Inventory.listbyType(types).forEach((itemContainer) => {
+        const td1 = $('<div/>').addClass('EHPEname').html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html("5");
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemID).append(td1,td2);
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2);
         table.append(row);
     });
     $heroEquipmentList.append(table);
