@@ -193,28 +193,26 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("data-value");
     const heroID = $(e.currentTarget).attr("heroID");
-    displayEquipChoices(heroID,slot);
+    examineHeroPossibleEquip(["Knives"]);
 });
 
 const $heroEquipmentList = $("#heroEquipmentList");
 
-function examineHeroPossibleEquip() {
+function examineHeroPossibleEquip(types) {
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
-    const table = $('<div/>').addClass('recipeTable');
-    const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
-    const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
-    const htd4 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4);
+    const table = $('<div/>').addClass('EHPE');
+    const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
+    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
+    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2);
     table.append(hrow);
-    recipeList.recipes.forEach((recipe) => {
-        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipecostdiv').html(recipe.visualizeCost());
-        const td3 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
-        const td4 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4);
+    console.log(Inventory.listbyType(types))
+    Inventory.listbyType(types).forEach((itemID) => {
+        const item = recipeList.idToItem(itemID);
+        const td1 = $('<div/>').addClass('EHPEname').html(item.itemPicName());
+        const td2 = $('<div/>').addClass('EHPEstat').html("5");
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemID).append(td1,td2);
         table.append(row);
     });
-    $RecipeResults.append(table);
-}
+    $heroEquipmentList.append(table);
+};

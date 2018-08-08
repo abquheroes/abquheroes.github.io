@@ -12,6 +12,7 @@ class itemContainer {
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
+        this.type = this.item.type;
         this.picName = this.item.itemPicName();
         this.rarity = rarity;
         this.amt = 1;
@@ -56,6 +57,15 @@ const Inventory = {
             if (this.inv[i].match(id,rarity)) return this.inv[i].amt;
         }
         return 0;
+    },
+    listbyType(types) {
+        const filtered = [];
+        this.inv.forEach(item => {
+            if (types.includes(item.type)) {
+                filtered.push(item.id);
+            }
+        });
+        return filtered;
     }
 }
 
