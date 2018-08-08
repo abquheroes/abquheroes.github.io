@@ -86,7 +86,7 @@ function refreshResources() {
         $resources.append(d);
     });
     ResourceManager.materials.map(m => m.id).forEach(material => {
-        const d = $("<div/>").addClass("resource tooltip").attr("id",material.id).html(ResourceManager.output(material));
+        const d = $("<div/>").addClass("resource").attr("id",material.id).html(ResourceManager.output(material));
         $resources.append(d);
     })
 }
