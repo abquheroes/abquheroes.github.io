@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -81,7 +81,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -833,7 +833,7 @@ input#importSaveText {
     text-align: center;
 }
 
-.upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .workerLvl, .InitialCost, .TicketName {
+.upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost, .TicketName {
     font-size: .9em;
 }
 
@@ -858,6 +858,10 @@ input#importSaveText {
     margin-bottom: 10px;
 }
 
+.WorkerImage {
+    margin-top: 25px;
+}
+
 .WorkerDesc {
     color: var(--text-3);
     text-align: center;
@@ -874,7 +878,19 @@ input#importSaveText {
     margin: 0 0 10px 0;
 }
 
-.workerLvl, .upgradeLvl {
+.WorkerLvl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--scheme);
+    border-bottom: 1px solid var(--border);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.upgradeLvl {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -935,7 +951,7 @@ input#importSaveText {
     width: 100%;
 }
 
-.Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
+.Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
     display: block;
     padding: 10px;
     border: none;
@@ -947,7 +963,7 @@ input#importSaveText {
     cursor: pointer;
 }
 
-.Upgrade .BuyUpgrade, .TicketCard .buyTicket {
+.Upgrade .BuyUpgrade, .WorkerUpgrade, .TicketCard .buyTicket {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -970,7 +986,7 @@ input#importSaveText {
     margin-right: 1px;
 }
 
-.Worker .BuyWorker:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
+.Worker .BuyWorker:hover, .WorkerUpgrade:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
     background-color: var(--bg-2);
 }
 
@@ -1561,12 +1577,12 @@ span#copyme {
     padding: 5px 10px;
 }
 
-.workerLvl.tooltip:hover:before, .upgradeLvl.tooltip:hover:before {
+.upgradeLvl.tooltip:hover:before {
     margin-top: -28px;
     margin-right: -8px;
 }
 
-.workerLvl.tooltip:hover:after, .upgradeLvl.tooltip:hover:after {
+.upgradeLvl.tooltip:hover:after {
     font-weight: normal;
     top: unset;
     left: -45%;
@@ -1618,10 +1634,6 @@ footer a[href*="discord.gg"]:hover {
 @-moz-document url-prefix() { 
     .resource.tooltip:hover:before {
         margin-top: -37px;
-    }
-
-    .workerLvl.tooltip:hover::before {
-        margin-top: -53px;
     }
 
     #workerList, #upgradelist, #progresslist {
