@@ -87,7 +87,7 @@ function refreshWorkers() {
             }
         }
         const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
-        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable")
+        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("aria-label","You must first contribute the items above by clicking on them.")
         $workers.append(workerDiv.append(d1,d2,d3,d4,d5,b1))
     });
 }

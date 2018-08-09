@@ -990,12 +990,12 @@ input#importSaveText {
     background-color: var(--bg-2);
 }
 
-.BuyWorker.workerDisable, .BuyUpgrade.upgradeDisable {
+.BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
     color: #c90000;
     background-color: rgba(255, 0, 0, 0.10);
 }
 
-.BuyWorker.workerDisable:hover, .BuyUpgrade.upgradeDisable:hover {
+.BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover, .BuyUpgrade.upgradeDisable:hover {
     color: #c90000;
     background-color: rgba(255, 0, 0, 0.10);
     cursor: not-allowed;
@@ -1593,7 +1593,7 @@ span#copyme {
     z-index: 999;
 }
 
-.BuyWorker.tooltip:hover:after, .BuyUpgrade.tooltip:hover:after {
+.BuyWorker.tooltip:hover:after, .WorkerUpgrade.workerUpgradeDisable:hover:after, .BuyUpgrade.tooltip:hover:after {
     top: unset;
     left: -50%;
     right: -50%;
