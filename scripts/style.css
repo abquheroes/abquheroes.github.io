@@ -649,64 +649,124 @@ input#importSaveText {
     vertical-align: middle;
 }
 
-#RecipeFilter a[href="KnifeSelector"]:before {
-    background-image: url('../images/recipeFilter/Knife32.png');
-}
-
 #RecipeFilter a[href="MaceSelector"]:before {
-   background-image: url('../images/recipeFilter/Club32.png');
+    background-image: url('../images/recipeFilter/Maces32.png');
 }
-
-#RecipeFilter a[href="GloveSelector"]:before {
-    background-image: url('../images/recipeFilter/glove32.png');
-}
-
-#RecipeFilter a[href="PotionSelector"]:before {
-    background-image: url('../images/recipeFilter/Potion32.png');
-}
-
+    
 #RecipeFilter a[href="AxeSelector"]:before {
-    background-image: url('../images/recipeFilter/Axe32.png');
+    background-image: url('../images/recipeFilter/Axes32.png');
 }
 
-#RecipeFilter a[href="HatSelector"]:before {
-    background-image: url('../images/recipeFilter/Hat32.png');
+#RecipeFilter a[href="SpearSelector"]:before {
+    background-image: url('../images/recipeFilter/Spears32.png');
+}
+
+#RecipeFilter a[href="RodSelector"]:before {
+    background-image: url('../images/recipeFilter/Rods32.png');
 }
 
 #RecipeFilter a[href="WandSelector"]:before {
-    background-image: url('../images/recipeFilter/Wand32.png');
+    background-image: url('../images/recipeFilter/Wands32.png');
+}
+
+#RecipeFilter a[href="StaffSelector"]:before {
+    background-image: url('../images/recipeFilter/Staves32.png');
+}
+
+#RecipeFilter a[href="KnifeSelector"]:before {
+    background-image: url('../images/recipeFilter/Knives32.png');
+}
+
+#RecipeFilter a[href="BowSelector"]:before {
+    background-image: url('../images/recipeFilter/Bows32.png');
+}
+
+#RecipeFilter a[href="WhipSelector"]:before {
+    background-image: url('../images/recipeFilter/Whips32.png');
+}
+
+#RecipeFilter a[href="HelmetSelector"]:before {
+    background-image: url('../images/recipeFilter/Helmets32.png');
+}
+
+#RecipeFilter a[href="HatSelector"]:before {
+    background-image: url('../images/recipeFilter/Hats32.png');
+}
+
+#RecipeFilter a[href="MaskSelector"]:before {
+    background-image: url('../images/recipeFilter/Masks32.png');
 }
 
 #RecipeFilter a[href="GauntletSelector"]:before {
     background-image: url('../images/recipeFilter/Gauntlets32.png');
 }
 
-#RecipeFilter a[href="HelmetSelector"]:before {
-    background-image: url('../images/recipeFilter/helmet32.png');
+#RecipeFilter a[href="GloveSelector"]:before {
+    background-image: url('../images/recipeFilter/Gloves32.png');
 }
 
 #RecipeFilter a[href="ShoeSelector"]:before {
     background-image: url('../images/recipeFilter/Shoes32.png');
 }
 
-#RecipeFilter a[href="WardSelector"]:before {
-    background-image: url('../images/recipeFilter/Ward32.png');
-}
-
-#RecipeFilter a[href="ShieldSelector"]:before {
-    background-image: url('../images/recipeFilter/Shield32.png');
-}
-
-#RecipeFilter a[href="CloakSelector"]:before {
-    background-image: url('../images/recipeFilter/Cloak32.png');
-}
-
 #RecipeFilter a[href="ArmorSelector"]:before {
     background-image: url('../images/recipeFilter/Armor32.png');
 }
 
+#RecipeFilter a[href="CloakSelector"]:before {
+    background-image: url('../images/recipeFilter/Cloaks32.png');
+}
+
+#RecipeFilter a[href="VestSelector"]:before {
+    background-image: url('../images/recipeFilter/Vests32.png');
+}
+
+#RecipeFilter a[href="ShieldSelector"]:before {
+    background-image: url('../images/recipeFilter/Shields32.png');
+}
+
+#RecipeFilter a[href="WardSelector"]:before {
+    background-image: url('../images/recipeFilter/Wards32.png');
+}
+
+#RecipeFilter a[href="ThrownSelector"]:before {
+    background-image: url('../images/recipeFilter/Thrown32.png');
+}
+
+#RecipeFilter a[href="OffhandSelector"]:before {
+    background-image: url('../images/recipeFilter/Offhand32.png');
+}
+
+#RecipeFilter a[href="TomeSelector"]:before {
+    background-image: url('../images/recipeFilter/Tomes32.png');
+}
+
+#RecipeFilter a[href="DartSelector"]:before {
+    background-image: url('../images/recipeFilter/Darts32.png');
+}
+
+#RecipeFilter a[href="PotionSelector"]:before {
+    background-image: url('../images/recipeFilter/Potions32.png');
+}
+
 #RecipeFilter a[href="PendantSelector"]:before {
-    background-image: url('../images/recipeFilter/Pendant32.png');
+    background-image: url('../images/recipeFilter/Pendants32.png');
+}
+
+#RecipeFilter a[href="RingSelector"]:before {
+    background-image: url('../images/recipeFilter/Rings32.png');
+}
+
+#RecipeFilter a[href="InstrumentSelector"]:before {
+    background-image: url('../images/recipeFilter/Instruments32.png');
+}
+
+#RecipeFilter a[href="BeltSelector"]:before {
+    background-image: url('../images/recipeFilter/Belts32.png');
+}
+
+#RecipeFilter a[href="EarringSelector"]:before {
+    background-image: url('../images/recipeFilter/Earrings32.png');
 }
 
 .recipeTable {

@@ -21,7 +21,6 @@ class Worker {
         let result = true;
         $.each(this.thislvlreq(),(item,amt) => {
             if (!ResourceManager.available(item,amt)) {
-                console.log("fail: ",item,amt);
                 result = false;
             }
         })
