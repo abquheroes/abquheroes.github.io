@@ -73,7 +73,8 @@ function refreshWorkers() {
     WorkerManager.workers.forEach(worker => {
         const workerDiv = $('<div/>').addClass("Worker");
         const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
-        const d2 = $("<div/>").addClass("WorkerName").html(worker.name + "&nbsp;&nbsp;(Lv&nbsp;" + worker.lvl + ")");
+        const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
+        const d3 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
         const d4 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
         const d5 = $('<div/>').addClass("itemSac");
         if (!worker.maxlevel()) {
@@ -86,8 +87,8 @@ function refreshWorkers() {
             }
         }
         const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
-        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable")
-        $workers.append(workerDiv.append(d1,d2,d4,d5,b1))
+        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("aria-label","You must first contribute the items above by clicking on them.")
+        $workers.append(workerDiv.append(d1,d2,d3,d4,d5,b1))
     });
 }
 
