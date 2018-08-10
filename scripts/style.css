@@ -865,6 +865,11 @@ input#importSaveText {
     text-align: left;
 }
 
+.indvCost, .recipeValue {
+    display: flex;
+    align-items: center;
+}
+
 #workerList, #joblist, #upgradelist, #ticketShop {
     display: flex;
     flex-wrap: wrap;
