@@ -20,6 +20,9 @@ class Hero {
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
+        this.slot4 = null;
+        this.slot5 = null;
+        this.slot6 = null;
         this.image = '<img src="images/heroes/'+this.id+'.gif">';
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = true;
@@ -89,6 +92,10 @@ class Hero {
         else if (this.slot2Type.includes(type)) this.slot2 = item;
         else if (this.slot3Type.includes(type)) this.slot3 = item;
     }
+    slotTypesByNum(num) {
+        const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
+        return slots[num];
+    }
 }
 
 const HeroManager = {
@@ -112,13 +119,14 @@ const HeroManager = {
         return null;
     },
     equipItem(containerID,heroID) {
-        console.log(heroID);
         const item = Inventory.equipItem(containerID);
-        console.log(item);
         const hero = this.idToHero(heroID);
         hero.equip(item);
+    },
+    getSlotTypes(slot,heroID) {
+        const hero = this.idToHero(heroID);
+        return hero.slotTypesByNum(slot);
     }
-
 }
 
 const $heroList = $("#heroList");
@@ -174,10 +182,12 @@ function examineHero(ID) {
     const slots = hero.getEquipSlots();
     const slotName = ["Weapon:&nbsp;","Head:&nbsp;","Armament:&nbsp;","Chest:&nbsp;","Handheld:&nbsp;","Accessory:&nbsp;"]
     $.each(slots, (slotNum,equip) => {
-        equip = equip || "Empty";
+        console.log(slotNum,equip);
+        let equipText = "Empty"
+        if (equip !== null) equipText = equip.picName;
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
-        const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
+        const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equipText);
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
@@ -216,18 +226,20 @@ $(document).on('click', "div.EHPErow", (e) => {
     const heroID = $(e.currentTarget).attr("heroID");
     const itemCOntainerID = parseInt($(e.currentTarget).attr("id"));
     HeroManager.equipItem(itemCOntainerID,heroID);
+    examineHero(heroID);
 });
 
 const $heroEquipmentList = $("#heroEquipmentList");
 
-let filterTypeCache = null;
+let filterSlotCache = null;
 let filterIDCache = null;
 
 function examineHeroPossibleEquip(slot,heroID) {
-    types = types || filterTypeCache;
+    slot = slot || filterSlotCache;
     heroID = heroID || filterIDCache;
-    filterTypeCache = types;
+    filterSlotCache = slot;
     filterIDCache = heroID;
+    const types = HeroManager.getSlotTypes(slot,heroID);
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
@@ -235,6 +247,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2);
     table.append(hrow);
+    console.log(types);
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html("5");
