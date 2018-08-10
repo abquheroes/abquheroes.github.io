@@ -822,7 +822,8 @@ input#importSaveText {
 }
 
 .recipeName>img {
-    margin-left: 5px;
+    margin-right: 5px;
+    height: 28px;
 }
 
 .unlockReq {
@@ -949,9 +950,8 @@ input#importSaveText {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--scheme);
-    border-bottom: 1px solid var(--border);
-    color: white;
+    background: #10442d;
+    color: #11dc82;
     text-align: center;
     padding: 5px;
 }
@@ -1004,6 +1004,10 @@ input#importSaveText {
     position: relative;
     min-width: 20%;
     margin: 0 2px;
+}
+
+.itemToSac>img {
+    height: 20px;
 }
 
 .Worker .itemToSac {
@@ -1572,7 +1576,7 @@ span#copyme {
     left: -100%;
     right: -100%;
     margin-top: -4px;
-    content: attr(aria-label);
+    content: attr(data-tooltip);
     background-color: #000;
     color: #fff;
     border: 1px solid #000;
@@ -1617,12 +1621,11 @@ span#copyme {
 }
 
 .indvCost.tooltip:hover:after {
-    margin-top: -15px;
     bottom: 150%;
     top: unset;
 }
 .indvCost.tooltip:hover:before {
-    margin-top: -10px;
+    margin-top: -12px;
     margin-right: -12px;
 }
 

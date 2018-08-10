@@ -87,7 +87,7 @@ function refreshUpgrades() {
         const d1 = $("<div/>").addClass("upgradeImage").html(upgradeImageReference[upgrades[i].name]);
         const d2 = $('<div/>').addClass('upgradeName').html("<h3>"+upgrades[i].name+"</h3>");
         const d3 = $('<div/>').addClass('upgradeDesc').html(upgrades[i].description);
-        const d4 = $("<div/>").addClass("upgradeLvl tooltip").html(lvl).attr("aria-label", "Upgrade Level");
+        const d4 = $("<div/>").addClass("upgradeLvl tooltip").html(lvl).attr("data-tooltip", "Upgrade Level");
         const d5 = $("<div/>").addClass("upgradeLvlDesc").html("");
         if (lvl !== upgrades[i].value.length-1) {
             const delta = upgrades[i].value[lvl+1] - upgrades[i].value[lvl]
@@ -97,7 +97,7 @@ function refreshUpgrades() {
         if (lvl === 0) d4.addClass("hidden");
         const d6 = $('<div/>').addClass('upgradeCost').html("Cost:&nbsp;&nbsp;&nbsp;"+imageReference["Gold"]+"&nbsp;&nbsp;"+formatToUnits(upgrades[i].cost[lvl],2));
         const b1 = $("<button/>").addClass("BuyUpgrade").attr("id",upgrades[i].name).html("PURCHASE");
-        if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable tooltip").attr("aria-label", "You do not have enough Gold to purchase this upgrade.");
+        if (player.money < upgrades[i].cost[lvl]) b1.addClass("upgradeDisable tooltip").attr("data-tooltip", "You do not have enough Gold to purchase this upgrade.");
         if (lvl === upgrades[i].value.length-1) {
             d6.addClass("hidden");
             b1.addClass("hidden");

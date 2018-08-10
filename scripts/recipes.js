@@ -26,7 +26,7 @@ class Item{
         const d = $("<div/>").addClass("itemCost")
         for (const [resource, amt] of Object.entries(this.cost)) {
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-            d.append($("<div/>").addClass("indvCost tooltip").attr("aria-label",resourceNameForTooltips).html(ResourceManager.formatCost(resource,amt)));
+            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.formatCost(resource,amt)));
         }
         return d;
     }

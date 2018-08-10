@@ -81,12 +81,12 @@ function refreshWorkers() {
                 const d5a = $("<div/>").addClass("itemToSacDiv");
                 if (!ResourceManager.available(res,amt)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
-                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("aria-label",ResourceManager.name(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
+                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.name(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
                 d5.append(d5a.append(d5b));
             }
         }
         const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
-        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("aria-label","You must first contribute the items above by clicking on them.")
+        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
         $workers.append(workerDiv.append(d1,d2,d3,d4,d5,b1))
     });
 }
