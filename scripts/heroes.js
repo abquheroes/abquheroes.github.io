@@ -81,11 +81,7 @@ class Hero {
     }
     getEquipSlots() {
         //return an object with 
-        const equip = {};
-        equip["WEAPON"] = this.slot1 || "Empty";
-        equip["ARMOR"] = this.slot2 || "Empty";
-        equip["ACCESSORY"] = this.slot3 || "Empty";
-        return equip;
+        return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
     }
     equip(item) {
         const type = item.type;
@@ -176,9 +172,11 @@ function examineHero(ID) {
     }
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
-    $.each(slots, (slotName,equip) => {
-        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotName).attr("heroID",ID);
-        const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName);
+    const slotName = ["Weapon:&nbsp;","Head:&nbsp;","Armament:&nbsp;","Chest:&nbsp;","Handheld:&nbsp;","Accessory:&nbsp;"]
+    $.each(slots, (slotNum,equip) => {
+        equip = equip || "Empty";
+        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
+        const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equip);
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
@@ -204,12 +202,12 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
 });
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
-    //select an item type to 
+    //select an item type to display what you can equip
     e.preventDefault();
     const slot = $(e.currentTarget).attr("data-value");
     const heroID = $(e.currentTarget).attr("heroID");
-    examineHeroPossibleEquip(["Knives"],heroID);
-    
+    console.log(slot,heroID);
+    examineHeroPossibleEquip(slot,heroID);
 });
 
 $(document).on('click', "div.EHPErow", (e) => {
@@ -225,7 +223,7 @@ const $heroEquipmentList = $("#heroEquipmentList");
 let filterTypeCache = null;
 let filterIDCache = null;
 
-function examineHeroPossibleEquip(types,heroID) {
+function examineHeroPossibleEquip(slot,heroID) {
     types = types || filterTypeCache;
     heroID = heroID || filterIDCache;
     filterTypeCache = types;

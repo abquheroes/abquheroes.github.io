@@ -5,40 +5,60 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
     "id": "H002",
     "name": "Cedric",
     "class": "Fighter",
-    "type": "Might",
+    "type": "",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -47,19 +67,29 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -68,19 +98,29 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -89,19 +129,29 @@
     "class": "Caster",
     "type": "Mind",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -110,19 +160,29 @@
     "class": "Caster",
     "type": "Mind",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -131,19 +191,29 @@
     "class": "Caster",
     "type": "Mind",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -152,19 +222,29 @@
     "class": "Caster",
     "type": "Mind",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -173,19 +253,29 @@
     "class": "Thief",
     "type": "Magic",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -194,19 +284,29 @@
     "class": "Thief",
     "type": "Magic",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
@@ -215,40 +315,60 @@
     "class": "Thief",
     "type": "Magic",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   },
   {
     "id": "H204",
-    "name": "Claudia",
+    "name": "Caeda",
     "class": "Thief",
     "type": "Magic",
     "slot1Type": [
-      "Knives",
       "Maces",
       "Axes",
-      "Wands"
+      "Spears"
     ],
     "slot2Type": [
-      "Hats",
-      "Helmets",
-      "Armor"
+      "Helmets"
     ],
     "slot3Type": [
-      "Wards",
-      "Pendants"
+      "Gauntlets"
+    ],
+    "slot4Type": [
+      "Armor"
+    ],
+    "slot5Type": [
+      "Shields"
+    ],
+    "slot6Type": [
+      "Potions",
+      "Pendants",
+      "Rings",
+      "Instruments",
+      "Belts",
+      "Earrings"
     ]
   }
 ]
