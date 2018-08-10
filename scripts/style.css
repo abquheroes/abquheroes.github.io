@@ -599,10 +599,10 @@ input#importSaveText {
 
 #RecipeFilter {
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--bg);
     padding: 0 25px 0 0;
     margin-top: 10px;
-    height: 40px;
     line-height: 40px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -613,8 +613,10 @@ input#importSaveText {
     padding: 0 15px 0 3px;
     height: 100%;
     max-width: 40px;
+    max-height: 40px;
     overflow: hidden;
     border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     text-decoration: none;
 }
 
@@ -1596,7 +1598,7 @@ span#copyme {
     display: none;
 }
 
-.itemToSacDiv a.tooltip:hover:after {
+.itemToSac.tooltip:hover:after {
     left: -100%;
     right: -100%;
     top: unset;
@@ -1604,7 +1606,7 @@ span#copyme {
     z-index: 2;
 }
 
-.itemToSacDiv a.tooltip:hover:before {
+.itemToSac.tooltip:hover:before {
     left: unset;
     right: unset;
 }
@@ -2131,11 +2133,14 @@ a.workerDialog:hover {
     #RecipeFilter {
         padding: 0;
         overflow: auto;
+        flex-wrap: nowrap;
     }
 
     #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
         min-width: 40px;
         max-width: 40px;
+        max-height: 40px;
+        border-bottom: none;
     }
 
     .recipeHeader {
