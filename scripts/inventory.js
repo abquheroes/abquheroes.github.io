@@ -40,6 +40,7 @@ const Inventory = {
         this.inv.push(new itemContainer(id,rarity,amt));
         refreshInventory();
         refreshWorkers();
+        examineHeroPossibleEquip();
     },
     removeFromInventory(id,rarity,amt) {
         for (let i=0;i<this.inv.length;i++) {
@@ -73,8 +74,6 @@ const Inventory = {
     },
     equipItem(containerID) {
         for (let i=0;i<this.inv.length;i++) {
-            console.log(typeof(containerID));
-            console.log(typeof(this.inv[i].containerID));
             if (this.inv[i].containerID === containerID) {
                 const id = this.inv[i].id;
                 const rarity = this.inv[i].rarity;

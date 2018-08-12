@@ -95,7 +95,16 @@ class Hero {
         else if (this.slot5Type.includes(type)) this.slot5 = item;
     }
     unequip(slot) {
-        this.getEquipSlots()[slot] = null;
+        console.log(slot);
+        if (slot === 0) {
+            this.slot1 = null;
+            console.log(this.slot1);
+        }
+        else if (slot === 1) this.slot2 = null;
+        else if (slot === 2) this.slot3 = null;
+        else if (slot === 3) this.slot4 = null;
+        else if (slot === 4) this.slot5 = null;
+        else this.slot6 = null;
     }
     slotTypesByNum(num) {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
@@ -103,6 +112,9 @@ class Hero {
     }
     slotEmpty(slot) {
         return this.getEquipSlots()[slot] === null;
+    }
+    getSlot(slot) {
+        return this.getEquipSlots()[slot];
     }
 }
 
@@ -140,7 +152,10 @@ const HeroManager = {
         return hero.slotEmpty(slot);
     },
     unequip(slot,heroID) {
-
+        const hero = this.idToHero(heroID);
+        const item = hero.getSlot(slot);
+        hero.unequip(slot);
+        Inventory.addToInventory(item.id,item.rarity,1);
     }
 }
 
@@ -197,7 +212,6 @@ function examineHero(ID) {
     const slots = hero.getEquipSlots();
     const slotName = ["Weapon:&nbsp;","Head:&nbsp;","Armament:&nbsp;","Chest:&nbsp;","Handheld:&nbsp;","Accessory:&nbsp;"]
     $.each(slots, (slotNum,equip) => {
-        console.log(slotNum,equip);
         let equipText = "Empty"
         if (equip !== null) equipText = equip.picName;
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
@@ -207,7 +221,6 @@ function examineHero(ID) {
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
     $heroCard.append(upperLeftDiv,upperRightDive,lowerDiv);
-    $heroEquipmentList.empty();
 }
 
 function statRow(name,value) {
@@ -217,42 +230,20 @@ function statRow(name,value) {
     return d1.append(d2,d3);
 }
 
-$(document).on('click', "div.heroOwnedCard", (e) => {
-    //pop up the detailed character card
-    e.preventDefault();
-    const ID = $(e.currentTarget).attr("data-value");
-    $(".heroOwnedCard").removeClass("highlight");
-    $(e.currentTarget).addClass("highlight");
-    examineHero(ID);
-});
-
-$(document).on('click', "div.heroExamineEquipment", (e) => {
-    //select an item type to display what you can equip OR unequip the current item;
-    e.preventDefault();
-    const slot = $(e.currentTarget).attr("data-value");
-    const heroID = $(e.currentTarget).attr("heroID");
-    equipOrUnequip(slot,heroID);
-});
-
-$(document).on('click', "div.EHPErow", (e) => {
-    //equip the clicked item
-    e.preventDefault();
-    const heroID = $(e.currentTarget).attr("heroID");
-    const itemCOntainerID = parseInt($(e.currentTarget).attr("id"));
-    HeroManager.equipItem(itemCOntainerID,heroID);
-    examineHero(heroID);
-});
 
 const $heroEquipmentList = $("#heroEquipmentList");
 
-let filterSlotCache = null;
-let filterIDCache = null;
+let examineSlotCache = 0;
+let examineHeroCache = null;
 
 function examineHeroPossibleEquip(slot,heroID) {
-    slot = slot || filterSlotCache;
-    heroID = heroID || filterIDCache;
-    filterSlotCache = slot;
-    filterIDCache = heroID;
+    if (slot === 0) examineSlotCache = 0; //workaround for next line...
+    slot = slot || examineSlotCache;
+    heroID = heroID || examineHeroCache;
+    examineSlotCache = slot;
+    examineHeroCache = heroID;
+    console.log(slot,heroID);
+    if (slot === null || heroID === null) return;
     const types = HeroManager.getSlotTypes(slot,heroID);
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
@@ -271,7 +262,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     $heroEquipmentList.append(table);
 };
 
-function equipOrUnequip(slot,heroID) {
+function equipOrUnequipSlot(slot,heroID) {
     if (HeroManager.slotEmpty(slot,heroID)) {
         console.log("get equip");
         examineHeroPossibleEquip(slot,heroID)
@@ -282,3 +273,32 @@ function equipOrUnequip(slot,heroID) {
     }
     examineHero(heroID);
 }
+
+
+$(document).on('click', "div.heroOwnedCard", (e) => {
+    //pop up the detailed character card
+    e.preventDefault();
+    const ID = $(e.currentTarget).attr("data-value");
+    $(".heroOwnedCard").removeClass("highlight");
+    $(e.currentTarget).addClass("highlight");
+    examineHero(ID);
+});
+
+$(document).on('click', "div.heroExamineEquipment", (e) => {
+    //select an item type to display what you can equip OR unequip the current item;
+    e.preventDefault();
+    const slot = parseInt($(e.currentTarget).attr("data-value"));
+    const heroID = $(e.currentTarget).attr("heroID");
+    console.log(slot,heroID);
+    equipOrUnequipSlot(slot,heroID);
+});
+
+$(document).on('click', "div.EHPErow", (e) => {
+    //equip the clicked item
+    e.preventDefault();
+    const heroID = $(e.currentTarget).attr("heroID");
+    const itemCOntainerID = parseInt($(e.currentTarget).attr("id"));
+    HeroManager.equipItem(itemCOntainerID,heroID);
+    examineHero(heroID);
+    examineHeroPossibleEquip();
+});

@@ -8,12 +8,6 @@ const player = {
     sellPref : 1,
 }
 
-function initialize() {
-    loadMaterials();
-    loadRecipes();
-    loadWorkers();
-}
-
 function afterLoad() {
     refreshInventory(); //the others are loaded in order
     refreshWorkers();
@@ -21,9 +15,11 @@ function afterLoad() {
     initializeRecipes();
     initializeActionSlots();
     initializeHeroList();
+    populateRecipe("Maces");
 }
 
 loadMaterials(); //the others are loaded in order
+openTab("recipesTab");
 
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;

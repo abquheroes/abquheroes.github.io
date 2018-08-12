@@ -93,5 +93,6 @@ $(document).on('click', '.recipeName', (e) => {
 $(document).on('click', '.recipeSelect', (e) => {
     e.preventDefault();
     const type = $(e.target).attr("id");
+    console.log(type);
     populateRecipe(type);
 })
