@@ -127,6 +127,7 @@ body{
 #side-content {
     flex-grow: 1;
     padding: 0 20px;
+    overflow: auto;
 }
 
 #resources-container, #settings-container {
@@ -775,14 +776,14 @@ input#importSaveText {
     width: 100%;
 }
 
-.recipeHeader {
+.recipeHeader, .EHPEHeader {
     background-color: var(--bg);
     height: 40px;
     border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
-.recipeHeader, .recipeRow{
+.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -791,15 +792,15 @@ input#importSaveText {
     min-height: 40px;
 }
 
-.recipeRow:nth-of-type(odd) {
+.recipeRow:nth-of-type(odd), .EHPErow:nth-of-type(odd) {
     background-color: var(--bg);
 }
 
-.recipeRow:hover {
+.recipeRow:hover, .EHPErow:hover {
     background-color: var(--border);
 }
 
-.recipeHeadName, .recipeName {
+.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;
     width: 100%;
@@ -807,12 +808,12 @@ input#importSaveText {
     padding-left: 10px;
 }
 
-.recipeHeadName {
+.recipeHeadName, .EHPEHeaderName {
     padding-left: 15px;
     max-width: 300px;
 }
 
-.recipeName {
+.recipeName, .EHPEname {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -1222,6 +1223,7 @@ input#importSaveText {
 
 #heroContainer {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     overflow: hidden;
 }
@@ -1277,6 +1279,7 @@ input#importSaveText {
     flex: 1;
     background-color: var(--bg);
     border-left: 1px solid var(--border);
+    overflow: auto;
 }
 
 .heroExamineTop, .heroExamineStats, .heroExamineEquip {
@@ -1313,7 +1316,36 @@ input#importSaveText {
 }
 
 .heroExamineEquip {
-    width: 100%; /* temp styling until complete */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heroExamineEquipment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    min-width: 200px;
+    max-height: 200px;
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
+}
+
+#heroEquipmentList {
+    position: relative;
+    max-width: calc(100% - 300px);
+    margin-left: 300px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--bg);
+    border-left: 1px solid var(--border);
+}
+
+.EHPEstat {
+    margin-left: 300px;
 }
 
 #dungeon-container {
