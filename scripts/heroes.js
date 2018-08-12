@@ -91,10 +91,18 @@ class Hero {
         if (this.slot1Type.includes(type)) this.slot1 = item;
         else if (this.slot2Type.includes(type)) this.slot2 = item;
         else if (this.slot3Type.includes(type)) this.slot3 = item;
+        else if (this.slot4Type.includes(type)) this.slot4 = item;
+        else if (this.slot5Type.includes(type)) this.slot5 = item;
+    }
+    unequip(slot) {
+        this.getEquipSlots()[slot] = null;
     }
     slotTypesByNum(num) {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
         return slots[num];
+    }
+    slotEmpty(slot) {
+        return this.getEquipSlots()[slot] === null;
     }
 }
 
@@ -126,6 +134,13 @@ const HeroManager = {
     getSlotTypes(slot,heroID) {
         const hero = this.idToHero(heroID);
         return hero.slotTypesByNum(slot);
+    },
+    slotEmpty(slot,heroID) {
+        const hero = this.idToHero(heroID);
+        return hero.slotEmpty(slot);
+    },
+    unequip(slot,heroID) {
+
     }
 }
 
@@ -212,12 +227,11 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
 });
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
-    //select an item type to display what you can equip
+    //select an item type to display what you can equip OR unequip the current item;
     e.preventDefault();
     const slot = $(e.currentTarget).attr("data-value");
     const heroID = $(e.currentTarget).attr("heroID");
-    console.log(slot,heroID);
-    examineHeroPossibleEquip(slot,heroID);
+    equipOrUnequip(slot,heroID);
 });
 
 $(document).on('click', "div.EHPErow", (e) => {
@@ -247,7 +261,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2);
     table.append(hrow);
-    console.log(types);
+    console.log(Inventory.listbyType(types));
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html("5");
@@ -256,3 +270,15 @@ function examineHeroPossibleEquip(slot,heroID) {
     });
     $heroEquipmentList.append(table);
 };
+
+function equipOrUnequip(slot,heroID) {
+    if (HeroManager.slotEmpty(slot,heroID)) {
+        console.log("get equip");
+        examineHeroPossibleEquip(slot,heroID)
+    }
+    else {
+        console.log("unequip");
+        HeroManager.unequip(slot,heroID);
+    }
+    examineHero(heroID);
+}
