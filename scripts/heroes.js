@@ -7,7 +7,6 @@ class Hero {
         this.xp = 0;
         this.hp = 100;
         this.hpmax = 100;
-        this.pow = 10;
         this.ap = 0;
         this.apmax = 5;
         this.act = 0;
@@ -27,8 +26,15 @@ class Hero {
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = true;
     }
-    power() {
-        return this.pow;
+    pow() {
+        let pow = 10;
+        if (this.slot1 !== null) pow += this.slot1.pow();
+        if (this.slot2 !== null) pow += this.slot2.pow();
+        if (this.slot3 !== null) pow += this.slot3.pow();
+        if (this.slot4 !== null) pow += this.slot4.pow();
+        if (this.slot5 !== null) pow += this.slot5.pow();
+        if (this.slot6 !== null) pow += this.slot6.pow();
+        return pow;
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.hpmax);
@@ -203,7 +209,7 @@ function examineHero(ID) {
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
     const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
     upperRightDive.append(htd.append(htd1,htd2));
-    const stats = [hero.hpmax,hero.pow, hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
+    const stats = [hero.hpmax,hero.pow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDive.append(statRow(statName[i],stats[i]));

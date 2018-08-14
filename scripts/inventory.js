@@ -24,6 +24,9 @@ class itemContainer {
     match(id,rarity) {
         return id+rarity === this.id + this.rarity;
     }
+    pow() {
+        return this.item.pow;
+    }
 }
 
 const Inventory = {
