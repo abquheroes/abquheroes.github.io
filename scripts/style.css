@@ -1282,6 +1282,16 @@ input#importSaveText {
     overflow: auto;
 }
 
+#heroDetails {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-placeholder-details {
+    display: block;
+    padding: 20px;
+}
+
 .heroExamineTop, .heroExamineStats, .heroExamineEquip {
     padding: 20px;
 }
@@ -1323,9 +1333,8 @@ input#importSaveText {
 
 .heroExamineEquipment {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
     margin: 5px;
     min-width: 200px;
     max-height: 200px;
@@ -1333,12 +1342,27 @@ input#importSaveText {
     border: 1px solid var(--border);
 }
 
+.heroExamineEquipmentSlot {
+    background-color: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    text-align: center;
+    padding: 3px 5px;
+}
+
+.heroExamineEquipmentEquip {
+    padding: 5px;
+    margin: auto;
+}
+
+.heroExamineEquipmentEquip>img {
+    display: block;
+    margin: auto auto 5px auto;
+    height: 20px;
+}
+
 #heroEquipmentList {
     position: relative;
-    max-width: calc(100% - 300px);
-    margin-left: 300px;
-    top: 0;
-    right: 0;
     width: 100%;
     background-color: var(--bg);
     border-left: 1px solid var(--border);

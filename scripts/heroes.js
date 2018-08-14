@@ -187,11 +187,11 @@ function refreshHeroes() {
     }
 }
 
-const $heroCard = $("#heroCard");
+const $heroDetails = $("#heroDetails");
 
 function examineHero(ID) {
     const hero = HeroManager.idToHero(ID);
-    $heroCard.empty();
+    $heroDetails.empty();
     const upperLeftDiv = $("<div/>").addClass("heroExamineTop");
     const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
@@ -210,7 +210,7 @@ function examineHero(ID) {
     }
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
-    const slotName = ["Weapon:&nbsp;","Head:&nbsp;","Armament:&nbsp;","Chest:&nbsp;","Handheld:&nbsp;","Accessory:&nbsp;"]
+    const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
     $.each(slots, (slotNum,equip) => {
         let equipText = "Empty"
         if (equip !== null) equipText = equip.picName;
@@ -220,7 +220,7 @@ function examineHero(ID) {
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
-    $heroCard.append(upperLeftDiv,upperRightDive,lowerDiv);
+    $heroDetails.append(upperLeftDiv,upperRightDive,lowerDiv);
 }
 
 function statRow(name,value) {
