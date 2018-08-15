@@ -173,21 +173,6 @@ function tabHighlight() {
     this.classList.add("selected");
 };
 
-// Tab Selection for Navigation
-
-var navTab = document.querySelectorAll(".tablinks");
-
-for (i = 0; i < navTab.length; i++) {
-    navTab[i].addEventListener("click", navTabHighlight);
-};
-
-function navTabHighlight() {
-    for (i = 0; i < navTab.length; i++) {
-        navTab[i].classList.remove("tab-selected");
-    };
-    this.classList.add("tab-selected");
-};
-
 // Logo Easter Egg
 
 const $gameLogo = $("#game-logo");
