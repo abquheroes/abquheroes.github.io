@@ -14,7 +14,7 @@ class Item{
         return Resources.canAfford(this.cost);
     }
     itemPicName() {
-        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>&nbsp;"+this.name;
+        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
     itemPic() {
         return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>";
