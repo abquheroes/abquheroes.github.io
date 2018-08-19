@@ -81,7 +81,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -507,12 +507,14 @@ select {
 }
 
 .ASProgressBar:before {
-    content: " " attr(data-label);
+    content: attr(data-label);
     position: absolute;
     white-space: pre;
     bottom: 3px;
     left: 50%;
     transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 0.9em;
     z-index: 2;
 }
 
@@ -543,12 +545,18 @@ select {
     text-align: center;
     flex-grow: 1;
     padding: 5px;
+    font-size: 0.9em;
     z-index: 2;
 }
 
 .ASName img {
     vertical-align: middle;
-    margin-bottom: 2px;
+    margin: 3px 0;
+}
+
+.ASEmptyImg {
+    max-height: 32px;
+    opacity: 0.8;
 }
 
 .ASCancel {

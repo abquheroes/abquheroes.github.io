@@ -52,6 +52,9 @@ const actionSlotManager = {
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
     },
+    isEmptySlot() {
+        return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
+    },
     asPicName(slotnum) {
         return this.slots[slotnum].itemPicName();
     },
@@ -83,7 +86,7 @@ function initializeActionSlots() {
         const d = $("<div/>").addClass("ASBlock");
         const d1 = $("<div/>").addClass("ASName");
         if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
-        else d1.html("Empty");
+        else d1.html(actionSlotManager.isEmptySlot());
         const d2 = $("<div/>").addClass("ASCancel").attr("id",i);
         const a2 = $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="tiny material-icons">close</i>')
         if (!actionSlotManager.hasSlot(i)) d2.hide();
