@@ -963,8 +963,33 @@ input#importSaveText {
     margin-bottom: 10px;
 }
 
-.WorkerImage {
+.WorkerDetails {
+    display: flex;
+    justify-content: center;
     margin-top: 25px;
+}
+
+.WorkerImage {
+    margin-right: 5px;
+}
+
+.WorkerNameAndProduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.WorkerName {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.WorkerProduction {
+    display: flex;
+    font-size: 0.9em;
+    align-items: center;
 }
 
 .WorkerDesc {
@@ -977,10 +1002,6 @@ input#importSaveText {
 .WorkerDesc>em {
     color: var(--text);
     font-style: normal;
-}
-
-.WorkerName>h3 {
-    margin: 0 0 10px 0;
 }
 
 .WorkerLvl {

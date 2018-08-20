@@ -71,10 +71,14 @@ function refreshWorkers() {
     $workers.empty();
     WorkerManager.workers.forEach(worker => {
         const workerDiv = $('<div/>').addClass("Worker");
-        const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
-        const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
-        const d3 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
-        const d4 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
+        const workerDetails = $('<div/>').addClass("WorkerDetails");
+            const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
+        const workerNameProduction = $('<div/>').addClass("WorkerNameAndProduction");
+            const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
+            const d3 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
+        workerNameProduction.append(d2, d3);
+        workerDetails.append(d1, workerNameProduction);
+        const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
         const d5 = $('<div/>').addClass("itemSac");
         if (!worker.maxlevel()) {
             for (const [res, amt] of Object.entries(worker.thislvlreq())) {
@@ -87,7 +91,7 @@ function refreshWorkers() {
         }
         const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
         if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
-        $workers.append(workerDiv.append(d1,d2,d3,d4,d5,b1))
+        $workers.append(workerDiv.append(workerDetails,d4,d5,b1))
     });
 }
 
