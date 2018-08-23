@@ -81,11 +81,7 @@ body{
     margin: 0;
 }
 
-<<<<<<< HEAD
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks {
-=======
 #Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar {
->>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -517,14 +513,11 @@ select {
     bottom: 3px;
     left: 50%;
     transform: translateX(-50%);
-<<<<<<< HEAD
-=======
     background-color: rgba(255,255,255,0.15);
     border-radius: 15px;
     font-weight: bold;
     font-size: 0.9em;
     padding: 0 10px;
->>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
     z-index: 2;
 }
 
@@ -555,10 +548,8 @@ select {
     text-align: center;
     flex-grow: 1;
     padding: 5px;
-<<<<<<< HEAD
-=======
     font-size: 0.9em;
->>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
+    font-size: 0.9em;
     z-index: 2;
 }
 
