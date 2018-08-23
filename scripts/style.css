@@ -81,7 +81,11 @@ body{
     margin: 0;
 }
 
+<<<<<<< HEAD
 #Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks {
+=======
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar {
+>>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -507,12 +511,20 @@ select {
 }
 
 .ASProgressBar:before {
-    content: " " attr(data-label);
+    content: attr(data-label);
     position: absolute;
     white-space: pre;
     bottom: 3px;
     left: 50%;
     transform: translateX(-50%);
+<<<<<<< HEAD
+=======
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 0 10px;
+>>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
     z-index: 2;
 }
 
@@ -543,12 +555,21 @@ select {
     text-align: center;
     flex-grow: 1;
     padding: 5px;
+<<<<<<< HEAD
+=======
+    font-size: 0.9em;
+>>>>>>> 1fd519484dc619be0d4a9852de959ead7283bf9e
     z-index: 2;
 }
 
 .ASName img {
     vertical-align: middle;
-    margin-bottom: 2px;
+    margin: 3px 0;
+}
+
+.ASEmptyImg {
+    max-height: 32px;
+    opacity: 0.8;
 }
 
 .ASCancel {
@@ -952,8 +973,33 @@ input#importSaveText {
     margin-bottom: 10px;
 }
 
-.WorkerImage {
+.WorkerDetails {
+    display: flex;
+    justify-content: center;
     margin-top: 25px;
+}
+
+.WorkerImage {
+    margin-right: 5px;
+}
+
+.WorkerNameAndProduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.WorkerName {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.WorkerProduction {
+    display: flex;
+    font-size: 0.9em;
+    align-items: center;
 }
 
 .WorkerDesc {
@@ -966,10 +1012,6 @@ input#importSaveText {
 .WorkerDesc>em {
     color: var(--text);
     font-style: normal;
-}
-
-.WorkerName>h3 {
-    margin: 0 0 10px 0;
 }
 
 .WorkerLvl {
@@ -1637,6 +1679,8 @@ span#copyme {
     word-wrap: break-word;
 }
 
+/* Tooltips */
+
 .tooltip:hover:before {
     display: inline-block;
     position: absolute;
@@ -1791,7 +1835,6 @@ footer a[href*="discord.gg"]:hover {
         padding: 20px 0px 20px 20px;
     }
   }
-/**/
 
 /* Playfab Dialog */
 
@@ -1862,8 +1905,6 @@ footer a[href*="discord.gg"]:hover {
     width: 100%;
 }
 
-/**/
-
 /* Flex Tables */
 
 #flex-table {
@@ -1899,8 +1940,6 @@ footer a[href*="discord.gg"]:hover {
     max-width: 50%;
     padding: 3px 5px;
 }
-
-/**/
 
 /* Dialogs */
 
@@ -2015,7 +2054,7 @@ a.workerDialog:hover {
     font-weight: bold;
 }
 
-/**/
+/* Animation Keyframes */
 
 @keyframes fade-in {
     from {

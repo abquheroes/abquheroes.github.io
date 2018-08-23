@@ -1,7 +1,9 @@
 # abquheroes.github.io
-Hi this is the working directory of the game Forge & Fortune
+Hey there, 
 
-Any questions/concerns, reach out to support@abquheroes.com
+This is the working directory for the game Forge & Fortune (formerly Abqu Heroes).
 
-Discord: http://www.discord.gg/qGBAVNR
-Game: http://www.abquheroes.com
+Any questions/concerns, reach out to us at support@abquheroes.com.
+
+Our Discord Server: http://www.discord.gg/qGBAVNR  
+Direct Link to the Game: http://www.abquheroes.com
