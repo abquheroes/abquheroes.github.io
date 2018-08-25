@@ -35,23 +35,24 @@
 /* LIGHT AND DARK MODE */
 
 :root {
-    --bg: #202020;
-    --bg-2: #151515;
-    --bg-3: #191919;
+    --bg: #212325;
+    --bg-2: #1a1d1f;
+    --bg-3: #191b1d;
     --green-dark: #064a21;
     --green-light: #089e42;
     --blue-dark: #063a4a;
     --blue-light: #087d9e;
-    --border: #2b2b2b;
+    --border: #2b2e31;
     --border-2: #adadad;
     --border-3: #3b3b3b;
+    --highlight: #ffc100; 
     --text: #fff;
     --text-2: #fff;
     --text-3: #909090;
     --link: #191919;
     --scroll-thumb: rgba(255,255,255,0.10);
     --scroll-track: rgba(0,0,0,0.30);
-    --progressbar: #218cff;
+    --progressbar: #1c95c5;
     --scheme: linear-gradient(-40deg, #353535 0%, #545454 51%, #636262 75%);
 }
 
@@ -214,8 +215,9 @@ body{
 }
 
 #sell1, #sell10, #sellAll {
-    background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    background-color: var(--bg-2);
+    border: 2px solid var(--border);
+    color: var(--text-3);
     border-radius: 20px;
     padding: 3px 5px;
     margin: 0 3px;
@@ -224,12 +226,12 @@ body{
 }
 
 #sell1:hover, #sell10:hover, #sellAll:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
 }
 
 #sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
-    background: var(--scheme);
     color: var(--text-2);
+    border-color: var(--border-2);
 }
 
 .inventoryItem {
@@ -288,14 +290,14 @@ body{
 .game-content #tabs {
     display: flex;
     max-height: calc(100vh - 50px);
-    border-bottom: 3px solid var(--border);
+    border-bottom: 2px solid var(--border);
 }
 
 .tablinks {
     background-color: transparent;
     border: none;
     color: var(--text-3);
-    margin: 0 0 -3px 0;
+    margin: 0 0 -2px 0;
     padding: 0;
     text-transform: uppercase;
     font-size: 0.8em;
@@ -309,7 +311,7 @@ body{
 
 .tablinks.tab-selected {
     border-color: var(--border-2);
-    color: #ffc100;
+    color: var(--highlight);
 }
 
 .tablinks.tab-selected:after {
@@ -317,7 +319,7 @@ body{
 }
 
 .tablinks:hover {
-    color: #ffc100;
+    color: var(--highlight);
 }
 
 .tablinks:after {
@@ -325,8 +327,8 @@ body{
     display: block;
     margin: auto;
     width: 0;
-    height: 3px;
-    background-color: #ffc100;
+    height: 2px;
+    background-color: var(--highlight);
     transition: width 0.2s ease-in-out;
 }
 
@@ -506,7 +508,7 @@ select {
     flex-direction: column;
     position: relative;
     background-color: var(--bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 10px;
     margin: 0 4px 10px 0;
     width: 150px;
@@ -544,7 +546,7 @@ select {
     bottom: 3px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(0,0,0,0.15);
     border-radius: 15px;
     font-weight: bold;
     font-size: 0.9em;
@@ -556,7 +558,7 @@ select {
     display: block;
     position: relative;
     height: 100%;
-    background: var(--scheme);
+    background: var(--progressbar);
     z-index: 1;
 }
 
@@ -1270,7 +1272,8 @@ input#importSaveText {
 }
 
 #completeTime {
-    background: var(--scheme);
+    background-color: var(--green-dark);
+    border: 1px solid var(--green-light);
     color: var(--text-2);
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
