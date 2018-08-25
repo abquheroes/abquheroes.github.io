@@ -286,6 +286,7 @@ body{
 }
 
 .game-content #tabs {
+    display: flex;
     max-height: calc(100vh - 50px);
     border-bottom: 3px solid var(--border);
 }
@@ -293,18 +294,48 @@ body{
 .tablinks {
     background-color: transparent;
     border: none;
-    border-bottom: 3px solid transparent;
     color: var(--text-3);
-    margin: 0 -3px -3px -3px;
-    padding: 10px 20px;
+    margin: 0 0 -3px 0;
+    padding: 0;
     text-transform: uppercase;
     font-size: 0.8em;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.tablinks > div {
+    padding: 10px 15px;
 }
 
 .tablinks.tab-selected {
     border-color: var(--border-2);
-    color: var(--text);
+    color: #ffc100;
+}
+
+.tablinks.tab-selected:after {
+    width: 100%;
+}
+
+.tablinks:hover {
+    color: #ffc100;
+}
+
+.tablinks:after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 0;
+    height: 3px;
+    background-color: #ffc100;
+    transition: width 0.2s ease-in-out;
+}
+
+.tablinks:hover:after {
+    width: 100%;
+}
+
+.tabcontent {
+    animation: 0.2s fade-in;
 }
 
 .demoHeaders {
