@@ -251,8 +251,8 @@ const setHeight = () => {
     setInterval(
         function() {
             const ascHeight = actionSlotsContainer.offsetHeight;
-            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 88}px)`;
-            heroContainer.style.height = `calc(100vh - ${ascHeight + 88}px)`;
+            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
+            heroContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
         }
     );
 }

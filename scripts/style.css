@@ -32,6 +32,13 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
+.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard {
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
 /* LIGHT AND DARK MODE */
 
 :root {
@@ -61,7 +68,7 @@
     padding: 7px 10px;
     width: 100%;
     border: none;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 25px;
     background-color: var(--bg);
     color: var(--text);
@@ -175,7 +182,7 @@ body{
     margin: 5px 0;
     padding: 5px 10px;
     background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 25px;
 }
 
@@ -227,6 +234,7 @@ body{
 
 #sell1:hover, #sell10:hover, #sellAll:hover {
     background-color: var(--bg-3);
+    border-color: var(--border-3);
 }
 
 #sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
@@ -500,7 +508,6 @@ select {
     flex-wrap: wrap;
     padding: 10px 10px 0 20px;
     width: 100%;
-    max-width: 1200px;
 }
 
 .ASBlock {
@@ -514,7 +521,6 @@ select {
     width: 150px;
     height: 115px;
     overflow: hidden;
-    animation: 0.2s fade-in;
 }
 
 .ASProgressBar, .plProgressBar {
@@ -691,7 +697,7 @@ input#importSaveText {
 #RecipeFilter a.recipeSelect.selected {
     width: auto;
     max-width: 100%;
-    background-color: var(--link);
+    background-color: var(--bg-2);
     color: var(--text-2);
 }
 
@@ -700,7 +706,7 @@ input#importSaveText {
 }
 
 #RecipeFilter a.recipeSelect:hover {
-    background-color: var(--link);
+    background-color: var(--bg-2);
     color: var(--text-2);
 }
 
@@ -962,10 +968,6 @@ input#importSaveText {
     padding: 15px 15px 50px;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .WorkerImage, .WorkerName, .upgradeName, .upgradeDesc, .TicketName{
@@ -1242,10 +1244,6 @@ input#importSaveText {
     max-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px 15px 30px 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 #progresslist .plProgressBar {
@@ -1265,10 +1263,6 @@ input#importSaveText {
     font-size: .9em;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 #completeTime {
@@ -1303,10 +1297,6 @@ input#importSaveText {
     min-height: 100px;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .TicketCard .TicketName {
@@ -1378,6 +1368,8 @@ input#importSaveText {
 #heroDetails {
     display: flex;
     flex-wrap: wrap;
+    align-items: start;
+    max-width: 1000px
 }
 
 .hero-placeholder-details {
@@ -1393,11 +1385,20 @@ input#importSaveText {
     flex: 1;
 }
 
+.heroExamineTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .heroExamineStats {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: start;
+    max-width: 500px;
 }
 
 .heroExamineHeading {
@@ -1408,7 +1409,6 @@ input#importSaveText {
 
 .heroExamineStatRow {
     display: flex;
-    flex-direction: column;
     min-width: 200px;
     justify-content: center;
     align-items: center;
@@ -1416,6 +1416,15 @@ input#importSaveText {
     border: 1px solid var(--border);
     margin: 3px;
     padding: 10px;
+}
+
+.heroExamineStatRowName {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.heroExamineStatRowValue {
+    padding-right: 20px;
 }
 
 .heroExamineEquip {
@@ -1428,9 +1437,11 @@ input#importSaveText {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     margin: 5px;
-    min-width: 200px;
-    max-height: 200px;
+    flex-grow: 1;
+    min-width: 100px;
+    max-width: 150px;
     background-color: var(--bg-3);
     border: 1px solid var(--border);
 }
@@ -1444,7 +1455,7 @@ input#importSaveText {
 }
 
 .heroExamineEquipmentEquip {
-    padding: 5px;
+    padding: 10px 15px;
     margin: auto;
 }
 
@@ -2107,6 +2118,17 @@ a.workerDialog:hover {
 /* Hide content completely, removing both the content and its effect on elements */
 .none {
     display: none;
+}
+
+@media screen and (min-width: 1120px) and (max-width: 1360px) {
+    #ActionSlots {
+        padding: 5px 5px 0 5px;
+        justify-content: center;
+    }
+
+    .ASBlock {
+        margin: 0 1px 3px 1px;
+    }
 }
 
 @media screen and (max-width: 1100px) {
