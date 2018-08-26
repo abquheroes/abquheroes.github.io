@@ -1723,9 +1723,9 @@ span#copyme {
 .tooltip:hover:after {
     display: inline-block;
     position: absolute;
-    top: -100%;
     left: -100%;
     right: -100%;
+    bottom: 120%;
     margin-top: -4px;
     content: attr(data-tooltip);
     background-color: #000;
