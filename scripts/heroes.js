@@ -194,25 +194,27 @@ function refreshHeroes() {
 }
 
 const $heroDetails = $("#heroDetails");
+const $heroGearSlots = $("#heroGearSlots");
 
 function examineHero(ID) {
     const hero = HeroManager.idToHero(ID);
     $heroDetails.empty();
+    $heroGearSlots.empty();
     const upperLeftDiv = $("<div/>").addClass("heroExamineTop");
     const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
     const d4 = $("<div/>").addClass("heroExamineExp").html("Exp: "+hero.xp);
     upperLeftDiv.append(d1,d2,d3,d4);
-    const upperRightDive = $("<div/>").addClass("heroExamineStats");
+    const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
     const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
-    upperRightDive.append(htd.append(htd1,htd2));
+    upperRightDiv.append(htd.append(htd1,htd2));
     const stats = [hero.hpmax,hero.pow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
-        upperRightDive.append(statRow(statName[i],stats[i]));
+        upperRightDiv.append(statRow(statName[i],stats[i]));
     }
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
@@ -226,7 +228,8 @@ function examineHero(ID) {
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
-    $heroDetails.append(upperLeftDiv,upperRightDive,lowerDiv);
+    $heroDetails.append(upperLeftDiv,upperRightDiv);
+    $heroGearSlots.append(lowerDiv);
 }
 
 function statRow(name,value) {
