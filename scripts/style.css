@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -865,11 +865,11 @@ input#importSaveText {
     min-height: 40px;
 }
 
-.recipeRow:nth-of-type(odd), .EHPErow:nth-of-type(odd) {
+.recipeRow:nth-of-type(odd) {
     background-color: var(--bg);
 }
 
-.recipeRow:hover, .EHPErow:hover {
+.recipeRow:hover {
     background-color: var(--border);
 }
 
@@ -895,7 +895,7 @@ input#importSaveText {
     cursor: pointer;
 }
 
-.recipeName>img {
+.recipeName>img, .EHPEname>img {
     margin-right: 10px;
     height: 28px;
 }
@@ -1367,7 +1367,6 @@ input#importSaveText {
 
 #heroDetails {
     display: flex;
-    flex-wrap: wrap;
     align-items: start;
     max-width: 1000px
 }
@@ -1444,6 +1443,7 @@ input#importSaveText {
     max-width: 150px;
     background-color: var(--bg-3);
     border: 1px solid var(--border);
+    cursor: pointer;
 }
 
 .heroExamineEquipmentSlot {
@@ -1469,7 +1469,19 @@ input#importSaveText {
     position: relative;
     width: 100%;
     background-color: var(--bg);
-    border-left: 1px solid var(--border);
+}
+
+.EHPEHeader {
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+}
+
+.EHPErow:nth-of-type(odd) {
+    background-color: var(--bg-2);
+}
+
+.EHPErow:hover {
+    background-color: var(--border);
 }
 
 .EHPEstat {
