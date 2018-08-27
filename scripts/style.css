@@ -1358,7 +1358,7 @@ input#importSaveText {
 
 #heroCard {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     flex: 1;
     background-color: var(--bg);
     border-left: 1px solid var(--border);
