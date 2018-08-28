@@ -89,7 +89,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -1374,7 +1374,7 @@ input#importSaveText {
     padding: 20px;
 }
 
-.heroExamineTop, .heroExamineStats, .heroExamineEquip {
+.heroExamineTop, .heroExamineStats {
     padding: 20px;
 }
 
@@ -1390,6 +1390,31 @@ input#importSaveText {
     width: 100%;
 }
 
+.heroExamineImage {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
+}
+
+.heroExamineName, .heroExamineHeading {
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.heroExamineName:after, .heroExamineHeading:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 75%;
+    margin: 3px auto;
+    background-color: var(--border);
+}
+
 .heroExamineStats {
     display: flex;
     flex-wrap: wrap;
@@ -1397,21 +1422,15 @@ input#importSaveText {
     align-content: start;
 }
 
-.heroExamineHeading {
-    display: none;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
 .heroExamineStatRow {
     display: flex;
-    min-width: 200px;
     justify-content: center;
     align-items: center;
+    margin: 1px 0;
+    padding: 10px;
+    width: 100%;
     background-color: var(--bg-3);
     border: 1px solid var(--border);
-    margin: 3px;
-    padding: 10px;
 }
 
 .heroExamineStatRowName {
@@ -1440,13 +1459,16 @@ input#importSaveText {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 5px;
     flex-grow: 1;
     min-width: 100px;
-    max-width: 150px;
+    min-height: 100px;
     background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     cursor: pointer;
+}
+
+.heroExamineEquipmentList + .heroExamineEquipment {
+    border-left: 1px solid var(--border);
 }
 
 .heroExamineEquipmentSlot {
@@ -1458,8 +1480,12 @@ input#importSaveText {
 }
 
 .heroExamineEquipmentEquip {
-    padding: 10px 15px;
+    padding: 5px;
     margin: auto;
+}
+
+.heroExamineEquipmentEquip > .item-name {
+    max-width: 90px;
 }
 
 .heroExamineEquipmentEquip>img {
