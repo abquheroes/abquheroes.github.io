@@ -20,13 +20,16 @@ const MobManager = {
 class MobTemplate {
     constructor (props) {
         Object.assign(this, props);
-        this.image = '<img src="enemies/' + this.id + '">';
+        this.image = '<img src="images/enemies/' + this.id + '.gif">';
     }
 }
 
 class Mob {
     constructor (lvl,mobTemplate) {
         this.lvl = lvl;
+        this.name = mobTemplate.name;
+        this.id = mobTemplate.id;
+        this.image = mobTemplate.image;
         this.pow = mobTemplate.powBase + mobTemplate.powLvl*lvl;
         this.hpmax = mobTemplate.hpBase + mobTemplate.hpLvl*lvl;
         this.hp = this.hpmax;
@@ -36,6 +39,8 @@ class Mob {
         this.critdmg = mobTemplate.critdmg;
         this.dodge = mobTemplate.dodge;
         this.target = mobTemplate.target;
+        this.apmax = mobTemplate.ap;
+        this.ap = 0;
     }
     getPow() {
         return this.pow;
@@ -62,7 +67,7 @@ class Mob {
         //takes a list of mobs and executes an attack on one of them
         //todo: more than one...
         const target = getTarget(party,this.target);
-        const dmg = this.critical(this.power());
+        const dmg = this.critical(this.getPow());
         if (this.ap === this.apmax) {
             target.takeDamage(DamageType.MAGIC,dmg*2);
             this.ap = 0;
@@ -75,13 +80,13 @@ class Mob {
     takeDamage(type,dmg) {
         if (type === DamageType.PHYSICAL) {
             dmg -= this.armor;
-            if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
+            if (!this.dodgeCheck()) this.hp = Math.max(this.hp-dmg,0);
         }
         else {
             this.hp = Math.max(this.hp-dmg,0);
         }
     }
-    dodge() {
+    dodgeCheck() {
         return this.dodgeChance > Math.floor(Math.random()*100) + 1;
     }
     critical(dmg) {
@@ -93,6 +98,7 @@ class Mob {
 }
 
 function getTarget(party,type) {
+    console.log(party);
     if (type === "first") {
         for (let i=0;i<party.length;i++) {
             if (party[i].alive()) {

@@ -16,7 +16,6 @@ const $dtsBottom = $("#dtsBottom");
 const $daTop = $("#daTop");
 const $daBottom = $("#daBottom");
 
-
 const DungeonAssist = {
     floorNum : 0,
     floor : null,

@@ -15,7 +15,7 @@ class Hero {
         this.crit = 5;
         this.critdmg = 2;
         this.dodgeChance = 0;
-        //this.target = TargetType.FIRST;
+        this.target = "first"
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
@@ -62,7 +62,8 @@ class Hero {
         //takes a list of mobs and executes an attack
         //this is just w/e right now...
         const target = getTarget(mobs,this.target);
-        const dmg = this.critical(this.power());
+        console.log(target);
+        const dmg = this.critical(this.getPow());
         if (this.ap === this.apmax) {
             target.takeDamage(DamageType.MAGIC,dmg*2);
             this.ap = 0;

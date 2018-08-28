@@ -25,7 +25,7 @@ openTab("recipesTab");
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
     player.lastTime = Date.now();
-    //dungeonAdvance(elapsedTime);
+    dungeonAdvance(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
 }
 
