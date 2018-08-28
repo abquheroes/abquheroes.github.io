@@ -207,10 +207,9 @@ function examineHero(ID) {
     upperLeftDiv.append(d1,d2,d3,d4);
     const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
-    const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
-    const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
-    upperRightDiv.append(htd.append(htd1,htd2));
-    const stats = [hero.hpmax,hero.getPow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
+    const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
+    upperRightDiv.append(htd.append(htd1));
+    const stats = [hero.hpmax,hero.pow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
