@@ -143,6 +143,10 @@ body{
     max-height: 500px;
     overflow: hidden;
     transition: max-height 0.3s linear;
+    -ms-transition: max-height 0.3s linear;
+    -o-transition: max-height 0.3s linear;
+    -moz-transition: max-height 0.3s linear;
+    -webkit-transition: max-height 0.3s linear;
 }
 
 .height-collapse {
@@ -154,9 +158,13 @@ body{
     top: 4px;
     right: 2px;
     color: var(--text-3);
-    transition: all 0.3s ease;
     font-family: monospace;
     font-weight: bold;
+    transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
 
 .arrow-rotate {
@@ -316,6 +324,10 @@ body{
     font-size: 0.8em;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
 }
 
 .tablinks > div {
@@ -343,6 +355,10 @@ body{
     height: 2px;
     background-color: var(--highlight);
     transition: width 0.2s ease-in-out;
+    -ms-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -webkit-transition: width 0.2s ease-in-out;
 }
 
 .tablinks:hover:after {
@@ -620,6 +636,10 @@ select {
     color: rgba(255, 0, 0, 0.5);
     text-decoration: none;
     transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
@@ -1735,6 +1755,10 @@ footer a {
     color: var(--text);
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
@@ -1757,6 +1781,10 @@ footer a:hover {
     transform: rotate(45deg);
     color: var(--text-3);
     transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
 }
 
 #bottom-right a:hover > i.material-icons {
@@ -1954,7 +1982,11 @@ footer a[href*="discord.gg"]:hover {
     border: none;
     border: 1px solid var(--border);
     border-radius: 0;
-    transition: all 0.2s linear;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:after, #pfPassword:after {
@@ -1964,7 +1996,11 @@ footer a[href*="discord.gg"]:hover {
     height: 2px;
     width: 0;
     background-color: var(--border-2);
-    transition: all 0.2s linear;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:hover:after, #pfPassword:hover:after {
@@ -1986,9 +2022,14 @@ footer a[href*="discord.gg"]:hover {
     border: 1px solid var(--border);
     border-radius: 0;
     cursor: pointer;
-    transition: all 0.2s linear;
     appearance: none;
+    -moz-appearance: none;
     -webkit-appearance: none;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
@@ -2054,8 +2095,12 @@ footer a[href*="discord.gg"]:hover {
     bottom: 0;
     background-color: rgba(0,0,0,0.8);
     pointer-events: none;
-    transition: all 0.2s linear;
     z-index: 9999;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 a.workerDialog {
@@ -2121,8 +2166,12 @@ a.workerDialog:hover {
     font-size: 32px;
     text-decoration: none;
     border-radius: 50%;
-    transition: all 0.2s ease;
     z-index: 2;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .dialog_close:hover {
