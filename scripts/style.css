@@ -217,8 +217,11 @@ body{
     position: sticky;
     top: 0;
     background: var(--bg);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     z-index: 99;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 #sellPref {
@@ -1348,7 +1351,7 @@ input#importSaveText {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    max-width: 300px;
+    max-width: 250px;
     overflow: auto;
 }
 
@@ -1398,17 +1401,18 @@ input#importSaveText {
 }
 
 #heroDetails {
-    max-width: 300px;
+    max-width: 275px;
     overflow: auto;
 }
 
 .hero-placeholder-details {
     display: block;
     padding: 20px;
+    font-size: 0.9em;
 }
 
 .heroExamineTop, .heroExamineStats {
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .heroExamineTop, .heroExamineStats {
@@ -1459,20 +1463,15 @@ input#importSaveText {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1px 0;
-    padding: 10px;
+    margin: 2px 0;
+    padding: 10px 20px;
     width: 100%;
     background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    font-size: 0.9em;
 }
 
 .heroExamineStatRowName {
     flex-grow: 1;
-    padding-left: 20px;
-}
-
-.heroExamineStatRowValue {
-    padding-right: 20px;
 }
 
 #heroGear {
@@ -2196,6 +2195,9 @@ a.workerDialog:hover {
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .dialog_body {
@@ -2269,8 +2271,11 @@ a.workerDialog:hover {
         position: relative;
         flex-wrap: wrap;
         flex-direction: row;
-        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
         z-index: 2;
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -o-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
     }
 
     #selection {
@@ -2291,8 +2296,11 @@ a.workerDialog:hover {
 
     #right-side-content {
         margin-bottom: 50px;
-        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
         z-index: 2;
+        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -webkit-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -moz-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -o-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
     }
 
     #game-logo {
