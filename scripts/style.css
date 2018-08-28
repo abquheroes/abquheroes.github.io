@@ -60,7 +60,9 @@
     --scroll-thumb: rgba(255,255,255,0.10);
     --scroll-track: rgba(0,0,0,0.30);
     --progressbar: #1c95c5;
-    --scheme: linear-gradient(90deg, #0b7edc 0%, #1396f3 50%, #00adff 100%);
+    --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
+    --scheme-moz: -moz-linear-gradient(left, #0b7edc 0%, #1396f3 50%, #00adff 100%);
+    --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
 }
 
 .lm-btn, .dm-btn, .cp-btn, .cf-btn {
@@ -142,11 +144,11 @@ body{
     position: relative;
     max-height: 500px;
     overflow: hidden;
-    transition: max-height 0.3s linear;
-    -ms-transition: max-height 0.3s linear;
-    -o-transition: max-height 0.3s linear;
-    -moz-transition: max-height 0.3s linear;
-    -webkit-transition: max-height 0.3s linear;
+    transition: max-height 0.3s ease-in-out;
+    -ms-transition: max-height 0.3s ease-in-out;
+    -o-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
+    -webkit-transition: max-height 0.3s ease-in-out;
 }
 
 .height-collapse {
@@ -160,11 +162,11 @@ body{
     color: var(--text-3);
     font-family: monospace;
     font-weight: bold;
-    transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 }
 
 .arrow-rotate {
@@ -369,6 +371,8 @@ body{
     animation: 0.2s fade-in;
 }
 
+
+/* BULLSHIT JQUERY UI */
 .demoHeaders {
     margin-top: 2em;
 }
@@ -517,6 +521,8 @@ select {
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
 
+/* END OF JQUERY UI */
+
 #Actions>h1 {
     margin: 10px 0;
     padding: 0 20px;
@@ -586,6 +592,8 @@ select {
     position: relative;
     height: 100%;
     background: var(--scheme);
+    background: var(--scheme-moz);
+    background: var(--scheme-webkit);
     z-index: 1;
 }
 
@@ -1725,7 +1733,9 @@ input#importSaveText {
     display: block;
     position: relative;
     height: 100%;
-    background-color: var(--scheme);
+    background: var(--scheme);
+    background: var(--scheme-moz);
+    background: var(--scheme-webkit);
 }
 
 footer {
@@ -2087,13 +2097,13 @@ footer a[href*="discord.gg"]:hover {
 /* Dialogs */
 
 .dialog {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.8);
+    opacity: 0;
     pointer-events: none;
     z-index: 9999;
     transition: all 0.2s ease-in-out;
@@ -2125,9 +2135,8 @@ a.workerDialog:hover {
 }
 
 .dialog:target {
-    display: block;
+    opacity: 1;
     pointer-events: auto;
-    animation: 0.2s fade-in;
 }
 
 .dialog_content {
