@@ -209,7 +209,7 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     upperRightDiv.append(htd.append(htd1));
-    const stats = [hero.hpmax,hero.pow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
+    const stats = [hero.hpmax,hero.getPow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
