@@ -60,7 +60,7 @@
     --scroll-thumb: rgba(255,255,255,0.10);
     --scroll-track: rgba(0,0,0,0.30);
     --progressbar: #1c95c5;
-    --scheme: linear-gradient(-40deg, #353535 0%, #545454 51%, #636262 75%);
+    --scheme: linear-gradient(90deg, #0b7edc 0%, #1396f3 50%, #00adff 100%);
 }
 
 .lm-btn, .dm-btn, .cp-btn, .cf-btn {
@@ -175,11 +175,16 @@ body{
     margin-top: 0;
 }
 
+#resources {
+    display: flex;
+    flex-direction: column;
+}
+
 .resource {
     position: relative;
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 2px 0;
     padding: 5px 10px;
     background-color: var(--bg-3);
     border: 2px solid var(--border);
@@ -564,7 +569,7 @@ select {
     display: block;
     position: relative;
     height: 100%;
-    background: var(--progressbar);
+    background: var(--scheme);
     z-index: 1;
 }
 
@@ -1700,7 +1705,7 @@ input#importSaveText {
     display: block;
     position: relative;
     height: 100%;
-    background-color: var(--progressbar);
+    background-color: var(--scheme);
 }
 
 footer {
@@ -1798,6 +1803,7 @@ footer a[href*="discord.gg"]:hover {
     transform: rotate(180deg);
     animation: fade-in 0.3s;
     pointer-events: none;
+    z-index: 10;
 }
 
 .tooltip:hover:after {
@@ -1819,6 +1825,7 @@ footer a[href*="discord.gg"]:hover {
     padding: 5px 8px;
     animation: fade-in 0.3s; 
     pointer-events: none;
+    z-index: 10;
 }
 
 .inventoryItem.tooltip:hover:after {
