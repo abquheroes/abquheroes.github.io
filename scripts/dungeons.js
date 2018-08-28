@@ -6,9 +6,9 @@ class Floor {
     constructor (type,lvl) {
         this.type = type;
         this.lvl = lvl;
-        this.icon = dungeonIcons[[type]];
+        this.icon = '<img src="/images/DungeonIcons/combat_floor.png">'
         this.difficulty = this.lvl*2+5;
-        this.monster = [getMonster(lvl)];
+        this.monster = [MobManager.getMonster(lvl)];
     }
     isDead() {
         return this.monster.every((mob) => mob.dead());
@@ -16,12 +16,12 @@ class Floor {
 }
 
 const dungeonIcons = {
-    [FloorType.FIGHT] : '<img src="DungeonIcons/combat_floor.png" alt="Fight">',
-    [FloorType.TREASURE] : '<img src="DungeonIcons/treasure_floor.png" alt="Treasure">',
-    [Stat.HP] : '<img src="PixelItem/Heart.png" alt="HP">',
-    [Stat.POW] : '<img src="PixelItem/Icosahedron.png" alt="POW">',
-    [Stat.ACT] : '<img src="DungeonIcons/act.png" alt="Act">',
-    [Stat.AP] : '<img src="DungeonIcons/ap.png" alt="AP">',
+    [FloorType.FIGHT] : '<img src="images/DungeonIcons/combat_floor.png" alt="Fight">',
+    [FloorType.TREASURE] : '<img src="images/DungeonIcons/treasure_floor.png" alt="Treasure">',
+    [Stat.HP] : '<img src="images/DungeonIcons/hp.png" alt="HP">',
+    [Stat.POW] : '<img src="images/DungeonIcons/pow.png" alt="POW">',
+    [Stat.ACT] : '<img src="images/DungeonIcons/act.png" alt="Act">',
+    [Stat.AP] : '<img src="images/DungeonIcons/ap.png" alt="AP">',
 }
 
 const dungeon = [];

@@ -108,19 +108,20 @@ function refreshHeroSelect() {
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Available Heroes:</h3>");
     $dtsBottom.append(d1bot);
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
-    for (const [heroID, _] of Object.entries(heroBase)) {
-        if (memberAvailable(heroID)) {
-            const d3 = characterCard(heroID,"dungeonAvailable",heroID);
-            d2.append(d3);
+    HeroManager.ownedHeroes().forEach(hero => {
+        if (!party.hasMember(hero.id)) {
+            const d3 = characterCard(hero.id,"dungeonAvailable",hero.id);
+            d2.append(d3);  
         }
-    };
+    });
     $dtsBottom.append(d2);
 }
 
 function characterCard(ID,prefix,dv) {
+    const hero = HeroManager.idToHero(ID);
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
-    const d1 = $("<div/>").addClass(prefix+"Image").html(heroOwnedbyID(ID).image);
-    const d2 = $("<div/>").addClass(prefix+"Name").html(heroBase[ID][0]);
+    const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
+    const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
     d.append(d1,d2);
     return d;
 }
@@ -176,9 +177,9 @@ function createDungeonCard(hero) {
     const d = $("<div/>").addClass("dhc");
     const d1 = $("<div/>").addClass("dhcName").html(hero.name);
     const d2 = heroBars(hero);
-    const s = hero.pic();
+    const s = hero.image;
     const d3 = $("<div/>").addClass("dhcPic").html(s);
-    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.power());
+    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.getPow());
     d.append(d1,d2,d3,d4)
     return d;
 }

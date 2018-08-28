@@ -48,6 +48,19 @@ function loadHeroes() {
             const hero = new Hero(props);
             HeroManager.addHero(hero);
         });
+        loadMobs();
+    });
+}
+
+function loadMobs() {
+    $.ajax({
+        url: "json/mobs.json",
+    }).done((data) => {
+        console.log("mob load complete");
+        $.each(data, function(i,props){
+            const mob = new MobTemplate(props);
+            MobManager.addMob(mob);
+        });
         afterLoad();
     });
 }

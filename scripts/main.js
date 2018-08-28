@@ -15,6 +15,7 @@ function afterLoad() {
     initializeRecipes();
     initializeActionSlots();
     initializeHeroList();
+    refreshHeroSelect();
     populateRecipe("Maces");
 }
 

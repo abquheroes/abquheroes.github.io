@@ -1,36 +1,21 @@
 class Party {
-    constructor (hero1,hero2,hero3,hero4) {
-        this.heroes = [hero1,hero2,hero3,hero4]
+    constructor (ct) {
+        this.maxSize = ct;
+        this.heroes = [];
     }
     hasMember(member) {
-        for (let i=0;i<this.heroes.length;i++) {
-            if (this.heroes[i] === member) return true;
-        }
-        return false;
+        return this.heroes.includes(member);
     }
     addMember(member) {
-        for (let i=0;i<this.heroes.length;i++) {
-            if (this.heroes[i] === "H999") {
-                this.heroes[i] = member;
-                return;
-            }
-        }
+        if (this.heroes.length >= this.maxSize) return false;
+        this.heroes.push(member);
     }
+    //tf is this for?
     removeMemberLocation(location) {
         this.heroes.splice(location, 1);
-        this.heroes.push("H999");
-    }
-    damageParty(dmg) {
-        this.heroList().forEach((hero) => {
-            hero.takeDamage(dmg);
-        })
     }
     heroList() {
-        const hList = [];
-        this.heroes.forEach((heroID) => {
-            if (heroID !== "H999") hList.push(heroOwnedbyID(heroID));
-        });
-        return hList
+        return this.heroes.map(id => HeroManager.idToHero(id))
     }
     validTeam() {
         return this.heroList().length > 0;
@@ -43,4 +28,4 @@ class Party {
     }
 }
 
-const party = new Party("H999","H999","H999","H999");
+const party = new Party(1);

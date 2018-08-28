@@ -43,7 +43,7 @@ const ResourceManager = {
         for (let i=0;i<this.materials.length;i++) {
             if (this.materials[i].id === res) return this.materialIcon(res) + "&nbsp;&nbsp" + this.materials[i].amt;
         }
-        return this.materialIcon(res) + "&nbsp;&nbsp" + this.resourceAvailable(res) + "/" + WorkerManager.totalProduction(res);
+        return this.materialIcon(res) + "&nbsp;&nbsp" + this.resourceAvailable(res) + " out of " + WorkerManager.totalProduction(res);
     },
     available(res,amt) {
         const item = recipeList.idToItem(res);

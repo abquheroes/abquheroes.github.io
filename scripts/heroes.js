@@ -26,7 +26,7 @@ class Hero {
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = true;
     }
-    pow() {
+    getPow() {
         let pow = 10;
         if (this.slot1 !== null) pow += this.slot1.pow();
         if (this.slot2 !== null) pow += this.slot2.pow();
@@ -135,14 +135,10 @@ const HeroManager = {
         });
     },
     heroOwned(ID) {
-        if (party.hasMember(member)) return false;
-        return true;
+        return this.idToHero(ID).owned;
     },
     idToHero(ID) {
-        for (let i=0;i<this.heroes.length;i++) {
-            if (this.heroes[i].id === ID) return this.heroes[i];
-        }
-        return null;
+        return this.heroes.find(hero => hero.id === ID);
     },
     equipItem(containerID,heroID) {
         const item = Inventory.equipItem(containerID);
@@ -162,6 +158,9 @@ const HeroManager = {
         const item = hero.getSlot(slot);
         hero.unequip(slot);
         Inventory.addToInventory(item.id,item.rarity,1);
+    },
+    ownedHeroes() {
+        return this.heroes.filter(hero => hero.owned);
     }
 }
 
@@ -211,7 +210,7 @@ function examineHero(ID) {
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("STAT");
     const htd2 = $("<div/>").addClass("heroExamineStatValueHeading").html("VALUE");
     upperRightDiv.append(htd.append(htd1,htd2));
-    const stats = [hero.hpmax,hero.pow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
+    const stats = [hero.hpmax,hero.getPow(), hero.apmax, hero.actmax, hero.armor, hero.crit, hero.critdmg, hero.dodgeChance];
     const statName = ["HP","POW","AP","ACT","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
