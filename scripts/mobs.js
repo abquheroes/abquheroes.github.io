@@ -30,8 +30,8 @@ class Mob {
         this.name = mobTemplate.name;
         this.id = mobTemplate.id;
         this.image = mobTemplate.image;
-        this.pow = mobTemplate.powBase + mobTemplate.powLvl*lvl;
-        this.hpmax = mobTemplate.hpBase + mobTemplate.hpLvl*lvl;
+        this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
+        this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
         this.actmax = mobTemplate.act;
         this.act = 0;

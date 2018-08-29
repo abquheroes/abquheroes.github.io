@@ -10,6 +10,9 @@ class Party {
         if (this.heroes.length >= this.maxSize) return false;
         this.heroes.push(member);
     }
+    emptyPartySlots() {
+        return this.maxSize-this.heroes.length;
+    }
     //tf is this for?
     removeMemberLocation(location) {
         this.heroes.splice(location, 1);

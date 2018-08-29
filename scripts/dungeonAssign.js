@@ -3,7 +3,7 @@
 //then you assign heroes by clicking on the slot?
 //build adventure groups so dungeons.js can automate it
 
-const DungeonState = Object.freeze({"TEAMSELECT":0,"ADVENTURING":1,"DONE":2});
+const DungeonState = Object.freeze({"TEAMSELECT":0,"ADVENTURING":1});
 
 $dungeonLayout = $("#dungeonLayout");
 
@@ -30,7 +30,7 @@ const DungeonAssist = {
             if (mob.addTime(t)) mob.attack(party.heroList());
         });
         if (party.isDead()) {
-            this.status = DungeonState.DONE;
+            this.status = DungeonState.TEAMSELECT;
             loadCorrectDungeonScreen();
         }
         if (this.floor.isDead()) {
@@ -64,11 +64,6 @@ function loadCorrectDungeonScreen() {
         $dungeonAfter.hide();
         refreshDungeonFloor();
     }
-    else {
-        $dungeonTeamSelect.hide();
-        $dungeonRun.hide();
-        $dungeonAfter.show();
-    }
 }
 
 function refreshDungeonGrid() {
@@ -97,9 +92,13 @@ function refreshHeroSelect() {
     $dtsTop.append(d1top);
     const d = $("<div/>").addClass("dungeonTeamCollection");
     party.heroes.forEach((hero,i) => {
-        const d1 = characterCard(hero,"dungeonTeam",i);
+        const d1 = characterCard("dungeonTeam",i,hero);
         d.append(d1);
     });
+    for (let i=0;i<party.emptyPartySlots();i++) {
+        const d1a = characterCard("dungeonTeam",i);
+        d.append(d1a);
+    }
     $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH");
     $dtsTop.append(dbutton);
@@ -109,20 +108,24 @@ function refreshHeroSelect() {
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
         if (!party.hasMember(hero.id)) {
-            const d3 = characterCard(hero.id,"dungeonAvailable",hero.id);
+            const d3 = characterCard("dungeonAvailable",hero.id,hero.id);
             d2.append(d3);  
         }
     });
     $dtsBottom.append(d2);
 }
 
-function characterCard(ID,prefix,dv) {
-    const hero = HeroManager.idToHero(ID);
+function characterCard(prefix,dv,ID) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
+    if (!ID) {
+        const d1a = $("<div/>").addClass(prefix+"Image").html('<img src="images/heroes/blank.png">');
+        const d2a = $("<div/>").addClass(prefix+"Name").html("Empty");
+        return d.append(d1a,d2a);
+    }
+    const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    d.append(d1,d2);
-    return d;
+    return d.append(d1,d2);
 }
 
 //clicking a hero to remove them from your party
@@ -178,8 +181,8 @@ function createDungeonCard(hero) {
     const d2 = heroBars(hero);
     const s = hero.image;
     const d3 = $("<div/>").addClass("dhcPic").html(s);
-    const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.getPow());
-    d.append(d1,d2,d3,d4)
+    //const d4 = $("<div/>").addClass("dhcPow").html(dungeonIcons[Stat.POW]+"&nbsp;&nbsp;"+hero.getPow());
+    d.append(d1,d2,d3)
     return d;
 }
 
