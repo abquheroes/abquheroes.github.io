@@ -60,7 +60,9 @@
     --scroll-thumb: rgba(255,255,255,0.10);
     --scroll-track: rgba(0,0,0,0.30);
     --progressbar: #1c95c5;
-    --scheme: linear-gradient(-40deg, #353535 0%, #545454 51%, #636262 75%);
+    --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
+    --scheme-moz: -moz-linear-gradient(left, #0b7edc 0%, #1396f3 50%, #00adff 100%);
+    --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
 }
 
 .lm-btn, .dm-btn, .cp-btn, .cf-btn {
@@ -142,7 +144,11 @@ body{
     position: relative;
     max-height: 500px;
     overflow: hidden;
-    transition: max-height 0.3s linear;
+    transition: max-height 0.3s ease-in-out;
+    -ms-transition: max-height 0.3s ease-in-out;
+    -o-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
+    -webkit-transition: max-height 0.3s ease-in-out;
 }
 
 .height-collapse {
@@ -154,9 +160,13 @@ body{
     top: 4px;
     right: 2px;
     color: var(--text-3);
-    transition: all 0.3s ease;
     font-family: monospace;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
 }
 
 .arrow-rotate {
@@ -175,11 +185,16 @@ body{
     margin-top: 0;
 }
 
+#resources {
+    display: flex;
+    flex-direction: column;
+}
+
 .resource {
     position: relative;
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 2px 0;
     padding: 5px 10px;
     background-color: var(--bg-3);
     border: 2px solid var(--border);
@@ -202,8 +217,11 @@ body{
     position: sticky;
     top: 0;
     background: var(--bg);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     z-index: 99;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 #sellPref {
@@ -311,6 +329,10 @@ body{
     font-size: 0.8em;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
 }
 
 .tablinks > div {
@@ -338,6 +360,10 @@ body{
     height: 2px;
     background-color: var(--highlight);
     transition: width 0.2s ease-in-out;
+    -ms-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -webkit-transition: width 0.2s ease-in-out;
 }
 
 .tablinks:hover:after {
@@ -348,6 +374,8 @@ body{
     animation: 0.2s fade-in;
 }
 
+
+/* BULLSHIT JQUERY UI */
 .demoHeaders {
     margin-top: 2em;
 }
@@ -496,6 +524,8 @@ select {
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
 
+/* END OF JQUERY UI */
+
 #Actions>h1 {
     margin: 10px 0;
     padding: 0 20px;
@@ -564,7 +594,9 @@ select {
     display: block;
     position: relative;
     height: 100%;
-    background: var(--progressbar);
+    background: var(--scheme);
+    background: var(--scheme-moz);
+    background: var(--scheme-webkit);
     z-index: 1;
 }
 
@@ -615,6 +647,10 @@ select {
     color: rgba(255, 0, 0, 0.5);
     text-decoration: none;
     transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
@@ -1315,7 +1351,7 @@ input#importSaveText {
     display: flex;
     flex-wrap: wrap;
     align-content: start;
-    max-width: 300px;
+    max-width: 250px;
     overflow: auto;
 }
 
@@ -1365,17 +1401,18 @@ input#importSaveText {
 }
 
 #heroDetails {
-    max-width: 300px;
+    max-width: 275px;
     overflow: auto;
 }
 
 .hero-placeholder-details {
     display: block;
     padding: 20px;
+    font-size: 0.9em;
 }
 
 .heroExamineTop, .heroExamineStats {
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .heroExamineTop, .heroExamineStats {
@@ -1426,20 +1463,15 @@ input#importSaveText {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1px 0;
-    padding: 10px;
+    margin: 2px 0;
+    padding: 10px 20px;
     width: 100%;
     background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    font-size: 0.9em;
 }
 
 .heroExamineStatRowName {
     flex-grow: 1;
-    padding-left: 20px;
-}
-
-.heroExamineStatRowValue {
-    padding-right: 20px;
 }
 
 #heroGear {
@@ -1700,7 +1732,9 @@ input#importSaveText {
     display: block;
     position: relative;
     height: 100%;
-    background-color: var(--progressbar);
+    background: var(--scheme);
+    background: var(--scheme-moz);
+    background: var(--scheme-webkit);
 }
 
 footer {
@@ -1730,6 +1764,10 @@ footer a {
     color: var(--text);
     text-decoration: none;
     transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
@@ -1752,6 +1790,10 @@ footer a:hover {
     transform: rotate(45deg);
     color: var(--text-3);
     transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
 }
 
 #bottom-right a:hover > i.material-icons {
@@ -1798,6 +1840,7 @@ footer a[href*="discord.gg"]:hover {
     transform: rotate(180deg);
     animation: fade-in 0.3s;
     pointer-events: none;
+    z-index: 10;
 }
 
 .tooltip:hover:after {
@@ -1819,6 +1862,7 @@ footer a[href*="discord.gg"]:hover {
     padding: 5px 8px;
     animation: fade-in 0.3s; 
     pointer-events: none;
+    z-index: 10;
 }
 
 .inventoryItem.tooltip:hover:after {
@@ -1947,7 +1991,11 @@ footer a[href*="discord.gg"]:hover {
     border: none;
     border: 1px solid var(--border);
     border-radius: 0;
-    transition: all 0.2s linear;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:after, #pfPassword:after {
@@ -1957,7 +2005,11 @@ footer a[href*="discord.gg"]:hover {
     height: 2px;
     width: 0;
     background-color: var(--border-2);
-    transition: all 0.2s linear;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:hover:after, #pfPassword:hover:after {
@@ -1979,9 +2031,14 @@ footer a[href*="discord.gg"]:hover {
     border: 1px solid var(--border);
     border-radius: 0;
     cursor: pointer;
-    transition: all 0.2s linear;
     appearance: none;
+    -moz-appearance: none;
     -webkit-appearance: none;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
@@ -2039,16 +2096,20 @@ footer a[href*="discord.gg"]:hover {
 /* Dialogs */
 
 .dialog {
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.8);
+    opacity: 0;
     pointer-events: none;
-    transition: all 0.2s linear;
     z-index: 9999;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 a.workerDialog {
@@ -2073,9 +2134,8 @@ a.workerDialog:hover {
 }
 
 .dialog:target {
-    display: block;
+    opacity: 1;
     pointer-events: auto;
-    animation: 0.2s fade-in;
 }
 
 .dialog_content {
@@ -2114,8 +2174,12 @@ a.workerDialog:hover {
     font-size: 32px;
     text-decoration: none;
     border-radius: 50%;
-    transition: all 0.2s ease;
     z-index: 2;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .dialog_close:hover {
@@ -2131,6 +2195,9 @@ a.workerDialog:hover {
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .dialog_body {
@@ -2204,8 +2271,11 @@ a.workerDialog:hover {
         position: relative;
         flex-wrap: wrap;
         flex-direction: row;
-        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
         z-index: 2;
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
+        -o-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
     }
 
     #selection {
@@ -2226,8 +2296,11 @@ a.workerDialog:hover {
 
     #right-side-content {
         margin-bottom: 50px;
-        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
         z-index: 2;
+        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -webkit-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -moz-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
+        -o-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
     }
 
     #game-logo {
