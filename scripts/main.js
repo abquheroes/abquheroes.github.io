@@ -25,8 +25,9 @@ openTab("recipesTab");
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
     player.lastTime = Date.now();
-    dungeonAdvance(elapsedTime);
+    DungeonAssist.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
+    HeroManager.healTimer(elapsedTime);
 }
 
 setInterval(mainLoop, 10);

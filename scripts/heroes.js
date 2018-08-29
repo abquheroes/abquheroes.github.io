@@ -39,6 +39,11 @@ class Hero {
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.hpmax);
     }
+    healPercent(hpPercent) {
+        let hp = Math.floor(this.hpmax*hpPercent/100);
+        hp = Math.max(1,hp);
+        this.heal(hp);
+    }
     dead() {
         return this.hp === 0;
     }
@@ -127,6 +132,7 @@ class Hero {
 
 const HeroManager = {
     heroes : [],
+    healTime : 0,
     addHero(hero) {
         this.heroes.push(hero);
     },
@@ -162,6 +168,23 @@ const HeroManager = {
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
+    },
+    healTimer(ms) {
+        //once it reaches 6 seconds, heals all non-active party members 1%
+        this.healTime += ms;
+        if (this.healTime >= 6000) {
+            this.healTime -= 6000;
+            this.restBeat();
+        }
+    },
+    restBeat() {
+        //heal up all non-current partying members by 1% of their maxhp
+        this.heroes.forEach(hero => {
+            if (!party.hasMember(hero.id) || !DungeonAssist.isActive()) {
+                hero.healPercent(1);
+            }
+        });
+        refreshHeroSelect();
     }
 }
 

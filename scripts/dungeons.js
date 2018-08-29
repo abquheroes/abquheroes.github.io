@@ -32,6 +32,5 @@ function generateDungeonFloor() {
     else ft = FloorType.FIGHT;
     const difficulty = dungeon.length+1;
     const floor = new Floor(ft,difficulty);
-    console.log(floor.monster);
     dungeon.push(floor);
 }
