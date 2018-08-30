@@ -5,8 +5,6 @@
 
 const DungeonState = Object.freeze({"TEAMSELECT":0,"ADVENTURING":1});
 
-$dungeonLayout = $("#dungeonLayout");
-
 const $dungeonTeamSelect = $("#dungeonTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 const $dungeonAfter = $("#dungeonAfter");
@@ -44,7 +42,6 @@ const DungeonAssist = {
             generateDungeonFloor();
         }
         this.floor = dungeon[this.floorNum-1];
-        refreshDungeonGrid();
         refreshDungeonFloor();
     },
     isActive() {
@@ -67,16 +64,6 @@ function loadCorrectDungeonScreen() {
         $dungeonAfter.hide();
         refreshDungeonFloor();
     }
-}
-
-function refreshDungeonGrid() {
-    $dungeonLayout.empty();
-    dungeon.forEach((floor,i) => {
-        const d = $("<div/>").addClass("dungeonFloor").html(floor.icon + "&nbsp;&nbsp;Floor "+(i+1));
-        if (party.floor < i) d.addClass("dungeonFloorClear");
-        else if (party.floor == i) d.addClass("dungeonFloorCurrent");
-        $dungeonLayout.append(d);
-    });
 }
 
 function refreshHeroSelect() {
@@ -197,10 +184,10 @@ function heroBars(hero) {
 }
 
 function heroHPBar(hero) {
-    const hpPercent = hero.hp/hero.hpmax;
+    const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.hpmax).attr("id","hp"+hero.id);
+    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+hero.id);
     const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+hero.id).css('width', hpWidth);
     return d1.append(d1a,s1);
 }

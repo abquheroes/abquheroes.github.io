@@ -27,6 +27,9 @@ class itemContainer {
     pow() {
         return this.item.pow;
     }
+    hp() {
+        return this.item.hp;
+    }
 }
 
 const Inventory = {

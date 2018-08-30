@@ -1,5 +1,6 @@
 "use strict";
 const DamageType = Object.freeze({PHYSICAL:0,MAGIC:1});
+const MobState = Object.freeze({DEAD:0,ALIVE:1});
 
 const monsterDB = [];
 
@@ -41,6 +42,7 @@ class Mob {
         this.target = mobTemplate.target;
         this.apmax = mobTemplate.ap;
         this.ap = 0;
+        this.status = MobState.ALIVE;
     }
     getPow() {
         return this.pow;
@@ -85,6 +87,7 @@ class Mob {
         else {
             this.hp = Math.max(this.hp-dmg,0);
         }
+        this.deadCheck();
     }
     dodgeCheck() {
         return this.dodgeChance > Math.floor(Math.random()*100) + 1;
@@ -94,6 +97,14 @@ class Mob {
             dmg = dmg*this.critdmg
         }
         return dmg;
+    }
+    maxHP() {
+        return this.hpmax;
+    }
+    deadCheck() {
+        if (this.hp > 0 || this.status === MobState.DEAD) return;
+        this.status = MobState.DEAD;
+        party.addXP(this.lvl);
     }
 }
 

@@ -1,12 +1,29 @@
 "use strict";
 
+const levelCurves = { 
+    xpCurve : [],
+    hpCurve : [],
+    powCurve : [],
+    getLvlStats(lvl) {
+        return {xp:this.xpCurve[lvl-1],hp:this.hpCurve[lvl-1],pow:this.powCurve[lvl-1]};
+    },
+    setXP(xp) {
+        this.xpCurve = xp;
+    },
+    setHP(hp) {
+        this.hpCurve = hp;
+    },
+    setPOW(pow) {
+        this.powCurve = pow;
+    },
+}
+
 class Hero {
     constructor (props) {
         Object.assign(this, props);
         this.lvl = 1;
         this.xp = 0;
-        this.hp = 100;
-        this.hpmax = 100;
+        this.hp = levelCurves.getLvlStats(this.lvl).hp;
         this.ap = 0;
         this.apmax = 5;
         this.act = 0;
@@ -27,7 +44,7 @@ class Hero {
         this.owned = true;
     }
     getPow() {
-        let pow = 10;
+        let pow = levelCurves.getLvlStats(this.lvl).pow;
         if (this.slot1 !== null) pow += this.slot1.pow();
         if (this.slot2 !== null) pow += this.slot2.pow();
         if (this.slot3 !== null) pow += this.slot3.pow();
@@ -37,10 +54,10 @@ class Hero {
         return pow;
     }
     heal(hp) {
-        this.hp = Math.min(this.hp+hp,this.hpmax);
+        this.hp = Math.min(this.hp+hp,this.maxHP());
     }
     healPercent(hpPercent) {
-        let hp = Math.floor(this.hpmax*hpPercent/100);
+        let hp = Math.floor(this.maxHP()*hpPercent/100);
         hp = Math.max(1,hp);
         this.heal(hp);
     }
@@ -127,6 +144,26 @@ class Hero {
     }
     getSlot(slot) {
         return this.getEquipSlots()[slot];
+    }
+    maxXP() {
+        return levelCurves.getLvlStats(this.lvl).xp;
+    }
+    maxHP() {
+        let hp = levelCurves.getLvlStats(this.lvl).hp;
+        if (this.slot1 !== null) hp += this.slot1.hp();
+        if (this.slot2 !== null) hp += this.slot2.hp();
+        if (this.slot3 !== null) hp += this.slot3.hp();
+        if (this.slot4 !== null) hp += this.slot4.hp();
+        if (this.slot5 !== null) hp += this.slot5.hp();
+        if (this.slot6 !== null) hp += this.slot6.hp();
+        return hp;
+    }
+    addXP(xp) {
+        this.xp += xp;
+        if (this.xp >= this.maxXP()) {
+            this.xp -= this.maxXP();
+            this.lvl += 1;
+        }
     }
 }
 
@@ -227,7 +264,7 @@ function examineHero(ID) {
     const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
-    const d4 = $("<div/>").addClass("heroExamineExp").html("Exp: "+hero.xp);
+    const d4 = $("<div/>").addClass("heroExamineExp").html(`Exp: ${hero.xp}/${hero.maxXP()}`);
     upperLeftDiv.append(d1,d2,d3,d4);
     const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");

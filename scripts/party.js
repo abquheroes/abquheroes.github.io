@@ -21,13 +21,18 @@ class Party {
         return this.heroes.map(id => HeroManager.idToHero(id))
     }
     validTeam() {
-        return this.heroList().length > 0;
+        return this.heroes.length > 0 && this.alive();
     }
     alive() {
         return this.heroList().some((hero) => !hero.dead());
     }
     isDead() {
         return this.heroList().every((hero) => hero.dead());
+    }
+    addXP(xp) {
+        this.heroList().forEach(hero => {
+            hero.addXP(xp);
+        });
     }
 }
 
