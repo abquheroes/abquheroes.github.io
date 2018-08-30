@@ -3,8 +3,7 @@ const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", TRIAL:"Trial", TREA
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 
 class Floor {
-    constructor (type,lvl) {
-        this.type = type;
+    constructor (lvl) {
         this.lvl = lvl;
         this.icon = '<img src="/images/DungeonIcons/combat_floor.png">'
         this.difficulty = this.lvl*2+5;
@@ -27,10 +26,8 @@ const dungeonIcons = {
 const dungeon = [];
 
 function generateDungeonFloor() {
-    let ft = null;
-    if ((dungeon.length+1) % 5 === 0) ft = FloorType.TREASURE;
-    else ft = FloorType.FIGHT;
     const difficulty = dungeon.length+1;
-    const floor = new Floor(ft,difficulty);
+    console.log(difficulty);
+    const floor = new Floor(difficulty);
     dungeon.push(floor);
 }

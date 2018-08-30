@@ -10,7 +10,8 @@ const MobManager = {
         this.monsterDB.push(mob);
     },
     getMonster(floor) {
-        const mobTemplate = this.monsterDB[Math.floor(Math.random()*this.monsterDB.length)];
+        const possibleMonster = this.monsterDB.filter(mob => mob.minFloor <= floor && mob.maxFloor >= floor);
+        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
         return new Mob(floor,mobTemplate);
     },
     idToMob(id) {
@@ -31,6 +32,7 @@ class Mob {
         this.name = mobTemplate.name;
         this.id = mobTemplate.id;
         this.image = mobTemplate.image;
+        this.drops = mobTemplate.drops;
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
@@ -104,10 +106,11 @@ class Mob {
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;
         this.status = MobState.DEAD;
-        rollDrops();
+        this.rollDrops();
         party.addXP(this.lvl);
     }
     rollDrops() {
+        if (this.drops === null) return;
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
             if (success > roll) ResourceManager.addMaterial(material,1);
@@ -116,13 +119,9 @@ class Mob {
 }
 
 function getTarget(party,type) {
-    console.log(party);
+    console.log(party, type);
     if (type === "first") {
-        for (let i=0;i<party.length;i++) {
-            if (party[i].alive()) {
-                return party[i];
-            }
-        }
+        return party.filter(hero => hero.alive())[0]
     }
     else if (type === "reverse") {
         for (let i=party.length;i>0;i--) {
@@ -132,26 +131,10 @@ function getTarget(party,type) {
     else if (type === "random") {
         return party[Math.floor(Math.random()*party.length)];
     }
-    else if (type === "highHP") {
-        let highhp = 0;
-        let chosen = null;
-        for (let i=0;i<party.length;i++) {
-            if (party[i].hp > highhp) {
-                highhp = party[i].hp;
-                chosen = party[i];
-            }
-        }
-        return chosen;
+    else if (type === "highhp") {
+        return party.sort((a,b) => {return b.hp - a.hp})[0];
     }
-    else if (type === "lowHP") {
-        let lowhp = 9999999999;
-        let chosen = null;
-        for (let i=0;i<party.length;i++) {
-            if (party[i].hp < lowhp && party[i].hp > 0) {
-                lowhp = party[i].hp;
-                chosen = party[i];
-            }
-        }
-        return chosen;
+    else if (type === "lowhp") {
+        return party.sort((a,b) => {return a.hp - b.hp})[0];
     }
 }

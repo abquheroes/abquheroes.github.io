@@ -98,6 +98,7 @@ function refreshResources() {
     });
     ResourceManager.materials.map(m => m.id).forEach(material => {
         const d = $("<div/>").addClass("resource").attr("id",material).html(ResourceManager.output(material));
+        if (material !== "M001" && ResourceManager.idToMaterial(material).amt === 0) d.hide()
         $resources.append(d);
     })
 }

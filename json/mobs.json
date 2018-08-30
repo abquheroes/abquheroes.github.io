@@ -14,10 +14,9 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M101": 5
-    },
+      "M101": 100    },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 150
   },
   "B102": {
     "id": "B102",
@@ -36,8 +35,8 @@
     "drops": {
       "M102": 5
     },
-    "minFloor": 101,
-    "maxFloor": 200
+    "minFloor": 151,
+    "maxFloor": 300
   },
   "B103": {
     "id": "B103",
@@ -56,8 +55,8 @@
     "drops": {
       "M103": 5
     },
-    "minFloor": 201,
-    "maxFloor": 300
+    "minFloor": 301,
+    "maxFloor": 450
   },
   "B104": {
     "id": "B104",
@@ -76,8 +75,8 @@
     "drops": {
       "M104": 5
     },
-    "minFloor": 301,
-    "maxFloor": 400
+    "minFloor": 451,
+    "maxFloor": 600
   },
   "B105": {
     "id": "B105",
@@ -96,8 +95,8 @@
     "drops": {
       "M105": 5
     },
-    "minFloor": 401,
-    "maxFloor": 500
+    "minFloor": 601,
+    "maxFloor": 750
   },
   "B106": {
     "id": "B106",
@@ -116,8 +115,8 @@
     "drops": {
       "M106": 5
     },
-    "minFloor": 501,
-    "maxFloor": 600
+    "minFloor": 751,
+    "maxFloor": 900
   },
   "B107": {
     "id": "B107",
@@ -136,8 +135,8 @@
     "drops": {
       "M107": 5
     },
-    "minFloor": 601,
-    "maxFloor": 700
+    "minFloor": 901,
+    "maxFloor": 1050
   },
   "B108": {
     "id": "B108",
@@ -156,8 +155,8 @@
     "drops": {
       "M108": 5
     },
-    "minFloor": 701,
-    "maxFloor": 800
+    "minFloor": 1051,
+    "maxFloor": 1200
   },
   "B109": {
     "id": "B109",
@@ -176,8 +175,8 @@
     "drops": {
       "M109": 5
     },
-    "minFloor": 801,
-    "maxFloor": 900
+    "minFloor": 1201,
+    "maxFloor": 1350
   },
   "B110": {
     "id": "B110",
@@ -196,11 +195,11 @@
     "drops": {
       "M110": 5
     },
-    "minFloor": 901,
-    "maxFloor": 1000
+    "minFloor": 1351,
+    "maxFloor": 1500
   },
-  "B111": {
-    "id": "B111",
+  "B201": {
+    "id": "B201",
     "name": "Bee",
     "hpBase": 25,
     "hpLvl": 1,
@@ -210,17 +209,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M111": 5
+      "M201": 5
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 150
   },
-  "B112": {
-    "id": "B112",
+  "B202": {
+    "id": "B202",
     "name": "Cobra",
     "hpBase": 25,
     "hpLvl": 1.25,
@@ -230,17 +229,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M112": 5
+      "M202": 5
     },
-    "minFloor": 101,
-    "maxFloor": 200
+    "minFloor": 151,
+    "maxFloor": 300
   },
-  "B113": {
-    "id": "B113",
+  "B203": {
+    "id": "B203",
     "name": "Worm",
     "hpBase": 25,
     "hpLvl": 1.5,
@@ -250,17 +249,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M113": 5
+      "M203": 5
     },
-    "minFloor": 201,
-    "maxFloor": 300
+    "minFloor": 301,
+    "maxFloor": 450
   },
-  "B114": {
-    "id": "B114",
+  "B204": {
+    "id": "B204",
     "name": "Rat",
     "hpBase": 25,
     "hpLvl": 1.75,
@@ -270,17 +269,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M114": 5
+      "M204": 5
     },
-    "minFloor": 301,
-    "maxFloor": 400
+    "minFloor": 451,
+    "maxFloor": 600
   },
-  "B115": {
-    "id": "B115",
+  "B205": {
+    "id": "B205",
     "name": "Scorpion",
     "hpBase": 25,
     "hpLvl": 2,
@@ -290,17 +289,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M115": 5
+      "M205": 5
     },
-    "minFloor": 401,
-    "maxFloor": 500
+    "minFloor": 601,
+    "maxFloor": 750
   },
-  "B116": {
-    "id": "B116",
+  "B206": {
+    "id": "B206",
     "name": "Spider",
     "hpBase": 25,
     "hpLvl": 2.25,
@@ -310,17 +309,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M116": 5
+      "M206": 5
     },
-    "minFloor": 501,
-    "maxFloor": 600
+    "minFloor": 751,
+    "maxFloor": 900
   },
-  "B117": {
-    "id": "B117",
+  "B207": {
+    "id": "B207",
     "name": "Snake",
     "hpBase": 25,
     "hpLvl": 2.5,
@@ -330,17 +329,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M117": 5
+      "M207": 5
     },
-    "minFloor": 601,
-    "maxFloor": 700
+    "minFloor": 901,
+    "maxFloor": 1050
   },
-  "B118": {
-    "id": "B118",
+  "B208": {
+    "id": "B208",
     "name": "Parasite",
     "hpBase": 25,
     "hpLvl": 2.75,
@@ -350,17 +349,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M118": 5
+      "M208": 5
     },
-    "minFloor": 701,
-    "maxFloor": 800
+    "minFloor": 1051,
+    "maxFloor": 1200
   },
-  "B119": {
-    "id": "B119",
+  "B209": {
+    "id": "B209",
     "name": "Wasp",
     "hpBase": 25,
     "hpLvl": 3,
@@ -370,17 +369,17 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M119": 5
+      "M209": 5
     },
-    "minFloor": 801,
-    "maxFloor": 900
+    "minFloor": 1201,
+    "maxFloor": 1350
   },
-  "B120": {
-    "id": "B120",
+  "B210": {
+    "id": "B210",
     "name": "Bat",
     "hpBase": 25,
     "hpLvl": 3.25,
@@ -390,13 +389,313 @@
     "act": 2000,
     "armor": 0,
     "crit": 20,
-    "critdmg": 1.5,
+    "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M120": 5
+      "M210": 5
+    },
+    "minFloor": 1351,
+    "maxFloor": 1500
+  },
+  "B301": {
+    "id": "B301",
+    "name": "Earth Shaman",
+    "hpBase": 60,
+    "hpLvl": 1,
+    "powBase": 3,
+    "powLvl": 1.5,
+    "ap": 4,
+    "act": 4500,
+    "armor": 0,
+    "crit": 10,
+    "critdmg": 2,
+    "dodge": 10,
+    "target": "highhp",
+    "drops": {
+      "M301": 5
+    },
+    "minFloor": 1,
+    "maxFloor": 300
+  },
+  "B302": {
+    "id": "B302",
+    "name": "Water Shaman",
+    "hpBase": 60,
+    "hpLvl": 2,
+    "powBase": 3,
+    "powLvl": 1.5,
+    "ap": 4,
+    "act": 4500,
+    "armor": 0,
+    "crit": 10,
+    "critdmg": 2,
+    "dodge": 10,
+    "target": "highhp",
+    "drops": {
+      "M302": 5
+    },
+    "minFloor": 301,
+    "maxFloor": 600
+  },
+  "B303": {
+    "id": "B303",
+    "name": "Life Shaman",
+    "hpBase": 60,
+    "hpLvl": 3,
+    "powBase": 3,
+    "powLvl": 1.5,
+    "ap": 4,
+    "act": 4500,
+    "armor": 0,
+    "crit": 10,
+    "critdmg": 2,
+    "dodge": 10,
+    "target": "highhp",
+    "drops": {
+      "M303": 5
+    },
+    "minFloor": 601,
+    "maxFloor": 900
+  },
+  "B304": {
+    "id": "B304",
+    "name": "Fire Shaman",
+    "hpBase": 60,
+    "hpLvl": 4,
+    "powBase": 3,
+    "powLvl": 1.5,
+    "ap": 4,
+    "act": 4500,
+    "armor": 0,
+    "crit": 10,
+    "critdmg": 2,
+    "dodge": 10,
+    "target": "highhp",
+    "drops": {
+      "M304": 5
     },
     "minFloor": 901,
-    "maxFloor": 1000
+    "maxFloor": 1200
+  },
+  "B305": {
+    "id": "B305",
+    "name": "Death Shaman",
+    "hpBase": 60,
+    "hpLvl": 5,
+    "powBase": 3,
+    "powLvl": 1.5,
+    "ap": 4,
+    "act": 4500,
+    "armor": 0,
+    "crit": 10,
+    "critdmg": 2,
+    "dodge": 10,
+    "target": "highhp",
+    "drops": {
+      "M305": 5
+    },
+    "minFloor": 1200,
+    "maxFloor": 1500
+  },
+  "B401": {
+    "id": "B401",
+    "name": "Crab",
+    "hpBase": 60,
+    "hpLvl": 5,
+    "powBase": 4,
+    "powLvl": 1,
+    "ap": 2,
+    "act": 8000,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M401": 5
+    },
+    "minFloor": 1,
+    "maxFloor": 300
+  },
+  "B402": {
+    "id": "B402",
+    "name": "Octopus",
+    "hpBase": 60,
+    "hpLvl": 6,
+    "powBase": 4,
+    "powLvl": 1,
+    "ap": 2,
+    "act": 8000,
+    "armor": 100,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M402": 5
+    },
+    "minFloor": 301,
+    "maxFloor": 600
+  },
+  "B403": {
+    "id": "B403",
+    "name": "Turtle",
+    "hpBase": 60,
+    "hpLvl": 7,
+    "powBase": 4,
+    "powLvl": 1,
+    "ap": 2,
+    "act": 8000,
+    "armor": 200,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M403": 5
+    },
+    "minFloor": 601,
+    "maxFloor": 900
+  },
+  "B404": {
+    "id": "B404",
+    "name": "Alligator",
+    "hpBase": 60,
+    "hpLvl": 8,
+    "powBase": 4,
+    "powLvl": 1,
+    "ap": 2,
+    "act": 8000,
+    "armor": 300,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M404": 5
+    },
+    "minFloor": 901,
+    "maxFloor": 1200
+  },
+  "B405": {
+    "id": "B405",
+    "name": "Dinosaur",
+    "hpBase": 60,
+    "hpLvl": 9,
+    "powBase": 4,
+    "powLvl": 1,
+    "ap": 2,
+    "act": 8000,
+    "armor": 400,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M405": 5
+    },
+    "minFloor": 1200,
+    "maxFloor": 1500
+  },
+  "B501": {
+    "id": "B501",
+    "name": "Dwarf Guru",
+    "hpBase": 60,
+    "hpLvl": 3,
+    "powBase": 4,
+    "powLvl": 2,
+    "ap": 5,
+    "act": 5500,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M501": 5
+    },
+    "minFloor": 1,
+    "maxFloor": 300
+  },
+  "B502": {
+    "id": "B502",
+    "name": "Dwarf Cadet",
+    "hpBase": 60,
+    "hpLvl": 4,
+    "powBase": 4,
+    "powLvl": 2,
+    "ap": 5,
+    "act": 5500,
+    "armor": 50,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M502": 5
+    },
+    "minFloor": 301,
+    "maxFloor": 600
+  },
+  "B503": {
+    "id": "B503",
+    "name": "Dwarf Knife",
+    "hpBase": 60,
+    "hpLvl": 5,
+    "powBase": 4,
+    "powLvl": 2,
+    "ap": 5,
+    "act": 5500,
+    "armor": 100,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M503": 5
+    },
+    "minFloor": 601,
+    "maxFloor": 900
+  },
+  "B504": {
+    "id": "B504",
+    "name": "Dwarf Templar",
+    "hpBase": 60,
+    "hpLvl": 6,
+    "powBase": 4,
+    "powLvl": 2,
+    "ap": 5,
+    "act": 5500,
+    "armor": 150,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M504": 5
+    },
+    "minFloor": 901,
+    "maxFloor": 1200
+  },
+  "B505": {
+    "id": "B505",
+    "name": "Dwarf Champion",
+    "hpBase": 60,
+    "hpLvl": 7,
+    "powBase": 4,
+    "powLvl": 2,
+    "ap": 5,
+    "act": 5500,
+    "armor": 200,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M505": 5
+    },
+    "minFloor": 1200,
+    "maxFloor": 1500
   }
 }
