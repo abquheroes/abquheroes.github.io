@@ -75,8 +75,8 @@ const actionSlotManager = {
         $.each(this.slots, (i,slot) => {
             slot.craftAdvance(t)
             $("#ASBarFill"+i).css('width', slot.progress);
-            if (slot.status === slotState.CRAFTING) $("#ASBar"+i).attr("data-label",msToTime(slot.timeRemaining()));
-            else $("#ASBar"+i).attr("data-label","Waiting for material");
+            if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
+            else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
     totalCost(resource) {

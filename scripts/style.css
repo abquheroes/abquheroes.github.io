@@ -590,6 +590,15 @@ select {
     z-index: 2;
 }
 
+.ASProgressBar.matsNeeded:before {
+    color: var(--highlight);
+    font-weight: normal;
+    font-size: 0.70em;
+    text-transform: uppercase;
+    background: none;
+
+}
+
 .ProgressBarFill, .plProgressBarPercent {
     display: block;
     position: relative;
@@ -1391,6 +1400,7 @@ input#importSaveText {
 
 .heroOwnedCard.highlight {
     background: var(--bg-3);
+    border-bottom-color: var(--highlight);
 }
 
 .heroOwnedName {
