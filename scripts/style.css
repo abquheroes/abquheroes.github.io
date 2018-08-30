@@ -1491,8 +1491,7 @@ input#importSaveText {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex-grow: 1;
-    min-width: 100px;
+    flex: 1 100px;
     min-height: 100px;
     background-color: var(--bg-3);
     border-bottom: 1px solid var(--border);
