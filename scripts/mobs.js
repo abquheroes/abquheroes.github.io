@@ -104,7 +104,14 @@ class Mob {
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;
         this.status = MobState.DEAD;
+        rollDrops();
         party.addXP(this.lvl);
+    }
+    rollDrops() {
+        for (const [material, success] of Object.entries(this.drops)) {
+            const roll = Math.floor(Math.random() * 100);
+            if (success > roll) ResourceManager.addMaterial(material,1);
+        }
     }
 }
 

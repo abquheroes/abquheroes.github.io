@@ -17,24 +17,32 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
-        for (let i=0;i<this.materials.length;i++) {
-            if (this.materials[i].id === res) {
-                this.materials[i].amt += amt;
-                break;
-            }
-        }
+        console.log(res,amt);
+        this.materials.find(mat => mat.id === res).amt += amt;
         refreshResources();
-        refreshWorkers();
     },
-    canAfford(item) {
-        for (const [resource, amt] of Object.entries(item.cost)) {
+    canAffordResources(itemID) {
+        const item = recipeList.idToItem(itemID);
+        for (const [resource, amt] of Object.entries(item.rcost)) {
             if (amt > this.resourceAvailable(resource)) return false;
         }
         return true;
     },
+    canAffordMaterial(item) {
+        for (const [material, amt] of Object.entries(item.mcost)) {
+            if (amt > this.materialAvailable(material)) return false;
+        }
+        return true;
+    },
+    deductMaterial(item) {
+        for (const [resource, amt] of Object.entries(item.mcost)) {
+            this.addMaterial(resource,-amt);
+        }
+        refreshResources();
+    },
     materialIcon(type) {
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
-        return "<img src='/images/resources/"+type+".png' alt='"+type+"'>";
+        return `<img src="/images/resources/${type}.png" alt="${type}">`
     },
     formatCost(res,amt) {
         return this.materialIcon(res)+"&nbsp;"+amt;
@@ -55,6 +63,9 @@ const ResourceManager = {
     resourceAvailable(res) {
         if (res[0] === "R") return Inventory
         return WorkerManager.totalProduction(res)-actionSlotManager.totalCost(res);
+    },
+    materialAvailable(matID) {
+        return this.materials.find(mat => mat.id === matID).amt;
     },
     name(res) {
         const item = recipeList.idToItem(res);

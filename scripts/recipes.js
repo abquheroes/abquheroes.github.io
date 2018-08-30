@@ -24,14 +24,18 @@ class Item{
     }
     visualizeCost() {
         const d = $("<div/>").addClass("itemCost")
-        for (const [resource, amt] of Object.entries(this.cost)) {
+        for (const [resource, amt] of Object.entries(this.rcost)) {
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
             d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.formatCost(resource,amt)));
+        }
+        for (const [material, amt] of Object.entries(this.mcost)) {
+            const mat = ResourceManager.idToMaterial(material)
+            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt)));
         }
         return d;
     }
     getCost(resource) {
-        if (resource in this.cost) return this.cost[resource];
+        if (resource in this.rcost) return this.rcost[resource];
         return 0;
     }
 }
@@ -85,9 +89,7 @@ $(document).on('click', '.recipeName', (e) => {
     e.preventDefault();
     const type = $(e.target).attr("id");
     const item = recipeList.idToItem(type);
-    if (!ResourceManager.canAfford(item)) return;
     actionSlotManager.addSlot(type);
-    refreshResources();
 });
 
 $(document).on('click', '.recipeSelect', (e) => {
