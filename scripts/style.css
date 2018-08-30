@@ -972,6 +972,11 @@ input#importSaveText {
     margin-left: 300px;
 }
 
+.itemCost {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .indvCost {
     display: inline-block;
     position: relative;
