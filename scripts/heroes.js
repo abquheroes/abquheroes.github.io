@@ -279,10 +279,14 @@ function examineHero(ID) {
     const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
     $.each(slots, (slotNum,equip) => {
         let equipText = "Empty"
-        if (equip !== null) equipText = equip.picName;
+        let equipRarity = 0
+        if (equip !== null) {
+            equipText = equip.picName;
+            equipRarity = equip.rarity;
+        }
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
-        const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").html(equipText);
+        const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
@@ -321,7 +325,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     table.append(hrow);
     console.log(Inventory.listbyType(types));
     Inventory.listbyType(types).forEach((itemContainer) => {
-        const td1 = $('<div/>').addClass('EHPEname').html(itemContainer.picName);
+        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html("5");
         const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2);
         table.append(row);

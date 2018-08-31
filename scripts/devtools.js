@@ -1,19 +1,16 @@
 const devtools = {
     godmode : function() {
         console.log("this will probably take a minute, don't close...");
-        for (let i=0;i<blueprints.length;i++) {
-            itemCount[blueprints[i].name] = 1000;
-        }
-        for (const [worker,lvl] of Object.entries(workerProgress)) {
-            workerProgress[worker] = 25;
-        }
-        player.money = 1000000000000;
-        for (let i=0;i<blueprints.length;i++) {
-            inventory[blueprints[i].name] = 10;
-        }
-        refreshWorkers();
-        refreshUpgrades();
-        refreshInventory();
+        recipeList.recipes.forEach(recipe => {
+            recipe.owned = true;
+        })
+        WorkerManager.workers.forEach(worker => {
+            worker.owned = true;
+            worker.lvl = 10;
+        })
+        ResourceManager.materials.forEach(material => {
+            ResourceManager.addMaterial(material.id,100);
+        })
     },
     streamData : function() {
         //take each slot, find cost per second and output per second, sum amts and output results to console
@@ -55,5 +52,5 @@ const devtools = {
     },
     speed(amt) {
         player.timeWarp = amt;
-    }
+    },
 }

@@ -26,7 +26,7 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            Inventory.addToInventory(this.itemid,0);
+            Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
         }
         this.progress = (this.craftTime/this.maxCraft).toFixed(3)*100+"%";
