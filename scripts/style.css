@@ -142,7 +142,7 @@ body{
 
 #resources-container, #settings-container {
     position: relative;
-    max-height: 1200px;
+    max-height: 1800px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
@@ -1982,10 +1982,9 @@ footer a[href*="discord.gg"]:hover {
     top: unset;
     bottom: 130%;
     left: 0;
-    right: 0;
-    width: 50px;
+    right: 50%;
     margin-top: 0;
-    padding: 5px 10px;
+    padding: 5px;
 }
 
 .WorkerDesc.tooltip:hover:before {
