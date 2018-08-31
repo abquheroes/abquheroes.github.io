@@ -6,8 +6,7 @@
     "craftTime": 1852,
     "type": "Maces",
     "rcost": {
-      "wood": 5,
-      "mana": 5
+      "wood": 5
     },
     "mcost": {
       "M101": 1
