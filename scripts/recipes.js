@@ -8,10 +8,10 @@ const $RecipeResults = $("#RecipeResults");
 class Item{
     constructor (props) {
         Object.assign(this, props);
-        this.owned = true;
+        this.owned = false;
     }
     canAfford() {
-        return Resources.canAfford(this.cost);
+        return ResourceManager.canAffordResources(this.id);
     }
     itemPicName() {
         return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
@@ -54,14 +54,26 @@ const recipeList = {
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
+    buyable(type) {
+        return this.recipes.filter(recipe => recipe.type === type && !recipe.owned && recipe.canAfford())
+    },
+    buyBP(id) {
+        console.log(id);
+        if (ResourceManager.idToMaterial("M002").amt === 0) return;
+        ResourceManager.addMaterial("M002",-1);
+        const item = this.idToItem(id);
+        item.owned = true;
+        populateRecipe(item.type);
+    }
 }
 
 function populateRecipe(type) {
     type = type || ItemType.KNIFE;
     $(".recipeRow").hide();
-    recipeList.listByType(type).forEach((recipe) => {
+    recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
         $("#"+recipe.id).show();
     });
+    refreshBlueprint(type);
 }
 
 function initializeRecipes() {
@@ -85,6 +97,19 @@ function initializeRecipes() {
     $RecipeResults.append(table);
 }
 
+const $blueprintUnlock = $("#BlueprintUnlock");
+
+function refreshBlueprint(type) {
+    $blueprintUnlock.empty();
+    recipeList.buyable(type).forEach(recipe => {
+        const d = $("<div/>").addClass('bpShop');
+        const d1 = $("<div/>").addClass('bpShopName').html(recipe.itemPicName());
+        const b1 = $("<div/>").addClass('bpShopButton').attr("id",recipe.id).html(`BUY - 1 <img src="images/resources/M002.png" id="${recipe.id}" alt="Blueprint">`);
+        d.append(d1,b1);
+        $blueprintUnlock.append(d);
+    })
+}
+
 $(document).on('click', '.recipeName', (e) => {
     e.preventDefault();
     const type = $(e.target).attr("id");
@@ -95,6 +120,11 @@ $(document).on('click', '.recipeName', (e) => {
 $(document).on('click', '.recipeSelect', (e) => {
     e.preventDefault();
     const type = $(e.target).attr("id");
-    console.log(type);
     populateRecipe(type);
 })
+
+$(document).on('click','.bpShopButton', (e) => {
+    e.preventDefault();
+    const id = $(e.target).attr('id');
+    recipeList.buyBP(id);
+});
