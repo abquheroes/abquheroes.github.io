@@ -48,6 +48,13 @@ const Inventory = {
         refreshWorkers();
         examineHeroPossibleEquip();
     },
+    craftToInventory(id) {
+        const roll = Math.floor(Math.random() * 1000)
+        if (roll <= 1) this.addToInventory(id,3,1);
+        else if (roll <= 10) this.addToInventory(id,2,1);
+        else if (roll <= 50) this.addToInventory(id,1,1);
+        else this.addToInventory(id,0,1);
+    },
     removeFromInventory(id,rarity,amt) {
         for (let i=0;i<this.inv.length;i++) {
             if (this.inv[i].match(id,rarity)) {
