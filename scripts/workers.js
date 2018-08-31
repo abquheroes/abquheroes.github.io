@@ -76,6 +76,8 @@ function refreshWorkers() {
         const workerNameProduction = $('<div/>').addClass("WorkerNameAndProduction");
             const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
             const d3 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
+                const d3a = $("<div/>").addClass("WorkerDesc tooltip").html("<i class='tiny material-icons'>info_outline</i>").attr("data-tooltip", worker.description);
+            d3.append(d3a);
         workerNameProduction.append(d2, d3);
         workerDetails.append(d1, workerNameProduction);
         const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);

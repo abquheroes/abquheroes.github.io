@@ -2,11 +2,12 @@
   "R0101": {
     "id": "R0101",
     "name": "Club",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 10,
+    "craftTime": 1852,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 5,
+      "mana": 5
     },
     "mcost": {
       "M001": 1
@@ -16,11 +17,11 @@
   "R0102": {
     "id": "R0102",
     "name": "Maul",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 72,
+    "craftTime": 3609,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 10
     },
     "mcost": {},
     "pow": 10
@@ -28,11 +29,11 @@
   "R0103": {
     "id": "R0103",
     "name": "Brawler",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 518,
+    "craftTime": 6710,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 15
     },
     "mcost": {},
     "pow": 15
@@ -40,11 +41,11 @@
   "R0104": {
     "id": "R0104",
     "name": "The Broominator",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 3732,
+    "craftTime": 12494,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 20
     },
     "mcost": {},
     "pow": 20
@@ -52,11 +53,12 @@
   "R0105": {
     "id": "R0105",
     "name": "Blackjack",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 26870,
+    "craftTime": 23245,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "bone": 10
     },
     "mcost": {},
     "pow": 25
@@ -64,11 +66,12 @@
   "R0106": {
     "id": "R0106",
     "name": "Bludgeon",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 193464,
+    "craftTime": 43251,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "bone": 15
     },
     "mcost": {},
     "pow": 30
@@ -76,11 +79,12 @@
   "R0107": {
     "id": "R0107",
     "name": "Striped Club",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1025141,
+    "craftTime": 59225,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "bone": 20
     },
     "mcost": {},
     "pow": 35
@@ -88,11 +92,12 @@
   "R0108": {
     "id": "R0108",
     "name": "Night Club",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 4875124,
+    "craftTime": 72783,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "bone": 25
     },
     "mcost": {},
     "pow": 40
@@ -100,11 +105,12 @@
   "R0109": {
     "id": "R0109",
     "name": "Fact Finder",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 21251125,
+    "craftTime": 81988,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "bone": 30
     },
     "mcost": {},
     "pow": 45
@@ -112,11 +118,12 @@
   "R0110": {
     "id": "R0110",
     "name": "Knife Club",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 108215963,
+    "craftTime": 107891,
     "type": "Maces",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "bone": 35
     },
     "mcost": {},
     "pow": 50
@@ -124,8 +131,8 @@
   "R0201": {
     "id": "R0201",
     "name": "Rage Maker",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 13,
+    "craftTime": 2648,
     "type": "Axes",
     "rcost": {
       "ore": 5
@@ -136,11 +143,11 @@
   "R0202": {
     "id": "R0202",
     "name": "Fury Bringer",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 93,
+    "craftTime": 4895,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 10
     },
     "mcost": {},
     "pow": 10
@@ -148,11 +155,11 @@
   "R0203": {
     "id": "R0203",
     "name": "Vengeance",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 673,
+    "craftTime": 9154,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 15
     },
     "mcost": {},
     "pow": 15
@@ -160,11 +167,11 @@
   "R0204": {
     "id": "R0204",
     "name": "Pride",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 4851,
+    "craftTime": 17052,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 20
     },
     "mcost": {},
     "pow": 20
@@ -172,11 +179,12 @@
   "R0205": {
     "id": "R0205",
     "name": "Greedy Pickaxe",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 34931,
+    "craftTime": 30219,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "wood": 10
     },
     "mcost": {},
     "pow": 25
@@ -184,11 +192,12 @@
   "R0206": {
     "id": "R0206",
     "name": "Slothslayer",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 251503,
+    "craftTime": 56226,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "wood": 15
     },
     "mcost": {},
     "pow": 30
@@ -196,11 +205,12 @@
   "R0207": {
     "id": "R0207",
     "name": "Lusty Handaxe",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1332683,
+    "craftTime": 76992,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "wood": 20
     },
     "mcost": {},
     "pow": 35
@@ -208,11 +218,12 @@
   "R0208": {
     "id": "R0208",
     "name": "Envy",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 6337661,
+    "craftTime": 94618,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "wood": 25
     },
     "mcost": {},
     "pow": 40
@@ -220,11 +231,12 @@
   "R0209": {
     "id": "R0209",
     "name": "Gluttonous Axe",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 27626462,
+    "craftTime": 106584,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "wood": 30
     },
     "mcost": {},
     "pow": 45
@@ -232,11 +244,12 @@
   "R0210": {
     "id": "R0210",
     "name": "Wrath",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 140680751,
+    "craftTime": 140258,
     "type": "Axes",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "wood": 35
     },
     "mcost": {},
     "pow": 50
@@ -244,11 +257,11 @@
   "R0301": {
     "id": "R0301",
     "name": "Lonely Spear",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 7,
+    "craftTime": 1426,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "bone": 5
     },
     "mcost": {},
     "pow": 5
@@ -256,11 +269,11 @@
   "R0302": {
     "id": "R0302",
     "name": "Scary Spear",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 50,
+    "craftTime": 2632,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "bone": 10
     },
     "mcost": {},
     "pow": 10
@@ -268,11 +281,11 @@
   "R0303": {
     "id": "R0303",
     "name": "Crazy Spear",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 362,
+    "craftTime": 4924,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "bone": 15
     },
     "mcost": {},
     "pow": 15
@@ -280,11 +293,11 @@
   "R0304": {
     "id": "R0304",
     "name": "Intimidating Spear",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 2612,
+    "craftTime": 9181,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "bone": 20
     },
     "mcost": {},
     "pow": 20
@@ -292,11 +305,12 @@
   "R0305": {
     "id": "R0305",
     "name": "Moody Spear",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 18809,
+    "craftTime": 16272,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 10,
+      "bone": 25
     },
     "mcost": {},
     "pow": 25
@@ -304,11 +318,12 @@
   "R0306": {
     "id": "R0306",
     "name": "Shadow Spear",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 135424,
+    "craftTime": 30275,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 15,
+      "bone": 30
     },
     "mcost": {},
     "pow": 30
@@ -316,11 +331,12 @@
   "R0307": {
     "id": "R0307",
     "name": "Lucky Spear",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 717598,
+    "craftTime": 41457,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 20,
+      "bone": 35
     },
     "mcost": {},
     "pow": 35
@@ -328,11 +344,12 @@
   "R0308": {
     "id": "R0308",
     "name": "Pickle Spear",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 3412586,
+    "craftTime": 50948,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "bone": 40
     },
     "mcost": {},
     "pow": 40
@@ -340,11 +357,12 @@
   "R0309": {
     "id": "R0309",
     "name": "Alien Spear",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 14875787,
+    "craftTime": 57392,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "bone": 45
     },
     "mcost": {},
     "pow": 45
@@ -352,11 +370,12 @@
   "R0310": {
     "id": "R0310",
     "name": "Toxic Spear",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 75751174,
+    "craftTime": 75524,
     "type": "Spears",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "bone": 50
     },
     "mcost": {},
     "pow": 50
@@ -364,11 +383,11 @@
   "R0401": {
     "id": "R0401",
     "name": "Servant Rod",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 5,
+    "craftTime": 1018,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "silver": 5
     },
     "mcost": {},
     "pow": 5
@@ -376,11 +395,11 @@
   "R0402": {
     "id": "R0402",
     "name": "Envoy Rod",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 36,
+    "craftTime": 1895,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "silver": 10
     },
     "mcost": {},
     "pow": 10
@@ -388,11 +407,11 @@
   "R0403": {
     "id": "R0403",
     "name": "Actor Rod",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 259,
+    "craftTime": 3523,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "silver": 15
     },
     "mcost": {},
     "pow": 15
@@ -400,11 +419,11 @@
   "R0404": {
     "id": "R0404",
     "name": "Officer Rod",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 1866,
+    "craftTime": 6559,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "silver": 20
     },
     "mcost": {},
     "pow": 20
@@ -412,11 +431,12 @@
   "R0405": {
     "id": "R0405",
     "name": "Manager Rod",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 13435,
+    "craftTime": 12204,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 10,
+      "silver": 25
     },
     "mcost": {},
     "pow": 25
@@ -424,11 +444,12 @@
   "R0406": {
     "id": "R0406",
     "name": "Stewart Rod",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 96732,
+    "craftTime": 22707,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 15,
+      "silver": 30
     },
     "mcost": {},
     "pow": 30
@@ -436,11 +457,12 @@
   "R0407": {
     "id": "R0407",
     "name": "Finnicky Rod",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 512570,
+    "craftTime": 31093,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 20,
+      "silver": 35
     },
     "mcost": {},
     "pow": 35
@@ -448,11 +470,12 @@
   "R0408": {
     "id": "R0408",
     "name": "Funky Rod",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 2437562,
+    "craftTime": 38211,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 25,
+      "silver": 40
     },
     "mcost": {},
     "pow": 40
@@ -460,11 +483,12 @@
   "R0409": {
     "id": "R0409",
     "name": "Flashy Rod",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 10625562,
+    "craftTime": 43044,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 30,
+      "silver": 45
     },
     "mcost": {},
     "pow": 45
@@ -472,11 +496,12 @@
   "R0410": {
     "id": "R0410",
     "name": "Fishing Rod",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 54107981,
+    "craftTime": 56643,
     "type": "Rods",
     "rcost": {
-      "ore": 5
+      "steel": 35,
+      "silver": 50
     },
     "mcost": {},
     "pow": 50
@@ -484,11 +509,11 @@
   "R0501": {
     "id": "R0501",
     "name": "Basic Wand",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 3,
+    "craftTime": 596,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "mana": 5
     },
     "mcost": {},
     "pow": 5
@@ -496,11 +521,11 @@
   "R0502": {
     "id": "R0502",
     "name": "Forest Wand",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 21,
+    "craftTime": 1078,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "mana": 10
     },
     "mcost": {},
     "pow": 10
@@ -508,11 +533,11 @@
   "R0503": {
     "id": "R0503",
     "name": "Wind Wand",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 155,
+    "craftTime": 2057,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "mana": 15
     },
     "mcost": {},
     "pow": 15
@@ -520,11 +545,11 @@
   "R0504": {
     "id": "R0504",
     "name": "Soul Wand",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 1119,
+    "craftTime": 3837,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "mana": 20
     },
     "mcost": {},
     "pow": 20
@@ -532,11 +557,12 @@
   "R0505": {
     "id": "R0505",
     "name": "Rain Wand",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 8061,
+    "craftTime": 6811,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 10,
+      "mana": 25
     },
     "mcost": {},
     "pow": 25
@@ -544,11 +570,12 @@
   "R0506": {
     "id": "R0506",
     "name": "Frozen Wand",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 58039,
+    "craftTime": 12673,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 16,
+      "mana": 30
     },
     "mcost": {},
     "pow": 30
@@ -556,11 +583,12 @@
   "R0507": {
     "id": "R0507",
     "name": "Ocean Wand",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 307542,
+    "craftTime": 17354,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 23,
+      "mana": 35
     },
     "mcost": {},
     "pow": 35
@@ -568,11 +596,12 @@
   "R0508": {
     "id": "R0508",
     "name": "Thunder Wand",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 1462537,
+    "craftTime": 21327,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 31,
+      "mana": 40
     },
     "mcost": {},
     "pow": 40
@@ -580,11 +609,12 @@
   "R0509": {
     "id": "R0509",
     "name": "Hate Wand",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 6375337,
+    "craftTime": 24024,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "mana": 45
     },
     "mcost": {},
     "pow": 45
@@ -592,11 +622,12 @@
   "R0510": {
     "id": "R0510",
     "name": "Love Wand",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 32464788,
+    "craftTime": 31615,
     "type": "Wands",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 50
@@ -604,11 +635,11 @@
   "R0601": {
     "id": "R0601",
     "name": "Earth Staff",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 9,
+    "craftTime": 1746,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 5
     },
     "mcost": {},
     "pow": 5
@@ -616,11 +647,11 @@
   "R0602": {
     "id": "R0602",
     "name": "Wind Staff",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 64,
+    "craftTime": 3208,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 10
     },
     "mcost": {},
     "pow": 10
@@ -628,11 +659,11 @@
   "R0603": {
     "id": "R0603",
     "name": "Fire Staff",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 466,
+    "craftTime": 6037,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 15
     },
     "mcost": {},
     "pow": 15
@@ -640,11 +671,11 @@
   "R0604": {
     "id": "R0604",
     "name": "September Staff",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 3358,
+    "craftTime": 11242,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 20
     },
     "mcost": {},
     "pow": 20
@@ -652,11 +683,12 @@
   "R0605": {
     "id": "R0605",
     "name": "Water Staff",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 24183,
+    "craftTime": 20434,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "mana": 10
     },
     "mcost": {},
     "pow": 25
@@ -664,11 +696,12 @@
   "R0606": {
     "id": "R0606",
     "name": "Heart Staff",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 174117,
+    "craftTime": 38020,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "mana": 15
     },
     "mcost": {},
     "pow": 30
@@ -676,11 +709,12 @@
   "R0607": {
     "id": "R0607",
     "name": "Planet Staff",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 922626,
+    "craftTime": 52063,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "mana": 20
     },
     "mcost": {},
     "pow": 35
@@ -688,11 +722,12 @@
   "R0608": {
     "id": "R0608",
     "name": "Lunar Staff",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 4387611,
+    "craftTime": 63981,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "mana": 25
     },
     "mcost": {},
     "pow": 40
@@ -700,11 +735,12 @@
   "R0609": {
     "id": "R0609",
     "name": "Support Staff",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 19126012,
+    "craftTime": 72073,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "mana": 30
     },
     "mcost": {},
     "pow": 45
@@ -712,11 +748,12 @@
   "R0610": {
     "id": "R0610",
     "name": "Janitorial Staff",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 97394366,
+    "craftTime": 94844,
     "type": "Staves",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "mana": 35
     },
     "mcost": {},
     "pow": 50
@@ -725,7 +762,7 @@
     "id": "R0701",
     "name": "Knife",
     "value": 6,
-    "craftTime": 5000,
+    "craftTime": 1222,
     "type": "Knives",
     "rcost": {
       "ore": 5
@@ -736,11 +773,11 @@
   "R0702": {
     "id": "R0702",
     "name": "Butter Knife",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 43,
+    "craftTime": 2263,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 10
     },
     "mcost": {},
     "pow": 10
@@ -748,11 +785,11 @@
   "R0703": {
     "id": "R0703",
     "name": "Kitchen Knife",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 310,
+    "craftTime": 4217,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 15
     },
     "mcost": {},
     "pow": 15
@@ -760,11 +797,11 @@
   "R0704": {
     "id": "R0704",
     "name": "Chefs Knife",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 2239,
+    "craftTime": 7870,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 20
     },
     "mcost": {},
     "pow": 20
@@ -772,11 +809,12 @@
   "R0705": {
     "id": "R0705",
     "name": "Fishing Knife",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 16122,
+    "craftTime": 14645,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "steel": 10
     },
     "mcost": {},
     "pow": 25
@@ -784,11 +822,12 @@
   "R0706": {
     "id": "R0706",
     "name": "Thats Not A Knife",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 116078,
+    "craftTime": 27248,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "steel": 16
     },
     "mcost": {},
     "pow": 30
@@ -796,11 +835,12 @@
   "R0707": {
     "id": "R0707",
     "name": "Thats A Knife",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 615084,
+    "craftTime": 37312,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "steel": 23
     },
     "mcost": {},
     "pow": 35
@@ -808,11 +848,12 @@
   "R0708": {
     "id": "R0708",
     "name": "Club Knife",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 2925074,
+    "craftTime": 45853,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "steel": 31
     },
     "mcost": {},
     "pow": 40
@@ -820,11 +861,12 @@
   "R0709": {
     "id": "R0709",
     "name": "Dark Knife",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 12750675,
+    "craftTime": 51652,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "steel": 40
     },
     "mcost": {},
     "pow": 45
@@ -832,11 +874,12 @@
   "R0710": {
     "id": "R0710",
     "name": "The Bloopinator",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 64929577,
+    "craftTime": 67971,
     "type": "Knives",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "steel": 50
     },
     "mcost": {},
     "pow": 50
@@ -844,11 +887,11 @@
   "R0801": {
     "id": "R0801",
     "name": "Shatterer",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 11,
+    "craftTime": 2134,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 5
     },
     "mcost": {},
     "pow": 5
@@ -856,11 +899,11 @@
   "R0802": {
     "id": "R0802",
     "name": "Fragmenter",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 79,
+    "craftTime": 3960,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 10
     },
     "mcost": {},
     "pow": 10
@@ -868,11 +911,11 @@
   "R0803": {
     "id": "R0803",
     "name": "Disintgrater",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 569,
+    "craftTime": 7371,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 15
     },
     "mcost": {},
     "pow": 15
@@ -880,11 +923,11 @@
   "R0804": {
     "id": "R0804",
     "name": "Bone Breaker",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 4105,
+    "craftTime": 13742,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 20
     },
     "mcost": {},
     "pow": 20
@@ -892,11 +935,12 @@
   "R0805": {
     "id": "R0805",
     "name": "Fracture Finder",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 29557,
+    "craftTime": 24408,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "leather": 10
     },
     "mcost": {},
     "pow": 25
@@ -904,11 +948,12 @@
   "R0806": {
     "id": "R0806",
     "name": "Demolisher",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 212810,
+    "craftTime": 45413,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "leather": 15
     },
     "mcost": {},
     "pow": 30
@@ -916,11 +961,12 @@
   "R0807": {
     "id": "R0807",
     "name": "Shocker",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1127655,
+    "craftTime": 62186,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "leather": 20
     },
     "mcost": {},
     "pow": 35
@@ -928,11 +974,12 @@
   "R0808": {
     "id": "R0808",
     "name": "Stunner",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 5362636,
+    "craftTime": 76422,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "leather": 25
     },
     "mcost": {},
     "pow": 40
@@ -940,11 +987,12 @@
   "R0809": {
     "id": "R0809",
     "name": "Splinterer",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 23376237,
+    "craftTime": 86087,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "leather": 30
     },
     "mcost": {},
     "pow": 45
@@ -952,11 +1000,12 @@
   "R0810": {
     "id": "R0810",
     "name": "Ruiner",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 119037559,
+    "craftTime": 113285,
     "type": "Bows",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "leather": 35
     },
     "mcost": {},
     "pow": 50
@@ -964,11 +1013,11 @@
   "R0901": {
     "id": "R0901",
     "name": "Riding Crop",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 8,
+    "craftTime": 1552,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 5
     },
     "mcost": {},
     "pow": 5
@@ -976,11 +1025,11 @@
   "R0902": {
     "id": "R0902",
     "name": "Bull Whip",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 57,
+    "craftTime": 2857,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 10
     },
     "mcost": {},
     "pow": 10
@@ -988,11 +1037,11 @@
   "R0903": {
     "id": "R0903",
     "name": "Snake Whip",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 414,
+    "craftTime": 5363,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 15
     },
     "mcost": {},
     "pow": 15
@@ -1000,11 +1049,11 @@
   "R0904": {
     "id": "R0904",
     "name": "Cool Whip",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 2985,
+    "craftTime": 9993,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 20
     },
     "mcost": {},
     "pow": 20
@@ -1012,11 +1061,12 @@
   "R0905": {
     "id": "R0905",
     "name": "Readied Whip",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 21496,
+    "craftTime": 18164,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "fabric": 10
     },
     "mcost": {},
     "pow": 25
@@ -1024,11 +1074,12 @@
   "R0906": {
     "id": "R0906",
     "name": "Quirt",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 154771,
+    "craftTime": 33796,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "fabric": 15
     },
     "mcost": {},
     "pow": 30
@@ -1036,11 +1087,12 @@
   "R0907": {
     "id": "R0907",
     "name": "Qilibian",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 820112,
+    "craftTime": 46278,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "fabric": 20
     },
     "mcost": {},
     "pow": 35
@@ -1048,11 +1100,12 @@
   "R0908": {
     "id": "R0908",
     "name": "Sjambok",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 3900099,
+    "craftTime": 56872,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 40,
+      "fabric": 25
     },
     "mcost": {},
     "pow": 40
@@ -1060,11 +1113,12 @@
   "R0909": {
     "id": "R0909",
     "name": "Cat O Nine Tails",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 17000900,
+    "craftTime": 64065,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 45,
+      "fabric": 30
     },
     "mcost": {},
     "pow": 45
@@ -1072,11 +1126,12 @@
   "R0910": {
     "id": "R0910",
     "name": "Shaped Whip",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 86572770,
+    "craftTime": 84305,
     "type": "Whips",
     "rcost": {
-      "ore": 5
+      "leather": 50,
+      "fabric": 35
     },
     "mcost": {},
     "pow": 50
@@ -1084,11 +1139,12 @@
   "R2101": {
     "id": "R2101",
     "name": "Standard Helmet",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 20,
+    "craftTime": 3880,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 5,
+      "leather": 5
     },
     "mcost": {},
     "pow": 0
@@ -1096,11 +1152,12 @@
   "R2102": {
     "id": "R2102",
     "name": "Cobalt Helmet",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 137,
+    "craftTime": 6868,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 10,
+      "leather": 10
     },
     "mcost": {},
     "pow": 0
@@ -1108,11 +1165,12 @@
   "R2103": {
     "id": "R2103",
     "name": "Regular Helmet",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 949,
+    "craftTime": 12294,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 15,
+      "leather": 15
     },
     "mcost": {},
     "pow": 0
@@ -1120,11 +1178,12 @@
   "R2104": {
     "id": "R2104",
     "name": "Super Helmet",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6532,
+    "craftTime": 21867,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 20,
+      "leather": 20
     },
     "mcost": {},
     "pow": 0
@@ -1132,11 +1191,13 @@
   "R2105": {
     "id": "R2105",
     "name": "Mega Helmet",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 44941,
+    "craftTime": 38879,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "leather": 25,
+      "steel": 10
     },
     "mcost": {},
     "pow": 0
@@ -1144,11 +1205,13 @@
   "R2106": {
     "id": "R2106",
     "name": "Skull Helmet",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 308746,
+    "craftTime": 69023,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "leather": 30,
+      "steel": 15
     },
     "mcost": {},
     "pow": 0
@@ -1156,11 +1219,13 @@
   "R2107": {
     "id": "R2107",
     "name": "Dark Helmet",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1636356,
+    "craftTime": 94536,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "leather": 35,
+      "steel": 20
     },
     "mcost": {},
     "pow": 0
@@ -1168,11 +1233,13 @@
   "R2108": {
     "id": "R2108",
     "name": "Whimsical Helmet",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 7690875,
+    "craftTime": 114821,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "leather": 40,
+      "steel": 25
     },
     "mcost": {},
     "pow": 0
@@ -1180,11 +1247,13 @@
   "R2109": {
     "id": "R2109",
     "name": "Magnetized Helmet",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 33070764,
+    "craftTime": 127589,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "leather": 45,
+      "steel": 30
     },
     "mcost": {},
     "pow": 0
@@ -1192,11 +1261,13 @@
   "R2110": {
     "id": "R2110",
     "name": "Coal Helmut",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 168660899,
+    "craftTime": 168154,
     "type": "Helmets",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "leather": 50,
+      "steel": 35
     },
     "mcost": {},
     "pow": 0
@@ -1204,11 +1275,12 @@
   "R2201": {
     "id": "R2201",
     "name": "Simple Hat",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 16,
+    "craftTime": 3104,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "fabric": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -1216,11 +1288,12 @@
   "R2202": {
     "id": "R2202",
     "name": "Princess Tiara",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 110,
+    "craftTime": 5514,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "fabric": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -1228,11 +1301,12 @@
   "R2203": {
     "id": "R2203",
     "name": "Black Hat",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 759,
+    "craftTime": 9832,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "fabric": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -1240,11 +1314,12 @@
   "R2204": {
     "id": "R2204",
     "name": "Beach Hat",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 5225,
+    "craftTime": 17492,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "fabric": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -1252,11 +1327,13 @@
   "R2205": {
     "id": "R2205",
     "name": "Green Bay Beret",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 35953,
+    "craftTime": 29689,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 10,
+      "fabric": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -1264,11 +1341,13 @@
   "R2206": {
     "id": "R2206",
     "name": "The Mind Cap",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 246997,
+    "craftTime": 52709,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 15,
+      "fabric": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -1276,11 +1355,13 @@
   "R2207": {
     "id": "R2207",
     "name": "Ornate Crown",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1309085,
+    "craftTime": 72191,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 20,
+      "fabric": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -1288,11 +1369,13 @@
   "R2208": {
     "id": "R2208",
     "name": "Spellcasting Hat",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 6152700,
+    "craftTime": 87681,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "fabric": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -1300,11 +1383,13 @@
   "R2209": {
     "id": "R2209",
     "name": "Noble Tiara",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 26456611,
+    "craftTime": 97432,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "fabric": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -1312,11 +1397,13 @@
   "R2210": {
     "id": "R2210",
     "name": "All Folks Hat",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 134928719,
+    "craftTime": 128409,
     "type": "Hats",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "fabric": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0
@@ -1324,11 +1411,12 @@
   "R2301": {
     "id": "R2301",
     "name": "Bandit Mask",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 18,
+    "craftTime": 3411,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 5,
+      "fabric": 5
     },
     "mcost": {},
     "pow": 0
@@ -1336,11 +1424,12 @@
   "R2302": {
     "id": "R2302",
     "name": "Hidden Mask",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 124,
+    "craftTime": 6072,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 10,
+      "fabric": 10
     },
     "mcost": {},
     "pow": 0
@@ -1348,11 +1437,12 @@
   "R2303": {
     "id": "R2303",
     "name": "Rubber Mask",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 854,
+    "craftTime": 10806,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 15,
+      "fabric": 15
     },
     "mcost": {},
     "pow": 0
@@ -1360,11 +1450,12 @@
   "R2304": {
     "id": "R2304",
     "name": "Cucumber Mask",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 5878,
+    "craftTime": 19220,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 20,
+      "fabric": 20
     },
     "mcost": {},
     "pow": 0
@@ -1372,11 +1463,13 @@
   "R2305": {
     "id": "R2305",
     "name": "Coffee Mask",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 40447,
+    "craftTime": 34177,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "fabric": 25,
+      "silver": 10
     },
     "mcost": {},
     "pow": 0
@@ -1384,11 +1477,13 @@
   "R2306": {
     "id": "R2306",
     "name": "Pumpkin Mask",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 277871,
+    "craftTime": 60676,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "fabric": 30,
+      "silver": 15
     },
     "mcost": {},
     "pow": 0
@@ -1396,11 +1491,13 @@
   "R2307": {
     "id": "R2307",
     "name": "Stone Mask",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1472720,
+    "craftTime": 83104,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "fabric": 35,
+      "silver": 20
     },
     "mcost": {},
     "pow": 0
@@ -1408,11 +1505,13 @@
   "R2308": {
     "id": "R2308",
     "name": "Oxygen Mask",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 6921787,
+    "craftTime": 100935,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 40,
+      "fabric": 40,
+      "silver": 25
     },
     "mcost": {},
     "pow": 0
@@ -1420,11 +1519,13 @@
   "R2309": {
     "id": "R2309",
     "name": "Spoopy Mask",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 29763688,
+    "craftTime": 112160,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 45,
+      "fabric": 45,
+      "silver": 30
     },
     "mcost": {},
     "pow": 0
@@ -1432,11 +1533,13 @@
   "R2310": {
     "id": "R2310",
     "name": "Volto Mask",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 151794809,
+    "craftTime": 147819,
     "type": "Masks",
     "rcost": {
-      "ore": 5
+      "leather": 50,
+      "fabric": 50,
+      "silver": 35
     },
     "mcost": {},
     "pow": 0
@@ -1444,11 +1547,12 @@
   "R3101": {
     "id": "R3101",
     "name": "New Gauntlets",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 15,
+    "craftTime": 2981,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "fabric": 5,
+      "steel": 5
     },
     "mcost": {},
     "pow": 0
@@ -1456,11 +1560,12 @@
   "R3102": {
     "id": "R3102",
     "name": "Shiny Gauntlets",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 111,
+    "craftTime": 5700,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "fabric": 10,
+      "steel": 10
     },
     "mcost": {},
     "pow": 0
@@ -1468,11 +1573,12 @@
   "R3103": {
     "id": "R3103",
     "name": "Plain Gauntlets",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 523,
+    "craftTime": 6940,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "fabric": 15,
+      "steel": 15
     },
     "mcost": {},
     "pow": 0
@@ -1480,11 +1586,12 @@
   "R3104": {
     "id": "R3104",
     "name": "Pristine Gauntlets",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6094,
+    "craftTime": 20898,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "fabric": 20,
+      "steel": 20
     },
     "mcost": {},
     "pow": 0
@@ -1492,11 +1599,13 @@
   "R3105": {
     "id": "R3105",
     "name": "Challenge Gauntlets",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 45040,
+    "craftTime": 39915,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 10,
+      "fabric": 25,
+      "steel": 25
     },
     "mcost": {},
     "pow": 0
@@ -1504,11 +1613,13 @@
   "R3106": {
     "id": "R3106",
     "name": "Fancy Gauntlets",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 332399,
+    "craftTime": 76124,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 15,
+      "fabric": 30,
+      "steel": 30
     },
     "mcost": {},
     "pow": 0
@@ -1516,11 +1627,13 @@
   "R3107": {
     "id": "R3107",
     "name": "Old Gauntlets",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1761716,
+    "craftTime": 104261,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 20,
+      "fabric": 35,
+      "steel": 35
     },
     "mcost": {},
     "pow": 0
@@ -1528,11 +1641,13 @@
   "R3108": {
     "id": "R3108",
     "name": "Dark Gauntlets",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 8280068,
+    "craftTime": 126632,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "fabric": 40,
+      "steel": 40
     },
     "mcost": {},
     "pow": 0
@@ -1540,11 +1655,13 @@
   "R3109": {
     "id": "R3109",
     "name": "Dandy Gauntlets",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 35604293,
+    "craftTime": 140714,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "fabric": 45,
+      "steel": 45
     },
     "mcost": {},
     "pow": 0
@@ -1552,11 +1669,13 @@
   "R3110": {
     "id": "R3110",
     "name": "Cool Gauntlets",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 181581899,
+    "craftTime": 185452,
     "type": "Gauntlets",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "fabric": 50,
+      "steel": 50
     },
     "mcost": {},
     "pow": 0
@@ -1564,11 +1683,12 @@
   "R3201": {
     "id": "R3201",
     "name": "Gardening Gloves",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 17,
+    "craftTime": 3221,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 5,
+      "herb": 5
     },
     "mcost": {},
     "pow": 0
@@ -1576,11 +1696,12 @@
   "R3202": {
     "id": "R3202",
     "name": "Running Gloves",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 125,
+    "craftTime": 6121,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 10,
+      "herb": 10
     },
     "mcost": {},
     "pow": 0
@@ -1588,11 +1709,12 @@
   "R3203": {
     "id": "R3203",
     "name": "Fighting Gloves",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 933,
+    "craftTime": 11806,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 15,
+      "herb": 15
     },
     "mcost": {},
     "pow": 0
@@ -1600,11 +1722,12 @@
   "R3204": {
     "id": "R3204",
     "name": "Cleaning Gloves",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6907,
+    "craftTime": 22585,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 20,
+      "herb": 20
     },
     "mcost": {},
     "pow": 0
@@ -1612,11 +1735,13 @@
   "R3205": {
     "id": "R3205",
     "name": "Punching Gloves",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 51045,
+    "craftTime": 45237,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "herb": 25,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -1624,11 +1749,13 @@
   "R3206": {
     "id": "R3206",
     "name": "Hugging Gloves",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 376719,
+    "craftTime": 86274,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "herb": 30,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -1636,11 +1763,13 @@
   "R3207": {
     "id": "R3207",
     "name": "Dancing Gloves",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1996612,
+    "craftTime": 118162,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "herb": 35,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -1648,11 +1777,13 @@
   "R3208": {
     "id": "R3208",
     "name": "Loving Gloves",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 9384077,
+    "craftTime": 143516,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 40,
+      "herb": 40,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -1660,11 +1791,13 @@
   "R3209": {
     "id": "R3209",
     "name": "Other Gloves",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 40351533,
+    "craftTime": 159476,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 45,
+      "herb": 45,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -1672,11 +1805,13 @@
   "R3210": {
     "id": "R3210",
     "name": "Boxing Gloves",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 205792819,
+    "craftTime": 210179,
     "type": "Gloves",
     "rcost": {
-      "ore": 5
+      "leather": 50,
+      "herb": 50,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -1684,11 +1819,12 @@
   "R3301": {
     "id": "R3301",
     "name": "Hamster Clogs",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 19,
+    "craftTime": 3600,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 5,
+      "fabric": 5
     },
     "mcost": {},
     "pow": 0
@@ -1696,11 +1832,12 @@
   "R3302": {
     "id": "R3302",
     "name": "Mage Moccasins",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 140,
+    "craftTime": 6855,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 10,
+      "fabric": 10
     },
     "mcost": {},
     "pow": 0
@@ -1708,11 +1845,12 @@
   "R3303": {
     "id": "R3303",
     "name": "Druidic Boots",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1043,
+    "craftTime": 13197,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 15,
+      "fabric": 15
     },
     "mcost": {},
     "pow": 0
@@ -1720,11 +1858,12 @@
   "R3304": {
     "id": "R3304",
     "name": "Fighting Stilettos",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 7720,
+    "craftTime": 25243,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 20,
+      "fabric": 20
     },
     "mcost": {},
     "pow": 0
@@ -1732,11 +1871,13 @@
   "R3305": {
     "id": "R3305",
     "name": "Bardic Galoshes",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 57051,
+    "craftTime": 46065,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "leather": 10,
+      "fabric": 25
     },
     "mcost": {},
     "pow": 0
@@ -1744,11 +1885,13 @@
   "R3306": {
     "id": "R3306",
     "name": "Master Loafers",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 421039,
+    "craftTime": 87853,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "leather": 15,
+      "fabric": 30
     },
     "mcost": {},
     "pow": 0
@@ -1756,11 +1899,13 @@
   "R3307": {
     "id": "R3307",
     "name": "Foxy Slippers",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2231507,
+    "craftTime": 120325,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "leather": 20,
+      "fabric": 35
     },
     "mcost": {},
     "pow": 0
@@ -1768,11 +1913,13 @@
   "R3308": {
     "id": "R3308",
     "name": "Hairy Shoes",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 10488086,
+    "craftTime": 146143,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "leather": 25,
+      "fabric": 40
     },
     "mcost": {},
     "pow": 0
@@ -1780,11 +1927,13 @@
   "R3309": {
     "id": "R3309",
     "name": "Lunar Whalers",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 45098772,
+    "craftTime": 162394,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "leather": 30,
+      "fabric": 45
     },
     "mcost": {},
     "pow": 0
@@ -1792,11 +1941,13 @@
   "R3310": {
     "id": "R3310",
     "name": "Jay Walkers",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 230003739,
+    "craftTime": 214025,
     "type": "Shoes",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "leather": 35,
+      "fabric": 50
     },
     "mcost": {},
     "pow": 0
@@ -1804,11 +1955,13 @@
   "R4101": {
     "id": "R4101",
     "name": "Metal Armor",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 22,
+    "craftTime": 4268,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 5,
+      "leather": 5,
+      "steel": 5
     },
     "mcost": {},
     "pow": 0
@@ -1816,11 +1969,13 @@
   "R4102": {
     "id": "R4102",
     "name": "Metallic Armor",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 156,
+    "craftTime": 7820,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 10,
+      "leather": 10,
+      "steel": 10
     },
     "mcost": {},
     "pow": 0
@@ -1828,11 +1983,13 @@
   "R4103": {
     "id": "R4103",
     "name": "Panther Armor",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1109,
+    "craftTime": 14367,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 15,
+      "leather": 15,
+      "steel": 15
     },
     "mcost": {},
     "pow": 0
@@ -1840,11 +1997,13 @@
   "R4104": {
     "id": "R4104",
     "name": "Slayers Plate",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 7874,
+    "craftTime": 26360,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 20,
+      "leather": 20,
+      "steel": 20
     },
     "mcost": {},
     "pow": 0
@@ -1852,11 +2011,13 @@
   "R4105": {
     "id": "R4105",
     "name": "Leaded Zeppelin Hull",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 55905,
+    "craftTime": 48364,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "leather": 25,
+      "steel": 25
     },
     "mcost": {},
     "pow": 0
@@ -1864,11 +2025,13 @@
   "R4106": {
     "id": "R4106",
     "name": "A Cool Dark Chainmail",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 396930,
+    "craftTime": 88738,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "leather": 30,
+      "steel": 30
     },
     "mcost": {},
     "pow": 0
@@ -1876,11 +2039,13 @@
   "R4107": {
     "id": "R4107",
     "name": "Maidens Plate",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2103731,
+    "craftTime": 121537,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "leather": 35,
+      "steel": 35
     },
     "mcost": {},
     "pow": 0
@@ -1888,11 +2053,13 @@
   "R4108": {
     "id": "R4108",
     "name": "Intense Purple Cuirass",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 10939403,
+    "craftTime": 163319,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "leather": 40,
+      "steel": 40
     },
     "mcost": {},
     "pow": 0
@@ -1900,11 +2067,13 @@
   "R4109": {
     "id": "R4109",
     "name": "Serpent Mail",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 55790957,
+    "craftTime": 215245,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "leather": 45,
+      "steel": 45
     },
     "mcost": {},
     "pow": 0
@@ -1912,11 +2081,13 @@
   "R4110": {
     "id": "R4110",
     "name": "Heavy Metal Armor",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 273375691,
+    "craftTime": 272554,
     "type": "Armor",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "leather": 50,
+      "steel": 50
     },
     "mcost": {},
     "pow": 0
@@ -1924,11 +2095,13 @@
   "R4201": {
     "id": "R4201",
     "name": "Novice Cloak",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 26,
+    "craftTime": 4814,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 5,
+      "fabric": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -1936,11 +2109,13 @@
   "R4202": {
     "id": "R4202",
     "name": "Apprentice Cloak",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 184,
+    "craftTime": 8805,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 10,
+      "fabric": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -1948,11 +2123,13 @@
   "R4203": {
     "id": "R4203",
     "name": "Practitioner Cloak",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1310,
+    "craftTime": 16199,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 15,
+      "fabric": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -1960,11 +2137,13 @@
   "R4204": {
     "id": "R4204",
     "name": "Journeyman Cloak",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 9305,
+    "craftTime": 29734,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 20,
+      "fabric": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -1972,11 +2151,13 @@
   "R4205": {
     "id": "R4205",
     "name": "Expert Cloak",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 66070,
+    "craftTime": 54560,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "fabric": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -1984,11 +2165,13 @@
   "R4206": {
     "id": "R4206",
     "name": "Frostflinger Cloak",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 469099,
+    "craftTime": 100105,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "fabric": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -1996,11 +2179,13 @@
   "R4207": {
     "id": "R4207",
     "name": "Stormbringer Cloak",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2486228,
+    "craftTime": 137106,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "fabric": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -2008,11 +2193,13 @@
   "R4208": {
     "id": "R4208",
     "name": "Earthslinger Cloak",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 12928385,
+    "craftTime": 184240,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 40,
+      "fabric": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -2020,11 +2207,13 @@
   "R4209": {
     "id": "R4209",
     "name": "Lifegiver Cloak",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 65934767,
+    "craftTime": 242817,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 45,
+      "fabric": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -2032,11 +2221,13 @@
   "R4210": {
     "id": "R4210",
     "name": "Deathcaller Cloak",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 323080362,
+    "craftTime": 307468,
     "type": "Cloaks",
     "rcost": {
-      "ore": 5
+      "leather": 50,
+      "fabric": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0
@@ -2044,11 +2235,13 @@
   "R4301": {
     "id": "R4301",
     "name": "Mole Vest",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 24,
+    "craftTime": 4444,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 5,
+      "leather": 5,
+      "bone": 5
     },
     "mcost": {},
     "pow": 0
@@ -2056,11 +2249,13 @@
   "R4302": {
     "id": "R4302",
     "name": "Assassin Vest",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 170,
+    "craftTime": 8135,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 10,
+      "leather": 10,
+      "bone": 10
     },
     "mcost": {},
     "pow": 0
@@ -2068,11 +2263,13 @@
   "R4303": {
     "id": "R4303",
     "name": "Bandit Vest",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1209,
+    "craftTime": 14950,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 15,
+      "leather": 15,
+      "bone": 15
     },
     "mcost": {},
     "pow": 0
@@ -2080,11 +2277,13 @@
   "R4304": {
     "id": "R4304",
     "name": "Spy Vest",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 8589,
+    "craftTime": 27446,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 20,
+      "leather": 20,
+      "bone": 20
     },
     "mcost": {},
     "pow": 0
@@ -2092,11 +2291,13 @@
   "R4305": {
     "id": "R4305",
     "name": "Fugitive Vest",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 60988,
+    "craftTime": 50363,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "leather": 25,
+      "bone": 25
     },
     "mcost": {},
     "pow": 0
@@ -2104,11 +2305,13 @@
   "R4306": {
     "id": "R4306",
     "name": "Outlaw Vest",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 433015,
+    "craftTime": 92405,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "leather": 30,
+      "bone": 30
     },
     "mcost": {},
     "pow": 0
@@ -2116,11 +2319,13 @@
   "R4307": {
     "id": "R4307",
     "name": "Grifter Vest",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2294979,
+    "craftTime": 126560,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "leather": 35,
+      "bone": 35
     },
     "mcost": {},
     "pow": 0
@@ -2128,11 +2333,13 @@
   "R4308": {
     "id": "R4308",
     "name": "Criminal Vest",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 11933894,
+    "craftTime": 170068,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "leather": 40,
+      "bone": 40
     },
     "mcost": {},
     "pow": 0
@@ -2140,11 +2347,13 @@
   "R4309": {
     "id": "R4309",
     "name": "Hitman Vest",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 60862862,
+    "craftTime": 224139,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "leather": 45,
+      "bone": 45
     },
     "mcost": {},
     "pow": 0
@@ -2152,11 +2361,13 @@
   "R4310": {
     "id": "R4310",
     "name": "Pirate Vest",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 298228026,
+    "craftTime": 283817,
     "type": "Vests",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "leather": 50,
+      "bone": 50
     },
     "mcost": {},
     "pow": 0
@@ -2164,11 +2375,13 @@
   "R5101": {
     "id": "R5101",
     "name": "Patience",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 32,
+    "craftTime": 6518,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 5,
+      "silver": 5,
+      "herb": 5
     },
     "mcost": {},
     "pow": 0
@@ -2176,11 +2389,13 @@
   "R5102": {
     "id": "R5102",
     "name": "Faithful Buckler",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 195,
+    "craftTime": 10264,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 10,
+      "silver": 10,
+      "herb": 10
     },
     "mcost": {},
     "pow": 0
@@ -2188,11 +2403,13 @@
   "R5103": {
     "id": "R5103",
     "name": "Defiant Targe",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1190,
+    "craftTime": 16187,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 15,
+      "silver": 15,
+      "herb": 15
     },
     "mcost": {},
     "pow": 0
@@ -2200,11 +2417,13 @@
   "R5104": {
     "id": "R5104",
     "name": "Fair Shield",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 7263,
+    "craftTime": 25530,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 20,
+      "silver": 20,
+      "herb": 20
     },
     "mcost": {},
     "pow": 0
@@ -2212,11 +2431,13 @@
   "R5105": {
     "id": "R5105",
     "name": "Wisdom",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 44306,
+    "craftTime": 40246,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 25,
+      "silver": 25,
+      "herb": 25
     },
     "mcost": {},
     "pow": 0
@@ -2224,11 +2445,13 @@
   "R5106": {
     "id": "R5106",
     "name": "Generous Blocker",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 270270,
+    "craftTime": 63443,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 30,
+      "silver": 30,
+      "herb": 30
     },
     "mcost": {},
     "pow": 0
@@ -2236,11 +2459,13 @@
   "R5107": {
     "id": "R5107",
     "name": "Loyal Companion",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1648651,
+    "craftTime": 100009,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 35,
+      "silver": 35,
+      "herb": 35
     },
     "mcost": {},
     "pow": 0
@@ -2248,11 +2473,13 @@
   "R5108": {
     "id": "R5108",
     "name": "Dignity",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 10056777,
+    "craftTime": 157649,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 40,
+      "silver": 40,
+      "herb": 40
     },
     "mcost": {},
     "pow": 0
@@ -2260,11 +2487,13 @@
   "R5109": {
     "id": "R5109",
     "name": "Trustworthy Kite",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 60340662,
+    "craftTime": 244438,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 45,
+      "silver": 45,
+      "herb": 45
     },
     "mcost": {},
     "pow": 0
@@ -2272,11 +2501,13 @@
   "R5110": {
     "id": "R5110",
     "name": "Truth Teller",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 356009908,
+    "craftTime": 372687,
     "type": "Shields",
     "rcost": {
-      "ore": 5
+      "steel": 50,
+      "silver": 50,
+      "herb": 50
     },
     "mcost": {},
     "pow": 0
@@ -2284,11 +2515,13 @@
   "R5201": {
     "id": "R5201",
     "name": "Stealth Ward",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 28,
+    "craftTime": 6337,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 5,
+      "herb": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -2296,11 +2529,13 @@
   "R5202": {
     "id": "R5202",
     "name": "Sentry Ward",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 170,
+    "craftTime": 9942,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 10,
+      "herb": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -2308,11 +2543,13 @@
   "R5203": {
     "id": "R5203",
     "name": "Spell Ward",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1041,
+    "craftTime": 15733,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 15,
+      "herb": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -2320,11 +2557,13 @@
   "R5204": {
     "id": "R5204",
     "name": "Curse Ward",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6355,
+    "craftTime": 24820,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 20,
+      "herb": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -2332,11 +2571,13 @@
   "R5205": {
     "id": "R5205",
     "name": "Poison Ward",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 38468,
+    "craftTime": 38826,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 25,
+      "herb": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -2344,11 +2585,13 @@
   "R5206": {
     "id": "R5206",
     "name": "Disease Ward",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 236486,
+    "craftTime": 61680,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 30,
+      "herb": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -2356,11 +2599,13 @@
   "R5207": {
     "id": "R5207",
     "name": "Infection Ward",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1442570,
+    "craftTime": 97231,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 35,
+      "herb": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -2368,11 +2613,13 @@
   "R5208": {
     "id": "R5208",
     "name": "Cancer Ward",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 8499679,
+    "craftTime": 148045,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 40,
+      "herb": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -2380,11 +2627,13 @@
   "R5209": {
     "id": "R5209",
     "name": "Maternity Ward",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 52798079,
+    "craftTime": 237648,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 45,
+      "herb": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -2392,11 +2641,13 @@
   "R5210": {
     "id": "R5210",
     "name": "Burn Unit",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 311508669,
+    "craftTime": 362335,
     "type": "Wards",
     "rcost": {
-      "ore": 5
+      "paper": 50,
+      "herb": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0
@@ -2404,11 +2655,13 @@
   "R5301": {
     "id": "R5301",
     "name": "Stones",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 29,
+    "craftTime": 5626,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 5,
+      "steel": 5,
+      "silver": 5
     },
     "mcost": {},
     "pow": 0
@@ -2416,11 +2669,13 @@
   "R5302": {
     "id": "R5302",
     "name": "Sticks",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 176,
+    "craftTime": 8823,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 10,
+      "steel": 10,
+      "silver": 10
     },
     "mcost": {},
     "pow": 0
@@ -2428,11 +2683,13 @@
   "R5303": {
     "id": "R5303",
     "name": "Words",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1079,
+    "craftTime": 13978,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 15,
+      "steel": 15,
+      "silver": 15
     },
     "mcost": {},
     "pow": 0
@@ -2440,11 +2697,13 @@
   "R5304": {
     "id": "R5304",
     "name": "Ninja Stars",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6582,
+    "craftTime": 22035,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 20,
+      "steel": 20,
+      "silver": 20
     },
     "mcost": {},
     "pow": 0
@@ -2452,11 +2711,13 @@
   "R5305": {
     "id": "R5305",
     "name": "Poison Shuriken",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 40152,
+    "craftTime": 34736,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 25,
+      "steel": 25,
+      "silver": 25
     },
     "mcost": {},
     "pow": 0
@@ -2464,11 +2725,13 @@
   "R5306": {
     "id": "R5306",
     "name": "Shining Stars",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 244932,
+    "craftTime": 54757,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 30,
+      "steel": 30,
+      "silver": 30
     },
     "mcost": {},
     "pow": 0
@@ -2476,11 +2739,13 @@
   "R5307": {
     "id": "R5307",
     "name": "Golden Shuriken",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1494090,
+    "craftTime": 86317,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 35,
+      "steel": 35,
+      "silver": 35
     },
     "mcost": {},
     "pow": 0
@@ -2488,11 +2753,13 @@
   "R5308": {
     "id": "R5308",
     "name": "Frost Shuriken",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 9113954,
+    "craftTime": 136066,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 40,
+      "steel": 40,
+      "silver": 40
     },
     "mcost": {},
     "pow": 0
@@ -2500,11 +2767,13 @@
   "R5309": {
     "id": "R5309",
     "name": "Burning Sticks",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 54683725,
+    "craftTime": 210973,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 45,
+      "steel": 45,
+      "silver": 45
     },
     "mcost": {},
     "pow": 0
@@ -2512,11 +2781,13 @@
   "R5310": {
     "id": "R5310",
     "name": "Heart Seeker",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 322633979,
+    "craftTime": 321665,
     "type": "Thrown",
     "rcost": {
-      "ore": 5
+      "wood": 50,
+      "steel": 50,
+      "silver": 50
     },
     "mcost": {},
     "pow": 0
@@ -2524,11 +2795,13 @@
   "R5401": {
     "id": "R5401",
     "name": "Quick Axe",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 27,
+    "craftTime": 5238,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 5,
+      "wood": 5,
+      "bone": 5
     },
     "mcost": {},
     "pow": 0
@@ -2536,11 +2809,13 @@
   "R5402": {
     "id": "R5402",
     "name": "Poison Katar",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 164,
+    "craftTime": 8221,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 10,
+      "wood": 10,
+      "bone": 10
     },
     "mcost": {},
     "pow": 0
@@ -2548,11 +2823,13 @@
   "R5403": {
     "id": "R5403",
     "name": "Firey Sword",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1004,
+    "craftTime": 13006,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 15,
+      "wood": 15,
+      "bone": 15
     },
     "mcost": {},
     "pow": 0
@@ -2560,11 +2837,13 @@
   "R5404": {
     "id": "R5404",
     "name": "Mace Of Spades",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6128,
+    "craftTime": 20515,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 20,
+      "wood": 20,
+      "bone": 20
     },
     "mcost": {},
     "pow": 0
@@ -2572,11 +2851,13 @@
   "R5405": {
     "id": "R5405",
     "name": "Pretty Club",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 37383,
+    "craftTime": 32340,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "wood": 25,
+      "bone": 25
     },
     "mcost": {},
     "pow": 0
@@ -2584,11 +2865,13 @@
   "R5406": {
     "id": "R5406",
     "name": "Slow Axe",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 228041,
+    "craftTime": 50981,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "wood": 30,
+      "bone": 30
     },
     "mcost": {},
     "pow": 0
@@ -2596,11 +2879,13 @@
   "R5407": {
     "id": "R5407",
     "name": "Healing Katar",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1391050,
+    "craftTime": 80364,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "wood": 35,
+      "bone": 35
     },
     "mcost": {},
     "pow": 0
@@ -2608,11 +2893,13 @@
   "R5408": {
     "id": "R5408",
     "name": "Icy Sword",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 8485405,
+    "craftTime": 126683,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "wood": 40,
+      "bone": 40
     },
     "mcost": {},
     "pow": 0
@@ -2620,11 +2907,13 @@
   "R5409": {
     "id": "R5409",
     "name": "Mace Of Diamonds",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 50912433,
+    "craftTime": 196423,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "wood": 45,
+      "bone": 45
     },
     "mcost": {},
     "pow": 0
@@ -2632,11 +2921,13 @@
   "R5410": {
     "id": "R5410",
     "name": "Ugly Club",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 300383360,
+    "craftTime": 299481,
     "type": "Offhand",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "wood": 50,
+      "bone": 50
     },
     "mcost": {},
     "pow": 0
@@ -2644,11 +2935,13 @@
   "R5501": {
     "id": "R5501",
     "name": "Spells Vol I",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 31,
+    "craftTime": 6647,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 5,
+      "paper": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -2656,11 +2949,13 @@
   "R5502": {
     "id": "R5502",
     "name": "Spells Vol II",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 189,
+    "craftTime": 10472,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 10,
+      "paper": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -2668,11 +2963,13 @@
   "R5503": {
     "id": "R5503",
     "name": "Spells Vol IV",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1153,
+    "craftTime": 16509,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 15,
+      "paper": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -2680,11 +2977,13 @@
   "R5504": {
     "id": "R5504",
     "name": "Earthshaping and You",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 7036,
+    "craftTime": 26034,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 20,
+      "paper": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -2692,11 +2991,13 @@
   "R5505": {
     "id": "R5505",
     "name": "Pyromania: A Love Story",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 42922,
+    "craftTime": 41041,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 25,
+      "paper": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -2704,11 +3005,13 @@
   "R5506": {
     "id": "R5506",
     "name": "Great Hamster Vol XXI",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 261824,
+    "craftTime": 64695,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 30,
+      "paper": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -2716,11 +3019,13 @@
   "R5507": {
     "id": "R5507",
     "name": "Nal'Dur's Diary",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1597131,
+    "craftTime": 101983,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 35,
+      "paper": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -2728,11 +3033,13 @@
   "R5508": {
     "id": "R5508",
     "name": "Cauldroning 101",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 9742502,
+    "craftTime": 160761,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 40,
+      "paper": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -2740,11 +3047,13 @@
   "R5509": {
     "id": "R5509",
     "name": "Secret Streams",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 58455016,
+    "craftTime": 249262,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 45,
+      "paper": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -2752,11 +3061,13 @@
   "R5510": {
     "id": "R5510",
     "name": "Efficient Spells 102",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 344884598,
+    "craftTime": 380043,
     "type": "Tomes",
     "rcost": {
-      "ore": 5
+      "fabric": 50,
+      "paper": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0
@@ -2764,11 +3075,13 @@
   "R5601": {
     "id": "R5601",
     "name": "Deflected Dart",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 30,
+    "craftTime": 5820,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 5,
+      "bone": 5,
+      "steel": 5
     },
     "mcost": {},
     "pow": 0
@@ -2776,11 +3089,13 @@
   "R5602": {
     "id": "R5602",
     "name": "Delayed Dart",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 183,
+    "craftTime": 9174,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 10,
+      "bone": 10,
+      "steel": 10
     },
     "mcost": {},
     "pow": 0
@@ -2788,11 +3103,13 @@
   "R5603": {
     "id": "R5603",
     "name": "Diverted Dart",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1116,
+    "craftTime": 14457,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 15,
+      "bone": 15,
+      "steel": 15
     },
     "mcost": {},
     "pow": 0
@@ -2800,11 +3117,13 @@
   "R5604": {
     "id": "R5604",
     "name": "Ditched Dart",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 6809,
+    "craftTime": 22794,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 20,
+      "bone": 20,
+      "steel": 20
     },
     "mcost": {},
     "pow": 0
@@ -2812,11 +3131,13 @@
   "R5605": {
     "id": "R5605",
     "name": "Ducked Dart",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 41537,
+    "craftTime": 35934,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 25,
+      "bone": 25,
+      "steel": 25
     },
     "mcost": {},
     "pow": 0
@@ -2824,11 +3145,13 @@
   "R5606": {
     "id": "R5606",
     "name": "Dipped Dart",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 253378,
+    "craftTime": 56645,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 30,
+      "bone": 30,
+      "steel": 30
     },
     "mcost": {},
     "pow": 0
@@ -2836,11 +3159,13 @@
   "R5607": {
     "id": "R5607",
     "name": "Dancing Dart",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1545611,
+    "craftTime": 89294,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 35,
+      "bone": 35,
+      "steel": 35
     },
     "mcost": {},
     "pow": 0
@@ -2848,11 +3173,13 @@
   "R5608": {
     "id": "R5608",
     "name": "Daring Dart",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 9428828,
+    "craftTime": 140767,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 40,
+      "bone": 40,
+      "steel": 40
     },
     "mcost": {},
     "pow": 0
@@ -2860,11 +3187,13 @@
   "R5609": {
     "id": "R5609",
     "name": "Double Dart",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 56569371,
+    "craftTime": 218248,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 45,
+      "bone": 45,
+      "steel": 45
     },
     "mcost": {},
     "pow": 0
@@ -2872,11 +3201,13 @@
   "R5610": {
     "id": "R5610",
     "name": "Dodged Dart",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 333759289,
+    "craftTime": 332756,
     "type": "Darts",
     "rcost": {
-      "ore": 5
+      "paper": 50,
+      "bone": 50,
+      "steel": 50
     },
     "mcost": {},
     "pow": 0
@@ -2884,11 +3215,12 @@
   "R6101": {
     "id": "R6101",
     "name": "Healing Potion",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 13,
+    "craftTime": 2787,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -2896,11 +3228,12 @@
   "R6102": {
     "id": "R6102",
     "name": "Mana Potion",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 98,
+    "craftTime": 5430,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -2908,11 +3241,12 @@
   "R6103": {
     "id": "R6103",
     "name": "Sleeping Potion",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 741,
+    "craftTime": 10610,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -2920,11 +3254,12 @@
   "R6104": {
     "id": "R6104",
     "name": "Coughing Potion",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 5483,
+    "craftTime": 20288,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -2932,11 +3267,12 @@
   "R6105": {
     "id": "R6105",
     "name": "Invincibility Potion",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 40028,
+    "craftTime": 38274,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -2944,11 +3280,12 @@
   "R6106": {
     "id": "R6106",
     "name": "Laughing Potion",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 288207,
+    "craftTime": 71214,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -2956,11 +3293,12 @@
   "R6107": {
     "id": "R6107",
     "name": "Rejuvenating Potion",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1527499,
+    "craftTime": 97536,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -2968,11 +3306,12 @@
   "R6108": {
     "id": "R6108",
     "name": "Like Potion",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 7942998,
+    "craftTime": 131067,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -2980,11 +3319,12 @@
   "R6109": {
     "id": "R6109",
     "name": "Bitter Potion",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 40509293,
+    "craftTime": 172738,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -2992,11 +3332,12 @@
   "R6110": {
     "id": "R6110",
     "name": "Strength Potion",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 198495540,
+    "craftTime": 218731,
     "type": "Potions",
     "rcost": {
-      "ore": 5
+      "herb": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0
@@ -3004,11 +3345,12 @@
   "R6201": {
     "id": "R6201",
     "name": "Lactuca",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 25,
+    "craftTime": 4968,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 5,
+      "silver": 5
     },
     "mcost": {},
     "pow": 0
@@ -3016,11 +3358,12 @@
   "R6202": {
     "id": "R6202",
     "name": "Gelata Eros",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 190,
+    "craftTime": 9757,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 10,
+      "silver": 10
     },
     "mcost": {},
     "pow": 0
@@ -3028,11 +3371,12 @@
   "R6203": {
     "id": "R6203",
     "name": "Comitatus",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1425,
+    "craftTime": 18910,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 15,
+      "silver": 15
     },
     "mcost": {},
     "pow": 0
@@ -3040,11 +3384,12 @@
   "R6204": {
     "id": "R6204",
     "name": "Tacet Gladio",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 10545,
+    "craftTime": 36162,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 20,
+      "silver": 20
     },
     "mcost": {},
     "pow": 0
@@ -3052,11 +3397,12 @@
   "R6205": {
     "id": "R6205",
     "name": "Ostium Amici",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 76978,
+    "craftTime": 68219,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 25,
+      "silver": 25
     },
     "mcost": {},
     "pow": 0
@@ -3064,11 +3410,12 @@
   "R6206": {
     "id": "R6206",
     "name": "Ignis Pullum",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 554245,
+    "craftTime": 126929,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 30,
+      "silver": 30
     },
     "mcost": {},
     "pow": 0
@@ -3076,11 +3423,12 @@
   "R6207": {
     "id": "R6207",
     "name": "Folium Strennus",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2937499,
+    "craftTime": 173845,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 35,
+      "silver": 35
     },
     "mcost": {},
     "pow": 0
@@ -3088,11 +3436,12 @@
   "R6208": {
     "id": "R6208",
     "name": "Magicae Criceta",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 15274997,
+    "craftTime": 233610,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 40,
+      "silver": 40
     },
     "mcost": {},
     "pow": 0
@@ -3100,11 +3449,12 @@
   "R6209": {
     "id": "R6209",
     "name": "Inpulsa Sciurus",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 77902488,
+    "craftTime": 307883,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 45,
+      "silver": 45
     },
     "mcost": {},
     "pow": 0
@@ -3112,11 +3462,12 @@
   "R6210": {
     "id": "R6210",
     "name": "Adipem Pater",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 381772192,
+    "craftTime": 389909,
     "type": "Pendants",
     "rcost": {
-      "ore": 5
+      "fabric": 50,
+      "silver": 50
     },
     "mcost": {},
     "pow": 0
@@ -3124,11 +3475,12 @@
   "R6301": {
     "id": "R6301",
     "name": "Soldier Ring",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 14,
+    "craftTime": 2852,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 5,
+      "silver": 5
     },
     "mcost": {},
     "pow": 0
@@ -3136,11 +3488,12 @@
   "R6302": {
     "id": "R6302",
     "name": "Mercenary Ring",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 106,
+    "craftTime": 5579,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 10,
+      "silver": 10
     },
     "mcost": {},
     "pow": 0
@@ -3148,11 +3501,12 @@
   "R6303": {
     "id": "R6303",
     "name": "Chaplain Ring",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 798,
+    "craftTime": 10855,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 15,
+      "silver": 15
     },
     "mcost": {},
     "pow": 0
@@ -3160,11 +3514,12 @@
   "R6304": {
     "id": "R6304",
     "name": "General Ring",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 5905,
+    "craftTime": 20757,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 20,
+      "silver": 20
     },
     "mcost": {},
     "pow": 0
@@ -3172,11 +3527,12 @@
   "R6305": {
     "id": "R6305",
     "name": "Tactical Ring",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 43107,
+    "craftTime": 39157,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 25,
+      "silver": 25
     },
     "mcost": {},
     "pow": 0
@@ -3184,11 +3540,12 @@
   "R6306": {
     "id": "R6306",
     "name": "Paladin Ring",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 310377,
+    "craftTime": 72857,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 30,
+      "silver": 30
     },
     "mcost": {},
     "pow": 0
@@ -3196,11 +3553,12 @@
   "R6307": {
     "id": "R6307",
     "name": "Hunter Ring",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1644999,
+    "craftTime": 99787,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 35,
+      "silver": 35
     },
     "mcost": {},
     "pow": 0
@@ -3208,11 +3566,12 @@
   "R6308": {
     "id": "R6308",
     "name": "Trapper Ring",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 8553998,
+    "craftTime": 134092,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 40,
+      "silver": 40
     },
     "mcost": {},
     "pow": 0
@@ -3220,11 +3579,12 @@
   "R6309": {
     "id": "R6309",
     "name": "Berserker Ring",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 43625393,
+    "craftTime": 176725,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 45,
+      "silver": 45
     },
     "mcost": {},
     "pow": 0
@@ -3232,11 +3592,12 @@
   "R6310": {
     "id": "R6310",
     "name": "Marksman Ring",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 213764428,
+    "craftTime": 223778,
     "type": "Rings",
     "rcost": {
-      "ore": 5
+      "ore": 50,
+      "silver": 50
     },
     "mcost": {},
     "pow": 0
@@ -3244,11 +3605,12 @@
   "R6401": {
     "id": "R6401",
     "name": "Conch Shell",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 23,
+    "craftTime": 4571,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 5,
+      "bone": 5
     },
     "mcost": {},
     "pow": 0
@@ -3256,11 +3618,12 @@
   "R6402": {
     "id": "R6402",
     "name": "Flute",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 174,
+    "craftTime": 8935,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 10,
+      "bone": 10
     },
     "mcost": {},
     "pow": 0
@@ -3268,11 +3631,12 @@
   "R6403": {
     "id": "R6403",
     "name": "Harp",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1311,
+    "craftTime": 17398,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 15,
+      "bone": 15
     },
     "mcost": {},
     "pow": 0
@@ -3280,11 +3644,12 @@
   "R6404": {
     "id": "R6404",
     "name": "Guitar Pick",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 9701,
+    "craftTime": 33268,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 20,
+      "bone": 20
     },
     "mcost": {},
     "pow": 0
@@ -3292,11 +3657,12 @@
   "R6405": {
     "id": "R6405",
     "name": "Flugelhorn",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 70820,
+    "craftTime": 62761,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 25,
+      "bone": 25
     },
     "mcost": {},
     "pow": 0
@@ -3304,11 +3670,12 @@
   "R6406": {
     "id": "R6406",
     "name": "Drum",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 509905,
+    "craftTime": 116775,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 30,
+      "bone": 30
     },
     "mcost": {},
     "pow": 0
@@ -3316,11 +3683,12 @@
   "R6407": {
     "id": "R6407",
     "name": "Lyre",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2702499,
+    "craftTime": 159938,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 35,
+      "bone": 35
     },
     "mcost": {},
     "pow": 0
@@ -3328,11 +3696,12 @@
   "R6408": {
     "id": "R6408",
     "name": "Bells",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 14052997,
+    "craftTime": 214921,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 40,
+      "bone": 40
     },
     "mcost": {},
     "pow": 0
@@ -3340,11 +3709,12 @@
   "R6409": {
     "id": "R6409",
     "name": "Shofar",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 71670289,
+    "craftTime": 283252,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 45,
+      "bone": 45
     },
     "mcost": {},
     "pow": 0
@@ -3352,11 +3722,12 @@
   "R6410": {
     "id": "R6410",
     "name": "Gjallerhorn",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 351184417,
+    "craftTime": 358669,
     "type": "Instruments",
     "rcost": {
-      "ore": 5
+      "fabric": 50,
+      "bone": 50
     },
     "mcost": {},
     "pow": 0
@@ -3364,11 +3735,12 @@
   "R6501": {
     "id": "R6501",
     "name": "Leather Belt",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 12,
+    "craftTime": 2328,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 5,
+      "steel": 5
     },
     "mcost": {},
     "pow": 0
@@ -3376,11 +3748,12 @@
   "R6502": {
     "id": "R6502",
     "name": "Timing Belt",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 91,
+    "craftTime": 4562,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 10,
+      "steel": 10
     },
     "mcost": {},
     "pow": 0
@@ -3388,11 +3761,12 @@
   "R6503": {
     "id": "R6503",
     "name": "Rodeo Belt",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 684,
+    "craftTime": 8861,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 15,
+      "steel": 15
     },
     "mcost": {},
     "pow": 0
@@ -3400,11 +3774,12 @@
   "R6504": {
     "id": "R6504",
     "name": "Rust Belt",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 5061,
+    "craftTime": 16943,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 20,
+      "steel": 20
     },
     "mcost": {},
     "pow": 0
@@ -3412,11 +3787,12 @@
   "R6505": {
     "id": "R6505",
     "name": "Cowboy Belt",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 36949,
+    "craftTime": 31965,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 25,
+      "steel": 25
     },
     "mcost": {},
     "pow": 0
@@ -3424,11 +3800,12 @@
   "R6506": {
     "id": "R6506",
     "name": "Flat Belt",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 266037,
+    "craftTime": 59475,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 30,
+      "steel": 30
     },
     "mcost": {},
     "pow": 0
@@ -3436,11 +3813,12 @@
   "R6507": {
     "id": "R6507",
     "name": "Fan Belt",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 1409999,
+    "craftTime": 81459,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 35,
+      "steel": 35
     },
     "mcost": {},
     "pow": 0
@@ -3448,11 +3826,12 @@
   "R6508": {
     "id": "R6508",
     "name": "Formal Belt",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 7331998,
+    "craftTime": 109463,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 40,
+      "steel": 40
     },
     "mcost": {},
     "pow": 0
@@ -3460,11 +3839,12 @@
   "R6509": {
     "id": "R6509",
     "name": "Conveyor Belt",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 37393194,
+    "craftTime": 144265,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 45,
+      "steel": 45
     },
     "mcost": {},
     "pow": 0
@@ -3472,11 +3852,12 @@
   "R6510": {
     "id": "R6510",
     "name": "Extra Belt",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 183226652,
+    "craftTime": 182676,
     "type": "Belts",
     "rcost": {
-      "ore": 5
+      "leather": 50,
+      "steel": 50
     },
     "mcost": {},
     "pow": 0
@@ -3484,11 +3865,12 @@
   "R6601": {
     "id": "R6601",
     "name": "Magic Earring",
-    "value": 6,
-    "craftTime": 5000,
+    "value": 21,
+    "craftTime": 4173,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 5,
+      "mana": 5
     },
     "mcost": {},
     "pow": 0
@@ -3496,11 +3878,12 @@
   "R6602": {
     "id": "R6602",
     "name": "Druidic Earring",
-    "value": 8,
-    "craftTime": 7000,
+    "value": 159,
+    "craftTime": 8165,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 10,
+      "mana": 10
     },
     "mcost": {},
     "pow": 0
@@ -3508,11 +3891,12 @@
   "R6603": {
     "id": "R6603",
     "name": "Musical Earring",
-    "value": 13,
-    "craftTime": 8000,
+    "value": 1197,
+    "craftTime": 15885,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 15,
+      "mana": 15
     },
     "mcost": {},
     "pow": 0
@@ -3520,11 +3904,12 @@
   "R6604": {
     "id": "R6604",
     "name": "Caster Earring",
-    "value": 20,
-    "craftTime": 11000,
+    "value": 8857,
+    "craftTime": 30374,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 20,
+      "mana": 20
     },
     "mcost": {},
     "pow": 0
@@ -3532,11 +3917,12 @@
   "R6605": {
     "id": "R6605",
     "name": "Medical Earring",
-    "value": 31,
-    "craftTime": 14000,
+    "value": 64661,
+    "craftTime": 57303,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 25,
+      "mana": 25
     },
     "mcost": {},
     "pow": 0
@@ -3544,11 +3930,12 @@
   "R6606": {
     "id": "R6606",
     "name": "Healing Earring",
-    "value": 48,
-    "craftTime": 19000,
+    "value": 465565,
+    "craftTime": 106621,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 30,
+      "mana": 30
     },
     "mcost": {},
     "pow": 0
@@ -3556,11 +3943,12 @@
   "R6607": {
     "id": "R6607",
     "name": "Wizard Earring",
-    "value": 73,
-    "craftTime": 24000,
+    "value": 2467499,
+    "craftTime": 146030,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 35,
+      "mana": 35
     },
     "mcost": {},
     "pow": 0
@@ -3568,11 +3956,12 @@
   "R6608": {
     "id": "R6608",
     "name": "Clerical Earring",
-    "value": 113,
-    "craftTime": 31000,
+    "value": 12830998,
+    "craftTime": 196232,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 40,
+      "mana": 40
     },
     "mcost": {},
     "pow": 0
@@ -3580,11 +3969,12 @@
   "R6609": {
     "id": "R6609",
     "name": "Charismatic Earring",
-    "value": 174,
-    "craftTime": 41000,
+    "value": 65438090,
+    "craftTime": 258622,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 45,
+      "mana": 45
     },
     "mcost": {},
     "pow": 0
@@ -3592,11 +3982,12 @@
   "R6610": {
     "id": "R6610",
     "name": "Rose Earring",
-    "value": 268,
-    "craftTime": 53000,
+    "value": 320646642,
+    "craftTime": 327480,
     "type": "Earrings",
     "rcost": {
-      "ore": 5
+      "silver": 50,
+      "mana": 50
     },
     "mcost": {},
     "pow": 0

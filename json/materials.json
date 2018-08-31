@@ -3,6 +3,10 @@
     "id": "M001",
     "name": "Gold"
   },
+  "M002": {
+    "id": "M002",
+    "name": "Blueprint"
+  },
   "M101": {
     "id": "M101",
     "name": "Emerald Slime"

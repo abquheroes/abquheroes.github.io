@@ -1056,6 +1056,8 @@ input#importSaveText {
 }
 
 .WorkerImage {
+    height: 64px;
+    width: 64px;
     margin-right: 5px;
 }
 
@@ -1080,15 +1082,21 @@ input#importSaveText {
 
 .WorkerDesc {
     color: var(--text-3);
-    text-align: center;
-    flex-grow: 1;
-    max-height: 60px;
+    order: -1;
+    margin-right: 5px;
+    transition: color 0.2s ease-in-out;
 }
 
-.WorkerDesc>em {
+.WorkerDesc:hover {
     color: var(--text);
-    font-style: normal;
 }
+
+.WorkerDesc > .material-icons {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+
 
 .WorkerLvl {
     position: absolute;
@@ -1933,6 +1941,18 @@ footer a[href*="discord.gg"]:hover {
     width: 50px;
     margin-top: 0;
     padding: 5px 10px;
+}
+
+.WorkerDesc.tooltip:hover:before {
+    right: unset;
+    margin-top: -10px;
+    margin-left: 2px;
+}
+
+.WorkerDesc.tooltip:hover:after {
+    right: 0;
+    left: 0;
+    bottom: 75%;
 }
 
 .upgradeLvl.tooltip:hover:before {
