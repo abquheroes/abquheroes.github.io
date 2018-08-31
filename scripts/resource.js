@@ -97,7 +97,7 @@ function refreshResources() {
         $resources.append(d);
     });
     ResourceManager.materials.map(m => m.id).forEach(material => {
-        const d = $("<div/>").addClass("resource").attr("id",material).html(ResourceManager.output(material));
+        const d = $("<div/>").addClass("resource tooltip").attr("id",material).attr("data-tooltip",ResourceManager.idToMaterial(material).name).html(ResourceManager.output(material));
         if (material !== "M001" && ResourceManager.idToMaterial(material).amt === 0) d.hide()
         $resources.append(d);
     })

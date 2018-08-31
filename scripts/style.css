@@ -32,7 +32,7 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard {
+.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -142,7 +142,7 @@ body{
 
 #resources-container, #settings-container {
     position: relative;
-    max-height: 500px;
+    max-height: 600px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
@@ -999,6 +999,48 @@ input#importSaveText {
     align-items: center;
 }
 
+.bpShop {
+    display: inline-flex;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    margin: 15px;
+}
+
+.bpShopButton {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background-color: var(--bg-2);
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.bpShopButton:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-light);
+}
+
+.bpShopButton > img {
+    margin-left: 5px;
+}
+
+.bpShopName {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px;
+    margin-right: 25px;
+}
+
+.bpShopName .item-name {
+    margin-left: 10px;
+}
+
 #workerList, #joblist, #upgradelist, #ticketShop {
     display: flex;
     flex-wrap: wrap;
@@ -1085,6 +1127,10 @@ input#importSaveText {
     order: -1;
     margin-right: 5px;
     transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
 }
 
 .WorkerDesc:hover {
@@ -1095,8 +1141,6 @@ input#importSaveText {
     font-size: 1.5em;
     vertical-align: middle;
 }
-
-
 
 .WorkerLvl {
     position: absolute;
