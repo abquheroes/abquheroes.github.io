@@ -142,7 +142,7 @@ body{
 
 #resources-container, #settings-container {
     position: relative;
-    max-height: 600px;
+    max-height: 1200px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
@@ -1111,6 +1111,7 @@ input#importSaveText {
 }
 
 .WorkerName {
+    display: inline-flex;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.1em;
@@ -1124,8 +1125,8 @@ input#importSaveText {
 
 .WorkerDesc {
     color: var(--text-3);
-    order: -1;
-    margin-right: 5px;
+    font-weight: normal;
+    margin-left: 5px;
     transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
@@ -1138,7 +1139,7 @@ input#importSaveText {
 }
 
 .WorkerDesc > .material-icons {
-    font-size: 1.5em;
+    font-size: 1.1em;
     vertical-align: middle;
 }
 
@@ -1994,9 +1995,9 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .WorkerDesc.tooltip:hover:after {
-    right: 0;
-    left: 0;
-    bottom: 75%;
+    right: 5px;
+    left: 5px;
+    bottom: 85%;
 }
 
 .upgradeLvl.tooltip:hover:before {
