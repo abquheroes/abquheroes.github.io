@@ -16,6 +16,7 @@ const $daBottom = $("#daBottom");
 
 const DungeonAssist = {
     floorNum : 0,
+    maxfloor : -1,
     floor : null,
     status : DungeonState.TEAMSELECT,
     addTime(t) {
@@ -29,23 +30,28 @@ const DungeonAssist = {
         });
         if (party.isDead()) {
             this.status = DungeonState.TEAMSELECT;
+            this.resetDungeon();
             loadCorrectDungeonScreen();
+            return;
         }
-        if (this.floor.isDead()) {
+        else if (this.floor.isDead()) {
             this.advanceFloor();
         }
         refreshDungeonFloor();
     },
     advanceFloor() {
+        if (this.floorNum%5 === 0 && this.maxfloor === this.floorNum) ResourceManager.addMaterial("M002",1);
         this.floorNum += 1;
-        while (this.floorNum > dungeon.length) {
-            generateDungeonFloor();
-        }
-        this.floor = dungeon[this.floorNum-1];
+        this.maxfloor = Math.max(this.maxfloor,this.floorNum);
+        this.floor = new Floor(this.floorNum);
         refreshDungeonFloor();
     },
     isActive() {
         return this.status === DungeonState.ADVENTURING;
+    },
+    resetDungeon() {
+        this.floor = null;
+        this.floorNum = 0;
     }
 };
 

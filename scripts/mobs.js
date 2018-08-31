@@ -119,7 +119,6 @@ class Mob {
 }
 
 function getTarget(party,type) {
-    console.log(party, type);
     if (type === "first") {
         return party.filter(hero => hero.alive())[0]
     }

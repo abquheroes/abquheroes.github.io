@@ -84,7 +84,6 @@ class Hero {
         //takes a list of mobs and executes an attack
         //this is just w/e right now...
         const target = getTarget(mobs,this.target);
-        console.log(target);
         const dmg = this.critical(this.getPow());
         if (this.ap === this.apmax) {
             target.takeDamage(DamageType.MAGIC,dmg*2);

@@ -22,12 +22,3 @@ const dungeonIcons = {
     [Stat.ACT] : '<img src="images/DungeonIcons/act.png" alt="Act">',
     [Stat.AP] : '<img src="images/DungeonIcons/ap.png" alt="AP">',
 }
-
-const dungeon = [];
-
-function generateDungeonFloor() {
-    const difficulty = dungeon.length+1;
-    console.log(difficulty);
-    const floor = new Floor(difficulty);
-    dungeon.push(floor);
-}

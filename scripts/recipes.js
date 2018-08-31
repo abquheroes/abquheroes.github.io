@@ -104,7 +104,7 @@ function refreshBlueprint(type) {
     recipeList.buyable(type).forEach(recipe => {
         const d = $("<div/>").addClass('bpShop');
         const d1 = $("<div/>").addClass('bpShopName').html(recipe.itemPicName());
-        const b1 = $("<div/>").addClass('bpShopButton').attr("id",recipe.id).html(`BUY - 1 <img src="images/resources/M002.png" id="${recipe.id}" alt="Blueprint">`);
+        const b1 = $("<div/>").addClass('bpShopButton').attr("id",recipe.id).html(`UNLOCK - 1 <img src="images/resources/M002.png" id="${recipe.id}" alt="Blueprint">`);
         d.append(d1,b1);
         $blueprintUnlock.append(d);
     })
