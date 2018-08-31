@@ -67,9 +67,9 @@ const ResourceManager = {
     materialAvailable(matID) {
         return this.materials.find(mat => mat.id === matID).amt;
     },
-    name(res) {
-        const item = recipeList.idToItem(res);
-        if (item === undefined) return res;
+    nameForWorkerSac(mat) {
+        const item = recipeList.idToItem(mat);
+        if (item === undefined) return this.idToMaterial(mat).name;
         return item.name;
     },
     deductUpgradeCosts(resArray) {

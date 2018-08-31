@@ -87,7 +87,7 @@ function refreshWorkers() {
                 const d5a = $("<div/>").addClass("itemToSacDiv");
                 if (!ResourceManager.available(res,amt)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
-                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.name(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
+                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
                 d5.append(d5a.append(d5b));
             }
         }
