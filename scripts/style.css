@@ -32,7 +32,7 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop {
+.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -1811,6 +1811,26 @@ input#importSaveText {
 
 /* Events */
 
+#eventTab {
+    position: relative;
+}
+
+.hasEvent:before {
+    content: "!";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(162, 21, 0, 1);
+    color: var(--text-2);
+    border-radius: 50%;
+    padding: 1px 8px;
+    animation: 2s ease-in-out infinite notification;
+}
+
 #eventContainer {
     display: flex;
 }
@@ -2399,6 +2419,18 @@ a.workerDialog:hover {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes notification {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(.8)
+    }
+    100% {
+        transform: scale(1)
     }
 }
 
