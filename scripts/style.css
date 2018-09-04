@@ -91,7 +91,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails {
+#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -1221,6 +1221,7 @@ input#importSaveText {
     padding: 10px;
     font-size: .9em;
     width: 100%;
+    cursor: pointer;
 }
 
 .Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
@@ -1808,6 +1809,79 @@ input#importSaveText {
     background: var(--scheme-webkit);
 }
 
+/* Events */
+
+#eventContainer {
+    display: flex;
+}
+
+#eventList {
+    flex: 1;
+}
+
+.eventList {
+    padding: 15px;
+    background-color: var(--bg);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.eventList:hover {
+    background-color: var(--bg-2);
+}
+
+#eventContent {
+    flex: 2;
+}
+
+.eventMessage {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.eventConfirm {
+    margin-top: 20px;
+    padding: 15px;
+    max-width: 200px;
+    text-align: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.eventConfirm:hover {
+    background-color: var(--green-dark);
+    border-color: var(--green-light);
+    cursor: pointer;
+}
+
+.rewardCard {
+    padding: 3px 10px;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.rewardCard + .rewardCard {
+    margin-left: 5px;
+}
+
+.rewardImage {
+    position: relative;
+    margin-right: 10px;
+}
+
+.rewardImage > img {
+    vertical-align: middle;
+    padding: 3px;
+}
+
+/**/
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -2039,6 +2113,23 @@ footer a[href*="discord.gg"]:hover {
     max-width: 100px;
     width: 100vw;
     margin: 0 auto;
+}
+
+.rewardImage.tooltip:hover:before {
+    left: unset;
+    right: unset;
+    bottom: unset;
+    top: 60%;
+    margin: 0 0 0 2px;
+    transform: rotate(360deg);
+}
+
+.rewardImage.tooltip:hover:after {
+    left: -60px;
+    right: unset;
+    bottom: unset;
+    width: 120px;
+    top: 130%;
 }
 
 .ProgressCard.tooltip:hover:after {

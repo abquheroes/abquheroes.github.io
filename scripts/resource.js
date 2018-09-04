@@ -6,7 +6,7 @@ class Material{
     constructor (props) {
         Object.assign(this, props);
         this.amt = 0;
-        this.img = "<img src='/images/resources/"+this.id+".png' alt='"+this.name+"'>";
+        this.img = `<img src='/images/resources/${this.id}.png' alt='${this.name}'>`;
     }
 }
 

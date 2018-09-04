@@ -65,7 +65,7 @@ function dungeonDrops(event) {
     const d = $("<div/>").addClass("rewardDiv");
     event.reward.forEach(reward => {
         const d1 = $("<div/>").addClass("rewardCard");
-        const d2 = $("<div/>").addClass("rewardImage").html(ResourceManager.idToMaterial(reward.id).img);
+        const d2 = $("<div/>").addClass("rewardImage tooltip").attr("data-tooltip",ResourceManager.idToMaterial(reward.id).name).html(ResourceManager.idToMaterial(reward.id).img);
         const d3 = $("<div/>").addClass("rewardAmt").html(reward.amt);
         d.append(d1.append(d2,d3));
     });
