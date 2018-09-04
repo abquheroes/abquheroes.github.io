@@ -16,7 +16,6 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
-        console.log(res,amt);
         this.materials.find(mat => mat.id === res).amt += amt;
         refreshResources();
     },
@@ -83,6 +82,11 @@ const ResourceManager = {
             if (this.materials[i].id === matID) return this.materials[i];
         }
         return null;
+    },
+    addDungeonDrops(drops) {
+        drops.forEach(d => {
+            this.addMaterial(d.id,d.amt);
+        })
     }
 }
 

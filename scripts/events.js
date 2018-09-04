@@ -12,7 +12,12 @@ const EventManager = {
         refreshEvents();
     },
     removeEvent(eventID) {
-        events = events.filter(event => !(event.id === eventID));
+        const event = this.idToEvent(eventID);
+        if (event.type === EventTypes.DUNGEON) {
+            ResourceManager.addDungeonDrops(event.reward);
+        }
+        this.events = this.events.filter(event => !(event.id === eventID));
+        refreshEvents();
     },
     idToEvent(eventID) {
         console.log(this.events);
@@ -52,6 +57,7 @@ function refreshEvents() {
         const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} Event ${event.id}`);
         $eventList.append(d1);
     });
+    $eventContent.empty();
 }
 
 function dungeonDrops(event) {
@@ -81,3 +87,10 @@ $(document).on('click', "div.eventList", (e) => {
     d.append(d2);
     $eventContent.append(d);
 });
+
+$(document).on('click', "div.eventConfirm", (e) => {
+    //gets rid of event, and adds to inventory if you need to
+    e.preventDefault();
+    const eventID = $(e.currentTarget).attr("eventID");
+    EventManager.removeEvent(eventID);
+})
