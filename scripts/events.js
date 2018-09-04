@@ -31,6 +31,9 @@ const EventManager = {
     addOnceEvent(eventID) {
         const event = new Event(eventID);
         EventManager.addEvent(event)
+    },
+    hasEvents() {
+        return this.events.length > 0
     }
 };
 
@@ -50,6 +53,7 @@ class Event {
 
 const $eventList = $("#eventList");
 const $eventContent = $("#eventContent");
+const $eventTab = $("#eventTab");
 
 function refreshEvents() {
     $eventList.empty();
@@ -58,6 +62,8 @@ function refreshEvents() {
         $eventList.append(d1);
     });
     $eventContent.empty();
+    if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
+    else $eventTab.removeClass("hasEvent");
 }
 
 function dungeonDrops(event) {
