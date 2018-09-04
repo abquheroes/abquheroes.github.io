@@ -10,7 +10,6 @@ class Material{
     }
 }
 
-
 const ResourceManager = {
     materials : [],
     addNewMaterial(material) {

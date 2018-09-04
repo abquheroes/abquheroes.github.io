@@ -60,7 +60,6 @@ const WorkerManager = {
     },
     upgrade(workerID) {
         const worker = this.workerByID(workerID);
-        console.log(worker);
         worker.upgrade();
     }
 }

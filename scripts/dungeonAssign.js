@@ -18,6 +18,7 @@ const DungeonAssist = {
     floorNum : 0,
     maxfloor : -1,
     floor : null,
+    dropList : [],
     status : DungeonState.TEAMSELECT,
     addTime(t) {
         if (this.status !== DungeonState.ADVENTURING) return;
@@ -30,6 +31,7 @@ const DungeonAssist = {
         });
         if (party.isDead()) {
             this.status = DungeonState.TEAMSELECT;
+            EventManager.addEventDungeon(this.dropList);
             this.resetDungeon();
             loadCorrectDungeonScreen();
             return;
@@ -40,7 +42,7 @@ const DungeonAssist = {
         refreshDungeonFloor();
     },
     advanceFloor() {
-        if (this.floorNum%5 === 0 && this.maxfloor === this.floorNum) ResourceManager.addMaterial("M002",1);
+        if (this.maxfloor === this.floorNum) DungeonAssist.checkOneTimeDrops(this.floorNum);
         this.floorNum += 1;
         this.maxfloor = Math.max(this.maxfloor,this.floorNum);
         this.floor = new Floor(this.floorNum);
@@ -52,6 +54,17 @@ const DungeonAssist = {
     resetDungeon() {
         this.floor = null;
         this.floorNum = 0;
+        this.dropList = [];
+    },
+    checkOneTimeDrops(floor) {
+        if (floor % 5 === 0) DungeonAssist.addDungeonDrop("M002",1);
+        if (floor === 4) EventManager.addOnceEvent(EventTypes.ERYN);
+    },
+    addDungeonDrop(drop,amt) {
+        const found = this.dropList.find(d => d.id === drop)
+        console.log(drop,found);
+        if (found === undefined) this.dropList.push({"id":drop,"amt":amt});
+        else found.amt += amt;
     }
 };
 

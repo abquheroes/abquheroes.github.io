@@ -113,7 +113,10 @@ class Mob {
         if (this.drops === null) return;
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
-            if (success > roll) ResourceManager.addMaterial(material,1);
+            if (success > roll) {
+                DungeonAssist.addDungeonDrop(material,1);
+                console.log(`${material} found!`);
+            }
         }
     }
 }
