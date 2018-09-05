@@ -174,7 +174,8 @@ body{
 }
 
 #side-content .heading {
-    padding: 5px 10px;
+    font-size: .95em;
+    padding: 5px 20px 5px 10px;
     text-align: center;
     color: var(--text);
     border-bottom: 2px solid var(--border);
@@ -188,6 +189,7 @@ body{
 #resources {
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .resource {
