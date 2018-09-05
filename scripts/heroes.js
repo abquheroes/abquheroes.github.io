@@ -218,9 +218,9 @@ const HeroManager = {
         this.heroes.forEach(hero => {
             if (!party.hasMember(hero.id) || !DungeonAssist.isActive()) {
                 hero.healPercent(1);
+                refreshHeroHPBar(hero);
             }
         });
-        refreshHeroSelect();
     }
 }
 

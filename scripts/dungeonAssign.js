@@ -219,6 +219,13 @@ function heroHPBar(hero) {
     return d1.append(d1a,s1);
 }
 
+function refreshHeroHPBar(hero) {
+    const hpPercent = hero.hp/hero.maxHP();
+    const hpWidth = (hpPercent*100).toFixed(1)+"%";
+    $("#hp"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFill"+hero.id).css('width', hpWidth);
+}
+
 $floorID = $("#floorID");
 $dungeonHeroList = $("#dungeonHeroList");
 $dungeonMonsterList = $("#dungeonMonsterList");
