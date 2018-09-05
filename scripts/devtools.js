@@ -12,6 +12,11 @@ const devtools = {
             ResourceManager.addMaterial(material.id,100);
         })
     },
+    materials : function() {
+        ResourceManager.materials.forEach(material => {
+            ResourceManager.addMaterial(material.id,10000);
+        })
+    },
     streamData : function() {
         //take each slot, find cost per second and output per second, sum amts and output results to console
         const results = {};
