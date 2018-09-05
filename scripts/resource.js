@@ -45,10 +45,11 @@ const ResourceManager = {
     formatCost(res,amt) {
         return this.materialIcon(res)+"&nbsp;"+amt;
     },
-    output(res) {
-        for (let i=0;i<this.materials.length;i++) {
-            if (this.materials[i].id === res) return this.materialIcon(res) + "&nbsp;&nbsp" + this.materials[i].amt;
-        }
+    sidebarMaterial(resID) {
+        const res = this.materials.find(resource => resource.id == resID)
+        return `${this.materialIcon(resID)}&nbsp;&nbsp${res.amt}`
+    },
+    sidebarResource(res) {
         return this.materialIcon(res) + "&nbsp;&nbsp" + this.resourceAvailable(res) + " out of " + WorkerManager.totalProduction(res);
     },
     available(res,amt) {
@@ -87,6 +88,9 @@ const ResourceManager = {
         drops.forEach(d => {
             this.addMaterial(d.id,d.amt);
         })
+    },
+    resourceProduction(res) {
+        return WorkerManager.totalProduction(res);
     }
 }
 
@@ -96,11 +100,12 @@ function refreshResources() {
     $resources.empty();
     $.each(Resources , function(_, resource) {
         const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-        const d = $("<div/>").addClass("resource tooltip").attr("id",resource+"resource").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.output(resource));
+        const d = $("<div/>").addClass("resource tooltip").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.sidebarResource(resource));
+        if (ResourceManager.resourceProduction(resource) === 0) d.hide();
         $resources.append(d);
     });
     ResourceManager.materials.map(m => m.id).forEach(material => {
-        const d = $("<div/>").addClass("resource tooltip").attr("id",material).attr("data-tooltip",ResourceManager.idToMaterial(material).name).html(ResourceManager.output(material));
+        const d = $("<div/>").addClass("resource tooltip").attr("id",material).attr("data-tooltip",ResourceManager.idToMaterial(material).name).html(ResourceManager.sidebarMaterial(material));
         if (material !== "M001" && ResourceManager.idToMaterial(material).amt === 0) d.hide()
         $resources.append(d);
     })

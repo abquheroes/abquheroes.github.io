@@ -1,6 +1,6 @@
 "use strict";
 
-const EventTypes = Object.freeze({OREN:0,ERYN:1,HERBIE:2,LAKUR:3,HARMONY:4,FREDERIK:5,MAGNOLIA:6,SYLVESTER:7,PIPPA:8,MANNY:9,DUNGEON:10,});
+const EventTypes = Object.freeze({OREN:"W001",ERYN:"W002",HERBIE:"W003",LAKUR:"W004",HARMONY:"W005",FREDERIK:"W006",MAGNOLIA:"W007",SYLVESTER:"W008",PIPPA:"W009",MANNY:"W010",DUNGEON:"DUNGEON",});
 
 const EventManager = {
     events : [],
@@ -13,9 +13,8 @@ const EventManager = {
     },
     removeEvent(eventID) {
         const event = this.idToEvent(eventID);
-        if (event.type === EventTypes.DUNGEON) {
-            ResourceManager.addDungeonDrops(event.reward);
-        }
+        if (event.type === EventTypes.DUNGEON) ResourceManager.addDungeonDrops(event.reward);
+        else WorkerManager.gainWorker(event.type)
         this.events = this.events.filter(event => !(event.id === eventID));
         refreshEvents();
     },

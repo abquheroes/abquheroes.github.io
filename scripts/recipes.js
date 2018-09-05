@@ -1,6 +1,6 @@
 "use strict";
 
-const ItemType = Object.freeze({KNIFE:"Knives", MACE:"Maces", GLOVE:"Gloves", POTION:"Potions", AXE:"Axes", HAT:"Hats", WAND:"Wands", GAUNTLET:"Gauntlets", HELMET:"Helmets", SHOES:"Shoes", WARD:"Wards", SHIELD:"Shields", CLOAK:"Cloaks", ARMOR:"Armor", PENDANT:"Pendants"});
+const ItemType = Object.freeze({MACE:"Maces", AXE:"Axes", SPEAR:"Spears", ROD:"Rods", WAND:"Wands", STAFF:"Staves", KNIFE:"Knives", BOW:"Bows", WHIP:"Whips", HELMET:"Helmets", HAT:"Hats", MASK:"Masks", GAUNTLET:"Gauntlets", GLOVE:"Gloves", SHOE:"Shoes", ARMOR:"Armor", CLOAK:"Cloaks", VEST:"Vests", SHIELD:"Shields", WARD:"Wards", THROWN:"Thrown", OFFHAND:"Offhand", TOME:"Tomes", DART:"Darts", POTION:"Potions", PENDANT:"Pendants", RING:"Rings", INSTRUMENT:"Instruments", BELT:"Belts", EARRING:"Earrings"});
 const Rarity = Object.freeze({COMMON:"common",UNCOMMON:"uncommon",RARE:"rare",LEGENDARY:"legendary"});
 
 const $RecipeResults = $("#RecipeResults");
@@ -57,6 +57,9 @@ const recipeList = {
     buyable(type) {
         return this.recipes.filter(recipe => recipe.type === type && !recipe.owned && recipe.canAfford())
     },
+    owned(type) {
+        return this.recipes.filter(recipe => recipe.type === type && recipe.owned);
+    },
     buyBP(id) {
         console.log(id);
         if (ResourceManager.idToMaterial("M002").amt === 0) return;
@@ -64,6 +67,9 @@ const recipeList = {
         const item = this.idToItem(id);
         item.owned = true;
         populateRecipe(item.type);
+    },
+    ownedOrBuyable(type) {
+        return this.owned(type).length > 0 || this.buyable(type).length > 0;
     }
 }
 
@@ -74,6 +80,16 @@ function populateRecipe(type) {
         $("#"+recipe.id).show();
     });
     refreshBlueprint(type);
+}
+
+
+function refreshRecipeFilters() {
+    //hide recipe buttons if we don't know know a recipe and also can't learn one...
+    $.each(ItemType , function(_, type) {
+        console.log(type, recipeList.ownedOrBuyable(type))
+        if (recipeList.ownedOrBuyable(type)) $("#"+type).show();
+        else $("#"+type).hide();
+    });
 }
 
 function initializeRecipes() {
@@ -128,3 +144,4 @@ $(document).on('click','.bpShopButton', (e) => {
     const id = $(e.target).attr('id');
     recipeList.buyBP(id);
 });
+

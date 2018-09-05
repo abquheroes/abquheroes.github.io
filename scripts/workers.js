@@ -5,9 +5,10 @@ class Worker {
         Object.assign(this, props);
         this.lvl = 1;
         this.pic = '<img src="images/workers/'+this.name+'.gif">';
-        this.owned = true;
+        this.owned = false;
     }
     produces(resource) {
+        if (!this.owned) return 0;
         if (resource in this.production) return this.production[resource] * this.lvl;
         return 0;
     }
@@ -61,6 +62,14 @@ const WorkerManager = {
     upgrade(workerID) {
         const worker = this.workerByID(workerID);
         worker.upgrade();
+        refreshWorkers();
+        refreshRecipeFilters();
+    },
+    gainWorker(workerID) {
+        const worker = this.workerByID(workerID);
+        worker.owned = true;
+        refreshWorkers();
+        refreshRecipeFilters();
     }
 }
 
@@ -69,6 +78,7 @@ const $workers = $('#workerList');
 function refreshWorkers() {
     $workers.empty();
     WorkerManager.workers.forEach(worker => {
+        if (!worker.owned) return;
         const workerDiv = $('<div/>').addClass("Worker");
         const workerDetails = $('<div/>').addClass("WorkerDetails");
             const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);

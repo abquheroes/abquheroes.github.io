@@ -9,10 +9,12 @@ const player = {
 }
 
 function afterLoad() {
+    initializeRecipes();
+    WorkerManager.gainWorker("W001");
+    recipeList.idToItem("R0701").owned = true;
     refreshInventory(); //the others are loaded in order
     refreshWorkers();
     refreshResources();
-    initializeRecipes();
     initializeActionSlots();
     initializeHeroList();
     refreshHeroSelect();

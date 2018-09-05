@@ -59,6 +59,14 @@ const DungeonAssist = {
     checkOneTimeDrops(floor) {
         if (floor % 5 === 0) DungeonAssist.addDungeonDrop("M002",1);
         if (floor === 4) EventManager.addOnceEvent(EventTypes.ERYN);
+        if (floor === 9) EventManager.addOnceEvent(EventTypes.HERBIE);
+        if (floor === 14) EventManager.addOnceEvent(EventTypes.LAKUR);
+        if (floor === 19) EventManager.addOnceEvent(EventTypes.HARMONY);
+        if (floor === 24) EventManager.addOnceEvent(EventTypes.FREDERIK);
+        if (floor === 29) EventManager.addOnceEvent(EventTypes.MAGNOLIA);
+        if (floor === 34) EventManager.addOnceEvent(EventTypes.SYLVESTER);
+        if (floor === 39) EventManager.addOnceEvent(EventTypes.PIPPA);
+        if (floor === 44) EventManager.addOnceEvent(EventTypes.MANNY);
     },
     addDungeonDrop(drop,amt) {
         const found = this.dropList.find(d => d.id === drop)
