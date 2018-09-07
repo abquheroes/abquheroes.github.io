@@ -23,6 +23,7 @@ class MobTemplate {
     constructor (props) {
         Object.assign(this, props);
         this.image = '<img src="images/enemies/' + this.id + '.gif">';
+        this.head = '<img src="images/enemies/heads/' + this.id + '.png">';
     }
 }
 
@@ -32,6 +33,7 @@ class Mob {
         this.name = mobTemplate.name;
         this.id = mobTemplate.id;
         this.image = mobTemplate.image;
+        this.head = mobTemplate.head;
         this.drops = mobTemplate.drops;
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);

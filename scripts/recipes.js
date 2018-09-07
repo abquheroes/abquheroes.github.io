@@ -86,7 +86,6 @@ function populateRecipe(type) {
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     $.each(ItemType , function(_, type) {
-        console.log(type, recipeList.ownedOrBuyable(type))
         if (recipeList.ownedOrBuyable(type)) $("#"+type).show();
         else $("#"+type).hide();
     });
