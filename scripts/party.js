@@ -36,4 +36,4 @@ class Party {
     }
 }
 
-const party = new Party(1);
+const party = new Party(4);
