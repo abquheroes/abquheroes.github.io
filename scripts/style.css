@@ -1666,13 +1666,96 @@ input#importSaveText {
 
 #drContent {
     flex-grow: 1;
-    padding: 20px;
     overflow: auto;
+}
+
+#drArena {
+    position: relative;
+    height: 300px;
+    border-bottom: 2px solid var(--border);
+}
+
+.bgContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bgContainer .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bgContainer .layer1 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
+    background-size: 500px;
+}
+
+.bgContainer .layer2 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
+    background-size: 500px;
+    
+}
+
+.bgContainer .layer3 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
+    background-size: 500px;
+}
+
+.bgContainer .layer4 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
+    background-size: 500px;
+    animation: 8s linear infinite gleam;
+}
+
+.bgContainer .layer5 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
+    background-size: 500px;
+    animation: 5s linear infinite gleam;
+}
+
+.bgContainer .layer6 {
+    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
+    background-repeat: repeat-x;
+    background-position-y: bottom;
+    background-size: 500px;
+}
+
+#drArena > h3 {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#floorID {
+    background-color: rgba(0,0,0,0.50);
+    border: 1px solid rgba(255,255,255,0.10);
+    padding: 10px 20px;
+}
+
+#dungeonListContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #dungeonHeroList {
     display: flex;
     flex-wrap: wrap;
+}
+
+#dungeonHeroList > .dfc, #dungeonMobList > .dfm {
+    background-color: rgba(0,0,0,0.50);
+    border: 1px solid rgba(255,255,255,0.10);
+    text-align: center;
+    padding: 10px 20px;
 }
 
 .dhc {
@@ -1684,15 +1767,41 @@ input#importSaveText {
     border: 1px solid var(--border);
 }
 
-#drLog {
+#drStats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dsc {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    padding: 15px;
+    min-width: 200px;
+}
+
+.dsm {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 15px;
+    min-width: 200px;
+}
+
+#drLog {
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--bg-3);
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-    max-width: 350px;
-    overflow: auto;
+}
+
+#drLogHero {
+    border-right: 1px solid var(--border);
+}
+
+#drLogHero, #drLogMob {
+    border-top: 1px solid var(--border);
+    flex: 1 300px;
+    padding: 15px;
 }
 
 .logEntry {
@@ -2421,6 +2530,18 @@ a.workerDialog:hover {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes gleam {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
