@@ -247,7 +247,7 @@ const actionSlotsContainer = document.getElementById('Actions');
 const dungeonContainer = document.getElementById('dungeon-container');
 const heroContainer = document.getElementById('heroContainer');
 
-const setHeight = () => {
+/*const setHeight = () => {
     setInterval(
         function() {
             const ascHeight = actionSlotsContainer.offsetHeight;
@@ -259,6 +259,6 @@ const setHeight = () => {
 
 if (actionSlotsContainer || dungeonContainer || heroContainer) {
     setHeight();
-}
+}*/
 
 

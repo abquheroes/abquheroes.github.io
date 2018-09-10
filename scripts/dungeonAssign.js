@@ -14,6 +14,9 @@ const $dtsBottom = $("#dtsBottom");
 const $daTop = $("#daTop");
 const $daBottom = $("#daBottom");
 
+const $DungeonSideBarStatus = $("#DungeonSideBarStatus");
+const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
+
 const DungeonAssist = {
     floorNum : 0,
     maxfloor : -1,
@@ -34,6 +37,7 @@ const DungeonAssist = {
             EventManager.addEventDungeon(this.dropList);
             this.resetDungeon();
             loadCorrectDungeonScreen();
+            $DungeonSideBarStatus.html("Status: Idle");
             return;
         }
         else if (this.floor.isDead()) {
@@ -47,6 +51,7 @@ const DungeonAssist = {
         this.maxfloor = Math.max(this.maxfloor,this.floorNum);
         this.floor = new Floor(this.floorNum);
         initiateDungeonFloor();
+        $DungeonSideBarStatus.html("Status: Floor " + this.floorNum);
     },
     isActive() {
         return this.status === DungeonState.ADVENTURING;
@@ -93,6 +98,7 @@ function loadCorrectDungeonScreen() {
     }
 }
 
+
 function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
@@ -121,6 +127,15 @@ function refreshHeroSelect() {
         }
     });
     $dtsBottom.append(d2);
+    //update the sidebar!
+    $DungeonSideBarTeam.empty();
+    party.heroList().forEach(hero => {
+        const d3 = $("<div/>").addClass("dungeonSideBarMember");
+        const d3a = $("<div/>").addClass("dungeonSideBarMemberIcon").html(hero.head);
+        const d3b = $("<div/>").addClass("dungeonSideBarMemberHP").html(sidebarHP(hero));
+        d3.append(d3a,d3b);
+        $DungeonSideBarTeam.append(d3);
+    });
 }
 
 function characterCard(prefix,dv,ID) {
@@ -218,6 +233,15 @@ function refreshDungeonFloorBars() {
         refreshAPBar(mob);
         refreshActBar(mob);
     });
+}
+
+function sidebarHP(hero) {
+    const hpPercent = hero.hp/hero.maxHP();
+    const hpWidth = (hpPercent*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("dsbhpBarDiv").html(dungeonIcons[Stat.HP]);
+    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+hero.id);
+    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFill"+hero.id).css('width', hpWidth);
+    return d1.append(d1a,s1);
 }
 
 function createHPBar(hero) {
