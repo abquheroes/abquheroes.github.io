@@ -173,7 +173,7 @@ body{
     transform: rotateZ(180deg);
 }
 
-#side-content .heading {
+#side-content .heading, #right-side-content .heading {
     font-size: .95em;
     padding: 5px 20px 5px 10px;
     text-align: center;
@@ -210,9 +210,9 @@ body{
 }
 
 #right-side-content .heading {
-    text-transform: uppercase;
-    text-align: center;
-    margin: 10px 0;
+    margin: 10px 15px;
+    padding: 5px 20px;
+    cursor: default;
 }
 
 #inv-header {
@@ -535,10 +535,9 @@ select {
 
 #ActionSlots {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    padding: 10px 10px 0 20px;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -549,9 +548,9 @@ select {
     background-color: var(--bg);
     border: 2px solid var(--border);
     border-radius: 10px;
-    margin: 0 4px 10px 0;
-    width: 150px;
-    height: 115px;
+    margin: 0 0 5px 0;
+    width: 100%;
+    height: 100px;
     overflow: hidden;
 }
 
