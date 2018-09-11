@@ -241,24 +241,4 @@ function toggleAboutState(e) {
     }
 };
 
-// Calculate Actions height and apply to Dungeons container
-
-const actionSlotsContainer = document.getElementById('Actions');
-const dungeonContainer = document.getElementById('dungeon-container');
-const heroContainer = document.getElementById('heroContainer');
-
-/*const setHeight = () => {
-    setInterval(
-        function() {
-            const ascHeight = actionSlotsContainer.offsetHeight;
-            dungeonContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
-            heroContainer.style.height = `calc(100vh - ${ascHeight + 90}px)`;
-        }
-    );
-}
-
-if (actionSlotsContainer || dungeonContainer || heroContainer) {
-    setHeight();
-}*/
-
 
