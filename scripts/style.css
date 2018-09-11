@@ -136,13 +136,13 @@ body{
 
 #side-content {
     flex-grow: 1;
-    padding: 0 20px;
-    overflow: auto;
+    padding: 0 10px;
+    overflow-y: auto;
 }
 
 #resources-container, #settings-container {
     position: relative;
-    max-height: 1800px;
+    max-height: 2500px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
