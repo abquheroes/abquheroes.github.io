@@ -136,13 +136,13 @@ body{
 
 #side-content {
     flex-grow: 1;
-    padding: 0 20px;
-    overflow: auto;
+    padding: 0 10px;
+    overflow-y: auto;
 }
 
 #resources-container, #settings-container {
     position: relative;
-    max-height: 1800px;
+    max-height: 2500px;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
@@ -173,7 +173,7 @@ body{
     transform: rotateZ(180deg);
 }
 
-#side-content .heading {
+#side-content .heading, #right-side-content .heading {
     font-size: .95em;
     padding: 5px 20px 5px 10px;
     text-align: center;
@@ -210,9 +210,25 @@ body{
 }
 
 #right-side-content .heading {
-    text-transform: uppercase;
+    margin: 10px 15px;
+    padding: 5px 20px;
+    cursor: default;
+}
+
+#DungeonSideBar {
+    padding: 0 10px;
+}
+
+#DungeonSideBarStatus {
     text-align: center;
-    margin: 10px 0;
+    background-color: var(--bg-2);
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+#DungeonSideBarTeam {
+    
 }
 
 #inv-header {
@@ -309,7 +325,7 @@ body{
 
 .game-wrapper {
     flex-grow: 1;
-    height: 100%;
+    height: 100vh;
     max-width: calc(100% - 500px);
     max-height: calc(100vh - 50px);
     overflow-y: auto;
@@ -317,8 +333,12 @@ body{
 
 .game-content #tabs {
     display: flex;
+    position: sticky;
+    top: 0;
     max-height: calc(100vh - 50px);
     border-bottom: 2px solid var(--border);
+    background-color: var(--bg-2);
+    z-index: 100;
 }
 
 .tablinks {
@@ -373,6 +393,7 @@ body{
 }
 
 .tabcontent {
+    height: calc(100vh - 90px);
     animation: 0.2s fade-in;
 }
 
@@ -534,11 +555,8 @@ select {
 }
 
 #ActionSlots {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding: 10px 10px 0 20px;
+    display: block;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -549,9 +567,9 @@ select {
     background-color: var(--bg);
     border: 2px solid var(--border);
     border-radius: 10px;
-    margin: 0 4px 10px 0;
-    width: 150px;
-    height: 115px;
+    margin: 0 0 5px 0;
+    width: 100%;
+    min-height: 100px;
     overflow: hidden;
 }
 
@@ -723,7 +741,6 @@ input#importSaveText {
     flex-wrap: wrap;
     background-color: var(--bg);
     padding: 0 25px 0 0;
-    margin-top: 10px;
     line-height: 40px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -1418,6 +1435,7 @@ input#importSaveText {
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -1625,7 +1643,6 @@ input#importSaveText {
 
 #dungeon-container {
     display: flex;
-    height: calc(100vh - 250px);
     overflow: hidden;
 }
 

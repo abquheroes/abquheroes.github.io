@@ -48,7 +48,7 @@ class actionSlot {
 
 
 const actionSlotManager = {
-    maxSlots : 5, /* SET TO 10 FOR TESTING PURPOSES */
+    maxSlots : 5,
     slots : [],
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) return;
