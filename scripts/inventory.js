@@ -103,38 +103,16 @@ function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
     Inventory.inv.forEach(item => {
-        const itemdiv = $("<div/>").addClass("inventoryItem tooltip").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        const itemdiv = $("<div/>").addClass("inventoryItem");
         itemdiv.addClass("R"+item.rarity)
+        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
         const itemCt = $("<div/>").addClass("inventoryCount").html("x"+item.amt);
-        itemdiv.append(itemCt);
+        const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
+        const sellButtons = $("<div/>").addClass('inventorySellButtons');
+        const sellOne = $("<div/>").addClass('inventorySellOne').html("Sell 1x");
+        const sellAll = $("<div/>").addClass('inventorySellAll').html("Sell Max");
+        sellButtons.append(sellOne,sellAll);
+        itemdiv.append(itemName,itemCt,sellButtons,);
         $inventory.append(itemdiv);
     });
 }
-
-$sellOne = $("#sell1");
-$sellTen = $("#sell10");
-$sellAll = $("#sellAll");
-
-$sellOne.click((e) => {
-    e.preventDefault();
-    player.sellPref = 1;
-    $sellOne.addClass("itemSellPrefSelected");
-    $sellTen.removeClass("itemSellPrefSelected");
-    $sellAll.removeClass("itemSellPrefSelected");
-});
-
-$sellTen.click((e) => {
-    e.preventDefault();
-    player.sellPref = 10;
-    $sellOne.removeClass("itemSellPrefSelected");
-    $sellTen.addClass("itemSellPrefSelected");
-    $sellAll.removeClass("itemSellPrefSelected");
-});
-
-$sellAll.click((e) => {
-    e.preventDefault();
-    player.sellPref = 100;
-    $sellOne.removeClass("itemSellPrefSelected");
-    $sellTen.removeClass("itemSellPrefSelected");
-    $sellAll.addClass("itemSellPrefSelected");
-});
