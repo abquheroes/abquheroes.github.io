@@ -1789,6 +1789,10 @@ input#importSaveText {
     border: 1px solid var(--border);
 }
 
+#drStats {
+    flex-wrap: nowrap;
+}
+
 #drStatsHero {
     display: flex;
     flex-wrap: wrap;
