@@ -1,23 +1,28 @@
-$('#inventory').on("click",".inventoryItem",(e) => {
+$('#inventory').on("click",".inventorySellOne",(e) => {
     e.preventDefault();
     const id = $(e.target).attr("id");
     const rarity = $(e.target).attr("r");
-    let amt = player.sellPref || 1;
-//  if (e.shiftKey) amt = 100
-    Inventory.sellItem(id,rarity,amt);
+    Inventory.sellItem(id,rarity,1);
+})
+
+$('#inventory').on("click",".inventorySellAll",(e) => {
+    e.preventDefault();
+    const id = $(e.target).attr("id");
+    const rarity = $(e.target).attr("r");
+    Inventory.sellItem(id,rarity);
 })
 
 let containerid = 0;
 
 class itemContainer {
-    constructor(id,rarity) {
+    constructor(id,rarity,amt) {
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
         this.type = this.item.type;
         this.picName = this.item.itemPicName();
         this.rarity = rarity;
-        this.amt = 1;
+        this.amt = amt || 1;
         this.containerID = containerid;
         containerid += 1;
     }
@@ -36,6 +41,7 @@ const Inventory = {
     inv : [],
     addToInventory(id,rarity,amt,norefresh) {
         amt = amt || 1;
+        console.log(amt);
         for (let i=0;i<this.inv.length;i++) {
             if (this.inv[i].match(id,rarity)) {
                 this.inv[i].amt += amt;
@@ -67,9 +73,9 @@ const Inventory = {
         refreshInventory();
     },
     sellItem(id,rarity,amt) {
+        amt = amt || this.itemCount(id,rarity);
         this.removeFromInventory(id,rarity,amt);
-        const gold = recipeList.idToItem(id).value;
-        console.log(gold);
+        const gold = recipeList.idToItem(id).value*amt;
         ResourceManager.addMaterial("M001",gold);
     },
     itemCount(id,rarity) {
@@ -111,8 +117,8 @@ function refreshInventory() {
         const itemCt = $("<div/>").addClass("inventoryCount").html("x"+item.amt);
         const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
         const sellButtons = $("<div/>").addClass('inventorySellButtons');
-        const sellOne = $("<div/>").addClass('inventorySellOne').html("Sell 1x");
-        const sellAll = $("<div/>").addClass('inventorySellAll').html("Sell Max");
+        const sellOne = $("<div/>").addClass('inventorySellOne').attr("id",item.id).attr("r",item.rarity).html("Sell 1x");
+        const sellAll = $("<div/>").addClass('inventorySellAll').attr("id",item.id).attr("r",item.rarity).html("Sell Max");
         sellButtons.append(sellOne,sellAll);
         itemdiv.append(itemName,itemCt,sellButtons,);
         $inventory.append(itemdiv);
