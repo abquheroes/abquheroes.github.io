@@ -313,7 +313,6 @@ function examineHeroPossibleEquip(slot,heroID) {
     heroID = heroID || examineHeroCache;
     examineSlotCache = slot;
     examineHeroCache = heroID;
-    console.log(slot,heroID);
     if (slot === null || heroID === null) return;
     const types = HeroManager.getSlotTypes(slot,heroID);
     $heroEquipmentList.empty();

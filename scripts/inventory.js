@@ -34,19 +34,21 @@ class itemContainer {
 
 const Inventory = {
     inv : [],
-    addToInventory(id,rarity,amt) {
+    addToInventory(id,rarity,amt,norefresh) {
         amt = amt || 1;
         for (let i=0;i<this.inv.length;i++) {
             if (this.inv[i].match(id,rarity)) {
                 this.inv[i].amt += amt;
-                refreshInventory();
+                if (!norefresh) refreshInventory();
                 return;
             }
         }
         this.inv.push(new itemContainer(id,rarity,amt));
-        refreshInventory();
-        refreshWorkers();
-        examineHeroPossibleEquip();
+        if (!norefresh) {
+            refreshInventory();
+            refreshWorkers();
+            examineHeroPossibleEquip();
+        }
     },
     craftToInventory(id) {
         const roll = Math.floor(Math.random() * 1000)
