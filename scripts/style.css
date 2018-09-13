@@ -1453,7 +1453,7 @@ input#importSaveText {
     background-color: var(--bg);
     border: 1px solid var(--border);
     min-width: 125px;
-    min-height: 128px;
+    min-height: 155px;
     text-align: center;
     justify-content: center;
     padding: 20px;
@@ -1643,6 +1643,7 @@ input#importSaveText {
 
 #dungeon-container {
     display: flex;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -1682,6 +1683,8 @@ input#importSaveText {
 }
 
 #drContent {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     overflow: auto;
 }
@@ -1757,10 +1760,11 @@ input#importSaveText {
     padding: 10px 20px;
 }
 
-#dungeonListContainer {
+#dungeonListContainer, #drStats {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
+    padding: 20px;
 }
 
 #dungeonHeroList {
@@ -1769,9 +1773,10 @@ input#importSaveText {
 }
 
 #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
-    background-color: rgba(0,0,0,0.50);
+    background-color: rgba(0,0,0,0.30);
     border: 1px solid rgba(255,255,255,0.10);
     text-align: center;
+    margin: 0 5px;
     padding: 10px 20px;
 }
 
@@ -1784,9 +1789,9 @@ input#importSaveText {
     border: 1px solid var(--border);
 }
 
-#drStats {
+#drStatsHero {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .dsc {
@@ -1808,6 +1813,7 @@ input#importSaveText {
 #drLog {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     background-color: var(--bg-3);
 }
 
