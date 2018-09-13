@@ -294,26 +294,18 @@ body{
     border: 1px solid var(--border);
     color: var(--text);
     flex: 1 200px;
-    height: 75px;
+    padding: 10px;
 }
 
 .inventoryItemName {
     display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding-left: 15px;
     flex-wrap: wrap;
     align-items: center;
     flex: 1;
-    cursor: pointer;
 }
 
 .inventoryItemName > .item-name {
     margin-left: 10px;
-    max-width: 150px;
 }
 
 .inventoryItemName > img {
@@ -324,8 +316,6 @@ body{
 
 .inventorySellButtons {
     margin-right: 10px;
-    position: absolute;
-    right: 70px;
 }
 
 .inventoryItem .inventoryCount {
@@ -333,8 +323,6 @@ body{
     align-items: center;
     justify-content: center;
     order: 1;
-    position: absolute;
-    right: 15px;
     height: 50px;
     width: 50px;
     background-color: rgba(255,255,255,0.1);
