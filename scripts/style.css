@@ -274,6 +274,10 @@ body{
     border-color: var(--border-2);
 }
 
+#inventoryTab {
+    height: calc(100vh - 100px)
+}
+
 #inventory {
     display: grid;
     grid-auto-rows: auto;
