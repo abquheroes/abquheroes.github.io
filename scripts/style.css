@@ -807,7 +807,6 @@ input#importSaveText {
     background-color: var(--bg);
     padding: 0 25px 0 0;
     line-height: 40px;
-    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
@@ -2196,22 +2195,23 @@ footer a[href*="discord.gg"]:hover {
 
 /* Tooltips */
 
-.tooltip:hover:before {
+.tooltip:before {
     display: inline-block;
     position: absolute;
-    margin-top: -25px;
+    margin-top: -60px;
     right: 50%;
     margin-right: -6px;
     content: "";
     border: 8px solid transparent;
     border-bottom-color: black;
-    transform: rotate(180deg);
-    animation: fade-in 0.3s;
+    transform: scale(0) rotate(180deg);
     pointer-events: none;
     z-index: 10;
-}
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+} 
 
-.tooltip:hover:after {
+.tooltip:after {
     display: inline-block;
     position: absolute;
     left: -100%;
@@ -2228,12 +2228,24 @@ footer a[href*="discord.gg"]:hover {
     text-transform: none;
     word-wrap: break-word;
     padding: 5px 8px;
-    animation: fade-in 0.3s; 
     pointer-events: none;
     z-index: 10;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
 }
 
-.inventoryItem.tooltip:hover:after {
+.tooltip:hover:before, .tooltip:hover:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tooltip:hover:before {
+    margin-top: -25px;
+    transform: rotate(180deg);
+}
+
+.inventoryItem.tooltip:after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2246,11 +2258,11 @@ footer a[href*="discord.gg"]:hover {
     z-index: 2;
 }
 
-.inventoryItem.tooltip:hover:before {
+.inventoryItem.tooltip:before {
     display: none;
 }
 
-.itemToSac.tooltip:hover:after {
+.itemToSac.tooltip:after {
     left: -100%;
     right: -100%;
     top: unset;
@@ -2258,56 +2270,71 @@ footer a[href*="discord.gg"]:hover {
     z-index: 2;
 }
 
-.itemToSac.tooltip:hover:before {
+.itemToSac.tooltip:before {
     left: unset;
     right: unset;
 }
 
-.indvCost.tooltip:hover:after {
+.indvCost.tooltip:after {
     bottom: 150%;
     top: unset;
 }
-.indvCost.tooltip:hover:before {
-    margin-top: -12px;
+
+.indvCost.tooltip:before {
+    margin-top: -35px;
     margin-right: -12px;
 }
 
-.resource.tooltip:hover:before {
-    margin-top: -18px;
+.indvCost.tooltip:hover:before {
+    margin-top: -12px;
+}
+
+.resource.tooltip:before {
+    margin-top: -30px;
     right: unset;
     left: unset;
     margin-right: 0;
 }
 
-.resource.tooltip:hover:after {
+.resource.tooltip:hover:before {
+    margin-top: -18px;
+}
+
+.resource.tooltip:after {
     top: unset;
     bottom: 130%;
     left: 0;
     right: 50%;
     margin-top: 0;
     padding: 5px;
+    transform-origin: left;
 }
 
-.WorkerDesc.tooltip:hover:before {
+.WorkerDesc.tooltip:before {
     right: unset;
-    margin-top: 15px;
+    margin-top: 35px;
     transform: rotate(360deg);
 }
 
-.WorkerDesc.tooltip:hover:after {
+.WorkerDesc.tooltip:hover:before {
+    margin-top: 15px;
+}
+
+.WorkerDesc.tooltip:after {
     right: -2.5px;
     left: unset;
     top: 150%;
     bottom: unset;
     width: 225px;
+    transform-origin: right;
 }
 
-.upgradeLvl.tooltip:hover:before {
+.upgradeLvl.tooltip:before {
     margin-top: -28px;
     margin-right: -8px;
 }
 
-.upgradeLvl.tooltip:hover:after {
+.upgradeLvl.tooltip:after {
     font-weight: normal;
     top: unset;
     left: -45%;
@@ -2318,7 +2345,7 @@ footer a[href*="discord.gg"]:hover {
     z-index: 999;
 }
 
-.BuyWorker.tooltip:hover:after, .WorkerUpgrade.workerUpgradeDisable:hover:after, .BuyUpgrade.tooltip:hover:after {
+.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2328,7 +2355,7 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.jobDisable.tooltip:hover:after {
+.jobDisable.tooltip:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2338,16 +2365,20 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.rewardImage.tooltip:hover:before {
+.rewardImage.tooltip:before {
     left: unset;
     right: unset;
     bottom: unset;
     top: 60%;
-    margin: 0 0 0 2px;
+    margin: 20px 0 0 2px;
     transform: rotate(360deg);
 }
 
-.rewardImage.tooltip:hover:after {
+.rewardImage.tooltip:hover:before {
+    margin-top: 0px;
+} 
+
+.rewardImage.tooltip:after {
     left: -60px;
     right: unset;
     bottom: unset;
@@ -2355,7 +2386,7 @@ footer a[href*="discord.gg"]:hover {
     top: 130%;
 }
 
-.ProgressCard.tooltip:hover:after {
+.ProgressCard.tooltip:after {
     top: unset;
     left: -10%;
     right: -10%;
@@ -2364,7 +2395,7 @@ footer a[href*="discord.gg"]:hover {
 
 /* Firefox-Specific Fixes */
 @-moz-document url-prefix() { 
-    .resource.tooltip:hover:before {
+    .resource.tooltip:before {
         margin-top: -37px;
     }
 
