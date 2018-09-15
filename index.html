@@ -47,10 +47,10 @@
             <div class="dialog_content">
                 <div class="dialog_header">
                     <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                    <h2 id="titlePlayfab" class="dialog_title">Playfab</h2>
+                    <h2 id="titlePlayfab" class="dialog_title">Playfab Cloud Save</h2>
                 </div>
                 <div class="dialog_body">
-                    <p id="descPlayfab" class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
+                    <p id="descPlayfab" class="dialog_description">Login or Register your PlayFab account below, and then import or export your cloud save on any computer or device!</p>
                     <div id="pfLoginRegister">
                         <form>
                             <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"autocomplete="email"></div>
@@ -79,6 +79,8 @@
                 </div>
                 <div class="dialog_body">
                     <p id="descClearSave" class="dialog_description">Are you sure you want to clear your saved game data from this browser? This action cannot be reversed.</p>
+                    <button id="deleteSaveButton">Yes, Delete My Data</button>
+                    <button id="declineSaveButton">No, Do Not Delete My Data</button>
                 </div>
             </div>
         </div>
@@ -86,10 +88,10 @@
             <div class="dialog_content">
                 <div class="dialog_header">
                     <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                    <h2 id="titleExportSave" class="dialog_title">Export Save Data?</h2>
+                    <h2 id="titleExportSave" class="dialog_title">Export Game Data?</h2>
                 </div>
                 <div class="dialog_body">
-                    <p id="descExportSave" class="dialog_description">Export your save data for use at a later time or use in another browser, computer or device.</p>
+                    <p id="descExportSave" class="dialog_description">Export your game data for sharing or use at a later time in another browser, computer or device. Copy the export string below for importing at a later time.</p>
                 </div>
             </div>
         </div>
@@ -97,11 +99,12 @@
             <div class="dialog_content">
                 <div class="dialog_header">
                     <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                    <h2 id="titleImportSave" class="dialog_title">Import Save Data?</h2>
+                    <h2 id="titleImportSave" class="dialog_title">Import Game Data?</h2>
                 </div>
                 <div class="dialog_body">
-                    <p id="descImportSave" class="dialog_description">Import previously exported data by inputting the export string below.</p>
+                    <p id="descImportSave" class="dialog_description">Import previously exported data by inputting the export string in the box below then pressing 'Import Save'.</p>
                     <input type="text" id="importSaveText"/>
+                    <button id="importSaveButton">Import Save</button>
                 </div>
             </div>
         </div>
@@ -289,7 +292,7 @@
                     <a id="clearSave" class="tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
                     <a id="exportSave" class="tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
                     <a id="importSave" class="tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
-                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
+                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab.">Cloud Save</a>
                 </div>
                 <div id="bottom-right">
                     <p id="version-scale">v0.2.0.0-dev</p>

@@ -796,10 +796,13 @@ select {
     color: var(--text-3);
 }
 
-input#importSaveText {
+#importSaveText {
     background-color: var(--bg-3);
     border: 1px solid var(--border);
     color: var(--text);
+    width: 100%;
+    min-height: 30px;
+    padding: 0 5px;
 }
 
 #RecipeFilter {
@@ -2463,7 +2466,7 @@ footer a[href*="discord.gg"]:hover {
     justify-content: center;
 }
 
-#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input {
+#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton {
     margin-top: 10px;
     padding: 10px 25px;
     flex-grow: 1;
@@ -2483,7 +2486,12 @@ footer a[href*="discord.gg"]:hover {
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
+#deleteSaveButton:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+    border-color: rgba(162, 21, 0, 1);
+}
+
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover {
     background-color: var(--bg-2);
 }
 
@@ -2497,6 +2505,7 @@ footer a[href*="discord.gg"]:hover {
 
 #pfSaveStatus {
     width: 100%;
+    margin-top: 10px;
 }
 
 /* Flex Tables */
@@ -2586,7 +2595,7 @@ a.workerDialog:hover {
     transform: translateY(-50%) scale(0);
     width: 100%;
     max-width: 500px;
-    height: 100%;
+    height: auto;
     max-height: 400px;
     background-color: var(--bg);
     border: 1px solid var(--border);
