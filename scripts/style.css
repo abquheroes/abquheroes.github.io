@@ -104,6 +104,7 @@ body{
 .game-content {
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-content .status, #right-side-content {
@@ -2530,7 +2531,6 @@ footer a[href*="discord.gg"]:hover {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8);
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
@@ -2571,7 +2571,7 @@ a.workerDialog:hover {
     position: relative;
     margin: auto;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0);
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -2582,6 +2582,15 @@ a.workerDialog:hover {
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+.dialog:target .dialog_content {
+    transform: translateY(-50%) scale(1);
+}
+
+.dialog:target + .game-content {
+    filter: blur(10px);
 }
 
 .dialog_header {
