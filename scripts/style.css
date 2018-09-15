@@ -1638,6 +1638,12 @@ input#importSaveText {
     overflow: auto;
 }
 
+#heroGearSlots {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .heroExamineEquip {
     width: 100%;
     display: flex;
@@ -1669,12 +1675,18 @@ input#importSaveText {
 }
 
 .heroExamineEquipmentEquip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .heroExamineEquipmentEquip > .item-name {
-    max-width: 90px;
+    max-width: 110px;
+    margin: auto;
 }
 
 .heroExamineEquipmentEquip>img {
