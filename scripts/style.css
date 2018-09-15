@@ -2589,7 +2589,7 @@ a.workerDialog:hover {
     transform: translateY(-50%) scale(1);
 }
 
-.dialog:target + .game-content {
+.dialog:target ~ .game-content {
     filter: blur(10px);
 }
 

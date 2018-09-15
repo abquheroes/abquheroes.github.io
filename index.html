@@ -71,6 +71,51 @@
                 </div>
             </div>
         </div>
+        <div id="dialogClearSave" class="dialog" role="dialog" aria-labelledby="titleClearSave" aria-describedby="descClearSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleClearSave" class="dialog_title">Clear Your Save Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descClearSave" class="dialog_description">Are you sure you want to clear your saved game data from this browser? This action cannot be reversed.</p>
+                </div>
+            </div>
+        </div>
+        <div id="dialogExportSave" class="dialog" role="dialog" aria-labelledby="titleExportSave" aria-describedby="descExportSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleExportSave" class="dialog_title">Export Save Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descExportSave" class="dialog_description">Export your save data for use at a later time or use in another browser, computer or device.</p>
+                </div>
+            </div>
+        </div>
+        <div id="dialogImportSave" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleImportSave" class="dialog_title">Import Save Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descImportSave" class="dialog_description">Import previously exported data by inputting the export string below.</p>
+                    <input type="text" id="importSaveText"/>
+                </div>
+            </div>
+        </div>
+        <div id="dialogUnlock" class="dialog" role="dialog" aria-labelledby="titleUnlock" aria-describedby="descUnlock">
+                <div class="dialog_content">
+                    <div class="dialog_header">
+                        <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                        <h2 id="titleUnlock" class="dialog_title">New Recipe Unlocked!</h2>
+                    </div>
+                    <div class="dialog_body">
+                        <p id="descUnlock" class="dialog_description">You've unlocked a new recipe!</p>
+                    </div>
+                </div>
+        </div>
         <!-- End of Dialogs -->
         <section class="game-content">
             <div class="status">
@@ -241,9 +286,9 @@
             </div>
             <footer role="contentinfo">
                 <div id="bottom-left">
-                    <a id="clearSave" class="tooltip" href="clearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
-                    <a id="exportSave" class="tooltip" href="exportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
-                    <a id="importSave" class="tooltip" href="importSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
+                    <a id="clearSave" class="tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
+                    <a id="exportSave" class="tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
+                    <a id="importSave" class="tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
                     <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
                 </div>
                 <div id="bottom-right">
@@ -272,10 +317,6 @@
             </div>
         </section>
     </main>
-    <!---<div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
-    <div id="exportDialog" title="Export Save"></div>
-    <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
-    <div id="unlockDialog" title="New Recipe Unlocked!"></div>-->
 
 <script src="external/jquery/jquery.js"></script>
 <script src="scripts/jsonDataLoader.js"></script>
