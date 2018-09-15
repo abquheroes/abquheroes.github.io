@@ -1778,35 +1778,35 @@ input#importSaveText {
 }
 
 .bgContainer .layer1 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
     background-size: 500px;
 }
 
 .bgContainer .layer2 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
     background-size: 500px;
     
 }
 
 .bgContainer .layer3 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
     background-size: 500px;
 }
 
 .bgContainer .layer4 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
     background-size: 500px;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
     background-size: 500px;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;
