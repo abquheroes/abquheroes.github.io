@@ -81,7 +81,8 @@ function populateRecipe(type) {
     type = type || ItemType.KNIFE;
     $(".recipeRow").hide();
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
-        $("#"+recipe.id).show();
+        console.log(recipe.id);
+        $("#rr"+recipe.id).show();
     });
     refreshBlueprint(type);
 }
@@ -114,7 +115,7 @@ function initializeRecipes() {
         const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
         const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td6 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4,td5,td6);
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6);
         table.append(row);
     });
     $RecipeResults.append(table);

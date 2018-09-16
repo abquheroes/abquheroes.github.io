@@ -18,7 +18,6 @@ const ResourceManager = {
     addMaterial(res,amt) {
         const mat = this.materials.find(mat => mat.id === res); 
         mat.amt += amt;
-        console.log(mat.amt);
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt);

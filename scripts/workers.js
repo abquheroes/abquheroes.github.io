@@ -61,23 +61,6 @@ const WorkerManager = {
         refreshWorkers();
         refreshRecipeFilters();
     },
-    canAfford(item) {
-        const lvl = item.lvl;
-        item.rcost.forEach(r=> {
-            const freeworker = this.nextAvailable(r,lvl);
-            if (!freeworker) {
-                this.workers.forEach(worker => {
-                    if (worker.status === "temp") worker.status = "idle";
-                })
-                return false;
-            }
-            freeworker.status = "temp";
-        });
-        this.workers.forEach(worker => {
-            if (worker.status === "temp") worker.status = "idle";
-        })
-        return true;
-    },
     assignWorker(item) {
         const lvl = item.lvl;
         item.rcost.forEach(res => {
@@ -100,7 +83,7 @@ const WorkerManager = {
         })
     },
     couldCraft(item) {
-        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned).map(w=>w.production);
+        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned && w.status === "idle").map(w=>w.production);
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
     }

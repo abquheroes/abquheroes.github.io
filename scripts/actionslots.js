@@ -53,7 +53,7 @@ const actionSlotManager = {
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) return;
         const item = recipeList.idToItem(itemid);
-        if (!WorkerManager.canAfford(item)) return;
+        if (!WorkerManager.couldCraft(item)) return;
         this.slots.push(new actionSlot(itemid));
         initializeActionSlots();
         refreshSideWorkers();

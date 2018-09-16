@@ -19,6 +19,7 @@ const devtools = {
         refreshInventory();
         refreshWorkers();
         examineHeroPossibleEquip();
+        refreshRecipeFilters();
         console.log("done!");
     },
     materials : function() {
