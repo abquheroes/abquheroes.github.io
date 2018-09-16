@@ -54,6 +54,7 @@ const WorkerManager = {
         worker.upgrade();
         refreshWorkers();
         refreshRecipeFilters();
+        refreshSideWorkers();
     },
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);
