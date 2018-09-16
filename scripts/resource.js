@@ -19,8 +19,8 @@ const ResourceManager = {
         const mat = this.materials.find(mat => mat.id === res); 
         mat.amt += amt;
         console.log(mat.amt);
-        if (mat.amt === 0) $("#"+mat.id).show();
-        else $("#"+mat.id).hide();
+        if (mat.amt === 0) $("#"+mat.id).hide();
+        else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt);
     },
     canAffordMaterial(item) {
@@ -88,6 +88,7 @@ function initializeMats() {
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
         const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(mat.amt);
         d.append(d1,d2);
+        d.hide();
         $materials.append(d);
     })
 }
