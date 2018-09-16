@@ -150,6 +150,7 @@ body{
     -o-transition: max-height 0.3s ease-in-out;
     -moz-transition: max-height 0.3s ease-in-out;
     -webkit-transition: max-height 0.3s ease-in-out;
+    margin-bottom: 15px;
 }
 
 .height-collapse {
@@ -187,13 +188,52 @@ body{
     margin-top: 0;
 }
 
+.workerSideBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--green-dark);
+    border: 1px solid var(--green-light);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.workerSideBar + .workerSideBar {
+    margin-top: 5px;
+}
+
+.wsbLvl {
+    position: absolute;
+    left: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-dark);
+    border: 1px solid var( --green-light);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.wsbType {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 27px;
+}
+
+.wsbCraft {
+    min-width: 50px;
+    text-align: center;
+    border-left: 1px solid var(--green-light);
+    padding: 2px 0;
+}
+
 #resources {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
 }
 
-.resource {
+.resource, .material {
     position: relative;
     display: flex;
     align-items: center;
@@ -202,6 +242,15 @@ body{
     background-color: var(--bg-3);
     border: 2px solid var(--border);
     border-radius: 25px;
+}
+
+.material .materialName {
+    display: flex;
+    align-items: center;
+}
+
+.material .materialName > img {
+    margin-right: 5px;
 }
 
 #right-side-content {
@@ -2311,18 +2360,18 @@ footer a[href*="discord.gg"]:hover {
     margin-top: -12px;
 }
 
-.resource.tooltip:before {
+.resource.tooltip:before, .material.tooltip:before {
     margin-top: -30px;
     right: unset;
     left: unset;
     margin-right: 0;
 }
 
-.resource.tooltip:hover:before {
+.resource.tooltip:hover:before, .material.tooltip:hover:before {
     margin-top: -18px;
 }
 
-.resource.tooltip:after {
+.resource.tooltip:after, .material.tooltip:after {
     top: unset;
     bottom: 130%;
     left: 0;
