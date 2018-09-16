@@ -52,15 +52,16 @@ const actionSlotManager = {
     slots : [],
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) return;
-        if (!ResourceManager.canAffordResources(itemid)) return;
+        const item = recipeList.idToItem(itemid);
+        if (!WorkerManager.canAfford(item)) return;
         this.slots.push(new actionSlot(itemid));
         initializeActionSlots();
-        refreshResources();
+        refreshSideWorkers();
     },
     removeSlot(slot) {
         this.slots.splice(slot,1);
         initializeActionSlots();
-        refreshResources();
+        refreshSideWorkers();
     },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
@@ -79,9 +80,8 @@ const actionSlotManager = {
             else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
-    totalCost(resource) {
-        if (this.slots.length === 0) return 0;
-        return this.slots.map(slot => slot.getCost(resource)).reduce((total,amt) => total + amt);
+    itemList() {
+        return this.slots.map(slot => slot.item);
     }
 }
 

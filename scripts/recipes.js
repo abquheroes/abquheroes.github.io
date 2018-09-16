@@ -10,9 +10,6 @@ class Item{
         Object.assign(this, props);
         this.owned = false;
     }
-    canAfford() {
-        return ResourceManager.canAffordResources(this.id);
-    }
     itemPicName() {
         return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
@@ -22,12 +19,16 @@ class Item{
     imageValue() {
         return ResourceManager.formatCost("M001",this.value);
     }
-    visualizeCost() {
+    visualizeRes() {
         const d = $("<div/>").addClass("itemCost")
-        for (const [resource, amt] of Object.entries(this.rcost)) {
+        this.rcost.forEach(resource => {
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.formatCost(resource,amt)));
-        }
+            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
+        })
+        return d;
+    }
+    visualizeMat() {
+        const d = $("<div/>").addClass("itemCost")
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material)
             d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt)));
@@ -37,6 +38,9 @@ class Item{
     getCost(resource) {
         if (resource in this.rcost) return this.rcost[resource];
         return 0;
+    }
+    canAfford() {
+        return WorkerManager.couldCraft(this);
     }
 }
 
@@ -96,17 +100,21 @@ function initializeRecipes() {
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('recipeTable');
     const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('recipeHeadCost').html("COST");
-    const htd3 = $('<div/>').addClass('recipeHeadTime').html("TIME");
-    const htd4 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4);
+    const htd2 = $('<div/>').addClass('recipeHeadLvl').html("LVL");
+    const htd3 = $('<div/>').addClass('recipeHeadLvl').html("RES");
+    const htd4 = $('<div/>').addClass('recipeHeadCost').html("MATS");
+    const htd5 = $('<div/>').addClass('recipeHeadTime').html("TIME");
+    const htd6 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
+    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipecostdiv').html(recipe.visualizeCost());
-        const td3 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
-        const td4 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4);
+        const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
+        const td3 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
+        const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
+        const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+        const td6 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
+        const row = $('<div/>').addClass('recipeRow').attr("id",recipe.id).append(td1,td2,td3,td4,td5,td6);
         table.append(row);
     });
     $RecipeResults.append(table);
@@ -126,6 +134,7 @@ function refreshBlueprint(type) {
 }
 
 $(document).on('click', '.recipeName', (e) => {
+    //click on a recipe to slot it
     e.preventDefault();
     const type = $(e.target).attr("id");
     const item = recipeList.idToItem(type);

@@ -17,14 +17,6 @@ const ResourceManager = {
     },
     addMaterial(res,amt) {
         this.materials.find(mat => mat.id === res).amt += amt;
-        refreshResources();
-    },
-    canAffordResources(itemID) {
-        const item = recipeList.idToItem(itemID);
-        for (const [resource, amt] of Object.entries(item.rcost)) {
-            if (amt > this.resourceAvailable(resource)) return false;
-        }
-        return true;
     },
     canAffordMaterial(item) {
         for (const [material, amt] of Object.entries(item.mcost)) {
@@ -36,7 +28,6 @@ const ResourceManager = {
         for (const [resource, amt] of Object.entries(item.mcost)) {
             this.addMaterial(resource,-amt);
         }
-        refreshResources();
     },
     materialIcon(type) {
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
@@ -49,19 +40,12 @@ const ResourceManager = {
         const res = this.materials.find(resource => resource.id == resID)
         return `${this.materialIcon(resID)}&nbsp;&nbsp${res.amt}`
     },
-    sidebarResource(res) {
-        return this.materialIcon(res) + "&nbsp;&nbsp" + this.resourceAvailable(res) + " out of " + WorkerManager.totalProduction(res);
-    },
     available(res,amt) {
         const item = recipeList.idToItem(res);
         if (item === undefined) {
             return this.idToMaterial(res).amt >= amt;
         }
         return Inventory.itemCount(res,0) >= amt;
-    },
-    resourceAvailable(res) {
-        if (res[0] === "R") return Inventory
-        return WorkerManager.totalProduction(res)-actionSlotManager.totalCost(res);
     },
     materialAvailable(matID) {
         return this.materials.find(mat => mat.id === matID).amt;
@@ -89,24 +73,4 @@ const ResourceManager = {
             this.addMaterial(d.id,d.amt);
         })
     },
-    resourceProduction(res) {
-        return WorkerManager.totalProduction(res);
-    }
-}
-
-const $resources = $("#resources");
-
-function refreshResources() {
-    $resources.empty();
-    $.each(Resources , function(_, resource) {
-        const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-        const d = $("<div/>").addClass("resource tooltip").attr("data-tooltip",resourceNameForTooltips).html(ResourceManager.sidebarResource(resource));
-        if (ResourceManager.resourceProduction(resource) === 0) d.hide();
-        $resources.append(d);
-    });
-    ResourceManager.materials.map(m => m.id).forEach(material => {
-        const d = $("<div/>").addClass("resource tooltip").attr("id",material).attr("data-tooltip",ResourceManager.idToMaterial(material).name).html(ResourceManager.sidebarMaterial(material));
-        if (material !== "M001" && ResourceManager.idToMaterial(material).amt === 0) d.hide()
-        $resources.append(d);
-    })
 }

@@ -14,7 +14,7 @@ function afterLoad() {
     recipeList.idToItem("R0701").owned = true;
     refreshInventory(); //the others are loaded in order
     refreshWorkers();
-    refreshResources();
+    refreshSideWorkers();
     initializeActionSlots();
     initializeHeroList();
     refreshHeroSelect();

@@ -5,7 +5,10 @@ class Worker {
         Object.assign(this, props);
         this.lvl = 1;
         this.pic = '<img src="images/workers/'+this.name+'.gif">';
+        this.prodpic = '<img src="images/resources/'+this.production+'.png">';
         this.owned = false;
+        this.assigned = false;
+        this.status = "idle";
     }
     produces(resource) {
         if (!this.owned) return 0;
@@ -29,17 +32,12 @@ class Worker {
     }
     upgrade() {
         if (!this.canUpgrade()) return;
-        console.log("we're upgrading!");
         ResourceManager.deductUpgradeCosts(this.thislvlreq());
         this.lvl += 1;
         refreshWorkers();
     }
     productionText() {
-        let s = "Produces:&nbsp;&nbsp;";
-        $.each(this.production, (res,amt) => {
-            s += ResourceManager.materialIcon(res) + ","
-        })
-        return s.slice(0, -1)
+        return "Produces:&nbsp;&nbsp;"+ResourceManager.materialIcon(this.production);
     }
 }
 
@@ -48,16 +46,8 @@ const WorkerManager = {
     addWorker(worker) {
         this.workers.push(worker);
     },
-    resourceCount(resource) {
-        return this.workers.map(el=>el.produces(resource)).reduce((total,amt) => total + amt)
-    },
     workerByID(id) {
-        for (let i=0;i<this.workers.length;i++) {
-            if (this.workers[i].workerID === id) return this.workers[i];
-        }
-    },
-    totalProduction(res) {
-        return this.resourceCount(res);
+        return this.workers.find(worker => worker.workerID === id);
     },
     upgrade(workerID) {
         const worker = this.workerByID(workerID);
@@ -70,10 +60,76 @@ const WorkerManager = {
         worker.owned = true;
         refreshWorkers();
         refreshRecipeFilters();
+    },
+    canAfford(item) {
+        const lvl = item.lvl;
+        item.rcost.forEach(r=> {
+            const freeworker = this.nextAvailable(r,lvl);
+            if (!freeworker) {
+                this.workers.forEach(worker => {
+                    if (worker.status === "temp") worker.status = "idle";
+                })
+                return false;
+            }
+            freeworker.status = "temp";
+        });
+        this.workers.forEach(worker => {
+            if (worker.status === "temp") worker.status = "idle";
+        })
+        return true;
+    },
+    assignWorker(item) {
+        const lvl = item.lvl;
+        item.rcost.forEach(res => {
+            const freeworkers = this.workers.filter(worker=>worker.status === "idle");
+            const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned && worker.lvl >= lvl).sort((a,b) => a.lvl - b.lvl)[0];
+            chosenworker.status = item.id;
+        });
+    },
+    nextAvailable(res,lvl) {
+        const freeworkers = this.workers.filter(worker => worker.status === "idle" && worker.owned && worker.production === res && worker.lvl >= lvl)
+        if (freeworkers.length == 0) return false;
+        return freeworkers.sort((a,b) => a.lvl-b.lvl)[0]
+    },
+    reallocate() {
+        //reassign workers as appropriate
+        this.workers.forEach(worker => worker.status = "idle");
+        const items = actionSlotManager.itemList().sort((a,b) => b.lvl-a.lvl);
+        items.forEach(item => {
+            this.assignWorker(item);
+        })
+    },
+    couldCraft(item) {
+        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned).map(w=>w.production);
+        const difference = item.rcost.filter(x => !canProduce.includes(x));
+        return difference.length === 0;
     }
 }
 
 const $workers = $('#workerList');
+const $workersUse = $("#workersUse");
+
+function refreshSideWorkers() {
+    $workersUse.empty();
+    WorkerManager.reallocate();
+    WorkerManager.workers.filter(w=>w.owned).forEach(worker => {
+        const d = $("<div/>").addClass("workerSideBar");
+        const d1 = $("<div/>").addClass("wsbLvl").html(worker.lvl);
+        const d2 = $("<div/>").addClass("wsbType").html(worker.prodpic+"&nbsp;"+worker.name);
+        const d3 = $("<div/>").addClass("wsbCraft");
+        if (worker.status === "idle") {
+            d.addClass("wsbIdle");
+            d3.html("Idle");
+        }
+        else {
+            const item = recipeList.idToItem(worker.status);
+            d.addClass("wsbActive");
+            d3.html(item.itemPic()+"&nbsp;"+item.name);
+        }
+        d.append(d1,d2,d3);
+        $workersUse.append(d);
+    })
+}
 
 function refreshWorkers() {
     $workers.empty();
@@ -107,7 +163,6 @@ function refreshWorkers() {
 }
 
 $(document).on("click", ".WorkerUpgrade", (e) => {
-    console.log('trigger')
     e.preventDefault();
     const worker = $(e.currentTarget).attr("data-value");
     WorkerManager.upgrade(worker);
