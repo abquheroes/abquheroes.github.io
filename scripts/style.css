@@ -141,7 +141,7 @@ body{
     overflow-y: auto;
 }
 
-#resources-container, #settings-container {
+#workers-container, #materials-container, #settings-container {
     position: relative;
     max-height: 2500px;
     overflow: hidden;
@@ -1055,20 +1055,26 @@ select {
     margin-left: 5px;
 }
 
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue, .jobHeadWorker, .jobHeadName, .jobHeadTime, .jobHeadValue, .jobWorker, .jobName, .jobTime, .jobValue {
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeValue, .recipeLvl {
     padding: 0 10px;
     width: 100%;
     min-width: 100px;
     max-width: 200px;
 }
 
-.recipecostdiv {
-    display: flex;
-    flex-wrap: wrap;
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue {
+    padding: 0;
+}
+
+.recipeHeadLvl, .recipeLvl {
+    max-width: 50px;
+}
+
+.recipeLvl {
     margin-left: 300px;
 }
 
-.itemCost {
+.reciperesdiv, .itemCost {
     display: flex;
     flex-wrap: wrap;
 }
