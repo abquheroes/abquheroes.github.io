@@ -2653,15 +2653,27 @@ a.workerDialog:hover {
 .dialog_title {
     margin: 0;
     padding: 10px;
-    background: var(--blue-light);
+    min-height: 50px;
+    background-color: var(--border-3);
+    border-bottom: 1px solid var(--border);
     color: var(--text-2);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#titleClearSave {
+    background-color: rgb(144, 17, 18);;
+}
+
+#titlePlayfab {
+    font-size: 0;
+    background-color: #ff6d21;
+}
+
+.playfabLogo {
+    height: 30px;
+    vertical-align: middle;
 }
 
 .dialog_body {
