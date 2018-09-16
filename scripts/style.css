@@ -192,16 +192,16 @@ body{
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--bg);
-    border: 1px solid var(--border-3);
+    background-color: var(--green-dark);
+    border: 1px solid var(--green-light);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     height: 30px;
 }
 
 .workerSideBar.wsbActive {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--bg);
+    border-color: var(--border-3);
 }
 
 .workerSideBar + .workerSideBar {
@@ -214,16 +214,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg);
-    border: 1px solid var(--border-3);
+    background-color: var(--green-dark);
+    border: 1px solid var(--green-light);
     border-radius: 50%;
     width: 30px;
     height: 30px;
 }
 
 .workerSideBar.wsbActive .wsbLvl{
-    background-color: var(--green-dark);
-    border-color: var( --green-light);
+    background-color: var(--bg);
+    border-color: var(--border-3);
 }
 
 .wsbType {
@@ -235,12 +235,12 @@ body{
 .wsbCraft {
     min-width: 50px;
     text-align: center;
-    border-left: 1px solid var(--border-3);
+    border-left: 1px solid var(--green-light);
     padding: 2px 0;
 }
 
 .workerSideBar.wsbActive .wsbCraft {
-    border-color: var(--green-light);
+    border-color: var(--border-3);
 }
 
 .wsbCraft > img {
