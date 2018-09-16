@@ -84,7 +84,7 @@ const $materials = $("#materials");
 
 function initializeMats() {
     ResourceManager.materials.forEach(mat => {
-        const d = $("<div/>").addClass("material").attr("id",mat.id);
+        const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
         const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(mat.amt);
         d.append(d1,d2);
