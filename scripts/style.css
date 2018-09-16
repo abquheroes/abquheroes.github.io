@@ -192,10 +192,16 @@ body{
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
+    background-color: var(--bg);
+    border: 1px solid var(--border-3);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    height: 30px;
+}
+
+.workerSideBar.wsbActive {
+    background-color: var(--green-dark);
+    border-color: var(--green-light);
 }
 
 .workerSideBar + .workerSideBar {
@@ -208,24 +214,38 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--green-dark);
-    border: 1px solid var( --green-light);
+    background-color: var(--bg);
+    border: 1px solid var(--border-3);
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+}
+
+.workerSideBar.wsbActive .wsbLvl{
+    background-color: var(--green-dark);
+    border-color: var( --green-light);
 }
 
 .wsbType {
     display: flex;
     flex-grow: 1;
-    padding-left: 27px;
+    padding-left: 32px;
 }
 
 .wsbCraft {
     min-width: 50px;
     text-align: center;
-    border-left: 1px solid var(--green-light);
+    border-left: 1px solid var(--border-3);
     padding: 2px 0;
+}
+
+.workerSideBar.wsbActive .wsbCraft {
+    border-color: var(--green-light);
+}
+
+.wsbCraft > img {
+    height: 20px;
+    vertical-align: middle;
 }
 
 #resources {
@@ -1105,14 +1125,9 @@ select {
 }
 
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeValue, .recipeLvl {
-    padding: 0 10px;
     width: 100%;
     min-width: 100px;
     max-width: 200px;
-}
-
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue {
-    padding: 0;
 }
 
 .recipeHeadLvl, .recipeLvl {
@@ -1132,7 +1147,7 @@ select {
     display: inline-block;
     position: relative;
     margin-right: 5px;
-    min-width: 50px;
+    min-width: 35px;
     text-align: left;
 }
 
@@ -2349,11 +2364,14 @@ footer a[href*="discord.gg"]:hover {
 .indvCost.tooltip:after {
     bottom: 150%;
     top: unset;
+    left: -100%;
+    right: -100%;
+    margin-left: -20px;
 }
 
 .indvCost.tooltip:before {
     margin-top: -35px;
-    margin-right: -12px;
+    margin-right: 0px;
 }
 
 .indvCost.tooltip:hover:before {
@@ -2365,6 +2383,19 @@ footer a[href*="discord.gg"]:hover {
     right: unset;
     left: unset;
     margin-right: 0;
+}
+
+.wsbCraft.tooltip:after {
+    left: 0;
+    right: 0;
+    bottom: 135%;
+    transform-origin: right bottom;
+}
+
+.wsbCraft.tooltip:before {
+    margin-top: -15px;
+    transform: rotate(180deg);
+    right: 22.5px;
 }
 
 .resource.tooltip:hover:before, .material.tooltip:hover:before {
