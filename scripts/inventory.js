@@ -41,7 +41,6 @@ const Inventory = {
     inv : [],
     addToInventory(id,rarity,amt,norefresh) {
         amt = amt || 1;
-        console.log(amt);
         for (let i=0;i<this.inv.length;i++) {
             if (this.inv[i].match(id,rarity)) {
                 this.inv[i].amt += amt;

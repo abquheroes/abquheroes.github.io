@@ -16,7 +16,12 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
-        this.materials.find(mat => mat.id === res).amt += amt;
+        const mat = this.materials.find(mat => mat.id === res); 
+        mat.amt += amt;
+        console.log(mat.amt);
+        if (mat.amt === 0) $("#"+mat.id).show();
+        else $("#"+mat.id).hide();
+        $("#amt"+mat.id).html(mat.amt);
     },
     canAffordMaterial(item) {
         for (const [material, amt] of Object.entries(item.mcost)) {
@@ -73,4 +78,16 @@ const ResourceManager = {
             this.addMaterial(d.id,d.amt);
         })
     },
+}
+
+const $materials = $("#materials");
+
+function initializeMats() {
+    ResourceManager.materials.forEach(mat => {
+        const d = $("<div/>").addClass("material").attr("id",mat.id);
+        const d1 = $("<div/>").addClass("materialName").html(mat.img);
+        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(mat.amt);
+        d.append(d1,d2);
+        $materials.append(d);
+    })
 }
