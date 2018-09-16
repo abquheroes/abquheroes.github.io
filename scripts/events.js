@@ -57,7 +57,7 @@ const $eventTab = $("#eventTab");
 function refreshEvents() {
     $eventList.empty();
     EventManager.events.forEach(event => {
-        const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} Event ${event.id}`);
+        const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} Event ${parseInt(event.id)+1}`);
         $eventList.append(d1);
     });
     $eventContent.empty();

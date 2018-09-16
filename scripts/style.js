@@ -240,5 +240,3 @@ function toggleAboutState(e) {
         arrow[0].classList.add("arrow-rotate");
     }
 };
-
-

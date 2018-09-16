@@ -104,6 +104,7 @@ body{
 .game-content {
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-content .status, #right-side-content {
@@ -346,26 +347,47 @@ body{
     pointer-events: none;
 }
 
-/*.R0 {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0, 247, 255, 0.25) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0, 247, 255, 0.25) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 247, 255, 0.25) 100%);
-    border-color: rgba(0, 247, 255, 0.4);
-}*/
+/* 
+=============================================
+Rarities 
+=============================================
+*/
 
-.R1 {
+/*
+.R0 {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.15) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.15) 100%);
+    border-color: rgba(0, 0, 0, 0.25);
+}
+*/
+
+.R1 { /* Green */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(23, 247, 2, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(23, 247, 2, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(23, 247, 2, 0.15) 100%);
     border-color: rgba(44, 223, 27, 0.25);
 }
 
-.R2 {
+.R2 { /* Yellow */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(223, 189, 2, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(223, 189, 2, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(223, 189, 2, 0.15) 100%);
     border-color: rgba(223, 189, 2, 0.25);
 }
+
+.R3 { /* Pink */
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(223, 2, 131, 0.15) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(223, 2, 131, 0.15) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(223, 2, 131, 0.15) 100%);
+    border-color: rgba(223, 2, 131, 0.25);
+}
+
+/* 
+=============================================
+
+=============================================
+*/
 
 .game-wrapper {
     flex-grow: 1;
@@ -774,10 +796,13 @@ select {
     color: var(--text-3);
 }
 
-input#importSaveText {
+#importSaveText {
     background-color: var(--bg-3);
     border: 1px solid var(--border);
     color: var(--text);
+    width: 100%;
+    min-height: 30px;
+    padding: 0 5px;
 }
 
 #RecipeFilter {
@@ -786,7 +811,6 @@ input#importSaveText {
     background-color: var(--bg);
     padding: 0 25px 0 0;
     line-height: 40px;
-    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
@@ -1617,6 +1641,12 @@ input#importSaveText {
     overflow: auto;
 }
 
+#heroGearSlots {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .heroExamineEquip {
     width: 100%;
     display: flex;
@@ -1648,12 +1678,18 @@ input#importSaveText {
 }
 
 .heroExamineEquipmentEquip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .heroExamineEquipmentEquip > .item-name {
-    max-width: 90px;
+    max-width: 110px;
+    margin: auto;
 }
 
 .heroExamineEquipmentEquip>img {
@@ -1757,35 +1793,35 @@ input#importSaveText {
 }
 
 .bgContainer .layer1 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
     background-size: 500px;
 }
 
 .bgContainer .layer2 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
     background-size: 500px;
     
 }
 
 .bgContainer .layer3 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
     background-size: 500px;
 }
 
 .bgContainer .layer4 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
     background-size: 500px;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
     background-size: 500px;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6 {
-    background: url(/unused/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
+    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;
@@ -2175,22 +2211,23 @@ footer a[href*="discord.gg"]:hover {
 
 /* Tooltips */
 
-.tooltip:hover:before {
+.tooltip:before {
     display: inline-block;
     position: absolute;
-    margin-top: -25px;
+    margin-top: -60px;
     right: 50%;
     margin-right: -6px;
     content: "";
     border: 8px solid transparent;
     border-bottom-color: black;
-    transform: rotate(180deg);
-    animation: fade-in 0.3s;
+    transform: scale(0) rotate(180deg);
     pointer-events: none;
     z-index: 10;
-}
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+} 
 
-.tooltip:hover:after {
+.tooltip:after {
     display: inline-block;
     position: absolute;
     left: -100%;
@@ -2207,12 +2244,24 @@ footer a[href*="discord.gg"]:hover {
     text-transform: none;
     word-wrap: break-word;
     padding: 5px 8px;
-    animation: fade-in 0.3s; 
     pointer-events: none;
     z-index: 10;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
 }
 
-.inventoryItem.tooltip:hover:after {
+.tooltip:hover:before, .tooltip:hover:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tooltip:hover:before {
+    margin-top: -25px;
+    transform: rotate(180deg);
+}
+
+.inventoryItem.tooltip:after {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2225,11 +2274,11 @@ footer a[href*="discord.gg"]:hover {
     z-index: 2;
 }
 
-.inventoryItem.tooltip:hover:before {
+.inventoryItem.tooltip:before {
     display: none;
 }
 
-.itemToSac.tooltip:hover:after {
+.itemToSac.tooltip:after {
     left: -100%;
     right: -100%;
     top: unset;
@@ -2237,56 +2286,71 @@ footer a[href*="discord.gg"]:hover {
     z-index: 2;
 }
 
-.itemToSac.tooltip:hover:before {
+.itemToSac.tooltip:before {
     left: unset;
     right: unset;
 }
 
-.indvCost.tooltip:hover:after {
+.indvCost.tooltip:after {
     bottom: 150%;
     top: unset;
 }
-.indvCost.tooltip:hover:before {
-    margin-top: -12px;
+
+.indvCost.tooltip:before {
+    margin-top: -35px;
     margin-right: -12px;
 }
 
-.resource.tooltip:hover:before {
-    margin-top: -18px;
+.indvCost.tooltip:hover:before {
+    margin-top: -12px;
+}
+
+.resource.tooltip:before {
+    margin-top: -30px;
     right: unset;
     left: unset;
     margin-right: 0;
 }
 
-.resource.tooltip:hover:after {
+.resource.tooltip:hover:before {
+    margin-top: -18px;
+}
+
+.resource.tooltip:after {
     top: unset;
     bottom: 130%;
     left: 0;
     right: 50%;
     margin-top: 0;
     padding: 5px;
+    transform-origin: left;
 }
 
-.WorkerDesc.tooltip:hover:before {
+.WorkerDesc.tooltip:before {
     right: unset;
-    margin-top: 15px;
+    margin-top: 35px;
     transform: rotate(360deg);
 }
 
-.WorkerDesc.tooltip:hover:after {
+.WorkerDesc.tooltip:hover:before {
+    margin-top: 15px;
+}
+
+.WorkerDesc.tooltip:after {
     right: -2.5px;
     left: unset;
     top: 150%;
     bottom: unset;
     width: 225px;
+    transform-origin: right;
 }
 
-.upgradeLvl.tooltip:hover:before {
+.upgradeLvl.tooltip:before {
     margin-top: -28px;
     margin-right: -8px;
 }
 
-.upgradeLvl.tooltip:hover:after {
+.upgradeLvl.tooltip:after {
     font-weight: normal;
     top: unset;
     left: -45%;
@@ -2297,7 +2361,7 @@ footer a[href*="discord.gg"]:hover {
     z-index: 999;
 }
 
-.BuyWorker.tooltip:hover:after, .WorkerUpgrade.workerUpgradeDisable:hover:after, .BuyUpgrade.tooltip:hover:after {
+.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2307,7 +2371,7 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.jobDisable.tooltip:hover:after {
+.jobDisable.tooltip:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2317,16 +2381,20 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.rewardImage.tooltip:hover:before {
+.rewardImage.tooltip:before {
     left: unset;
     right: unset;
     bottom: unset;
     top: 60%;
-    margin: 0 0 0 2px;
+    margin: 20px 0 0 2px;
     transform: rotate(360deg);
 }
 
-.rewardImage.tooltip:hover:after {
+.rewardImage.tooltip:hover:before {
+    margin-top: 0px;
+} 
+
+.rewardImage.tooltip:after {
     left: -60px;
     right: unset;
     bottom: unset;
@@ -2334,7 +2402,7 @@ footer a[href*="discord.gg"]:hover {
     top: 130%;
 }
 
-.ProgressCard.tooltip:hover:after {
+.ProgressCard.tooltip:after {
     top: unset;
     left: -10%;
     right: -10%;
@@ -2343,7 +2411,7 @@ footer a[href*="discord.gg"]:hover {
 
 /* Firefox-Specific Fixes */
 @-moz-document url-prefix() { 
-    .resource.tooltip:hover:before {
+    .resource.tooltip:before {
         margin-top: -37px;
     }
 
@@ -2389,7 +2457,7 @@ footer a[href*="discord.gg"]:hover {
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-#pfEmail:hover:after, #pfPassword:hover:after {
+#pfEmail:hover:after, #pfPassword:hover:after, #pfEmail:focus-within:after, #pfPassword:focus-within:after {
     width: 100%;
 }
 
@@ -2398,7 +2466,7 @@ footer a[href*="discord.gg"]:hover {
     justify-content: center;
 }
 
-#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input {
+#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton {
     margin-top: 10px;
     padding: 10px 25px;
     flex-grow: 1;
@@ -2418,7 +2486,12 @@ footer a[href*="discord.gg"]:hover {
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover {
+#deleteSaveButton:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+    border-color: rgba(162, 21, 0, 1);
+}
+
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover {
     background-color: var(--bg-2);
 }
 
@@ -2430,8 +2503,14 @@ footer a[href*="discord.gg"]:hover {
     flex-wrap: wrap;
 }
 
-#pfSaveStatus {
+#pfStatus, #pfSaveStatus {
+    display: block;
     width: 100%;
+    margin-top: 10px;
+}
+
+#pfloadYes {
+    margin-right: 5px;
 }
 
 /* Flex Tables */
@@ -2478,7 +2557,6 @@ footer a[href*="discord.gg"]:hover {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.8);
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
@@ -2519,10 +2597,10 @@ a.workerDialog:hover {
     position: relative;
     margin: auto;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0);
     width: 100%;
     max-width: 500px;
-    height: 100%;
+    height: auto;
     max-height: 400px;
     background-color: var(--bg);
     border: 1px solid var(--border);
@@ -2530,6 +2608,15 @@ a.workerDialog:hover {
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+.dialog:target .dialog_content {
+    transform: translateY(-50%) scale(1);
+}
+
+.dialog:target ~ .game-content {
+    filter: blur(10px);
 }
 
 .dialog_header {
@@ -2566,20 +2653,32 @@ a.workerDialog:hover {
 .dialog_title {
     margin: 0;
     padding: 10px;
-    background: var(--blue-light);
+    min-height: 50px;
+    background-color: var(--border-3);
+    border-bottom: 1px solid var(--border);
     color: var(--text-2);
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#titleClearSave {
+    background-color: rgb(144, 17, 18);;
+}
+
+#titlePlayfab {
+    font-size: 0;
+    background-color: #ff6d21;
+}
+
+.playfabLogo {
+    height: 30px;
+    vertical-align: middle;
 }
 
 .dialog_body {
     padding: 20px;
-    max-height: 100%;
+    max-height: inherit;
     overflow: auto;
 }
 

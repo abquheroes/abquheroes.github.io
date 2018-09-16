@@ -42,6 +42,84 @@
 </head>
 <body>
     <main id="content">
+        <!-- Dialogs -->
+        <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titlePlayfab" class="dialog_title"><img class="playfabLogo" src="/images/PlayFab_logo_small.png" oncontextmenu="return false;">PlayfabCloud Save</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descPlayfab" class="dialog_description">Login or Register your PlayFab account below, and then import or export your cloud save on any computer or device!</p>
+                    <div id="pfLoginRegister">
+                        <form>
+                            <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"autocomplete="email"></div>
+                            <div id="pfPassword"><h2>Password</h2> <input type="password" name="password" id="password" autocomplete="current-password"></div>
+                            <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
+                            <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
+                        </form>
+                    </div>
+                    <div id="pfImportExport">
+                        <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">
+                        <input type="button" name="Load from Cloud" id="pfLoad" value="Load from Cloud">
+                        <div id="pfSaveStatus"><span id="pfStatusSave" style="color:red"></span></div>
+                    </div>
+                    <div id="loadSure">
+                        <p>Are you SURE you want to load this data? This action cannot be undone!!</p>
+                        <div id="pfLoadButtons"><input type="button" name="loadYes" id="pfloadYes" value="Yes"><input type="button" name="loadNo" id="pfloadNo" value="No"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dialogClearSave" class="dialog" role="dialog" aria-labelledby="titleClearSave" aria-describedby="descClearSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleClearSave" class="dialog_title">Clear Your Save Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descClearSave" class="dialog_description">Are you sure you want to clear your saved game data from this browser? This action cannot be reversed.</p>
+                    <button id="deleteSaveButton">Yes, Delete My Data</button>
+                    <a href="#closeDialog"><button id="declineSaveButton">No, Do Not Delete My Data</button></a>
+                </div>
+            </div>
+        </div>
+        <div id="dialogExportSave" class="dialog" role="dialog" aria-labelledby="titleExportSave" aria-describedby="descExportSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleExportSave" class="dialog_title">Export Game Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descExportSave" class="dialog_description">Export your game data for sharing or use at a later time in another browser, computer or device. Copy the export string below for importing at a later time.</p>
+                </div>
+            </div>
+        </div>
+        <div id="dialogImportSave" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <h2 id="titleImportSave" class="dialog_title">Import Game Data?</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descImportSave" class="dialog_description">Import previously exported data by inputting the export string in the box below then pressing 'Import Save'.</p>
+                    <input type="text" id="importSaveText"/>
+                    <button id="importSaveButton">Import Save</button>
+                </div>
+            </div>
+        </div>
+        <div id="dialogUnlock" class="dialog" role="dialog" aria-labelledby="titleUnlock" aria-describedby="descUnlock">
+                <div class="dialog_content">
+                    <div class="dialog_header">
+                        <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                        <h2 id="titleUnlock" class="dialog_title">New Recipe Unlocked!</h2>
+                    </div>
+                    <div class="dialog_body">
+                        <p id="descUnlock" class="dialog_description">You've unlocked a new recipe!</p>
+                    </div>
+                </div>
+        </div>
+        <!-- End of Dialogs -->
         <section class="game-content">
             <div class="status">
                 <div id="game-logo"><h1>Forge &amp; Fortune</h1></div>
@@ -70,35 +148,7 @@
                 </div>
             </div>
             <div class="game-wrapper" role="main">
-                <!-- Dialogs -->
-                <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
-                    <div class="dialog_content">
-                        <div class="dialog_header">
-                            <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
-                            <h2 id="titlePlayfab" class="dialog_title">Playfab</h2>
-                        </div>
-                        <div class="dialog_body">
-                            <p id="descPlayfab" class="dialog_description">Login/Register your PlayFab account here, and then import/export your cloud save to pull it up on any device.</p>
-                            <div id="pfLoginRegister">
-                                <form>
-                                    <div id="pfEmail"><h2>Email</h2><input type="text" name="demail" id="email"autocomplete="email"></div>
-                                    <div id="pfPassword"><h2>Password</h2> <input type="password" name="password" id="password" autocomplete="current-password"></div>
-                                    <div id="pfButtons"><input type="button" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
-                                    <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
-                                </form>
-                            </div>
-                            <div id="pfImportExport">
-                                <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">
-                                <input type="button" name="Load from Cloud" id="pfLoad" value="Load from Cloud">
-                                <div id="pfSaveStatus"><span id="pfStatusSave" style="color:red"></span></div>
-                            </div>
-                            <div id="loadSure">
-                                <p>Are you SURE you want to load this data? This action cannot be undone!!</p>
-                                <div id="pfLoadButtons"><input type="button" name="loadYes" id="pfloadYes" value="Yes"><input type="button" name="loadNo" id="pfloadNo" value="No"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div id="tabs" class="tab">
                     <button class="tablinks" onclick="openTab('inventoryTab')"><div>Inventory</div></button>
                     <button class="tablinks" onclick="openTab('recipesTab')"><div>Recipes</div></button>
@@ -242,10 +292,10 @@
             </div>
             <footer role="contentinfo">
                 <div id="bottom-left">
-                    <a id="clearSave" class="tooltip" href="clearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
-                    <a id="exportSave" class="tooltip" href="exportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
-                    <a id="importSave" class="tooltip" href="importSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
-                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game from the Cloud using Playfab.">Cloud Save</a>
+                    <a id="clearSave" class="tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
+                    <a id="exportSave" class="tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
+                    <a id="importSave" class="tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
+                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab.">Cloud Save</a>
                 </div>
                 <div id="bottom-right">
                     <p id="version-scale">v0.2.0.0-dev</p>
@@ -273,10 +323,6 @@
             </div>
         </section>
     </main>
-    <!---<div id="clearDialog" title="Are you sure?">Are you sure you'd like to clear your save? Note: This can't be undone!</div>
-    <div id="exportDialog" title="Export Save"></div>
-    <div id="importDialog" title="Import Save"><p>Paste the export string below:</p><input type="text" id="importSaveText"/></div>
-    <div id="unlockDialog" title="New Recipe Unlocked!"></div>-->
 
 <script src="external/jquery/jquery.js"></script>
 <script src="scripts/jsonDataLoader.js"></script>
