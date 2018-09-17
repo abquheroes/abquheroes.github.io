@@ -134,8 +134,8 @@ function refreshWorkers() {
         const d5 = $('<div/>').addClass("itemSac");
         if (!worker.maxlevel()) {
             for (const [res, amt] of Object.entries(worker.thislvlreq())) {
-                const d5a = $("<div/>").addClass("itemToSacDiv");
-                if (!ResourceManager.available(res,amt)) d5a.addClass("cantAfford");
+                const d5a = $("<div/>").addClass("itemToSacDiv").attr("id",worker.workerID+res);
+                if (Inventory.itemCount(res,0) === 0) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
                 const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
                 d5.append(d5a.append(d5b));
@@ -145,6 +145,17 @@ function refreshWorkers() {
         if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
         $workers.append(workerDiv.append(workerDetails,d4,d5,b1))
     });
+}
+
+function refreshWorkerAmts() {
+    //loop through JUST the worker resource costs to update "cantAffords"
+    WorkerManager.workers.forEach(worker => {
+        if (worker.maxlevel()) return;
+        for (const [res, amt] of Object.entries(worker.thislvlreq())) {
+            if (Inventory.itemCount(res,0) === 0) $("#"+worker.workerID+res).addClass("cantAfford");
+            else $("#"+worker.workerID+res).removeClass("cantAfford");
+        }
+    }
 }
 
 $(document).on("click", ".WorkerUpgrade", (e) => {

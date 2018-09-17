@@ -51,8 +51,8 @@ const Inventory = {
         this.inv.push(new itemContainer(id,rarity,amt));
         if (!norefresh) {
             refreshInventory();
-            refreshWorkers();
             examineHeroPossibleEquip();
+            refreshWorkerAmts();
         }
     },
     craftToInventory(id) {
@@ -78,6 +78,7 @@ const Inventory = {
         ResourceManager.addMaterial("M001",gold);
     },
     itemCount(id,rarity) {
+        if(id === "M101") return ResourceManager.idToMaterial("M101").amt;
         for (let i=0;i<this.inv.length;i++) {
             if (this.inv[i].match(id,rarity)) return this.inv[i].amt;
         }
