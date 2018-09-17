@@ -197,6 +197,7 @@ body{
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     height: 30px;
+    cursor: pointer;
 }
 
 .workerSideBar.wsbActive {
@@ -1072,6 +1073,11 @@ select {
 
 .recipeRow:hover {
     background-color: var(--border);
+}
+
+.recipeRow.recipeRowDisable {
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
