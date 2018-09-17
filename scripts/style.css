@@ -1083,8 +1083,12 @@ select {
 }
 
 .recipeRow.recipeRowDisable {
-    opacity: 0.5;
-    pointer-events: none;
+    background-color: #232527;
+    color: #717171;
+}
+
+.recipeRow.recipeRowDisable:nth-of-type(odd) {
+    background-color: #2c2f31;
 }
 
 .recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
