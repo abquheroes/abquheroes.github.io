@@ -159,6 +159,4 @@ $(document).on("click", ".workerSideBar", (e) => {
     const craft = $(e.currentTarget).attr("id");
     if (craft === "idle") return;
     actionSlotManager.removeID(craft);
-    refreshSideWorkers();
-    initializeActionSlots();
 })
