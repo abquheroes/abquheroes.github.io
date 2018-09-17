@@ -19,7 +19,7 @@ class Worker {
         return this.lvl > this.lvlreq.length;
     }
     thislvlreq() {
-        return this.lvlreq[this.lvl];
+        return this.lvlreq[this.lvl-1];
     }
     canUpgrade() {
         let result = true;
