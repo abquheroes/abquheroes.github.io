@@ -57,11 +57,13 @@ const actionSlotManager = {
         this.slots.push(new actionSlot(itemid));
         initializeActionSlots();
         refreshSideWorkers();
+        recipeCanCraft();
     },
     removeSlot(slot) {
         this.slots.splice(slot,1);
         initializeActionSlots();
         refreshSideWorkers();
+        recipeCanCraft();
     },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);

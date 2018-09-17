@@ -121,6 +121,14 @@ function initializeRecipes() {
     $RecipeResults.append(table);
 }
 
+function recipeCanCraft() {
+    //loops through recipes, adds class if disabled
+    $(".recipeRow").removeClass("recipeRowDisable");
+    recipeList.recipes.forEach(recipe => {
+        if (!WorkerManager.couldCraft(recipe)) $("#rr"+recipe.id).addClass("recipeRowDisable");
+    }) 
+}
+
 const $blueprintUnlock = $("#BlueprintUnlock");
 
 function refreshBlueprint(type) {
