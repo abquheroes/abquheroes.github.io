@@ -197,12 +197,17 @@ body{
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     height: 30px;
-    cursor: pointer;
 }
 
 .workerSideBar.wsbActive {
     background-color: var(--bg);
     border-color: var(--border-3);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.workerSideBar.wsbActive:hover, .workerSideBar.wsbActive:hover .wsbLvl, .workerSideBar.wsbActive:hover .wsbCraft {
+    border-color: var(--border-2);
 }
 
 .workerSideBar + .workerSideBar {
@@ -225,6 +230,7 @@ body{
 .workerSideBar.wsbActive .wsbLvl{
     background-color: var(--bg);
     border-color: var(--border-3);
+    transition: all 0.2s ease-in-out;
 }
 
 .wsbType {
@@ -242,6 +248,7 @@ body{
 
 .workerSideBar.wsbActive .wsbCraft {
     border-color: var(--border-3);
+    transition: all 0.2s ease-in-out;
 }
 
 .wsbCraft > img {
@@ -1385,6 +1392,13 @@ select {
     font-size: .9em;
     width: 100%;
     cursor: pointer;
+}
+
+.Worker .itemToSacDiv.cantAfford .itemToSac {
+    background-color: rgba(255, 0, 0, 0.10);
+    border-color: rgba(255, 0, 0, 0.15);
+    color: #c90000;
+    cursor: not-allowed;
 }
 
 .Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
