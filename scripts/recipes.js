@@ -73,6 +73,7 @@ const recipeList = {
         populateRecipe(item.type);
     },
     ownedOrBuyable(type) {
+        console.log(type,this.owned(type).length,this.buyable(type).length)
         return this.owned(type).length > 0 || this.buyable(type).length > 0;
     }
 }

@@ -155,7 +155,7 @@ function refreshWorkerAmts() {
             if (Inventory.itemCount(res,0) === 0) $("#"+worker.workerID+res).addClass("cantAfford");
             else $("#"+worker.workerID+res).removeClass("cantAfford");
         }
-    }
+    });
 }
 
 $(document).on("click", ".WorkerUpgrade", (e) => {
