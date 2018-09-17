@@ -60,6 +60,7 @@ const WorkerManager = {
         const worker = this.workerByID(workerID);
         worker.owned = true;
         refreshWorkers();
+        refreshSideWorkers();
         refreshRecipeFilters();
     },
     assignWorker(item) {
@@ -97,7 +98,7 @@ function refreshSideWorkers() {
     $workersUse.empty();
     WorkerManager.reallocate();
     WorkerManager.workers.filter(w=>w.owned).forEach(worker => {
-        const d = $("<div/>").addClass("workerSideBar");
+        const d = $("<div/>").addClass("workerSideBar").attr("id",worker.status);
         const d1 = $("<div/>").addClass("wsbLvl").html(worker.lvl);
         const d2 = $("<div/>").addClass("wsbType").html(worker.prodpic+"&nbsp;"+worker.name);
         const d3 = $("<div/>").addClass("wsbCraft");
@@ -151,3 +152,13 @@ $(document).on("click", ".WorkerUpgrade", (e) => {
     const worker = $(e.currentTarget).attr("data-value");
     WorkerManager.upgrade(worker);
 });
+
+$(document).on("click", ".workerSideBar", (e) => {
+    //unslot an action slot for worker if assigned
+    e.preventDefault();
+    const craft = $(e.currentTarget).attr("id");
+    if (craft === "idle") return;
+    actionSlotManager.removeID(craft);
+    refreshSideWorkers();
+    initializeActionSlots();
+})

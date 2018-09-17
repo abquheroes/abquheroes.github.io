@@ -63,6 +63,10 @@ const actionSlotManager = {
         initializeActionSlots();
         refreshSideWorkers();
     },
+    removeID(itemID) {
+        const num = this.slots.findIndex(a=>a.itemid === itemID);
+        this.slots.splice(num, 1);
+    },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
     },
