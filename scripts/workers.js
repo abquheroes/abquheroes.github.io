@@ -171,3 +171,7 @@ $(document).on("click", ".workerSideBar", (e) => {
     if (craft === "idle") return;
     actionSlotManager.removeID(craft);
 })
+
+$(document).on("click",".itemToSacDiv", (e) => {
+    //sacrifice items to potentially 
+});
