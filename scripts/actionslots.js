@@ -45,8 +45,6 @@ class actionSlot {
     }
 }
 
-
-
 const actionSlotManager = {
     maxSlots : 5,
     slots : [],

@@ -28,6 +28,9 @@ const ResourceManager = {
         }
         return true;
     },
+    deductMoney(amt) {
+        this.addMaterial("M001",-amt);
+    },
     deductMaterial(item) {
         for (const [resource, amt] of Object.entries(item.mcost)) {
             this.addMaterial(resource,-amt);
@@ -58,13 +61,6 @@ const ResourceManager = {
         const item = recipeList.idToItem(mat);
         if (item === undefined) return this.idToMaterial(mat).name;
         return item.name;
-    },
-    deductUpgradeCosts(resArray) {
-        $.each(resArray, (id,amt) => {
-            const item = recipeList.idToItem(id);
-            if (item === undefined) this.idToMaterial(id).amt -= amt;
-            else Inventory.removeFromInventory(id,0,amt);
-        })
     },
     idToMaterial(matID) {
         for (let i=0;i<this.materials.length;i++) {

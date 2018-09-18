@@ -6,6 +6,7 @@ class Worker {
         this.lvl = 1;
         this.pic = '<img src="images/workers/'+this.name+'.gif">';
         this.prodpic = '<img src="images/resources/'+this.production+'.png">';
+        this.donated = {};
         this.owned = false;
         this.assigned = false;
         this.status = "idle";
@@ -21,23 +22,38 @@ class Worker {
     thislvlreq() {
         return this.lvlreq[this.lvl-1];
     }
-    canUpgrade() {
-        let result = true;
-        $.each(this.thislvlreq(),(item,amt) => {
-            if (!ResourceManager.available(item,amt)) {
-                result = false;
-            }
-        })
-        return result;
-    }
     upgrade() {
+        if (ResourceManager.materialAvailable("M001") < this.numToDonate("M001")) {
+            Notifications.workerGoldReq();
+            return;
+        }
         if (!this.canUpgrade()) return;
-        ResourceManager.deductUpgradeCosts(this.thislvlreq());
+        ResourceManager.deductMoney(this.numToDonate("M001"));
         this.lvl += 1;
+        this.clearDonation();
         refreshWorkers();
     }
     productionText() {
         return "Produces:&nbsp;&nbsp;"+ResourceManager.materialIcon(this.production);
+    }
+    clearDonation() {
+        this.thislvlreq().forEach(r => this.donated[r[0]] = 0)
+    }
+    numToDonate(craftID) {
+        return this.thislvlreq().find(l => l[0] === craftID)[2];
+    }
+    sacRemaining(craftID) {
+        const needed = this.numToDonate(craftID);
+        const have = this.donated[craftID];
+        console.log(needed,have);
+        return needed-have;
+    }
+    canUpgrade() {
+        let result = true;
+        this.thislvlreq().forEach(req => {
+            if (this.donated[req[0]] < req[2]) result = false;
+        })
+        return result;
     }
 }
 
@@ -59,6 +75,7 @@ const WorkerManager = {
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);
         worker.owned = true;
+        worker.clearDonation();
         refreshWorkers();
         refreshSideWorkers();
         refreshRecipeFilters();
@@ -88,7 +105,16 @@ const WorkerManager = {
         const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned && w.status === "idle").map(w=>w.production);
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
-    }
+    },
+    partialsacrifice(workerID,craftID,rarity) {
+        const worker = this.workerByID(workerID);
+        const amt = Inventory.itemCount(craftID,rarity);
+        const needed = worker.numToDonate(craftID);
+        const adjamt = Math.min(amt,needed);
+        Inventory.removeFromInventory(craftID,rarity,adjamt);
+        if (craftID in worker.donated) worker.donated[craftID] += adjamt;
+        else worker.donated[craftID] = adjamt;
+    },
 }
 
 const $workers = $('#workerList');
@@ -132,18 +158,31 @@ function refreshWorkers() {
         workerDetails.append(d1, workerNameProduction);
         const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
         const d5 = $('<div/>').addClass("itemSac");
+        workerDiv.append(workerDetails,d4,d5)
+        //workersac
         if (!worker.maxlevel()) {
-            for (const [res, amt] of Object.entries(worker.thislvlreq())) {
-                const d5a = $("<div/>").addClass("itemToSacDiv").attr("id",worker.workerID+res);
+            let money = "";
+            worker.thislvlreq().forEach(reqs => {
+                const res = reqs[0];
+                const rarity = reqs[1];
+                const amt = reqs[2];
+                if (res === "M001") {
+                    money = ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(amt,2);
+                    return;
+                }
+                const adjamt = worker.sacRemaining(reqs[0])
+                if (adjamt === 0) return;
+                const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
                 if (Inventory.itemCount(res,0) === 0) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
-                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(amt,2));
+                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(adjamt,2));
                 d5.append(d5a.append(d5b));
-            }
+            });
+            const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade&nbsp;&nbsp;" + money);
+            if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
+            workerDiv.append(b1);
         }
-        const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade");
-        if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
-        $workers.append(workerDiv.append(workerDetails,d4,d5,b1))
+        $workers.append(workerDiv)
     });
 }
 
@@ -151,14 +190,15 @@ function refreshWorkerAmts() {
     //loop through JUST the worker resource costs to update "cantAffords"
     WorkerManager.workers.forEach(worker => {
         if (worker.maxlevel()) return;
-        for (const [res, amt] of Object.entries(worker.thislvlreq())) {
-            if (Inventory.itemCount(res,0) === 0) $("#"+worker.workerID+res).addClass("cantAfford");
-            else $("#"+worker.workerID+res).removeClass("cantAfford");
-        }
+        worker.thislvlreq().forEach(reqs => {
+            if (Inventory.itemCount(reqs[0],reqs[1]) === 0) $("#ws"+worker.workerID+reqs[0]+reqs[1]).addClass("cantAfford");
+            else $("#ws"+worker.workerID+reqs[0]+reqs[1]).removeClass("cantAfford");
+        });
     });
 }
 
 $(document).on("click", ".WorkerUpgrade", (e) => {
+    //click the upgrade button on a worker!
     e.preventDefault();
     const worker = $(e.currentTarget).attr("data-value");
     WorkerManager.upgrade(worker);
@@ -173,5 +213,12 @@ $(document).on("click", ".workerSideBar", (e) => {
 })
 
 $(document).on("click",".itemToSacDiv", (e) => {
-    //sacrifice items to potentially 
+    //sacrifice items, even partial
+    e.preventDefault();
+    const divID = $(e.currentTarget).attr("id");
+    const workerID = divID.substring(2,6);
+    const craftID = divID.substring(6,11);
+    const rarity = divID.substring(11,12);
+    WorkerManager.partialsacrifice(workerID,craftID,rarity);
+    refreshWorkers();
 });
