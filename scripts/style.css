@@ -2353,7 +2353,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .tooltip:hover:before {
-    margin-top: -25px;
+    margin-top: -26px;
     transform: rotate(180deg);
 }
 
@@ -2471,10 +2471,6 @@ footer a[href*="discord.gg"]:hover {
     margin-left: -5px;
     margin-right: -5px;
     z-index: 999;
-}
-
-.BuyWorker.tooltip:hover:before, .WorkerUpgrade.workerUpgradeDisable:hover:before, .BuyUpgrade.tooltip:hover:before {
-    margin-top: -26px;
 }
 
 .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
