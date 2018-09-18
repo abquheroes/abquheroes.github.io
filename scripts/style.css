@@ -1400,7 +1400,6 @@ select {
 
 .Worker .itemToSacDiv.cantAfford .itemToSac {
     background-color: rgba(255, 0, 0, 0.10);
-    border-color: rgba(255, 0, 0, 0.15);
     color: #c90000;
     cursor: not-allowed;
 }
@@ -1418,6 +1417,9 @@ select {
 }
 
 .Upgrade .BuyUpgrade, .WorkerUpgrade, .TicketCard .buyTicket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2469,6 +2471,10 @@ footer a[href*="discord.gg"]:hover {
     margin-left: -5px;
     margin-right: -5px;
     z-index: 999;
+}
+
+.BuyWorker.tooltip:hover:before, .WorkerUpgrade.workerUpgradeDisable:hover:before, .BuyUpgrade.tooltip:hover:before {
+    margin-top: -26px;
 }
 
 .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
