@@ -2036,7 +2036,7 @@ select {
     background-color: var(--green-light);
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -2045,18 +2045,18 @@ select {
     border: 1px solid rgb(100, 100, 100); /* default color when none is present */
 }
 
-.hpBarDiv {
+.hpBarDiv, .dsbhpBarDiv {
     border: 1px solid rgb(134, 0, 0);
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img  {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
     position: absolute;
     left: 2px;
     bottom: 2px;
     z-index: 1;
 }
 
-.hpBar:before, .apBar:before, .actBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
@@ -2066,14 +2066,14 @@ select {
     z-index: 2;
 }
 
-.hpBarFill, .apBarFill, .actBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill {
     display: block;
     position: relative;
     height: 100%;
     background-color: rgb(75, 75, 75); /* default color when none is present */
 }
 
-.hpBarFill {
+.hpBarFill, .dsbhpBarFill {
     background-color: rgb(105, 2, 2);
 }
 
