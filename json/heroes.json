@@ -4,371 +4,143 @@
     "name": "Beorn",
     "class": "Fighter",
     "type": "Might",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Maces!Axes!Spears",
+    "!slot2Type": "Helmets",
+    "!slot3Type": "Gauntlets",
+    "!slot4Type": "Armor",
+    "!slot5Type": "Shields",
+    "!slot6Type": "Rings"
   },
   {
     "id": "H002",
     "name": "Cedric",
     "class": "Fighter",
-    "type": "",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "type": "Might",
+    "!slot1Type": "Maces!Axes!Spears",
+    "!slot2Type": "Helmets",
+    "!slot3Type": "Gauntlets",
+    "!slot4Type": "Armor",
+    "!slot5Type": "Shields",
+    "!slot6Type": "Belts"
   },
   {
     "id": "H003",
     "name": "Grim",
     "class": "Fighter",
     "type": "Might",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Maces!Axes!Spears",
+    "!slot2Type": "Helmets",
+    "!slot3Type": "Gauntlets",
+    "!slot4Type": "Armor",
+    "!slot5Type": "Offhand",
+    "!slot6Type": "Pendants"
   },
   {
     "id": "H004",
     "name": "Lambug",
     "class": "Fighter",
     "type": "Might",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Maces!Axes!Spears",
+    "!slot2Type": "Helmets",
+    "!slot3Type": "Gauntlets",
+    "!slot4Type": "Armor",
+    "!slot5Type": "Offhand",
+    "!slot6Type": "Potions"
   },
   {
     "id": "H101",
     "name": "Zoe",
     "class": "Caster",
     "type": "Mind",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Rods!Wands!Staves",
+    "!slot2Type": "Hats",
+    "!slot3Type": "Gloves",
+    "!slot4Type": "Cloaks",
+    "!slot5Type": "Wards",
+    "!slot6Type": "Pendants"
   },
   {
     "id": "H102",
     "name": "Neve",
     "class": "Caster",
     "type": "Mind",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Rods!Wands!Staves",
+    "!slot2Type": "Hats",
+    "!slot3Type": "Gloves",
+    "!slot4Type": "Cloaks",
+    "!slot5Type": "Wards",
+    "!slot6Type": "Earrings"
   },
   {
     "id": "H103",
     "name": "Titus",
     "class": "Caster",
     "type": "Mind",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Rods!Wands!Staves",
+    "!slot2Type": "Hats",
+    "!slot3Type": "Gloves",
+    "!slot4Type": "Cloaks",
+    "!slot5Type": "Tomes",
+    "!slot6Type": "Rings"
   },
   {
     "id": "H104",
     "name": "Troy",
     "class": "Caster",
     "type": "Mind",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Rods!Wands!Staves",
+    "!slot2Type": "Hats",
+    "!slot3Type": "Gloves",
+    "!slot4Type": "Cloaks",
+    "!slot5Type": "Tomes",
+    "!slot6Type": "Instruments"
   },
   {
     "id": "H201",
     "name": "Alok",
     "class": "Thief",
     "type": "Magic",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Knives!Bows!Whips",
+    "!slot2Type": "Masks",
+    "!slot3Type": "Shoes",
+    "!slot4Type": "Vests",
+    "!slot5Type": "Thrown",
+    "!slot6Type": "instruments"
   },
   {
     "id": "H202",
     "name": "Grogmar",
     "class": "Thief",
     "type": "Magic",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Knives!Bows!Whips",
+    "!slot2Type": "Masks",
+    "!slot3Type": "Shoes",
+    "!slot4Type": "Vests",
+    "!slot5Type": "Thrown",
+    "!slot6Type": "Belts"
   },
   {
     "id": "H203",
     "name": "Revere",
     "class": "Thief",
     "type": "Magic",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Knives!Bows!Whips",
+    "!slot2Type": "Masks",
+    "!slot3Type": "Shoes",
+    "!slot4Type": "Vests",
+    "!slot5Type": "Darts",
+    "!slot6Type": "Earrings"
   },
   {
     "id": "H204",
     "name": "Caeda",
     "class": "Thief",
     "type": "Magic",
-    "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Potions",
-      "Pendants",
-      "Rings",
-      "Instruments",
-      "Belts",
-      "Earrings"
-    ]
+    "!slot1Type": "Knives!Bows!Whips",
+    "!slot2Type": "Masks",
+    "!slot3Type": "Shoes",
+    "!slot4Type": "Vests",
+    "!slot5Type": "Darts",
+    "!slot6Type": "Potions"
   }
 ]
