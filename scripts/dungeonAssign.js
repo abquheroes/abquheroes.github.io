@@ -252,9 +252,9 @@ function createHPBar(hero,tag) {
 }
 
 function createActBar(hero) {
-    const actPercent = hero.act/hero.actmax;
+    const actPercent = hero.act/hero.actmax();
     const actWidth = (actPercent*100).toFixed(1)+"%";
-    const actText = round((hero.actmax-hero.act)/1000,1);
+    const actText = round((hero.actmax()-hero.act)/1000,1);
     const d = $("<div/>").addClass("actBarDiv").html(dungeonIcons[Stat.ACT]);
     const d1 = $("<div/>").addClass("actBar").attr("data-label",actText).attr("id","act"+hero.id);
     const s1 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.id).css('width', actWidth);
@@ -292,9 +292,9 @@ function refreshAPBar(hero) {
 }
 
 function refreshActBar(hero) {
-    const actPercent = hero.act/hero.actmax;
+    const actPercent = hero.act/hero.actmax();
     const actWidth = (actPercent*100).toFixed(1)+"%";
-    const actText = round((hero.actmax-hero.act)/1000,1);
+    const actText = round((hero.actmax()-hero.act)/1000,1);
     $("#act"+hero.id).attr("data-label",actText);
     $("#actFill"+hero.id).css('width', actWidth);
 }

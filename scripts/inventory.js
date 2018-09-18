@@ -35,6 +35,9 @@ class itemContainer {
     hp() {
         return this.item.hp;
     }
+    act() {
+        return this.item.act();
+    }
 }
 
 const Inventory = {
@@ -112,7 +115,7 @@ const Inventory = {
                 return new itemContainer(id,rarity);
             }
         }
-    }
+    },
 }
 
 $inventory = $("#inventory");

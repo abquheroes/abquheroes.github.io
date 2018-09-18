@@ -38,7 +38,7 @@ class Mob {
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
-        this.actmax = mobTemplate.act;
+        this.actmaxnum = mobTemplate.act;
         this.act = 0;
         this.armor = mobTemplate.armor;
         this.critdmg = mobTemplate.critdmg;
@@ -47,6 +47,9 @@ class Mob {
         this.apmax = mobTemplate.ap;
         this.ap = 0;
         this.status = MobState.ALIVE;
+    }
+    actmax() {
+        return this.actmaxnum;
     }
     getPow() {
         return this.pow;
@@ -57,8 +60,8 @@ class Mob {
     addTime(t) {
         if (this.dead()) return false;
         this.act += t;
-        if (this.act >= this.actmax) {
-            this.act -= this.actmax;
+        if (this.act >= this.actmax()) {
+            this.act -= this.actmax();
             return true;
         }
         return false;

@@ -42,6 +42,9 @@ class Item{
     canAfford() {
         return WorkerManager.couldCraft(this);
     }
+    act() {
+        return this.actTime;
+    }
 }
 
 const recipeList = {
