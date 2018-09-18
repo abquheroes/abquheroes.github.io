@@ -23,7 +23,6 @@ class Worker {
         return this.lvlreq[this.lvl-1];
     }
     upgrade() {
-        console.log("upgrade!");
         if (ResourceManager.materialAvailable("M001") < this.numToDonate("M001")) {
             Notifications.workerGoldReq();
             return;
@@ -110,7 +109,7 @@ const WorkerManager = {
     partialsacrifice(workerID,craftID,rarity) {
         const worker = this.workerByID(workerID);
         const amt = Inventory.itemCount(craftID,rarity);
-        const needed = worker.numToDonate(craftID);
+        const needed = worker.sacRemaining(craftID);
         const adjamt = Math.min(amt,needed);
         Inventory.removeFromInventory(craftID,rarity,adjamt);
         if (craftID in worker.donated) worker.donated[craftID] += adjamt;
@@ -172,6 +171,7 @@ function refreshWorkers() {
                     return;
                 }
                 const adjamt = worker.sacRemaining(reqs[0])
+                console.log(worker.name,adjamt);
                 if (adjamt === 0) return;
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
                 if (Inventory.itemCount(res,0) === 0) d5a.addClass("cantAfford");
