@@ -148,7 +148,7 @@ function characterCard(prefix,dv,ID) {
     const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d3 = createHPBar(hero);    
+    const d3 = createHPBar(hero,"Party");    
     return d.append(d1,d2,d3);
 }
 
@@ -200,8 +200,8 @@ function initiateDungeonFloor() {
         const d2 = $("<div/>").addClass("dsc");
         const d2a = $("<div/>").addClass("dscPic").html(hero.head);
         const d2b = $("<div/>").addClass("dscName").html(hero.name);
-        const d2c = $("<div/>").addClass("dscHP").html(createHPBar(hero));
-        const d2d = $("<div/>").addClass("dscAP").html(createAPBar(hero));
+        const d2c = $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung"));
+        const d2d = $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung"));
         d2.append(d2a,d2b,d2c,d2d);
         $drStatsHero.append(d2);
     });
@@ -215,8 +215,8 @@ function initiateDungeonFloor() {
         const d4 = $("<div/>").addClass("dsm");
         const d4a = $("<div/>").addClass("dsmPic").html(mob.head);
         const d4b = $("<div/>").addClass("dsmName").html(mob.name);
-        const d4c = $("<div/>").addClass("dsmHP").html(createHPBar(mob));
-        const d4d = $("<div/>").addClass("dsmAP").html(createAPBar(mob));
+        const d4c = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
+        const d4d = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d4.append(d4a,d4b,d4c,d4d);
         $drStatsMob.append(d4);
     });
@@ -224,12 +224,10 @@ function initiateDungeonFloor() {
 
 function refreshDungeonFloorBars() {
     party.heroList().forEach((hero) => {
-        refreshHPBar(hero);
         refreshAPBar(hero);
         refreshActBar(hero);
     });
     DungeonAssist.floor.monster.forEach((mob) => {
-        refreshHPBar(mob);
         refreshAPBar(mob);
         refreshActBar(mob);
     });
@@ -244,12 +242,12 @@ function sidebarHP(hero) {
     return d1.append(d1a,s1);
 }
 
-function createHPBar(hero) {
+function createHPBar(hero,tag) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+hero.id);
-    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+hero.id).css('width', hpWidth);
+    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.id);
+    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.id).css('width', hpWidth);
     return d1.append(d1a,s1);
 }
 
@@ -275,8 +273,10 @@ function createAPBar(hero) {
 function refreshHPBar(hero) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    $("#hp"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
-    $("#hpFill"+hero.id).css('width', hpWidth);
+    $("#hpParty"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillParty"+hero.id).css('width', hpWidth);
+    $("#hpDung"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillDung"+hero.id).css('width', hpWidth);
     $("#hpSide"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
     $("#hpFillSide"+hero.id).css('width', hpWidth);
 }

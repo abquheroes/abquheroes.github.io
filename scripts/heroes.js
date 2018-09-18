@@ -55,6 +55,7 @@ class Hero {
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());
+        refreshHPBar(this);
     }
     healPercent(hpPercent) {
         let hp = Math.floor(this.maxHP()*hpPercent/100);
@@ -102,6 +103,7 @@ class Hero {
         else {
             this.hp = Math.max(this.hp-dmg,0);
         }
+        refreshHPBar(this);
     }
     dodge() {
         return this.dodgeChance > Math.floor(Math.random()*100) + 1;
@@ -218,7 +220,6 @@ const HeroManager = {
         this.heroes.forEach(hero => {
             if (!party.hasMember(hero.id) || !DungeonAssist.isActive()) {
                 hero.healPercent(1);
-                refreshHPBar(hero);
             }
         });
     }
