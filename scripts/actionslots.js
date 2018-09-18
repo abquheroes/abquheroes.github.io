@@ -28,6 +28,7 @@ class actionSlot {
             this.craftTime = 0;
             Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
+            this.attemptStart();
         }
         this.progress = (this.craftTime/this.maxCraft).toFixed(3)*100+"%";
     }

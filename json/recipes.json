@@ -4,7 +4,7 @@
     "name": "Club",
     "lvl": 1,
     "value": 6,
-    "craftTime": 1852,
+    "craftTime": 18517,
     "type": "Maces",
     "rcost": [
       "wood"
@@ -19,7 +19,7 @@
     "name": "Maul",
     "lvl": 2,
     "value": 72,
-    "craftTime": 3609,
+    "craftTime": 36094,
     "type": "Maces",
     "rcost": [
       "wood"
@@ -36,7 +36,7 @@
     "name": "Brawler",
     "lvl": 3,
     "value": 518,
-    "craftTime": 6710,
+    "craftTime": 67105,
     "type": "Maces",
     "rcost": [
       "wood"
@@ -53,7 +53,7 @@
     "name": "The Broominator",
     "lvl": 4,
     "value": 3732,
-    "craftTime": 12494,
+    "craftTime": 124936,
     "type": "Maces",
     "rcost": [
       "wood"
@@ -70,7 +70,7 @@
     "name": "Blackjack",
     "lvl": 5,
     "value": 26870,
-    "craftTime": 23245,
+    "craftTime": 232455,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -88,7 +88,7 @@
     "name": "Bludgeon",
     "lvl": 6,
     "value": 106406,
-    "craftTime": 43251,
+    "craftTime": 432509,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -104,7 +104,7 @@
     "name": "Striped Club",
     "lvl": 7,
     "value": 1025141,
-    "craftTime": 59225,
+    "craftTime": 592248,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -122,7 +122,7 @@
     "name": "Night Club",
     "lvl": 8,
     "value": 4875124,
-    "craftTime": 72783,
+    "craftTime": 727830,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -140,7 +140,7 @@
     "name": "Fact Finder",
     "lvl": 9,
     "value": 21251125,
-    "craftTime": 81988,
+    "craftTime": 819881,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -158,7 +158,7 @@
     "name": "Knife Club",
     "lvl": 10,
     "value": 108215963,
-    "craftTime": 107891,
+    "craftTime": 1078908,
     "type": "Maces",
     "rcost": [
       "wood",
@@ -176,7 +176,7 @@
     "name": "Rage Maker",
     "lvl": 1,
     "value": 13,
-    "craftTime": 2648,
+    "craftTime": 26479,
     "type": "Axes",
     "rcost": [
       "ore"
@@ -193,7 +193,7 @@
     "name": "Fury Bringer",
     "lvl": 2,
     "value": 52,
-    "craftTime": 4895,
+    "craftTime": 48952,
     "type": "Axes",
     "rcost": [
       "ore"
@@ -208,7 +208,7 @@
     "name": "Vengeance",
     "lvl": 3,
     "value": 673,
-    "craftTime": 9154,
+    "craftTime": 91543,
     "type": "Axes",
     "rcost": [
       "ore"
@@ -225,7 +225,7 @@
     "name": "Pride",
     "lvl": 4,
     "value": 4851,
-    "craftTime": 17052,
+    "craftTime": 170517,
     "type": "Axes",
     "rcost": [
       "ore"
@@ -242,7 +242,7 @@
     "name": "Greedy Pickaxe",
     "lvl": 5,
     "value": 34931,
-    "craftTime": 30219,
+    "craftTime": 302191,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -260,7 +260,7 @@
     "name": "Slothslayer",
     "lvl": 6,
     "value": 251503,
-    "craftTime": 56226,
+    "craftTime": 562262,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -278,7 +278,7 @@
     "name": "Lusty Handaxe",
     "lvl": 7,
     "value": 732976,
-    "craftTime": 76992,
+    "craftTime": 769922,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -294,7 +294,7 @@
     "name": "Envy",
     "lvl": 8,
     "value": 6337661,
-    "craftTime": 94618,
+    "craftTime": 946179,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -312,7 +312,7 @@
     "name": "Gluttonous Axe",
     "lvl": 9,
     "value": 27626462,
-    "craftTime": 106584,
+    "craftTime": 1065845,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -330,7 +330,7 @@
     "name": "Wrath",
     "lvl": 10,
     "value": 140680751,
-    "craftTime": 140258,
+    "craftTime": 1402580,
     "type": "Axes",
     "rcost": [
       "ore",
@@ -348,7 +348,7 @@
     "name": "Lonely Spear",
     "lvl": 1,
     "value": 7,
-    "craftTime": 1426,
+    "craftTime": 14258,
     "type": "Spears",
     "rcost": [
       "bone"
@@ -365,7 +365,7 @@
     "name": "Scary Spear",
     "lvl": 2,
     "value": 50,
-    "craftTime": 2632,
+    "craftTime": 26318,
     "type": "Spears",
     "rcost": [
       "bone"
@@ -382,7 +382,7 @@
     "name": "Crazy Spear",
     "lvl": 3,
     "value": 200,
-    "craftTime": 4924,
+    "craftTime": 49240,
     "type": "Spears",
     "rcost": [
       "bone"
@@ -397,7 +397,7 @@
     "name": "Intimidating Spear",
     "lvl": 4,
     "value": 2612,
-    "craftTime": 9181,
+    "craftTime": 91814,
     "type": "Spears",
     "rcost": [
       "bone"
@@ -414,7 +414,7 @@
     "name": "Moody Spear",
     "lvl": 5,
     "value": 18809,
-    "craftTime": 16272,
+    "craftTime": 162718,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -432,7 +432,7 @@
     "name": "Shadow Spear",
     "lvl": 6,
     "value": 135424,
-    "craftTime": 30275,
+    "craftTime": 302755,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -450,7 +450,7 @@
     "name": "Lucky Spear",
     "lvl": 7,
     "value": 717598,
-    "craftTime": 41457,
+    "craftTime": 414573,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -468,7 +468,7 @@
     "name": "Pickle Spear",
     "lvl": 8,
     "value": 1876923,
-    "craftTime": 50948,
+    "craftTime": 509481,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -484,7 +484,7 @@
     "name": "Alien Spear",
     "lvl": 9,
     "value": 14875787,
-    "craftTime": 57392,
+    "craftTime": 573916,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -502,7 +502,7 @@
     "name": "Toxic Spear",
     "lvl": 10,
     "value": 75751174,
-    "craftTime": 75524,
+    "craftTime": 755236,
     "type": "Spears",
     "rcost": [
       "wood",
@@ -520,7 +520,7 @@
     "name": "Servant Rod",
     "lvl": 1,
     "value": 3,
-    "craftTime": 1018,
+    "craftTime": 10184,
     "type": "Rods",
     "rcost": [
       "silver"
@@ -535,7 +535,7 @@
     "name": "Envoy Rod",
     "lvl": 2,
     "value": 36,
-    "craftTime": 1895,
+    "craftTime": 18949,
     "type": "Rods",
     "rcost": [
       "silver"
@@ -552,7 +552,7 @@
     "name": "Actor Rod",
     "lvl": 3,
     "value": 259,
-    "craftTime": 3523,
+    "craftTime": 35230,
     "type": "Rods",
     "rcost": [
       "silver"
@@ -569,7 +569,7 @@
     "name": "Officer Rod",
     "lvl": 4,
     "value": 1866,
-    "craftTime": 6559,
+    "craftTime": 65591,
     "type": "Rods",
     "rcost": [
       "silver"
@@ -586,7 +586,7 @@
     "name": "Manager Rod",
     "lvl": 5,
     "value": 13435,
-    "craftTime": 12204,
+    "craftTime": 122039,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -604,7 +604,7 @@
     "name": "Stewart Rod",
     "lvl": 6,
     "value": 53203,
-    "craftTime": 22707,
+    "craftTime": 227067,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -620,7 +620,7 @@
     "name": "Finnicky Rod",
     "lvl": 7,
     "value": 512570,
-    "craftTime": 31093,
+    "craftTime": 310930,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -638,7 +638,7 @@
     "name": "Funky Rod",
     "lvl": 8,
     "value": 2437562,
-    "craftTime": 38211,
+    "craftTime": 382111,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -656,7 +656,7 @@
     "name": "Flashy Rod",
     "lvl": 9,
     "value": 10625562,
-    "craftTime": 43044,
+    "craftTime": 430437,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -674,7 +674,7 @@
     "name": "Fishing Rod",
     "lvl": 10,
     "value": 54107981,
-    "craftTime": 56643,
+    "craftTime": 566427,
     "type": "Rods",
     "rcost": [
       "steel",
@@ -692,7 +692,7 @@
     "name": "Basic Wand",
     "lvl": 1,
     "value": 3,
-    "craftTime": 596,
+    "craftTime": 5962,
     "type": "Wands",
     "rcost": [
       "mana"
@@ -709,7 +709,7 @@
     "name": "Forest Wand",
     "lvl": 2,
     "value": 21,
-    "craftTime": 1078,
+    "craftTime": 10784,
     "type": "Wands",
     "rcost": [
       "mana"
@@ -726,7 +726,7 @@
     "name": "Wind Wand",
     "lvl": 3,
     "value": 86,
-    "craftTime": 2057,
+    "craftTime": 20569,
     "type": "Wands",
     "rcost": [
       "mana"
@@ -741,7 +741,7 @@
     "name": "Soul Wand",
     "lvl": 4,
     "value": 1119,
-    "craftTime": 3837,
+    "craftTime": 38374,
     "type": "Wands",
     "rcost": [
       "mana"
@@ -758,7 +758,7 @@
     "name": "Rain Wand",
     "lvl": 5,
     "value": 8061,
-    "craftTime": 6811,
+    "craftTime": 68115,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -776,7 +776,7 @@
     "name": "Frozen Wand",
     "lvl": 6,
     "value": 58039,
-    "craftTime": 12673,
+    "craftTime": 126735,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -794,7 +794,7 @@
     "name": "Ocean Wand",
     "lvl": 7,
     "value": 307542,
-    "craftTime": 17354,
+    "craftTime": 173542,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -812,7 +812,7 @@
     "name": "Thunder Wand",
     "lvl": 8,
     "value": 804396,
-    "craftTime": 21327,
+    "craftTime": 213271,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -828,7 +828,7 @@
     "name": "Hate Wand",
     "lvl": 9,
     "value": 6375337,
-    "craftTime": 24024,
+    "craftTime": 240244,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -846,7 +846,7 @@
     "name": "Love Wand",
     "lvl": 10,
     "value": 32464788,
-    "craftTime": 31615,
+    "craftTime": 316145,
     "type": "Wands",
     "rcost": [
       "wood",
@@ -864,7 +864,7 @@
     "name": "Earth Staff",
     "lvl": 1,
     "value": 9,
-    "craftTime": 1746,
+    "craftTime": 17459,
     "type": "Staves",
     "rcost": [
       "wood"
@@ -881,7 +881,7 @@
     "name": "Wind Staff",
     "lvl": 2,
     "value": 36,
-    "craftTime": 3208,
+    "craftTime": 32083,
     "type": "Staves",
     "rcost": [
       "wood"
@@ -896,7 +896,7 @@
     "name": "Fire Staff",
     "lvl": 3,
     "value": 466,
-    "craftTime": 6037,
+    "craftTime": 60368,
     "type": "Staves",
     "rcost": [
       "wood"
@@ -913,7 +913,7 @@
     "name": "September Staff",
     "lvl": 4,
     "value": 3358,
-    "craftTime": 11242,
+    "craftTime": 112416,
     "type": "Staves",
     "rcost": [
       "wood"
@@ -930,7 +930,7 @@
     "name": "Water Staff",
     "lvl": 5,
     "value": 24183,
-    "craftTime": 20434,
+    "craftTime": 204344,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -948,7 +948,7 @@
     "name": "Heart Staff",
     "lvl": 6,
     "value": 174117,
-    "craftTime": 38020,
+    "craftTime": 380205,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -966,7 +966,7 @@
     "name": "Planet Staff",
     "lvl": 7,
     "value": 507445,
-    "craftTime": 52063,
+    "craftTime": 520626,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -982,7 +982,7 @@
     "name": "Lunar Staff",
     "lvl": 8,
     "value": 4387611,
-    "craftTime": 63981,
+    "craftTime": 639813,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -1000,7 +1000,7 @@
     "name": "Support Staff",
     "lvl": 9,
     "value": 19126012,
-    "craftTime": 72073,
+    "craftTime": 720732,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -1018,7 +1018,7 @@
     "name": "Janitorial Staff",
     "lvl": 10,
     "value": 97394366,
-    "craftTime": 94844,
+    "craftTime": 948435,
     "type": "Staves",
     "rcost": [
       "wood",
@@ -1036,7 +1036,7 @@
     "name": "Knife",
     "lvl": 1,
     "value": 4,
-    "craftTime": 1222,
+    "craftTime": 12221,
     "type": "Knives",
     "rcost": [
       "ore"
@@ -1051,7 +1051,7 @@
     "name": "Butter Knife",
     "lvl": 2,
     "value": 43,
-    "craftTime": 2263,
+    "craftTime": 22634,
     "type": "Knives",
     "rcost": [
       "ore"
@@ -1068,7 +1068,7 @@
     "name": "Kitchen Knife",
     "lvl": 3,
     "value": 310,
-    "craftTime": 4217,
+    "craftTime": 42167,
     "type": "Knives",
     "rcost": [
       "ore"
@@ -1085,7 +1085,7 @@
     "name": "Chefs Knife",
     "lvl": 4,
     "value": 2239,
-    "craftTime": 7870,
+    "craftTime": 78703,
     "type": "Knives",
     "rcost": [
       "ore"
@@ -1102,7 +1102,7 @@
     "name": "Fishing Knife",
     "lvl": 5,
     "value": 16122,
-    "craftTime": 14645,
+    "craftTime": 146447,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1120,7 +1120,7 @@
     "name": "Thats Not A Knife",
     "lvl": 6,
     "value": 63843,
-    "craftTime": 27248,
+    "craftTime": 272480,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1136,7 +1136,7 @@
     "name": "Thats A Knife",
     "lvl": 7,
     "value": 615084,
-    "craftTime": 37312,
+    "craftTime": 373116,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1154,7 +1154,7 @@
     "name": "Club Knife",
     "lvl": 8,
     "value": 2925074,
-    "craftTime": 45853,
+    "craftTime": 458533,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1172,7 +1172,7 @@
     "name": "Dark Knife",
     "lvl": 9,
     "value": 12750675,
-    "craftTime": 51652,
+    "craftTime": 516525,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1190,7 +1190,7 @@
     "name": "The Bloopinator",
     "lvl": 10,
     "value": 64929577,
-    "craftTime": 67971,
+    "craftTime": 679712,
     "type": "Knives",
     "rcost": [
       "ore",
@@ -1208,7 +1208,7 @@
     "name": "Shatterer",
     "lvl": 1,
     "value": 11,
-    "craftTime": 2134,
+    "craftTime": 21339,
     "type": "Bows",
     "rcost": [
       "wood"
@@ -1225,7 +1225,7 @@
     "name": "Fragmenter",
     "lvl": 2,
     "value": 44,
-    "craftTime": 3960,
+    "craftTime": 39603,
     "type": "Bows",
     "rcost": [
       "wood"
@@ -1240,7 +1240,7 @@
     "name": "Disintgrater",
     "lvl": 3,
     "value": 569,
-    "craftTime": 7371,
+    "craftTime": 73711,
     "type": "Bows",
     "rcost": [
       "wood"
@@ -1257,7 +1257,7 @@
     "name": "Bone Breaker",
     "lvl": 4,
     "value": 4105,
-    "craftTime": 13742,
+    "craftTime": 137423,
     "type": "Bows",
     "rcost": [
       "wood"
@@ -1274,7 +1274,7 @@
     "name": "Fracture Finder",
     "lvl": 5,
     "value": 29557,
-    "craftTime": 24408,
+    "craftTime": 244078,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1292,7 +1292,7 @@
     "name": "Demolisher",
     "lvl": 6,
     "value": 212810,
-    "craftTime": 45413,
+    "craftTime": 454134,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1310,7 +1310,7 @@
     "name": "Shocker",
     "lvl": 7,
     "value": 620211,
-    "craftTime": 62186,
+    "craftTime": 621860,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1326,7 +1326,7 @@
     "name": "Stunner",
     "lvl": 8,
     "value": 5362636,
-    "craftTime": 76422,
+    "craftTime": 764221,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1344,7 +1344,7 @@
     "name": "Splinterer",
     "lvl": 9,
     "value": 23376237,
-    "craftTime": 86087,
+    "craftTime": 860875,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1362,7 +1362,7 @@
     "name": "Ruiner",
     "lvl": 10,
     "value": 119037559,
-    "craftTime": 113285,
+    "craftTime": 1132853,
     "type": "Bows",
     "rcost": [
       "wood",
@@ -1380,7 +1380,7 @@
     "name": "Riding Crop",
     "lvl": 1,
     "value": 8,
-    "craftTime": 1552,
+    "craftTime": 15519,
     "type": "Whips",
     "rcost": [
       "leather"
@@ -1397,7 +1397,7 @@
     "name": "Bull Whip",
     "lvl": 2,
     "value": 57,
-    "craftTime": 2857,
+    "craftTime": 28574,
     "type": "Whips",
     "rcost": [
       "leather"
@@ -1414,7 +1414,7 @@
     "name": "Snake Whip",
     "lvl": 3,
     "value": 228,
-    "craftTime": 5363,
+    "craftTime": 53632,
     "type": "Whips",
     "rcost": [
       "leather"
@@ -1429,7 +1429,7 @@
     "name": "Cool Whip",
     "lvl": 4,
     "value": 2985,
-    "craftTime": 9993,
+    "craftTime": 99929,
     "type": "Whips",
     "rcost": [
       "leather"
@@ -1446,7 +1446,7 @@
     "name": "Readied Whip",
     "lvl": 5,
     "value": 21496,
-    "craftTime": 18164,
+    "craftTime": 181639,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1464,7 +1464,7 @@
     "name": "Quirt",
     "lvl": 6,
     "value": 154771,
-    "craftTime": 33796,
+    "craftTime": 337960,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1482,7 +1482,7 @@
     "name": "Qilibian",
     "lvl": 7,
     "value": 820112,
-    "craftTime": 46278,
+    "craftTime": 462779,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1500,7 +1500,7 @@
     "name": "Sjambok",
     "lvl": 8,
     "value": 2145055,
-    "craftTime": 56872,
+    "craftTime": 568723,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1516,7 +1516,7 @@
     "name": "Cat O Nine Tails",
     "lvl": 9,
     "value": 17000900,
-    "craftTime": 64065,
+    "craftTime": 640651,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1534,7 +1534,7 @@
     "name": "Shaped Whip",
     "lvl": 10,
     "value": 86572770,
-    "craftTime": 84305,
+    "craftTime": 843054,
     "type": "Whips",
     "rcost": [
       "leather",
@@ -1552,7 +1552,7 @@
     "name": "Standard Helmet",
     "lvl": 1,
     "value": 11,
-    "craftTime": 3880,
+    "craftTime": 38797,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1568,7 +1568,7 @@
     "name": "Cobalt Helmet",
     "lvl": 2,
     "value": 137,
-    "craftTime": 6868,
+    "craftTime": 68678,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1586,7 +1586,7 @@
     "name": "Regular Helmet",
     "lvl": 3,
     "value": 949,
-    "craftTime": 12294,
+    "craftTime": 122939,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1604,7 +1604,7 @@
     "name": "Super Helmet",
     "lvl": 4,
     "value": 6532,
-    "craftTime": 21867,
+    "craftTime": 218672,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1622,7 +1622,7 @@
     "name": "Mega Helmet",
     "lvl": 5,
     "value": 44941,
-    "craftTime": 38879,
+    "craftTime": 388789,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1641,7 +1641,7 @@
     "name": "Skull Helmet",
     "lvl": 6,
     "value": 169811,
-    "craftTime": 69023,
+    "craftTime": 690234,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1658,7 +1658,7 @@
     "name": "Dark Helmet",
     "lvl": 7,
     "value": 1636356,
-    "craftTime": 94536,
+    "craftTime": 945361,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1677,7 +1677,7 @@
     "name": "Whimsical Helmet",
     "lvl": 8,
     "value": 7690875,
-    "craftTime": 114821,
+    "craftTime": 1148206,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1696,7 +1696,7 @@
     "name": "Magnetized Helmet",
     "lvl": 9,
     "value": 33070764,
-    "craftTime": 127589,
+    "craftTime": 1275889,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1715,7 +1715,7 @@
     "name": "Coal Helmut",
     "lvl": 10,
     "value": 168660899,
-    "craftTime": 168154,
+    "craftTime": 1681541,
     "type": "Helmets",
     "rcost": [
       "ore",
@@ -1734,7 +1734,7 @@
     "name": "Simple Hat",
     "lvl": 1,
     "value": 9,
-    "craftTime": 3104,
+    "craftTime": 31038,
     "type": "Hats",
     "rcost": [
       "fabric",
@@ -1750,7 +1750,7 @@
     "name": "Princess Tiara",
     "lvl": 2,
     "value": 110,
-    "craftTime": 5514,
+    "craftTime": 55143,
     "type": "Hats",
     "rcost": [
       "fabric",
@@ -1768,7 +1768,7 @@
     "name": "Black Hat",
     "lvl": 3,
     "value": 759,
-    "craftTime": 9832,
+    "craftTime": 98325,
     "type": "Hats",
     "rcost": [
       "fabric",
@@ -1786,7 +1786,7 @@
     "name": "Beach Hat",
     "lvl": 4,
     "value": 5225,
-    "craftTime": 17492,
+    "craftTime": 174917,
     "type": "Hats",
     "rcost": [
       "fabric",
@@ -1804,7 +1804,7 @@
     "name": "Green Bay Beret",
     "lvl": 5,
     "value": 35953,
-    "craftTime": 29689,
+    "craftTime": 296895,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1823,7 +1823,7 @@
     "name": "The Mind Cap",
     "lvl": 6,
     "value": 135849,
-    "craftTime": 52709,
+    "craftTime": 527089,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1840,7 +1840,7 @@
     "name": "Ornate Crown",
     "lvl": 7,
     "value": 1309085,
-    "craftTime": 72191,
+    "craftTime": 721912,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1859,7 +1859,7 @@
     "name": "Spellcasting Hat",
     "lvl": 8,
     "value": 6152700,
-    "craftTime": 87681,
+    "craftTime": 876812,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1878,7 +1878,7 @@
     "name": "Noble Tiara",
     "lvl": 9,
     "value": 26456611,
-    "craftTime": 97432,
+    "craftTime": 974315,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1897,7 +1897,7 @@
     "name": "All Folks Hat",
     "lvl": 10,
     "value": 134928719,
-    "craftTime": 128409,
+    "craftTime": 1284086,
     "type": "Hats",
     "rcost": [
       "leather",
@@ -1916,7 +1916,7 @@
     "name": "Bandit Mask",
     "lvl": 1,
     "value": 10,
-    "craftTime": 3411,
+    "craftTime": 34106,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -1932,7 +1932,7 @@
     "name": "Hidden Mask",
     "lvl": 2,
     "value": 124,
-    "craftTime": 6072,
+    "craftTime": 60716,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -1950,7 +1950,7 @@
     "name": "Rubber Mask",
     "lvl": 3,
     "value": 854,
-    "craftTime": 10806,
+    "craftTime": 108059,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -1968,7 +1968,7 @@
     "name": "Cucumber Mask",
     "lvl": 4,
     "value": 5878,
-    "craftTime": 19220,
+    "craftTime": 192202,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -1986,7 +1986,7 @@
     "name": "Coffee Mask",
     "lvl": 5,
     "value": 40447,
-    "craftTime": 34177,
+    "craftTime": 341773,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2004,7 +2004,7 @@
     "name": "Pumpkin Mask",
     "lvl": 6,
     "value": 152830,
-    "craftTime": 60676,
+    "craftTime": 606763,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2021,7 +2021,7 @@
     "name": "Stone Mask",
     "lvl": 7,
     "value": 1472720,
-    "craftTime": 83104,
+    "craftTime": 831038,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2040,7 +2040,7 @@
     "name": "Oxygen Mask",
     "lvl": 8,
     "value": 6921787,
-    "craftTime": 100935,
+    "craftTime": 1009353,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2059,7 +2059,7 @@
     "name": "Spoopy Mask",
     "lvl": 9,
     "value": 29763688,
-    "craftTime": 112160,
+    "craftTime": 1121595,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2078,7 +2078,7 @@
     "name": "Volto Mask",
     "lvl": 10,
     "value": 151794809,
-    "craftTime": 147819,
+    "craftTime": 1478192,
     "type": "Masks",
     "rcost": [
       "leather",
@@ -2097,7 +2097,7 @@
     "name": "New Gauntlets",
     "lvl": 1,
     "value": 15,
-    "craftTime": 2981,
+    "craftTime": 29808,
     "type": "Gauntlets",
     "rcost": [
       "fabric",
@@ -2115,7 +2115,7 @@
     "name": "Shiny Gauntlets",
     "lvl": 2,
     "value": 62,
-    "craftTime": 5700,
+    "craftTime": 57001,
     "type": "Gauntlets",
     "rcost": [
       "fabric",
@@ -2131,7 +2131,7 @@
     "name": "Plain Gauntlets",
     "lvl": 3,
     "value": 523,
-    "craftTime": 6940,
+    "craftTime": 69405,
     "type": "Gauntlets",
     "rcost": [
       "fabric",
@@ -2149,7 +2149,7 @@
     "name": "Pristine Gauntlets",
     "lvl": 4,
     "value": 6094,
-    "craftTime": 20898,
+    "craftTime": 208985,
     "type": "Gauntlets",
     "rcost": [
       "fabric",
@@ -2167,7 +2167,7 @@
     "name": "Challenge Gauntlets",
     "lvl": 5,
     "value": 45040,
-    "craftTime": 39915,
+    "craftTime": 399149,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2186,7 +2186,7 @@
     "name": "Fancy Gauntlets",
     "lvl": 6,
     "value": 332399,
-    "craftTime": 76124,
+    "craftTime": 761238,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2205,7 +2205,7 @@
     "name": "Old Gauntlets",
     "lvl": 7,
     "value": 968944,
-    "craftTime": 104261,
+    "craftTime": 1042608,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2222,7 +2222,7 @@
     "name": "Dark Gauntlets",
     "lvl": 8,
     "value": 8280068,
-    "craftTime": 126632,
+    "craftTime": 1266320,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2241,7 +2241,7 @@
     "name": "Dandy Gauntlets",
     "lvl": 9,
     "value": 35604293,
-    "craftTime": 140714,
+    "craftTime": 1407137,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2260,7 +2260,7 @@
     "name": "Cool Gauntlets",
     "lvl": 10,
     "value": 181581899,
-    "craftTime": 185452,
+    "craftTime": 1854518,
     "type": "Gauntlets",
     "rcost": [
       "ore",
@@ -2279,7 +2279,7 @@
     "name": "Gardening Gloves",
     "lvl": 1,
     "value": 17,
-    "craftTime": 3221,
+    "craftTime": 32211,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2297,7 +2297,7 @@
     "name": "Running Gloves",
     "lvl": 2,
     "value": 69,
-    "craftTime": 6121,
+    "craftTime": 61205,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2313,7 +2313,7 @@
     "name": "Fighting Gloves",
     "lvl": 3,
     "value": 933,
-    "craftTime": 11806,
+    "craftTime": 118055,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2331,7 +2331,7 @@
     "name": "Cleaning Gloves",
     "lvl": 4,
     "value": 6907,
-    "craftTime": 22585,
+    "craftTime": 225848,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2349,7 +2349,7 @@
     "name": "Punching Gloves",
     "lvl": 5,
     "value": 51045,
-    "craftTime": 45237,
+    "craftTime": 452366,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2368,7 +2368,7 @@
     "name": "Hugging Gloves",
     "lvl": 6,
     "value": 376719,
-    "craftTime": 86274,
+    "craftTime": 862737,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2387,7 +2387,7 @@
     "name": "Dancing Gloves",
     "lvl": 7,
     "value": 1098137,
-    "craftTime": 118162,
+    "craftTime": 1181623,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2404,7 +2404,7 @@
     "name": "Loving Gloves",
     "lvl": 8,
     "value": 9384077,
-    "craftTime": 143516,
+    "craftTime": 1435163,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2423,7 +2423,7 @@
     "name": "Other Gloves",
     "lvl": 9,
     "value": 40351533,
-    "craftTime": 159476,
+    "craftTime": 1594756,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2442,7 +2442,7 @@
     "name": "Boxing Gloves",
     "lvl": 10,
     "value": 205792819,
-    "craftTime": 210179,
+    "craftTime": 2101787,
     "type": "Gloves",
     "rcost": [
       "leather",
@@ -2461,7 +2461,7 @@
     "name": "Hamster Clogs",
     "lvl": 1,
     "value": 19,
-    "craftTime": 3600,
+    "craftTime": 36000,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2479,7 +2479,7 @@
     "name": "Mage Moccasins",
     "lvl": 2,
     "value": 77,
-    "craftTime": 6855,
+    "craftTime": 68550,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2495,7 +2495,7 @@
     "name": "Druidic Boots",
     "lvl": 3,
     "value": 1043,
-    "craftTime": 13197,
+    "craftTime": 131974,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2513,7 +2513,7 @@
     "name": "Fighting Stilettos",
     "lvl": 4,
     "value": 7720,
-    "craftTime": 25243,
+    "craftTime": 252432,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2531,7 +2531,7 @@
     "name": "Bardic Galoshes",
     "lvl": 5,
     "value": 57051,
-    "craftTime": 46065,
+    "craftTime": 460650,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2550,7 +2550,7 @@
     "name": "Master Loafers",
     "lvl": 6,
     "value": 421039,
-    "craftTime": 87853,
+    "craftTime": 878526,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2569,7 +2569,7 @@
     "name": "Foxy Slippers",
     "lvl": 7,
     "value": 1227329,
-    "craftTime": 120325,
+    "craftTime": 1203247,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2586,7 +2586,7 @@
     "name": "Hairy Shoes",
     "lvl": 8,
     "value": 10488086,
-    "craftTime": 146143,
+    "craftTime": 1461427,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2605,7 +2605,7 @@
     "name": "Lunar Whalers",
     "lvl": 9,
     "value": 45098772,
-    "craftTime": 162394,
+    "craftTime": 1623941,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2624,7 +2624,7 @@
     "name": "Jay Walkers",
     "lvl": 10,
     "value": 230003739,
-    "craftTime": 214025,
+    "craftTime": 2140251,
     "type": "Shoes",
     "rcost": [
       "wood",
@@ -2643,7 +2643,7 @@
     "name": "Metal Armor",
     "lvl": 1,
     "value": 22,
-    "craftTime": 4268,
+    "craftTime": 42677,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2662,7 +2662,7 @@
     "name": "Metallic Armor",
     "lvl": 2,
     "value": 156,
-    "craftTime": 7820,
+    "craftTime": 78203,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2681,7 +2681,7 @@
     "name": "Panther Armor",
     "lvl": 3,
     "value": 610,
-    "craftTime": 14367,
+    "craftTime": 143666,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2698,7 +2698,7 @@
     "name": "Slayers Plate",
     "lvl": 4,
     "value": 7874,
-    "craftTime": 26360,
+    "craftTime": 263598,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2717,7 +2717,7 @@
     "name": "Leaded Zeppelin Hull",
     "lvl": 5,
     "value": 55905,
-    "craftTime": 48364,
+    "craftTime": 483639,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2736,7 +2736,7 @@
     "name": "A Cool Dark Chainmail",
     "lvl": 6,
     "value": 396930,
-    "craftTime": 88738,
+    "craftTime": 887379,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2755,7 +2755,7 @@
     "name": "Maidens Plate",
     "lvl": 7,
     "value": 2103731,
-    "craftTime": 121537,
+    "craftTime": 1215374,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2774,7 +2774,7 @@
     "name": "Intense Purple Cuirass",
     "lvl": 8,
     "value": 6016672,
-    "craftTime": 163319,
+    "craftTime": 1633194,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2791,7 +2791,7 @@
     "name": "Serpent Mail",
     "lvl": 9,
     "value": 55790957,
-    "craftTime": 215245,
+    "craftTime": 2152447,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2810,7 +2810,7 @@
     "name": "Heavy Metal Armor",
     "lvl": 10,
     "value": 273375691,
-    "craftTime": 272554,
+    "craftTime": 2725543,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -2829,7 +2829,7 @@
     "name": "Novice Cloak",
     "lvl": 1,
     "value": 26,
-    "craftTime": 4814,
+    "craftTime": 48144,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2848,7 +2848,7 @@
     "name": "Apprentice Cloak",
     "lvl": 2,
     "value": 184,
-    "craftTime": 8805,
+    "craftTime": 88046,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2867,7 +2867,7 @@
     "name": "Practitioner Cloak",
     "lvl": 3,
     "value": 721,
-    "craftTime": 16199,
+    "craftTime": 161991,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2884,7 +2884,7 @@
     "name": "Journeyman Cloak",
     "lvl": 4,
     "value": 9305,
-    "craftTime": 29734,
+    "craftTime": 297344,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2903,7 +2903,7 @@
     "name": "Expert Cloak",
     "lvl": 5,
     "value": 66070,
-    "craftTime": 54560,
+    "craftTime": 545597,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2922,7 +2922,7 @@
     "name": "Frostflinger Cloak",
     "lvl": 6,
     "value": 469099,
-    "craftTime": 100105,
+    "craftTime": 1001051,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2941,7 +2941,7 @@
     "name": "Stormbringer Cloak",
     "lvl": 7,
     "value": 2486228,
-    "craftTime": 137106,
+    "craftTime": 1371063,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2960,7 +2960,7 @@
     "name": "Earthslinger Cloak",
     "lvl": 8,
     "value": 7110612,
-    "craftTime": 184240,
+    "craftTime": 1842405,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2977,7 +2977,7 @@
     "name": "Lifegiver Cloak",
     "lvl": 9,
     "value": 65934767,
-    "craftTime": 242817,
+    "craftTime": 2428174,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -2996,7 +2996,7 @@
     "name": "Deathcaller Cloak",
     "lvl": 10,
     "value": 323080362,
-    "craftTime": 307468,
+    "craftTime": 3074682,
     "type": "Cloaks",
     "rcost": [
       "leather",
@@ -3015,7 +3015,7 @@
     "name": "Mole Vest",
     "lvl": 1,
     "value": 24,
-    "craftTime": 4444,
+    "craftTime": 44441,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3034,7 +3034,7 @@
     "name": "Assassin Vest",
     "lvl": 2,
     "value": 170,
-    "craftTime": 8135,
+    "craftTime": 81347,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3053,7 +3053,7 @@
     "name": "Bandit Vest",
     "lvl": 3,
     "value": 665,
-    "craftTime": 14950,
+    "craftTime": 149501,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3070,7 +3070,7 @@
     "name": "Spy Vest",
     "lvl": 4,
     "value": 8589,
-    "craftTime": 27446,
+    "craftTime": 274464,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3089,7 +3089,7 @@
     "name": "Fugitive Vest",
     "lvl": 5,
     "value": 60988,
-    "craftTime": 50363,
+    "craftTime": 503630,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3108,7 +3108,7 @@
     "name": "Outlaw Vest",
     "lvl": 6,
     "value": 433015,
-    "craftTime": 92405,
+    "craftTime": 924049,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3127,7 +3127,7 @@
     "name": "Grifter Vest",
     "lvl": 7,
     "value": 2294979,
-    "craftTime": 126560,
+    "craftTime": 1265596,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3146,7 +3146,7 @@
     "name": "Criminal Vest",
     "lvl": 8,
     "value": 6563642,
-    "craftTime": 170068,
+    "craftTime": 1700681,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3163,7 +3163,7 @@
     "name": "Hitman Vest",
     "lvl": 9,
     "value": 60862862,
-    "craftTime": 224139,
+    "craftTime": 2241391,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3182,7 +3182,7 @@
     "name": "Pirate Vest",
     "lvl": 10,
     "value": 298228026,
-    "craftTime": 283817,
+    "craftTime": 2838168,
     "type": "Vests",
     "rcost": [
       "wood",
@@ -3201,7 +3201,7 @@
     "name": "Patience",
     "lvl": 1,
     "value": 32,
-    "craftTime": 6518,
+    "craftTime": 65180,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3220,7 +3220,7 @@
     "name": "Faithful Buckler",
     "lvl": 2,
     "value": 195,
-    "craftTime": 10264,
+    "craftTime": 102641,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3239,7 +3239,7 @@
     "name": "Defiant Targe",
     "lvl": 3,
     "value": 1190,
-    "craftTime": 16187,
+    "craftTime": 161867,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3258,7 +3258,7 @@
     "name": "Fair Shield",
     "lvl": 4,
     "value": 3995,
-    "craftTime": 25530,
+    "craftTime": 255301,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3275,7 +3275,7 @@
     "name": "Wisdom",
     "lvl": 5,
     "value": 44306,
-    "craftTime": 40246,
+    "craftTime": 402460,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3294,7 +3294,7 @@
     "name": "Generous Blocker",
     "lvl": 6,
     "value": 270270,
-    "craftTime": 63443,
+    "craftTime": 634428,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3313,7 +3313,7 @@
     "name": "Loyal Companion",
     "lvl": 7,
     "value": 1648651,
-    "craftTime": 100009,
+    "craftTime": 1000087,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3332,7 +3332,7 @@
     "name": "Dignity",
     "lvl": 8,
     "value": 10056777,
-    "craftTime": 157649,
+    "craftTime": 1576494,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3351,7 +3351,7 @@
     "name": "Trustworthy Kite",
     "lvl": 9,
     "value": 33187365,
-    "craftTime": 244438,
+    "craftTime": 2444376,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3368,7 +3368,7 @@
     "name": "Truth Teller",
     "lvl": 10,
     "value": 356009908,
-    "craftTime": 372687,
+    "craftTime": 3726872,
     "type": "Shields",
     "rcost": [
       "steel",
@@ -3387,7 +3387,7 @@
     "name": "Stealth Ward",
     "lvl": 1,
     "value": 28,
-    "craftTime": 6337,
+    "craftTime": 63369,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3406,7 +3406,7 @@
     "name": "Sentry Ward",
     "lvl": 2,
     "value": 170,
-    "craftTime": 9942,
+    "craftTime": 99424,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3425,7 +3425,7 @@
     "name": "Spell Ward",
     "lvl": 3,
     "value": 1041,
-    "craftTime": 15733,
+    "craftTime": 157333,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3444,7 +3444,7 @@
     "name": "Curse Ward",
     "lvl": 4,
     "value": 3496,
-    "craftTime": 24820,
+    "craftTime": 248204,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3461,7 +3461,7 @@
     "name": "Poison Ward",
     "lvl": 5,
     "value": 38468,
-    "craftTime": 38826,
+    "craftTime": 388255,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3480,7 +3480,7 @@
     "name": "Disease Ward",
     "lvl": 6,
     "value": 236486,
-    "craftTime": 61680,
+    "craftTime": 616804,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3499,7 +3499,7 @@
     "name": "Infection Ward",
     "lvl": 7,
     "value": 1442570,
-    "craftTime": 97231,
+    "craftTime": 972307,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3518,7 +3518,7 @@
     "name": "Cancer Ward",
     "lvl": 8,
     "value": 8499679,
-    "craftTime": 148045,
+    "craftTime": 1480449,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3537,7 +3537,7 @@
     "name": "Maternity Ward",
     "lvl": 9,
     "value": 29038944,
-    "craftTime": 237648,
+    "craftTime": 2376477,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3554,7 +3554,7 @@
     "name": "Burn Unit",
     "lvl": 10,
     "value": 311508669,
-    "craftTime": 362335,
+    "craftTime": 3623348,
     "type": "Wards",
     "rcost": [
       "paper",
@@ -3573,7 +3573,7 @@
     "name": "Stones",
     "lvl": 1,
     "value": 29,
-    "craftTime": 5626,
+    "craftTime": 56256,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3592,7 +3592,7 @@
     "name": "Sticks",
     "lvl": 2,
     "value": 176,
-    "craftTime": 8823,
+    "craftTime": 88229,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3611,7 +3611,7 @@
     "name": "Words",
     "lvl": 3,
     "value": 1079,
-    "craftTime": 13978,
+    "craftTime": 139779,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3630,7 +3630,7 @@
     "name": "Ninja Stars",
     "lvl": 4,
     "value": 3621,
-    "craftTime": 22035,
+    "craftTime": 220346,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3647,7 +3647,7 @@
     "name": "Poison Shuriken",
     "lvl": 5,
     "value": 40152,
-    "craftTime": 34736,
+    "craftTime": 347359,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3666,7 +3666,7 @@
     "name": "Shining Stars",
     "lvl": 6,
     "value": 244932,
-    "craftTime": 54757,
+    "craftTime": 547571,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3685,7 +3685,7 @@
     "name": "Golden Shuriken",
     "lvl": 7,
     "value": 1494090,
-    "craftTime": 86317,
+    "craftTime": 863170,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3704,7 +3704,7 @@
     "name": "Frost Shuriken",
     "lvl": 8,
     "value": 9113954,
-    "craftTime": 136066,
+    "craftTime": 1360664,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3723,7 +3723,7 @@
     "name": "Burning Sticks",
     "lvl": 9,
     "value": 30076049,
-    "craftTime": 210973,
+    "craftTime": 2109729,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3740,7 +3740,7 @@
     "name": "Heart Seeker",
     "lvl": 10,
     "value": 322633979,
-    "craftTime": 321665,
+    "craftTime": 3216645,
     "type": "Thrown",
     "rcost": [
       "wood",
@@ -3759,7 +3759,7 @@
     "name": "Quick Axe",
     "lvl": 1,
     "value": 27,
-    "craftTime": 5238,
+    "craftTime": 52377,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3778,7 +3778,7 @@
     "name": "Poison Katar",
     "lvl": 2,
     "value": 164,
-    "craftTime": 8221,
+    "craftTime": 82213,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3797,7 +3797,7 @@
     "name": "Firey Sword",
     "lvl": 3,
     "value": 1004,
-    "craftTime": 13006,
+    "craftTime": 130064,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3816,7 +3816,7 @@
     "name": "Mace Of Spades",
     "lvl": 4,
     "value": 6128,
-    "craftTime": 20515,
+    "craftTime": 205147,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3835,7 +3835,7 @@
     "name": "Pretty Club",
     "lvl": 5,
     "value": 20561,
-    "craftTime": 32340,
+    "craftTime": 323404,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3852,7 +3852,7 @@
     "name": "Slow Axe",
     "lvl": 6,
     "value": 228041,
-    "craftTime": 50981,
+    "craftTime": 509810,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3871,7 +3871,7 @@
     "name": "Healing Katar",
     "lvl": 7,
     "value": 1391050,
-    "craftTime": 80364,
+    "craftTime": 803642,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3890,7 +3890,7 @@
     "name": "Icy Sword",
     "lvl": 8,
     "value": 8485405,
-    "craftTime": 126683,
+    "craftTime": 1266825,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3909,7 +3909,7 @@
     "name": "Mace Of Diamonds",
     "lvl": 9,
     "value": 50912433,
-    "craftTime": 196423,
+    "craftTime": 1964231,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3928,7 +3928,7 @@
     "name": "Ugly Club",
     "lvl": 10,
     "value": 165210848,
-    "craftTime": 299481,
+    "craftTime": 2994808,
     "type": "Offhand",
     "rcost": [
       "ore",
@@ -3945,7 +3945,7 @@
     "name": "Spells Vol I",
     "lvl": 1,
     "value": 31,
-    "craftTime": 6647,
+    "craftTime": 66466,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -3964,7 +3964,7 @@
     "name": "Spells Vol II",
     "lvl": 2,
     "value": 189,
-    "craftTime": 10472,
+    "craftTime": 104719,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -3983,7 +3983,7 @@
     "name": "Spells Vol IV",
     "lvl": 3,
     "value": 1153,
-    "craftTime": 16509,
+    "craftTime": 165089,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4002,7 +4002,7 @@
     "name": "Earthshaping and You",
     "lvl": 4,
     "value": 7036,
-    "craftTime": 26034,
+    "craftTime": 260338,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4021,7 +4021,7 @@
     "name": "Pyromania: A Love Story",
     "lvl": 5,
     "value": 23608,
-    "craftTime": 41041,
+    "craftTime": 410409,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4038,7 +4038,7 @@
     "name": "Great Hamster Vol XXI",
     "lvl": 6,
     "value": 261824,
-    "craftTime": 64695,
+    "craftTime": 646950,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4057,7 +4057,7 @@
     "name": "Nal'Dur's Diary",
     "lvl": 7,
     "value": 1597131,
-    "craftTime": 101983,
+    "craftTime": 1019826,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4076,7 +4076,7 @@
     "name": "Cauldroning 101",
     "lvl": 8,
     "value": 9742502,
-    "craftTime": 160761,
+    "craftTime": 1607609,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4095,7 +4095,7 @@
     "name": "Secret Streams",
     "lvl": 9,
     "value": 58455016,
-    "craftTime": 249262,
+    "craftTime": 2492620,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4114,7 +4114,7 @@
     "name": "Efficient Spells 102",
     "lvl": 10,
     "value": 189686529,
-    "craftTime": 380043,
+    "craftTime": 3800429,
     "type": "Tomes",
     "rcost": [
       "fabric",
@@ -4131,7 +4131,7 @@
     "name": "Deflected Dart",
     "lvl": 1,
     "value": 30,
-    "craftTime": 5820,
+    "craftTime": 58196,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4150,7 +4150,7 @@
     "name": "Delayed Dart",
     "lvl": 2,
     "value": 183,
-    "craftTime": 9174,
+    "craftTime": 91738,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4169,7 +4169,7 @@
     "name": "Diverted Dart",
     "lvl": 3,
     "value": 1116,
-    "craftTime": 14457,
+    "craftTime": 144573,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4188,7 +4188,7 @@
     "name": "Ditched Dart",
     "lvl": 4,
     "value": 6809,
-    "craftTime": 22794,
+    "craftTime": 227945,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4207,7 +4207,7 @@
     "name": "Ducked Dart",
     "lvl": 5,
     "value": 22846,
-    "craftTime": 35934,
+    "craftTime": 359340,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4224,7 +4224,7 @@
     "name": "Dipped Dart",
     "lvl": 6,
     "value": 253378,
-    "craftTime": 56645,
+    "craftTime": 566453,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4243,7 +4243,7 @@
     "name": "Dancing Dart",
     "lvl": 7,
     "value": 1545611,
-    "craftTime": 89294,
+    "craftTime": 892935,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4262,7 +4262,7 @@
     "name": "Daring Dart",
     "lvl": 8,
     "value": 9428828,
-    "craftTime": 140767,
+    "craftTime": 1407673,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4281,7 +4281,7 @@
     "name": "Double Dart",
     "lvl": 9,
     "value": 56569371,
-    "craftTime": 218248,
+    "craftTime": 2182479,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4300,7 +4300,7 @@
     "name": "Dodged Dart",
     "lvl": 10,
     "value": 183567609,
-    "craftTime": 332756,
+    "craftTime": 3327564,
     "type": "Darts",
     "rcost": [
       "paper",
@@ -4317,7 +4317,7 @@
     "name": "Healing Potion",
     "lvl": 1,
     "value": 13,
-    "craftTime": 2787,
+    "craftTime": 27873,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4335,7 +4335,7 @@
     "name": "Mana Potion",
     "lvl": 2,
     "value": 98,
-    "craftTime": 5430,
+    "craftTime": 54299,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4353,7 +4353,7 @@
     "name": "Sleeping Potion",
     "lvl": 3,
     "value": 741,
-    "craftTime": 10610,
+    "craftTime": 106098,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4371,7 +4371,7 @@
     "name": "Coughing Potion",
     "lvl": 4,
     "value": 3016,
-    "craftTime": 20288,
+    "craftTime": 202876,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4387,7 +4387,7 @@
     "name": "Invincibility Potion",
     "lvl": 5,
     "value": 40028,
-    "craftTime": 38274,
+    "craftTime": 382737,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4405,7 +4405,7 @@
     "name": "Laughing Potion",
     "lvl": 6,
     "value": 288207,
-    "craftTime": 71214,
+    "craftTime": 712140,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4423,7 +4423,7 @@
     "name": "Rejuvenating Potion",
     "lvl": 7,
     "value": 1527499,
-    "craftTime": 97536,
+    "craftTime": 975363,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4441,7 +4441,7 @@
     "name": "Like Potion",
     "lvl": 8,
     "value": 7942998,
-    "craftTime": 131067,
+    "craftTime": 1310673,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4459,7 +4459,7 @@
     "name": "Bitter Potion",
     "lvl": 9,
     "value": 22280112,
-    "craftTime": 172738,
+    "craftTime": 1727384,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4475,7 +4475,7 @@
     "name": "Strength Potion",
     "lvl": 10,
     "value": 198495540,
-    "craftTime": 218731,
+    "craftTime": 2187306,
     "type": "Potions",
     "rcost": [
       "herb",
@@ -4493,7 +4493,7 @@
     "name": "Lactuca",
     "lvl": 1,
     "value": 25,
-    "craftTime": 4968,
+    "craftTime": 49680,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4511,7 +4511,7 @@
     "name": "Gelata Eros",
     "lvl": 2,
     "value": 190,
-    "craftTime": 9757,
+    "craftTime": 97570,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4529,7 +4529,7 @@
     "name": "Comitatus",
     "lvl": 3,
     "value": 1425,
-    "craftTime": 18910,
+    "craftTime": 189105,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4547,7 +4547,7 @@
     "name": "Tacet Gladio",
     "lvl": 4,
     "value": 5800,
-    "craftTime": 36162,
+    "craftTime": 361625,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4563,7 +4563,7 @@
     "name": "Ostium Amici",
     "lvl": 5,
     "value": 76978,
-    "craftTime": 68219,
+    "craftTime": 682186,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4581,7 +4581,7 @@
     "name": "Ignis Pullum",
     "lvl": 6,
     "value": 554245,
-    "craftTime": 126929,
+    "craftTime": 1269295,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4599,7 +4599,7 @@
     "name": "Folium Strennus",
     "lvl": 7,
     "value": 2937499,
-    "craftTime": 173845,
+    "craftTime": 1738453,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4617,7 +4617,7 @@
     "name": "Magicae Criceta",
     "lvl": 8,
     "value": 15274997,
-    "craftTime": 233610,
+    "craftTime": 2336096,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4635,7 +4635,7 @@
     "name": "Inpulsa Sciurus",
     "lvl": 9,
     "value": 42846369,
-    "craftTime": 307883,
+    "craftTime": 3078828,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4651,7 +4651,7 @@
     "name": "Adipem Pater",
     "lvl": 10,
     "value": 381772192,
-    "craftTime": 389909,
+    "craftTime": 3899086,
     "type": "Pendants",
     "rcost": [
       "fabric",
@@ -4669,7 +4669,7 @@
     "name": "Soldier Ring",
     "lvl": 1,
     "value": 14,
-    "craftTime": 2852,
+    "craftTime": 28516,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4687,7 +4687,7 @@
     "name": "Mercenary Ring",
     "lvl": 2,
     "value": 106,
-    "craftTime": 5579,
+    "craftTime": 55795,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4705,7 +4705,7 @@
     "name": "Chaplain Ring",
     "lvl": 3,
     "value": 798,
-    "craftTime": 10855,
+    "craftTime": 108546,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4723,7 +4723,7 @@
     "name": "General Ring",
     "lvl": 4,
     "value": 3248,
-    "craftTime": 20757,
+    "craftTime": 207566,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4739,7 +4739,7 @@
     "name": "Tactical Ring",
     "lvl": 5,
     "value": 43107,
-    "craftTime": 39157,
+    "craftTime": 391569,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4757,7 +4757,7 @@
     "name": "Paladin Ring",
     "lvl": 6,
     "value": 310377,
-    "craftTime": 72857,
+    "craftTime": 728575,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4775,7 +4775,7 @@
     "name": "Hunter Ring",
     "lvl": 7,
     "value": 1644999,
-    "craftTime": 99787,
+    "craftTime": 997872,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4793,7 +4793,7 @@
     "name": "Trapper Ring",
     "lvl": 8,
     "value": 8553998,
-    "craftTime": 134092,
+    "craftTime": 1340919,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4811,7 +4811,7 @@
     "name": "Berserker Ring",
     "lvl": 9,
     "value": 23993967,
-    "craftTime": 176725,
+    "craftTime": 1767247,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4827,7 +4827,7 @@
     "name": "Marksman Ring",
     "lvl": 10,
     "value": 213764428,
-    "craftTime": 223778,
+    "craftTime": 2237782,
     "type": "Rings",
     "rcost": [
       "ore",
@@ -4845,7 +4845,7 @@
     "name": "Conch Shell",
     "lvl": 1,
     "value": 23,
-    "craftTime": 4571,
+    "craftTime": 45705,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4863,7 +4863,7 @@
     "name": "Flute",
     "lvl": 2,
     "value": 174,
-    "craftTime": 8935,
+    "craftTime": 89354,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4881,7 +4881,7 @@
     "name": "Harp",
     "lvl": 3,
     "value": 1311,
-    "craftTime": 17398,
+    "craftTime": 173976,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4899,7 +4899,7 @@
     "name": "Guitar Pick",
     "lvl": 4,
     "value": 9701,
-    "craftTime": 33268,
+    "craftTime": 332681,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4917,7 +4917,7 @@
     "name": "Flugelhorn",
     "lvl": 5,
     "value": 38951,
-    "craftTime": 62761,
+    "craftTime": 627613,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4933,7 +4933,7 @@
     "name": "Drum",
     "lvl": 6,
     "value": 509905,
-    "craftTime": 116775,
+    "craftTime": 1167750,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4951,7 +4951,7 @@
     "name": "Lyre",
     "lvl": 7,
     "value": 2702499,
-    "craftTime": 159938,
+    "craftTime": 1599377,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4969,7 +4969,7 @@
     "name": "Bells",
     "lvl": 8,
     "value": 14052997,
-    "craftTime": 214921,
+    "craftTime": 2149209,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -4987,7 +4987,7 @@
     "name": "Shofar",
     "lvl": 9,
     "value": 71670289,
-    "craftTime": 283252,
+    "craftTime": 2832522,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -5005,7 +5005,7 @@
     "name": "Gjallerhorn",
     "lvl": 10,
     "value": 193151430,
-    "craftTime": 358669,
+    "craftTime": 3586689,
     "type": "Instruments",
     "rcost": [
       "fabric",
@@ -5021,7 +5021,7 @@
     "name": "Leather Belt",
     "lvl": 1,
     "value": 12,
-    "craftTime": 2328,
+    "craftTime": 23278,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5039,7 +5039,7 @@
     "name": "Timing Belt",
     "lvl": 2,
     "value": 91,
-    "craftTime": 4562,
+    "craftTime": 45618,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5057,7 +5057,7 @@
     "name": "Rodeo Belt",
     "lvl": 3,
     "value": 684,
-    "craftTime": 8861,
+    "craftTime": 88609,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5075,7 +5075,7 @@
     "name": "Rust Belt",
     "lvl": 4,
     "value": 5061,
-    "craftTime": 16943,
+    "craftTime": 169427,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5093,7 +5093,7 @@
     "name": "Cowboy Belt",
     "lvl": 5,
     "value": 20322,
-    "craftTime": 31965,
+    "craftTime": 319649,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5109,7 +5109,7 @@
     "name": "Flat Belt",
     "lvl": 6,
     "value": 266037,
-    "craftTime": 59475,
+    "craftTime": 594754,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5127,7 +5127,7 @@
     "name": "Fan Belt",
     "lvl": 7,
     "value": 1409999,
-    "craftTime": 81459,
+    "craftTime": 814589,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5145,7 +5145,7 @@
     "name": "Formal Belt",
     "lvl": 8,
     "value": 7331998,
-    "craftTime": 109463,
+    "craftTime": 1094628,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5163,7 +5163,7 @@
     "name": "Conveyor Belt",
     "lvl": 9,
     "value": 37393194,
-    "craftTime": 144265,
+    "craftTime": 1442651,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5181,7 +5181,7 @@
     "name": "Extra Belt",
     "lvl": 10,
     "value": 100774659,
-    "craftTime": 182676,
+    "craftTime": 1826761,
     "type": "Belts",
     "rcost": [
       "leather",
@@ -5197,7 +5197,7 @@
     "name": "Magic Earring",
     "lvl": 1,
     "value": 21,
-    "craftTime": 4173,
+    "craftTime": 41731,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5215,7 +5215,7 @@
     "name": "Druidic Earring",
     "lvl": 2,
     "value": 159,
-    "craftTime": 8165,
+    "craftTime": 81651,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5233,7 +5233,7 @@
     "name": "Musical Earring",
     "lvl": 3,
     "value": 1197,
-    "craftTime": 15885,
+    "craftTime": 158848,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5251,7 +5251,7 @@
     "name": "Caster Earring",
     "lvl": 4,
     "value": 8857,
-    "craftTime": 30374,
+    "craftTime": 303738,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5269,7 +5269,7 @@
     "name": "Medical Earring",
     "lvl": 5,
     "value": 35564,
-    "craftTime": 57303,
+    "craftTime": 573032,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5285,7 +5285,7 @@
     "name": "Healing Earring",
     "lvl": 6,
     "value": 465565,
-    "craftTime": 106621,
+    "craftTime": 1066206,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5303,7 +5303,7 @@
     "name": "Wizard Earring",
     "lvl": 7,
     "value": 2467499,
-    "craftTime": 146030,
+    "craftTime": 1460300,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5321,7 +5321,7 @@
     "name": "Clerical Earring",
     "lvl": 8,
     "value": 12830998,
-    "craftTime": 196232,
+    "craftTime": 1962321,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5339,7 +5339,7 @@
     "name": "Charismatic Earring",
     "lvl": 9,
     "value": 65438090,
-    "craftTime": 258622,
+    "craftTime": 2586215,
     "type": "Earrings",
     "rcost": [
       "silver",
@@ -5357,7 +5357,7 @@
     "name": "Rose Earring",
     "lvl": 10,
     "value": 176355654,
-    "craftTime": 327480,
+    "craftTime": 3274803,
     "type": "Earrings",
     "rcost": [
       "silver",
