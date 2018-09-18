@@ -23,6 +23,7 @@ class Worker {
         return this.lvlreq[this.lvl-1];
     }
     upgrade() {
+        console.log("upgrade!");
         if (ResourceManager.materialAvailable("M001") < this.numToDonate("M001")) {
             Notifications.workerGoldReq();
             return;
@@ -45,12 +46,12 @@ class Worker {
     sacRemaining(craftID) {
         const needed = this.numToDonate(craftID);
         const have = this.donated[craftID];
-        console.log(needed,have);
         return needed-have;
     }
     canUpgrade() {
         let result = true;
         this.thislvlreq().forEach(req => {
+            if (req[0] === "M001") return;
             if (this.donated[req[0]] < req[2]) result = false;
         })
         return result;

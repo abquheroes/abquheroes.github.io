@@ -33,4 +33,10 @@ const devtools = {
     speed(amt) {
         player.timeWarp = amt;
     },
+    workershorcut() {
+        Inventory.addToInventory("R0201",0,10);
+        Inventory.addToInventory("R0701",0,10);
+        Inventory.addToInventory("R2101",0,10);
+        ResourceManager.addMaterial("M001",10000);
+    }
 }
