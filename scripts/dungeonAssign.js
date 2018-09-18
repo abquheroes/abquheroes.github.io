@@ -239,8 +239,8 @@ function sidebarHP(hero) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("dsbhpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+hero.id);
-    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFill"+hero.id).css('width', hpWidth);
+    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.id);
+    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.id).css('width', hpWidth);
     return d1.append(d1a,s1);
 }
 
@@ -277,6 +277,8 @@ function refreshHPBar(hero) {
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     $("#hp"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
     $("#hpFill"+hero.id).css('width', hpWidth);
+    $("#hpSide"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillSide"+hero.id).css('width', hpWidth);
 }
 
 function refreshAPBar(hero) {
