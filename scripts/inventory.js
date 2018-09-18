@@ -56,10 +56,20 @@ const Inventory = {
         }
     },
     craftToInventory(id) {
+        const name = recipeList.idToItem(id).name;
         const roll = Math.floor(Math.random() * 1000)
-        if (roll <= 1) this.addToInventory(id,3,1);
-        else if (roll <= 10) this.addToInventory(id,2,1);
-        else if (roll <= 50) this.addToInventory(id,1,1);
+        if (roll <= 1) {
+            this.addToInventory(id,3,1);
+            Notifications.exceptionalCraft(name,"epic");
+        }
+        else if (roll <= 10) {
+            this.addToInventory(id,2,1);
+            Notifications.exceptionalCraft(name,"great");
+        }
+        else if (roll <= 50) {
+            this.addToInventory(id,1,1);
+            Notifications.exceptionalCraft(name,"good");
+        }
         else this.addToInventory(id,0,1);
     },
     removeFromInventory(id,rarity,amt) {
