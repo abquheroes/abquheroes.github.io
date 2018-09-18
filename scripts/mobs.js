@@ -92,6 +92,7 @@ class Mob {
             this.hp = Math.max(this.hp-dmg,0);
         }
         this.deadCheck();
+        refreshHPBar(this);
     }
     dodgeCheck() {
         return this.dodgeChance > Math.floor(Math.random()*100) + 1;

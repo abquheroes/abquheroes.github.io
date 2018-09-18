@@ -38,5 +38,15 @@ const devtools = {
         Inventory.addToInventory("R0701",0,10);
         Inventory.addToInventory("R2101",0,10);
         ResourceManager.addMaterial("M001",10000);
+    },
+    monstercheck(floor,trials) {
+        const results = {}
+        while (trials > 0) {
+            const mobName = MobManager.getMonster(floor).name;
+            if (mobName in results) results[mobName] += 1;
+            else results[mobName] = 1;
+            trials -= 1;
+        }
+        console.log(results);
     }
 }
