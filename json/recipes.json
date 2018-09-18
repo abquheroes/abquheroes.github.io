@@ -6,7 +6,9 @@
     "value": 6,
     "craftTime": 1852,
     "type": "Maces",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 5,
@@ -19,7 +21,9 @@
     "value": 72,
     "craftTime": 3609,
     "type": "Maces",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -34,7 +38,9 @@
     "value": 518,
     "craftTime": 6710,
     "type": "Maces",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -49,7 +55,9 @@
     "value": 3732,
     "craftTime": 12494,
     "type": "Maces",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M204": 1
     },
@@ -64,7 +72,10 @@
     "value": 26870,
     "craftTime": 23245,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -79,7 +90,10 @@
     "value": 106406,
     "craftTime": 43251,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 30,
@@ -92,7 +106,10 @@
     "value": 1025141,
     "craftTime": 59225,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -107,7 +124,10 @@
     "value": 4875124,
     "craftTime": 72783,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -122,7 +142,10 @@
     "value": 21251125,
     "craftTime": 81988,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -137,7 +160,10 @@
     "value": 108215963,
     "craftTime": 107891,
     "type": "Maces",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -152,7 +178,9 @@
     "value": 13,
     "craftTime": 2648,
     "type": "Axes",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -167,7 +195,9 @@
     "value": 52,
     "craftTime": 4895,
     "type": "Axes",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 16,
@@ -180,7 +210,9 @@
     "value": 673,
     "craftTime": 9154,
     "type": "Axes",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M103": 1
     },
@@ -195,7 +227,9 @@
     "value": 4851,
     "craftTime": 17052,
     "type": "Axes",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -210,7 +244,10 @@
     "value": 34931,
     "craftTime": 30219,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -225,7 +262,10 @@
     "value": 251503,
     "craftTime": 56226,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -240,7 +280,10 @@
     "value": 732976,
     "craftTime": 76992,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 56,
@@ -253,7 +296,10 @@
     "value": 6337661,
     "craftTime": 94618,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -268,7 +314,10 @@
     "value": 27626462,
     "craftTime": 106584,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -283,7 +332,10 @@
     "value": 140680751,
     "craftTime": 140258,
     "type": "Axes",
-    "!rcost": "ore!wood",
+    "rcost": [
+      "ore",
+      "wood"
+    ],
     "mcost": {
       "M110": 1
     },
@@ -298,7 +350,9 @@
     "value": 7,
     "craftTime": 1426,
     "type": "Spears",
-    "!rcost": "bone",
+    "rcost": [
+      "bone"
+    ],
     "mcost": {
       "M101": 1
     },
@@ -313,7 +367,9 @@
     "value": 50,
     "craftTime": 2632,
     "type": "Spears",
-    "!rcost": "bone",
+    "rcost": [
+      "bone"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -328,7 +384,9 @@
     "value": 200,
     "craftTime": 4924,
     "type": "Spears",
-    "!rcost": "bone",
+    "rcost": [
+      "bone"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 9,
@@ -341,7 +399,9 @@
     "value": 2612,
     "craftTime": 9181,
     "type": "Spears",
-    "!rcost": "bone",
+    "rcost": [
+      "bone"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -356,7 +416,10 @@
     "value": 18809,
     "craftTime": 16272,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -371,7 +434,10 @@
     "value": 135424,
     "craftTime": 30275,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M106": 1
     },
@@ -386,7 +452,10 @@
     "value": 717598,
     "craftTime": 41457,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -401,7 +470,10 @@
     "value": 1876923,
     "craftTime": 50948,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 24,
@@ -414,7 +486,10 @@
     "value": 14875787,
     "craftTime": 57392,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -429,7 +504,10 @@
     "value": 75751174,
     "craftTime": 75524,
     "type": "Spears",
-    "!rcost": "wood!bone",
+    "rcost": [
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -444,7 +522,9 @@
     "value": 3,
     "craftTime": 1018,
     "type": "Rods",
-    "!rcost": "silver",
+    "rcost": [
+      "silver"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 5,
@@ -457,7 +537,9 @@
     "value": 36,
     "craftTime": 1895,
     "type": "Rods",
-    "!rcost": "silver",
+    "rcost": [
+      "silver"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -472,7 +554,9 @@
     "value": 259,
     "craftTime": 3523,
     "type": "Rods",
-    "!rcost": "silver",
+    "rcost": [
+      "silver"
+    ],
     "mcost": {
       "M103": 1
     },
@@ -487,7 +571,9 @@
     "value": 1866,
     "craftTime": 6559,
     "type": "Rods",
-    "!rcost": "silver",
+    "rcost": [
+      "silver"
+    ],
     "mcost": {
       "M204": 1
     },
@@ -502,7 +588,10 @@
     "value": 13435,
     "craftTime": 12204,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M105": 1
     },
@@ -517,7 +606,10 @@
     "value": 53203,
     "craftTime": 22707,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 30,
@@ -530,7 +622,10 @@
     "value": 512570,
     "craftTime": 31093,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -545,7 +640,10 @@
     "value": 2437562,
     "craftTime": 38211,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -560,7 +658,10 @@
     "value": 10625562,
     "craftTime": 43044,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -575,7 +676,10 @@
     "value": 54107981,
     "craftTime": 56643,
     "type": "Rods",
-    "!rcost": "steel!silver",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M210": 1
     },
@@ -590,7 +694,9 @@
     "value": 3,
     "craftTime": 596,
     "type": "Wands",
-    "!rcost": "mana",
+    "rcost": [
+      "mana"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -605,7 +711,9 @@
     "value": 21,
     "craftTime": 1078,
     "type": "Wands",
-    "!rcost": "mana",
+    "rcost": [
+      "mana"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -620,7 +728,9 @@
     "value": 86,
     "craftTime": 2057,
     "type": "Wands",
-    "!rcost": "mana",
+    "rcost": [
+      "mana"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 9,
@@ -633,7 +743,9 @@
     "value": 1119,
     "craftTime": 3837,
     "type": "Wands",
-    "!rcost": "mana",
+    "rcost": [
+      "mana"
+    ],
     "mcost": {
       "M104": 1
     },
@@ -648,7 +760,10 @@
     "value": 8061,
     "craftTime": 6811,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -663,7 +778,10 @@
     "value": 58039,
     "craftTime": 12673,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -678,7 +796,10 @@
     "value": 307542,
     "craftTime": 17354,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M107": 1
     },
@@ -693,7 +814,10 @@
     "value": 804396,
     "craftTime": 21327,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 24,
@@ -706,7 +830,10 @@
     "value": 6375337,
     "craftTime": 24024,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -721,7 +848,10 @@
     "value": 32464788,
     "craftTime": 31615,
     "type": "Wands",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -736,7 +866,9 @@
     "value": 9,
     "craftTime": 1746,
     "type": "Staves",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -751,7 +883,9 @@
     "value": 36,
     "craftTime": 3208,
     "type": "Staves",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 16,
@@ -764,7 +898,9 @@
     "value": 466,
     "craftTime": 6037,
     "type": "Staves",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -779,7 +915,9 @@
     "value": 3358,
     "craftTime": 11242,
     "type": "Staves",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M104": 1
     },
@@ -794,7 +932,10 @@
     "value": 24183,
     "craftTime": 20434,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M205": 1
     },
@@ -809,7 +950,10 @@
     "value": 174117,
     "craftTime": 38020,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M106": 1
     },
@@ -824,7 +968,10 @@
     "value": 507445,
     "craftTime": 52063,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 56,
@@ -837,7 +984,10 @@
     "value": 4387611,
     "craftTime": 63981,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -852,7 +1002,10 @@
     "value": 19126012,
     "craftTime": 72073,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -867,7 +1020,10 @@
     "value": 97394366,
     "craftTime": 94844,
     "type": "Staves",
-    "!rcost": "wood!mana",
+    "rcost": [
+      "wood",
+      "mana"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -882,7 +1038,9 @@
     "value": 4,
     "craftTime": 1222,
     "type": "Knives",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 3,
@@ -895,7 +1053,9 @@
     "value": 43,
     "craftTime": 2263,
     "type": "Knives",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M202": 1
     },
@@ -910,7 +1070,9 @@
     "value": 310,
     "craftTime": 4217,
     "type": "Knives",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M103": 1
     },
@@ -925,7 +1087,9 @@
     "value": 2239,
     "craftTime": 7870,
     "type": "Knives",
-    "!rcost": "ore",
+    "rcost": [
+      "ore"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -940,7 +1104,10 @@
     "value": 16122,
     "craftTime": 14645,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -955,7 +1122,10 @@
     "value": 63843,
     "craftTime": 27248,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": "",
     "actTime": 4000,
     "pow": 18,
@@ -968,7 +1138,10 @@
     "value": 615084,
     "craftTime": 37312,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -983,7 +1156,10 @@
     "value": 2925074,
     "craftTime": 45853,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -998,7 +1174,10 @@
     "value": 12750675,
     "craftTime": 51652,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -1013,7 +1192,10 @@
     "value": 64929577,
     "craftTime": 67971,
     "type": "Knives",
-    "!rcost": "ore!steel",
+    "rcost": [
+      "ore",
+      "steel"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -1028,7 +1210,9 @@
     "value": 11,
     "craftTime": 2134,
     "type": "Bows",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -1043,7 +1227,9 @@
     "value": 44,
     "craftTime": 3960,
     "type": "Bows",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 16,
@@ -1056,7 +1242,9 @@
     "value": 569,
     "craftTime": 7371,
     "type": "Bows",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -1071,7 +1259,9 @@
     "value": 4105,
     "craftTime": 13742,
     "type": "Bows",
-    "!rcost": "wood",
+    "rcost": [
+      "wood"
+    ],
     "mcost": {
       "M204": 1
     },
@@ -1086,7 +1276,10 @@
     "value": 29557,
     "craftTime": 24408,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": {
       "M105": 1
     },
@@ -1101,7 +1294,10 @@
     "value": 212810,
     "craftTime": 45413,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": {
       "M106": 1
     },
@@ -1116,7 +1312,10 @@
     "value": 620211,
     "craftTime": 62186,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": "",
     "actTime": 6000,
     "pow": 56,
@@ -1129,7 +1328,10 @@
     "value": 5362636,
     "craftTime": 76422,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -1144,7 +1346,10 @@
     "value": 23376237,
     "craftTime": 86087,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -1159,7 +1364,10 @@
     "value": 119037559,
     "craftTime": 113285,
     "type": "Bows",
-    "!rcost": "wood!leather",
+    "rcost": [
+      "wood",
+      "leather"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -1174,7 +1382,9 @@
     "value": 8,
     "craftTime": 1552,
     "type": "Whips",
-    "!rcost": "leather",
+    "rcost": [
+      "leather"
+    ],
     "mcost": {
       "M201": 1
     },
@@ -1189,7 +1399,9 @@
     "value": 57,
     "craftTime": 2857,
     "type": "Whips",
-    "!rcost": "leather",
+    "rcost": [
+      "leather"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -1204,7 +1416,9 @@
     "value": 228,
     "craftTime": 5363,
     "type": "Whips",
-    "!rcost": "leather",
+    "rcost": [
+      "leather"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 15,
@@ -1217,7 +1431,9 @@
     "value": 2985,
     "craftTime": 9993,
     "type": "Whips",
-    "!rcost": "leather",
+    "rcost": [
+      "leather"
+    ],
     "mcost": {
       "M104": 1
     },
@@ -1232,7 +1448,10 @@
     "value": 21496,
     "craftTime": 18164,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -1247,7 +1466,10 @@
     "value": 154771,
     "craftTime": 33796,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -1262,7 +1484,10 @@
     "value": 820112,
     "craftTime": 46278,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -1277,7 +1502,10 @@
     "value": 2145055,
     "craftTime": 56872,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": "",
     "actTime": 5000,
     "pow": 40,
@@ -1290,7 +1518,10 @@
     "value": 17000900,
     "craftTime": 64065,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -1305,7 +1536,10 @@
     "value": 86572770,
     "craftTime": 84305,
     "type": "Whips",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -1320,7 +1554,10 @@
     "value": 11,
     "craftTime": 3880,
     "type": "Helmets",
-    "!rcost": "ore!leather",
+    "rcost": [
+      "ore",
+      "leather"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1333,7 +1570,10 @@
     "value": 137,
     "craftTime": 6868,
     "type": "Helmets",
-    "!rcost": "ore!leather",
+    "rcost": [
+      "ore",
+      "leather"
+    ],
     "mcost": {
       "M202": 1
     },
@@ -1348,7 +1588,10 @@
     "value": 949,
     "craftTime": 12294,
     "type": "Helmets",
-    "!rcost": "ore!leather",
+    "rcost": [
+      "ore",
+      "leather"
+    ],
     "mcost": {
       "M103": 1
     },
@@ -1363,7 +1606,10 @@
     "value": 6532,
     "craftTime": 21867,
     "type": "Helmets",
-    "!rcost": "ore!leather",
+    "rcost": [
+      "ore",
+      "leather"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -1378,7 +1624,11 @@
     "value": 44941,
     "craftTime": 38879,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M205": 1
     },
@@ -1393,7 +1643,11 @@
     "value": 169811,
     "craftTime": 69023,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1406,7 +1660,11 @@
     "value": 1636356,
     "craftTime": 94536,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -1421,7 +1679,11 @@
     "value": 7690875,
     "craftTime": 114821,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -1436,7 +1698,11 @@
     "value": 33070764,
     "craftTime": 127589,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -1451,7 +1717,11 @@
     "value": 168660899,
     "craftTime": 168154,
     "type": "Helmets",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -1466,7 +1736,10 @@
     "value": 9,
     "craftTime": 3104,
     "type": "Hats",
-    "!rcost": "fabric!mana",
+    "rcost": [
+      "fabric",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1479,7 +1752,10 @@
     "value": 110,
     "craftTime": 5514,
     "type": "Hats",
-    "!rcost": "fabric!mana",
+    "rcost": [
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M102": 1
     },
@@ -1494,7 +1770,10 @@
     "value": 759,
     "craftTime": 9832,
     "type": "Hats",
-    "!rcost": "fabric!mana",
+    "rcost": [
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -1509,7 +1788,10 @@
     "value": 5225,
     "craftTime": 17492,
     "type": "Hats",
-    "!rcost": "fabric!mana",
+    "rcost": [
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -1524,7 +1806,11 @@
     "value": 35953,
     "craftTime": 29689,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -1539,7 +1825,11 @@
     "value": 135849,
     "craftTime": 52709,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1552,7 +1842,11 @@
     "value": 1309085,
     "craftTime": 72191,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -1567,7 +1861,11 @@
     "value": 6152700,
     "craftTime": 87681,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -1582,7 +1880,11 @@
     "value": 26456611,
     "craftTime": 97432,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -1597,7 +1899,11 @@
     "value": 134928719,
     "craftTime": 128409,
     "type": "Hats",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -1612,7 +1918,10 @@
     "value": 10,
     "craftTime": 3411,
     "type": "Masks",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1625,7 +1934,10 @@
     "value": 124,
     "craftTime": 6072,
     "type": "Masks",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -1640,7 +1952,10 @@
     "value": 854,
     "craftTime": 10806,
     "type": "Masks",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M203": 1
     },
@@ -1655,7 +1970,10 @@
     "value": 5878,
     "craftTime": 19220,
     "type": "Masks",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -1670,7 +1988,10 @@
     "value": 40447,
     "craftTime": 34177,
     "type": "Masks",
-    "!rcost": "leather!fabric",
+    "rcost": [
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -1685,7 +2006,11 @@
     "value": 152830,
     "craftTime": 60676,
     "type": "Masks",
-    "!rcost": "leather!fabric!silver",
+    "rcost": [
+      "leather",
+      "fabric",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1698,7 +2023,11 @@
     "value": 1472720,
     "craftTime": 83104,
     "type": "Masks",
-    "!rcost": "leather!fabric!silver",
+    "rcost": [
+      "leather",
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -1713,7 +2042,11 @@
     "value": 6921787,
     "craftTime": 100935,
     "type": "Masks",
-    "!rcost": "leather!fabric!silver",
+    "rcost": [
+      "leather",
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -1728,7 +2061,11 @@
     "value": 29763688,
     "craftTime": 112160,
     "type": "Masks",
-    "!rcost": "leather!fabric!silver",
+    "rcost": [
+      "leather",
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -1743,7 +2080,11 @@
     "value": 151794809,
     "craftTime": 147819,
     "type": "Masks",
-    "!rcost": "leather!fabric!silver",
+    "rcost": [
+      "leather",
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -1758,7 +2099,10 @@
     "value": 15,
     "craftTime": 2981,
     "type": "Gauntlets",
-    "!rcost": "fabric!steel",
+    "rcost": [
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -1773,7 +2117,10 @@
     "value": 62,
     "craftTime": 5700,
     "type": "Gauntlets",
-    "!rcost": "fabric!steel",
+    "rcost": [
+      "fabric",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1786,7 +2133,10 @@
     "value": 523,
     "craftTime": 6940,
     "type": "Gauntlets",
-    "!rcost": "fabric!steel",
+    "rcost": [
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -1801,7 +2151,10 @@
     "value": 6094,
     "craftTime": 20898,
     "type": "Gauntlets",
-    "!rcost": "fabric!steel",
+    "rcost": [
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -1816,7 +2169,11 @@
     "value": 45040,
     "craftTime": 39915,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M105": 1
     },
@@ -1831,7 +2188,11 @@
     "value": 332399,
     "craftTime": 76124,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -1846,7 +2207,11 @@
     "value": 968944,
     "craftTime": 104261,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1859,7 +2224,11 @@
     "value": 8280068,
     "craftTime": 126632,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -1874,7 +2243,11 @@
     "value": 35604293,
     "craftTime": 140714,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M209": 1
     },
@@ -1889,7 +2262,11 @@
     "value": 181581899,
     "craftTime": 185452,
     "type": "Gauntlets",
-    "!rcost": "ore!fabric!steel",
+    "rcost": [
+      "ore",
+      "fabric",
+      "steel"
+    ],
     "mcost": {
       "M110": 1
     },
@@ -1904,7 +2281,10 @@
     "value": 17,
     "craftTime": 3221,
     "type": "Gloves",
-    "!rcost": "leather!herb",
+    "rcost": [
+      "leather",
+      "herb"
+    ],
     "mcost": {
       "M201": 1
     },
@@ -1919,7 +2299,10 @@
     "value": 69,
     "craftTime": 6121,
     "type": "Gloves",
-    "!rcost": "leather!herb",
+    "rcost": [
+      "leather",
+      "herb"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -1932,7 +2315,10 @@
     "value": 933,
     "craftTime": 11806,
     "type": "Gloves",
-    "!rcost": "leather!herb",
+    "rcost": [
+      "leather",
+      "herb"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -1947,7 +2333,10 @@
     "value": 6907,
     "craftTime": 22585,
     "type": "Gloves",
-    "!rcost": "leather!herb",
+    "rcost": [
+      "leather",
+      "herb"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -1962,7 +2351,11 @@
     "value": 51045,
     "craftTime": 45237,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M105": 1
     },
@@ -1977,7 +2370,11 @@
     "value": 376719,
     "craftTime": 86274,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M206": 1
     },
@@ -1992,7 +2389,11 @@
     "value": 1098137,
     "craftTime": 118162,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2005,7 +2406,11 @@
     "value": 9384077,
     "craftTime": 143516,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -2020,7 +2425,11 @@
     "value": 40351533,
     "craftTime": 159476,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -2035,7 +2444,11 @@
     "value": 205792819,
     "craftTime": 210179,
     "type": "Gloves",
-    "!rcost": "leather!herb!mana",
+    "rcost": [
+      "leather",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -2050,7 +2463,10 @@
     "value": 19,
     "craftTime": 3600,
     "type": "Shoes",
-    "!rcost": "wood!fabric",
+    "rcost": [
+      "wood",
+      "fabric"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -2065,7 +2481,10 @@
     "value": 77,
     "craftTime": 6855,
     "type": "Shoes",
-    "!rcost": "wood!fabric",
+    "rcost": [
+      "wood",
+      "fabric"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2078,7 +2497,10 @@
     "value": 1043,
     "craftTime": 13197,
     "type": "Shoes",
-    "!rcost": "wood!fabric",
+    "rcost": [
+      "wood",
+      "fabric"
+    ],
     "mcost": {
       "M203": 1
     },
@@ -2093,7 +2515,10 @@
     "value": 7720,
     "craftTime": 25243,
     "type": "Shoes",
-    "!rcost": "wood!fabric",
+    "rcost": [
+      "wood",
+      "fabric"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -2108,7 +2533,11 @@
     "value": 57051,
     "craftTime": 46065,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -2123,7 +2552,11 @@
     "value": 421039,
     "craftTime": 87853,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M206": 1
     },
@@ -2138,7 +2571,11 @@
     "value": 1227329,
     "craftTime": 120325,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2151,7 +2588,11 @@
     "value": 10488086,
     "craftTime": 146143,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -2166,7 +2607,11 @@
     "value": 45098772,
     "craftTime": 162394,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -2181,7 +2626,11 @@
     "value": 230003739,
     "craftTime": 214025,
     "type": "Shoes",
-    "!rcost": "wood!leather!fabric",
+    "rcost": [
+      "wood",
+      "leather",
+      "fabric"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -2196,7 +2645,11 @@
     "value": 22,
     "craftTime": 4268,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -2211,7 +2664,11 @@
     "value": 156,
     "craftTime": 7820,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -2226,7 +2683,11 @@
     "value": 610,
     "craftTime": 14367,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2239,7 +2700,11 @@
     "value": 7874,
     "craftTime": 26360,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M204": 1
     },
@@ -2254,7 +2719,11 @@
     "value": 55905,
     "craftTime": 48364,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -2269,7 +2738,11 @@
     "value": 396930,
     "craftTime": 88738,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -2284,7 +2757,11 @@
     "value": 2103731,
     "craftTime": 121537,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -2299,7 +2776,11 @@
     "value": 6016672,
     "craftTime": 163319,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2312,7 +2793,11 @@
     "value": 55790957,
     "craftTime": 215245,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -2327,7 +2812,11 @@
     "value": 273375691,
     "craftTime": 272554,
     "type": "Armor",
-    "!rcost": "ore!leather!steel",
+    "rcost": [
+      "ore",
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M210": 1
     },
@@ -2342,7 +2831,11 @@
     "value": 26,
     "craftTime": 4814,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M101": 1
     },
@@ -2357,7 +2850,11 @@
     "value": 184,
     "craftTime": 8805,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -2372,7 +2869,11 @@
     "value": 721,
     "craftTime": 16199,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2385,7 +2886,11 @@
     "value": 9305,
     "craftTime": 29734,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -2400,7 +2905,11 @@
     "value": 66070,
     "craftTime": 54560,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M205": 1
     },
@@ -2415,7 +2924,11 @@
     "value": 469099,
     "craftTime": 100105,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M206": 1
     },
@@ -2430,7 +2943,11 @@
     "value": 2486228,
     "craftTime": 137106,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -2445,7 +2962,11 @@
     "value": 7110612,
     "craftTime": 184240,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2458,7 +2979,11 @@
     "value": 65934767,
     "craftTime": 242817,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -2473,7 +2998,11 @@
     "value": 323080362,
     "craftTime": 307468,
     "type": "Cloaks",
-    "!rcost": "leather!fabric!mana",
+    "rcost": [
+      "leather",
+      "fabric",
+      "mana"
+    ],
     "mcost": {
       "M110": 1
     },
@@ -2488,7 +3017,11 @@
     "value": 24,
     "craftTime": 4444,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M201": 1
     },
@@ -2503,7 +3036,11 @@
     "value": 170,
     "craftTime": 8135,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -2518,7 +3055,11 @@
     "value": 665,
     "craftTime": 14950,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2531,7 +3072,11 @@
     "value": 8589,
     "craftTime": 27446,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -2546,7 +3091,11 @@
     "value": 60988,
     "craftTime": 50363,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -2561,7 +3110,11 @@
     "value": 433015,
     "craftTime": 92405,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M106": 1
     },
@@ -2576,7 +3129,11 @@
     "value": 2294979,
     "craftTime": 126560,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -2591,7 +3148,11 @@
     "value": 6563642,
     "craftTime": 170068,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -2604,7 +3165,11 @@
     "value": 60862862,
     "craftTime": 224139,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -2619,7 +3184,11 @@
     "value": 298228026,
     "craftTime": 283817,
     "type": "Vests",
-    "!rcost": "wood!leather!bone",
+    "rcost": [
+      "wood",
+      "leather",
+      "bone"
+    ],
     "mcost": {
       "M210": 1
     },
@@ -2634,7 +3203,11 @@
     "value": 32,
     "craftTime": 6518,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -2649,7 +3222,11 @@
     "value": 195,
     "craftTime": 10264,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M202": 1
     },
@@ -2664,7 +3241,11 @@
     "value": 1190,
     "craftTime": 16187,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -2679,7 +3260,11 @@
     "value": 3995,
     "craftTime": 25530,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 20,
@@ -2692,7 +3277,11 @@
     "value": 44306,
     "craftTime": 40246,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M205": 1
     },
@@ -2707,7 +3296,11 @@
     "value": 270270,
     "craftTime": 63443,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -2722,7 +3315,11 @@
     "value": 1648651,
     "craftTime": 100009,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -2737,7 +3334,11 @@
     "value": 10056777,
     "craftTime": 157649,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M108": 1
     },
@@ -2752,7 +3353,11 @@
     "value": 33187365,
     "craftTime": 244438,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 45,
@@ -2765,7 +3370,11 @@
     "value": 356009908,
     "craftTime": 372687,
     "type": "Shields",
-    "!rcost": "steel!silver!herb",
+    "rcost": [
+      "steel",
+      "silver",
+      "herb"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -2780,7 +3389,11 @@
     "value": 28,
     "craftTime": 6337,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -2795,7 +3408,11 @@
     "value": 170,
     "craftTime": 9942,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -2810,7 +3427,11 @@
     "value": 1041,
     "craftTime": 15733,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M103": 1
     },
@@ -2825,7 +3446,11 @@
     "value": 3496,
     "craftTime": 24820,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 20,
@@ -2838,7 +3463,11 @@
     "value": 38468,
     "craftTime": 38826,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -2853,7 +3482,11 @@
     "value": 236486,
     "craftTime": 61680,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -2868,7 +3501,11 @@
     "value": 1442570,
     "craftTime": 97231,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -2883,7 +3520,11 @@
     "value": 8499679,
     "craftTime": 148045,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M108": 1
     },
@@ -2898,7 +3539,11 @@
     "value": 29038944,
     "craftTime": 237648,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 45,
@@ -2911,7 +3556,11 @@
     "value": 311508669,
     "craftTime": 362335,
     "type": "Wards",
-    "!rcost": "paper!herb!mana",
+    "rcost": [
+      "paper",
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M210": 1
     },
@@ -2926,7 +3575,11 @@
     "value": 29,
     "craftTime": 5626,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M101": 1
     },
@@ -2941,7 +3594,11 @@
     "value": 176,
     "craftTime": 8823,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -2956,7 +3613,11 @@
     "value": 1079,
     "craftTime": 13978,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -2971,7 +3632,11 @@
     "value": 3621,
     "craftTime": 22035,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 20,
@@ -2984,7 +3649,11 @@
     "value": 40152,
     "craftTime": 34736,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M205": 1
     },
@@ -2999,7 +3668,11 @@
     "value": 244932,
     "craftTime": 54757,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -3014,7 +3687,11 @@
     "value": 1494090,
     "craftTime": 86317,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -3029,7 +3706,11 @@
     "value": 9113954,
     "craftTime": 136066,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M108": 1
     },
@@ -3044,7 +3725,11 @@
     "value": 30076049,
     "craftTime": 210973,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 45,
@@ -3057,7 +3742,11 @@
     "value": 322633979,
     "craftTime": 321665,
     "type": "Thrown",
-    "!rcost": "wood!steel!silver",
+    "rcost": [
+      "wood",
+      "steel",
+      "silver"
+    ],
     "mcost": {
       "M210": 1
     },
@@ -3072,7 +3761,11 @@
     "value": 27,
     "craftTime": 5238,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -3087,7 +3780,11 @@
     "value": 164,
     "craftTime": 8221,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M202": 1
     },
@@ -3102,7 +3799,11 @@
     "value": 1004,
     "craftTime": 13006,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -3117,7 +3818,11 @@
     "value": 6128,
     "craftTime": 20515,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M104": 1
     },
@@ -3132,7 +3837,11 @@
     "value": 20561,
     "craftTime": 32340,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 25,
@@ -3145,7 +3854,11 @@
     "value": 228041,
     "craftTime": 50981,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -3160,7 +3873,11 @@
     "value": 1391050,
     "craftTime": 80364,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -3175,7 +3892,11 @@
     "value": 8485405,
     "craftTime": 126683,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -3190,7 +3911,11 @@
     "value": 50912433,
     "craftTime": 196423,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": {
       "M109": 1
     },
@@ -3205,7 +3930,11 @@
     "value": 165210848,
     "craftTime": 299481,
     "type": "Offhand",
-    "!rcost": "ore!wood!bone",
+    "rcost": [
+      "ore",
+      "wood",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 50,
@@ -3218,7 +3947,11 @@
     "value": 31,
     "craftTime": 6647,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -3233,7 +3966,11 @@
     "value": 189,
     "craftTime": 10472,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M102": 1
     },
@@ -3248,7 +3985,11 @@
     "value": 1153,
     "craftTime": 16509,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -3263,7 +4004,11 @@
     "value": 7036,
     "craftTime": 26034,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M204": 1
     },
@@ -3278,7 +4023,11 @@
     "value": 23608,
     "craftTime": 41041,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 25,
@@ -3291,7 +4040,11 @@
     "value": 261824,
     "craftTime": 64695,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -3306,7 +4059,11 @@
     "value": 1597131,
     "craftTime": 101983,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -3321,7 +4078,11 @@
     "value": 9742502,
     "craftTime": 160761,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -3336,7 +4097,11 @@
     "value": 58455016,
     "craftTime": 249262,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -3351,7 +4116,11 @@
     "value": 189686529,
     "craftTime": 380043,
     "type": "Tomes",
-    "!rcost": "fabric!paper!mana",
+    "rcost": [
+      "fabric",
+      "paper",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 50,
@@ -3364,7 +4133,11 @@
     "value": 30,
     "craftTime": 5820,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M201": 1
     },
@@ -3379,7 +4152,11 @@
     "value": 183,
     "craftTime": 9174,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M102": 1
     },
@@ -3394,7 +4171,11 @@
     "value": 1116,
     "craftTime": 14457,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -3409,7 +4190,11 @@
     "value": 6809,
     "craftTime": 22794,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -3424,7 +4209,11 @@
     "value": 22846,
     "craftTime": 35934,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 25,
@@ -3437,7 +4226,11 @@
     "value": 253378,
     "craftTime": 56645,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -3452,7 +4245,11 @@
     "value": 1545611,
     "craftTime": 89294,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -3467,7 +4264,11 @@
     "value": 9428828,
     "craftTime": 140767,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -3482,7 +4283,11 @@
     "value": 56569371,
     "craftTime": 218248,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -3497,7 +4302,11 @@
     "value": 183567609,
     "craftTime": 332756,
     "type": "Darts",
-    "!rcost": "paper!bone!steel",
+    "rcost": [
+      "paper",
+      "bone",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 50,
@@ -3510,7 +4319,10 @@
     "value": 13,
     "craftTime": 2787,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -3525,7 +4337,10 @@
     "value": 98,
     "craftTime": 5430,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M102": 1
     },
@@ -3540,7 +4355,10 @@
     "value": 741,
     "craftTime": 10610,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M203": 1
     },
@@ -3555,7 +4373,10 @@
     "value": 3016,
     "craftTime": 20288,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3568,7 +4389,10 @@
     "value": 40028,
     "craftTime": 38274,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -3583,7 +4407,10 @@
     "value": 288207,
     "craftTime": 71214,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -3598,7 +4425,10 @@
     "value": 1527499,
     "craftTime": 97536,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -3613,7 +4443,10 @@
     "value": 7942998,
     "craftTime": 131067,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M108": 1
     },
@@ -3628,7 +4461,10 @@
     "value": 22280112,
     "craftTime": 172738,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3641,7 +4477,10 @@
     "value": 198495540,
     "craftTime": 218731,
     "type": "Potions",
-    "!rcost": "herb!mana",
+    "rcost": [
+      "herb",
+      "mana"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -3656,7 +4495,10 @@
     "value": 25,
     "craftTime": 4968,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -3671,7 +4513,10 @@
     "value": 190,
     "craftTime": 9757,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M102": 1
     },
@@ -3686,7 +4531,10 @@
     "value": 1425,
     "craftTime": 18910,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -3701,7 +4549,10 @@
     "value": 5800,
     "craftTime": 36162,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3714,7 +4565,10 @@
     "value": 76978,
     "craftTime": 68219,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -3729,7 +4583,10 @@
     "value": 554245,
     "craftTime": 126929,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M206": 1
     },
@@ -3744,7 +4601,10 @@
     "value": 2937499,
     "craftTime": 173845,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M107": 1
     },
@@ -3759,7 +4619,10 @@
     "value": 15274997,
     "craftTime": 233610,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M208": 1
     },
@@ -3774,7 +4637,10 @@
     "value": 42846369,
     "craftTime": 307883,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3787,7 +4653,10 @@
     "value": 381772192,
     "craftTime": 389909,
     "type": "Pendants",
-    "!rcost": "fabric!silver",
+    "rcost": [
+      "fabric",
+      "silver"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -3802,7 +4671,10 @@
     "value": 14,
     "craftTime": 2852,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -3817,7 +4689,10 @@
     "value": 106,
     "craftTime": 5579,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -3832,7 +4707,10 @@
     "value": 798,
     "craftTime": 10855,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -3847,7 +4725,10 @@
     "value": 3248,
     "craftTime": 20757,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3860,7 +4741,10 @@
     "value": 43107,
     "craftTime": 39157,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M303": 1
     },
@@ -3875,7 +4759,10 @@
     "value": 310377,
     "craftTime": 72857,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M206": 1
     },
@@ -3890,7 +4777,10 @@
     "value": 1644999,
     "craftTime": 99787,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M107": 1
     },
@@ -3905,7 +4795,10 @@
     "value": 8553998,
     "craftTime": 134092,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M404": 1
     },
@@ -3920,7 +4813,10 @@
     "value": 23993967,
     "craftTime": 176725,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -3933,7 +4829,10 @@
     "value": 213764428,
     "craftTime": 223778,
     "type": "Rings",
-    "!rcost": "ore!silver",
+    "rcost": [
+      "ore",
+      "silver"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -3948,7 +4847,10 @@
     "value": 23,
     "craftTime": 4571,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M201": 1
     },
@@ -3963,7 +4865,10 @@
     "value": 174,
     "craftTime": 8935,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -3978,7 +4883,10 @@
     "value": 1311,
     "craftTime": 17398,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M302": 1
     },
@@ -3993,7 +4901,10 @@
     "value": 9701,
     "craftTime": 33268,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M104": 1
     },
@@ -4008,7 +4919,10 @@
     "value": 38951,
     "craftTime": 62761,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -4021,7 +4935,10 @@
     "value": 509905,
     "craftTime": 116775,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M503": 1
     },
@@ -4036,7 +4953,10 @@
     "value": 2702499,
     "craftTime": 159938,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -4051,7 +4971,10 @@
     "value": 14052997,
     "craftTime": 214921,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -4066,7 +4989,10 @@
     "value": 71670289,
     "craftTime": 283252,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": {
       "M405": 1
     },
@@ -4081,7 +5007,10 @@
     "value": 193151430,
     "craftTime": 358669,
     "type": "Instruments",
-    "!rcost": "fabric!bone",
+    "rcost": [
+      "fabric",
+      "bone"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -4094,7 +5023,10 @@
     "value": 12,
     "craftTime": 2328,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M101": 1
     },
@@ -4109,7 +5041,10 @@
     "value": 91,
     "craftTime": 4562,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M401": 1
     },
@@ -4124,7 +5059,10 @@
     "value": 684,
     "craftTime": 8861,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M203": 1
     },
@@ -4139,7 +5077,10 @@
     "value": 5061,
     "craftTime": 16943,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -4154,7 +5095,10 @@
     "value": 20322,
     "craftTime": 31965,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -4167,7 +5111,10 @@
     "value": 266037,
     "craftTime": 59475,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M403": 1
     },
@@ -4182,7 +5129,10 @@
     "value": 1409999,
     "craftTime": 81459,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M207": 1
     },
@@ -4197,7 +5147,10 @@
     "value": 7331998,
     "craftTime": 109463,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M504": 1
     },
@@ -4212,7 +5165,10 @@
     "value": 37393194,
     "craftTime": 144265,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": {
       "M305": 1
     },
@@ -4227,7 +5183,10 @@
     "value": 100774659,
     "craftTime": 182676,
     "type": "Belts",
-    "!rcost": "leather!steel",
+    "rcost": [
+      "leather",
+      "steel"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -4240,7 +5199,10 @@
     "value": 21,
     "craftTime": 4173,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M301": 1
     },
@@ -4255,7 +5217,10 @@
     "value": 159,
     "craftTime": 8165,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M501": 1
     },
@@ -4270,7 +5235,10 @@
     "value": 1197,
     "craftTime": 15885,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M402": 1
     },
@@ -4285,7 +5253,10 @@
     "value": 8857,
     "craftTime": 30374,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M502": 1
     },
@@ -4300,7 +5271,10 @@
     "value": 35564,
     "craftTime": 57303,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
@@ -4313,7 +5287,10 @@
     "value": 465565,
     "craftTime": 106621,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M106": 1
     },
@@ -4328,7 +5305,10 @@
     "value": 2467499,
     "craftTime": 146030,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M304": 1
     },
@@ -4343,7 +5323,10 @@
     "value": 12830998,
     "craftTime": 196232,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M108": 1
     },
@@ -4358,7 +5341,10 @@
     "value": 65438090,
     "craftTime": 258622,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": {
       "M505": 1
     },
@@ -4373,7 +5359,10 @@
     "value": 176355654,
     "craftTime": 327480,
     "type": "Earrings",
-    "!rcost": "silver!mana",
+    "rcost": [
+      "silver",
+      "mana"
+    ],
     "mcost": "",
     "actTime": "",
     "pow": 0,
