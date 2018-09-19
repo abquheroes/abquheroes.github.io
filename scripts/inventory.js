@@ -1,33 +1,31 @@
-$('#inventory').on("click",".inventorySellOne",(e) => {
+$('#inventory').on("click",".inventorySell",(e) => {
     e.preventDefault();
     const id = $(e.target).attr("id");
-    const rarity = $(e.target).attr("r");
-    Inventory.sellItem(id,rarity,1);
+    const rarity = parseInt($(e.target).attr("r"));
+    Inventory.sellInventory(id,rarity);
 })
 
-$('#inventory').on("click",".inventorySellAll",(e) => {
-    e.preventDefault();
-    const id = $(e.target).attr("id");
-    const rarity = $(e.target).attr("r");
-    Inventory.sellItem(id,rarity);
+const $autoSellToggle = $("#autoSellToggle");
+
+$(document).on("click","#autoSellToggle",(e) => {
+    autoSellToggle = !autoSellToggle;
+    if (autoSellToggle) $autoSellToggle.removeClass("noAutoSell").addClass("yesAutoSell").html("Autosell Commons");
+    else $autoSellToggle.removeClass("yesAutoSell").addClass("noAutoSell").html("Don't Autosell Commons");
 })
 
 let containerid = 0;
+let autoSellToggle = false;
 
 class itemContainer {
-    constructor(id,rarity,amt) {
+    constructor(id,rarity) {
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
         this.type = this.item.type;
         this.picName = this.item.itemPicName();
         this.rarity = rarity;
-        this.amt = amt || 1;
         this.containerID = containerid;
         containerid += 1;
-    }
-    match(id,rarity) {
-        return id+rarity === this.id + this.rarity;
     }
     pow() {
         return this.item.pow;
@@ -42,19 +40,17 @@ class itemContainer {
 
 const Inventory = {
     inv : [],
-    addToInventory(id,rarity,amt,norefresh) {
-        amt = amt || 1;
-        for (let i=0;i<this.inv.length;i++) {
-            if (this.inv[i].match(id,rarity)) {
-                this.inv[i].amt += amt;
-                if (!norefresh) refreshInventory();
-                return;
-            }
+    invMax : 20,
+    addToInventory(id,rarity) {
+        if (this.inv.length === this.invMax) {
+            this.sellItem(id,rarity);
         }
-        this.inv.push(new itemContainer(id,rarity,amt));
-        if (!norefresh) {
+        else if (autoSellToggle && rarity === 0) {
+            this.sellItem(id,rarity);
+        }
+        else {
+            this.inv.push(new itemContainer(id,rarity));
             refreshInventory();
-            examineHeroPossibleEquip();
             refreshWorkerAmts();
         }
     },
@@ -62,42 +58,41 @@ const Inventory = {
         const name = recipeList.idToItem(id).name;
         const roll = Math.floor(Math.random() * 1000)
         if (roll <= 1) {
-            this.addToInventory(id,3,1);
+            this.addToInventory(id,3);
             Notifications.exceptionalCraft(name,"epic");
         }
         else if (roll <= 10) {
-            this.addToInventory(id,2,1);
+            this.addToInventory(id,2);
             Notifications.exceptionalCraft(name,"great");
         }
         else if (roll <= 50) {
-            this.addToInventory(id,1,1);
+            this.addToInventory(id,1);
             Notifications.exceptionalCraft(name,"good");
         }
-        else this.addToInventory(id,0,1);
+        else this.addToInventory(id,0);
     },
-    removeFromInventory(id,rarity,amt) {
+    removeFromInventory(id,rarity) {
+        console.log(id,rarity);
         for (let i=0;i<this.inv.length;i++) {
-            if (this.inv[i].match(id,rarity)) {
-                this.inv[i].amt -= amt;
-                if (this.inv[i].amt <= 0) this.inv.splice(i, 1);
+            const ic = this.inv[i]
+            console.log(ic.rarity,rarity)
+            if (ic.id === id && ic.rarity === rarity) {
+                this.inv.splice(i,1);
+                refreshInventory();
+                return;
             }
         }
-        refreshInventory();
     },
-    sellItem(id,rarity,amt) {
-        amt = amt || this.itemCount(id,rarity);
-        this.removeFromInventory(id,rarity,amt);
-        const gold = recipeList.idToItem(id).value*amt;
+    sellInventory(id,rarity) {
+        this.removeFromInventory(id,rarity);
+        this.sellItem(id,rarity);
+    },
+    sellItem(id,rarity) {
+        const gold = recipeList.idToItem(id).value*(rarity+1);
         ResourceManager.addMaterial("M001",gold);
     },
-    itemCount(id,rarity) {
-        if(id === "M101") return ResourceManager.idToMaterial("M101").amt;
-        for (let i=0;i<this.inv.length;i++) {
-            if (this.inv[i].match(id,rarity)) return this.inv[i].amt;
-        }
-        return 0;
-    },
     listbyType(types) {
+        return this.inv.filter
         const filtered = [];
         this.inv.forEach(item => {
             if (types.includes(item.type)) {
@@ -116,6 +111,10 @@ const Inventory = {
             }
         }
     },
+    haveItem(id,rarity) {
+        console.log(this.inv.filter(r=>r.id === id && r.rarity === rarity));
+        return this.inv.filter(r=>r.id === id && r.rarity === rarity).length > 0
+    }
 }
 
 $inventory = $("#inventory");
@@ -127,13 +126,9 @@ function refreshInventory() {
         const itemdiv = $("<div/>").addClass("inventoryItem");
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
-        const itemCt = $("<div/>").addClass("inventoryCount").html("x"+item.amt);
-        const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
-        const sellButtons = $("<div/>").addClass('inventorySellButtons');
-        const sellOne = $("<div/>").addClass('inventorySellOne').attr("id",item.id).attr("r",item.rarity).html("Sell 1x");
-        const sellAll = $("<div/>").addClass('inventorySellAll').attr("id",item.id).attr("r",item.rarity).html("Sell Max");
-        sellButtons.append(sellOne,sellAll);
-        itemdiv.append(itemName,itemCt,sellButtons,);
+        //const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
+        const sellButtons = $("<div/>").addClass('inventorySell').attr("id",item.id).attr("r",item.rarity).html("Sell");
+        itemdiv.append(itemName,sellButtons);
         $inventory.append(itemdiv);
     });
 }

@@ -106,14 +106,13 @@ const WorkerManager = {
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
     },
-    partialsacrifice(workerID,craftID,rarity) {
+    sacrificeItem(workerID,craftID,rarity) {
+        console.log(workerID,craftID,rarity);
+        if (!Inventory.haveItem(craftID,rarity)) return;
         const worker = this.workerByID(workerID);
-        const amt = Inventory.itemCount(craftID,rarity);
-        const needed = worker.sacRemaining(craftID);
-        const adjamt = Math.min(amt,needed);
-        Inventory.removeFromInventory(craftID,rarity,adjamt);
-        if (craftID in worker.donated) worker.donated[craftID] += adjamt;
-        else worker.donated[craftID] = adjamt;
+        Inventory.removeFromInventory(craftID,rarity);
+        if (craftID in worker.donated) worker.donated[craftID] += 1;
+        else worker.donated[craftID] = 1;
     },
 }
 
@@ -174,7 +173,7 @@ function refreshWorkers() {
                 console.log(worker.name,adjamt);
                 if (adjamt === 0) return;
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
-                if (Inventory.itemCount(res,0) === 0) d5a.addClass("cantAfford");
+                if (!Inventory.haveItem(res,0)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
                 const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(adjamt,2));
                 d5.append(d5a.append(d5b));
@@ -192,7 +191,7 @@ function refreshWorkerAmts() {
     WorkerManager.workers.forEach(worker => {
         if (worker.maxlevel()) return;
         worker.thislvlreq().forEach(reqs => {
-            if (Inventory.itemCount(reqs[0],reqs[1]) === 0) $("#ws"+worker.workerID+reqs[0]+reqs[1]).addClass("cantAfford");
+            if (!Inventory.haveItem(reqs[0],reqs[1])) $("#ws"+worker.workerID+reqs[0]+reqs[1]).addClass("cantAfford");
             else $("#ws"+worker.workerID+reqs[0]+reqs[1]).removeClass("cantAfford");
         });
     });
@@ -219,7 +218,7 @@ $(document).on("click",".itemToSacDiv", (e) => {
     const divID = $(e.currentTarget).attr("id");
     const workerID = divID.substring(2,6);
     const craftID = divID.substring(6,11);
-    const rarity = divID.substring(11,12);
-    WorkerManager.partialsacrifice(workerID,craftID,rarity);
+    const rarity = parseInt(divID.substring(11,12));
+    WorkerManager.sacrificeItem(workerID,craftID,rarity);
     refreshWorkers();
 });

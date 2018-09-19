@@ -11,12 +11,6 @@ const devtools = {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,100);
         })
-        recipeList.recipes.forEach(recipe => {
-            Inventory.addToInventory(recipe.id,0,10,true);
-            Inventory.addToInventory(recipe.id,1,10,true);
-            Inventory.addToInventory(recipe.id,2,10,true);
-        })
-        refreshInventory();
         refreshWorkers();
         examineHeroPossibleEquip();
         refreshRecipeFilters();
