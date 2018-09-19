@@ -170,7 +170,6 @@ function refreshWorkers() {
                     return;
                 }
                 const adjamt = worker.sacRemaining(reqs[0])
-                console.log(worker.name,adjamt);
                 if (adjamt === 0) return;
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
                 if (!Inventory.haveItem(res,0)) d5a.addClass("cantAfford");

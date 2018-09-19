@@ -92,28 +92,16 @@ const Inventory = {
         ResourceManager.addMaterial("M001",gold);
     },
     listbyType(types) {
-        return this.inv.filter
-        const filtered = [];
-        this.inv.forEach(item => {
-            if (types.includes(item.type)) {
-                filtered.push(item);
-            }
-        });
-        return filtered;
+        return this.inv.filter(r=>types.includes(r.type));
     },
-    equipItem(containerID) {
-        for (let i=0;i<this.inv.length;i++) {
-            if (this.inv[i].containerID === containerID) {
-                const id = this.inv[i].id;
-                const rarity = this.inv[i].rarity;
-                this.removeFromInventory(id,rarity,1);
-                return new itemContainer(id,rarity);
-            }
-        }
+    containerToItem(containerID) {
+        return this.inv.find(r=>r.containerID===containerID)
     },
     haveItem(id,rarity) {
-        console.log(this.inv.filter(r=>r.id === id && r.rarity === rarity));
         return this.inv.filter(r=>r.id === id && r.rarity === rarity).length > 0
+    },
+    full() {
+        return this.inv.length === this.invMax;
     }
 }
 

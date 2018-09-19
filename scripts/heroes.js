@@ -122,22 +122,19 @@ class Hero {
     equip(item) {
         const type = item.type;
         if (this.slot1Type.includes(type)) this.slot1 = item;
-        else if (this.slot2Type.includes(type)) this.slot2 = item;
-        else if (this.slot3Type.includes(type)) this.slot3 = item;
-        else if (this.slot4Type.includes(type)) this.slot4 = item;
-        else if (this.slot5Type.includes(type)) this.slot5 = item;
+        if (this.slot2Type.includes(type)) this.slot2 = item;
+        if (this.slot3Type.includes(type)) this.slot3 = item;
+        if (this.slot4Type.includes(type)) this.slot4 = item;
+        if (this.slot5Type.includes(type)) this.slot5 = item;
+        if (this.slot6Type.includes(type)) this.slot6 = item;
     }
-    unequip(slot) {
-        console.log(slot);
-        if (slot === 0) {
-            this.slot1 = null;
-            console.log(this.slot1);
-        }
-        else if (slot === 1) this.slot2 = null;
-        else if (slot === 2) this.slot3 = null;
-        else if (slot === 3) this.slot4 = null;
-        else if (slot === 4) this.slot5 = null;
-        else this.slot6 = null;
+    removeSlot(slot) {
+        if (slot === 0) this.slot1 = null;
+        if (slot === 1) this.slot2 = null;
+        if (slot === 2) this.slot3 = null;
+        if (slot === 3) this.slot4 = null;
+        if (slot === 4) this.slot5 = null;
+        if (slot === 6) this.slot6 = null;
     }
     slotTypesByNum(num) {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
@@ -169,6 +166,23 @@ class Hero {
             this.lvl += 1;
         }
     }
+    unequip(slot) {
+        if (Inventory.full()) {
+            Notifications.inventoryFull();
+            return;
+        }
+        const item = this.getSlot(slot);
+        this.removeSlot(slot);
+        Inventory.addToInventory(item.id,item.rarity);
+    }
+    hasEquip(type) {
+        if (this.slot1Type.includes(type)) return this.slot1 !== null;
+        if (this.slot2Type.includes(type)) return this.slot2 !== null;
+        if (this.slot3Type.includes(type)) return this.slot3 !== null;
+        if (this.slot4Type.includes(type)) return this.slot4 !== null;
+        if (this.slot5Type.includes(type)) return this.slot5 !== null;
+        if (this.slot6Type.includes(type)) return this.slot6 !== null;
+    }
 }
 
 const HeroManager = {
@@ -189,8 +203,13 @@ const HeroManager = {
         return this.heroes.find(hero => hero.id === ID);
     },
     equipItem(containerID,heroID) {
-        const item = Inventory.equipItem(containerID);
+        const item = Inventory.containerToItem(containerID);
         const hero = this.idToHero(heroID);
+        if (hero.hasEquip(item.type)) {
+            Notifications.alreadyEquipped();
+            return;
+        }
+        Inventory.removeFromInventory(item.id,item.rarity);
         hero.equip(item);
     },
     getSlotTypes(slot,heroID) {
@@ -203,9 +222,7 @@ const HeroManager = {
     },
     unequip(slot,heroID) {
         const hero = this.idToHero(heroID);
-        const item = hero.getSlot(slot);
         hero.unequip(slot);
-        Inventory.addToInventory(item.id,item.rarity,1);
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
@@ -312,25 +329,20 @@ let examineSlotCache = 0;
 let examineHeroCache = null;
 
 function examineHeroPossibleEquip(slot,heroID) {
-    if (slot === 0) examineSlotCache = 0; //workaround for next line...
-    slot = slot || examineSlotCache;
-    heroID = heroID || examineHeroCache;
-    examineSlotCache = slot;
-    examineHeroCache = heroID;
-    if (slot === null || heroID === null) return;
     const types = HeroManager.getSlotTypes(slot,heroID);
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
     const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
-    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2);
+    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
+    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
     table.append(hrow);
-    console.log(Inventory.listbyType(types));
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
-        const td2 = $('<div/>').addClass('EHPEstat').html("5");
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2);
+        const td2 = $('<div/>').addClass('EHPEstat').html(itemContainer.pow());
+        const td3 = $('<div/>').addClass('EHPEstat').html(itemContainer.hp());
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3);
         table.append(row);
     });
     $heroEquipmentList.append(table);
@@ -338,11 +350,9 @@ function examineHeroPossibleEquip(slot,heroID) {
 
 function equipOrUnequipSlot(slot,heroID) {
     if (HeroManager.slotEmpty(slot,heroID)) {
-        console.log("get equip");
         examineHeroPossibleEquip(slot,heroID)
     }
     else {
-        console.log("unequip");
         HeroManager.unequip(slot,heroID);
     }
     examineHero(heroID);
@@ -363,7 +373,6 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     e.preventDefault();
     const slot = parseInt($(e.currentTarget).attr("data-value"));
     const heroID = $(e.currentTarget).attr("heroID");
-    console.log(slot,heroID);
     equipOrUnequipSlot(slot,heroID);
 });
 
@@ -371,8 +380,8 @@ $(document).on('click', "div.EHPErow", (e) => {
     //equip the clicked item
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
-    const itemCOntainerID = parseInt($(e.currentTarget).attr("id"));
-    HeroManager.equipItem(itemCOntainerID,heroID);
+    const containerID = parseInt($(e.currentTarget).attr("id"));
+    HeroManager.equipItem(containerID,heroID);
     examineHero(heroID);
-    examineHeroPossibleEquip();
+    $heroEquipmentList.empty();
 });
