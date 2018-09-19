@@ -1670,7 +1670,7 @@ select {
     overflow: auto;
 }
 
-.hero-placeholder-details {
+.hero-placeholder-details, .events-placeholder-details {
     display: block;
     padding: 20px;
     font-size: 0.9em;
