@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -65,7 +65,7 @@
     --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
 }
 
-.lm-btn, .dm-btn, .cp-btn, .cf-btn {
+.lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle {
     margin-bottom: 5px;
     padding: 7px 10px;
     width: 100%;
@@ -74,11 +74,13 @@
     border-radius: 25px;
     background-color: var(--bg);
     color: var(--text);
+    font-size: 0.8em;
+    text-align: center;
     text-transform: uppercase;
     cursor: pointer;
 }
 
-.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover {
+.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover, #autoSellToggle:hover {
     background-color: var(--bg-2);
 }
 
@@ -91,7 +93,7 @@ body{
     margin: 0;
 }
 
-#Actions>h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer {
+#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -282,6 +284,7 @@ body{
 }
 
 #right-side-content {
+    padding: 0 10px;
     border-left: 1px solid var(--border);
     height: calc(100vh - 50px);
     overflow-y: auto;
@@ -293,16 +296,22 @@ body{
     cursor: default;
 }
 
-#DungeonSideBar {
-    padding: 0 10px;
-}
-
 #DungeonSideBarStatus {
     text-align: center;
     background-color: var(--bg-2);
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 15px;
+}
+
+.dungeonSideBarMember {
+    display: flex;
+    align-items: center;
+}
+
+.dungeonSideBarMemberHP {
+    flex: 1;
+    margin-left: 10px;
 }
 
 #inv-header {
@@ -692,14 +701,13 @@ select {
 
 /* END OF JQUERY UI */
 
-#Actions>h1 {
+#Actions > h1 {
     margin: 10px 0;
     padding: 0 20px;
 }
 
 #ActionSlots {
     display: block;
-    padding: 0 10px;
     width: 100%;
 }
 
