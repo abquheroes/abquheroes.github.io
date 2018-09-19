@@ -72,10 +72,8 @@ const Inventory = {
         else this.addToInventory(id,0);
     },
     removeFromInventory(id,rarity) {
-        console.log(id,rarity);
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
-            console.log(ic.rarity,rarity)
             if (ic.id === id && ic.rarity === rarity) {
                 this.inv.splice(i,1);
                 refreshInventory();

@@ -19,7 +19,6 @@ const EventManager = {
         refreshEvents();
     },
     idToEvent(eventID) {
-        console.log(this.events);
         return this.events.find(event => event.id === eventID);
     },
     addEventDungeon(reward) {

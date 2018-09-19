@@ -68,7 +68,6 @@ const recipeList = {
         return this.recipes.filter(recipe => recipe.type === type && recipe.owned);
     },
     buyBP(id) {
-        console.log(id);
         if (ResourceManager.idToMaterial("M002").amt === 0) return;
         ResourceManager.addMaterial("M002",-1);
         const item = this.idToItem(id);
@@ -84,7 +83,6 @@ function populateRecipe(type) {
     type = type || ItemType.KNIFE;
     $(".recipeRow").hide();
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
-        console.log(recipe.id);
         $("#rr"+recipe.id).show();
     });
     refreshBlueprint(type);
@@ -146,7 +144,6 @@ function refreshBlueprint(type) {
 }
 
 $(document).on('click', '.recipeName', (e) => {
-    console.log("trigger");
     //click on a recipe to slot it
     e.preventDefault();
     const type = $(e.target).attr("id");

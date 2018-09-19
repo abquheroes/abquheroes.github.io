@@ -75,7 +75,6 @@ const DungeonAssist = {
     },
     addDungeonDrop(drop,amt) {
         const found = this.dropList.find(d => d.id === drop)
-        console.log(drop,found);
         if (found === undefined) this.dropList.push({"id":drop,"amt":amt});
         else found.amt += amt;
     }

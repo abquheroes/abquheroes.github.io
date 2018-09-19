@@ -107,7 +107,6 @@ const WorkerManager = {
         return difference.length === 0;
     },
     sacrificeItem(workerID,craftID,rarity) {
-        console.log(workerID,craftID,rarity);
         if (!Inventory.haveItem(craftID,rarity)) return;
         const worker = this.workerByID(workerID);
         Inventory.removeFromInventory(craftID,rarity);

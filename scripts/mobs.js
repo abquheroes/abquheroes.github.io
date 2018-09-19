@@ -121,7 +121,6 @@ class Mob {
             const roll = Math.floor(Math.random() * 100);
             if (success > roll) {
                 DungeonAssist.addDungeonDrop(material,1);
-                console.log(`${material} found!`);
             }
         }
     }
