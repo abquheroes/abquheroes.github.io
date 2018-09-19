@@ -62,7 +62,7 @@ const DungeonAssist = {
         this.dropList = [];
     },
     checkOneTimeDrops(floor) {
-        if (floor % 5 === 0) DungeonAssist.addDungeonDrop("M002",1);
+        //if (floor % 5 === 0) DungeonAssist.addDungeonDrop("M002",1);
         if (floor === 4) EventManager.addOnceEvent(EventTypes.ERYN);
         if (floor === 9) EventManager.addOnceEvent(EventTypes.HERBIE);
         if (floor === 14) EventManager.addOnceEvent(EventTypes.LAKUR);

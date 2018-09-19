@@ -14,7 +14,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M101": 100
+      "M101": 100,
+      "M002": 5
     },
     "minFloor": 1,
     "maxFloor": 150
@@ -34,7 +35,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M102": 100
+      "M102": 100,
+      "M002": 5
     },
     "minFloor": 151,
     "maxFloor": 300
@@ -54,7 +56,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M103": 100
+      "M103": 100,
+      "M002": 5
     },
     "minFloor": 301,
     "maxFloor": 450
@@ -74,7 +77,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M104": 100
+      "M104": 100,
+      "M002": 5
     },
     "minFloor": 451,
     "maxFloor": 600
@@ -94,7 +98,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M105": 100
+      "M105": 100,
+      "M002": 5
     },
     "minFloor": 601,
     "maxFloor": 750
@@ -114,7 +119,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M106": 100
+      "M106": 100,
+      "M002": 5
     },
     "minFloor": 751,
     "maxFloor": 900
@@ -134,7 +140,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M107": 100
+      "M107": 100,
+      "M002": 5
     },
     "minFloor": 901,
     "maxFloor": 1050
@@ -154,7 +161,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M108": 100
+      "M108": 100,
+      "M002": 5
     },
     "minFloor": 1051,
     "maxFloor": 1200
@@ -174,7 +182,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M109": 100
+      "M109": 100,
+      "M002": 5
     },
     "minFloor": 1201,
     "maxFloor": 1350
@@ -194,7 +203,8 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M110": 100
+      "M110": 100,
+      "M002": 5
     },
     "minFloor": 1351,
     "maxFloor": 1500
@@ -214,7 +224,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M201": 100
+      "M201": 100,
+      "M002": 5
     },
     "minFloor": 1,
     "maxFloor": 150
@@ -234,7 +245,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M202": 100
+      "M202": 100,
+      "M002": 5
     },
     "minFloor": 151,
     "maxFloor": 300
@@ -254,7 +266,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M203": 100
+      "M203": 100,
+      "M002": 5
     },
     "minFloor": 301,
     "maxFloor": 450
@@ -274,7 +287,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M204": 100
+      "M204": 100,
+      "M002": 5
     },
     "minFloor": 451,
     "maxFloor": 600
@@ -294,7 +308,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M205": 100
+      "M205": 100,
+      "M002": 5
     },
     "minFloor": 601,
     "maxFloor": 750
@@ -314,7 +329,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M206": 100
+      "M206": 100,
+      "M002": 5
     },
     "minFloor": 751,
     "maxFloor": 900
@@ -334,7 +350,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M207": 100
+      "M207": 100,
+      "M002": 5
     },
     "minFloor": 901,
     "maxFloor": 1050
@@ -354,7 +371,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M208": 100
+      "M208": 100,
+      "M002": 5
     },
     "minFloor": 1051,
     "maxFloor": 1200
@@ -374,7 +392,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M209": 100
+      "M209": 100,
+      "M002": 5
     },
     "minFloor": 1201,
     "maxFloor": 1350
@@ -394,7 +413,8 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M210": 100
+      "M210": 100,
+      "M002": 5
     },
     "minFloor": 1351,
     "maxFloor": 1500
@@ -414,7 +434,8 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M301": 100
+      "M301": 100,
+      "M002": 5
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -434,7 +455,8 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M302": 100
+      "M302": 100,
+      "M002": 5
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -454,7 +476,8 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M303": 100
+      "M303": 100,
+      "M002": 5
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -474,7 +497,8 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M304": 100
+      "M304": 100,
+      "M002": 5
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -494,7 +518,8 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M305": 100
+      "M305": 100,
+      "M002": 5
     },
     "minFloor": 1200,
     "maxFloor": 1500
@@ -514,7 +539,8 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M401": 100
+      "M401": 100,
+      "M002": 5
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -534,7 +560,8 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M402": 100
+      "M402": 100,
+      "M002": 5
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -554,7 +581,8 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M403": 100
+      "M403": 100,
+      "M002": 5
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -574,7 +602,8 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M404": 100
+      "M404": 100,
+      "M002": 5
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -594,7 +623,8 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M405": 100
+      "M405": 100,
+      "M002": 5
     },
     "minFloor": 1200,
     "maxFloor": 1500
@@ -614,7 +644,8 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M501": 100
+      "M501": 100,
+      "M002": 5
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -634,7 +665,8 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M502": 100
+      "M502": 100,
+      "M002": 5
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -654,7 +686,8 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M503": 100
+      "M503": 100,
+      "M002": 5
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -674,7 +707,8 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M504": 100
+      "M504": 100,
+      "M002": 5
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -694,7 +728,8 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M505": 100
+      "M505": 100,
+      "M002": 5
     },
     "minFloor": 1200,
     "maxFloor": 1500
