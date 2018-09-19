@@ -305,6 +305,16 @@ body{
     border-radius: 15px;
 }
 
+.dungeonSideBarMember {
+    display: flex;
+    align-items: center;
+}
+
+.dungeonSideBarMemberHP {
+    flex: 1;
+    margin-left: 10px;
+}
+
 #inv-header {
     position: sticky;
     top: 0;
