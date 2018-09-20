@@ -140,6 +140,13 @@ class Hero {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
         return slots[num];
     }
+    slotTypeIcons(num) {
+        let s = ""
+        this.slotTypesByNum(num).forEach(slot => {
+            s += `<img src="images/equipIcons/${slot}.png">`
+        })
+        return s;
+    }
     slotEmpty(slot) {
         return this.getEquipSlots()[slot] === null;
     }
@@ -299,11 +306,14 @@ function examineHero(ID) {
     const slots = hero.getEquipSlots();
     const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
     $.each(slots, (slotNum,equip) => {
-        let equipText = "Empty"
+        let equipText = "";
         let equipRarity = 0
         if (equip !== null) {
             equipText = equip.picName;
             equipRarity = equip.rarity;
+        }
+        else {
+            equipText = hero.slotTypeIcons(slotNum);
         }
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);

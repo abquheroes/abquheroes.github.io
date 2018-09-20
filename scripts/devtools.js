@@ -12,7 +12,6 @@ const devtools = {
             ResourceManager.addMaterial(material.id,100);
         })
         refreshWorkers();
-        examineHeroPossibleEquip();
         refreshRecipeFilters();
         console.log("done!");
     },
