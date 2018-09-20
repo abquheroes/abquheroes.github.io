@@ -93,7 +93,7 @@ body{
     margin: 0;
 }
 
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer {
+#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -1682,6 +1682,11 @@ select {
 
 .heroExamineTop, .heroExamineStats {
     flex: 1;
+}
+
+.heroExamineEquipmentEquipEmpty {
+    font-size: 0.9em;
+    color: var(--border-2);
 }
 
 .heroExamineTop {
