@@ -126,7 +126,7 @@ function recipeCanCraft() {
     //loops through recipes, adds class if disabled
     $(".recipeRow").removeClass("recipeRowDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.couldCraft(recipe)) $("#rr"+recipe.id).addClass("recipeRowDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#rr"+recipe.id).addClass("recipeRowDisable");
     }) 
 }
 

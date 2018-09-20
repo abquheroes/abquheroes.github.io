@@ -1,8 +1,7 @@
 $('#inventory').on("click",".inventorySell",(e) => {
     e.preventDefault();
     const id = $(e.target).attr("id");
-    const rarity = parseInt($(e.target).attr("r"));
-    Inventory.sellInventory(id,rarity);
+    Inventory.sellInventory(id);
 })
 
 const $autoSellToggle = $("#autoSellToggle");
@@ -39,20 +38,24 @@ class itemContainer {
 }
 
 const Inventory = {
-    inv : [],
+    inv : createArray(20,null),
     invMax : 20,
     addToInventory(id,rarity) {
-        if (this.inv.length === this.invMax) {
+        if (this.full()) {
             this.sellItem(id,rarity);
         }
         else if (autoSellToggle && rarity === 0) {
             this.sellItem(id,rarity);
         }
         else {
-            this.inv.push(new itemContainer(id,rarity));
-            refreshInventory();
-            refreshWorkerAmts();
+            this.findempty(new itemContainer(id,rarity));
         }
+    },
+    findempty(item) {
+        const i = this.inv.findIndex(r=>r===null);
+        this.inv[i] = item;
+        refreshInventory();
+        refreshWorkerAmts();
     },
     craftToInventory(id) {
         const name = recipeList.idToItem(id).name;
@@ -75,31 +78,38 @@ const Inventory = {
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
             if (ic.id === id && ic.rarity === rarity) {
-                this.inv.splice(i,1);
+                this.inv[i] = null;
                 refreshInventory();
+                refreshWorkerAmts();
                 return;
             }
         }
     },
-    sellInventory(id,rarity) {
-        this.removeFromInventory(id,rarity);
-        this.sellItem(id,rarity);
+    sellInventory(indx) {
+        const item = this.inv[indx];
+        this.inv[indx] = null;
+        this.sellItem(item.id,item.rarity);
+        refreshInventory();
+        refreshWorkerAmts();
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
         ResourceManager.addMaterial("M001",gold);
     },
     listbyType(types) {
-        return this.inv.filter(r=>types.includes(r.type));
+        return this.nonblank().filter(r=>types.includes(r.type));
     },
     containerToItem(containerID) {
-        return this.inv.find(r=>r.containerID===containerID)
+        return this.nonblank().find(r=>r.containerID===containerID)
     },
     haveItem(id,rarity) {
-        return this.inv.filter(r=>r.id === id && r.rarity === rarity).length > 0
+        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity).length > 0
     },
     full() {
-        return this.inv.length === this.invMax;
+        return this.nonblank().length === this.inv.length;
+    },
+    nonblank() {
+        return this.inv.filter(r=>r !== null);
     }
 }
 
@@ -108,12 +118,17 @@ $inventory = $("#inventory");
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
-    Inventory.inv.forEach(item => {
+    Inventory.inv.forEach((item,i) => {
         const itemdiv = $("<div/>").addClass("inventoryItem");
+        if (item === null) {
+            itemdiv.html("Empty");
+            $inventory.append(itemdiv);
+            return;
+        }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
         //const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
-        const sellButtons = $("<div/>").addClass('inventorySell').attr("id",item.id).attr("r",item.rarity).html("Sell");
+        const sellButtons = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
         itemdiv.append(itemName,sellButtons);
         $inventory.append(itemdiv);
     });

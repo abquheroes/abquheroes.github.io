@@ -51,3 +51,12 @@ function timeSince(startTime,endTime) {
     else s += diff + " seconds, ";
     return s.slice(0, -2);
 }
+
+function createArray(len, itm) {
+    const arr = [];
+    while (len > 0) {
+        arr.push(itm);
+        len--;
+    }
+    return arr;
+}
