@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -1670,7 +1670,7 @@ select {
     overflow: auto;
 }
 
-.hero-placeholder-details {
+.hero-placeholder-details, .events-placeholder-details {
     display: block;
     padding: 20px;
     font-size: 0.9em;
@@ -2155,16 +2155,20 @@ select {
 
 #eventContainer {
     display: flex;
+    height: 100%;
 }
 
 #eventList {
-    flex: 1;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    background-color: var(--bg);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
 }
 
 .eventList {
     padding: 15px;
-    background-color: var(--bg);
-    border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     cursor: pointer;
 }
@@ -2174,13 +2178,26 @@ select {
 }
 
 #eventContent {
-    flex: 2;
+    flex: 1;
+    font-size: 0.9em;
+    padding: 15px;
+}
+
+.rewardDiv:before, .eventMessage:before {
+    position: relative;
+    display: block;
+    padding: 5px 0;
+    border-bottom: 2px solid var(--border);
 }
 
 .eventMessage {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+}
+
+.eventMessage:before {
+    content: "Dungeon Complete!";
+    margin-bottom: 10px;
 }
 
 .eventConfirm {
@@ -2198,7 +2215,13 @@ select {
     cursor: pointer;
 }
 
+.rewardDiv:before {
+    content: "Your Rewards!";
+    margin-top: 25px;
+}
+
 .rewardCard {
+    position: relative;
     padding: 3px 10px;
     margin-top: 10px;
     display: inline-flex;
@@ -2501,25 +2524,20 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.rewardImage.tooltip:before {
-    left: unset;
-    right: unset;
-    bottom: unset;
-    top: 60%;
-    margin: 20px 0 0 2px;
-    transform: rotate(360deg);
+.rewardCard.tooltip:before {
+    margin-top: -40px;
 }
 
-.rewardImage.tooltip:hover:before {
-    margin-top: 0px;
+.rewardCard.tooltip:hover:before {
+    margin-top: -20px;
 } 
 
-.rewardImage.tooltip:after {
-    left: -60px;
-    right: unset;
-    bottom: unset;
+.rewardCard.tooltip:after {
+    left: -50%;
+    right: -50%;
+    margin-left: -8px;
+    bottom: 130%;
     width: 120px;
-    top: 130%;
 }
 
 .ProgressCard.tooltip:after {
