@@ -143,7 +143,7 @@ class Hero {
     slotTypeIcons(num) {
         let s = ""
         this.slotTypesByNum(num).forEach(slot => {
-            s += `<img src="images/equipIcons/${slot}.png">`
+            s += slot.toUpperCase() + "<br>";
         })
         return s;
     }
@@ -318,6 +318,7 @@ function examineHero(ID) {
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
+        if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b),d6);
     });
