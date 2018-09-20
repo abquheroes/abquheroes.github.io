@@ -15,7 +15,7 @@
     "target": "first",
     "drops": {
       "M101": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1,
     "maxFloor": 150
@@ -36,7 +36,7 @@
     "target": "first",
     "drops": {
       "M102": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 151,
     "maxFloor": 300
@@ -57,7 +57,7 @@
     "target": "first",
     "drops": {
       "M103": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 301,
     "maxFloor": 450
@@ -78,7 +78,7 @@
     "target": "first",
     "drops": {
       "M104": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 451,
     "maxFloor": 600
@@ -99,7 +99,7 @@
     "target": "first",
     "drops": {
       "M105": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 601,
     "maxFloor": 750
@@ -120,7 +120,7 @@
     "target": "first",
     "drops": {
       "M106": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 751,
     "maxFloor": 900
@@ -141,7 +141,7 @@
     "target": "first",
     "drops": {
       "M107": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 901,
     "maxFloor": 1050
@@ -162,7 +162,7 @@
     "target": "first",
     "drops": {
       "M108": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1051,
     "maxFloor": 1200
@@ -183,7 +183,7 @@
     "target": "first",
     "drops": {
       "M109": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1201,
     "maxFloor": 1350
@@ -204,7 +204,7 @@
     "target": "first",
     "drops": {
       "M110": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1351,
     "maxFloor": 1500
@@ -225,7 +225,7 @@
     "target": "random",
     "drops": {
       "M201": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1,
     "maxFloor": 150
@@ -246,7 +246,7 @@
     "target": "random",
     "drops": {
       "M202": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 151,
     "maxFloor": 300
@@ -267,7 +267,7 @@
     "target": "random",
     "drops": {
       "M203": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 301,
     "maxFloor": 450
@@ -288,7 +288,7 @@
     "target": "random",
     "drops": {
       "M204": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 451,
     "maxFloor": 600
@@ -309,7 +309,7 @@
     "target": "random",
     "drops": {
       "M205": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 601,
     "maxFloor": 750
@@ -330,7 +330,7 @@
     "target": "random",
     "drops": {
       "M206": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 751,
     "maxFloor": 900
@@ -351,7 +351,7 @@
     "target": "random",
     "drops": {
       "M207": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 901,
     "maxFloor": 1050
@@ -372,7 +372,7 @@
     "target": "random",
     "drops": {
       "M208": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1051,
     "maxFloor": 1200
@@ -393,7 +393,7 @@
     "target": "random",
     "drops": {
       "M209": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1201,
     "maxFloor": 1350
@@ -414,7 +414,7 @@
     "target": "random",
     "drops": {
       "M210": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1351,
     "maxFloor": 1500
@@ -435,7 +435,7 @@
     "target": "highhp",
     "drops": {
       "M301": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -456,7 +456,7 @@
     "target": "highhp",
     "drops": {
       "M302": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -477,7 +477,7 @@
     "target": "highhp",
     "drops": {
       "M303": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -498,7 +498,7 @@
     "target": "highhp",
     "drops": {
       "M304": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -519,7 +519,7 @@
     "target": "highhp",
     "drops": {
       "M305": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1200,
     "maxFloor": 1500
@@ -540,7 +540,7 @@
     "target": "first",
     "drops": {
       "M401": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -561,7 +561,7 @@
     "target": "first",
     "drops": {
       "M402": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -582,7 +582,7 @@
     "target": "first",
     "drops": {
       "M403": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -603,7 +603,7 @@
     "target": "first",
     "drops": {
       "M404": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -624,7 +624,7 @@
     "target": "first",
     "drops": {
       "M405": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1200,
     "maxFloor": 1500
@@ -645,7 +645,7 @@
     "target": "lowhp",
     "drops": {
       "M501": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1,
     "maxFloor": 300
@@ -666,7 +666,7 @@
     "target": "lowhp",
     "drops": {
       "M502": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 301,
     "maxFloor": 600
@@ -687,7 +687,7 @@
     "target": "lowhp",
     "drops": {
       "M503": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 601,
     "maxFloor": 900
@@ -708,7 +708,7 @@
     "target": "lowhp",
     "drops": {
       "M504": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 901,
     "maxFloor": 1200
@@ -729,7 +729,7 @@
     "target": "lowhp",
     "drops": {
       "M505": 100,
-      "M002": 5
+      "M002": 10
     },
     "minFloor": 1200,
     "maxFloor": 1500

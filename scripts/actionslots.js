@@ -55,7 +55,7 @@ const actionSlotManager = {
             return;
         }
         const item = recipeList.idToItem(itemid);
-        if (!WorkerManager.couldCraft(item)) {
+        if (!WorkerManager.canCurrentlyCraft(item)) {
             Notifications.craftWarning();
             return;
         }

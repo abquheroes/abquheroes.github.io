@@ -102,6 +102,11 @@ const WorkerManager = {
         })
     },
     couldCraft(item) {
+        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned).map(w=>w.production);
+        const difference = item.rcost.filter(x => !canProduce.includes(x));
+        return difference.length === 0;
+    },
+    canCurrentlyCraft(item) {
         const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned && w.status === "idle").map(w=>w.production);
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
