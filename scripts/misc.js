@@ -60,3 +60,13 @@ function createArray(len, itm) {
     }
     return arr;
 }
+
+const miscIcons = {
+    hp : '<img src="/images/DungeonIcons/hp.png">',
+    pow : '<img src="/images/DungeonIcons/pow.png">',
+    act : '<img src="/images/DungeonIcons/act.png">',
+}
+
+function msToSec(ms) {
+    return round(ms/1000,1) + "s"
+}

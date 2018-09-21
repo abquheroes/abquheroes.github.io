@@ -45,6 +45,22 @@ class Item{
     act() {
         return this.actTime;
     }
+    recipeListStats() {
+        const d = $("<div/>").addClass("recipeStatList");
+        if (this.actTime > 0) {
+            const d1 = $("<div/>").addClass("recipeStatListAct").html(miscIcons.act + "&nbsp;&nbsp;" + msToSec(this.actTime));
+            d.append(d1);
+        }
+        if (this.pow > 0) {
+            const d2 = $("<div/>").addClass("recipeStatListPow").html(miscIcons.pow + "&nbsp;&nbsp;" + this.pow);
+            d.append(d2);
+        }
+        if (this.hp > 0) {
+            const d3 = $("<div/>").addClass("recipeStatListHP").html(miscIcons.hp + "&nbsp;&nbsp;" + this.hp);
+            d.append(d3);
+        }
+        return d;
+    }
 }
 
 const recipeList = {
@@ -105,18 +121,20 @@ function initializeRecipes() {
     const htd2 = $('<div/>').addClass('recipeHeadLvl').html("LVL");
     const htd3 = $('<div/>').addClass('recipeHeadRes').html("RES");
     const htd4 = $('<div/>').addClass('recipeHeadCost').html("MATS");
-    const htd5 = $('<div/>').addClass('recipeHeadTime').html("TIME");
-    const htd6 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6);
+    const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
+    const htd6 = $('<div/>').addClass('recipeHeadTime').html("TIME");
+    const htd7 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
+    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6,htd7);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
         const td3 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
         const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
-        const td6 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6);
+        const td5 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
+        const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+        const td7 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6,td7);
         table.append(row);
     });
     $RecipeResults.append(table);

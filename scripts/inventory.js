@@ -27,13 +27,29 @@ class itemContainer {
         containerid += 1;
     }
     pow() {
-        return this.item.pow;
+        return Math.round(this.item.pow * (1+0.5*this.rarity));
     }
     hp() {
-        return this.item.hp;
+        return Math.round(this.item.hp * (1+0.5*this.rarity));
     }
     act() {
         return this.item.act();
+    }
+    propDiv() {
+        const d = $("<div/>").addClass("invProp");
+        if (this.act() > 0) {
+            const d1 = $("<div/>").addClass("invPropAct").html(miscIcons.act + "&nbsp;" + msToSec(this.act()))
+            d.append(d1);
+        }
+        if (this.pow() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow").html(miscIcons.pow + "&nbsp;" + this.pow())
+            d.append(d2);
+        }
+        if (this.hp() > 0) {
+            const d3 = $("<div/>").addClass("invPropHP").html(miscIcons.hp + "&nbsp;" + this.hp())
+            d.append(d3);
+        }
+        return d;
     }
 }
 
@@ -127,9 +143,10 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
-        //const itemProps = $("<div/>").addClass("inventoryProps").html("item stats here");
-        const sellButtons = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-        itemdiv.append(itemName,sellButtons);
+        const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
+        const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
+        const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
+        itemdiv.append(itemName,itemProps, equipButton, sellButton);
         $inventory.append(itemdiv);
     });
 }
