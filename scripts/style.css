@@ -367,32 +367,36 @@ body{
 
 #inventory {
     display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 10px;
     margin: 10px;
 }
 
 .inventoryItem {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative;
     background-color: var(--bg);
     border: 1px solid var(--border);
     color: var(--text);
-    flex: 1 200px;
-    padding: 5px 10px;
+    min-height: 150px;
 }
 
 .inventoryItemName {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    flex: 1;
+    text-align: center;
+    flex-grow: 1;
+    padding: 10px 5px;
 }
 
 .inventoryItemName > .item-name {
-    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 .inventoryItemName > img {
@@ -431,6 +435,39 @@ body{
     background-color: rgba(255,255,255,0.1);
     border-radius: 50%;
     pointer-events: none;
+}
+
+.inventoryProps {
+    width: 100%;
+}
+
+.invProp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.invProp > div {
+    margin: 0 5px;
+}
+
+.inventoryEquip {
+    margin-top: auto;
+}
+
+.inventorySell, .inventoryEquip {
+    width: 100%;
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.inventorySell:hover, .inventoryEquip:hover {
+    background-color: var(--bg-3);
 }
 
 /* 
@@ -1149,7 +1186,7 @@ select {
     margin-left: 5px;
 }
 
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeValue, .recipeLvl {
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
     width: 100%;
     min-width: 100px;
     max-width: 200px;
@@ -1163,9 +1200,10 @@ select {
     margin-left: 300px;
 }
 
-.reciperesdiv, .itemCost {
+.reciperesdiv, .itemCost, .recipeStatList {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .indvCost {
@@ -1179,6 +1217,19 @@ select {
 .indvCost, .recipeValue {
     display: flex;
     align-items: center;
+}
+
+.recipeStatList > div {
+    position: relative;
+    min-width: 50px;
+}
+
+.recipeStatList > div > img {
+    vertical-align: middle;
+}
+
+.recipeStatListAct {
+    margin-right: 10px;
 }
 
 .bpShop {
@@ -2437,6 +2488,21 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .indvCost.tooltip:hover:before {
+    margin-top: -12px;
+}
+
+.recipeStatList > .tooltip:after {
+    left: -50%;
+    right: -50%;
+    bottom: 150%;
+}
+
+.recipeStatList > .tooltip:before {
+    margin-top: -35px;
+    margin-right: -10px;
+}
+
+.recipeStatList > .tooltip:hover:before {
     margin-top: -12px;
 }
 

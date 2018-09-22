@@ -48,15 +48,15 @@ class Item{
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
         if (this.actTime > 0) {
-            const d1 = $("<div/>").addClass("recipeStatListAct").html(miscIcons.act + "&nbsp;&nbsp;" + msToSec(this.actTime));
+            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;&nbsp;" + msToSec(this.actTime));
             d.append(d1);
         }
         if (this.pow > 0) {
-            const d2 = $("<div/>").addClass("recipeStatListPow").html(miscIcons.pow + "&nbsp;&nbsp;" + this.pow);
+            const d2 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;&nbsp;" + this.pow);
             d.append(d2);
         }
         if (this.hp > 0) {
-            const d3 = $("<div/>").addClass("recipeStatListHP").html(miscIcons.hp + "&nbsp;&nbsp;" + this.hp);
+            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + "&nbsp;&nbsp;" + this.hp);
             d.append(d3);
         }
         return d;
