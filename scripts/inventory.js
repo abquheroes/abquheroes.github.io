@@ -38,15 +38,15 @@ class itemContainer {
     propDiv() {
         const d = $("<div/>").addClass("invProp");
         if (this.act() > 0) {
-            const d1 = $("<div/>").addClass("invPropAct").html(miscIcons.act + "&nbsp;" + msToSec(this.act()))
+            const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + msToSec(this.act()))
             d.append(d1);
         }
         if (this.pow() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow").html(miscIcons.pow + "&nbsp;" + this.pow())
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;" + this.pow())
             d.append(d2);
         }
         if (this.hp() > 0) {
-            const d3 = $("<div/>").addClass("invPropHP").html(miscIcons.hp + "&nbsp;" + this.hp())
+            const d3 = $("<div/>").addClass("invPropHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + "&nbsp;" + this.hp())
             d.append(d3);
         }
         return d;
@@ -150,7 +150,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
-        const itemCost = $("<div/>").addClass("inventoryItemName").html(item.goldValueFormatted());
+        const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
         const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
