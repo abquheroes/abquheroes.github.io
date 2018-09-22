@@ -1869,6 +1869,10 @@ select {
     border-top: 1px solid var(--border);
 }
 
+.EHPEHeader > div {
+    flex: 1;
+}
+
 .EHPErow:nth-of-type(odd) {
     background-color: var(--bg-2);
 }
@@ -1879,6 +1883,11 @@ select {
 
 .EHPEstat {
     margin-left: 300px;
+    flex: 1 50px;
+}
+
+.EHPEstat + .EHPEstat {
+    margin-left: 0;
 }
 
 #dungeon-container {
