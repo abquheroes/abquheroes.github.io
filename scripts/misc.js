@@ -65,6 +65,7 @@ const miscIcons = {
     hp : '<img src="/images/DungeonIcons/hp.png">',
     pow : '<img src="/images/DungeonIcons/pow.png">',
     act : '<img src="/images/DungeonIcons/act.png">',
+    gold : '<img src="/images/DungeonIcons/gold.png">'
 }
 
 function msToSec(ms) {

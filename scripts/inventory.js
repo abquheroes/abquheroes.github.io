@@ -51,6 +51,13 @@ class itemContainer {
         }
         return d;
     }
+    goldValueFormatted() {
+        return ResourceManager.materialIcon("M001") + "&nbsp;" + this.goldValue();
+    }
+    goldValue() {
+        return (this.item.value * (this.rarity+1)).toString();
+    }
+
 }
 
 const Inventory = {
@@ -126,7 +133,7 @@ const Inventory = {
     },
     nonblank() {
         return this.inv.filter(r=>r !== null);
-    }
+    },
 }
 
 $inventory = $("#inventory");
@@ -143,10 +150,11 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        const itemCost = $("<div/>").addClass("inventoryItemName").html(item.goldValueFormatted());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
         const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-        itemdiv.append(itemName,itemProps, equipButton, sellButton);
+        itemdiv.append(itemName,itemCost,itemProps, equipButton, sellButton);
         $inventory.append(itemdiv);
     });
 }

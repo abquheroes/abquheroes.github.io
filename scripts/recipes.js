@@ -84,7 +84,10 @@ const recipeList = {
         return this.recipes.filter(recipe => recipe.type === type && recipe.owned);
     },
     buyBP(id) {
-        if (ResourceManager.idToMaterial("M002").amt === 0) return;
+        if (ResourceManager.idToMaterial("M002").amt === 0) {
+            Notifications.moreBluePrints()
+            return;
+        }
         ResourceManager.addMaterial("M002",-1);
         const item = this.idToItem(id);
         item.owned = true;
