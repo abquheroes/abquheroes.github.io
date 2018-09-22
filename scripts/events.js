@@ -79,6 +79,8 @@ function dungeonDrops(event) {
 $(document).on('click', "div.eventList", (e) => {
     //display the text for a clicked event
     e.preventDefault();
+    $("div.eventList").removeClass("highlight");
+    $(e.currentTarget).addClass("highlight");
     const eventID = $(e.currentTarget).attr("eventID");
     const event = EventManager.idToEvent(eventID);
     $eventContent.empty();

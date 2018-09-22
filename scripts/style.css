@@ -2229,6 +2229,11 @@ select {
     cursor: pointer;
 }
 
+.eventList.highlight {
+    background: var(--bg-3);
+    border-bottom-color: var(--highlight);
+}
+
 .eventList:hover {
     background-color: var(--bg-2);
 }
