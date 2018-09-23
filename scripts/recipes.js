@@ -113,6 +113,7 @@ const recipeList = {
     remainingReqs(type) {
         const item = this.getNextBuyable(type);
         console.log(item);
+        if (item === undefined) return null;
         return item.remainingReqs();
     }
 }
@@ -179,6 +180,9 @@ function refreshBlueprint(type) {
     if (recipeList.moreRecipes(type)) {
         const d1 = $("<div/>").addClass('bpShopName').html(nextRecipe.itemPicName());
         d.append(d1);
+    }
+    else {
+        return;
     }
     const needed = recipeList.remainingReqs(type);
     if (needed.length === 0) {

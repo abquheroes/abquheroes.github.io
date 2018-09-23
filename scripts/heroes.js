@@ -318,7 +318,7 @@ function examineHero(ID) {
         else {
             equipText = hero.slotTypeIcons(slotNum);
         }
-        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("heroID",ID);
+        const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("id","hEE"+slotNum).attr("heroID",ID);
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
         if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
@@ -352,6 +352,12 @@ function examineHeroPossibleEquip(slot,heroID) {
     const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
     table.append(hrow);
+    if (Inventory.listbyType(types).length === 0) {
+        const ad = $('<div/>').addClass('EHPEmpty').html("No items available");
+        table.append(ad);
+        $heroEquipmentList.append(table);
+        return;
+    }
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html(itemContainer.pow());
@@ -364,12 +370,14 @@ function examineHeroPossibleEquip(slot,heroID) {
 
 function equipOrUnequipSlot(slot,heroID) {
     if (HeroManager.slotEmpty(slot,heroID)) {
+        $(".heroExamineEquipment").removeClass("hEEactive");
+        $("#hEE"+slot).addClass("hEEactive");
         examineHeroPossibleEquip(slot,heroID)
     }
     else {
         HeroManager.unequip(slot,heroID);
+        examineHero(heroID);
     }
-    examineHero(heroID);
 }
 
 
