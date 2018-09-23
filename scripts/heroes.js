@@ -344,6 +344,10 @@ let examineHeroCache = null;
 
 function examineHeroPossibleEquip(slot,heroID) {
     const types = HeroManager.getSlotTypes(slot,heroID);
+    if (Inventory.listbyType(types).length === 0) {
+        Notifications.noGearForSlot();
+        return;
+    }
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
@@ -352,12 +356,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
     table.append(hrow);
-    if (Inventory.listbyType(types).length === 0) {
-        const ad = $('<div/>').addClass('EHPEmpty').html("No items available");
-        table.append(ad);
-        $heroEquipmentList.append(table);
-        return;
-    }
+
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const td2 = $('<div/>').addClass('EHPEstat').html(itemContainer.pow());
