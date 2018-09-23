@@ -1456,7 +1456,7 @@ select {
     margin: 0 2px;
 }
 
-.itemToSac>img {
+.itemToSacReqHead > img {
     height: 20px;
 }
 
@@ -2499,8 +2499,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .itemToSac.tooltip:before {
-    left: unset;
-    right: unset;
+    margin-right: -8px;
 }
 
 .indvCost.tooltip:after {
