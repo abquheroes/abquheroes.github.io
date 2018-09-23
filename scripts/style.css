@@ -1244,9 +1244,11 @@ select {
 
 .bpShop {
     display: inline-flex;
+    align-items: center;
     background-color: var(--bg);
     border: 1px solid var(--border);
     margin: 15px;
+    padding: 15px;
 }
 
 .bpShopButton {
@@ -1276,12 +1278,15 @@ select {
 .bpShopName {
     display: inline-flex;
     align-items: center;
-    padding: 15px;
     margin-right: 25px;
 }
 
 .bpShopName .item-name {
     margin-left: 10px;
+}
+
+.bpReq {
+    color: var(--text-3);
 }
 
 #workerList, #joblist, #upgradelist, #ticketShop {
