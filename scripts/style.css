@@ -1845,6 +1845,10 @@ select {
     cursor: pointer;
 }
 
+.heroExamineEquipment.hEEactive {
+    border-bottom-color: var(--highlight);
+}
+
 .heroExamineEquipmentList + .heroExamineEquipment {
     border-left: 1px solid var(--border);
 }
