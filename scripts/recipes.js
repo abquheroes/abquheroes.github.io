@@ -1,7 +1,6 @@
 "use strict";
 
-const ItemType = Object.freeze({MACE:"Maces", AXE:"Axes", SPEAR:"Spears", ROD:"Rods", WAND:"Wands", STAFF:"Staves", KNIFE:"Knives", BOW:"Bows", WHIP:"Whips", HELMET:"Helmets", HAT:"Hats", MASK:"Masks", GAUNTLET:"Gauntlets", GLOVE:"Gloves", SHOE:"Shoes", ARMOR:"Armor", CLOAK:"Cloaks", VEST:"Vests", SHIELD:"Shields", WARD:"Wards", THROWN:"Thrown", OFFHAND:"Offhand", TOME:"Tomes", DART:"Darts", POTION:"Potions", PENDANT:"Pendants", RING:"Rings", INSTRUMENT:"Instruments", BELT:"Belts", EARRING:"Earrings"});
-const Rarity = Object.freeze({COMMON:"common",UNCOMMON:"uncommon",RARE:"rare",LEGENDARY:"legendary"});
+const ItemType = ["Maces", "Axes", "Spears",  "Rods",  "Wands",  "Staves", "Knives", "Bows", "Whips", "Helmets", "Hats", "Masks", "Gauntlets", "Gloves", "Shoes", "Armor", "Cloaks", "Vests", "Shields", "Wards", "Thrown", "Tomes", "Darts", "Potions", "Pendants", "Rings", "Instruments", "Belts", "Earrings"];
 
 const $RecipeResults = $("#RecipeResults");
 
@@ -39,9 +38,6 @@ class Item{
         if (resource in this.rcost) return this.rcost[resource];
         return 0;
     }
-    canAfford() {
-        return WorkerManager.couldCraft(this);
-    }
     act() {
         return this.actTime;
     }
@@ -61,6 +57,15 @@ class Item{
         }
         return d;
     }
+    remainingReqs() {
+        let s = ""
+        this.rcost.forEach(r => {
+            if (WorkerManager.lvlByType(r) >= this.lvl) return;
+            const mat = r.charAt(0).toUpperCase() + r.slice(1);
+            s += `Lv${this.lvl} ${mat}, `
+        });
+        return s.slice(0, -2);
+    }
 }
 
 const recipeList = {
@@ -77,11 +82,17 @@ const recipeList = {
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
-    buyable(type) {
-        return this.recipes.filter(recipe => recipe.type === type && !recipe.owned && recipe.canAfford())
+    getNextBuyable(type) {
+        console.log(type);
+        console.log(this.recipes.filter(recipe => recipe.type === type && !recipe.owned))
+        console.log(this.recipes.find(recipe => recipe.type === type && !recipe.owned));
+        return this.recipes.find(recipe => recipe.type === type && !recipe.owned);
     },
-    owned(type) {
-        return this.recipes.filter(recipe => recipe.type === type && recipe.owned);
+    getNextRequirement(type) {
+        this.recipes.find(recipe )
+    },
+    buyable(type) {
+        return true;
     },
     buyBP(id) {
         if (ResourceManager.idToMaterial("M002").amt === 0) {
@@ -93,13 +104,20 @@ const recipeList = {
         item.owned = true;
         populateRecipe(item.type);
     },
-    ownedOrBuyable(type) {
-        return this.owned(type).length > 0 || this.buyable(type).length > 0;
+    ownAtLeastOne(type) {
+        return this.recipes.filter(recipe => recipe.type === type && recipe.owned).length > 0;
+    },
+    moreRecipes(type) {
+        return this.recipes.filter(r => !r.owned && type === r.type).length > 0;
+    },
+    remainingReqs(type) {
+        const item = this.getNextBuyable(type);
+        console.log(item);
+        return item.remainingReqs();
     }
 }
 
 function populateRecipe(type) {
-    type = type || ItemType.KNIFE;
     $(".recipeRow").hide();
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
         $("#rr"+recipe.id).show();
@@ -110,9 +128,10 @@ function populateRecipe(type) {
 
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
-    $.each(ItemType , function(_, type) {
-        if (recipeList.ownedOrBuyable(type)) $("#"+type).show();
-        else $("#"+type).hide();
+    ItemType.forEach(type => {
+        console.log(type, recipeList.ownAtLeastOne(type));
+        if (recipeList.ownAtLeastOne(type) > 0) $("#rf"+type).show();
+        else $("#rf"+type).hide();
     });
 }
 
@@ -155,13 +174,22 @@ const $blueprintUnlock = $("#BlueprintUnlock");
 
 function refreshBlueprint(type) {
     $blueprintUnlock.empty();
-    recipeList.buyable(type).forEach(recipe => {
-        const d = $("<div/>").addClass('bpShop');
-        const d1 = $("<div/>").addClass('bpShopName').html(recipe.itemPicName());
-        const b1 = $("<div/>").addClass('bpShopButton').attr("id",recipe.id).html(`UNLOCK - 1 <img src="images/resources/M002.png" id="${recipe.id}" alt="Blueprint">`);
-        d.append(d1,b1);
-        $blueprintUnlock.append(d);
-    })
+    const d = $("<div/>").addClass('bpShop');
+    const nextRecipe = recipeList.getNextBuyable(type);
+    if (recipeList.moreRecipes(type)) {
+        const d1 = $("<div/>").addClass('bpShopName').html(nextRecipe.itemPicName());
+        d.append(d1);
+    }
+    const needed = recipeList.remainingReqs(type);
+    if (needed.length === 0) {
+        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - 1 <img src="images/resources/M002.png" id="${nextRecipe.id}" alt="Blueprint">`);
+        d.append(b1);
+    }
+    else {
+        const d2 = $("<div/>").addClass('bpReq').html("REQUIRES:<br>" + needed);
+        d.append(d2);
+    }
+    $blueprintUnlock.append(d);
 }
 
 $(document).on('click', '.recipeName', (e) => {
@@ -174,7 +202,8 @@ $(document).on('click', '.recipeName', (e) => {
 
 $(document).on('click', '.recipeSelect', (e) => {
     e.preventDefault();
-    const type = $(e.target).attr("id");
+    const type = $(e.target).attr("id").substring(2);
+    console.log(type);
     populateRecipe(type);
 })
 

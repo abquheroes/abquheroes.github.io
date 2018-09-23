@@ -19,7 +19,8 @@ function afterLoad() {
     initializeHeroList();
     initializeMats();
     refreshHeroSelect();
-    populateRecipe("Maces");
+    populateRecipe("Knives");
+    refreshRecipeFilters();
 }
 
 loadMaterials(); //the others are loaded in order

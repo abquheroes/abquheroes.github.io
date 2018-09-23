@@ -118,6 +118,10 @@ const WorkerManager = {
         if (craftID in worker.donated) worker.donated[craftID] += 1;
         else worker.donated[craftID] = 1;
     },
+    lvlByType(production) {
+        const workerLvls = this.workers.filter(w=> w.owned && w.production === production).map(w=>w.lvl);
+        return Math.max(...workerLvls);
+    }
 }
 
 const $workers = $('#workerList');
