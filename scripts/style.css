@@ -391,12 +391,13 @@ body{
     align-items: center;
     text-align: center;
     flex-grow: 1;
-    padding: 10px 5px;
+    padding: 10px;
 }
 
 .inventoryItemName > .item-name {
     margin-top: 10px;
     width: 100%;
+    align-self: flex-start;
 }
 
 .inventoryItemName > img {
@@ -441,7 +442,7 @@ body{
     width: 100%;
 }
 
-.invProp {
+.inventoryItemValue, .invProp {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -450,7 +451,11 @@ body{
 }
 
 .invProp > div {
+    position: relative;
+    display: flex;
     margin: 0 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .inventoryEquip {
@@ -458,16 +463,21 @@ body{
 }
 
 .inventorySell, .inventoryEquip {
-    width: 100%;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
+    width: 85%;
+    background-color: rgba(255,255,255,0.05);
     text-align: center;
+    border-radius: 25px;
+    margin-top: 5px;
     padding: 5px;
     cursor: pointer;
 }
 
 .inventorySell:hover, .inventoryEquip:hover {
-    background-color: var(--bg-3);
+    background-color: rgba(255,255,255,0.15);
+}
+
+.inventorySell {
+    margin-bottom: 10px;
 }
 
 /* 
@@ -2505,19 +2515,25 @@ footer a[href*="discord.gg"]:hover {
     margin-top: -12px;
 }
 
-.recipeStatList > .tooltip:after {
+.recipeStatList > .tooltip:after, .invProp > .tooltip:after {
     left: -50%;
     right: -50%;
     bottom: 150%;
 }
 
-.recipeStatList > .tooltip:before {
+.recipeStatList > .tooltip:before, .invProp > .tooltip:before{
     margin-top: -35px;
     margin-right: -10px;
 }
 
-.recipeStatList > .tooltip:hover:before {
+.recipeStatList > .tooltip:hover:before, .invProp > .tooltip:hover:before {
     margin-top: -12px;
+}
+
+.invProp > .tooltip:after {
+    left: unset;
+    right: unset;
+    width: 75px;
 }
 
 .resource.tooltip:before, .material.tooltip:before {
