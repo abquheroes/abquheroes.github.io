@@ -84,6 +84,11 @@
     background-color: var(--bg-2);
 }
 
+#autoSellToggle.yesAutoSell {
+    border-color: var(--green-light);
+    background-color: var(--green-dark);
+}
+
 /**/
 
 body{
