@@ -182,7 +182,10 @@ function refreshWorkers() {
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
                 if (!Inventory.haveItem(res,0)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
-                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res)).html(resIcon+"<br>"+formatToUnits(adjamt,2));
+                const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res))
+                const d5b1 = $('<div/>').addClass("itemToSacReqHead").html(resIcon)
+                const d5b2 = $('<div/>').addClass("itemToSacReq").html(formatToUnits(adjamt,2));
+                d5b.append(d5b1,d5b2);
                 d5.append(d5a.append(d5b));
             });
             const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade&nbsp;&nbsp;" + money);
