@@ -5,6 +5,7 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
+      "Swords",
       "Maces",
       "Axes",
       "Spears"
@@ -31,6 +32,7 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
+      "Swords",
       "Maces",
       "Axes",
       "Spears"
@@ -57,6 +59,7 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
+      "Swords",
       "Maces",
       "Axes",
       "Spears"
@@ -71,7 +74,10 @@
       "Armor"
     ],
     "slot5Type": [
-      "Offhand"
+      "Swords",
+      "Maces",
+      "Axes",
+      "Spears"
     ],
     "slot6Type": [
       "Pendants"
@@ -83,6 +89,7 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
+      "Swords",
       "Maces",
       "Axes",
       "Spears"
@@ -97,7 +104,10 @@
       "Armor"
     ],
     "slot5Type": [
-      "Offhand"
+      "Swords",
+      "Maces",
+      "Axes",
+      "Spears"
     ],
     "slot6Type": [
       "Potions"
@@ -211,7 +221,7 @@
     "id": "H201",
     "name": "Alok",
     "class": "Thief",
-    "type": "Magic",
+    "type": "Moxie",
     "slot1Type": [
       "Knives",
       "Bows",
@@ -237,7 +247,7 @@
     "id": "H202",
     "name": "Grogmar",
     "class": "Thief",
-    "type": "Magic",
+    "type": "Moxie",
     "slot1Type": [
       "Knives",
       "Bows",
@@ -263,7 +273,7 @@
     "id": "H203",
     "name": "Revere",
     "class": "Thief",
-    "type": "Magic",
+    "type": "Moxie",
     "slot1Type": [
       "Knives",
       "Bows",
@@ -289,7 +299,7 @@
     "id": "H204",
     "name": "Caeda",
     "class": "Thief",
-    "type": "Magic",
+    "type": "Moxie",
     "slot1Type": [
       "Knives",
       "Bows",
