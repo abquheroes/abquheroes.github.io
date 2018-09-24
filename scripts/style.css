@@ -1295,7 +1295,6 @@ select {
     border: 1px solid var(--border);
     background-color: var(--bg-2);
     padding: 10px 15px;
-    margin: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
