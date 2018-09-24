@@ -73,7 +73,6 @@ const WorkerManager = {
         refreshSideWorkers();
     },
     gainWorker(workerID) {
-        console.log(workerID);
         const worker = this.workerByID(workerID);
         worker.owned = true;
         worker.clearDonation();
@@ -148,7 +147,6 @@ const WorkerManager = {
             workerList = this.workers.filter(w=>!w.owned && w.type === "advanced").map(wk=>wk.workerID);
         }
         const workerID = workerList[Math.floor(Math.random() * workerList.length)];
-        console.log(workerID);
         this.gainWorker(workerID);
     }
 }
@@ -270,7 +268,7 @@ $(document).on("click",".itemToSacDiv", (e) => {
     refreshWorkers();
 });
 
-$(document).on("click",".buyNewWorker",(e) => {
+$(document).on("click",".purchaseWorkerCard",(e) => {
     e.preventDefault();
     WorkerManager.purchaseWorker();
 });
