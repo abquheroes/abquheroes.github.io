@@ -118,6 +118,7 @@ const Inventory = {
     removeFromInventory(id,rarity) {
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
+            if (ic === null) continue;
             if (ic.id === id && ic.rarity === rarity) {
                 this.inv[i] = null;
                 refreshInventory();

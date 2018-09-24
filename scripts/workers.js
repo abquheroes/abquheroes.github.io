@@ -77,9 +77,22 @@ const WorkerManager = {
         const worker = this.workerByID(workerID);
         worker.owned = true;
         worker.clearDonation();
+        this.freeCraft(workerID);
         refreshWorkers();
         refreshSideWorkers();
         refreshRecipeFilters();
+    },
+    freeCraft(workerID) {
+        if (workerID === "W001") recipeList.idToItem("R0701").owned = true;
+        if (workerID === "W002") recipeList.idToItem("R0101").owned = true;
+        if (workerID === "W003") recipeList.idToItem("R6101").owned = true;
+        if (workerID === "W004") recipeList.idToItem("R0901").owned = true;
+        if (workerID === "W005") recipeList.idToItem("R0301").owned = true;
+        if (workerID === "W006") recipeList.idToItem("R6201").owned = true;
+        if (workerID === "W007") recipeList.idToItem("R1001").owned = true;
+        if (workerID === "W008") recipeList.idToItem("R0401").owned = true;
+        if (workerID === "W009") recipeList.idToItem("R5501").owned = true;
+        if (workerID === "W010") recipeList.idToItem("R0501").owned = true;
     },
     assignWorker(item) {
         const lvl = item.lvl;
@@ -130,9 +143,12 @@ const WorkerManager = {
             return;
         }
         ResourceManager.deductMoney(amt);
-        const workers = this.workers.filter(w=>!w.owned).map(wk=>wk.workerID);
-        console.log(workers);
-        const workerID = workers[Math.floor(Math.random() * workers.length)];
+        let workerList = this.workers.filter(w=>!w.owned && w.type === "standard").map(wk=>wk.workerID);
+        if (workerList.length === 0) {
+            workerList = this.workers.filter(w=>!w.owned && w.type === "advanced").map(wk=>wk.workerID);
+        }
+        const workerID = workerList[Math.floor(Math.random() * workerList.length)];
+        console.log(workerID);
         this.gainWorker(workerID);
     }
 }

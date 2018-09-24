@@ -37,6 +37,7 @@ const ResourceManager = {
         }
     },
     materialIcon(type) {
+        console.log(type);
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
         return `<img src="/images/resources/${type}.png" alt="${type}">`
     },
