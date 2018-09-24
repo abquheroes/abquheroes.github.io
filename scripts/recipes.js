@@ -1,6 +1,6 @@
 "use strict";
 
-const ItemType = ["Maces", "Axes", "Spears",  "Rods",  "Wands",  "Staves", "Knives", "Bows", "Whips", "Helmets", "Hats", "Masks", "Gauntlets", "Gloves", "Shoes", "Armor", "Cloaks", "Vests", "Shields", "Wards", "Thrown", "Tomes", "Darts", "Potions", "Pendants", "Rings", "Instruments", "Belts", "Earrings"];
+const ItemType = ["Swords", "Maces", "Axes", "Spears",  "Rods",  "Wands",  "Staves", "Knives", "Bows", "Whips", "Helmets", "Hats", "Masks", "Gauntlets", "Gloves", "Shoes", "Armor", "Cloaks", "Vests", "Shields", "Wards", "Thrown", "Tomes", "Darts", "Potions", "Pendants", "Rings", "Instruments", "Belts", "Earrings"];
 
 const $RecipeResults = $("#RecipeResults");
 

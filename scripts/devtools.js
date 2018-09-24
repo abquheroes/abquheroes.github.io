@@ -8,11 +8,18 @@ const devtools = {
             worker.owned = true;
             worker.lvl = 10;
         })
-        ResourceManager.materials.forEach(material => {
-            ResourceManager.addMaterial(material.id,100);
+        HeroManager.heroes.forEach(hero => {
+            hero.owned = true;
+            hero.lvl = 50;
         })
+        ResourceManager.materials.forEach(material => {
+            ResourceManager.addMaterial(material.id,100000000);
+        })
+        party = new Party(4);
         refreshWorkers();
         refreshRecipeFilters();
+        initializeHeroList();
+        refreshHeroSelect();
         console.log("done!");
     },
     materials : function() {

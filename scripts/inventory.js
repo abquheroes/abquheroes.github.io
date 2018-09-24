@@ -96,6 +96,10 @@ const Inventory = {
     },
     craftToInventory(id) {
         const name = recipeList.idToItem(id).name;
+        if (devtools.autoLeg) {
+            this.addToInventory(id,3);
+            return;
+        }
         const roll = Math.floor(Math.random() * 1000)
         if (roll <= 1) {
             this.addToInventory(id,3);

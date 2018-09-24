@@ -3760,7 +3760,7 @@
     "lvl": 1,
     "value": 27,
     "craftTime": 52377,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3779,7 +3779,7 @@
     "lvl": 2,
     "value": 164,
     "craftTime": 82213,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3798,7 +3798,7 @@
     "lvl": 3,
     "value": 1004,
     "craftTime": 130064,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3817,7 +3817,7 @@
     "lvl": 4,
     "value": 6128,
     "craftTime": 205147,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3836,7 +3836,7 @@
     "lvl": 5,
     "value": 20561,
     "craftTime": 323404,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3853,7 +3853,7 @@
     "lvl": 6,
     "value": 228041,
     "craftTime": 509810,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3872,7 +3872,7 @@
     "lvl": 7,
     "value": 1391050,
     "craftTime": 803642,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3891,7 +3891,7 @@
     "lvl": 8,
     "value": 8485405,
     "craftTime": 1266825,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3910,7 +3910,7 @@
     "lvl": 9,
     "value": 50912433,
     "craftTime": 1964231,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
@@ -3929,7 +3929,7 @@
     "lvl": 10,
     "value": 165210848,
     "craftTime": 2994808,
-    "type": "Offhand",
+    "type": "Swords",
     "rcost": [
       "ore",
       "wood",
