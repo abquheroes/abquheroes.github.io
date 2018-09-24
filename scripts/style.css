@@ -867,6 +867,10 @@ Rarities
     vertical-align: middle;
 }
 
+#RecipeFilter a[href="SwordSelector"]:before {
+    background-image: url('../images/recipeFilter/Swords32.png');
+}
+
 #RecipeFilter a[href="MaceSelector"]:before {
     background-image: url('../images/recipeFilter/Maces32.png');
 }
