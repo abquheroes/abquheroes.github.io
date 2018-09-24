@@ -36,4 +36,4 @@ class Party {
     }
 }
 
-const party = new Party(1);
+let party = new Party(1);

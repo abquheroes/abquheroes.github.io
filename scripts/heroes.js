@@ -291,6 +291,9 @@ const HeroManager = {
         ResourceManager.deductMoney(amt);
         const heroes = this.heroes.filter(h=>!h.owned);
         heroes[Math.floor(Math.random() * heroes.length)].owned = true;
+        if (this.heroes.filter(h=>h.owned).length === 4) party = new Party(2);
+        if (this.heroes.filter(h=>h.owned).length === 8) party = new Party(3);
+        if (this.heroes.filter(h=>h.owned).length === 12) party = new Party(4);
         initializeHeroList();
         refreshHeroSelect();
     }
