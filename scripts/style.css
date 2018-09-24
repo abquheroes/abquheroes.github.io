@@ -1911,7 +1911,11 @@ select {
 }
 
 .EHPEstat.EHPEstatPositive {
-    color: var(--highlight);
+    color: mediumspringgreen;
+}
+
+.EHPEstat.EHPEstatNegative {
+    color: #c90000;
 }
 
 .EHPEstat + .EHPEstat {
