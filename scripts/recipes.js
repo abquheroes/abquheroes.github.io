@@ -101,8 +101,18 @@ const recipeList = {
         item.owned = true;
         populateRecipe(item.type);
     },
-    ownAtLeastOne(type) {
-        return this.recipes.filter(recipe => recipe.type === type && recipe.owned).length > 0;
+    ownAtLeastOneOrCanBuy(type) {
+        let returnVal = true;
+        const owned = this.recipes.filter(recipe => recipe.type === type && recipe.owned).length;
+        if (owned === 0) {
+            const item = this.getNextBuyable(type);
+            item.rcost.forEach(r => {
+                if (WorkerManager.lvlByType(r) >= item.lvl) return;
+                console.log(type,r);
+                returnVal = false;
+            });
+        }
+        return returnVal;
     },
     moreRecipes(type) {
         return this.recipes.filter(r => !r.owned && type === r.type).length > 0;
@@ -126,7 +136,7 @@ function populateRecipe(type) {
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
-        if (recipeList.ownAtLeastOne(type) > 0) $("#rf"+type).show();
+        if (recipeList.ownAtLeastOneOrCanBuy(type)) $("#rf"+type).show();
         else $("#rf"+type).hide();
     });
 }
