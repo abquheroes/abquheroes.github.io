@@ -1098,6 +1098,10 @@ Rarities
     align-items: center;
 }
 
+.recipeHeadCost, .recipematdiv {
+    max-width: 100px;
+}
+
 .indvCost {
     display: inline-block;
     position: relative;
