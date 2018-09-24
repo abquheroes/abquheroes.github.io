@@ -1548,6 +1548,177 @@
     "hp": 0
   },
   {
+    "id": "R1001",
+    "name": "Meager Sword",
+    "lvl": 1,
+    "value": 11,
+    "craftTime": 22406,
+    "type": "Swords",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M501": 1
+    },
+    "actTime": 0,
+    "pow": 5,
+    "hp": 0
+  },
+  {
+    "id": "R1002",
+    "name": "Modest Sabre",
+    "lvl": 2,
+    "value": 79,
+    "craftTime": 41583,
+    "type": "Swords",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M202": 1
+    },
+    "actTime": 0,
+    "pow": 10,
+    "hp": 0
+  },
+  {
+    "id": "R1003",
+    "name": "Sailor Cutlass",
+    "lvl": 3,
+    "value": 569,
+    "craftTime": 77397,
+    "type": "Swords",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M502": 1
+    },
+    "actTime": 0,
+    "pow": 15,
+    "hp": 0
+  },
+  {
+    "id": "R1004",
+    "name": "Salty Sword",
+    "lvl": 4,
+    "value": 4105,
+    "craftTime": 144294,
+    "type": "Swords",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M104": 1
+    },
+    "actTime": 0,
+    "pow": 20,
+    "hp": 0
+  },
+  {
+    "id": "R1005",
+    "name": "Lakekeeper",
+    "lvl": 5,
+    "value": 29557,
+    "craftTime": 268485,
+    "type": "Swords",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 25,
+    "hp": 0
+  },
+  {
+    "id": "R1006",
+    "name": "Buzzblade",
+    "lvl": 6,
+    "value": 212810,
+    "craftTime": 499547,
+    "type": "Swords",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
+    "mcost": {
+      "M303": 1
+    },
+    "actTime": 0,
+    "pow": 30,
+    "hp": 0
+  },
+  {
+    "id": "R1007",
+    "name": "Feverbreaker",
+    "lvl": 7,
+    "value": 1127655,
+    "craftTime": 684046,
+    "type": "Swords",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
+    "mcost": {
+      "M207": 1
+    },
+    "actTime": 0,
+    "pow": 35,
+    "hp": 0
+  },
+  {
+    "id": "R1008",
+    "name": "Balmungous",
+    "lvl": 8,
+    "value": 5362636,
+    "craftTime": 840643,
+    "type": "Swords",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
+    "mcost": {
+      "M504": 1
+    },
+    "actTime": 0,
+    "pow": 40,
+    "hp": 0
+  },
+  {
+    "id": "R1009",
+    "name": "Cannonballer",
+    "lvl": 9,
+    "value": 23376237,
+    "craftTime": 946962,
+    "type": "Swords",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
+    "mcost": {
+      "M109": 1
+    },
+    "actTime": 0,
+    "pow": 45,
+    "hp": 0
+  },
+  {
+    "id": "R1010",
+    "name": "Jawstriker",
+    "lvl": 10,
+    "value": 119037559,
+    "craftTime": 1246139,
+    "type": "Swords",
+    "rcost": [
+      "steel",
+      "silver"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 50,
+    "hp": 0
+  },
+  {
     "id": "R2101",
     "name": "Standard Helmet",
     "lvl": 1,
@@ -3750,192 +3921,6 @@
     "mcost": {
       "M210": 1
     },
-    "actTime": 0,
-    "pow": 50,
-    "hp": 0
-  },
-  {
-    "id": "R5401",
-    "name": "Quick Axe",
-    "lvl": 1,
-    "value": 27,
-    "craftTime": 52377,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M501": 1
-    },
-    "actTime": 0,
-    "pow": 5,
-    "hp": 0
-  },
-  {
-    "id": "R5402",
-    "name": "Poison Katar",
-    "lvl": 2,
-    "value": 164,
-    "craftTime": 82213,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M202": 1
-    },
-    "actTime": 0,
-    "pow": 10,
-    "hp": 0
-  },
-  {
-    "id": "R5403",
-    "name": "Firey Sword",
-    "lvl": 3,
-    "value": 1004,
-    "craftTime": 130064,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M502": 1
-    },
-    "actTime": 0,
-    "pow": 15,
-    "hp": 0
-  },
-  {
-    "id": "R5404",
-    "name": "Mace Of Spades",
-    "lvl": 4,
-    "value": 6128,
-    "craftTime": 205147,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M104": 1
-    },
-    "actTime": 0,
-    "pow": 20,
-    "hp": 0
-  },
-  {
-    "id": "R5405",
-    "name": "Pretty Club",
-    "lvl": 5,
-    "value": 20561,
-    "craftTime": 323404,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": "",
-    "actTime": 0,
-    "pow": 25,
-    "hp": 0
-  },
-  {
-    "id": "R5406",
-    "name": "Slow Axe",
-    "lvl": 6,
-    "value": 228041,
-    "craftTime": 509810,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M303": 1
-    },
-    "actTime": 0,
-    "pow": 30,
-    "hp": 0
-  },
-  {
-    "id": "R5407",
-    "name": "Healing Katar",
-    "lvl": 7,
-    "value": 1391050,
-    "craftTime": 803642,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M207": 1
-    },
-    "actTime": 0,
-    "pow": 35,
-    "hp": 0
-  },
-  {
-    "id": "R5408",
-    "name": "Icy Sword",
-    "lvl": 8,
-    "value": 8485405,
-    "craftTime": 1266825,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M504": 1
-    },
-    "actTime": 0,
-    "pow": 40,
-    "hp": 0
-  },
-  {
-    "id": "R5409",
-    "name": "Mace Of Diamonds",
-    "lvl": 9,
-    "value": 50912433,
-    "craftTime": 1964231,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": {
-      "M109": 1
-    },
-    "actTime": 0,
-    "pow": 45,
-    "hp": 0
-  },
-  {
-    "id": "R5410",
-    "name": "Ugly Club",
-    "lvl": 10,
-    "value": 165210848,
-    "craftTime": 2994808,
-    "type": "Swords",
-    "rcost": [
-      "ore",
-      "wood",
-      "bone"
-    ],
-    "mcost": "",
     "actTime": 0,
     "pow": 50,
     "hp": 0
