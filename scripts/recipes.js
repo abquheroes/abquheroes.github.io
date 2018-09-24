@@ -146,7 +146,7 @@ function initializeRecipes() {
     const table = $('<div/>').addClass('recipeTable');
     const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
     const htd2 = $('<div/>').addClass('recipeHeadLvl').html("LVL");
-    const htd3 = $('<div/>').addClass('recipeHeadRes').html("RES");
+    const htd3 = $('<div/>').addClass('recipeHeadRes').html("RESOURCES");
     const htd4 = $('<div/>').addClass('recipeHeadCost').html("MATS");
     const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
     const htd6 = $('<div/>').addClass('recipeHeadTime').html("TIME");

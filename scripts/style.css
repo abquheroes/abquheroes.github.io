@@ -1,3 +1,5 @@
+/* Root */
+
 * {
     box-sizing: border-box;
     outline: 0;
@@ -9,37 +11,6 @@
         margin: 0;
     }
 }
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-thumb);
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: var(--scroll-track);
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, .purchaseWorkerCard   {
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-}
-
-.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem   {
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-}
-
-/* LIGHT AND DARK MODE */
 
 :root {
     --bg: #212325;
@@ -65,6 +36,60 @@
     --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scroll-track);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Global */
+
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, .purchaseWorkerCard   {
+    transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard {
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+body {
+    color: var(--text);
+    background-color: var(--bg-2);
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 0;
+}
+
+/* Font Stack */
+
+#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+/* General Content */
+
+#content, footer {
+    padding: 0;
+    user-select: none;
+}
+
 .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle {
     margin-bottom: 5px;
     padding: 7px 10px;
@@ -87,25 +112,6 @@
 #autoSellToggle.yesAutoSell {
     border-color: var(--green-light);
     background-color: var(--green-dark);
-}
-
-/**/
-
-body{
-    color: var(--text);
-    background-color: var(--bg-2);
-    font-family: "Trebuchet MS", sans-serif;
-    margin: 0;
-}
-
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .jobDisable, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
-}
-
-#content, footer {
-    padding: 0;
-    user-select: none;
 }
 
 .game-content {
@@ -648,157 +654,7 @@ Rarities
     animation: 0.2s fade-in;
 }
 
-
-/* BULLSHIT JQUERY UI */
-.demoHeaders {
-    margin-top: 2em;
-}
-#dialog-link {
-    padding: .4em 1em .4em 20px;
-    text-decoration: none;
-    position: relative;
-}
-#dialog-link span.ui-icon {
-    margin: 0 5px 0 0;
-    position: absolute;
-    left: .2em;
-    top: 50%;
-    margin-top: -8px;
-}
-#icons {
-    margin: 0;
-    padding: 0;
-}
-#icons li {
-    margin: 2px;
-    position: relative;
-    padding: 4px 0;
-    cursor: pointer;
-    float: left;
-    list-style: none;
-}
-#icons span.ui-icon {
-    float: left;
-    margin: 0 4px;
-}
-.fakewindowcontain .ui-widget-overlay {
-    position: absolute;
-}
-select {
-    width: 300px;
-}
-
-.ui-progressbar {
-    width: 200px;
-    height: 20px;
-    padding: 0px;
-    display: inline-block;
-}
-
-.ui-progressbar-value {
-    background-color: #007fff;
-}
-
-.progressText {
-    color: black;
-    float:left;
-    text-align:left;
-    padding-left: 5px;
-    width:100%;
-}
-
-.pbLabel {
-    width: 100%;
-    float: left;
-    line-height: 200%;
-    padding: 0px;
-    line-height: 20px;
-    padding-left: 2px;
-}
-
-.ui-tabs .ui-tabs-panel {
-    color: var(--text);
-    padding: 0;
-}
-
-.ui-widget-content a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.ui-tabs .ui-corner-all .ui-widget .ui-widget-content {
-    padding-bottom: 100px;
-}
-
-.ui-tabs, .ui-tabs .ui-tabs-nav {
-    padding: 0;
-    border-radius: 0;
-    border: 1px solid var(--border);
-    border-left: none;
-    border-right: 1px solid transparent;
-    background-color: var(--bg);
-}
-
-.ui-tabs .ui-tabs-nav li {
-    border: none;
-    border-radius: 0;
-    margin: 0;
-    padding: 0;
-}
-
-.ui-tabs .ui-tabs-nav li a {
-    color: var(--text-3);
-}
-
-.ui-tabs-nav li a:hover {
-    background-color: var(--bg-2);
-    color: var(--text);
-}
-
-.ui-tabs .ui-tabs-nav li.ui-tabs-active {
-    padding: 0;
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active  {
-    border: none;
-}
-
-.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
-    background: var(--link);
-    color: var(--text-2);
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default {
-    background-color: var(--bg);
-}
-
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
-    color: var(--text);
-}
-
-.ui-widget.ui-widget-content, .ui-widget-content {
-    background-color: var(--bg-2);
-    border: none;
-}
-
-.ui-progressbar.ui-widget.ui-widget-content {
-    background-color: var(--bg-3);
-}
-
-.ui-progressbar .ui-progressbar-value {
-    margin: 0;
-}
-
-.ui-dialog {
-    border: 1px solid var(--border)!important;
-    background-color: var(--bg-2)!important;
-    box-shadow: 0 0 15px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 15px rgba(0,0,0,0.25);
-    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
-}
-
-/* END OF JQUERY UI */
+/* Action Slots */
 
 #Actions > h1 {
     margin: 10px 0;
@@ -950,36 +806,6 @@ select {
     text-transform: uppercase;
 }
 
-.ui-widget-header {
-    border: none;
-}
-
-.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-    border-radius: 0;
-}
-
-.ui-dialog .ui-dialog-content {
-    color: var(--text);
-}
-
-.ui-dialog .ui-dialog-buttonpane button {
-    margin: .5em .4em .5em 0;
-    cursor: pointer;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text-3);
-    border-radius: 3px;
-}
-
-.ui-dialog .ui-dialog-buttonpane button:hover {
-    color: var(--text);
-}
-
-.ui-draggable .ui-dialog-titlebar {
-    background-color: var(--bg);
-    color: var(--text-3);
-}
-
 #importSaveText {
     background-color: var(--bg-3);
     border: 1px solid var(--border);
@@ -1039,6 +865,10 @@ select {
     background-position: center;
     background-size: 20px;
     vertical-align: middle;
+}
+
+#RecipeFilter a[href="SwordSelector"]:before {
+    background-image: url('../images/recipeFilter/Swords32.png');
 }
 
 #RecipeFilter a[href="MaceSelector"]:before {
@@ -1225,27 +1055,8 @@ select {
     height: 28px;
 }
 
-.recipeName>img, .item-name {
+.recipeName > img, .item-name {
     pointer-events: none;
-}
-
-.unlockReq {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 10px;
-    background-color: var(--bg);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.unlockReq>i:before {
-    display: inline-block;
-    position: relative;
-    content: "?";
-    font-weight: bold;
-    color: var(--text);
-    margin-right: 10px;
-    margin-left: 5px;
 }
 
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
@@ -1266,6 +1077,10 @@ select {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.recipeHeadCost, .recipematdiv {
+    max-width: 100px;
 }
 
 .indvCost {
@@ -1372,14 +1187,14 @@ select {
     align-items: center;
     align-self: flex-start;
     padding: 5px 20px 5px 5px;
-    background-color: var(--bg);
+    background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
 }
 
 .purchaseWorkerCard:hover {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--bg);
+    border-color: var(--border-3);
 }
 
 .buyNewWorker {
@@ -1551,7 +1366,7 @@ select {
     cursor: not-allowed;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .TicketCard .buyTicket {
+.Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .TicketCard .buyTicket {
     display: block;
     padding: 10px;
     border: none;
@@ -1572,12 +1387,6 @@ select {
     left: 0;
     margin: 10px 0 0 0;
     width: 100%;
-}
-
-.Worker .jobDisable {
-    background-color: rgba(255, 174, 0, 0.1);
-    color: #c99a00;
-    cursor: not-allowed;
 }
 
 .Worker .BuyWorker {
@@ -1617,28 +1426,6 @@ select {
     position: relative;
     flex-grow: 1;
     min-width: 50%;
-}
-
-.jobHeadWorker {
-    padding-left: 15px;
-}
-
-.jobWorker {
-    display: flex;
-    margin-left: 5px;
-}
-
-.jobWorker>a {
-    flex-grow: 1;
-    padding: 10px 0;
-}
-
-.jobRow.jobDisable {
-    padding: 10px 0;
-    color: #c99a00;
-    background-color: rgba(255, 174, 0, 0.1);
-    cursor: not-allowed;
-    user-select: none;
 }
 
 #progresslist {
@@ -1782,7 +1569,7 @@ select {
     border-bottom: 1px solid var(--border);
 }
 
-.heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover, .buyNewHeroCard:hover {
+.heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
     background-color: var(--bg-2);
     cursor: pointer;
 }
@@ -1798,6 +1585,15 @@ select {
 
 .buyNewHeroCard {
     padding: 15px 20px;
+    margin: 5px;
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.buyNewHeroCard:hover {
+    background-color: var(--bg);
+    border-color: var(--border-3);
 }
 
 #heroCard {
@@ -2708,16 +2504,6 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.jobDisable.tooltip:after {
-    top: unset;
-    left: -50%;
-    right: -50%;
-    bottom: 135%;
-    max-width: 100px;
-    width: 100vw;
-    margin: 0 auto;
-}
-
 .rewardCard.tooltip:before {
     margin-top: -40px;
 }
@@ -3269,7 +3055,7 @@ a.workerDialog:hover {
         text-align: center;
     }
 
-    #ASTable::-webkit-scrollbar, .ui-tabs-nav::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
@@ -3280,19 +3066,6 @@ a.workerDialog:hover {
         position: relative;
         overflow-x: auto;
         margin: 0;
-    }
-
-    .ui-tabs-nav {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        overflow-y: hidden;
-        overflow-x: auto;
-    }
-
-    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-        display: flex;
-        padding: 10px 12px;
     }
 
     #RecipeFilter {
