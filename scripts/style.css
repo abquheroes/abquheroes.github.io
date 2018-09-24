@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard  {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory   {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -32,7 +32,7 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before {
+.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem   {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -368,6 +368,20 @@ body{
 
 #inventoryTab {
     height: calc(100vh - 100px)
+}
+
+#sortInventory {
+    display: inline-flex;
+    margin: 10px 10px 0;
+    padding: 10px 15px;
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+#sortInventory:hover {
+    background-color: var(--bg);
+    border-color: var(--border-3);
 }
 
 #inventory {
@@ -1295,7 +1309,6 @@ select {
     border: 1px solid var(--border);
     background-color: var(--bg-2);
     padding: 10px 15px;
-    margin: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
