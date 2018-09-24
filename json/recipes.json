@@ -1623,7 +1623,8 @@
     "craftTime": 268485,
     "type": "Swords",
     "rcost": [
-      "steel"
+      "steel",
+      "silver"
     ],
     "mcost": "",
     "actTime": 0,
@@ -3375,9 +3376,7 @@
     "craftTime": 65180,
     "type": "Shields",
     "rcost": [
-      "steel",
-      "silver",
-      "herb"
+      "steel"
     ],
     "mcost": {
       "M401": 1
@@ -3394,9 +3393,7 @@
     "craftTime": 102641,
     "type": "Shields",
     "rcost": [
-      "steel",
-      "silver",
-      "herb"
+      "steel"
     ],
     "mcost": {
       "M202": 1
@@ -3414,8 +3411,7 @@
     "type": "Shields",
     "rcost": [
       "steel",
-      "silver",
-      "herb"
+      "silver"
     ],
     "mcost": {
       "M302": 1
@@ -3433,8 +3429,7 @@
     "type": "Shields",
     "rcost": [
       "steel",
-      "silver",
-      "herb"
+      "silver"
     ],
     "mcost": "",
     "actTime": 0,
@@ -3561,8 +3556,6 @@
     "craftTime": 63369,
     "type": "Wards",
     "rcost": [
-      "paper",
-      "herb",
       "mana"
     ],
     "mcost": {
@@ -3580,8 +3573,6 @@
     "craftTime": 99424,
     "type": "Wards",
     "rcost": [
-      "paper",
-      "herb",
       "mana"
     ],
     "mcost": {
@@ -3599,7 +3590,6 @@
     "craftTime": 157333,
     "type": "Wards",
     "rcost": [
-      "paper",
       "herb",
       "mana"
     ],
@@ -3618,7 +3608,6 @@
     "craftTime": 248204,
     "type": "Wards",
     "rcost": [
-      "paper",
       "herb",
       "mana"
     ],
@@ -3747,9 +3736,7 @@
     "craftTime": 56256,
     "type": "Thrown",
     "rcost": [
-      "wood",
-      "steel",
-      "silver"
+      "wood"
     ],
     "mcost": {
       "M101": 1
@@ -3766,9 +3753,7 @@
     "craftTime": 88229,
     "type": "Thrown",
     "rcost": [
-      "wood",
-      "steel",
-      "silver"
+      "wood"
     ],
     "mcost": {
       "M301": 1
@@ -3786,8 +3771,7 @@
     "type": "Thrown",
     "rcost": [
       "wood",
-      "steel",
-      "silver"
+      "steel"
     ],
     "mcost": {
       "M502": 1
@@ -3805,8 +3789,7 @@
     "type": "Thrown",
     "rcost": [
       "wood",
-      "steel",
-      "silver"
+      "steel"
     ],
     "mcost": "",
     "actTime": 0,
@@ -3933,9 +3916,7 @@
     "craftTime": 66466,
     "type": "Tomes",
     "rcost": [
-      "fabric",
-      "paper",
-      "mana"
+      "paper"
     ],
     "mcost": {
       "M301": 1
@@ -3952,9 +3933,7 @@
     "craftTime": 104719,
     "type": "Tomes",
     "rcost": [
-      "fabric",
-      "paper",
-      "mana"
+      "paper"
     ],
     "mcost": {
       "M102": 1
@@ -3971,7 +3950,6 @@
     "craftTime": 165089,
     "type": "Tomes",
     "rcost": [
-      "fabric",
       "paper",
       "mana"
     ],
@@ -3990,7 +3968,6 @@
     "craftTime": 260338,
     "type": "Tomes",
     "rcost": [
-      "fabric",
       "paper",
       "mana"
     ],
@@ -4119,9 +4096,7 @@
     "craftTime": 58196,
     "type": "Darts",
     "rcost": [
-      "paper",
-      "bone",
-      "steel"
+      "paper"
     ],
     "mcost": {
       "M201": 1
@@ -4138,9 +4113,7 @@
     "craftTime": 91738,
     "type": "Darts",
     "rcost": [
-      "paper",
-      "bone",
-      "steel"
+      "paper"
     ],
     "mcost": {
       "M102": 1
@@ -4158,8 +4131,7 @@
     "type": "Darts",
     "rcost": [
       "paper",
-      "bone",
-      "steel"
+      "bone"
     ],
     "mcost": {
       "M302": 1
@@ -4177,8 +4149,7 @@
     "type": "Darts",
     "rcost": [
       "paper",
-      "bone",
-      "steel"
+      "bone"
     ],
     "mcost": {
       "M502": 1
@@ -4305,8 +4276,7 @@
     "craftTime": 27873,
     "type": "Potions",
     "rcost": [
-      "herb",
-      "mana"
+      "herb"
     ],
     "mcost": {
       "M501": 1
@@ -4323,8 +4293,7 @@
     "craftTime": 54299,
     "type": "Potions",
     "rcost": [
-      "herb",
-      "mana"
+      "herb"
     ],
     "mcost": {
       "M102": 1
@@ -4341,8 +4310,7 @@
     "craftTime": 106098,
     "type": "Potions",
     "rcost": [
-      "herb",
-      "mana"
+      "herb"
     ],
     "mcost": {
       "M203": 1
@@ -4359,8 +4327,7 @@
     "craftTime": 202876,
     "type": "Potions",
     "rcost": [
-      "herb",
-      "mana"
+      "herb"
     ],
     "mcost": "",
     "actTime": 0,
@@ -4481,8 +4448,7 @@
     "craftTime": 49680,
     "type": "Pendants",
     "rcost": [
-      "fabric",
-      "silver"
+      "fabric"
     ],
     "mcost": {
       "M501": 1
@@ -4499,8 +4465,7 @@
     "craftTime": 97570,
     "type": "Pendants",
     "rcost": [
-      "fabric",
-      "silver"
+      "fabric"
     ],
     "mcost": {
       "M102": 1
@@ -4517,8 +4482,7 @@
     "craftTime": 189105,
     "type": "Pendants",
     "rcost": [
-      "fabric",
-      "silver"
+      "fabric"
     ],
     "mcost": {
       "M402": 1
@@ -4535,8 +4499,7 @@
     "craftTime": 361625,
     "type": "Pendants",
     "rcost": [
-      "fabric",
-      "silver"
+      "fabric"
     ],
     "mcost": "",
     "actTime": 0,
