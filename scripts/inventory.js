@@ -7,10 +7,16 @@ $('#inventory').on("click",".inventorySell",(e) => {
 const $autoSellToggle = $("#autoSellToggle");
 
 $(document).on("click","#autoSellToggle",(e) => {
+    e.preventDefault();
     autoSellToggle = !autoSellToggle;
     if (autoSellToggle) $autoSellToggle.removeClass("noAutoSell").addClass("yesAutoSell").html("Autosell Commons");
     else $autoSellToggle.removeClass("yesAutoSell").addClass("noAutoSell").html("Don't Autosell Commons");
-})
+});
+
+$(document).on("click","#sortInventory",(e) => {
+    e.preventDefault();
+    Inventory.sortInventory();
+});
 
 let containerid = 0;
 let autoSellToggle = false;
@@ -148,6 +154,14 @@ const Inventory = {
     nonblank() {
         return this.inv.filter(r=>r !== null);
     },
+    sortInventory() {
+        this.inv = this.inv.filter(c=>c !== null);
+        while (this.inv.length < this.invMax) {
+            this.inv.push(null);
+        }
+        refreshInventory();
+        refreshWorkerAmts();
+    }
 }
 
 $inventory = $("#inventory");
