@@ -40,7 +40,7 @@ class Hero {
         this.slot6 = null;
         this.image = '<img src="images/heroes/'+this.id+'.gif">';
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
-        this.owned = true;
+        this.owned = false;
     }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
@@ -227,11 +227,6 @@ const HeroManager = {
     addHero(hero) {
         this.heroes.push(hero);
     },
-    ownAllHeroes() {
-        this.heroes.forEach(hero => {
-            hero.owned = true;
-        });
-    },
     heroOwned(ID) {
         return this.idToHero(ID).owned;
     },
@@ -287,12 +282,24 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         return hp - hero.getHPSlot(slot);
     },
+    purchaseHero() {
+        const amt = HeroManager.heroes.filter(h=>h.owned).length*100;
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordHero();
+            return;
+        }
+        ResourceManager.deductMoney(amt);
+        const heroes = this.heroes.filter(h=>!h.owned);
+        heroes[Math.floor(Math.random() * heroes.length)].owned = true;
+        initializeHeroList();
+        refreshHeroSelect();
+    }
 }
 
 const $heroList = $("#heroList");
 
 function initializeHeroList() {
-    HeroManager.ownAllHeroes();
+    $heroList.empty();
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
@@ -301,6 +308,12 @@ function initializeHeroList() {
         if (!hero.owned) d.hide();
         $heroList.append(d);
     });
+    if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
+        console.log("side trigger!");
+        const amt = HeroManager.heroes.filter(h=>h.owned).length*100;
+        const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+        $heroList.append(b1);
+    }
 }
 
 function refreshHeroes() {
@@ -454,3 +467,8 @@ $(document).on('click', "div.EHPErow", (e) => {
     examineHero(heroID);
     clearExaminePossibleEquip();
 });
+
+$(document).on('click', ".buyNewHeroCard", (e) => {
+    e.preventDefault();
+    HeroManager.purchaseHero();    
+})

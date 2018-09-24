@@ -16,6 +16,7 @@ function afterLoad() {
     refreshWorkers();
     refreshSideWorkers();
     initializeActionSlots();
+    HeroManager.idToHero("H203").owned = true;
     initializeHeroList();
     initializeMats();
     refreshHeroSelect();
