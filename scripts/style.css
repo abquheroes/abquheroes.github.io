@@ -1910,6 +1910,10 @@ select {
     flex: 1 50px;
 }
 
+.EHPEstat.EHPEstatPositive {
+    color: var(--highlight);
+}
+
 .EHPEstat + .EHPEstat {
     margin-left: 0;
 }
