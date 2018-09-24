@@ -108,7 +108,6 @@ const recipeList = {
             const item = this.getNextBuyable(type);
             item.rcost.forEach(r => {
                 if (WorkerManager.lvlByType(r) >= item.lvl) return;
-                console.log(type,r);
                 returnVal = false;
             });
         }
