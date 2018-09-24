@@ -83,9 +83,6 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.id === id);
     },
     getNextBuyable(type) {
-        console.log(type);
-        console.log(this.recipes.filter(recipe => recipe.type === type && !recipe.owned))
-        console.log(this.recipes.find(recipe => recipe.type === type && !recipe.owned));
         return this.recipes.find(recipe => recipe.type === type && !recipe.owned);
     },
     getNextRequirement(type) {
@@ -112,7 +109,6 @@ const recipeList = {
     },
     remainingReqs(type) {
         const item = this.getNextBuyable(type);
-        console.log(item);
         if (item === undefined) return null;
         return item.remainingReqs();
     }
@@ -130,7 +126,6 @@ function populateRecipe(type) {
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
-        console.log(type, recipeList.ownAtLeastOne(type));
         if (recipeList.ownAtLeastOne(type) > 0) $("#rf"+type).show();
         else $("#rf"+type).hide();
     });

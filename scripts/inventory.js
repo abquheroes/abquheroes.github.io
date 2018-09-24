@@ -72,7 +72,15 @@ const Inventory = {
         }
         else {
             this.findempty(new itemContainer(id,rarity));
+            const item = recipeList.idToItem(id);
+            if (examineGearTypesCache.includes(item.type)) {
+                examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
+            }
         }
+    },
+    addItemContainerToInventory(container) {
+        if (this.full()) this.sellItem(id,rarity);
+        else this.findempty(container);
     },
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
@@ -107,6 +115,12 @@ const Inventory = {
                 return;
             }
         }
+    },
+    removeContainerFromInventory(containerID) {
+        this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
+        this.inv.push(null);
+        refreshInventory();
+        refreshWorkerAmts();
     },
     sellInventory(indx) {
         const item = this.inv[indx];

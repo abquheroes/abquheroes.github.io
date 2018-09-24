@@ -52,6 +52,24 @@ class Hero {
         if (this.slot6 !== null) pow += this.slot6.pow();
         return pow;
     }
+    getPowSlot(slot) {
+        if (slot === 0 && this.slot1 !== null) return this.slot1.pow();
+        if (slot === 1 && this.slot2 !== null) return this.slot2.pow();
+        if (slot === 2 && this.slot3 !== null) return this.slot3.pow();
+        if (slot === 3 && this.slot4 !== null) return this.slot4.pow();
+        if (slot === 4 && this.slot5 !== null) return this.slot5.pow();
+        if (slot === 5 && this.slot6 !== null) return this.slot6.pow();
+        return 0;
+    }
+    getHPSlot(slot) {
+        if (slot === 0 && this.slot1 !== null) return this.slot1.hp();
+        if (slot === 1 && this.slot2 !== null) return this.slot2.hp();
+        if (slot === 2 && this.slot3 !== null) return this.slot3.hp();
+        if (slot === 3 && this.slot4 !== null) return this.slot4.hp();
+        if (slot === 4 && this.slot5 !== null) return this.slot5.hp();
+        if (slot === 5 && this.slot6 !== null) return this.slot6.hp();
+        return 0;
+    }
     actmax() {
         if (this.slot1 !== null) return this.slot1.act();
         else return 5000;
@@ -190,6 +208,14 @@ class Hero {
         if (this.slot5Type.includes(type)) return this.slot5 !== null;
         if (this.slot6Type.includes(type)) return this.slot6 !== null;
     }
+    getEquip(type) {
+        if (this.slot1Type.includes(type)) return this.slot1;
+        if (this.slot2Type.includes(type)) return this.slot2;
+        if (this.slot3Type.includes(type)) return this.slot3;
+        if (this.slot4Type.includes(type)) return this.slot4;
+        if (this.slot5Type.includes(type)) return this.slot5;
+        if (this.slot6Type.includes(type)) return this.slot6;
+    }
     dps() {
         return round(this.getPow()/this.actmax(),2);
     }
@@ -215,11 +241,11 @@ const HeroManager = {
     equipItem(containerID,heroID) {
         const item = Inventory.containerToItem(containerID);
         const hero = this.idToHero(heroID);
+        Inventory.removeContainerFromInventory(containerID);
         if (hero.hasEquip(item.type)) {
-            Notifications.alreadyEquipped();
-            return;
+            const equippedItem = hero.getEquip(item.type);
+            Inventory.addItemContainerToInventory(equippedItem);
         }
-        Inventory.removeFromInventory(item.id,item.rarity);
         hero.equip(item);
     },
     getSlotTypes(slot,heroID) {
@@ -252,7 +278,15 @@ const HeroManager = {
                 hero.healPercent(1);
             }
         });
-    }
+    },
+    relativePow(heroID,slot,pow) {
+        const hero = this.idToHero(heroID);
+        return pow - hero.getPowSlot(slot);
+    },
+    relativeHP(heroID,slot,hp) {
+        const hero = this.idToHero(heroID);
+        return hp - hero.getHPSlot(slot);
+    },
 }
 
 const $heroList = $("#heroList");
@@ -339,16 +373,26 @@ function statRow(name,value) {
 
 const $heroEquipmentList = $("#heroEquipmentList");
 
-let examineSlotCache = 0;
-let examineHeroCache = null;
+let examineGearSlotCache = null;
+let examineGearHeroIDCache = null;
+let examineGearTypesCache = [];
 
+function clearExaminePossibleEquip() {
+    $heroEquipmentList.empty();
+    examineGearHeroIDCache = null;
+    examineGearSlotCache = null;
+    examineGearTypesCache = [];
+}
 function examineHeroPossibleEquip(slot,heroID) {
+    examineGearSlotCache = slot;
+    examineGearHeroIDCache = heroID;
     const types = HeroManager.getSlotTypes(slot,heroID);
+    examineGearTypesCache = types;
+    $heroEquipmentList.empty();
     if (Inventory.listbyType(types).length === 0) {
         Notifications.noGearForSlot();
         return;
     }
-    $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
@@ -359,24 +403,25 @@ function examineHeroPossibleEquip(slot,heroID) {
 
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
-        const td2 = $('<div/>').addClass('EHPEstat').html(itemContainer.pow());
-        const td3 = $('<div/>').addClass('EHPEstat').html(itemContainer.hp());
+        const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
+        const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
+        const td2 = $('<div/>').addClass('EHPEstat')
+        const td3 = $('<div/>').addClass('EHPEstat')
+        if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
+        else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
+        else td2.html(itemContainer.pow() + " (+" + relPow + ")");
+        if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relPow + ")");
+        else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relPow + ")");
+        else td3.html(itemContainer.hp());
         const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3);
         table.append(row);
     });
     $heroEquipmentList.append(table);
 };
 
-function equipOrUnequipSlot(slot,heroID) {
-    if (HeroManager.slotEmpty(slot,heroID)) {
-        $(".heroExamineEquipment").removeClass("hEEactive");
-        $("#hEE"+slot).addClass("hEEactive");
-        examineHeroPossibleEquip(slot,heroID)
-    }
-    else {
-        HeroManager.unequip(slot,heroID);
-        examineHero(heroID);
-    }
+function unequipSlot(slot,heroID) {
+    HeroManager.unequip(slot,heroID);
+    examineHero(heroID);
 }
 
 
@@ -387,14 +432,17 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
     examineHero(ID);
+    clearExaminePossibleEquip();
 });
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
-    //select an item type to display what you can equip OR unequip the current item;
+    //select an item type to display what you can equip
     e.preventDefault();
     const slot = parseInt($(e.currentTarget).attr("data-value"));
     const heroID = $(e.currentTarget).attr("heroID");
-    equipOrUnequipSlot(slot,heroID);
+    $(".heroExamineEquipment").removeClass("hEEactive");
+    $("#hEE"+slot).addClass("hEEactive");
+    examineHeroPossibleEquip(slot,heroID)
 });
 
 $(document).on('click', "div.EHPErow", (e) => {
@@ -404,5 +452,5 @@ $(document).on('click', "div.EHPErow", (e) => {
     const containerID = parseInt($(e.currentTarget).attr("id"));
     HeroManager.equipItem(containerID,heroID);
     examineHero(heroID);
-    $heroEquipmentList.empty();
+    clearExaminePossibleEquip();
 });
