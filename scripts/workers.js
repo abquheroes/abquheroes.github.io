@@ -73,6 +73,7 @@ const WorkerManager = {
         refreshSideWorkers();
     },
     gainWorker(workerID) {
+        console.log(workerID);
         const worker = this.workerByID(workerID);
         worker.owned = true;
         worker.clearDonation();
@@ -121,6 +122,18 @@ const WorkerManager = {
     lvlByType(production) {
         const workerLvls = this.workers.filter(w=> w.owned && w.production === production).map(w=>w.lvl);
         return Math.max(...workerLvls);
+    },
+    purchaseWorker() {
+        const amt = 500;
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordWorker();
+            return;
+        }
+        ResourceManager.deductMoney(amt);
+        const workers = this.workers.filter(w=>!w.owned).map(wk=>wk.workerID);
+        console.log(workers);
+        const workerID = workers[Math.floor(Math.random() * workers.length)];
+        this.gainWorker(workerID);
     }
 }
 
@@ -146,7 +159,8 @@ function refreshSideWorkers() {
         }
         d.append(d1,d2,d3);
         $workersUse.append(d);
-    })
+    });
+
 }
 
 function refreshWorkers() {
@@ -194,6 +208,13 @@ function refreshWorkers() {
         }
         $workers.append(workerDiv)
     });
+    const amt = 500;
+    const pw = $("<div/>").addClass("purchaseWorkerCard");
+    const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
+    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase Worker&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+    pw.append(pw1,b1);
+    if (WorkerManager.workers.filter(w=>!w.owned).length === 0) pw.hide();
+    $workers.append(pw);
 }
 
 function refreshWorkerAmts() {
@@ -231,4 +252,9 @@ $(document).on("click",".itemToSacDiv", (e) => {
     const rarity = parseInt(divID.substring(11,12));
     WorkerManager.sacrificeItem(workerID,craftID,rarity);
     refreshWorkers();
+});
+
+$(document).on("click",".buyNewWorker",(e) => {
+    e.preventDefault();
+    WorkerManager.purchaseWorker();
 });
