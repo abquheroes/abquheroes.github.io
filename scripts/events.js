@@ -45,7 +45,7 @@ class Event {
         if (type === EventTypes.DUNGEON) {
             return "You completed a dungeon! Click ACCEPT to get your rewards.";
         }
-        return "You found a worker in the dungeon! Click ACCEPT to add him to your entourage!"
+        return "You found a worker in the dungeon! Click ACCEPT to add them to your entourage!"
     }
 };
 
