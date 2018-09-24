@@ -312,7 +312,6 @@ function initializeHeroList() {
         $heroList.append(d);
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
-        console.log("side trigger!");
         const amt = HeroManager.heroes.filter(h=>h.owned).length*100;
         const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
         $heroList.append(b1);
