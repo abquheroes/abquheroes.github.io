@@ -24,7 +24,7 @@
     height: 8px;
 }
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .Worker .jobDisable, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, .ui-tabs .ui-tabs-nav .ui-tabs-anchor, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard  {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -396,6 +396,7 @@ body{
     align-items: center;
     text-align: center;
     flex-grow: 1;
+    width: 100%;
     padding: 10px;
 }
 
@@ -491,15 +492,6 @@ Rarities
 =============================================
 */
 
-/*
-.R0 {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.15) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.15) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.15) 100%);
-    border-color: rgba(0, 0, 0, 0.25);
-}
-*/
-
 .R1 { /* Green */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(23, 247, 2, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(23, 247, 2, 0.15) 100%);
@@ -519,6 +511,47 @@ Rarities
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(223, 2, 131, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(223, 2, 131, 0.15) 100%);
     border-color: rgba(223, 2, 131, 0.25);
+}
+
+.inventoryItem.R0 > .inventoryItemName:before, .inventoryItem.R1 > .inventoryItemName:before, .inventoryItem.R2 > .inventoryItemName:before, .inventoryItem.R3 > .inventoryItemName:before {
+    display: block;
+    position: absolute;  
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    z-index: 10;
+}
+
+.inventoryItem.R0 > .inventoryItemName:before {
+    content: "Standard";
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
+}
+
+.inventoryItem.R1 > .inventoryItemName:before {
+    content: "Good";
+    background-color: rgb(25, 64, 26);
+    border: 1px solid #1e5b1c;
+}
+
+.inventoryItem.R2 > .inventoryItemName:before {
+    content: "Great";
+    background-color: #32301b;
+    border: 1px solid #5a5016;
+}
+
+.inventoryItem.R3 > .inventoryItemName:before {
+    content: "Epic";
+    background-color: #34192c;
+    border: 1px solid #5d1441;
+}
+
+.inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
+    opacity: 1;
 }
 
 /* 
@@ -1703,7 +1736,7 @@ select {
     margin: 1px;
 }
 
-.heroOwnedCard {
+.heroOwnedCard, .buyNewHeroCard {
     display: flex;
     background-color: var(--bg);
     text-align: center;
@@ -1714,7 +1747,7 @@ select {
     border-bottom: 1px solid var(--border);
 }
 
-.heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
+.heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover, .buyNewHeroCard:hover {
     background-color: var(--bg-2);
     cursor: pointer;
 }
@@ -1726,6 +1759,10 @@ select {
 
 .heroOwnedName {
     flex: 1;
+}
+
+.buyNewHeroCard {
+    padding: 15px 20px;
 }
 
 #heroCard {
