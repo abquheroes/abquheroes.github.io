@@ -425,8 +425,8 @@ function examineHeroPossibleEquip(slot,heroID) {
         if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
         else td2.html(itemContainer.pow() + " (+" + relPow + ")");
-        if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relPow + ")");
-        else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relPow + ")");
+        if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
+        else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
         else td3.html(itemContainer.hp());
         const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3);
         table.append(row);
