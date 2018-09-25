@@ -71,3 +71,5 @@ const miscIcons = {
 function msToSec(ms) {
     return round(ms/1000,1) + "s"
 }
+
+const miscLoadedValues = {};

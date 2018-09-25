@@ -1,20 +1,13 @@
 "use strict";
 
 const levelCurves = { 
-    xpCurve : [],
-    hpCurve : [],
-    powCurve : [],
     getLvlStats(lvl) {
         return {xp:this.xpCurve[lvl-1],hp:this.hpCurve[lvl-1],pow:this.powCurve[lvl-1]};
     },
-    setXP(xp) {
-        this.xpCurve = xp;
-    },
-    setHP(hp) {
-        this.hpCurve = hp;
-    },
-    setPOW(pow) {
-        this.powCurve = pow;
+    initialize() {
+        this.xpCurve = miscLoadedValues.xpCurve.slice();
+        this.hpCurve = miscLoadedValues.hpCurve.slice();
+        this.powCurve = miscLoadedValues.powCurve.slice();
     },
 }
 
@@ -283,7 +276,7 @@ const HeroManager = {
         return hp - hero.getHPSlot(slot);
     },
     purchaseHero() {
-        const amt = HeroManager.heroes.filter(h=>h.owned).length*100;
+        const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
         if (ResourceManager.materialAvailable("M001") < amt) {
             Notifications.cantAffordHero();
             return;
@@ -312,7 +305,7 @@ function initializeHeroList() {
         $heroList.append(d);
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
-        const amt = HeroManager.heroes.filter(h=>h.owned).length*100;
+        const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
         const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
         $heroList.append(b1);
     }

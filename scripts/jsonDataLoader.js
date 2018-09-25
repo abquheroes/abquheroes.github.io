@@ -1,5 +1,20 @@
 "use strict";
 
+function loadMisc() {
+    $.ajax({
+        url: "json/misc.json",
+    }).done((data) => {
+        console.log("misc load complete");
+        $.each(data, function(i,prop){
+            $.each(prop, function (name,val) {
+                miscLoadedValues[name] = val;
+            })
+        });
+        levelCurves.initialize();
+        loadMaterials();
+    });
+}
+
 function loadMaterials() {
     $.ajax({
         url: "json/materials.json",
@@ -34,42 +49,6 @@ function loadWorkers() {
         $.each(data, function(i,props){
             const worker = new Worker(props);
             WorkerManager.addWorker(worker);
-        });
-        loadXPCurve();
-    });
-}
-
-function loadXPCurve() {
-    $.ajax({
-        url: "json/xpCurve.json",
-    }).done((data) => {
-        console.log("xp curve load complete");
-        $.each(data, function(i,props){
-            levelCurves.setXP(props);
-        });
-        loadHPCurve();
-    });
-}
-
-function loadHPCurve() {
-    $.ajax({
-        url: "json/hpCurve.json",
-    }).done((data) => {
-        console.log("hp curve load complete");
-        $.each(data, function(i,props){
-            levelCurves.setHP(props);
-        });
-        loadPOWCurve();
-    });
-}
-
-function loadPOWCurve() {
-    $.ajax({
-        url: "json/powCurve.json",
-    }).done((data) => {
-        console.log("pow curve load complete");
-        $.each(data, function(i,props){
-            levelCurves.setPOW(props);
         });
         loadHeroes();
     });

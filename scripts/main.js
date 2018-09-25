@@ -10,6 +10,7 @@ const player = {
 
 function afterLoad() {
     initializeRecipes();
+    WorkerManager.generateWorkerSac();
     WorkerManager.gainWorker("W001");
     recipeList.idToItem("R0701").owned = true;
     refreshInventory(); //the others are loaded in order
@@ -24,7 +25,7 @@ function afterLoad() {
     refreshRecipeFilters();
 }
 
-loadMaterials(); //the others are loaded in order
+loadMisc(); //the others are loaded in order
 openTab("recipesTab");
 
 function mainLoop() {

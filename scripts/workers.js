@@ -148,6 +148,27 @@ const WorkerManager = {
         }
         const workerID = workerList[Math.floor(Math.random() * workerList.length)];
         this.gainWorker(workerID);
+    },
+    generateWorkerSac() {
+        this.workers.forEach(w=>w.lvlreq = []);
+        ["standard","advanced"].forEach(t => {
+            for (let i=1;i<11;i++) { //10 levels of worker sac, generate a new random list every time
+                const usedTypes = this.workers.map(w=>w.defaultRecipeLine);
+                let remainingTypes = ItemType.slice().filter(x => !usedTypes.includes(x));
+                this.workers.filter(w=>w.type === t).forEach(worker => {
+                    const T1 = worker.defaultRecipeLine;
+                    //we don't remove because we did that already
+                    const T2 = remainingTypes[Math.floor(Math.random() * remainingTypes.length)];
+                    remainingTypes = remainingTypes.filter(t=>t !== T2);
+                    const T3 = remainingTypes[Math.floor(Math.random() * remainingTypes.length)];
+                    remainingTypes = remainingTypes.filter(t=>t !== T3);
+                    let r = 0
+                    if (t === "advanced") r = 1
+                    const req = [[recipeList.recipeIDByTypeLvl(T1,i),r,10],[recipeList.recipeIDByTypeLvl(T2,i),r,10],[recipeList.recipeIDByTypeLvl(T3,i),r,10],["M001",0,miscLoadedValues.workerCost[i]]];
+                    worker.lvlreq.push(req);
+                });
+            };
+        });
     }
 }
 
