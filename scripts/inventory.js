@@ -101,19 +101,21 @@ const Inventory = {
             return;
         }
         const roll = Math.floor(Math.random() * 1000)
-        if (roll <= 1) {
+        if (roll < miscLoadedValues.qualityCheck[0]) {
             this.addToInventory(id,3);
             Notifications.exceptionalCraft(name,"epic");
         }
-        else if (roll <= 10) {
+        else if (roll < miscLoadedValues.qualityCheck[1]+miscLoadedValues.qualityCheck[0]) {
             this.addToInventory(id,2);
             Notifications.exceptionalCraft(name,"great");
         }
-        else if (roll <= 50) {
+        else if (roll < miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1]+miscLoadedValues.qualityCheck[0]) {
             this.addToInventory(id,1);
             Notifications.exceptionalCraft(name,"good");
         }
-        else this.addToInventory(id,0);
+        else {
+            devtools.craftTable["common"] += 1;
+        }
     },
     removeFromInventory(id,rarity) {
         for (let i=0;i<this.inv.length;i++) {
