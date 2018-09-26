@@ -8,6 +8,11 @@ $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     actionSlotManager.removeSlot(slot);
 });
 
+$(document).on("click", ".ASBuySlot", (e) => {
+    e.preventDefault();
+    actionSlotManager.upgradeSlot();
+})
+
 class actionSlot {
     constructor(itemid) {
         this.itemid = itemid;
@@ -47,7 +52,7 @@ class actionSlot {
 }
 
 const actionSlotManager = {
-    maxSlots : 5,
+    maxSlots : 1,
     slots : [],
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
@@ -96,6 +101,17 @@ const actionSlotManager = {
     },
     itemList() {
         return this.slots.map(slot => slot.item);
+    },
+    upgradeSlot() {
+        if (this.maxSlots === 5) return;
+        const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordSlot();
+            return;
+        }
+        ResourceManager.deductMoney(amt);
+        this.maxSlots += 1;
+        initializeActionSlots();
     }
 }
 
@@ -115,5 +131,12 @@ function initializeActionSlots() {
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
         d.append(d1,d2.append(a2),d3.append(s3));
         $ActionSlots.append(d);
+    }
+    if (actionSlotManager.maxSlots < 5) {
+        const d4 = $("<div/>").addClass("ASBuySlot");
+        const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
+        const d5 = $("<div/>").addClass("ASBuySlotText").html(`Purchase Action Slot - ${miscIcons.gold}&nbsp;&nbsp;${amt}`)
+        d4.append(d5);
+        $ActionSlots.append(d4);
     }
 }
