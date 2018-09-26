@@ -33,10 +33,10 @@ class itemContainer {
         containerid += 1;
     }
     pow() {
-        return Math.round(this.item.pow * (1+0.5*this.rarity));
+        return Math.round(this.item.pow * miscLoadedValues.rarityMod[this.rarity]);
     }
     hp() {
-        return Math.round(this.item.hp * (1+0.5*this.rarity));
+        return Math.round(this.item.hp * miscLoadedValues.rarityMod[this.rarity]);
     }
     act() {
         return this.item.act();
@@ -101,20 +101,20 @@ const Inventory = {
             return;
         }
         const roll = Math.floor(Math.random() * 1000)
-        if (roll < miscLoadedValues.qualityCheck[0]) {
+        if (roll < miscLoadedValues.qualityCheck[3]) {
             this.addToInventory(id,3);
             Notifications.exceptionalCraft(name,"epic");
         }
-        else if (roll < miscLoadedValues.qualityCheck[1]+miscLoadedValues.qualityCheck[0]) {
+        else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]) {
             this.addToInventory(id,2);
             Notifications.exceptionalCraft(name,"great");
         }
-        else if (roll < miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1]+miscLoadedValues.qualityCheck[0]) {
+        else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1]) {
             this.addToInventory(id,1);
             Notifications.exceptionalCraft(name,"good");
         }
         else {
-            devtools.craftTable["common"] += 1;
+            this.addToInventory(id,0);
         }
     },
     removeFromInventory(id,rarity) {
