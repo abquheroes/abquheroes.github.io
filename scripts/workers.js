@@ -136,7 +136,7 @@ const WorkerManager = {
         return Math.max(...workerLvls);
     },
     purchaseWorker() {
-        const amt = 500;
+        const amt = miscLoadedValues.workerCost[this.workers.filter(w=>w.owned).length];
         if (ResourceManager.materialAvailable("M001") < amt) {
             Notifications.cantAffordWorker();
             return;
@@ -243,7 +243,7 @@ function refreshWorkers() {
         }
         $workers.append(workerDiv)
     });
-    const amt = 500;
+    const amt = miscLoadedValues.workerCost[WorkerManager.workers.filter(w=>w.owned).length]
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
     const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase Worker&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
