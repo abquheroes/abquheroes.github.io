@@ -211,7 +211,7 @@
   },
   {
     "id": "B201",
-    "name": "Bee",
+    "name": "Bumbling Bee",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -232,7 +232,7 @@
   },
   {
     "id": "B202",
-    "name": "Cobra",
+    "name": "Crazy Cobra",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -253,7 +253,7 @@
   },
   {
     "id": "B203",
-    "name": "Worm",
+    "name": "Wiggle Worm",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -274,7 +274,7 @@
   },
   {
     "id": "B204",
-    "name": "Rat",
+    "name": "Reckless Rat",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -295,7 +295,7 @@
   },
   {
     "id": "B205",
-    "name": "Scorpion",
+    "name": "Scary Scorpion",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -316,7 +316,7 @@
   },
   {
     "id": "B206",
-    "name": "Spider",
+    "name": "Stinky Spider",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -337,7 +337,7 @@
   },
   {
     "id": "B207",
-    "name": "Snake",
+    "name": "Slinky Snake",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -358,7 +358,7 @@
   },
   {
     "id": "B208",
-    "name": "Parasite",
+    "name": "Pure Parasite",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -379,7 +379,7 @@
   },
   {
     "id": "B209",
-    "name": "Wasp",
+    "name": "Wistful Wasp",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -400,7 +400,7 @@
   },
   {
     "id": "B210",
-    "name": "Bat",
+    "name": "Badgering Bat",
     "hpBase": 25,
     "hpLvl": 0.5,
     "powBase": 1,
@@ -526,7 +526,7 @@
   },
   {
     "id": "B401",
-    "name": "Crab",
+    "name": "Cranky Crab",
     "hpBase": 60,
     "hpLvl": 4,
     "powBase": 4,
@@ -547,7 +547,7 @@
   },
   {
     "id": "B402",
-    "name": "Octopus",
+    "name": "Obese Octopus",
     "hpBase": 60,
     "hpLvl": 4,
     "powBase": 4,
@@ -568,7 +568,7 @@
   },
   {
     "id": "B403",
-    "name": "Turtle",
+    "name": "Tepid Turtle",
     "hpBase": 60,
     "hpLvl": 4,
     "powBase": 4,
@@ -589,7 +589,7 @@
   },
   {
     "id": "B404",
-    "name": "Alligator",
+    "name": "Achy Alligator",
     "hpBase": 60,
     "hpLvl": 4,
     "powBase": 4,
@@ -610,7 +610,7 @@
   },
   {
     "id": "B405",
-    "name": "Dinosaur",
+    "name": "Dinky Dinosaur",
     "hpBase": 60,
     "hpLvl": 4,
     "powBase": 4,
