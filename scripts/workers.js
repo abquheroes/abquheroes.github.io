@@ -49,6 +49,7 @@ class Worker {
     }
     canUpgrade() {
         let result = true;
+        if (devtools.bypassUpgrade) return true;
         this.thislvlreq().forEach(req => {
             if (req[0] === "M001") return;
             if (this.donated[req[0]] < req[2]) result = false;
@@ -152,7 +153,7 @@ const WorkerManager = {
     generateWorkerSac() {
         this.workers.forEach(w=>w.lvlreq = []);
         ["standard","advanced"].forEach(t => {
-            for (let i=1;i<11;i++) { //10 levels of worker sac, generate a new random list every time
+            for (let i=1;i<10;i++) { //10 levels of worker sac, generate a new random list every time
                 const usedTypes = this.workers.map(w=>w.defaultRecipeLine);
                 let remainingTypes = ItemType.slice().filter(x => !usedTypes.includes(x));
                 this.workers.filter(w=>w.type === t).forEach(worker => {
@@ -164,7 +165,7 @@ const WorkerManager = {
                     remainingTypes = remainingTypes.filter(t=>t !== T3);
                     let r = 0
                     if (t === "advanced") r = 1
-                    const req = [[recipeList.recipeIDByTypeLvl(T1,i),r,10],[recipeList.recipeIDByTypeLvl(T2,i),r,10],[recipeList.recipeIDByTypeLvl(T3,i),r,10],["M001",0,miscLoadedValues.workerCost[i]]];
+                    const req = [[recipeList.recipeIDByTypeLvl(T1,i),r,10],[recipeList.recipeIDByTypeLvl(T2,i),r,10],[recipeList.recipeIDByTypeLvl(T3,i),r,10],["M001",0,miscLoadedValues.workerSacCost[i]]];
                     worker.lvlreq.push(req);
                 });
             };

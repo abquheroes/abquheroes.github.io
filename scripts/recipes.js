@@ -122,7 +122,6 @@ const recipeList = {
         return item.remainingReqs();
     },
     recipeIDByTypeLvl(type,lvl) {
-        console.log(type, lvl);
         return this.recipes.find(r => r.type === type && r.lvl === lvl).id;
     }
 }
