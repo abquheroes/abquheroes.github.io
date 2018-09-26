@@ -347,15 +347,13 @@
     "id": "R0301",
     "name": "Lonely Spear",
     "lvl": 1,
-    "value": 7,
+    "value": 4,
     "craftTime": 14258,
     "type": "Spears",
     "rcost": [
       "bone"
     ],
-    "mcost": {
-      "M101": 1
-    },
+    "mcost": "",
     "actTime": 4000,
     "pow": 6,
     "hp": 0
@@ -697,9 +695,7 @@
     "rcost": [
       "mana"
     ],
-    "mcost": {
-      "M501": 1
-    },
+    "mcost": "",
     "actTime": 4000,
     "pow": 6,
     "hp": 0
@@ -1379,15 +1375,13 @@
     "id": "R0901",
     "name": "Riding Crop",
     "lvl": 1,
-    "value": 8,
+    "value": 5,
     "craftTime": 15519,
     "type": "Whips",
     "rcost": [
       "leather"
     ],
-    "mcost": {
-      "M201": 1
-    },
+    "mcost": "",
     "actTime": 5000,
     "pow": 10,
     "hp": 0
@@ -1551,15 +1545,13 @@
     "id": "R1001",
     "name": "Meager Sword",
     "lvl": 1,
-    "value": 11,
+    "value": 7,
     "craftTime": 22406,
     "type": "Swords",
     "rcost": [
       "steel"
     ],
-    "mcost": {
-      "M501": 1
-    },
+    "mcost": "",
     "actTime": 5000,
     "pow": 10,
     "hp": 0
@@ -1619,7 +1611,7 @@
     "id": "R1005",
     "name": "Lakekeeper",
     "lvl": 5,
-    "value": 29557,
+    "value": 16257,
     "craftTime": 268485,
     "type": "Swords",
     "rcost": [
@@ -1707,7 +1699,7 @@
     "id": "R1010",
     "name": "Jawstriker",
     "lvl": 10,
-    "value": 119037559,
+    "value": 65470658,
     "craftTime": 1246139,
     "type": "Swords",
     "rcost": [
@@ -3912,15 +3904,13 @@
     "id": "R5501",
     "name": "Spells Vol I",
     "lvl": 1,
-    "value": 31,
+    "value": 18,
     "craftTime": 66466,
     "type": "Tomes",
     "rcost": [
       "paper"
     ],
-    "mcost": {
-      "M301": 1
-    },
+    "mcost": "",
     "actTime": 0,
     "pow": 10,
     "hp": 0
@@ -4272,7 +4262,7 @@
     "id": "R6101",
     "name": "Healing Potion",
     "lvl": 1,
-    "value": 13,
+    "value": 8,
     "craftTime": 27873,
     "type": "Potions",
     "rcost": [
@@ -4444,15 +4434,13 @@
     "id": "R6201",
     "name": "Lactuca",
     "lvl": 1,
-    "value": 25,
+    "value": 14,
     "craftTime": 49680,
     "type": "Pendants",
     "rcost": [
       "fabric"
     ],
-    "mcost": {
-      "M501": 1
-    },
+    "mcost": "",
     "actTime": 0,
     "pow": 0,
     "hp": 40
