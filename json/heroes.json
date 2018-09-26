@@ -7,7 +7,6 @@
     "slot1Type": [
       "Swords",
       "Maces",
-      "Axes",
       "Spears"
     ],
     "slot2Type": [
@@ -34,8 +33,7 @@
     "slot1Type": [
       "Swords",
       "Maces",
-      "Axes",
-      "Spears"
+      "Axes"
     ],
     "slot2Type": [
       "Helmets"
@@ -59,7 +57,6 @@
     "class": "Fighter",
     "type": "Might",
     "slot1Type": [
-      "Swords",
       "Maces",
       "Axes",
       "Spears"
@@ -90,7 +87,6 @@
     "type": "Might",
     "slot1Type": [
       "Swords",
-      "Maces",
       "Axes",
       "Spears"
     ],
