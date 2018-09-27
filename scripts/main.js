@@ -23,6 +23,7 @@ function afterLoad() {
     refreshHeroSelect();
     populateRecipe("Knives");
     refreshRecipeFilters();
+    ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
 }
 
 loadMisc(); //the others are loaded in order
