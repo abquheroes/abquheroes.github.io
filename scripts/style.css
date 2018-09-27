@@ -54,7 +54,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, .purchaseWorkerCard   {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, .purchaseWorkerCard, .ASBuySlot  {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -796,6 +796,32 @@ Rarities
     margin-top: 3px;
 }
 
+.ASBuySlot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    min-height: 100px;
+    background-color: var(--bg-2);
+    border: 2px dotted var(--border-3);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.ASBuySlot:hover {
+    background-color: var(--green-dark);
+    border: 2px solid var(--green-light);
+}
+
+.ASBuySlotCost {
+    margin-top: 5px;
+}
+
+.ASBuySlotCost > img {
+    vertical-align: middle;
+}
+
 .pbLabel {
     padding: 3px 14px;
     color: var(--text);
@@ -1214,8 +1240,13 @@ Rarities
 }
 
 .purchaseWorkerCard:hover {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--green-dark);
+    border-color: var(--green-light);
+}
+
+.unknownWorker > img {
+    height: 48px;
+    vertical-align: middle;
 }
 
 .buyNewWorker {
@@ -1613,8 +1644,8 @@ Rarities
 }
 
 .buyNewHeroCard:hover {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--green-dark);
+    border-color: var(--green-light);
 }
 
 #heroCard {

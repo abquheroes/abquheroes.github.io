@@ -135,8 +135,9 @@ function initializeActionSlots() {
     if (actionSlotManager.maxSlots < 5) {
         const d4 = $("<div/>").addClass("ASBuySlot");
         const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
-        const d5 = $("<div/>").addClass("ASBuySlotText").html(`Purchase Action Slot - ${miscIcons.gold}&nbsp;&nbsp;${amt}`)
-        d4.append(d5);
+        const d5 = $("<div/>").addClass("ASBuySlotText").html(`Purchase Action Slot`);
+        const d6 = $("<div/>").addClass("ASBuySlotCost").html(`${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+        d4.append(d5, d6);
         $ActionSlots.append(d4);
     }
 }
