@@ -101,10 +101,10 @@ function refreshHeroSelect() {
         d.append(d1a);
     }
     $dtsTop.append(d);
-    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH");
+    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH DUNGEON");
     $dtsTop.append(dbutton);
     $dtsBottom.empty();
-    const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Available Heroes:</h3>");
+    const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
     $dtsBottom.append(d1bot);
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {

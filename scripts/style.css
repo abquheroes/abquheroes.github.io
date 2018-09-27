@@ -78,7 +78,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot {
+#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -1870,6 +1870,7 @@ Rarities
 #dungeon-container {
     display: flex;
     height: 100%;
+    font-size: 0.9em;
     overflow: hidden;
 }
 
@@ -2062,20 +2063,34 @@ Rarities
     padding: 10px 5px;
 }
 
-#dtsTop, #dtsBottom, #drTop, .dungeonTeamCollection, .dungeonAvailableCollection {
+#drTop {
     display: flex;
     flex-wrap: wrap;
 }
 
+.dungeonTeamCollection, .dungeonAvailableCollection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
 #dtsTop, #dtsBottom, #drTop {
-    flex-direction: column;
     padding: 20px;
 }
 
+.dtsTopTitle, .dtsBotTitle {
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 10px;
+    padding: 0 10px 10px;
+}
+
+.dtsTopTitle > h3, .dtsBotTitle > h3 {
+    margin: 0;
+}
+
 #dungeonTeamButton {
+    display: inline-flex;
     margin-top: 20px;
     padding: 10px 20px;
-    align-self: start;
     text-align: center;
     cursor: pointer;
     border: 1px solid var(--green-light);
@@ -2097,6 +2112,10 @@ Rarities
 
 .hpBarDiv, .dsbhpBarDiv {
     border: 1px solid rgb(134, 0, 0);
+}
+
+.hpBarDiv {
+    margin-top: 10px;
 }
 
 .hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
