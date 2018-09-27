@@ -400,6 +400,7 @@ body {
     height: 0;
     margin-left: 10px;
     opacity: 0;
+    pointer-events: none;
 }
 
 #sortInventory:hover:after {
