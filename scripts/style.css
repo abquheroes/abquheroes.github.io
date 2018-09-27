@@ -1164,6 +1164,10 @@ Rarities
     margin-right: 25px;
 }
 
+.bpShopName > img {
+    height: 24px;
+}
+
 .bpShopName .item-name {
     margin-left: 10px;
 }
