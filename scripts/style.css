@@ -62,7 +62,7 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -78,7 +78,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, .ASName, .ASProgressBar, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty {
+#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -806,6 +806,7 @@ Rarities
     background-color: var(--bg-2);
     border: 2px dotted var(--border-3);
     border-radius: 10px;
+    font-size: 0.9em;
     cursor: pointer;
 }
 
@@ -1052,6 +1053,11 @@ Rarities
 
 .recipeRow.recipeRowDisable:nth-of-type(odd) {
     background-color: #2c2f31;
+}
+
+.recipeRow.recipeRowDisable > div > img, 
+.recipeRow.recipeRowDisable > div > div > div > img {
+    opacity: 0.75;
 }
 
 .recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
