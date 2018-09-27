@@ -39,7 +39,7 @@ class Event {
     constructor(type) {
         this.type = type;
         this.text = this.getText(type);
-        this.image = '<img src="/images/DungeonIcons/event.png" alt="Event">';
+        this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
     }
     getText(type) {
         if (type === EventTypes.DUNGEON) {

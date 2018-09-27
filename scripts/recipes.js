@@ -10,10 +10,10 @@ class Item{
         this.owned = false;
     }
     itemPicName() {
-        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
+        return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
     itemPic() {
-        return "<img src='/images/recipes/"+this.type+"/"+this.id+".png'>";
+        return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>";
     }
     imageValue() {
         return ResourceManager.formatCost("M001",this.value);
