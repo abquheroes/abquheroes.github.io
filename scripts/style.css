@@ -2240,6 +2240,7 @@ Rarities
 .eventMessage {
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
 }
 
 .eventMessage:before {
@@ -2271,15 +2272,12 @@ Rarities
     position: relative;
     padding: 3px 10px;
     margin-top: 10px;
+    margin-right: 5px;
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--bg);
     border: 1px solid var(--border);
-}
-
-.rewardCard + .rewardCard {
-    margin-left: 5px;
 }
 
 .rewardImage {
@@ -2594,7 +2592,6 @@ footer a[href*="discord.gg"]:hover {
     right: -50%;
     margin-left: -8px;
     bottom: 130%;
-    width: 120px;
 }
 
 .ProgressCard.tooltip:after {
