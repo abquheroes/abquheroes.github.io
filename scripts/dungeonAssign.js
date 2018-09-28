@@ -97,11 +97,12 @@ function refreshHeroSelect() {
         d.append(d1);
     });
     for (let i=0;i<party.emptyPartySlots();i++) {
-        const d1a = characterCard("dungeonTeam",i);
+        const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
         d.append(d1a);
     }
     $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH DUNGEON");
+    if (party.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
     $dtsTop.append(dbutton);
     $dtsBottom.empty();
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
@@ -162,6 +163,9 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
         DungeonAssist.status = DungeonState.ADVENTURING;
         DungeonAssist.advanceFloor();
         loadCorrectDungeonScreen();
+    }
+    else {
+        Notifications.noPartySelected();
     }
 });
 
