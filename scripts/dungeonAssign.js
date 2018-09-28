@@ -136,8 +136,10 @@ function characterCard(prefix,dv,ID) {
     const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d3 = createHPBar(hero,"Party");    
-    return d.append(d1,d2,d3);
+    const d3 = $("<div/>").addClass(prefix+"Lvl").html("Lv"+hero.lvl);
+    const d5 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
+    const d4 = createHPBar(hero,"Party");    
+    return d.append(d1,d2,d3,d4,d5);
 }
 
 //clicking a hero to remove them from your party
