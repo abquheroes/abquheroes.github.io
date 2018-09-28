@@ -124,6 +124,7 @@ class Mob {
             }
         }
     }
+    healCost() {return};
 }
 
 function getTarget(party,type) {

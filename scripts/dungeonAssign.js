@@ -128,6 +128,7 @@ function refreshHeroSelect() {
 
 function characterCard(prefix,dv,ID) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
+    const dclick = $("<div/>").addClass(prefix+"CardClick").attr("data-value",dv);
     if (!ID) {
         const d1a = $("<div/>").addClass(prefix+"Image").html('<img src="images/heroes/blank.png">');
         const d2a = $("<div/>").addClass(prefix+"Name").html("Empty");
@@ -137,13 +138,16 @@ function characterCard(prefix,dv,ID) {
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
     const d3 = $("<div/>").addClass(prefix+"Lvl").html("Level "+hero.lvl);
-    const d5 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
-    const d4 = createHPBar(hero,"Party");    
-    return d.append(d1,d2,d3,d4,d5);
+    const d4 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
+    const d5 = createHPBar(hero,"Party");    
+    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.id).html(`Heal - ${miscIcons.gold} ${hero.healCost()}`);
+    if (hero.healCost() === 0) d6.hide();
+    dclick.append(d1,d2,d3,d4,d5);
+    return d.append(dclick,d6);
 }
 
 //clicking a hero to remove them from your party
-$(document).on('click', "div.dungeonTeamCard", (e) => {
+$(document).on('click', "div.dungeonTeamCardClick", (e) => {
     e.preventDefault();
     const arrayLocation = $(e.currentTarget).attr("data-value");
     party.removeMemberLocation(arrayLocation);
@@ -151,7 +155,7 @@ $(document).on('click', "div.dungeonTeamCard", (e) => {
 });
 
 //clicking a hero to add them to your party
-$(document).on('click', "div.dungeonAvailableCard", (e) => {
+$(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
     party.addMember(ID);
@@ -169,6 +173,13 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     else {
         Notifications.noPartySelected();
     }
+});
+
+//pay for heal
+$(document).on('click', ".healHero", (e) => {
+    e.preventDefault();
+    const ID = $(e.currentTarget).attr("id").substring(2);
+    HeroManager.idToHero(ID).healPay();
 });
 
 const $floorID = $("#floorID");
@@ -272,6 +283,10 @@ function refreshHPBar(hero) {
     $("#hpFillDung"+hero.id).css('width', hpWidth);
     $("#hpSide"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
     $("#hpFillSide"+hero.id).css('width', hpWidth);
+    const $hh = $("#hh"+hero.id)
+    $hh.html(`Heal - ${miscIcons.gold} ${hero.healCost()}`);
+    if (hero.healCost() > 0) $hh.show();
+    else $hh.hide();
 }
 
 function refreshAPBar(hero) {

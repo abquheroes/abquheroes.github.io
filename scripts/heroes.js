@@ -212,6 +212,18 @@ class Hero {
     dps() {
         return round(this.getPow()/this.actmax(),2);
     }
+    healCost() {
+        return this.maxHP()-this.hp;
+    }
+    healPay() {
+        const amt = this.healCost();
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordHealHero();
+            return;
+        }
+        ResourceManager.deductMoney(amt);
+        this.healPercent(100);
+    }
 }
 
 const HeroManager = {
@@ -289,7 +301,7 @@ const HeroManager = {
         if (this.heroes.filter(h=>h.owned).length === 12) party = new Party(4);
         initializeHeroList();
         refreshHeroSelect();
-    }
+    },
 }
 
 const $heroList = $("#heroList");
