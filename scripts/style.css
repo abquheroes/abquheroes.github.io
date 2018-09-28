@@ -2137,7 +2137,7 @@ Rarities
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
-    left: 15px;
+    left: 20px;
     bottom: 2px;
     white-space: pre;
     z-index: 2;
