@@ -2102,6 +2102,13 @@ Rarities
     background-color: var(--green-light);
 }
 
+#dungeonTeamButton.dungeonStartNotAvailable {
+    border-color: var(--border);
+    background-color: var(--bg);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
 .hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
     position: relative;
     display: flex;
