@@ -48,7 +48,7 @@ const Notifications = {
     },
     exceptionalCraft(name,type, iconType) {
         $.toast({
-            text: `You crfated a ${name} of ${type} rarity!`, // Text that is to be shown in the toast
+            text: `You crafted a ${name} of ${type} rarity!`, // Text that is to be shown in the toast
             heading: `${type} Craft!`, // Optional heading to be shown on the toast
             icon: iconType, // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
