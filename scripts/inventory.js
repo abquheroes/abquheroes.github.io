@@ -103,15 +103,15 @@ const Inventory = {
         const roll = Math.floor(Math.random() * 1000)
         if (roll < miscLoadedValues.qualityCheck[3]) {
             this.addToInventory(id,3);
-            Notifications.exceptionalCraft(name,"epic","craftEpic");
+            Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]) {
             this.addToInventory(id,2);
-            Notifications.exceptionalCraft(name,"great","craftGreat");
+            Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1]) {
             this.addToInventory(id,1);
-            Notifications.exceptionalCraft(name,"good","craftGood");
+            Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
             this.addToInventory(id,0);
