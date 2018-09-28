@@ -573,7 +573,7 @@ Rarities
 
 .inventoryItem.R1 > .inventoryItemName:before {
     content: "Good";
-    background-color: rgb(25, 64, 26);
+    background-color: #19401a;
     border: 1px solid #1e5b1c;
 }
 

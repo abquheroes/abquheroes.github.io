@@ -50,7 +50,7 @@ const Notifications = {
         $.toast({
             text: `You crafted a ${type} ${name}!`, // Text that is to be shown in the toast
             heading: 'Rare Craft!', // Optional heading to be shown on the toast
-            icon: 'success', // Type of toast icon
+            icon: 'craftGood', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
             hideAfter: 3000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
