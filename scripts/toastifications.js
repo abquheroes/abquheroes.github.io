@@ -3,7 +3,7 @@
 const Notifications = {
     craftWarning() {
         $.toast({
-            text: "Free up workers to proceed", // Text that is to be shown in the toast
+            text: "You do not have the required workers available for this craft.", // Text that is to be shown in the toast
             heading: 'Insufficient Workers', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
@@ -18,7 +18,7 @@ const Notifications = {
     },
     slotsFull() {
         $.toast({
-            text: "Remove a craft first", // Text that is to be shown in the toast
+            text: "Your action slots are all in use, please remove a craft to continue.", // Text that is to be shown in the toast
             heading: 'No Action Slots Available', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
@@ -33,8 +33,8 @@ const Notifications = {
     },
     workerGoldReq() {
         $.toast({
-            text: "More gold required to upgrade", // Text that is to be shown in the toast
-            heading: 'Error', // Optional heading to be shown on the toast
+            text: "You do not have enough gold to upgrade this worker.", // Text that is to be shown in the toast
+            heading: 'Cannot Upgrade Worker', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -63,7 +63,7 @@ const Notifications = {
     },
     inventoryFull() {
         $.toast({
-            text: "Please sell something to continue", // Text that is to be shown in the toast
+            text: "Your inventory is full, pleae sell something to continue.", // Text that is to be shown in the toast
             heading: 'Inventory Full', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
@@ -78,8 +78,8 @@ const Notifications = {
     },
     moreBluePrints() {
         $.toast({
-            text: "Not enough blueprint fragments", // Text that is to be shown in the toast
-            heading: 'Cannot Research', // Optional heading to be shown on the toast
+            text: "You do not have enough Blueprint Fragments to unlock this recipe.", // Text that is to be shown in the toast
+            heading: 'Cannot Research Recipe', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -93,8 +93,8 @@ const Notifications = {
     },
     noGearForSlot() {
         $.toast({
-            text: "No Gear in Inventory for Slot", // Text that is to be shown in the toast
-            heading: 'Cannot Equip', // Optional heading to be shown on the toast
+            text: "You do not have any gear for this slot in your inventory.", // Text that is to be shown in the toast
+            heading: 'No Gear to Equip', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -108,8 +108,8 @@ const Notifications = {
     },
     cantAffordHero() {
         $.toast({
-            text: "Not enough gold to purchase hero", // Text that is to be shown in the toast
-            heading: 'Cannot Purchase', // Optional heading to be shown on the toast
+            text: "You do not have enough gold to purchase this hero.", // Text that is to be shown in the toast
+            heading: 'Cannot Purchase Hero', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -123,8 +123,8 @@ const Notifications = {
     },
     cantAffordWorker() {
         $.toast({
-            text: "Not enough gold to purchase worker", // Text that is to be shown in the toast
-            heading: 'Cannot Purchase', // Optional heading to be shown on the toast
+            text: "You do not have enough gold to purchase this worker.", // Text that is to be shown in the toast
+            heading: 'Cannot Purchase Worker', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -138,8 +138,8 @@ const Notifications = {
     },
     cantAffordSlot() {
         $.toast({
-            text: "Not enough gold to purchase action slot", // Text that is to be shown in the toast
-            heading: 'Cannot Purchase', // Optional heading to be shown on the toast
+            text: "You do not have enough gold to purchase this slot.", // Text that is to be shown in the toast
+            heading: 'Cannot Purchase Slot', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
@@ -153,8 +153,8 @@ const Notifications = {
     },
     noPartySelected() {
         $.toast({
-            text: "No Heroes in Party", // Text that is to be shown in the toast
-            heading: 'Cannot Start', // Optional heading to be shown on the toast
+            text: "You have no heroes in your party.", // Text that is to be shown in the toast
+            heading: 'Cannot Start Dungeon', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false
