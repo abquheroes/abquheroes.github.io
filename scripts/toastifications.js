@@ -63,7 +63,7 @@ const Notifications = {
     },
     inventoryFull() {
         $.toast({
-            text: "Your inventory is full, pleae sell something to continue.", // Text that is to be shown in the toast
+            text: "Your inventory is full, please sell something to continue.", // Text that is to be shown in the toast
             heading: 'Inventory Full', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
