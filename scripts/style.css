@@ -573,7 +573,7 @@ Rarities
 
 .inventoryItem.R1 > .inventoryItemName:before {
     content: "Good";
-    background-color: rgb(25, 64, 26);
+    background-color: #19401a;
     border: 1px solid #1e5b1c;
 }
 
@@ -1623,12 +1623,13 @@ Rarities
 }
 
 .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--bg);
     border: 1px solid var(--border);
     min-width: 125px;
-    min-height: 164px;
+    min-height: 195px;
     text-align: center;
     justify-content: center;
     padding: 20px;
@@ -2107,6 +2108,31 @@ Rarities
     background-color: var(--bg);
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.dungeonAvailablePow, .dungeonTeamPow {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px auto;
+    padding: 5px 15px;
+    background-color: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.dungeonAvailablePow > img, .dungeonTeamPow > img {
+    vertical-align: middle;
+}
+
+.dungeonAvailableImage, .dungeonTeamImage {
+    margin-top: 10px;
+}
+
+.dungeonAvailableLvl, .dungeonTeamLvl {
+    color: #11dc82;
 }
 
 .hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
