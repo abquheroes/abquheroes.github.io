@@ -4,7 +4,7 @@ const slotState = Object.freeze({NEEDMATERIAL:0,CRAFTING:1});
 
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
-    const slot = $(e.target).parent().attr("href");
+    const slot = parseInt($(e.target).parent().attr("href"));
     actionSlotManager.removeSlot(slot);
 });
 
@@ -12,6 +12,12 @@ $(document).on("click", ".ASBuySlot", (e) => {
     e.preventDefault();
     actionSlotManager.upgradeSlot();
 })
+
+$(document).on("click", ".ASBlock", (e) => {
+    e.preventDefault();
+    const slot = $(e.currentTarget).attr("id");
+    actionSlotManager.toggleAuto(slot);
+});
 
 class actionSlot {
     constructor(itemid) {
@@ -21,6 +27,7 @@ class actionSlot {
         this.craftTime = 0;
         this.maxCraft = this.item.craftTime;
         this.status = slotState.NEEDMATERIAL;
+        this.autoSell = "None";
     }
     itemPicName() {
         return this.item.itemPicName();
@@ -31,7 +38,7 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            Inventory.craftToInventory(this.itemid);
+            Inventory.craftToInventory(this.itemid,this.autoSell);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
@@ -112,6 +119,16 @@ const actionSlotManager = {
         ResourceManager.deductMoney(amt);
         this.maxSlots += 1;
         initializeActionSlots();
+    },
+    autoSell(i) {
+        if (this.slots.length <= i) return "";
+        return this.slots[i].autoSell;
+    },
+    toggleAuto(i) {
+        console.log(i);
+        if (this.slots[i].autoSell === "None") this.slots[i].autoSell = "Common";
+        else this.slots[i].autoSell = "None";
+        initializeActionSlots();
     }
 }
 
@@ -120,7 +137,7 @@ const $ActionSlots = $("#ActionSlots");
 function initializeActionSlots() {
     $ActionSlots.empty();
     for (let i=0;i<actionSlotManager.maxSlots;i++) {
-        const d = $("<div/>").addClass("ASBlock");
+        const d = $("<div/>").addClass("ASBlock").attr("id",i);
         const d1 = $("<div/>").addClass("ASName");
         if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
         else d1.html(actionSlotManager.isEmptySlot());
@@ -129,7 +146,9 @@ function initializeActionSlots() {
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
-        d.append(d1,d2.append(a2),d3.append(s3));
+        const d4 = $("<div/>").addClass("ASauto").html(`AutoSell: ${actionSlotManager.autoSell(i)}`);
+        if (!actionSlotManager.hasSlot(i)) d4.hide();
+        d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
     }
     if (actionSlotManager.maxSlots < 5) {

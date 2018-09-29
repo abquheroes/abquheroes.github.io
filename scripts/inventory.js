@@ -4,14 +4,14 @@ $('#inventory').on("click",".inventorySell",(e) => {
     Inventory.sellInventory(id);
 })
 
-const $autoSellToggle = $("#autoSellToggle");
+/*const $autoSellToggle = $("#autoSellToggle");
 
 $(document).on("click","#autoSellToggle",(e) => {
     e.preventDefault();
     autoSellToggle = !autoSellToggle;
     if (autoSellToggle) $autoSellToggle.removeClass("noAutoSell").addClass("yesAutoSell").html("Autosell Commons");
     else $autoSellToggle.removeClass("yesAutoSell").addClass("noAutoSell").html("Don't Autosell Commons");
-});
+});*/
 
 $(document).on("click","#sortInventory",(e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ $(document).on("click","#sortInventory",(e) => {
 });
 
 let containerid = 0;
-let autoSellToggle = false;
+//let autoSellToggle = false;
 
 class itemContainer {
     constructor(id,rarity) {
@@ -69,11 +69,12 @@ class itemContainer {
 const Inventory = {
     inv : createArray(20,null),
     invMax : 20,
-    addToInventory(id,rarity) {
+    addToInventory(id,rarity,autoSell) {
+        console.log(autoSell);
         if (this.full()) {
             this.sellItem(id,rarity);
         }
-        else if (autoSellToggle && rarity === 0) {
+        else if (autoSell === "Common" && rarity === 0) {
             this.sellItem(id,rarity);
         }
         else {
@@ -94,7 +95,7 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
     },
-    craftToInventory(id) {
+    craftToInventory(id,autoSell) {
         const name = recipeList.idToItem(id).name;
         if (devtools.autoLeg) {
             this.addToInventory(id,3);
@@ -114,7 +115,7 @@ const Inventory = {
             Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
-            this.addToInventory(id,0);
+            this.addToInventory(id,0,autoSell);
         }
     },
     removeFromInventory(id,rarity) {
