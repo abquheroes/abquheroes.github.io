@@ -22,6 +22,7 @@ const DungeonAssist = {
     maxfloor : -1,
     floor : null,
     dropList : [],
+    dungeonTime : 0,
     status : DungeonState.TEAMSELECT,
     addTime(t) {
         if (this.status !== DungeonState.ADVENTURING) return;
@@ -34,7 +35,7 @@ const DungeonAssist = {
         });
         if (party.isDead()) {
             this.status = DungeonState.TEAMSELECT;
-            EventManager.addEventDungeon(this.dropList);
+            EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
             this.resetDungeon();
             loadCorrectDungeonScreen();
             $DungeonSideBarStatus.html("Status: Idle");
@@ -43,6 +44,7 @@ const DungeonAssist = {
         else if (this.floor.isDead()) {
             this.advanceFloor();
         }
+        this.dungeonTime += t;
         refreshDungeonFloorBars();
     },
     advanceFloor() {
@@ -60,6 +62,7 @@ const DungeonAssist = {
         this.floor = null;
         this.floorNum = 0;
         this.dropList = [];
+        this.dungeonTime = 0;
     },
     addDungeonDrop(drop,amt) {
         const found = this.dropList.find(d => d.id === drop)

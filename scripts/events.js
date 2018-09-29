@@ -21,9 +21,11 @@ const EventManager = {
     idToEvent(eventID) {
         return this.events.find(event => event.id === eventID);
     },
-    addEventDungeon(reward) {
+    addEventDungeon(reward,time,floor) {
         const event = new Event(EventTypes.DUNGEON);
         event.reward = reward;
+        event.time = time;
+        event.floor = floor;
         EventManager.addEvent(event)
     },
     addOnceEvent(eventID) {
@@ -38,14 +40,17 @@ const EventManager = {
 class Event {
     constructor(type) {
         this.type = type;
-        this.text = this.getText(type);
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
     }
-    getText(type) {
-        if (type === EventTypes.DUNGEON) {
-            return "You completed a dungeon! Click ACCEPT to get your rewards.";
-        }
-        return "You found a worker in the dungeon! Click ACCEPT to add them to your entourage!"
+    getText() {
+        const d = $("<div/>").addClass("dungeonEventText")
+        const d1 = $("<div/>").addClass("dungeonEventTimeHeading").html("Total Time:");
+        const d1a = $("<div/>").addClass("dungeonEventTime").html(msToTime(this.time));
+        const d2 = $("<div/>").addClass("dungeonEventFloorHeading").html("Floor Reached:");
+        const d2a = $("<div/>").addClass("dungeonEventFloor").html("Floor " + this.floor);
+        d1.append(d1a);
+        d2.append(d2a);
+        return d.append(d1,d2);
     }
 };
 
@@ -84,7 +89,7 @@ $(document).on('click', "div.eventList", (e) => {
     const eventID = $(e.currentTarget).attr("eventID");
     const event = EventManager.idToEvent(eventID);
     $eventContent.empty();
-    const d = $("<div/>").addClass("eventMessage").html(event.text);
+    const d = $("<div/>").addClass("eventMessage").html(event.getText());
     if (event.type === EventTypes.DUNGEON) {
         const d1 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d1);
