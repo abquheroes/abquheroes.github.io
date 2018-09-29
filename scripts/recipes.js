@@ -92,12 +92,13 @@ const recipeList = {
         return true;
     },
     buyBP(id) {
-        if (ResourceManager.idToMaterial("M002").amt === 0) {
-            Notifications.moreBluePrints()
+        const item = this.idToItem(id);
+        const amt = miscLoadedValues.recipeBuy[item.lvl-1]
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordBlueprint();
             return;
         }
-        ResourceManager.addMaterial("M002",-1);
-        const item = this.idToItem(id);
+        ResourceManager.deductMoney(amt);
         item.owned = true;
         populateRecipe(item.type);
     },
@@ -193,7 +194,8 @@ function refreshBlueprint(type) {
     }
     const needed = recipeList.remainingReqs(type);
     if (needed.length === 0) {
-        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - 1 <img src="images/resources/M002.png" id="${nextRecipe.id}" alt="Blueprint">`);
+        console.log(nextRecipe.lvl);
+        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${miscIcons.gold}&nbsp;&nbsp;${miscLoadedValues.recipeBuy[nextRecipe.lvl-1]}`);
         d.append(b1);
     }
     else {

@@ -76,9 +76,9 @@ const Notifications = {
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
-    moreBluePrints() {
+    cantAffordBlueprint() {
         $.toast({
-            text: "You do not have enough Blueprint Fragments to unlock this recipe.", // Text that is to be shown in the toast
+            text: "You do not have enough gold to research this recipe.", // Text that is to be shown in the toast
             heading: 'Cannot Research Recipe', // Optional heading to be shown on the toast
             icon: 'error', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain

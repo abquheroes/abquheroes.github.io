@@ -4,6 +4,7 @@ const slotState = Object.freeze({NEEDMATERIAL:0,CRAFTING:1});
 
 $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     const slot = parseInt($(e.target).parent().attr("href"));
     actionSlotManager.removeSlot(slot);
 });
