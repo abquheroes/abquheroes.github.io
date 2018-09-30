@@ -54,7 +54,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #achievements .ProgressCard, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -841,6 +841,40 @@ Rarities
 .ASBuySlotCost > img {
     vertical-align: middle;
 }
+
+.ASauto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 3px 5px;
+    font-size: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.ASauto:hover {
+    opacity: 1;
+}
+
+/*
+.ASauto:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Font Awesome 5 Free";
+    content: "\f155";
+    padding: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    opacity: 0.5;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+*/
 
 .pbLabel {
     padding: 3px 14px;
@@ -2503,6 +2537,26 @@ footer a[href*="discord.gg"]:hover {
 .tooltip:hover:before {
     margin-top: -26px;
     transform: rotate(180deg);
+}
+
+.ASauto.tooltip:before {
+    margin-top: 5px;
+    margin-right: -25px;
+    transform: rotate(-90deg);
+}
+
+.ASauto.tooltip:after {
+    top: 5px;
+    right: unset;
+    left: 25px;
+    bottom: unset;
+    width: 150px;
+    transform-origin: left;
+}
+
+.ASauto.tooltip:hover:before {
+    margin-right: -15px;
+    transform: rotate(-90deg);
 }
 
 .inventoryItem.tooltip:after {

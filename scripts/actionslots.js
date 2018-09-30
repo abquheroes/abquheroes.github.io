@@ -147,7 +147,7 @@ function initializeActionSlots() {
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
-        const d4 = $("<div/>").addClass("ASauto").html(`AutoSell: ${actionSlotManager.autoSell(i)}`);
+        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).html(`<i class="fas fa-dollar-sign"></i>`);
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
