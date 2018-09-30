@@ -4,15 +4,6 @@ $('#inventory').on("click",".inventorySell",(e) => {
     Inventory.sellInventory(id);
 })
 
-/*const $autoSellToggle = $("#autoSellToggle");
-
-$(document).on("click","#autoSellToggle",(e) => {
-    e.preventDefault();
-    autoSellToggle = !autoSellToggle;
-    if (autoSellToggle) $autoSellToggle.removeClass("noAutoSell").addClass("yesAutoSell").html("Autosell Commons");
-    else $autoSellToggle.removeClass("yesAutoSell").addClass("noAutoSell").html("Don't Autosell Commons");
-});*/
-
 $(document).on("click","#sortInventory",(e) => {
     e.preventDefault();
     Inventory.sortInventory();

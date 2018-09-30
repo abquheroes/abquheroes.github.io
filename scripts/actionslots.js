@@ -14,7 +14,7 @@ $(document).on("click", ".ASBuySlot", (e) => {
     actionSlotManager.upgradeSlot();
 })
 
-$(document).on("click", ".ASBlock", (e) => {
+$(document).on("click", ".ASauto", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("id");
     actionSlotManager.toggleAuto(slot);
@@ -138,7 +138,7 @@ const $ActionSlots = $("#ActionSlots");
 function initializeActionSlots() {
     $ActionSlots.empty();
     for (let i=0;i<actionSlotManager.maxSlots;i++) {
-        const d = $("<div/>").addClass("ASBlock").attr("id",i);
+        const d = $("<div/>").addClass("ASBlock");
         const d1 = $("<div/>").addClass("ASName");
         if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
         else d1.html(actionSlotManager.isEmptySlot());
@@ -147,7 +147,8 @@ function initializeActionSlots() {
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
-        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).html(`<i class="fas fa-dollar-sign"></i>`);
+        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
+        if (actionSlotManager.autoSell(i) === "Common") d4.addClass("ASautoEnabled");
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
