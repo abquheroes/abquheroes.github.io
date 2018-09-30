@@ -87,21 +87,25 @@ const Inventory = {
         refreshWorkerAmts();
     },
     craftToInventory(id,autoSell) {
-        const name = recipeList.idToItem(id).name;
+        const item = recipeList.idToItem(id)
+        const name = item.name;
+        item.addCount();
         if (devtools.autoLeg) {
             this.addToInventory(id,3);
             return;
         }
         const roll = Math.floor(Math.random() * 1000)
-        if (roll < miscLoadedValues.qualityCheck[3]) {
+        let mod = 1;
+        if (item.isMastered()) mod = 2;
+        if (roll < miscLoadedValues.qualityCheck[3]*mod) {
             this.addToInventory(id,3);
             Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
-        else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]) {
+        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
             this.addToInventory(id,2);
             Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
-        else if (roll < miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1]) {
+        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
             this.addToInventory(id,1);
             Notifications.exceptionalCraft(name,"Good","craftGood");
         }

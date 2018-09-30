@@ -130,6 +130,9 @@ const actionSlotManager = {
         if (this.slots[i].autoSell === "None") this.slots[i].autoSell = "Common";
         else this.slots[i].autoSell = "None";
         initializeActionSlots();
+    },
+    isMastered(i) {
+        return this.slots[i].item.isMastered();
     }
 }
 
@@ -147,6 +150,7 @@ function initializeActionSlots() {
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
+        if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
         if (actionSlotManager.autoSell(i) === "Common") d4.addClass("ASautoEnabled");
         if (!actionSlotManager.hasSlot(i)) d4.hide();

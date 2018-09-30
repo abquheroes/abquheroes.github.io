@@ -8,6 +8,7 @@ class Item{
     constructor (props) {
         Object.assign(this, props);
         this.owned = false;
+        this.craftCount = 0;
     }
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
@@ -65,6 +66,16 @@ class Item{
             s += `Lv${this.lvl} ${mat}, `
         });
         return s.slice(0, -2);
+    }
+    count() {
+        return Math.min(this.craftCount,100);
+    }
+    addCount() {
+        this.craftCount += 1;
+        $("#rc"+this.id).html(this.count()+"/100");
+    }
+    isMastered() {
+        return this.craftCount >= 100;
     }
 }
 
@@ -124,7 +135,7 @@ const recipeList = {
     },
     recipeIDByTypeLvl(type,lvl) {
         return this.recipes.find(r => r.type === type && r.lvl === lvl).id;
-    }
+    },
 }
 
 function populateRecipe(type) {
@@ -155,7 +166,8 @@ function initializeRecipes() {
     const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
     const htd6 = $('<div/>').addClass('recipeHeadTime').html("TIME");
     const htd7 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6,htd7);
+    const htd8 = $('<div/>').addClass('recipeHeadCount').html("MASTER");
+    const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
@@ -165,7 +177,8 @@ function initializeRecipes() {
         const td5 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
         const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td7 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6,td7);
+        const td8 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipe.count()+"/100");
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6,td7,td8);
         table.append(row);
     });
     $RecipeResults.append(table);
