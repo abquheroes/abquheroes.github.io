@@ -132,6 +132,7 @@ const actionSlotManager = {
         initializeActionSlots();
     },
     isMastered(i) {
+        if (i >= this.slots.length) return false;
         return this.slots[i].item.isMastered();
     }
 }
