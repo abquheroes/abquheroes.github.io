@@ -61,11 +61,10 @@ const Inventory = {
     inv : createArray(20,null),
     invMax : 20,
     addToInventory(id,rarity,autoSell) {
-        console.log(autoSell);
         if (this.full()) {
             this.sellItem(id,rarity);
         }
-        else if (autoSell === "Common" && rarity === 0) {
+        else if (autoSell >= rarity) {
             this.sellItem(id,rarity);
         }
         else {
@@ -90,27 +89,28 @@ const Inventory = {
         const item = recipeList.idToItem(id)
         const name = item.name;
         item.addCount();
-        if (devtools.autoLeg) {
-            this.addToInventory(id,3);
-            return;
-        }
         const roll = Math.floor(Math.random() * 1000)
         let mod = 1;
+        let sellToggle = -1
+        if (autoSell === "Common") sellToggle = 0;
+        if (autoSell === "Uncommon") sellToggle = 1;
+        if (autoSell === "Rare") sellToggle = 2;
+        if (autoSell === "Epic") sellToggle = 3;
         if (item.isMastered()) mod = 2;
         if (roll < miscLoadedValues.qualityCheck[3]*mod) {
-            this.addToInventory(id,3);
+            this.addToInventory(id,3,sellToggle);
             Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
-            this.addToInventory(id,2);
+            this.addToInventory(id,2,sellToggle);
             Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
-            this.addToInventory(id,1);
+            this.addToInventory(id,1,sellToggle);
             Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
-            this.addToInventory(id,0,autoSell);
+            this.addToInventory(id,0,sellToggle);
         }
     },
     removeFromInventory(id,rarity) {

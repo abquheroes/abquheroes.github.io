@@ -132,6 +132,9 @@ const actionSlotManager = {
     toggleAuto(i) {
         console.log(i);
         if (this.slots[i].autoSell === "None") this.slots[i].autoSell = "Common";
+        else if (this.slots[i].autoSell === "Common") this.slots[i].autoSell = "Uncommon";
+        else if (this.slots[i].autoSell === "Uncommon") this.slots[i].autoSell = "Rare";
+        else if (this.slots[i].autoSell === "Rare") this.slots[i].autoSell = "Epic";
         else this.slots[i].autoSell = "None";
         initializeActionSlots();
     },
@@ -157,7 +160,7 @@ function initializeActionSlots() {
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
         if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
-        if (actionSlotManager.autoSell(i) === "Common") d4.addClass("ASautoEnabled");
+        if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
