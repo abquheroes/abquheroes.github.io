@@ -34,6 +34,9 @@
     --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --scheme-moz: -moz-linear-gradient(left, #0b7edc 0%, #1396f3 50%, #00adff 100%);
     --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
+    --scheme-2: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+    --scheme-2-moz: -moz-linear-gradient(left, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+    --scheme-2-webkit: -webkit-linear-gradient(left, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
 }
 
 /* Scrollbar */
@@ -752,6 +755,12 @@ Rarities
     background: var(--scheme-moz);
     background: var(--scheme-webkit);
     z-index: 1;
+}
+
+.ASProgressBar .ProgressBarFill.ProgressBarFillMaster {
+    background: var(--scheme-2);
+    background: var(--scheme-2-moz);
+    background: var(--scheme-2-webkit);
 }
 
 .plProgressBarPercent {
