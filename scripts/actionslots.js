@@ -29,7 +29,6 @@ class actionSlot {
         this.maxCraft = this.item.craftTime;
         this.status = slotState.NEEDMATERIAL;
         this.autoSell = "None";
-        this.sellCount = 5;
     }
     itemPicName() {
         return this.item.itemPicName();
@@ -40,7 +39,6 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            this.sellCount -= 1;
             Inventory.craftToInventory(this.itemid,this.autoSell);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
@@ -55,6 +53,10 @@ class actionSlot {
     }
     attemptStart() {
         //attempts to consume requried material, if successful start crafting
+        if (this.item.isMastered()) {
+            this.status = slotState.CRAFTING;
+            return;
+        }
         if (!ResourceManager.canAffordMaterial(this.item)) return;
         ResourceManager.deductMaterial(this.item);
         this.status = slotState.CRAFTING;
@@ -107,9 +109,6 @@ const actionSlotManager = {
             $("#ASBarFill"+i).css('width', slot.progress);
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
             else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
-            if (slot.sellCount === 0) {
-                this.removeSlot(i);
-            }
         });
     },
     itemList() {
