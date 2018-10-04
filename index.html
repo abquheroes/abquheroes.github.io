@@ -23,7 +23,6 @@
     <link href="scripts/style.css" rel="stylesheet">
     <link href="scripts/jquery.toast.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
@@ -48,7 +47,7 @@
         <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
             <div class="dialog_content">
                 <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
                     <h2 id="titlePlayfab" class="dialog_title"><img class="playfabLogo" src="images/PlayFab_logo_small.png" oncontextmenu="return false;">PlayfabCloud Save</h2>
                 </div>
                 <div class="dialog_body">
@@ -76,7 +75,7 @@
         <div id="dialogClearSave" class="dialog" role="dialog" aria-labelledby="titleClearSave" aria-describedby="descClearSave">
             <div class="dialog_content">
                 <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
                     <h2 id="titleClearSave" class="dialog_title">Clear Your Save Data?</h2>
                 </div>
                 <div class="dialog_body">
@@ -89,7 +88,7 @@
         <div id="dialogExportSave" class="dialog" role="dialog" aria-labelledby="titleExportSave" aria-describedby="descExportSave">
             <div class="dialog_content">
                 <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
                     <h2 id="titleExportSave" class="dialog_title">Export Game Data?</h2>
                 </div>
                 <div class="dialog_body">
@@ -100,7 +99,7 @@
         <div id="dialogImportSave" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
             <div class="dialog_content">
                 <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
                     <h2 id="titleImportSave" class="dialog_title">Import Game Data?</h2>
                 </div>
                 <div class="dialog_body">
@@ -113,7 +112,7 @@
         <div id="dialogUnlock" class="dialog" role="dialog" aria-labelledby="titleUnlock" aria-describedby="descUnlock">
                 <div class="dialog_content">
                     <div class="dialog_header">
-                        <a href="#closeDialog" class="dialog_close"><i class="tiny material-icons">close</i></a>
+                        <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
                         <h2 id="titleUnlock" class="dialog_title">New Recipe Unlocked!</h2>
                     </div>
                     <div class="dialog_body">
@@ -127,16 +126,16 @@
                 <div id="game-logo"><h1>Forge &amp; Fortune</h1></div>
                 <div id="side-content">
                     <div id="workers-container">
-                        <p class="heading">Workers<span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
+                        <p class="heading">Workers<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
                         <div id ="workersUse"></div>
                     </div>
                     <div id="materials-container">
-                        <p class="heading">Materials<span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p>
+                        <p class="heading">Materials<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
                         <div id ="materials"></div>
                     </div>
                     <!--
                     <div id="settings-container">
-                        <p class="heading">Settings <span class="heading-arrow"><i class="tiny material-icons">expand_more</i></span></p> 
+                        <p class="heading">Settings <span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p> 
                             <div id="theme-selection">
                             <button class="lm-btn">Light Mode</button>
                             <button class="dm-btn">Dark Mode</button>
@@ -265,7 +264,7 @@
                 <div id="progressTab" class="tabcontent">
                     <div id="progresslist">
                         <div id="progress_container">
-                            <h3>Progress Tracker for v0.1x</h3>
+                            <h3 class="progress-section-title">Progress Tracker for v0.1x</h3>
                             <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/150</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
                             <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
                             <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
@@ -274,21 +273,93 @@
                             <div id="completeTime"></div>
                         </div>
                         <div id="achievements">
-                            <h3>Milestones</h3>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Purchase Eyrn"><img id="MaceStar" src="images/star_incomplete.png"><br/>Maces</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Purchase Lakur"><img id="GloveStar" src="images/star_incomplete.png"><br/>Gloves</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Purchase Herbie"><img id="PotionStar" src="images/star_incomplete.png"><br/>Potions</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Chef's Knife' and 3 'The Broominator'"><img id="AxeStar" src="images/star_incomplete.png"><br/>Axes</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Cleaning Gloves' and 3 'Sleeping Potion'"><img id="HatStar" src="images/star_incomplete.png"><br/>Hats</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Blackjack' and 3 'Invincibility Potion'"><img id="WandStar" src="images/star_incomplete.png"><br/>Wands</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Punching Gloves' and 3 'Fishing Knife'"><img id="GauntletStar" src="images/star_incomplete.png"><br/>Gauntlets</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Club Knife' and 3 'Like Potion'"><img id="HelmetStar" src="images/star_incomplete.png"><br/>Helmets</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Night Club' and 3 'Loving Gloves'"><img id="ShoeStar" src="images/star_incomplete.png"><br/>Shoes</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Vengeance' and 3 'Regular Helmet'"><img id="WardStar" src="images/star_incomplete.png"><br/>Wards</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Slothslayer', 3 'Bardic Galoshes', and 3 'Plain Gauntlets'"><img id="ShieldStar" src="images/star_incomplete.png"><br/>Shields</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Black Hat', 3 'Druidic Boots', and 3 'Rain Wand'"><img id="CloakStar" src="images/star_incomplete.png"><br/>Cloaks</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 3 'Mega Helmet', 3 'Green Bay Beret', and 3 'Challenge Gauntlets'"><img id="ArmorStar" src="images/star_incomplete.png"><br/>Armor</div></div>
-                            <div class="ProgressDiv"><div class="ProgressCard tooltip" data-tooltip="Craft 5 'Disease Ward', 5 'Generous Blocker', 5 'A Cool Dark Chainmail' and 5 'Frostflinger Cloak'"><img id="PendantStar" src="images/star_incomplete.png"><br/>Pendants</div></div>
+                            <h3 class="progress-section-title">Milestones</h3>
+                            <div class="progress-card-container">
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                                <div class="ProgressCard">
+                                    <i class="fas fa-star MilestoneStar"></i>
+                                    <div class="ProgressDetails">
+                                        <h3 class="MilestoneTitle">This is an achievement title</h3>
+                                        <p class="MilestoneDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi provident nobis molestias non quidem reprehenderit vitae voluptatum obcaecati temporibus! </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,8 +373,8 @@
                 </div>
                 <div id="bottom-right">
                     <p id="version-scale">v0.2.0.0-dev</p>
-                    <a href="about.html" target="_blank">About &amp; Crediting <i class="tiny material-icons">arrow_upward</i></a>
-                    <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server <i class="tiny material-icons">arrow_upward</i></a>
+                    <a href="about.html" target="_blank">About &amp; Crediting <i class="fas fa-external-link-square-alt"></i></a>
+                    <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server <i class="fas fa-external-link-square-alt"></i></a>
                 </div>
             </footer>
             <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
