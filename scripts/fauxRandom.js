@@ -1,9 +1,16 @@
-Math.reseed = () => {
+//not used currently
+
+Math.reseedWorkerSac = () => {
     Math.seed = 11; //KoL tribute
 }
 
-// the initial seed
-Math.reseed();
+Math.reseedHeroBuy = () => {
+    Math.seed = 12;
+}
+
+Math.reseedWorkerBuy = () => {
+    Math.seed = 13;
+}
 
 Math.seededRandom = (min, max) => {
     max = max || 1;

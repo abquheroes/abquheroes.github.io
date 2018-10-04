@@ -60,8 +60,29 @@ class Worker {
 
 const WorkerManager = {
     workers : [],
+    workerOrder : [],
     addWorker(worker) {
         this.workers.push(worker);
+    },
+    workerBuySeed() {
+        //pre-populate the hero buy order so you can't savescum
+        Math.reseedWorkerBuy();
+        this.workerOrder = ["W001"];
+        const standardWorkers = this.workers.filter(w=>w.type === "standard");
+        const advancedWorkers = this.workers.filter(w=>w.type === "advanced");
+        while (this.workerOrder.length < standardWorkers.length) {
+            const possibleWorkers = standardWorkers.map(w=>w.workerID).filter(h=>!this.workerOrder.includes(h));
+            const workerID = possibleWorkers[Math.floor(Math.seededRandom() * possibleWorkers.length)];
+            this.workerOrder.push(workerID);
+        }
+        while (this.workerOrder.length < this.workers.length) {
+            const possibleWorkers = advancedWorkers.map(w=>w.workerID).filter(h=>!this.workerOrder.includes(h));
+            const workerID = possibleWorkers[Math.floor(Math.seededRandom() * possibleWorkers.length)];
+            this.workerOrder.push(workerID);
+        }
+        //remove workers we already bought
+        const alreadyBought = this.workers.filter(w=>w.owned).map(w=>w.workerID);
+        this.workerOrder = this.workerOrder.filter(w=>!alreadyBought.includes(w));
     },
     workerByID(id) {
         return this.workers.find(worker => worker.workerID === id);
@@ -143,14 +164,12 @@ const WorkerManager = {
             return;
         }
         ResourceManager.deductMoney(amt);
-        let workerList = this.workers.filter(w=>!w.owned && w.type === "standard").map(wk=>wk.workerID);
-        if (workerList.length === 0) {
-            workerList = this.workers.filter(w=>!w.owned && w.type === "advanced").map(wk=>wk.workerID);
-        }
-        const workerID = workerList[Math.floor(Math.random() * workerList.length)];
+        const workerID = this.workerOrder.shift();
+        console.log(workerID);
         this.gainWorker(workerID);
     },
     generateWorkerSac() {
+        Math.reseedWorkerSac();
         this.workers.forEach(w=>w.lvlreq = []);
         ["standard","advanced"].forEach(t => {
             for (let i=1;i<10;i++) { //10 levels of worker sac, generate a new random list every time
@@ -159,9 +178,9 @@ const WorkerManager = {
                 this.workers.filter(w=>w.type === t).forEach(worker => {
                     const T1 = worker.defaultRecipeLine;
                     //we don't remove because we did that already
-                    const T2 = remainingTypes[Math.floor(Math.random() * remainingTypes.length)];
+                    const T2 = remainingTypes[Math.floor(Math.seededRandom() * remainingTypes.length)];
                     remainingTypes = remainingTypes.filter(t=>t !== T2);
-                    const T3 = remainingTypes[Math.floor(Math.random() * remainingTypes.length)];
+                    const T3 = remainingTypes[Math.floor(Math.seededRandom() * remainingTypes.length)];
                     remainingTypes = remainingTypes.filter(t=>t !== T3);
                     let r = 0
                     if (t === "advanced") r = 1

@@ -93,21 +93,21 @@ const Inventory = {
         let mod = 1;
         let sellToggle = -1
         if (autoSell === "Common") sellToggle = 0;
-        if (autoSell === "Uncommon") sellToggle = 1;
-        if (autoSell === "Rare") sellToggle = 2;
+        if (autoSell === "Good") sellToggle = 1;
+        if (autoSell === "Great") sellToggle = 2;
         if (autoSell === "Epic") sellToggle = 3;
         if (item.isMastered()) mod = 2;
         if (roll < miscLoadedValues.qualityCheck[3]*mod) {
             this.addToInventory(id,3,sellToggle);
-            Notifications.exceptionalCraft(name,"Epic","craftEpic");
+            if (sellToggle > 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
             this.addToInventory(id,2,sellToggle);
-            Notifications.exceptionalCraft(name,"Great","craftGreat");
+            if (sellToggle > 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
             this.addToInventory(id,1,sellToggle);
-            Notifications.exceptionalCraft(name,"Good","craftGood");
+            if (sellToggle > 1) Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
             this.addToInventory(id,0,sellToggle);

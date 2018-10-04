@@ -2,22 +2,22 @@
 
 const player = {
     saveStart : Date.now(),
-    completeTime : 0,
     lastTime : Date.now(),
     timeWarp : 1,
-    sellPref : 1,
 }
 
 function afterLoad() {
     initializeRecipes();
     WorkerManager.generateWorkerSac();
     WorkerManager.gainWorker("W001");
+    WorkerManager.workerBuySeed();
     recipeList.idToItem("R0701").owned = true;
     refreshInventory(); //the others are loaded in order
     refreshWorkers();
     refreshSideWorkers();
     initializeActionSlots();
     HeroManager.idToHero("H203").owned = true;
+    HeroManager.heroBuySeed();
     initializeHeroList();
     initializeMats();
     refreshHeroSelect();

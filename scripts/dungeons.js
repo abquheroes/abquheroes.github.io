@@ -6,7 +6,6 @@ class Floor {
     constructor (lvl) {
         this.lvl = lvl;
         this.icon = '<img src="images/DungeonIcons/combat_floor.png">'
-        this.difficulty = this.lvl*2+5;
         this.monster = [MobManager.getMonster(lvl)];
     }
     isDead() {

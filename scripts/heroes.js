@@ -228,9 +228,22 @@ class Hero {
 
 const HeroManager = {
     heroes : [],
+    heroOrder : [],
     healTime : 0,
     addHero(hero) {
         this.heroes.push(hero);
+    },
+    heroBuySeed() {
+        //pre-populate the hero buy order so you can't savescum
+        Math.reseedHeroBuy();
+        this.heroOrder = ["H203"];
+        while (this.heroOrder.length < this.heroes.length) {
+            const possibleHeroes = this.heroes.map(h=>h.id).filter(h=>!this.heroOrder.includes(h));
+            const heroID = possibleHeroes[Math.floor(Math.seededRandom() * possibleHeroes.length)];
+            this.heroOrder.push(heroID);            
+        }
+        const alreadyBought = this.heroes.filter(w=>w.owned).map(h=>h.id);
+        this.heroOrder = this.heroOrder.filter(h=>!alreadyBought.includes(h));
     },
     heroOwned(ID) {
         return this.idToHero(ID).owned;
@@ -294,8 +307,8 @@ const HeroManager = {
             return;
         }
         ResourceManager.deductMoney(amt);
-        const heroes = this.heroes.filter(h=>!h.owned);
-        heroes[Math.floor(Math.random() * heroes.length)].owned = true;
+        const heroID = this.heroOrder.shift();
+        this.idToHero(heroID).owned = true;
         if (this.heroes.filter(h=>h.owned).length === 4) party = new Party(2);
         if (this.heroes.filter(h=>h.owned).length === 8) party = new Party(3);
         if (this.heroes.filter(h=>h.owned).length === 12) party = new Party(4);
