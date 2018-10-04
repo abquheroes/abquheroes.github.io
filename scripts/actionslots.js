@@ -132,9 +132,9 @@ const actionSlotManager = {
     toggleAuto(i) {
         console.log(i);
         if (this.slots[i].autoSell === "None") this.slots[i].autoSell = "Common";
-        else if (this.slots[i].autoSell === "Common") this.slots[i].autoSell = "Uncommon";
-        else if (this.slots[i].autoSell === "Uncommon") this.slots[i].autoSell = "Rare";
-        else if (this.slots[i].autoSell === "Rare") this.slots[i].autoSell = "Epic";
+        else if (this.slots[i].autoSell === "Common") this.slots[i].autoSell = "Good";
+        else if (this.slots[i].autoSell === "Good") this.slots[i].autoSell = "Great";
+        else if (this.slots[i].autoSell === "Great") this.slots[i].autoSell = "Epic";
         else this.slots[i].autoSell = "None";
         initializeActionSlots();
     },
