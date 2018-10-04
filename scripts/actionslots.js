@@ -154,7 +154,7 @@ function initializeActionSlots() {
         if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
         else d1.html(actionSlotManager.isEmptySlot());
         const d2 = $("<div/>").addClass("ASCancel").attr("id",i);
-        const a2 = $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="tiny material-icons">close</i>')
+        const a2 = $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="fas fa-times"></i>')
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);

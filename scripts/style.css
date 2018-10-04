@@ -820,8 +820,9 @@ Rarities
     color: rgba(255, 0, 0, 1);
 }
 
-.ASCancel>a>i.tiny.material-icons {
-    margin-top: 3px;
+.ASCancel > a > i {
+    font-size: 2em;
+    padding: 3px 5px;
 }
 
 .ASBuySlot {
@@ -1405,7 +1406,7 @@ Rarities
     color: var(--text);
 }
 
-.WorkerDesc > .material-icons {
+.WorkerDesc > i {
     font-size: 1.1em;
     vertical-align: middle;
 }
@@ -2457,10 +2458,9 @@ footer a:hover {
     align-items: center;
 }
 
-#bottom-right a > i.material-icons {
-    margin-left: 3px;
+#bottom-right a > i {
+    margin-left: 5px;
     font-size: 1em;
-    transform: rotate(45deg);
     color: var(--text-3);
     transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
@@ -2469,7 +2469,7 @@ footer a:hover {
     -webkit-transition: color 0.2s ease-in-out;
 }
 
-#bottom-right a:hover > i.material-icons {
+#bottom-right a:hover > i {
     color: inherit;
 }
 
@@ -2954,11 +2954,11 @@ a.workerDialog:hover {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 7px;
+    top: 3px;
     right: 5px;
-    padding: 5px;
+    padding: 5px 10px;
     color: var(--text-2);
-    font-size: 32px;
+    font-size: 2em;
     text-decoration: none;
     border-radius: 50%;
     z-index: 2;
