@@ -12,7 +12,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
@@ -27,7 +27,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
@@ -42,7 +42,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
@@ -57,7 +57,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
@@ -72,7 +72,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
@@ -87,7 +87,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });       
     },
@@ -102,7 +102,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });       
     },
@@ -117,7 +117,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         }); 
     },
@@ -132,7 +132,7 @@ const Notifications = {
             stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
             position: 'top-left', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             textAlign: 'left',  // Text alignment i.e. left, right or center
-            loader: true,  // Whether to show loader or not. True by default
+            loader: false,  // Whether to show loader or not. True by default
             loaderBg: '#FFF',  // Background color of the toast loader
         });
     },
