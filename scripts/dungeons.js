@@ -11,6 +11,15 @@ class Floor {
     isDead() {
         return this.monster.every((mob) => mob.dead());
     }
+    createSave() {
+        const save = {};
+        save.lvl = this.lvl;
+        save.monster = [];
+        this.monster.forEach(m=> {
+            save.monster.push(m.createSave());
+        })
+        return save;
+    }
 }
 
 const dungeonIcons = {

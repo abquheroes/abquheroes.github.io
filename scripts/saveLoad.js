@@ -1,20 +1,8 @@
 let stopSave = false;
 
 function ClearSave() {
-    stopSave = true;
-    $('#clearDialog').dialog({
-        buttons: {
-            "Yes": function () {
-                localStorage.removeItem("gameSave3");
-                location.reload();
-            },
-            "No": function () {
-                stopSave = false;
-                $(this).dialog("close");
-            }
-        }
-    });
-    $('#clearDialog').dialog("open");
+    localStorage.removeItem("ffgs1");
+    location.reload();
 }
 
 function ExportSave() {
@@ -55,21 +43,35 @@ function ImportSaveButton() {
 
 function saveGame() {
     if (stopSave) return;
-    player.lastSave = Date.now();
-    localStorage.setItem('gameSave3', JSON.stringify(createSave()));
+    localStorage.setItem('ffgs1', createSave());
     ga('send', 'event', 'Save', 'savegame', 'savegame');
 }
 
 function createSave() {
-    return {
-        playerSave : player,
-        workerProgressSave : workerProgress,
-        workerSacProgressSave : workerSacProgress,
-        upgradeProgressSave : upgradeProgress,
-        inventorySave : inventory,
-        itemCountSave : itemCount,
-        flagsSave : flags,
-    }
+    const saveFile = {}
+    console.log("start");
+    saveFile["as"] = actionSlotManager.createSave();
+    console.log("as");
+    saveFile["da"] = DungeonAssist.createSave();
+    console.log("da");
+    saveFile["e"] = EventManager.createSave();
+    console.log("e");
+    saveFile["h"] = HeroManager.createSave();
+    console.log("h");
+    saveFile["i"] = Inventory.createSave();
+    console.log("i");
+    saveFile["p"] = party.createSave();
+    console.log("p");
+    saveFile["r"] = recipeList.createSave();
+    console.log("r");
+    saveFile["rs"] = ResourceManager.createSave();
+    console.log("rs");
+    saveFile["w"] = WorkerManager.createSave();
+    console.log("w");
+    const output = LZString.compress(JSON.stringify(saveFile));
+    //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
+    console.log(output);
+    return btoa(output);
 }
 
 function loadGame() {

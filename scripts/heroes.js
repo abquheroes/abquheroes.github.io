@@ -35,6 +35,29 @@ class Hero {
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = false;
     }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.lvl = this.lvl;
+        save.xp = this.xp;
+        save.hp = this.hp;
+        save.ap = this.ap;
+        save.act = this.act;
+        if (this.slot1 === null) save.slot1 = null;
+        else save.slot1 = this.slot1.createSave();
+        if (this.slot2 === null) save.slot1 = null;
+        else save.slot2 = this.slot2.createSave();
+        if (this.slot3 === null) save.slot1 = null;
+        else save.slot3 = this.slot3.createSave();
+        if (this.slot4 === null) save.slot1 = null;
+        else save.slot4 = this.slot4.createSave();
+        if (this.slot5 === null) save.slot5 = null;
+        else save.slot5 = this.slot5.createSave();
+        if (this.slot6 === null) save.slot6 = null;
+        else save.slot6 = this.slot6.createSave();
+        save.owned = this.owned;
+        return save;
+    }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
         if (this.slot1 !== null) pow += this.slot1.pow();
@@ -232,6 +255,13 @@ const HeroManager = {
     healTime : 0,
     addHero(hero) {
         this.heroes.push(hero);
+    },
+    createSave() {
+        const save = [];
+        this.heroes.forEach(h=> {
+            save.push(h.createSave());
+        });
+        return save;
     },
     heroBuySeed() {
         //pre-populate the hero buy order so you can't savescum

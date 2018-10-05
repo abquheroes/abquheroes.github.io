@@ -3,6 +3,9 @@ class Party {
         this.maxSize = ct;
         this.heroes = [];
     }
+    createSave() {
+        return this.heroes;
+    }
     hasMember(member) {
         return this.heroes.includes(member);
     }

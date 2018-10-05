@@ -24,6 +24,16 @@ const DungeonAssist = {
     dropList : [],
     dungeonTime : 0,
     status : DungeonState.TEAMSELECT,
+    createSave() {
+        const save = {};
+        save.floorNum = this.floorNum;
+        if (this.floor === null) save.floor = null;
+        else save.floor = this.floor.createSave();
+        save.dropList = this.dropList;
+        save.dungeonTime = this.dungeonTime;
+        save.status = this.status;
+        return save;
+    },
     addTime(t) {
         if (this.status !== DungeonState.ADVENTURING) return;
         //add time to all combatants, if they're ready for combat execute their attack on the opposing team.

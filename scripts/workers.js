@@ -11,6 +11,14 @@ class Worker {
         this.assigned = false;
         this.status = "idle";
     }
+    createSave() {
+        const save = {};
+        save.id = this.workerID;
+        save.lvl = this.lvl;
+        save.donated = this.donated;
+        save.owned = this.owned;
+        return save;
+    }
     produces(resource) {
         if (!this.owned) return 0;
         if (resource in this.production) return this.production[resource] * this.lvl;
@@ -63,6 +71,12 @@ const WorkerManager = {
     workerOrder : [],
     addWorker(worker) {
         this.workers.push(worker);
+    },
+    createSave() {
+        const save = [];
+        this.workers.forEach(w=> {
+            save.push(w.createSave());
+        });
     },
     workerBuySeed() {
         //pre-populate the hero buy order so you can't savescum

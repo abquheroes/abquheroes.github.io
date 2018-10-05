@@ -23,6 +23,12 @@ class itemContainer {
         this.containerID = containerid;
         containerid += 1;
     }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.rarity = this.rarity;
+        return save;
+    }
     pow() {
         return Math.round(this.item.pow * miscLoadedValues.rarityMod[this.rarity]);
     }
@@ -60,6 +66,14 @@ class itemContainer {
 const Inventory = {
     inv : createArray(20,null),
     invMax : 20,
+    createSave() {
+        const save = [];
+        this.inv.forEach(i => {
+            if (i === null) save.push(null);
+            else save.push(i.createSave());
+        });
+        return save;
+    },
     addToInventory(id,rarity,autoSell) {
         if (this.full()) {
             this.sellItem(id,rarity);
@@ -99,15 +113,15 @@ const Inventory = {
         if (item.isMastered()) mod = 2;
         if (roll < miscLoadedValues.qualityCheck[3]*mod) {
             this.addToInventory(id,3,sellToggle);
-            if (sellToggle > 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
+            if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
             this.addToInventory(id,2,sellToggle);
-            if (sellToggle > 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
+            if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
             this.addToInventory(id,1,sellToggle);
-            if (sellToggle > 1) Notifications.exceptionalCraft(name,"Good","craftGood");
+            if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
             this.addToInventory(id,0,sellToggle);

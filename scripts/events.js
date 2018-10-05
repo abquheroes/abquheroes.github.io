@@ -5,6 +5,13 @@ const EventTypes = Object.freeze({OREN:"W001",ERYN:"W002",HERBIE:"W003",LAKUR:"W
 const EventManager = {
     events : [],
     eventNum : 0,
+    createSave() {
+        const save = [];
+        this.events.forEach(e => {
+            save.push(e.createSave());
+        })
+        return save;
+    },
     addEvent(event) {
         event.id = this.eventNum.toString();
         this.eventNum += 1;
@@ -41,6 +48,14 @@ class Event {
     constructor(type) {
         this.type = type;
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
+    }
+    createSave() {
+        const save = {};
+        save.type = this.type;
+        save.reward = this.reward;
+        save.time = this.time;
+        save.floor = this.floor;
+        return save;
     }
     getText() {
         const d = $("<div/>").addClass("dungeonEventText")

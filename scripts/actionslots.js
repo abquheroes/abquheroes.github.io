@@ -30,6 +30,14 @@ class actionSlot {
         this.status = slotState.NEEDMATERIAL;
         this.autoSell = "None";
     }
+    createSave() {
+        const save = {};
+        save.itemid = this.itemid;
+        save.craftTime = this.craftTime;
+        save.status = this.status;
+        save.autoSell = this.autoSell;
+        return save;
+    }
     itemPicName() {
         return this.item.itemPicName();
     }
@@ -66,6 +74,13 @@ class actionSlot {
 const actionSlotManager = {
     maxSlots : 1,
     slots : [],
+    createSave() {
+        const save = [];
+        this.slots.forEach(s => {
+            save.push(s.createSave());
+        })
+        return save;
+    },
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
             Notifications.slotsFull();

@@ -48,6 +48,15 @@ class Mob {
         this.ap = 0;
         this.status = MobState.ALIVE;
     }
+    createSave() {
+        const save = {};
+        save.lvl = this.lvl;
+        save.id = this.id;
+        save.hp = this.hp;
+        save.act = this.act;
+        save.ap = this.ap
+        return save;
+    }
     actmax() {
         return this.actmaxnum;
     }

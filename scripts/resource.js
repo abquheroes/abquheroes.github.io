@@ -8,10 +8,23 @@ class Material{
         this.amt = 0;
         this.img = `<img src='images/resources/${this.id}.png' alt='${this.name}'>`;
     }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.amt = this.amt;
+        return save;
+    }
 }
 
 const ResourceManager = {
     materials : [],
+    createSave() {
+        const save = [];
+        this.materials.forEach(m=> {
+            save.push(m.createSave());
+        });
+        return save;
+    },
     addNewMaterial(material) {
         this.materials.push(material);
     },
