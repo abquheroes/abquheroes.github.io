@@ -143,7 +143,7 @@ function characterCard(prefix,dv,ID) {
     const d3 = $("<div/>").addClass(prefix+"Lvl").html("Level "+hero.lvl);
     const d4 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
     const d5 = createHPBar(hero,"Party");    
-    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.id).html(`Heal - ${miscIcons.gold} ${hero.healCost()}`);
+    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.id).html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
     if (hero.healCost() === 0) d6.hide();
     dclick.append(d1,d2,d3,d4,d5);
     return d.append(dclick,d6);
@@ -287,7 +287,7 @@ function refreshHPBar(hero) {
     $("#hpSide"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
     $("#hpFillSide"+hero.id).css('width', hpWidth);
     const $hh = $("#hh"+hero.id)
-    $hh.html(`Heal - ${miscIcons.gold} ${hero.healCost()}`);
+    $hh.html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
     if (hero.healCost() > 0) $hh.show();
     else $hh.hide();
 }

@@ -412,7 +412,7 @@ body {
 
 #inventory {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     grid-gap: 10px;
     margin: 10px;
 }
@@ -2120,7 +2120,7 @@ Rarities
 
 .dungeonTeamCollection, .dungeonAvailableCollection {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     grid-gap: 5px;
 }
 
@@ -2186,6 +2186,7 @@ Rarities
 
 .healHero {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
@@ -2199,7 +2200,13 @@ Rarities
     border-color: var(--border-3);
 }
 
-.healHero > img {
+.healHeroCost {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.healHeroCost > img {
     margin: 0 2px;
 }
 
