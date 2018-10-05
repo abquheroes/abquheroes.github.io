@@ -310,7 +310,7 @@ body {
 
 #DungeonSideBarStatus {
     text-align: center;
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 15px;
@@ -830,8 +830,8 @@ Rarities
     justify-content: center;
     padding: 15px 20px;
     min-height: 100px;
-    background-color: var(--bg-2);
-    border: 2px dotted var(--border-3);
+    background-color: var(--bg-3);
+    border: 2px dashed var(--border-3);
     border-radius: 10px;
     font-size: 0.9em;
     cursor: pointer;
@@ -1696,6 +1696,11 @@ Rarities
     cursor: pointer;
 }
 
+.dungeonTeamCard.noHeroDungeonSelect:hover {
+    background-color: var(--bg);
+    cursor: default;
+}
+
 .heroOwnedCard.highlight {
     background: var(--bg-3);
     border-bottom-color: var(--highlight);
@@ -1747,7 +1752,7 @@ Rarities
 
 .heroExamineEquipmentEquipEmpty {
     font-size: 0.9em;
-    color: var(--border-2);
+    color: var(--text-3);
 }
 
 .heroExamineTop {
@@ -2362,6 +2367,10 @@ Rarities
 .eventMessage:before {
     content: "Dungeon Complete!";
     margin-bottom: 10px;
+}
+
+.dungeonEventTime, .dungeonEventFloor{
+    margin: 5px 0;
 }
 
 .eventConfirm {
