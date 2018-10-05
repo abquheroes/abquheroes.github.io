@@ -13,24 +13,22 @@
 }
 
 :root {
-    --bg: #212325;
-    --bg-2: #1a1d1f;
-    --bg-3: #191b1d;
-    --green-dark: #064a21;
-    --green-light: #089e42;
+    --bg: #21262b;
+    --bg-2: #1c2025;
+    --bg-3: #191c21;
+    --green-dark: #064a38;
+    --green-light: #089e5f;
     --blue-dark: #063a4a;
     --blue-light: #087d9e;
-    --border: #2b2e31;
-    --border-2: #adadad;
-    --border-3: #3b3b3b;
-    --highlight: #ffc100; 
+    --border: #292f35;
+    --border-2: #323a42;
+    --border-3: #333f4a;
+    --highlight: #ffc100;
     --text: #fff;
     --text-2: #fff;
     --text-3: #909090;
-    --link: #191919;
-    --scroll-thumb: rgba(255,255,255,0.10);
-    --scroll-track: rgba(0,0,0,0.30);
-    --progressbar: #1c95c5;
+    --scroll-thumb: rgba(255,255,255,0.075);
+    --scroll-track: rgba(0,0,0,.20);
     --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --scheme-moz: -moz-linear-gradient(left, #0b7edc 0%, #1396f3 50%, #00adff 100%);
     --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
@@ -822,7 +820,7 @@ Rarities
 
 .ASCancel > a > i {
     font-size: 2em;
-    padding: 3px 5px;
+    padding: 5px;
 }
 
 .ASBuySlot {
@@ -1117,12 +1115,11 @@ Rarities
 }
 
 .recipeRow.recipeRowDisable {
-    background-color: #232527;
-    color: #717171;
+    color: rgba(255,255,255,0.5);
 }
 
 .recipeRow.recipeRowDisable:nth-of-type(odd) {
-    background-color: #2c2f31;
+    background-color: rgba(255,255,255, 0.02);
 }
 
 .recipeRow.recipeRowDisable > div > img, 
@@ -1861,7 +1858,7 @@ Rarities
     align-items: center;
     padding: 5px;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 26px);
 }
 
 .heroExamineEquipmentEquip > .item-name {
@@ -3096,9 +3093,7 @@ a.workerDialog:hover {
         left: 0;
         bottom: 0;
         padding: 25px;
-        background: var(--scheme);
-        background: var(--scheme-moz);
-        background: var(--scheme-webkit);
+        background: var(--bg);
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         text-align: center;
         text-shadow: 0 0 5px rgba(0,0,0,0.5);
