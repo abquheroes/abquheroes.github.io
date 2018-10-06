@@ -2,7 +2,7 @@ let stopSave = false;
 
 function ClearSave() {
     localStorage.removeItem("ffgs1");
-    location.reload();
+    location.replace('/');
 }
 
 function ExportSave() {
@@ -95,7 +95,7 @@ function loadGame() {
 
 
 //UI Stuff
-$("#clearSave").click((e) => {
+$("#deleteSaveButton").click((e) => {
     e.preventDefault();
     ClearSave();
 });
@@ -105,7 +105,7 @@ $('#exportSave').click((e) => {
     ExportSave();
 });
 
-$('#importSave').click((e) => {
+$('#importSaveButton').click((e) => {
     e.preventDefault();
     ImportSaveButton();
 });
