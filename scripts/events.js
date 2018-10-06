@@ -12,6 +12,13 @@ const EventManager = {
         })
         return save;
     },
+    loadSave(save) {
+        save.forEach(e => {
+            const event = new Event(e.type);
+            event.loadSave(e);
+            this.events.push(event);
+        });
+    },
     addEvent(event) {
         event.id = this.eventNum.toString();
         this.eventNum += 1;
@@ -56,6 +63,12 @@ class Event {
         save.time = this.time;
         save.floor = this.floor;
         return save;
+    }
+    loadSave(save) {
+        this.type = save.type;
+        this.reward = save.reward;
+        this.time = save.time;
+        this.floor = save.floor;
     }
     getText() {
         const d = $("<div/>").addClass("dungeonEventText")

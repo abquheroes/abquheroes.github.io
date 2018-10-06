@@ -14,6 +14,9 @@ class Material{
         save.amt = this.amt;
         return save;
     }
+    loadSave(save) {
+        this.amt = save.amt;
+    }
 }
 
 const ResourceManager = {
@@ -24,6 +27,12 @@ const ResourceManager = {
             save.push(m.createSave());
         });
         return save;
+    },
+    loadSave(save) {
+        save.forEach(m=> {
+            const mat = this.idToMaterial(m.id);
+            mat.loadSave(m);
+        });
     },
     addNewMaterial(material) {
         this.materials.push(material);

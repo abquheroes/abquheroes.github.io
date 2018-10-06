@@ -1,16 +1,7 @@
 //not used currently
-
-Math.reseedWorkerSac = () => {
-    Math.seed = 11; //KoL tribute
-}
-
-Math.reseedHeroBuy = () => {
-    Math.seed = 12;
-}
-
-Math.reseedWorkerBuy = () => {
-    Math.seed = 13;
-}
+const wsSeed = Math.floor(Math.random() * 100000);
+const hbSeed = Math.floor(Math.random() * 100000);
+const wbSeed = Math.floor(Math.random() * 100000);
 
 Math.seededRandom = (min, max) => {
     max = max || 1;

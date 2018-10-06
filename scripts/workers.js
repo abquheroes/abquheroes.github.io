@@ -19,6 +19,11 @@ class Worker {
         save.owned = this.owned;
         return save;
     }
+    loadSave(save) {
+        this.lvl = save.lvl;
+        this.donated = save.donated;
+        this.owned = save.owned;
+    }
     produces(resource) {
         if (!this.owned) return 0;
         if (resource in this.production) return this.production[resource] * this.lvl;
@@ -77,10 +82,17 @@ const WorkerManager = {
         this.workers.forEach(w=> {
             save.push(w.createSave());
         });
+        return save;
+    },
+    loadSave(save) {
+        save.forEach(w=> {
+            const worker = this.workerByID(w.id);
+            worker.loadSave(w);
+        });
     },
     workerBuySeed() {
         //pre-populate the hero buy order so you can't savescum
-        Math.reseedWorkerBuy();
+        Math.seed = wbSeed;
         this.workerOrder = ["W001"];
         const standardWorkers = this.workers.filter(w=>w.type === "standard");
         const advancedWorkers = this.workers.filter(w=>w.type === "advanced");
@@ -183,7 +195,7 @@ const WorkerManager = {
         this.gainWorker(workerID);
     },
     generateWorkerSac() {
-        Math.reseedWorkerSac();
+        Math.seed = wsSeed;
         this.workers.forEach(w=>w.lvlreq = []);
         ["standard","advanced"].forEach(t => {
             for (let i=1;i<10;i++) { //10 levels of worker sac, generate a new random list every time

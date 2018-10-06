@@ -74,6 +74,13 @@ const Inventory = {
         });
         return save;
     },
+    loadSave(save) {
+        save.forEach((item,i) => {
+            if (item === null) return;
+            const container = new itemContainer(item.id,item.rarity);
+            this.inv[i] = container;
+        });
+    },
     addToInventory(id,rarity,autoSell) {
         if (this.full()) {
             this.sellItem(id,rarity);

@@ -8,22 +8,29 @@ const player = {
 
 function afterLoad() {
     initializeRecipes();
-    WorkerManager.generateWorkerSac();
-    WorkerManager.gainWorker("W001");
-    WorkerManager.workerBuySeed();
-    recipeList.idToItem("R0701").owned = true;
-    refreshInventory(); //the others are loaded in order
+    initializeMats();
+    if (!loadGame()) {
+        WorkerManager.generateWorkerSac();
+        WorkerManager.workerBuySeed();
+        HeroManager.heroBuySeed();
+        WorkerManager.gainWorker("W001");
+        recipeList.idToItem("R0701").owned = true;
+        HeroManager.idToHero("H203").owned = true;
+        ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
+    }
+    else {
+        WorkerManager.generateWorkerSac();
+        WorkerManager.workerBuySeed();
+        HeroManager.heroBuySeed();
+    }
+    refreshInventory();
     refreshWorkers();
     refreshSideWorkers();
     initializeActionSlots();
-    HeroManager.idToHero("H203").owned = true;
-    HeroManager.heroBuySeed();
     initializeHeroList();
-    initializeMats();
     refreshHeroSelect();
-    populateRecipe("Knives");
     refreshRecipeFilters();
-    ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
+    populateRecipe("Knives");    
 }
 
 loadMisc(); //the others are loaded in order

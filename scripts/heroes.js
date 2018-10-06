@@ -45,11 +45,11 @@ class Hero {
         save.act = this.act;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
-        if (this.slot2 === null) save.slot1 = null;
+        if (this.slot2 === null) save.slot2 = null;
         else save.slot2 = this.slot2.createSave();
-        if (this.slot3 === null) save.slot1 = null;
+        if (this.slot3 === null) save.slot3 = null;
         else save.slot3 = this.slot3.createSave();
-        if (this.slot4 === null) save.slot1 = null;
+        if (this.slot4 === null) save.slot4 = null;
         else save.slot4 = this.slot4.createSave();
         if (this.slot5 === null) save.slot5 = null;
         else save.slot5 = this.slot5.createSave();
@@ -57,6 +57,20 @@ class Hero {
         else save.slot6 = this.slot6.createSave();
         save.owned = this.owned;
         return save;
+    }
+    loadSave(save) {
+        this.lvl = save.lvl;
+        this.xp = save.xp;
+        this.hp = save.hp;
+        this.ap = save.ap;
+        this.act = save.act;
+        this.slot1 = save.slot1;
+        this.slot2 = save.slot2;
+        this.slot3 = save.slot3;
+        this.slot4 = save.slot4;
+        this.slot5 = save.slot5;
+        this.slot6 = save.slot6;
+        this.owned = save.owned;
     }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
@@ -263,9 +277,15 @@ const HeroManager = {
         });
         return save;
     },
+    loadSave(save) {
+        save.forEach(h => {
+            const hero = this.idToHero(h.id);
+            hero.loadSave(h);
+        })
+    },
     heroBuySeed() {
         //pre-populate the hero buy order so you can't savescum
-        Math.reseedHeroBuy();
+        Math.seed = hbSeed;
         this.heroOrder = ["H203"];
         while (this.heroOrder.length < this.heroes.length) {
             const possibleHeroes = this.heroes.map(h=>h.id).filter(h=>!this.heroOrder.includes(h));

@@ -81,6 +81,15 @@ const actionSlotManager = {
         })
         return save;
     },
+    loadSave(save) {
+        save.forEach(s => {
+            const slot = new actionSlot(s.itemid)
+            slot.craftTime = s.craftTime;
+            slot.status = s.status;
+            slot.autoSell = s.autoSell;
+            this.slots.push(slot);
+        });
+    },
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
             Notifications.slotsFull();

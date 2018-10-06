@@ -45,49 +45,42 @@ function saveGame() {
     if (stopSave) return;
     localStorage.setItem('ffgs1', createSave());
     ga('send', 'event', 'Save', 'savegame', 'savegame');
+    console.log('game saved!');
 }
 
 function createSave() {
     const saveFile = {}
-    console.log("start");
     saveFile["as"] = actionSlotManager.createSave();
-    console.log("as");
     saveFile["da"] = DungeonAssist.createSave();
-    console.log("da");
     saveFile["e"] = EventManager.createSave();
-    console.log("e");
     saveFile["h"] = HeroManager.createSave();
-    console.log("h");
     saveFile["i"] = Inventory.createSave();
-    console.log("i");
     saveFile["p"] = party.createSave();
-    console.log("p");
     saveFile["r"] = recipeList.createSave();
-    console.log("r");
     saveFile["rs"] = ResourceManager.createSave();
-    console.log("rs");
     saveFile["w"] = WorkerManager.createSave();
-    console.log("w");
-    const output = LZString.compress(JSON.stringify(saveFile));
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
-    console.log(output);
-    return btoa(output);
+    return JSON.stringify(saveFile);
 }
 
 function loadGame() {
     //populate itemCount with blueprints as a base
-    const loadGame = JSON.parse(localStorage.getItem("gameSave3"));
-    if (loadGame !== null) {
-        //aka there IS a file
-        if (typeof loadGame.playerSave !== "undefined") $.extend(player,loadGame.playerSave);
-        if (typeof loadGame.workerProgressSave !== "undefined") $.extend(workerProgress,loadGame.workerProgressSave);
-        if (typeof loadGame.workerSacProgressSave !== "undefined") $.extend(workerSacProgress,loadGame.workerSacProgressSave);
-        if (typeof loadGame.upgradeProgressSave !== "undefined") $.extend(upgradeProgress,loadGame.upgradeProgressSave);
-        if (typeof loadGame.inventorySave !== "undefined") $.extend(inventory,loadGame.inventorySave);
-        if (typeof loadGame.itemCountSave !== "undefined") $.extend(itemCount,loadGame.itemCountSave);
-        if (typeof loadGame.flagsSave !== "undefined") $.extend(flags,loadGame.flagsSave);
-    }
+    const loadGame = JSON.parse(localStorage.getItem("ffgs1"));
+    if (loadGame === null) return false;
+    //aka there IS a file
+    if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
+    if (typeof loadGame["da"] !== "undefined") DungeonAssist.loadSave(loadGame["da"]);
+    if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);
+    if (typeof loadGame["h"] !== "undefined") HeroManager.loadSave(loadGame["h"]);
+    if (typeof loadGame["i"] !== "undefined") Inventory.loadSave(loadGame["i"]);
+    if (typeof loadGame["p"] !== "undefined") party.loadSave(loadGame["p"]);
+    if (typeof loadGame["r"] !== "undefined") recipeList.loadSave(loadGame["r"]);
+    if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
+    if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
+    return true;
 }
+
+setInterval(saveGame(), 6000);
 
 
 

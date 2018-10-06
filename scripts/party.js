@@ -37,6 +37,9 @@ class Party {
             hero.addXP(xp);
         });
     }
+    loadSave(save) {
+        this.heroes = save;
+    }
 }
 
 let party = new Party(1);

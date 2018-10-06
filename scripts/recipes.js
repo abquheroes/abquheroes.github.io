@@ -17,6 +17,10 @@ class Item{
         save.craftCount = this.craftCount;
         return save;
     }
+    loadSave(save) {
+        this.owned = save.owned;
+        this.craftCount = save.craftCount;
+    }
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
@@ -94,6 +98,12 @@ const recipeList = {
             save.push(r.createSave());
         });
         return save;
+    },
+    loadSave(save) {
+        save.forEach(i => {
+            const rec = this.idToItem(i.id);
+            rec.loadSave(i);
+        });
     },
     addItem(item) {
         this.recipes.push(item);

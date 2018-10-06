@@ -34,6 +34,17 @@ const DungeonAssist = {
         save.status = this.status;
         return save;
     },
+    loadSave(save) {
+        this.floorNum = save.floorNum;
+        if (save.floor !== null) {
+            const floor = new Floor(save.floor.lvl);
+            floor.loadSave(save.floor);
+            this.floor = floor;
+        }
+        this.dropList = save.dropList;
+        this.dungeonTime = save.dungeonTime;
+        this.status = save.status;
+    },
     addTime(t) {
         if (this.status !== DungeonState.ADVENTURING) return;
         //add time to all combatants, if they're ready for combat execute their attack on the opposing team.
