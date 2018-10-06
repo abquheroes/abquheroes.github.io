@@ -361,7 +361,7 @@ function initializeHeroList() {
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
-        const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+        const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero - <div class="buyHeroCost">${miscIcons.gold}${amt}</div>`);
         $heroList.append(b1);
     }
 }
