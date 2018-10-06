@@ -26,7 +26,7 @@
     --highlight: #ffc100;
     --text: #fff;
     --text-2: #fff;
-    --text-3: #909090;
+    --text-3: #b5b5b5;
     --scroll-thumb: rgba(255,255,255,0.075);
     --scroll-track: rgba(0,0,0,.20);
     --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
@@ -55,7 +55,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -859,7 +859,7 @@ Rarities
     font-size: 20px;
     opacity: 0.5;
     cursor: pointer;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.75), -1px -1px 0 rgba(0,0,0,0.75), 1px -1px 0 rgba(0,0,0,0.75), -1px 1px 0 rgba(0,0,0,0.75);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.55), -1px -1px 0 rgba(0,0,0,0.55), 1px -1px 0 rgba(0,0,0,0.55), -1px 1px 0 rgba(0,0,0,0.55);
 }
 
 .ASauto:hover {
@@ -1214,7 +1214,7 @@ Rarities
     align-items: center;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    margin: 30px 15px 15px;
+    margin: 40px 15px 15px;
     padding: 15px;
 }
 
@@ -1682,6 +1682,7 @@ Rarities
 
 .heroOwnedCard, .buyNewHeroCard {
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--bg);
     text-align: center;
     justify-content: center;
@@ -2200,13 +2201,13 @@ Rarities
     border-color: var(--border-3);
 }
 
-.healHeroCost {
+.healHeroCost, .buyHeroCost {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.healHeroCost > img {
+.healHeroCost > img, .buyHeroCost > img {
     margin: 0 2px;
 }
 
@@ -3099,7 +3100,7 @@ a.workerDialog:hover {
     main {display: none;}
 
     body:after {
-        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen.";
+        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen. Support for smaller screens is planned so check back in the future for access.";
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3117,6 +3118,7 @@ a.workerDialog:hover {
         z-index: 9999;
     }
 
+    /*
     .game-content {
         flex-direction: column;
     }
@@ -3408,5 +3410,50 @@ a.workerDialog:hover {
 
     #bottom-right a {
         display: none;
+    }
+    */
+}
+
+
+@media screen and (max-width: 1475px) {
+    #workerList {
+        padding: 5px;
+    }
+
+    .Worker {
+        margin: 0 3px 3px 0;
+    }
+
+    #heroList {
+        max-width: 190px;
+    }
+
+    .heroOwnedCard {
+        padding: 5px 10px;
+    }
+
+    #heroDetails {
+        max-width: 190px;
+    }
+
+    .heroExamineTop, .heroExamineStats, .buyNewHeroCard {
+        padding: 10px;
+    }
+
+    .EHPEHeaderName {
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .EHPErow {
+        font-size: 0.85em;
+    }
+
+    .EHPEname > img {
+        height: 20px;
+    }
+
+    .EHPEstat {
+        margin-left: 250px;
     }
 }

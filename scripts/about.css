@@ -50,6 +50,10 @@ nav {
     text-align: center;
 }
 
+.header {
+    animation: .75s scale-in;
+}
+
 .header .section-heading {
     margin: 35px 0 15px;
     font-size: 2.25em;
@@ -73,6 +77,8 @@ nav {
     width: 100%;
     max-width: 150px;
     cursor: pointer;
+    opacity: 0;
+    animation: 1s 0.75s fade-in forwards;
 }
 
 .heading-arrow {
@@ -122,15 +128,30 @@ nav {
 
 .user-card .user-title {
     margin-top: 5px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1em;
+    color: var(--highlight);
     opacity: 0;
 }
 
+.user-card .user-desc:before {
+    display: block;
+    position: relative;
+    content: "";
+    margin: 0 auto;
+    top: -11px;
+    height: 2px;
+    width: 75%;
+    background-color: var(--border-2);
+}
+
 .user-card .user-desc {
-    margin-top: 10px;
+    position: relative;
+    font-family: 'Varela Round', sans-serif;
+    color: var(--text-3);
+    margin-top: 20px;
     padding: 0 10px;
-    font-size: .9em;
+    font-size: .85em;
     opacity: 0;
 }
 
