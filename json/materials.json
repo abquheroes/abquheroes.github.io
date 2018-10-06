@@ -1,150 +1,250 @@
-{
-  "M001": {
+[
+  {
     "id": "M001",
     "name": "Gold"
   },
-  "M002": {
+  {
     "id": "M002",
     "name": "Blueprint"
   },
-  "M101": {
+  {
     "id": "M101",
     "name": "Emerald Slime"
   },
-  "M102": {
+  {
     "id": "M102",
     "name": "Peach Slime"
   },
-  "M103": {
+  {
     "id": "M103",
     "name": "Indigo Slime"
   },
-  "M104": {
+  {
     "id": "M104",
     "name": "Ginger Slime"
   },
-  "M105": {
+  {
     "id": "M105",
     "name": "Stinky Slime"
   },
-  "M106": {
+  {
     "id": "M106",
-    "name": "Cleare Slime"
+    "name": "Clear Slime"
   },
-  "M107": {
+  {
     "id": "M107",
     "name": "Magenta Slime"
   },
-  "M108": {
+  {
     "id": "M108",
     "name": "Grey Slime"
   },
-  "M109": {
+  {
     "id": "M109",
     "name": "Cobalt Slime"
   },
-  "M110": {
+  {
     "id": "M110",
     "name": "Technicolor Slime"
   },
-  "M201": {
+  {
     "id": "M201",
     "name": "Bee Wing"
   },
-  "M202": {
+  {
     "id": "M202",
     "name": "Cobra Scale"
   },
-  "M203": {
+  {
     "id": "M203",
     "name": "Compost"
   },
-  "M204": {
+  {
     "id": "M204",
     "name": "Rat Tail"
   },
-  "M205": {
+  {
     "id": "M205",
     "name": "Stinger"
   },
-  "M206": {
+  {
     "id": "M206",
     "name": "Silk"
   },
-  "M207": {
+  {
     "id": "M207",
     "name": "Snake Scale"
   },
-  "M208": {
+  {
     "id": "M208",
     "name": "Parasitic Egg"
   },
-  "M209": {
+  {
     "id": "M209",
     "name": "Wasp Wing"
   },
-  "M210": {
+  {
     "id": "M210",
     "name": "Bat Wing"
   },
-  "M301": {
+  {
     "id": "M301",
     "name": "Earth Crystal"
   },
-  "M302": {
+  {
     "id": "M302",
-    "name": "Water Crystal"
+    "name": "Psychic Crystal"
   },
-  "M303": {
+  {
     "id": "M303",
     "name": "Life Crystal"
   },
-  "M304": {
+  {
     "id": "M304",
+    "name": "Wind Crystal"
+  },
+  {
+    "id": "M305",
+    "name": "Lightning Crystal"
+  },
+  {
+    "id": "M306",
     "name": "Fire Crystal"
   },
-  "M305": {
-    "id": "M305",
+  {
+    "id": "M307",
+    "name": "Ice Crystal"
+  },
+  {
+    "id": "M308",
+    "name": "Poison Crystal"
+  },
+  {
+    "id": "M309",
+    "name": "Storm Crystal"
+  },
+  {
+    "id": "M310",
     "name": "Death Crystal"
   },
-  "M401": {
+  {
     "id": "M401",
     "name": "Crab Shell"
   },
-  "M402": {
+  {
     "id": "M402",
-    "name": "Octopus Tentacle"
-  },
-  "M403": {
-    "id": "M403",
     "name": "Turtle Shell"
   },
-  "M404": {
+  {
+    "id": "M403",
+    "name": "Octopus Tentacle"
+  },
+  {
     "id": "M404",
+    "name": "Frog Eye"
+  },
+  {
+    "id": "M405",
+    "name": "Amphab Spine"
+  },
+  {
+    "id": "M406",
+    "name": "Bear Hair"
+  },
+  {
+    "id": "M407",
+    "name": "Toad Shroom"
+  },
+  {
+    "id": "M408",
+    "name": "Moose Antler"
+  },
+  {
+    "id": "M409",
     "name": "Alligator Skull"
   },
-  "M405": {
-    "id": "M405",
+  {
+    "id": "M410",
     "name": "Dinosaur Bone"
   },
-  "M501": {
+  {
     "id": "M501",
     "name": "Ankh"
   },
-  "M502": {
+  {
     "id": "M502",
     "name": "Horseshoe"
   },
-  "M503": {
+  {
     "id": "M503",
     "name": "Chain"
   },
-  "M504": {
+  {
     "id": "M504",
     "name": "Coal"
   },
-  "M505": {
+  {
     "id": "M505",
     "name": "Goblet"
+  },
+  {
+    "id": "M506",
+    "name": "Nut"
+  },
+  {
+    "id": "M507",
+    "name": "Bolt"
+  },
+  {
+    "id": "M508",
+    "name": "Bell"
+  },
+  {
+    "id": "M509",
+    "name": "Cuffs"
+  },
+  {
+    "id": "M510",
+    "name": "Gear"
+  },
+  {
+    "id": "M601",
+    "name": "Red Bow"
+  },
+  {
+    "id": "M602",
+    "name": "Orange Yarn"
+  },
+  {
+    "id": "M603",
+    "name": "Yellow Clasp"
+  },
+  {
+    "id": "M604",
+    "name": "Green Button"
+  },
+  {
+    "id": "M605",
+    "name": "Blue Feather"
+  },
+  {
+    "id": "M606",
+    "name": "Indigo Bow"
+  },
+  {
+    "id": "M607",
+    "name": "Pink Yarn"
+  },
+  {
+    "id": "M608",
+    "name": "Cerulean Berries"
+  },
+  {
+    "id": "M609",
+    "name": "Black Feather"
+  },
+  {
+    "id": "M610",
+    "name": "White Berries"
   }
-}
+]
