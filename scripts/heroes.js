@@ -64,16 +64,17 @@ class Hero {
         this.hp = save.hp;
         this.ap = save.ap;
         this.act = save.act;
-        this.slot1 = save.slot1;
-        this.slot2 = save.slot2;
-        this.slot3 = save.slot3;
-        this.slot4 = save.slot4;
-        this.slot5 = save.slot5;
-        this.slot6 = save.slot6;
+        if (save.slot1 !== null) this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
+        if (save.slot2 !== null) this.slot2 = new itemContainer(save.slot2.id,save.slot2.rarity);
+        if (save.slot3 !== null) this.slot3 = new itemContainer(save.slot3.id,save.slot3.rarity);
+        if (save.slot4 !== null) this.slot4 = new itemContainer(save.slot4.id,save.slot4.rarity);
+        if (save.slot5 !== null) this.slot5 = new itemContainer(save.slot5.id,save.slot5.rarity);
+        if (save.slot6 !== null) this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
         this.owned = save.owned;
     }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
+        console.log(this.slot1);
         if (this.slot1 !== null) pow += this.slot1.pow();
         if (this.slot2 !== null) pow += this.slot2.pow();
         if (this.slot3 !== null) pow += this.slot3.pow();
