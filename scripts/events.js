@@ -1,6 +1,6 @@
 "use strict";
 
-const EventTypes = Object.freeze({OREN:"W001",ERYN:"W002",HERBIE:"W003",LAKUR:"W004",HARMONY:"W005",FREDERIK:"W006",MAGNOLIA:"W007",SYLVESTER:"W008",PIPPA:"W009",MANNY:"W010",DUNGEON:"DUNGEON",});
+const EventTypes = Object.freeze({DUNGEON:"DUNGEON",});
 
 const EventManager = {
     events : [],
@@ -16,6 +16,8 @@ const EventManager = {
         save.forEach(e => {
             const event = new Event(e.type);
             event.loadSave(e);
+            event.id = this.eventNum.toString();
+            this.eventNum += 1;
             this.events.push(event);
         });
     },
@@ -54,6 +56,7 @@ const EventManager = {
 class Event {
     constructor(type) {
         this.type = type;
+        if (this.type === EventTypes.DUNGEON) this.title = "Dungeon Reward";
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
     }
     createSave() {
@@ -89,7 +92,7 @@ const $eventTab = $("#eventTab");
 function refreshEvents() {
     $eventList.empty();
     EventManager.events.forEach(event => {
-        const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} Event ${parseInt(event.id)+1}`);
+        const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} ${event.title}`);
         $eventList.append(d1);
     });
     $eventContent.empty();

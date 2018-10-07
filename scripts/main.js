@@ -32,6 +32,8 @@ function afterLoad() {
     initializeHeroList();
     refreshHeroSelect();
     refreshRecipeFilters();
+    refreshEvents();
+    loadCorrectDungeonScreen();
     populateRecipe("Knives");
     setInterval(mainLoop, 10);
 }

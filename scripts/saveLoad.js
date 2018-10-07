@@ -84,6 +84,7 @@ function loadGame() {
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
     if (typeof loadGame["se"] !== "undefined") seedLoadSave(loadGame["se"]);
+    console.log("GAME LOADED");
     return true;
 }
 

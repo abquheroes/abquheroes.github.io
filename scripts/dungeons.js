@@ -21,15 +21,16 @@ class Floor {
         return save;
     }
     loadSave(save) {
+        this.lvl = save.lvl
+        this.monster = [];
         save.monster.forEach(m => {
             const mobTemplate = MobManager.idToMob(m.id);
-            const mob = new Mob(save.floor, mobTemplate);
+            const mob = new Mob(save.lvl, mobTemplate);
             mob.hp = m.hp;
             mob.act = m.act;
             mob.ap = m.ap;
             this.monster.push(mob);
-        })
-        this.lvl = save.lvl
+        });
     }
 }
 
