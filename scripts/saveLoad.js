@@ -6,39 +6,17 @@ function ClearSave() {
 }
 
 function ExportSave() {
-    const saveFile = createSave();
-    $("#exportDialog").html("<p>Copy this code to import later:</p><span id='copyme'>"+btoa(JSON.stringify(saveFile))+"</span>");
-    $("#exportDialog").dialog({
-        buttons: {
-            "Copy to Clipboard": () => {
-                var $temp = $("<input>");
-                $("body").append($temp);
-                $temp.val($("#copyme").text()).select();
-                document.execCommand("copy");
-                $temp.remove();
-            }
-        }
-    })
+    const saveFile = createSaveExport();
+    $("#exportSaveText").val(saveFile);
     ga('send', 'event', 'Save', 'export', 'export');
-    $("#exportDialog").dialog("open");
 }
 
 function ImportSaveButton() {
     stopSave = true;
-    $('#importDialog').dialog({
-        buttons: {
-            "Import": function () {
-                const s = JSON.parse(atob($('#importSaveText').val()));
-                localStorage.setItem('gameSave3', JSON.stringify(s));
-                location.reload();
-            },
-            "Cancel": function () {
-                $(this).dialog("close");
-                stopSave = false;
-            }
-        }
-    });
-    $('#importDialog').dialog("open");
+    const unpako = atob($('#importSaveText').val());
+    const saveFile = JSON.parse(pako.ungzip(unpako,{ to: 'string' }));
+    localStorage.setItem('ffgs1', saveFile);
+    location.reload(true);
 }
 
 let saveTime = 0;
@@ -69,6 +47,12 @@ function createSave() {
     return JSON.stringify(saveFile);
 }
 
+function createSaveExport() {
+    const save = createSave();
+    const pakoSave = pako.gzip(JSON.stringify(save),{ to: 'string' });
+    return btoa(pakoSave);
+}
+
 function loadGame() {
     //populate itemCount with blueprints as a base
     const loadGame = JSON.parse(localStorage.getItem("ffgs1"));
@@ -94,8 +78,7 @@ $("#deleteSaveButton").click((e) => {
     ClearSave();
 });
 
-$('#exportSave').click((e) => {
-    e.preventDefault();
+$('#exportSave').click(() => {
     ExportSave();
 });
 
@@ -103,3 +86,12 @@ $('#importSaveButton').click((e) => {
     e.preventDefault();
     ImportSaveButton();
 });
+
+$("#exportSaveCopy").click((e) => {
+    e.preventDefault();
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($("#exportSaveText").val()).select();
+    document.execCommand("copy");
+    $temp.remove();
+})
