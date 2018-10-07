@@ -50,22 +50,23 @@ class Worker {
         return "Produces:&nbsp;&nbsp;"+ResourceManager.materialIcon(this.production);
     }
     clearDonation() {
-        this.thislvlreq().forEach(r => this.donated[r[0]] = 0)
+        this.donated = {};
     }
     numToDonate(craftID) {
         return this.thislvlreq().find(l => l[0] === craftID)[2];
     }
     sacRemaining(craftID) {
         const needed = this.numToDonate(craftID);
-        const have = this.donated[craftID];
-        return needed-have;
+        if (craftID in this.donated) return needed - this.donated[craftID];
+        return needed;
     }
     canUpgrade() {
         let result = true;
         if (devtools.bypassUpgrade) return true;
         this.thislvlreq().forEach(req => {
             if (req[0] === "M001") return;
-            if (this.donated[req[0]] < req[2]) result = false;
+            if (!(req[0] in this.donated)) result = false;
+            else if (this.donated[req[0]] < req[2]) result = false;
         })
         return result;
     }
