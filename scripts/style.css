@@ -275,12 +275,22 @@ body {
     flex-direction: column;
 }
 
+#materials {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#M001.material {
+    width: 100%;
+}
+
 .resource, .material {
     position: relative;
     display: flex;
     align-items: center;
     margin: 2px 0;
     padding: 5px 10px;
+    width: 50%;
     background-color: var(--bg-3);
     border: 2px solid var(--border);
     border-radius: 25px;
@@ -2685,9 +2695,10 @@ footer a[href*="discord.gg"]:hover {
     top: unset;
     bottom: 130%;
     left: 0;
-    right: 50%;
+    right: unset;
+    width: 80px;
     margin-top: 0;
-    padding: 5px;
+    padding: 5px 10px;
     transform-origin: left;
 }
 
