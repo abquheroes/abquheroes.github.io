@@ -41,7 +41,12 @@ function ImportSaveButton() {
     $('#importDialog').dialog("open");
 }
 
-function saveGame() {
+let saveTime = 0;
+
+function saveGame(ms) {
+    saveTime += ms;
+    if (saveTime < 10000) return;
+    saveTime -= 10000;
     if (stopSave) return;
     localStorage.setItem('ffgs1', createSave());
     ga('send', 'event', 'Save', 'savegame', 'savegame');
@@ -77,15 +82,9 @@ function loadGame() {
     if (typeof loadGame["r"] !== "undefined") recipeList.loadSave(loadGame["r"]);
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
+    console.log("game loaded!");
     return true;
 }
-
-setInterval(saveGame(), 6000);
-
-
-
-
-
 
 //UI Stuff
 $("#deleteSaveButton").click((e) => {

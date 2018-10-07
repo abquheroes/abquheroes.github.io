@@ -30,7 +30,8 @@ function afterLoad() {
     initializeHeroList();
     refreshHeroSelect();
     refreshRecipeFilters();
-    populateRecipe("Knives");    
+    populateRecipe("Knives");
+    setInterval(mainLoop, 10);
 }
 
 loadMisc(); //the others are loaded in order
@@ -38,10 +39,9 @@ openTab("recipesTab");
 
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
+    saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();
     DungeonAssist.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
 }
-
-setInterval(mainLoop, 10);

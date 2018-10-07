@@ -75,14 +75,17 @@ const actionSlotManager = {
     maxSlots : 1,
     slots : [],
     createSave() {
-        const save = [];
+        const save = {};
+        save.maxSlots = this.maxSlots;
+        save.slots = [];
         this.slots.forEach(s => {
-            save.push(s.createSave());
+            save.slots.push(s.createSave());
         })
         return save;
     },
     loadSave(save) {
-        save.forEach(s => {
+        this.maxSlots = save.maxSlots;
+        save.slots.forEach(s => {
             const slot = new actionSlot(s.itemid)
             slot.craftTime = s.craftTime;
             slot.status = s.status;
