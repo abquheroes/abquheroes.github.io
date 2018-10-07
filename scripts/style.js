@@ -240,3 +240,17 @@ function toggleAboutState(e) {
         arrow[0].classList.add("arrow-rotate");
     }
 };
+
+/* Back To Top Button */
+
+const backToTopButton = document.querySelector(".back-to-top");
+
+function backToTop() {
+    if (document.documentElement.scrollTop > 200) {
+        backToTopButton.classList.add("show-button");
+    } else {
+        backToTopButton.classList.remove("show-button");
+    }
+}
+
+if (backToTopButton) window.onscroll = () => backToTop();

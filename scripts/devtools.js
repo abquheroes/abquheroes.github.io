@@ -13,7 +13,7 @@ const devtools = {
             hero.lvl = 50;
         })
         ResourceManager.materials.forEach(material => {
-            ResourceManager.addMaterial(material.id,100000000);
+            ResourceManager.addMaterial(material.id,9999999);
         })
         party = new Party(4);
         refreshWorkers();
