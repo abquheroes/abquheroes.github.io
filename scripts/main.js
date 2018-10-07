@@ -14,8 +14,10 @@ function afterLoad() {
         WorkerManager.workerBuySeed();
         HeroManager.heroBuySeed();
         WorkerManager.gainWorker("W001");
+        WorkerManager.workerOrder.shift();
         recipeList.idToItem("R0701").owned = true;
         HeroManager.idToHero("H203").owned = true;
+        HeroManager.heroOrder.shift();
         ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
     }
     else {
