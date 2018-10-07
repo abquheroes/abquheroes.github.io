@@ -73,7 +73,7 @@ nav {
     margin: 10px auto;
     padding-bottom: 10px;
     font-weight: normal;
-    border-bottom: 1px solid var(--border-2);
+    border-bottom: 2px solid var(--border-2);
     width: 100%;
     max-width: 150px;
     cursor: pointer;
@@ -134,7 +134,7 @@ nav {
     opacity: 0;
 }
 
-.user-card .user-desc:before {
+.user-card .user-desc:before, .asset-card .asset-desc:before{
     display: block;
     position: relative;
     content: "";
@@ -197,13 +197,20 @@ nav {
     max-height: 200px;
 }
 
+.asset-card .asset-name {
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
 .asset-card .asset-name, .asset-card .asset-desc {
     margin-top: 5px;
     padding: 0 20px;
 }
 
 .asset-card .asset-desc {
+    margin-top: 20px;
     flex-grow: 1;
+    font-family: 'Varela Round', sans-serif;
     font-size: 0.9em;
     color: var(--text-3);
 }
@@ -211,7 +218,7 @@ nav {
 .asset-card .asset-link {
     bottom: 0;
     display: block;
-    background-color: var(--bg-3);
+    background-color: var(--bg-2);
     border-top: 1px solid var(--border);
     margin-top: 15px;
     padding: 10px 20px;
@@ -223,7 +230,7 @@ nav {
 }
 
 .asset-card .asset-link:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
 }
 
 /* ANIMATIONS AND KEYFRAMING */
