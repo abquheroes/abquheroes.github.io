@@ -911,7 +911,7 @@ Rarities
     text-transform: uppercase;
 }
 
-#importSaveText {
+#importSaveText, #exportSaveText {
     background-color: var(--bg-3);
     border: 1px solid var(--border);
     color: var(--text);
@@ -2819,7 +2819,7 @@ footer a[href*="discord.gg"]:hover {
     justify-content: center;
 }
 
-#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton {
+#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy {
     margin-top: 10px;
     padding: 10px 25px;
     flex-grow: 1;
@@ -2844,7 +2844,7 @@ footer a[href*="discord.gg"]:hover {
     border-color: rgba(162, 21, 0, 1);
 }
 
-#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover {
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover {
     background-color: var(--bg-2);
 }
 
