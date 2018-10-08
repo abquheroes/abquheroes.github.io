@@ -77,11 +77,50 @@ body {
     margin: 0;
 }
 
+.back-to-top {
+    position: fixed;
+    z-index: 900;
+    bottom: 2%;
+    right: 1.5%;
+    padding: 20px 25px;
+    border-radius: 50%;
+    background-color: var(--border-3);
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    transform: scale(0);
+    opacity: 0;
+    animation: 0.5s 0.75s scale-in forwards;
+}
+
+.back-to-top:hover {
+    color: var(--highlight);
+}
+
+.show-button {
+    opacity: 1;
+}
+
 /* Font Stack */
 
 #Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
+}
+
+.dialog_title {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+}
+
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText {
+    font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
 /* General Content */
@@ -2816,10 +2855,11 @@ footer a[href*="discord.gg"]:hover {
 
 #pfButtons, #pfImportExport {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-#pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy {
+#pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy {
     margin-top: 10px;
     padding: 10px 25px;
     flex-grow: 1;
@@ -2846,10 +2886,6 @@ footer a[href*="discord.gg"]:hover {
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover {
     background-color: var(--bg-2);
-}
-
-#pfButtons>input:first-of-type, #pfImportExport>input:first-of-type {
-    margin-right: 10px;
 }
 
 #pfImportExport {
@@ -3006,13 +3042,15 @@ a.workerDialog:hover {
 .dialog_title {
     margin: 0;
     padding: 10px;
-    min-height: 50px;
+    max-height: 50px;
     background-color: var(--border-3);
     border-bottom: 1px solid var(--border);
     color: var(--text-2);
+    font-size: 1.3em;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 #titleClearSave {
@@ -3030,19 +3068,33 @@ a.workerDialog:hover {
 }
 
 .dialog_body {
-    padding: 20px;
+    padding: 70px 20px 20px;
     max-height: inherit;
     overflow: auto;
 }
 
 .dialog_description {
-    margin: 50px 0 15px 0;
+    margin: 0 0 15px 0;
     text-align: center;
 }
 
-.dialog_description>em {
+.dialog_description > em {
     font-style: normal;
     font-weight: bold;
+}
+
+.dialog_btn_actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn_action {
+    flex-grow: 1;
+}
+
+.btn_action > button {
+    width: 100%;
 }
 
 /* Animation Keyframes */
