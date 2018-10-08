@@ -3110,9 +3110,9 @@ a.workerDialog:hover {
     }
 }
 
+/* Temp Disable Mobile Block 
 @media screen and (max-width: 1100px) {
 
-    /*Disable small screens */
     main {display: none;}
 
     body:after {
@@ -3133,6 +3133,8 @@ a.workerDialog:hover {
         border-top: 3px solid var(--highlight);
         z-index: 9999;
     }
+
+    */
 
     /*
     .game-content {
