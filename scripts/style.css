@@ -2496,7 +2496,8 @@ footer {
 }
 
 #bottom-left, #bottom-right {
-    height: inherit;
+    display: flex;
+    align-items: center;
 }
 
 footer a {
@@ -2517,8 +2518,8 @@ footer a:hover {
 }
 
 #version-scale {
-    display: inline-block;
-    padding: 0 15px;
+    padding: 15px;
+    margin: 0;
 }
 
 #bottom-right a {
