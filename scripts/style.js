@@ -246,7 +246,7 @@ function toggleAboutState(e) {
 const backToTopButton = document.querySelector(".back-to-top");
 
 function backToTop() {
-    if (document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop || document.documentElement.scrollTop > 200) {
         backToTopButton.classList.add("show-button");
     } else {
         backToTopButton.classList.remove("show-button");

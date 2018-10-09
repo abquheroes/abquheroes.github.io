@@ -23,6 +23,8 @@
     <link href="scripts/style.css" rel="stylesheet">
     <link href="scripts/jquery.toast.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
@@ -80,8 +82,10 @@
                 </div>
                 <div class="dialog_body">
                     <p id="descClearSave" class="dialog_description">Are you sure you want to clear your saved game data from this browser? This action cannot be reversed.</p>
-                    <button id="deleteSaveButton">Yes, Delete My Data</button>
-                    <a href="#closeDialog"><button id="declineSaveButton">No, Do Not Delete My Data</button></a>
+                    <div class="dialog_btn_actions">
+                        <button class="btn_action" id="deleteSaveButton">Yes! Delete My Game Data.</button>
+                        <a class="btn_action" href="#closeDialog"><button id="declineSaveButton">No! Keep My Game Data.</button></a>
+                    </div>
                 </div>
             </div>
         </div>
