@@ -28,7 +28,6 @@ class actionSlot {
         this.craftTime = 0;
         this.maxCraft = this.item.craftTime;
         this.status = slotState.NEEDMATERIAL;
-        this.autoSell = "None";
     }
     createSave() {
         const save = {};
@@ -157,12 +156,7 @@ const actionSlotManager = {
         return this.slots[i].autoSell;
     },
     toggleAuto(i) {
-        console.log(i);
-        if (this.slots[i].autoSell === "None") this.slots[i].autoSell = "Common";
-        else if (this.slots[i].autoSell === "Common") this.slots[i].autoSell = "Good";
-        else if (this.slots[i].autoSell === "Good") this.slots[i].autoSell = "Great";
-        else if (this.slots[i].autoSell === "Great") this.slots[i].autoSell = "Epic";
-        else this.slots[i].autoSell = "None";
+        this.slots[i].autoSellToggle();
         initializeActionSlots();
     },
     isMastered(i) {

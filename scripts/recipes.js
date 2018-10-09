@@ -9,6 +9,7 @@ class Item{
         Object.assign(this, props);
         this.owned = false;
         this.craftCount = 0;
+        this.autoSell = "None";
     }
     createSave() {
         const save = {};
@@ -88,6 +89,13 @@ class Item{
     isMastered() {
         return this.craftCount >= 100;
     }
+    autoSellToggle() {
+        if (this.autoSell === "None") this.autoSell = "Common";
+        else if (this.autoSell === "Common") this.autoSell = "Good";
+        else if (this.autoSell === "Good") this.autoSell = "Great";
+        else if (this.autoSell === "Great") this.autoSell = "Epic";
+        else this.autoSell = "None";
+    }
 }
 
 const recipeList = {
@@ -108,6 +116,9 @@ const recipeList = {
     addItem(item) {
         this.recipes.push(item);
     },
+    getAutoSellPref() {
+        return this.autoSell;
+    },
     listByType(type) {
         return this.recipes.filter(recipe => recipe.type === type);
     },
@@ -121,7 +132,7 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.type === type && !recipe.owned);
     },
     getNextRequirement(type) {
-        this.recipes.find(recipe )
+        this.recipes.find(recipe)
     },
     buyable(type) {
         return true;
