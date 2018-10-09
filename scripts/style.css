@@ -1173,20 +1173,20 @@ Rarities
 
 .recipeRow.recipeRowDisable > div > img, 
 .recipeRow.recipeRowDisable > div > div > div > img {
-    opacity: 0.75;
+    opacity: 0.5;
 }
 
 .recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;
     width: 100%;
-    min-width: 300px;
+    min-width: 250px;
     padding-left: 10px;
 }
 
 .recipeHeadName, .EHPEHeaderName {
     padding-left: 15px;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .recipeName, .EHPEname {
@@ -1209,7 +1209,6 @@ Rarities
 
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
     width: 100%;
-    min-width: 100px;
     max-width: 200px;
 }
 
@@ -1218,13 +1217,17 @@ Rarities
 }
 
 .recipeLvl {
-    margin-left: 300px;
+    margin-left: 250px;
 }
 
 .reciperesdiv, .itemCost, .recipeStatList {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.recipeHeadRes, .reciperesdiv {
+    max-width: 120px;
 }
 
 .recipeHeadCost, .recipematdiv {
@@ -1235,7 +1238,7 @@ Rarities
     display: inline-block;
     position: relative;
     margin-right: 5px;
-    min-width: 35px;
+    min-width: 23px;
     text-align: left;
 }
 
@@ -1255,6 +1258,10 @@ Rarities
 
 .recipeStatListAct {
     margin-right: 10px;
+}
+
+.recipeHeadValue, .recipeValue {
+    min-width: 120px;
 }
 
 .bpShop {
@@ -1888,7 +1895,7 @@ Rarities
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex: 1 100px;
+    flex: 1 135px;
     min-height: 100px;
     background-color: var(--bg-3);
     border-bottom: 1px solid var(--border);
