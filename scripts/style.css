@@ -3535,3 +3535,46 @@ a.workerDialog:hover {
         margin-left: 250px;
     }
 }
+
+@media screen and (min-width: 1475px) {
+    #recipes-container {
+        display: flex;
+        height: 100%;
+    }
+    
+    #RecipeFilter {
+        display: flex;
+        flex-wrap: wrap;
+        width: 200px;
+        height: 100%;
+        background-color: var(--bg);
+        border-bottom: none;
+        padding: 0;
+        line-height: 40px;
+        overflow: auto;
+    }
+    
+    #RecipeFilter a.recipeSelect {
+        color: var(--text);
+        padding: 0;
+        width: 100%;
+        max-height: 40px;
+        max-width: none;
+        overflow: hidden;
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        text-decoration: none;
+    }
+    
+    #RecipeFilter a.recipeSelect.selected {
+        max-width: none;
+        width: 100%;
+        background-color: var(--bg-2);
+        color: var(--text-2);
+        border-bottom: 1px solid var(--highlight)
+    }
+    
+    #RecipeResults {
+        flex-grow: 1;
+    }
+}
