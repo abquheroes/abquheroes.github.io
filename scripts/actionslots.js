@@ -77,6 +77,10 @@ class actionSlot {
     autoSell() {
         return this.item.autoSell;
     }
+    refundMaterial() {
+        if (this.status !== slotState.CRAFTING) return;
+        ResourceManager.refundMaterial(this.item);
+    }
 }
 
 const actionSlotManager = {
@@ -115,6 +119,7 @@ const actionSlotManager = {
         recipeCanCraft();
     },
     removeSlot(slot) {
+        this.slots[slot].refundMaterial();
         this.slots.splice(slot,1);
         initializeActionSlots();
         refreshSideWorkers();

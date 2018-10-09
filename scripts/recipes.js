@@ -1,6 +1,6 @@
 "use strict";
 
-const ItemType = ["Swords", "Maces", "Axes", "Spears",  "Rods",  "Wands",  "Staves", "Knives", "Bows", "Whips", "Helmets", "Hats", "Masks", "Gauntlets", "Gloves", "Shoes", "Armor", "Cloaks", "Vests", "Shields", "Wards", "Thrown", "Tomes", "Darts", "Potions", "Pendants", "Rings", "Instruments", "Belts", "Earrings"];
+const ItemType = ["Armor", "Axes", "Belts", "Bows", "Cloaks", "Darts", "Earrings", "Gauntlets", "Gloves", "Hats", "Helmets", "Instruments", "Knives", "Maces", "Masks", "Pendants", "Potions", "Rings", "Rods", "Shields", "Shoes", "Spears", "Staves", "Swords", "Thrown", "Tomes", "Vests", "Wands", "Wards", "Whips"];
 
 const $RecipeResults = $("#RecipeResults");
 
@@ -86,6 +86,7 @@ class Item{
     }
     addCount() {
         this.craftCount += 1;
+        if (this.craftCount === 100) initializeActionSlots();
         $("#rc"+this.id).html(this.count()+"/100");
     }
     isMastered() {
@@ -177,6 +178,12 @@ const recipeList = {
 
 function populateRecipe(type) {
     $(".recipeRow").hide();
+    if (type === "Matless") {
+        console.log('fire')
+        recipeList.recipes.filter(r => r.owned && r.mcost.length === 0).forEach((recipe) => {
+            $("#rr"+recipe.id).show();
+        });
+    }
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
         $("#rr"+recipe.id).show();
     });
@@ -230,8 +237,11 @@ function recipeCanCraft() {
 }
 
 const $blueprintUnlock = $("#BlueprintUnlock");
+let cachedbptype = null;
 
 function refreshBlueprint(type) {
+    type = type || cachedbptype;
+    cachedbptype = type;
     $blueprintUnlock.empty();
     const d = $("<div/>").addClass('bpShop');
     const nextRecipe = recipeList.getNextBuyable(type);

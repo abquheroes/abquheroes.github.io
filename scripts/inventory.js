@@ -176,6 +176,9 @@ const Inventory = {
     full() {
         return this.nonblank().length === this.inv.length;
     },
+    inventoryCount() {
+        return this.nonblank().length;
+    },
     nonblank() {
         return this.inv.filter(r=>r !== null);
     },
@@ -186,10 +189,23 @@ const Inventory = {
         }
         refreshInventory();
         refreshWorkerAmts();
+    },
+    getMaxPowByTypes(types) {
+        //given a list of types, return highest power
+        const pows = this.inv.filter(i => i !== null && types.includes(i.type)).map(p => p.pow());
+        if (pows.length === 0) return 0;
+        return Math.max(...pows);
+    },
+    getMaxHPByTypes(types) {
+        //given a list of types, return highest power
+        const hps = this.inv.filter(i => i !== null && types.includes(i.type)).map(p => p.hp());
+        if (hps.length === 0) return 0;
+        return Math.max(...hps);
     }
 }
 
 $inventory = $("#inventory");
+$sideInventory = $("#inventorySidebar");
 
 function refreshInventory() {
     $inventory.empty();
@@ -210,4 +226,5 @@ function refreshInventory() {
         itemdiv.append(itemName,itemCost,itemProps, equipButton, sellButton);
         $inventory.append(itemdiv);
     });
+    $sideInventory.html(`${Inventory.inventoryCount()}/20`)
 }

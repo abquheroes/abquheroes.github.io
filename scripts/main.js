@@ -33,6 +33,7 @@ function afterLoad() {
     refreshHeroSelect();
     refreshRecipeFilters();
     refreshEvents();
+    hardMatRefresh();
     loadCorrectDungeonScreen();
     populateRecipe("Knives");
     setInterval(mainLoop, 10);

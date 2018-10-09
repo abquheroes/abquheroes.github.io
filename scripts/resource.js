@@ -58,6 +58,11 @@ const ResourceManager = {
             this.addMaterial(resource,-amt);
         }
     },
+    refundMaterial(item) {
+        for (const [resource,amt] of Object.entries(item.mcost)) {
+            this.addMaterial(resource,amt);
+        }
+    },
     materialIcon(type) {
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
         return `<img src="images/resources/${type}.png" alt="${type}">`
@@ -107,5 +112,14 @@ function initializeMats() {
         d.append(d1,d2);
         d.hide();
         $materials.append(d);
+    })
+}
+
+function hardMatRefresh() {
+    //used when we first load in
+    ResourceManager.materials.forEach(mat=> {
+        if (mat.amt === 0) $("#"+mat.id).hide();
+        else $("#"+mat.id).show();
+        $("#amt"+mat.id).html(mat.amt);
     })
 }

@@ -120,6 +120,8 @@ const WorkerManager = {
         refreshWorkers();
         refreshRecipeFilters();
         refreshSideWorkers();
+        recipeCanCraft();
+        refreshBlueprint();
     },
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);

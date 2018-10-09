@@ -7,6 +7,9 @@ class Floor {
         this.lvl = lvl;
         this.icon = '<img src="images/DungeonIcons/combat_floor.png">'
         this.monster = [MobManager.getMonster(lvl)];
+        if (lvl >= 100) this.monster.push(MobManager.getMonster(lvl));
+        if (lvl >= 200) this.monster.push(MobManager.getMonster(lvl));
+        if (lvl >= 300) this.monster.push(MobManager.getMonster(lvl));
     }
     isDead() {
         return this.monster.every((mob) => mob.dead());

@@ -1,20 +1,22 @@
 class Party {
-    constructor (ct) {
-        this.maxSize = ct;
+    constructor () {
         this.heroes = [];
     }
     createSave() {
         return this.heroes;
     }
+    loadSave(save) {
+        this.heroes = save;
+    }
     hasMember(member) {
         return this.heroes.includes(member);
     }
     addMember(member) {
-        if (this.heroes.length >= this.maxSize) return false;
+        if (this.heroes.length >= this.partySize()) return false;
         this.heroes.push(member);
     }
     emptyPartySlots() {
-        return this.maxSize-this.heroes.length;
+        return this.partySize()-this.heroes.length;
     }
     //tf is this for?
     removeMemberLocation(location) {
@@ -37,9 +39,13 @@ class Party {
             hero.addXP(xp);
         });
     }
-    loadSave(save) {
-        this.heroes = save;
+    partySize() {
+        const heroesOwned = HeroManager.ownedHeroes().length;
+        if (heroesOwned < 4) return 1;
+        if (heroesOwned < 8) return 2;
+        if (heroesOwned < 12) return 3;
+        return 4;
     }
 }
 
-let party = new Party(1);
+let party = new Party();

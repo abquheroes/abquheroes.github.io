@@ -24,7 +24,7 @@ class Hero {
         this.crit = 5;
         this.critdmg = 2;
         this.dodgeChance = 0;
-        this.target = "first"
+        this.target = "first";
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
@@ -136,6 +136,7 @@ class Hero {
         //takes a list of mobs and executes an attack
         //this is just w/e right now...
         const target = getTarget(mobs,this.target);
+        if (target === undefined) return;
         const dmg = this.critical(this.getPow());
         if (this.ap === this.apmax) {
             target.takeDamage(DamageType.MAGIC,dmg*2);
@@ -260,6 +261,14 @@ class Hero {
         }
         ResourceManager.deductMoney(amt);
         this.healPercent(100);
+    }
+    equipUpgradeAvailable(slot) {
+        const types = this.slotTypesByNum(slot)
+        const currentPow = this.getPowSlot(slot);
+        const currentHP = this.getHPSlot(slot);
+        const invMaxPow = Inventory.getMaxPowByTypes(types);
+        const invMaxHP = Inventory.getMaxHPByTypes(types);
+        return invMaxPow > currentPow || invMaxHP > currentHP;
     }
 }
 
@@ -436,6 +445,7 @@ function examineHero(ID) {
             equipText = hero.slotTypeIcons(slotNum);
         }
         const d5 = $("<div/>").addClass("heroExamineEquipment").attr("data-value",slotNum).attr("id","hEE"+slotNum).attr("heroID",ID);
+        if (hero.equipUpgradeAvailable(slotNum)) d5.addClass("equipUpgradeAvailable")
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
         if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
@@ -484,6 +494,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
     table.append(hrow);
 
+    let upgradeAvaialable = false;
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
@@ -500,6 +511,8 @@ function examineHeroPossibleEquip(slot,heroID) {
         table.append(row);
     });
     $heroEquipmentList.append(table);
+    //returns a value if this slot has an upgrade available
+    return upgradeAvaialable;
 };
 
 function unequipSlot(slot,heroID) {
