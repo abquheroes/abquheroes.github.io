@@ -3544,10 +3544,11 @@ a.workerDialog:hover {
     
     #RecipeFilter {
         display: flex;
-        flex-wrap: wrap;
+        align-content: flex-start;
         width: 200px;
         height: 100%;
         background-color: var(--bg);
+        border-right: 1px solid var(--border);
         border-bottom: none;
         padding: 0;
         line-height: 40px;
@@ -3561,7 +3562,7 @@ a.workerDialog:hover {
         max-height: 40px;
         max-width: none;
         overflow: hidden;
-        border-right: 1px solid var(--border);
+        border-right: none;
         border-bottom: 1px solid var(--border);
         text-decoration: none;
     }
@@ -3575,6 +3576,10 @@ a.workerDialog:hover {
     }
     
     #RecipeResults {
+        flex-grow: 1;
+    }
+
+    #recipes-list {
         flex-grow: 1;
     }
 }
