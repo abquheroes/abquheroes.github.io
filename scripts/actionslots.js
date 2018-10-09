@@ -180,7 +180,9 @@ function initializeActionSlots() {
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
         const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
         if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
-        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${actionSlotManager.autoSell(i)}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
+        let autoSellTooltip;
+        actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
+        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4);
