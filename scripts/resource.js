@@ -100,11 +100,15 @@ const ResourceManager = {
             this.addMaterial(d.id,d.amt);
         })
     },
+    reOrderMats() {
+        this.materials.sort((a,b) => a.tier >= b.tier);
+    }
 }
 
 const $materials = $("#materials");
 
 function initializeMats() {
+    ResourceManager.reOrderMats();
     ResourceManager.materials.forEach(mat => {
         const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);

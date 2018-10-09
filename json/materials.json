@@ -1,250 +1,312 @@
 [
   {
     "id": "M001",
-    "name": "Gold"
+    "name": "Gold",
+    "tier": 0
   },
   {
     "id": "M002",
-    "name": "Blueprint"
+    "name": "Blueprint",
+    "tier": 0
   },
   {
     "id": "M101",
-    "name": "Emerald Slime"
+    "name": "Emerald Slime",
+    "tier": 1
   },
   {
     "id": "M102",
-    "name": "Peach Slime"
+    "name": "Peach Slime",
+    "tier": 2
   },
   {
     "id": "M103",
-    "name": "Indigo Slime"
+    "name": "Indigo Slime",
+    "tier": 3
   },
   {
     "id": "M104",
-    "name": "Ginger Slime"
+    "name": "Ginger Slime",
+    "tier": 4
   },
   {
     "id": "M105",
-    "name": "Stinky Slime"
+    "name": "Stinky Slime",
+    "tier": 5
   },
   {
     "id": "M106",
-    "name": "Clear Slime"
+    "name": "Clear Slime",
+    "tier": 6
   },
   {
     "id": "M107",
-    "name": "Magenta Slime"
+    "name": "Magenta Slime",
+    "tier": 7
   },
   {
     "id": "M108",
-    "name": "Grey Slime"
+    "name": "Grey Slime",
+    "tier": 8
   },
   {
     "id": "M109",
-    "name": "Cobalt Slime"
+    "name": "Cobalt Slime",
+    "tier": 9
   },
   {
     "id": "M110",
-    "name": "Technicolor Slime"
+    "name": "Technicolor Slime",
+    "tier": 10
   },
   {
     "id": "M201",
-    "name": "Bee Wing"
+    "name": "Bee Wing",
+    "tier": 1
   },
   {
     "id": "M202",
-    "name": "Cobra Scale"
+    "name": "Cobra Scale",
+    "tier": 2
   },
   {
     "id": "M203",
-    "name": "Compost"
+    "name": "Compost",
+    "tier": 3
   },
   {
     "id": "M204",
-    "name": "Rat Tail"
+    "name": "Rat Tail",
+    "tier": 4
   },
   {
     "id": "M205",
-    "name": "Stinger"
+    "name": "Stinger",
+    "tier": 5
   },
   {
     "id": "M206",
-    "name": "Silk"
+    "name": "Silk",
+    "tier": 6
   },
   {
     "id": "M207",
-    "name": "Snake Scale"
+    "name": "Snake Scale",
+    "tier": 7
   },
   {
     "id": "M208",
-    "name": "Parasitic Egg"
+    "name": "Parasitic Egg",
+    "tier": 8
   },
   {
     "id": "M209",
-    "name": "Wasp Wing"
+    "name": "Wasp Wing",
+    "tier": 9
   },
   {
     "id": "M210",
-    "name": "Bat Wing"
+    "name": "Bat Wing",
+    "tier": 10
   },
   {
     "id": "M301",
-    "name": "Earth Crystal"
+    "name": "Earth Crystal",
+    "tier": 1
   },
   {
     "id": "M302",
-    "name": "Psychic Crystal"
+    "name": "Psychic Crystal",
+    "tier": 2
   },
   {
     "id": "M303",
-    "name": "Life Crystal"
+    "name": "Life Crystal",
+    "tier": 3
   },
   {
     "id": "M304",
-    "name": "Wind Crystal"
+    "name": "Wind Crystal",
+    "tier": 4
   },
   {
     "id": "M305",
-    "name": "Lightning Crystal"
+    "name": "Lightning Crystal",
+    "tier": 5
   },
   {
     "id": "M306",
-    "name": "Fire Crystal"
+    "name": "Fire Crystal",
+    "tier": 6
   },
   {
     "id": "M307",
-    "name": "Ice Crystal"
+    "name": "Ice Crystal",
+    "tier": 7
   },
   {
     "id": "M308",
-    "name": "Poison Crystal"
+    "name": "Poison Crystal",
+    "tier": 8
   },
   {
     "id": "M309",
-    "name": "Storm Crystal"
+    "name": "Storm Crystal",
+    "tier": 9
   },
   {
     "id": "M310",
-    "name": "Death Crystal"
+    "name": "Death Crystal",
+    "tier": 10
   },
   {
     "id": "M401",
-    "name": "Crab Shell"
+    "name": "Crab Shell",
+    "tier": 1
   },
   {
     "id": "M402",
-    "name": "Turtle Shell"
+    "name": "Turtle Shell",
+    "tier": 2
   },
   {
     "id": "M403",
-    "name": "Octopus Tentacle"
+    "name": "Octopus Tentacle",
+    "tier": 3
   },
   {
     "id": "M404",
-    "name": "Frog Eye"
+    "name": "Frog Eye",
+    "tier": 4
   },
   {
     "id": "M405",
-    "name": "Amphab Spine"
+    "name": "Amphab Spine",
+    "tier": 5
   },
   {
     "id": "M406",
-    "name": "Bear Hair"
+    "name": "Bear Hair",
+    "tier": 6
   },
   {
     "id": "M407",
-    "name": "Toad Shroom"
+    "name": "Toad Shroom",
+    "tier": 7
   },
   {
     "id": "M408",
-    "name": "Moose Antler"
+    "name": "Moose Antler",
+    "tier": 8
   },
   {
     "id": "M409",
-    "name": "Alligator Skull"
+    "name": "Alligator Skull",
+    "tier": 9
   },
   {
     "id": "M410",
-    "name": "Dinosaur Bone"
+    "name": "Dinosaur Bone",
+    "tier": 10
   },
   {
     "id": "M501",
-    "name": "Ankh"
+    "name": "Ankh",
+    "tier": 1
   },
   {
     "id": "M502",
-    "name": "Horseshoe"
+    "name": "Horseshoe",
+    "tier": 2
   },
   {
     "id": "M503",
-    "name": "Chain"
+    "name": "Chain",
+    "tier": 3
   },
   {
     "id": "M504",
-    "name": "Coal"
+    "name": "Coal",
+    "tier": 4
   },
   {
     "id": "M505",
-    "name": "Goblet"
+    "name": "Goblet",
+    "tier": 5
   },
   {
     "id": "M506",
-    "name": "Nut"
+    "name": "Nut",
+    "tier": 6
   },
   {
     "id": "M507",
-    "name": "Bolt"
+    "name": "Bolt",
+    "tier": 7
   },
   {
     "id": "M508",
-    "name": "Bell"
+    "name": "Bell",
+    "tier": 8
   },
   {
     "id": "M509",
-    "name": "Cuffs"
+    "name": "Cuffs",
+    "tier": 9
   },
   {
     "id": "M510",
-    "name": "Gear"
+    "name": "Gear",
+    "tier": 10
   },
   {
     "id": "M601",
-    "name": "Red Bow"
+    "name": "Red Bow",
+    "tier": 1
   },
   {
     "id": "M602",
-    "name": "Orange Yarn"
+    "name": "Orange Yarn",
+    "tier": 2
   },
   {
     "id": "M603",
-    "name": "Yellow Clasp"
+    "name": "Yellow Clasp",
+    "tier": 3
   },
   {
     "id": "M604",
-    "name": "Green Button"
+    "name": "Green Button",
+    "tier": 4
   },
   {
     "id": "M605",
-    "name": "Blue Feather"
+    "name": "Blue Feather",
+    "tier": 5
   },
   {
     "id": "M606",
-    "name": "Indigo Bow"
+    "name": "Indigo Bow",
+    "tier": 6
   },
   {
     "id": "M607",
-    "name": "Pink Yarn"
+    "name": "Pink Yarn",
+    "tier": 7
   },
   {
     "id": "M608",
-    "name": "Cerulean Berries"
+    "name": "Cerulean Berries",
+    "tier": 8
   },
   {
     "id": "M609",
-    "name": "Black Feather"
+    "name": "Black Feather",
+    "tier": 9
   },
   {
     "id": "M610",
-    "name": "White Berries"
+    "name": "White Berries",
+    "tier": 10
   }
 ]
