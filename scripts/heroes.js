@@ -168,14 +168,13 @@ class Hero {
         //return an object with 
         return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
     }
-    equip(item) {
-        const type = item.type;
-        if (this.slot1Type.includes(type)) this.slot1 = item;
-        if (this.slot2Type.includes(type)) this.slot2 = item;
-        if (this.slot3Type.includes(type)) this.slot3 = item;
-        if (this.slot4Type.includes(type)) this.slot4 = item;
-        if (this.slot5Type.includes(type)) this.slot5 = item;
-        if (this.slot6Type.includes(type)) this.slot6 = item;
+    equip(item,slot) {
+        if (slot === 0) this.slot1 = item;
+        if (slot === 1) this.slot2 = item;
+        if (slot === 2) this.slot3 = item;
+        if (slot === 3) this.slot4 = item;
+        if (slot === 4) this.slot5 = item;
+        if (slot === 5) this.slot6 = item;
     }
     removeSlot(slot) {
         if (slot === 0) this.slot1 = null;
@@ -228,6 +227,7 @@ class Hero {
             return;
         }
         const item = this.getSlot(slot);
+        if (item === null) return;
         this.removeSlot(slot);
         Inventory.addToInventory(item.id,item.rarity);
     }
@@ -310,15 +310,15 @@ const HeroManager = {
     idToHero(ID) {
         return this.heroes.find(hero => hero.id === ID);
     },
-    equipItem(containerID,heroID) {
+    equipItem(containerID,heroID,slot) {
         const item = Inventory.containerToItem(containerID);
+        console.log(item,heroID,slot);
         const hero = this.idToHero(heroID);
         Inventory.removeContainerFromInventory(containerID);
-        if (hero.hasEquip(item.type)) {
-            const equippedItem = hero.getEquip(item.type);
-            Inventory.addItemContainerToInventory(equippedItem);
-        }
-        hero.equip(item);
+        hero.unequip(slot);
+        console.log(hero.slot1);
+        hero.equip(item,slot);
+        console.log(hero.slot1);
     },
     getSlotTypes(slot,heroID) {
         const hero = this.idToHero(heroID);
@@ -524,6 +524,7 @@ function unequipSlot(slot,heroID) {
 $(document).on('click', "div.heroOwnedCard", (e) => {
     //pop up the detailed character card
     e.preventDefault();
+    equippingTo = null;
     const ID = $(e.currentTarget).attr("data-value");
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
@@ -535,6 +536,7 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     //select an item type to display what you can equip
     e.preventDefault();
     const slot = parseInt($(e.currentTarget).attr("data-value"));
+    equippingTo = slot;
     const heroID = $(e.currentTarget).attr("heroID");
     $(".heroExamineEquipment").removeClass("hEEactive");
     $("#hEE"+slot).addClass("hEEactive");
@@ -546,7 +548,7 @@ $(document).on('click', "div.EHPErow", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
     const containerID = parseInt($(e.currentTarget).attr("id"));
-    HeroManager.equipItem(containerID,heroID);
+    HeroManager.equipItem(containerID,heroID,equippingTo);
     examineHero(heroID);
     clearExaminePossibleEquip();
 });
@@ -555,3 +557,6 @@ $(document).on('click', ".buyNewHeroCard", (e) => {
     e.preventDefault();
     HeroManager.purchaseHero();    
 })
+
+//global variable to hold where we're looking to equip to for the equipping shit.
+let equippingTo = null;
