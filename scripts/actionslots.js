@@ -34,8 +34,11 @@ class actionSlot {
         save.itemid = this.itemid;
         save.craftTime = this.craftTime;
         save.status = this.status;
-        save.autoSell = this.autoSell;
         return save;
+    }
+    loadSave(save) {
+        this.craftTime = save.craftTime;
+        this.status = save.status;
     }
     itemPicName() {
         return this.item.itemPicName();
@@ -46,7 +49,7 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            Inventory.craftToInventory(this.itemid,this.autoSell);
+            Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
@@ -68,6 +71,12 @@ class actionSlot {
         ResourceManager.deductMaterial(this.item);
         this.status = slotState.CRAFTING;
     }
+    autoSellToggle() {
+        return this.item.autoSellToggle();
+    }
+    autoSell() {
+        return this.item.autoSell;
+    }
 }
 
 const actionSlotManager = {
@@ -86,9 +95,7 @@ const actionSlotManager = {
         this.maxSlots = save.maxSlots;
         save.slots.forEach(s => {
             const slot = new actionSlot(s.itemid)
-            slot.craftTime = s.craftTime;
-            slot.status = s.status;
-            slot.autoSell = s.autoSell;
+            slot.loadSave(s);
             this.slots.push(slot);
         });
     },
@@ -153,7 +160,7 @@ const actionSlotManager = {
     },
     autoSell(i) {
         if (this.slots.length <= i) return "";
-        return this.slots[i].autoSell;
+        return this.slots[i].autoSell();
     },
     toggleAuto(i) {
         this.slots[i].autoSellToggle();

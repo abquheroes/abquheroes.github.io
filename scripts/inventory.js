@@ -106,9 +106,10 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
     },
-    craftToInventory(id,autoSell) {
+    craftToInventory(id) {
         const item = recipeList.idToItem(id)
         const name = item.name;
+        const autoSell = item.autoSell;
         item.addCount();
         const roll = Math.floor(Math.random() * 1000)
         let mod = 1;

@@ -74,7 +74,6 @@ class Hero {
     }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
-        console.log(this.slot1);
         if (this.slot1 !== null) pow += this.slot1.pow();
         if (this.slot2 !== null) pow += this.slot2.pow();
         if (this.slot3 !== null) pow += this.slot3.pow();

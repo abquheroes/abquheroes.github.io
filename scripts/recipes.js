@@ -16,11 +16,13 @@ class Item{
         save.id = this.id;
         save.owned = this.owned;
         save.craftCount = this.craftCount;
+        save.autoSell = this.autoSell;
         return save;
     }
     loadSave(save) {
         this.owned = save.owned;
         this.craftCount = save.craftCount;
+        this.autoSell = save.autoSell;
     }
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
