@@ -1551,7 +1551,7 @@ Rarities
     display: block;
     padding: 10px;
     border: none;
-    background-color: var(--bg-3);
+    background-color: var(--bg-2);
     border-top: 1px solid var(--border);
     color: var(--text);
     font-size: 0.8em;
@@ -1580,7 +1580,7 @@ Rarities
 }
 
 .Worker .BuyWorker:hover, .WorkerUpgrade:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
 }
 
 .BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
