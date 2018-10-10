@@ -239,7 +239,7 @@ function refreshSideWorkers() {
         else {
             const item = recipeList.idToItem(worker.status);
             d.addClass("wsbActive");
-            d3.html(item.itemPic()).addClass("tooltip").attr("data-tooltip",item.name);
+            d3.html(item.itemPic()).addClass("tooltip").attr("data-tooltip","Cancel crafting " + item.name);
         }
         d.append(d1,d2,d3);
         $workersUse.append(d);
