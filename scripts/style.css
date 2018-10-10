@@ -830,7 +830,7 @@ Rarities
     flex-grow: 1;
     padding: 5px;
     font-size: 0.9em;
-    font-size: 0.9em;
+    text-shadow: 0 0 5px black;
     z-index: 2;
 }
 
