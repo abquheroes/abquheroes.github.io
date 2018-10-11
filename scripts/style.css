@@ -212,8 +212,8 @@ body {
 
 .heading-arrow {
     position: absolute;
-    top: 4px;
-    right: 2px;
+    top: 8px;
+    right: 6px;
     color: var(--text-3);
     font-family: monospace;
     font-weight: bold;
@@ -1285,6 +1285,8 @@ Rarities
     left: -1px;
     right: -1px;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
     background-color: var(--bg-3);
     border: 1px solid var(--border);
     padding: 5px 15px;
@@ -3204,7 +3206,7 @@ a.workerDialog:hover {
     main {display: none;}
 
     body:after {
-        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen. Support for smaller screens is planned so check back in the future for access.";
+        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen.";
         display: flex;
         justify-content: center;
         align-items: center;
