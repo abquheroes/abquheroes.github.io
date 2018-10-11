@@ -254,3 +254,17 @@ function backToTop() {
 }
 
 if (backToTopButton) window.onscroll = () => backToTop();
+
+/* Close Dialogs with Click Outside of Element */
+
+const dialogs = document.querySelectorAll(".dialog");
+
+dialogs.forEach((dialog) => {
+    dialog.addEventListener("click", closeDialog);
+});
+
+function closeDialog(dialog) {
+    if (this === dialog.target) {
+        window.location.assign("#closeDialog");
+    }
+}
