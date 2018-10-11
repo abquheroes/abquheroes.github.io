@@ -1011,6 +1011,10 @@ Rarities
     vertical-align: middle;
 }
 
+#RecipeFilter a[href="NoMatSelector"]:before {
+    background-image: url('../images/recipeFilter/NoMat32.png');
+}
+
 #RecipeFilter a[href="SwordSelector"]:before {
     background-image: url('../images/recipeFilter/Swords32.png');
 }
@@ -3568,7 +3572,7 @@ a.workerDialog:hover {
     
     #RecipeFilter a.recipeSelect {
         color: var(--text);
-        padding: 0;
+        padding: 0 0 0 10px;
         width: 100%;
         max-height: 40px;
         max-width: none;
