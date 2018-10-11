@@ -229,7 +229,7 @@ function refreshSideWorkers() {
     WorkerManager.reallocate();
     WorkerManager.workers.filter(w=>w.owned).forEach(worker => {
         const d = $("<div/>").addClass("workerSideBar").attr("id",worker.status);
-        const d1 = $("<div/>").addClass("wsbLvl").html(worker.lvl);
+        const d1 = $("<div/>").addClass("wsbLvl tooltip").attr("data-tooltip", "Worker Level").html(worker.lvl);
         const d2 = $("<div/>").addClass("wsbType").html(worker.prodpic+"&nbsp;"+worker.name);
         const d3 = $("<div/>").addClass("wsbCraft");
         if (worker.status === "idle") {

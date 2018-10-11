@@ -2721,6 +2721,19 @@ footer a[href*="discord.gg"]:hover {
     margin-right: 0;
 }
 
+.wsbLvl.tooltip:after {
+    left: 0;
+    right: unset;
+    width: 100px;
+    bottom: 135%;
+    transform-origin: left bottom;
+}
+
+.wsbLvl.tooltip:before {
+    margin-top: -20px;
+    left: 2.5px;
+}
+
 .wsbCraft.tooltip:after {
     left: 0;
     right: 0;
@@ -2730,7 +2743,6 @@ footer a[href*="discord.gg"]:hover {
 
 .wsbCraft.tooltip:before {
     margin-top: -15px;
-    transform: rotate(180deg);
     right: 22.5px;
 }
 
