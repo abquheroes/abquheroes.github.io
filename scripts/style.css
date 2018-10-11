@@ -1362,11 +1362,14 @@ Rarities
 
 .purchaseWorkerCard {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-self: flex-start;
-    padding: 5px 20px 5px 5px;
+    max-height: 266px;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 20px;
     background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
@@ -1378,13 +1381,23 @@ Rarities
 }
 
 .unknownWorker > img {
-    height: 48px;
     vertical-align: middle;
 }
 
 .buyNewWorker {
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.buyWorkerCost {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buyWorkerCost > img {
+    margin-right: 5px;
 }
 
 .upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost, .TicketName {

@@ -295,7 +295,7 @@ function refreshWorkers() {
     const amt = miscLoadedValues.workerCost[WorkerManager.workers.filter(w=>w.owned).length]
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
-    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase Worker&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${amt}</div>`);
     pw.append(pw1,b1);
     if (WorkerManager.workers.filter(w=>!w.owned).length === 0) pw.hide();
     $workers.append(pw);
