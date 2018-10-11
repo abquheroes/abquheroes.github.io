@@ -77,7 +77,7 @@ class Item{
         this.rcost.forEach(r => {
             if (WorkerManager.lvlByType(r) >= this.lvl) return;
             const mat = r.charAt(0).toUpperCase() + r.slice(1);
-            s += `Lv${this.lvl} ${mat}, `
+            s += `Lv${this.lvl} ${mat} Worker, `
         });
         return s.slice(0, -2);
     }
