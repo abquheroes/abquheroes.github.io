@@ -175,7 +175,7 @@ body {
 #game-logo {
     margin: 0 auto;
     background-color: var(--bg);
-    background-image: url('../images/site-logo.png');
+    background-image: url('../../images/site-logo.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1004,7 +1004,7 @@ Rarities
     margin-bottom: 2px;
     width: 32px;
     height: 32px;
-    background-image: url('images/userpics/nopic.jpg');
+    background-image: url('../../images/userpics/nopic.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px;
@@ -1012,131 +1012,131 @@ Rarities
 }
 
 #RecipeFilter a[href="NoMatSelector"]:before {
-    background-image: url('../images/recipeFilter/NoMat32.png');
+    background-image: url('../../images/recipeFilter/NoMat32.png');
 }
 
 #RecipeFilter a[href="SwordSelector"]:before {
-    background-image: url('../images/recipeFilter/Swords32.png');
+    background-image: url('../../images/recipeFilter/Swords32.png');
 }
 
 #RecipeFilter a[href="MaceSelector"]:before {
-    background-image: url('../images/recipeFilter/Maces32.png');
+    background-image: url('../../images/recipeFilter/Maces32.png');
 }
     
 #RecipeFilter a[href="AxeSelector"]:before {
-    background-image: url('../images/recipeFilter/Axes32.png');
+    background-image: url('../../images/recipeFilter/Axes32.png');
 }
 
 #RecipeFilter a[href="SpearSelector"]:before {
-    background-image: url('../images/recipeFilter/Spears32.png');
+    background-image: url('../../images/recipeFilter/Spears32.png');
 }
 
 #RecipeFilter a[href="RodSelector"]:before {
-    background-image: url('../images/recipeFilter/Rods32.png');
+    background-image: url('../../images/recipeFilter/Rods32.png');
 }
 
 #RecipeFilter a[href="WandSelector"]:before {
-    background-image: url('../images/recipeFilter/Wands32.png');
+    background-image: url('../../images/recipeFilter/Wands32.png');
 }
 
 #RecipeFilter a[href="StaffSelector"]:before {
-    background-image: url('../images/recipeFilter/Staves32.png');
+    background-image: url('../../images/recipeFilter/Staves32.png');
 }
 
 #RecipeFilter a[href="KnifeSelector"]:before {
-    background-image: url('../images/recipeFilter/Knives32.png');
+    background-image: url('../../images/recipeFilter/Knives32.png');
 }
 
 #RecipeFilter a[href="BowSelector"]:before {
-    background-image: url('../images/recipeFilter/Bows32.png');
+    background-image: url('../../images/recipeFilter/Bows32.png');
 }
 
 #RecipeFilter a[href="WhipSelector"]:before {
-    background-image: url('../images/recipeFilter/Whips32.png');
+    background-image: url('../../images/recipeFilter/Whips32.png');
 }
 
 #RecipeFilter a[href="HelmetSelector"]:before {
-    background-image: url('../images/recipeFilter/Helmets32.png');
+    background-image: url('../../images/recipeFilter/Helmets32.png');
 }
 
 #RecipeFilter a[href="HatSelector"]:before {
-    background-image: url('../images/recipeFilter/Hats32.png');
+    background-image: url('../../images/recipeFilter/Hats32.png');
 }
 
 #RecipeFilter a[href="MaskSelector"]:before {
-    background-image: url('../images/recipeFilter/Masks32.png');
+    background-image: url('../../images/recipeFilter/Masks32.png');
 }
 
 #RecipeFilter a[href="GauntletSelector"]:before {
-    background-image: url('../images/recipeFilter/Gauntlets32.png');
+    background-image: url('../../images/recipeFilter/Gauntlets32.png');
 }
 
 #RecipeFilter a[href="GloveSelector"]:before {
-    background-image: url('../images/recipeFilter/Gloves32.png');
+    background-image: url('../../images/recipeFilter/Gloves32.png');
 }
 
 #RecipeFilter a[href="ShoeSelector"]:before {
-    background-image: url('../images/recipeFilter/Shoes32.png');
+    background-image: url('../../images/recipeFilter/Shoes32.png');
 }
 
 #RecipeFilter a[href="ArmorSelector"]:before {
-    background-image: url('../images/recipeFilter/Armor32.png');
+    background-image: url('../../images/recipeFilter/Armor32.png');
 }
 
 #RecipeFilter a[href="CloakSelector"]:before {
-    background-image: url('../images/recipeFilter/Cloaks32.png');
+    background-image: url('../../images/recipeFilter/Cloaks32.png');
 }
 
 #RecipeFilter a[href="VestSelector"]:before {
-    background-image: url('../images/recipeFilter/Vests32.png');
+    background-image: url('../../images/recipeFilter/Vests32.png');
 }
 
 #RecipeFilter a[href="ShieldSelector"]:before {
-    background-image: url('../images/recipeFilter/Shields32.png');
+    background-image: url('../../images/recipeFilter/Shields32.png');
 }
 
 #RecipeFilter a[href="WardSelector"]:before {
-    background-image: url('../images/recipeFilter/Wards32.png');
+    background-image: url('../../images/recipeFilter/Wards32.png');
 }
 
 #RecipeFilter a[href="ThrownSelector"]:before {
-    background-image: url('../images/recipeFilter/Thrown32.png');
+    background-image: url('../../images/recipeFilter/Thrown32.png');
 }
 
 #RecipeFilter a[href="OffhandSelector"]:before {
-    background-image: url('../images/recipeFilter/Offhand32.png');
+    background-image: url('../../images/recipeFilter/Offhand32.png');
 }
 
 #RecipeFilter a[href="TomeSelector"]:before {
-    background-image: url('../images/recipeFilter/Tomes32.png');
+    background-image: url('../../images/recipeFilter/Tomes32.png');
 }
 
 #RecipeFilter a[href="DartSelector"]:before {
-    background-image: url('../images/recipeFilter/Darts32.png');
+    background-image: url('../../images/recipeFilter/Darts32.png');
 }
 
 #RecipeFilter a[href="PotionSelector"]:before {
-    background-image: url('../images/recipeFilter/Potions32.png');
+    background-image: url('../../images/recipeFilter/Potions32.png');
 }
 
 #RecipeFilter a[href="PendantSelector"]:before {
-    background-image: url('../images/recipeFilter/Pendants32.png');
+    background-image: url('../../images/recipeFilter/Pendants32.png');
 }
 
 #RecipeFilter a[href="RingSelector"]:before {
-    background-image: url('../images/recipeFilter/Rings32.png');
+    background-image: url('../../images/recipeFilter/Rings32.png');
 }
 
 #RecipeFilter a[href="InstrumentSelector"]:before {
-    background-image: url('../images/recipeFilter/Instruments32.png');
+    background-image: url('../../images/recipeFilter/Instruments32.png');
 }
 
 #RecipeFilter a[href="BeltSelector"]:before {
-    background-image: url('../images/recipeFilter/Belts32.png');
+    background-image: url('../../images/recipeFilter/Belts32.png');
 }
 
 #RecipeFilter a[href="EarringSelector"]:before {
-    background-image: url('../images/recipeFilter/Earrings32.png');
+    background-image: url('../../images/recipeFilter/Earrings32.png');
 }
 
 .recipeTable {
@@ -2071,35 +2071,35 @@ Rarities
 }
 
 .bgContainer .layer1 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg');
     background-size: 500px;
 }
 
 .bgContainer .layer2 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png');
     background-size: 500px;
     
 }
 
 .bgContainer .layer3 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png');
     background-size: 500px;
 }
 
 .bgContainer .layer4 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png');
     background-size: 500px;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png');
     background-size: 500px;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg');
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;

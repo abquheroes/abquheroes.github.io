@@ -81,7 +81,6 @@ function darkTheme() {
     darkButton.style.display = "none";
     lightButton.style.display = "block";
 };
-*/
 
 // View Selection for Compact and Comfortable
 
@@ -96,9 +95,9 @@ if (compactButton) {
 if (comfortButton) {
     comfortButton.addEventListener("click", changeView);
 }
-/*
+
 compactButton.addEventListener("click", changeView);
-comfortButton.addEventListener("click", changeView);*/
+comfortButton.addEventListener("click", changeView);
 
 let viewIndex = findView();
 
@@ -157,6 +156,7 @@ function compactView() {
     compactButton.style.display = "none";
     comfortButton.style.display = "block";
 };
+*/
 
 // Tab Selection for Recipes List
 
@@ -187,21 +187,6 @@ function navTabHighlight() {
     };
     this.classList.add("tab-selected");
 };
-
-// Logo Easter Egg
-
-const $gameLogo = $("#game-logo");
-let logoNum = 0;
-
-$gameLogo.click((e) => {
-    logoNum += 1;
-    if (logoNum === 1) $gameLogo.css("background-image","url('images/site-logo.png')");
-    else if (logoNum === 2) $gameLogo.css("background-image","url('images/site-logo2.png')");
-    else {
-        $gameLogo.css("background-image","none");
-        logoNum = 0;
-    }
-});
 
 // Status Container Expand and Collapse
 
@@ -259,12 +244,23 @@ if (backToTopButton) window.onscroll = () => backToTop();
 
 const dialogs = document.querySelectorAll(".dialog");
 
-dialogs.forEach((dialog) => {
-    dialog.addEventListener("click", closeDialog);
-});
+dialogs.forEach((dialog) => dialog.addEventListener("click", closeDialog));
 
 function closeDialog(dialog) {
-    if (this === dialog.target) {
-        window.location.assign("#closeDialog");
-    }
+    if (this === dialog.target) window.location.assign("#closeDialog");
 }
+
+// Logo Easter Egg
+
+const $gameLogo = $("#game-logo");
+let logoNum = 0;
+
+$gameLogo.click((e) => {
+    logoNum += 1;
+    if (logoNum === 1) $gameLogo.css("background-image","url('images/site-logo.png')");
+    else if (logoNum === 2) $gameLogo.css("background-image","url('images/site-logo2.png')");
+    else {
+        $gameLogo.css("background-image","none");
+        logoNum = 0;
+    }
+});
