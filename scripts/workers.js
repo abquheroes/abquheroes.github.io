@@ -262,8 +262,9 @@ function refreshWorkers() {
         workerNameProduction.append(d2, d3);
         workerDetails.append(d1, workerNameProduction);
         const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
+        const d5a = $("<div/>").addClass("itemContributions").html("Required Contributions"); 
         const d5 = $('<div/>').addClass("itemSac");
-        workerDiv.append(workerDetails,d4,d5)
+        workerDiv.append(workerDetails,d4,d5a,d5)
         //workersac
         if (!worker.maxlevel()) {
             let money = "";
@@ -289,6 +290,12 @@ function refreshWorkers() {
             const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade&nbsp;&nbsp;" + money);
             if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
             workerDiv.append(b1);
+        }
+        if (worker.maxlevel()) {
+            d5a.hide(); 
+            d5.hide();
+            const d6 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
+            workerDiv.append(d6);
         }
         $workers.append(workerDiv)
     });
