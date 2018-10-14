@@ -179,10 +179,12 @@ const recipeList = {
 function populateRecipe(type) {
     $(".recipeRow").hide();
     if (type === "Matless") {
-        console.log('fire')
-        recipeList.recipes.filter(r => r.owned && r.mcost.length === 0).forEach((recipe) => {
+        recipeList.recipes.filter(r => r.owned && (r.mcost.length === 0 || r.isMastered())).forEach((recipe) => {
             $("#rr"+recipe.id).show();
         });
+    }
+    else if (type === "WorkerSac") {
+        
     }
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
         $("#rr"+recipe.id).show();
