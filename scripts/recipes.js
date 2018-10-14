@@ -24,6 +24,9 @@ class Item{
         this.craftCount = save.craftCount;
         this.autoSell = save.autoSell;
     }
+    itemDescription() {
+        return this.description;
+    }
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
@@ -215,6 +218,8 @@ function initializeRecipes() {
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
+        const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
+        td1.append(td1a);
         const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
         const td3 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
         const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());

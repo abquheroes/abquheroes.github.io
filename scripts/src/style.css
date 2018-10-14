@@ -55,7 +55,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -1209,6 +1209,16 @@ Rarities
 
 .recipeName > img, .item-name {
     pointer-events: none;
+}
+
+.recipeDescription {
+    margin-left: 5px;
+    color: rgba(255,255,255,0.5);
+    pointer-events: none;
+}
+
+.recipeDescription:hover {
+    color: #fff;
 }
 
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
@@ -2703,6 +2713,27 @@ footer a[href*="discord.gg"]:hover {
     margin-right: -8px;
 }
 
+.recipeDescription.tooltip:before {
+    margin-top: 30px;
+    transform: none;
+    left: unset;
+    right: unset;
+}
+
+.recipeDescription.tooltip:hover:before {
+    margin-top: 14px;
+}
+
+.recipeDescription.tooltip:after {
+    width: 300px;
+    top: 110%;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    margin-left: -166px;
+    transform-origin: top;
+}
+
 .indvCost.tooltip:after {
     bottom: 150%;
     top: unset;
@@ -3581,10 +3612,11 @@ a.workerDialog:hover {
     }
     
     #RecipeFilter {
+        position: fixed;
         display: flex;
         align-content: flex-start;
         width: 200px;
-        height: 100%;
+        height: calc(100% - 90px);
         background-color: var(--bg);
         border-right: 1px solid var(--border);
         border-bottom: none;
@@ -3619,5 +3651,6 @@ a.workerDialog:hover {
 
     #recipes-list {
         flex-grow: 1;
+        margin-left: 200px;
     }
 }
