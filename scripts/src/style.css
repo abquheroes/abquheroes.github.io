@@ -1346,7 +1346,7 @@ Rarities
     padding: 20px;
 }
 
-.Worker, .Upgrade, .TicketCard {
+.Worker, .Upgrade, .TicketCard, .purchaseWorkerCard {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1363,15 +1363,8 @@ Rarities
 }
 
 .purchaseWorkerCard {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-height: 266px;
-    min-width: 250px;
-    max-width: 250px;
-    padding: 20px;
     background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
