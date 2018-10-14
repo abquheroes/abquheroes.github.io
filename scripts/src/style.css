@@ -1159,6 +1159,10 @@ Rarities
     min-height: 40px;
 }
 
+.recipeRow:last-of-type {
+    margin-bottom: 100px;
+}
+
 .recipeRow:nth-of-type(odd) {
     background-color: var(--bg);
 }
@@ -1193,6 +1197,10 @@ Rarities
     max-width: 250px;
 }
 
+.recipeName {
+    padding-left: 30px;
+}
+
 .recipeName, .EHPEname {
     position: absolute;
     top: 0;
@@ -1212,7 +1220,8 @@ Rarities
 }
 
 .recipeDescription {
-    margin-left: 5px;
+    position: relative;
+    padding-left: 5px;
     color: rgba(255,255,255,0.5);
     cursor: default;
 }
@@ -1231,7 +1240,7 @@ Rarities
 }
 
 .recipeLvl {
-    margin-left: 250px;
+    margin-left: 235px;
 }
 
 .reciperesdiv, .itemCost, .recipeStatList {
@@ -2714,7 +2723,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .recipeDescription.tooltip:before {
-    margin-top: 30px;
+    margin-top: 25px;
     transform: none;
     left: unset;
     right: unset;
@@ -2726,12 +2735,11 @@ footer a[href*="discord.gg"]:hover {
 
 .recipeDescription.tooltip:after {
     width: 300px;
-    top: 110%;
-    left: unset;
+    top: 180%;
+    left: 3px;
     right: unset;
     bottom: unset;
-    margin-left: -166px;
-    transform-origin: top;
+    transform-origin: top left;
 }
 
 .indvCost.tooltip:after {
@@ -3652,5 +3660,15 @@ a.workerDialog:hover {
     #recipes-list {
         flex-grow: 1;
         margin-left: 200px;
+    }
+    
+    .recipeDescription.tooltip:after {
+        width: 300px;
+        top: 180%;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        margin-left: -166px;
+        transform-origin: top;
     }
 }

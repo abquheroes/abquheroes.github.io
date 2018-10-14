@@ -219,7 +219,6 @@ function initializeRecipes() {
     recipeList.recipes.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        td1.append(td1a);
         const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
         const td3 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
         const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
@@ -227,7 +226,7 @@ function initializeRecipes() {
         const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td7 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
         const td8 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipe.count()+"/100");
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6,td7,td8);
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7,td8);
         table.append(row);
     });
     $RecipeResults.append(table);
