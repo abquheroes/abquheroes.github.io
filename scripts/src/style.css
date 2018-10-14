@@ -55,7 +55,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -175,7 +175,7 @@ body {
 #game-logo {
     margin: 0 auto;
     background-color: var(--bg);
-    background-image: url('../images/site-logo.png');
+    background-image: url('../../images/site-logo.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -212,8 +212,8 @@ body {
 
 .heading-arrow {
     position: absolute;
-    top: 4px;
-    right: 2px;
+    top: 8px;
+    right: 6px;
     color: var(--text-3);
     font-family: monospace;
     font-weight: bold;
@@ -357,7 +357,7 @@ body {
     cursor: default;
 }
 
-#DungeonSideBarStatus {
+#DungeonSideBarStatus, #inventorySidebar {
     text-align: center;
     background-color: var(--bg-3);
     padding: 5px;
@@ -830,7 +830,7 @@ Rarities
     flex-grow: 1;
     padding: 5px;
     font-size: 0.9em;
-    font-size: 0.9em;
+    text-shadow: 0 0 5px black;
     z-index: 2;
 }
 
@@ -1004,135 +1004,139 @@ Rarities
     margin-bottom: 2px;
     width: 32px;
     height: 32px;
-    background-image: url('images/userpics/nopic.jpg');
+    background-image: url('../../images/userpics/nopic.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20px;
     vertical-align: middle;
 }
 
+#RecipeFilter a[href="NoMatSelector"]:before {
+    background-image: url('../../images/recipeFilter/NoMat32.png');
+}
+
 #RecipeFilter a[href="SwordSelector"]:before {
-    background-image: url('../images/recipeFilter/Swords32.png');
+    background-image: url('../../images/recipeFilter/Swords32.png');
 }
 
 #RecipeFilter a[href="MaceSelector"]:before {
-    background-image: url('../images/recipeFilter/Maces32.png');
+    background-image: url('../../images/recipeFilter/Maces32.png');
 }
     
 #RecipeFilter a[href="AxeSelector"]:before {
-    background-image: url('../images/recipeFilter/Axes32.png');
+    background-image: url('../../images/recipeFilter/Axes32.png');
 }
 
 #RecipeFilter a[href="SpearSelector"]:before {
-    background-image: url('../images/recipeFilter/Spears32.png');
+    background-image: url('../../images/recipeFilter/Spears32.png');
 }
 
 #RecipeFilter a[href="RodSelector"]:before {
-    background-image: url('../images/recipeFilter/Rods32.png');
+    background-image: url('../../images/recipeFilter/Rods32.png');
 }
 
 #RecipeFilter a[href="WandSelector"]:before {
-    background-image: url('../images/recipeFilter/Wands32.png');
+    background-image: url('../../images/recipeFilter/Wands32.png');
 }
 
 #RecipeFilter a[href="StaffSelector"]:before {
-    background-image: url('../images/recipeFilter/Staves32.png');
+    background-image: url('../../images/recipeFilter/Staves32.png');
 }
 
 #RecipeFilter a[href="KnifeSelector"]:before {
-    background-image: url('../images/recipeFilter/Knives32.png');
+    background-image: url('../../images/recipeFilter/Knives32.png');
 }
 
 #RecipeFilter a[href="BowSelector"]:before {
-    background-image: url('../images/recipeFilter/Bows32.png');
+    background-image: url('../../images/recipeFilter/Bows32.png');
 }
 
 #RecipeFilter a[href="WhipSelector"]:before {
-    background-image: url('../images/recipeFilter/Whips32.png');
+    background-image: url('../../images/recipeFilter/Whips32.png');
 }
 
 #RecipeFilter a[href="HelmetSelector"]:before {
-    background-image: url('../images/recipeFilter/Helmets32.png');
+    background-image: url('../../images/recipeFilter/Helmets32.png');
 }
 
 #RecipeFilter a[href="HatSelector"]:before {
-    background-image: url('../images/recipeFilter/Hats32.png');
+    background-image: url('../../images/recipeFilter/Hats32.png');
 }
 
 #RecipeFilter a[href="MaskSelector"]:before {
-    background-image: url('../images/recipeFilter/Masks32.png');
+    background-image: url('../../images/recipeFilter/Masks32.png');
 }
 
 #RecipeFilter a[href="GauntletSelector"]:before {
-    background-image: url('../images/recipeFilter/Gauntlets32.png');
+    background-image: url('../../images/recipeFilter/Gauntlets32.png');
 }
 
 #RecipeFilter a[href="GloveSelector"]:before {
-    background-image: url('../images/recipeFilter/Gloves32.png');
+    background-image: url('../../images/recipeFilter/Gloves32.png');
 }
 
 #RecipeFilter a[href="ShoeSelector"]:before {
-    background-image: url('../images/recipeFilter/Shoes32.png');
+    background-image: url('../../images/recipeFilter/Shoes32.png');
 }
 
 #RecipeFilter a[href="ArmorSelector"]:before {
-    background-image: url('../images/recipeFilter/Armor32.png');
+    background-image: url('../../images/recipeFilter/Armor32.png');
 }
 
 #RecipeFilter a[href="CloakSelector"]:before {
-    background-image: url('../images/recipeFilter/Cloaks32.png');
+    background-image: url('../../images/recipeFilter/Cloaks32.png');
 }
 
 #RecipeFilter a[href="VestSelector"]:before {
-    background-image: url('../images/recipeFilter/Vests32.png');
+    background-image: url('../../images/recipeFilter/Vests32.png');
 }
 
 #RecipeFilter a[href="ShieldSelector"]:before {
-    background-image: url('../images/recipeFilter/Shields32.png');
+    background-image: url('../../images/recipeFilter/Shields32.png');
 }
 
 #RecipeFilter a[href="WardSelector"]:before {
-    background-image: url('../images/recipeFilter/Wards32.png');
+    background-image: url('../../images/recipeFilter/Wards32.png');
 }
 
 #RecipeFilter a[href="ThrownSelector"]:before {
-    background-image: url('../images/recipeFilter/Thrown32.png');
+    background-image: url('../../images/recipeFilter/Thrown32.png');
 }
 
 #RecipeFilter a[href="OffhandSelector"]:before {
-    background-image: url('../images/recipeFilter/Offhand32.png');
+    background-image: url('../../images/recipeFilter/Offhand32.png');
 }
 
 #RecipeFilter a[href="TomeSelector"]:before {
-    background-image: url('../images/recipeFilter/Tomes32.png');
+    background-image: url('../../images/recipeFilter/Tomes32.png');
 }
 
 #RecipeFilter a[href="DartSelector"]:before {
-    background-image: url('../images/recipeFilter/Darts32.png');
+    background-image: url('../../images/recipeFilter/Darts32.png');
 }
 
 #RecipeFilter a[href="PotionSelector"]:before {
-    background-image: url('../images/recipeFilter/Potions32.png');
+    background-image: url('../../images/recipeFilter/Potions32.png');
 }
 
 #RecipeFilter a[href="PendantSelector"]:before {
-    background-image: url('../images/recipeFilter/Pendants32.png');
+    background-image: url('../../images/recipeFilter/Pendants32.png');
 }
 
 #RecipeFilter a[href="RingSelector"]:before {
-    background-image: url('../images/recipeFilter/Rings32.png');
+    background-image: url('../../images/recipeFilter/Rings32.png');
 }
 
 #RecipeFilter a[href="InstrumentSelector"]:before {
-    background-image: url('../images/recipeFilter/Instruments32.png');
+    background-image: url('../../images/recipeFilter/Instruments32.png');
 }
 
 #RecipeFilter a[href="BeltSelector"]:before {
-    background-image: url('../images/recipeFilter/Belts32.png');
+    background-image: url('../../images/recipeFilter/Belts32.png');
 }
 
 #RecipeFilter a[href="EarringSelector"]:before {
-    background-image: url('../images/recipeFilter/Earrings32.png');
+    background-image: url('../../images/recipeFilter/Earrings32.png');
 }
 
 .recipeTable {
@@ -1153,6 +1157,10 @@ Rarities
     justify-content: flex-start;
     align-items: center;
     min-height: 40px;
+}
+
+.recipeRow:last-of-type {
+    margin-bottom: 100px;
 }
 
 .recipeRow:nth-of-type(odd) {
@@ -1189,6 +1197,10 @@ Rarities
     max-width: 250px;
 }
 
+.recipeName {
+    padding-left: 30px;
+}
+
 .recipeName, .EHPEname {
     position: absolute;
     top: 0;
@@ -1207,6 +1219,17 @@ Rarities
     pointer-events: none;
 }
 
+.recipeDescription {
+    position: relative;
+    padding-left: 5px;
+    color: rgba(255,255,255,0.5);
+    cursor: default;
+}
+
+.recipeDescription:hover {
+    color: #fff;
+}
+
 .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
     width: 100%;
     max-width: 200px;
@@ -1217,7 +1240,7 @@ Rarities
 }
 
 .recipeLvl {
-    margin-left: 250px;
+    margin-left: 235px;
 }
 
 .reciperesdiv, .itemCost, .recipeStatList {
@@ -1281,6 +1304,8 @@ Rarities
     left: -1px;
     right: -1px;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
     background-color: var(--bg-3);
     border: 1px solid var(--border);
     padding: 5px 15px;
@@ -1340,14 +1365,14 @@ Rarities
     padding: 20px;
 }
 
-.Worker, .Upgrade, .TicketCard {
+.Worker, .Upgrade, .TicketCard, .purchaseWorkerCard {
     display: flex;
     flex-direction: column;
     position: relative;
     min-width: 250px;
     max-width: 250px;
     margin: 0 15px 10px 0;
-    padding: 15px 15px 50px;
+    padding: 15px;
     background-color: var(--bg);
     border: 1px solid var(--border);
 }
@@ -1357,12 +1382,8 @@ Rarities
 }
 
 .purchaseWorkerCard {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-self: flex-start;
-    padding: 5px 20px 5px 5px;
     background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
@@ -1374,13 +1395,23 @@ Rarities
 }
 
 .unknownWorker > img {
-    height: 48px;
     vertical-align: middle;
 }
 
 .buyNewWorker {
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.buyWorkerCost {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buyWorkerCost > img {
+    margin-right: 5px;
 }
 
 .upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost, .TicketName {
@@ -1495,15 +1526,17 @@ Rarities
     font-weight: bold;
 }
 
-.Worker .itemSac {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 40px;
+.Worker .itemContributions {
+    padding-bottom: 3px;
+    color: var(--text-3);
+    font-size: .8em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
 }
-
+/*
 .Worker .itemSac:before {
     display: block;
     position: absolute;
@@ -1517,6 +1550,15 @@ Rarities
     text-transform: uppercase;
     width: 100%;
     border-bottom: 1px solid var(--border);
+}
+*/
+.Worker .itemSac {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
 }
 
 .itemToSacDiv {
@@ -1547,11 +1589,18 @@ Rarities
     cursor: not-allowed;
 }
 
+.Worker .workerMaxDescription {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--highlight);
+    margin-top: 10px;
+}
+
 .Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .TicketCard .buyTicket {
     display: block;
     padding: 10px;
     border: none;
-    background-color: var(--bg-3);
+    background-color: var(--bg-2);
     border-top: 1px solid var(--border);
     color: var(--text);
     font-size: 0.8em;
@@ -1563,11 +1612,8 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 10px 0 0 0;
-    width: 100%;
+    position: relative;
+    margin: 10px -15px -15px;
 }
 
 .Worker .BuyWorker {
@@ -1580,7 +1626,7 @@ Rarities
 }
 
 .Worker .BuyWorker:hover, .WorkerUpgrade:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-3);
 }
 
 .BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
@@ -2052,35 +2098,35 @@ Rarities
 }
 
 .bgContainer .layer1 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg');
     background-size: 500px;
 }
 
 .bgContainer .layer2 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png');
     background-size: 500px;
     
 }
 
 .bgContainer .layer3 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png');
     background-size: 500px;
 }
 
 .bgContainer .layer4 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png');
     background-size: 500px;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png');
     background-size: 500px;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6 {
-    background: url(../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg);
+    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg');
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;
@@ -2676,17 +2722,36 @@ footer a[href*="discord.gg"]:hover {
     margin-right: -8px;
 }
 
+.recipeDescription.tooltip:before {
+    margin-top: 25px;
+    transform: none;
+    left: unset;
+    right: unset;
+}
+
+.recipeDescription.tooltip:hover:before {
+    margin-top: 14px;
+}
+
+.recipeDescription.tooltip:after {
+    width: 300px;
+    top: 180%;
+    left: 3px;
+    right: unset;
+    bottom: unset;
+    transform-origin: top left;
+}
+
 .indvCost.tooltip:after {
     bottom: 150%;
     top: unset;
     left: -100%;
     right: -100%;
-    margin-left: -20px;
+    margin-left: -10px;
 }
 
 .indvCost.tooltip:before {
     margin-top: -35px;
-    margin-right: 0px;
 }
 
 .indvCost.tooltip:hover:before {
@@ -2721,6 +2786,19 @@ footer a[href*="discord.gg"]:hover {
     margin-right: 0;
 }
 
+.wsbLvl.tooltip:after {
+    left: 0;
+    right: unset;
+    width: 100px;
+    bottom: 135%;
+    transform-origin: left bottom;
+}
+
+.wsbLvl.tooltip:before {
+    margin-top: -20px;
+    left: 2.5px;
+}
+
 .wsbCraft.tooltip:after {
     left: 0;
     right: 0;
@@ -2730,7 +2808,6 @@ footer a[href*="discord.gg"]:hover {
 
 .wsbCraft.tooltip:before {
     margin-top: -15px;
-    transform: rotate(180deg);
     right: 22.5px;
 }
 
@@ -3176,7 +3253,7 @@ a.workerDialog:hover {
     main {display: none;}
 
     body:after {
-        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen. Support for smaller screens is planned so check back in the future for access.";
+        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen.";
         display: flex;
         justify-content: center;
         align-items: center;
@@ -3543,10 +3620,11 @@ a.workerDialog:hover {
     }
     
     #RecipeFilter {
+        position: fixed;
         display: flex;
         align-content: flex-start;
         width: 200px;
-        height: 100%;
+        height: calc(100% - 90px);
         background-color: var(--bg);
         border-right: 1px solid var(--border);
         border-bottom: none;
@@ -3557,7 +3635,7 @@ a.workerDialog:hover {
     
     #RecipeFilter a.recipeSelect {
         color: var(--text);
-        padding: 0;
+        padding: 0 0 0 10px;
         width: 100%;
         max-height: 40px;
         max-width: none;
@@ -3581,5 +3659,16 @@ a.workerDialog:hover {
 
     #recipes-list {
         flex-grow: 1;
+        margin-left: 200px;
+    }
+    
+    .recipeDescription.tooltip:after {
+        width: 300px;
+        top: 180%;
+        left: unset;
+        right: unset;
+        bottom: unset;
+        margin-left: -166px;
+        transform-origin: top;
     }
 }

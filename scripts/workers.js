@@ -229,7 +229,7 @@ function refreshSideWorkers() {
     WorkerManager.reallocate();
     WorkerManager.workers.filter(w=>w.owned).forEach(worker => {
         const d = $("<div/>").addClass("workerSideBar").attr("id",worker.status);
-        const d1 = $("<div/>").addClass("wsbLvl").html(worker.lvl);
+        const d1 = $("<div/>").addClass("wsbLvl tooltip").attr("data-tooltip", "Worker Level").html(worker.lvl);
         const d2 = $("<div/>").addClass("wsbType").html(worker.prodpic+"&nbsp;"+worker.name);
         const d3 = $("<div/>").addClass("wsbCraft");
         if (worker.status === "idle") {
@@ -239,7 +239,7 @@ function refreshSideWorkers() {
         else {
             const item = recipeList.idToItem(worker.status);
             d.addClass("wsbActive");
-            d3.html(item.itemPic()).addClass("tooltip").attr("data-tooltip",item.name);
+            d3.html(item.itemPic()).addClass("tooltip").attr("data-tooltip","Cancel crafting " + item.name);
         }
         d.append(d1,d2,d3);
         $workersUse.append(d);
@@ -262,8 +262,9 @@ function refreshWorkers() {
         workerNameProduction.append(d2, d3);
         workerDetails.append(d1, workerNameProduction);
         const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
+        const d5a = $("<div/>").addClass("itemContributions").html("Required Contributions"); 
         const d5 = $('<div/>').addClass("itemSac");
-        workerDiv.append(workerDetails,d4,d5)
+        workerDiv.append(workerDetails,d4,d5a,d5)
         //workersac
         if (!worker.maxlevel()) {
             let money = "";
@@ -290,12 +291,18 @@ function refreshWorkers() {
             if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
             workerDiv.append(b1);
         }
+        if (worker.maxlevel()) {
+            d5a.hide(); 
+            d5.hide();
+            const d6 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
+            workerDiv.append(d6);
+        }
         $workers.append(workerDiv)
     });
     const amt = miscLoadedValues.workerCost[WorkerManager.workers.filter(w=>w.owned).length]
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
-    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase Worker&nbsp;-&nbsp;&nbsp;${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${amt}</div>`);
     pw.append(pw1,b1);
     if (WorkerManager.workers.filter(w=>!w.owned).length === 0) pw.hide();
     $workers.append(pw);

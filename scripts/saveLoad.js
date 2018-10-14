@@ -16,7 +16,7 @@ function ImportSaveButton() {
     const unpako = atob($('#importSaveText').val());
     const saveFile = JSON.parse(pako.ungzip(unpako,{ to: 'string' }));
     localStorage.setItem('ffgs1', saveFile);
-    location.reload(true);
+    location.replace('/');
 }
 
 let saveTime = 0;

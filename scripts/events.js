@@ -97,7 +97,11 @@ function refreshEvents() {
     });
     $eventContent.empty();
     if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
-    else $eventTab.removeClass("hasEvent");
+    else {
+        $eventTab.removeClass("hasEvent");
+        const d1 = $("<div/>").addClass("events-placeholder-details").html("You have no mail to collect at the moment."); 
+        $eventList.append(d1);
+    }
 }
 
 function dungeonDrops(event) {
