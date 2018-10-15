@@ -1685,7 +1685,7 @@ Rarities
     flex-grow: 1;
 }
 
-.progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+.progressRecipe, .progressWorker, .progressUpgrade, .progressHero, .progressOverall {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1706,7 +1706,7 @@ Rarities
     margin: 0 -15px;
 }
 
-#gameTime, #completeTime {
+#highestFloor, #gameTime, #completeTime {
     width: 100%;
     margin-top: 20px;
     padding: 10px 20px;
