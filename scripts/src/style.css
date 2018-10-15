@@ -969,6 +969,7 @@ Rarities
 }
 
 #RecipeFilter a.recipeSelect {
+    position: relative;
     color: var(--text);
     padding: 0 15px 0 3px;
     height: 100%;
@@ -1684,7 +1685,7 @@ Rarities
     flex-grow: 1;
 }
 
-.progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+.progressRecipe, .progressWorker, .progressUpgrade, .progressHero, .progressOverall {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1705,7 +1706,7 @@ Rarities
     margin: 0 -15px;
 }
 
-#gameTime, #completeTime {
+#highestFloor, #gameTime, #completeTime {
     width: 100%;
     margin-top: 20px;
     padding: 10px 20px;
@@ -2420,19 +2421,21 @@ Rarities
     position: relative;
 }
 
-.hasEvent:before {
+.hasEvent:after {
     content: "!";
     display: inline-block;
     position: absolute;
     top: 0;
     right: 0;
     font-size: 12px;
-    font-weight: bold;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    font-weight: 700;
     text-align: center;
-    background-color: rgba(162, 21, 0, 1);
+    background-color: rgba(162,21,0,1);
     color: var(--text-2);
     border-radius: 50%;
-    padding: 1px 8px;
     animation: 2s ease-in-out infinite notification;
 }
 
