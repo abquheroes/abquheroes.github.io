@@ -90,7 +90,8 @@ body.pg-loading {
 }
 /* line 91, ../src/please-wait.scss */
 .pg-loading-screen .pg-loading-html {
-  margin-top: 90px;
+  margin-top: 35px;
+  padding: 0 20px;
 }
 /* line 94, ../src/please-wait.scss */
 .pg-loading-screen .pg-loading-html.pg-loaded {
@@ -110,8 +111,50 @@ body.pg-loading {
 }
 
 img.pg-loading-logo {
-  max-width: 1000px;
+  max-width: 80vh;
   width: 100%;
+  padding: 0 20px;
+}
+
+body > #content {
+  display: none;
+}
+
+body.pg-loaded > #content {
+  display: block;
+}
+
+.loadingMessage {
+  color: var(--text-3);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 35px auto;
+  background-color: var(--border-3);
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes pgAnimLoading {
