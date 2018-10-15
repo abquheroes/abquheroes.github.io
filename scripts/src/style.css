@@ -1388,6 +1388,7 @@ Rarities
 .purchaseWorkerCard {
     justify-content: center;
     align-items: center;
+    min-height: 259px;
     background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
