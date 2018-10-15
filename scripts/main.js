@@ -38,7 +38,7 @@ function afterLoad() {
     populateRecipe("Knives");
     refreshProgress();
     setInterval(mainLoop, 10);
-    /*loading_screen.finish();*/
+    loading_screen.finish();
 }
 
 const loadMessage = "Placeholder text for random load messages.";
