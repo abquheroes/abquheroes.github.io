@@ -1266,6 +1266,14 @@ Rarities
     text-align: left;
 }
 
+.indvCost.masteredMat > img {
+    filter: grayscale(100%);
+}
+
+.indvCost.masteredMat {
+    color: var(--text-3);
+}
+
 .indvCost, .recipeValue {
     display: flex;
     align-items: center;
