@@ -218,6 +218,12 @@ const WorkerManager = {
                 });
             };
         });
+    },
+    workerLevelCount() {
+        return this.workers.filter(w=>w.owned).map(w=>w.lvl).reduce((a,b) => a+b,0);
+    },
+    workerMaxLevelCount() {
+        return this.workers.length*this.workers[0].lvlreq.length;
     }
 }
 

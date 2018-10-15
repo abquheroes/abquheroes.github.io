@@ -275,13 +275,14 @@
                 <div id="progressTab" class="tabcontent">
                     <div id="progresslist">
                         <div id="progress_container">
-                            <h3 class="progress-section-title">Progress Tracker for v0.1x</h3>
-                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/150</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
-                            <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total purchased worker levels.</p><span id="plWorkerLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
-                            <div class="progressUpgrade"><h2>Upgrade Levels</h2><p class="progress-desc">Your progress for total purchased upgrades.</p><span id="plUpgradeLevel">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbUpgrade"></span></div></div>
+                            <h3 class="progress-section-title">Progress Tracker for v0.2x</h3>
+                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
+                            <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total worker levels.</p><span id="plWorkerLevel">0/200</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
+                            <div class="progressHero"><h2>Hero Levels</h2><p class="progress-desc">Your progress for hero levels.</p><span id="plHeroLevel">0/600</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbHero"></span></div></div>
                             <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
-                            <div id="gameTime"></div>
-                            <div id="completeTime"></div>
+                            <div id="highestFloor">Your highest floor is: Floor 1000</div>
+                            <div id="gameTime">You've been playing for 10 minutes</div>
+                            <div id="completeTime">You completed the game in 10 minutes!</div>
                         </div>
                         <div id="achievements">
                             <h3 class="progress-section-title">Milestones</h3>
@@ -433,6 +434,7 @@
 <script src="scripts/dist/style.min.js"></script>
 <script src="scripts/toastifications.js"></script>
 <script src="scripts/saveLoad.js"></script>
+<script src="scripts/progress.js"></script>
 <script language="javascript" src="scripts/lz-string.js"></script>
 </body>
 </html>

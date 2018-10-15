@@ -374,6 +374,12 @@ const HeroManager = {
         initializeHeroList();
         refreshHeroSelect();
     },
+    heroLevelCount() {
+        return this.heroes.filter(w=>w.owned).map(w=>w.lvl).reduce((a,b) => a+b,0);
+    },
+    heroMaxLevelCount() {
+        return this.heroes.length*50;
+    }
 }
 
 const $heroList = $("#heroList");
