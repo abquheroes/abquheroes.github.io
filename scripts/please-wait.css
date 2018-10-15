@@ -109,6 +109,11 @@ body.pg-loading {
   opacity: 1;
 }
 
+img.pg-loading-logo {
+  max-width: 1000px;
+  width: 100%;
+}
+
 @-webkit-keyframes pgAnimLoading {
   from {
     opacity: 0;
