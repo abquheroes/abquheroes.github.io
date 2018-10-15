@@ -124,6 +124,10 @@ body.pg-loaded > #content {
   display: block;
 }
 
+.loadingMessage {
+  color: var(--text-3);
+}
+
 .spinner {
   width: 40px;
   height: 40px;
