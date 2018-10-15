@@ -94,7 +94,7 @@ class Item{
         if (this.craftCount === 100) {
             initializeRecipes();
             initializeActionSlots();
-            populateRecipe(this.type);
+            populateRecipe();
         }
         $("#rc"+this.id).html(this.count()+"/100");
     }
@@ -198,7 +198,11 @@ const recipeList = {
     }
 }
 
+let cachedbptype = null;
+
 function populateRecipe(type) {
+    type = type || cachedbptype;
+    cachedbptype = type;
     $(".recipeRow").hide();
     if (type === "Matless") {
         recipeList.recipes.filter(r => r.owned && (r.mcost.length === 0 || r.isMastered())).forEach((recipe) => {
@@ -269,11 +273,8 @@ function recipeCanCraft() {
 }
 
 const $blueprintUnlock = $("#BlueprintUnlock");
-let cachedbptype = null;
 
 function refreshBlueprint(type) {
-    type = type || cachedbptype;
-    cachedbptype = type;
     $blueprintUnlock.empty();
     const d = $("<div/>").addClass('bpShop');
     const nextRecipe = recipeList.getNextBuyable(type);

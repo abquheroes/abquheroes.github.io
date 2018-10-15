@@ -131,6 +131,7 @@ const WorkerManager = {
         refreshWorkers();
         refreshSideWorkers();
         refreshRecipeFilters();
+        recipeCanCraft();
     },
     freeCraft(workerID) {
         if (workerID === "W001") recipeList.idToItem("R0701").owned = true;
@@ -195,6 +196,7 @@ const WorkerManager = {
         ResourceManager.deductMoney(amt);
         const workerID = this.workerOrder.shift();
         this.gainWorker(workerID);
+        recipeCanCraft();
     },
     generateWorkerSac() {
         Math.seed = wsSeed;
