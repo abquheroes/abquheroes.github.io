@@ -106,6 +106,7 @@ class Item{
 
 const recipeList = {
     recipes : [],
+    recipeNewFilter : [],
     createSave() {
         const save = [];
         this.recipes.forEach(r=> {
@@ -192,21 +193,20 @@ function populateRecipe(type) {
             $("#rr"+recipe.id).show();
         });
     }
-    else if (type === "WorkerSac") {
-        
-    }
     recipeList.listByType(type).filter(r => r.owned).forEach((recipe) => {
         $("#rr"+recipe.id).show();
     });
     refreshBlueprint(type);
 }
 
-
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
-        if (recipeList.ownAtLeastOneOrCanBuy(type)) $("#rf"+type).show();
-        else $("#rf"+type).hide();
+        const recipeIcon = $("#rf"+type);
+        if (recipeList.recipeNewFilter.includes(type)) recipeIcon.addClass("hasEvent");
+        else recipeIcon.removeClass("hasEvent");
+        if (recipeList.ownAtLeastOneOrCanBuy(type)) recipeIcon.show();
+        else recipeIcon.hide();
     });
 }
 
@@ -286,8 +286,13 @@ $(document).on('click', '.recipeName', (e) => {
 });
 
 $(document).on('click', '.recipeSelect', (e) => {
+    //click on a recipe filter
     e.preventDefault();
     const type = $(e.target).attr("id").substring(2);
+    console.log(recipeList.recipeNewFilter.length)
+    recipeList.recipeNewFilter = recipeList.recipeNewFilter.filter(t => t !== type);
+    console.log(recipeList.recipeNewFilter.length)
+    refreshRecipeFilters();
     populateRecipe(type);
 })
 
