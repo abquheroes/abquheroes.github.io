@@ -194,7 +194,6 @@ const WorkerManager = {
         }
         ResourceManager.deductMoney(amt);
         const workerID = this.workerOrder.shift();
-        console.log(workerID);
         this.gainWorker(workerID);
     },
     generateWorkerSac() {

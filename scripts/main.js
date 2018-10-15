@@ -19,6 +19,7 @@ function afterLoad() {
         HeroManager.idToHero("H203").owned = true;
         HeroManager.heroOrder.shift();
         ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
+        ItemType.forEach(type => recipeList.recipeNewFilter.push(type));
     }
     else {
         WorkerManager.generateWorkerSac();
