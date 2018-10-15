@@ -28,7 +28,10 @@ function saveGame(ms) {
     if (stopSave) return;
     localStorage.setItem('ffgs1', createSave());
     ga('send', 'event', 'Save', 'savegame', 'savegame');
-    console.log('game saved!');
+}
+
+function forceSave() {
+    localStorage.setItem('ffgs1', createSave());
 }
 
 function createSave() {
@@ -43,6 +46,7 @@ function createSave() {
     saveFile["rs"] = ResourceManager.createSave();
     saveFile["w"] = WorkerManager.createSave();
     saveFile["se"] = seedCreateSave();
+    saveFile["saveTime"] = Date.now();
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
     return JSON.stringify(saveFile);
 }

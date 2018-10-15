@@ -1,4 +1,4 @@
-PlayFab.settings.titleId = 7995;
+PlayFab.settings.titleId = "D765";
 
 let sessionID = ""
 let saveFile = 0;
@@ -16,25 +16,34 @@ $loadSure = $("#loadSure");
 $pfloadYes = $("#pfloadYes");
 $pfloadNo = $("#pfloadNo")
 
+$pfLoginRegister.show();
+$pfImportExport.hide();
+$loadSure.hide();
+
 $("#cloudSave").click((e) => {
+    //clicked on the "Cloud Save" button
     $pfLoginRegister.show();
     $pfImportExport.hide();
     $loadSure.hide();
 })
 
 $register.click((e) => {
+    e.preventDefault();
     registerAcct();
 })
 
 $login.click((e) => {
+    e.preventDefault();
     loginAcct();
 })
 
 $pfSave.click((e) => {
+    e.preventDefault();
     saveToCloud();
 })
 
 $pfLoad.click((e) => {
+    e.preventDefault();
     $loadSure.show();
     $pfImportExport.hide();
 })
@@ -95,19 +104,17 @@ const LoginCallback = function (result, error) {
         getSaveFromCloud();       
 
     } else if (error !== null) {
-        $pfStatus.html(PlayFab.GenerateErrorReport(error)+"<p>If you're having trouble logging in, email us at support@abquheroes.com and we'll help you out!");
+        $pfStatus.html(PlayFab.GenerateErrorReport(error));
     }
 }
 
 function saveToCloud() {
     $pfStatusSave.html("Saving...");
-    saveGame();
-    const input =JSON.stringify(createSave());
-    var output = pako.gzip(input,{ to: 'string' });
+    forceSave();
     const requestData = {
         TitleId : PlayFab.settings.titleId,
         Data : {
-            "savestring" : output,
+            "savestring" : createSaveExport(),
         }
     }
     PlayFab.ClientApi.UpdateUserData(requestData,saveCallback);
@@ -123,11 +130,10 @@ function saveCallback(result,error) {
 }
 
 function loadFromCloud() {
-    getSaveFromCloud()
+    getSaveFromCloud();
     if (saveFile) {
-        localStorage.setItem('gameSave3', JSON.stringify(saveFile));
-        location.href = 'index.html#closeDialog';
-        location.reload(true);
+        localStorage.setItem('ffgs1', JSON.stringify(saveFile));
+        location.replace('/');
     }
 }
 
@@ -144,8 +150,8 @@ function loadCallback(result,error) {
     }
     if (result) {
         if (result.data.Data !== null) {
-            saveFile = JSON.parse(pako.ungzip(result.data.Data.savestring.Value,{ to: 'string' }));
-            const date = saveFile.playerSave.lastSave;
+            saveFile = JSON.parse(JSON.parse(pako.ungzip(atob(result.data.Data.savestring.Value),{ to: 'string' })));
+            const date = saveFile["saveTime"];
             const dateString = new Date(date).toString();
             $pfStatusSave.html("Last save:</br>"+dateString);
         }
