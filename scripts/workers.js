@@ -252,6 +252,7 @@ function refreshWorkers() {
     WorkerManager.workers.forEach(worker => {
         if (!worker.owned) return;
         const workerDiv = $('<div/>').addClass("Worker");
+        workerDiv.addClass("wt"+worker.type);
         const workerDetails = $('<div/>').addClass("WorkerDetails");
             const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
         const workerNameProduction = $('<div/>').addClass("WorkerNameAndProduction");
@@ -279,7 +280,8 @@ function refreshWorkers() {
                 const adjamt = worker.sacRemaining(reqs[0])
                 if (adjamt === 0) return;
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
-                if (!Inventory.haveItem(res,0)) d5a.addClass("cantAfford");
+                if (worker.type === "advanced") d5a.addClass("isGood");
+                if (!Inventory.haveItem(res,rarity)) d5a.addClass("cantAfford");
                 const resIcon = ResourceManager.materialIcon(res);
                 const d5b = $('<div/>').addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(res))
                 const d5b1 = $('<div/>').addClass("itemToSacReqHead").html(resIcon)
