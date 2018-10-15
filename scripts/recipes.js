@@ -45,10 +45,12 @@ class Item{
         return d;
     }
     visualizeMat() {
-        const d = $("<div/>").addClass("itemCost")
+        const d = $("<div/>").addClass("itemCost");
         for (const [material, amt] of Object.entries(this.mcost)) {
-            const mat = ResourceManager.idToMaterial(material)
-            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt)));
+            const mat = ResourceManager.idToMaterial(material);
+            const d1 = $("<div/>").addClass("indvCost tooltip").attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
+            if (this.isMastered()) d1.addClass("masteredMat");
+            d.append(d1);
         }
         return d;
     }
@@ -89,7 +91,11 @@ class Item{
     }
     addCount() {
         this.craftCount += 1;
-        if (this.craftCount === 100) initializeActionSlots();
+        if (this.craftCount === 100) {
+            initializeRecipes();
+            initializeActionSlots();
+            populateRecipe(this.type);
+        }
         $("#rc"+this.id).html(this.count()+"/100");
     }
     isMastered() {
