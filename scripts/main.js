@@ -36,6 +36,7 @@ function afterLoad() {
     hardMatRefresh();
     loadCorrectDungeonScreen();
     populateRecipe("Knives");
+    refreshProgress();
     setInterval(mainLoop, 10);
 }
 
