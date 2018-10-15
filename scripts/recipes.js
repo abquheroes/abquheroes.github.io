@@ -245,11 +245,19 @@ function initializeRecipes() {
         const td5 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
         const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td7 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
+        console.log(recipe.count());
         const td8 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipe.count()+"/100");
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7,td8);
         table.append(row);
     });
     $RecipeResults.append(table);
+}
+
+function refreshCraftCount() {
+    recipeList.recipes.forEach((recipe) => {
+        $("#rc"+recipe.id).html(recipe.count()+"/100");
+    });
+    console.log('totes')
 }
 
 function recipeCanCraft() {

@@ -26,6 +26,7 @@ function afterLoad() {
         WorkerManager.workerBuySeed();
         HeroManager.heroBuySeed();
     }
+    refreshCraftCount();
     refreshInventory();
     refreshWorkers();
     refreshSideWorkers();

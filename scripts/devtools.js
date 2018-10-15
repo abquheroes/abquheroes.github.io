@@ -3,6 +3,7 @@ const devtools = {
         console.log("this will probably take a minute, don't close...");
         recipeList.recipes.forEach(recipe => {
             recipe.owned = true;
+            recipe.craftCount = 100;
         })
         WorkerManager.workers.forEach(worker => {
             worker.owned = true;
@@ -15,12 +16,8 @@ const devtools = {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);
         })
-        party = new Party(4);
-        refreshWorkers();
-        refreshRecipeFilters();
-        initializeHeroList();
-        refreshHeroSelect();
-        console.log("done!");
+        forceSave();
+        location.replace('/');
     },
     materials : function() {
         ResourceManager.materials.forEach(material => {
