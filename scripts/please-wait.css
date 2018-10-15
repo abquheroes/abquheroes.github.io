@@ -114,6 +114,14 @@ img.pg-loading-logo {
   width: 100%;
 }
 
+body > #content {
+  display: none;
+}
+
+body.pg-loaded > #content {
+  display: block;
+}
+
 @-webkit-keyframes pgAnimLoading {
   from {
     opacity: 0;
