@@ -2989,6 +2989,13 @@ footer a[href*="discord.gg"]:hover {
     background-color: var(--bg-2);
 }
 
+.ClipboardCopy {
+    display: inline-block;
+    padding: 0 15px;
+    color: var(--highlight);
+    animation: 0.2s scale-in;
+}
+
 #pfImportExport {
     flex-wrap: wrap;
 }

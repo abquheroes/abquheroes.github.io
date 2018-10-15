@@ -250,6 +250,22 @@ function closeDialog(dialog) {
     if (this === dialog.target) window.location.assign("#closeDialog");
 }
 
+/* Export Copy Click Feedback */
+
+const clipboardButton = document.querySelector("#exportSaveCopy");
+
+function clipboardText() {
+    if(document.querySelector(".ClipboardCopy")) {
+        document.querySelector(".ClipboardCopy").remove();
+    }
+    const copyAlert = document.createElement('div');
+    copyAlert.innerHTML = "Copied to clipboard.";
+    copyAlert.classList.add("ClipboardCopy");
+    clipboardButton.insertAdjacentElement("afterend", copyAlert);
+}
+
+clipboardButton.addEventListener("click", clipboardText);
+
 // Logo Easter Egg
 
 const $gameLogo = $("#game-logo");
