@@ -114,11 +114,17 @@ const recipeList = {
         });
         return save;
     },
+    createFilterSave() {
+        return this.recipeNewFilter;
+    },
     loadSave(save) {
         save.forEach(i => {
             const rec = this.idToItem(i.id);
             rec.loadSave(i);
         });
+    },
+    loadRecipeFilterSave(save) {
+        this.recipeNewFilter = save;
     },
     addItem(item) {
         this.recipes.push(item);
