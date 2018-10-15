@@ -2683,21 +2683,20 @@ footer a[href*="discord.gg"]:hover {
 
 .ASauto.tooltip:before {
     margin-top: 5px;
-    margin-right: -25px;
+    margin-right: -15px;
     transform: rotate(-90deg);
 }
 
 .ASauto.tooltip:after {
     top: 5px;
     right: unset;
-    left: 25px;
+    left: 26px;
     bottom: unset;
     width: 150px;
-    transform-origin: left;
+    transform-origin: left 14px;
 }
 
 .ASauto.tooltip:hover:before {
-    margin-right: -15px;
     transform: rotate(-90deg);
 }
 
@@ -2848,7 +2847,7 @@ footer a[href*="discord.gg"]:hover {
 
 .WorkerDesc.tooltip:before {
     right: unset;
-    margin-top: 35px;
+    margin-top: 38px;
     transform: rotate(360deg);
 }
 
