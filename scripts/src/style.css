@@ -1377,6 +1377,10 @@ Rarities
     border: 1px solid var(--border);
 }
 
+.Worker.wtadvanced .WorkerDetails .WorkerNameAndProduction .WorkerName {
+    color: #11dc82;
+}
+
 .WorkerImage, .WorkerName, .upgradeName, .upgradeDesc, .TicketName{
     text-align: center;
 }
@@ -1384,6 +1388,7 @@ Rarities
 .purchaseWorkerCard {
     justify-content: center;
     align-items: center;
+    min-height: 259px;
     background-color: var(--bg-2);
     border: 1px solid var(--border);
     cursor: pointer;
@@ -1631,12 +1636,12 @@ Rarities
 
 .BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
     color: #c90000;
-    background-color: rgba(255, 0, 0, 0.10);
+    background-color: rgb(56, 34, 39);
 }
 
 .BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover, .BuyUpgrade.upgradeDisable:hover {
     color: #c90000;
-    background-color: rgba(255, 0, 0, 0.10);
+    background-color: rgb(56, 34, 39);
     cursor: not-allowed;
 }
 
@@ -2718,6 +2723,18 @@ footer a[href*="discord.gg"]:hover {
     z-index: 2;
 }
 
+.itemToSacDiv.isGood > .itemToSac.tooltip:after {
+    content: "Good " attr(data-tooltip);
+}
+
+.itemToSacDiv.isGreat > .itemToSac.tooltip:after {
+    content: "Great " attr(data-tooltip);
+}
+
+.itemToSacDiv.isEpic > .itemToSac.tooltip:after {
+    content: "Epic " attr(data-tooltip);
+} 
+
 .itemToSac.tooltip:before {
     margin-right: -8px;
 }
@@ -2971,6 +2988,13 @@ footer a[href*="discord.gg"]:hover {
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover {
     background-color: var(--bg-2);
+}
+
+.ClipboardCopy {
+    display: inline-block;
+    padding: 0 15px;
+    color: var(--highlight);
+    animation: 0.2s scale-in;
 }
 
 #pfImportExport {
