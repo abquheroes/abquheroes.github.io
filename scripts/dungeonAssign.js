@@ -75,7 +75,7 @@ const DungeonAssist = {
         this.floor = new Floor(this.floorNum);
         initiateDungeonFloor();
         $DungeonSideBarStatus.html("Status: Floor " + this.floorNum);
-        achivementStats.floorBeaten(this.floor);
+        achivementStats.floorBeaten(this.floorNum);
     },
     isActive() {
         return this.status === DungeonState.ADVENTURING;
