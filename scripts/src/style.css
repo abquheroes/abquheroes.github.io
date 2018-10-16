@@ -1416,7 +1416,7 @@ Rarities
     position: relative;
     justify-content: center;
     flex-direction: row;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .itemToSacDiv {
