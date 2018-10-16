@@ -42,7 +42,7 @@ const ResourceManager = {
         mat.amt += amt;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(mat.amt);
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
     },
     canAffordMaterial(item) {
         for (const [material, amt] of Object.entries(item.mcost)) {
@@ -112,7 +112,7 @@ function initializeMats() {
     ResourceManager.materials.forEach(mat => {
         const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
-        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(mat.amt);
+        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,3));
         d.append(d1,d2);
         d.hide();
         $materials.append(d);
@@ -124,6 +124,6 @@ function hardMatRefresh() {
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(mat.amt);
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
     })
 }

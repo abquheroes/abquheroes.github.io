@@ -122,6 +122,7 @@ const WorkerManager = {
         refreshSideWorkers();
         recipeCanCraft();
         refreshBlueprint();
+        refreshProgress();
     },
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);
@@ -132,6 +133,7 @@ const WorkerManager = {
         refreshSideWorkers();
         refreshRecipeFilters();
         recipeCanCraft();
+        refreshProgress();
     },
     freeCraft(workerID) {
         if (workerID === "W001") recipeList.idToItem("R0701").owned = true;
