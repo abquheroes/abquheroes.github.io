@@ -95,10 +95,6 @@ body {
     animation: 0.5s 0.75s scale-in forwards;
 }
 
-.back-to-top:hover {
-    color: var(--highlight);
-}
-
 .show-button {
     opacity: 1;
 }
@@ -3394,6 +3390,12 @@ a.workerDialog:hover {
     
 }
 */
+
+@media screen and (min-width: 1250px) {
+    .back-to-top:hover {
+        color: var(--highlight);
+    }
+}
 
 @media screen and (max-width: 1475px) {
     #workerList {

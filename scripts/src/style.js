@@ -104,7 +104,9 @@ function clipboardText() {
     clipboardButton.insertAdjacentElement("afterend", copyAlert);
 }
 
-clipboardButton.addEventListener("click", clipboardText);
+if (clipboardButton) {
+    clipboardButton.addEventListener("click", clipboardText);
+}
 
 // Logo Easter Egg
 
