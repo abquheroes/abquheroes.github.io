@@ -1164,7 +1164,7 @@ Rarities
     margin-bottom: 100px;
 }
 
-.recipeRow:nth-of-type(odd) {
+.recipeRowHighlight {
     background-color: var(--bg);
 }
 
