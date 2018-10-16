@@ -55,7 +55,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -114,12 +114,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle {
     font-family: 'Roboto Slab', serif;
-    font-weight: 300;
+    font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .progress-desc, .statNormal, .MilestoneDescription {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -1675,21 +1675,29 @@ Rarities
     flex-wrap: wrap;
 }
 
-#progress_container>h3 {
+#progress_container > .progress-section-title {
+    margin-top: 0;
+}
+
+.progress-section-title {
     display: block;
     text-align: left;
     width: 100%;
-    margin: 0;
-    padding: 0 0 10px 0;
+    padding: 0 5px 5px;
+    margin: 25px 0 10px;
+    border-bottom: 2px solid var(--border);
 }
 
-#progress_container>div>h2 {
+#progress_container > div > h2 {
     font-size: 1em;
     margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
 }
 
 .progress-desc {
     font-size: .9em;
+    text-align: center;
     color: var(--text-3);
     flex-grow: 1;
 }
@@ -1697,6 +1705,7 @@ Rarities
 .progressRecipe, .progressWorker, .progressUpgrade, .progressHero, .progressOverall {
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     background-color: var(--bg);
     border: 1px solid var(--border);
@@ -1712,7 +1721,7 @@ Rarities
     bottom: 0;
     border-top: 1px solid var(--border)!important;
     width: 100%;
-    margin: 0 -15px;
+    margin: 0;
 }
 
 .progress-card-container, .stat-box-container {
@@ -1748,11 +1757,15 @@ Rarities
 }
 
 .statHeading {
-    font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 2px solid var(--border);
+}
+
+.statNormal, .MilestoneDescription {
+    font-size: 0.9em;
+    color: var(--text-3);
 }
 
 .MilestoneTitle, .MilestoneDescription {
@@ -3170,6 +3183,7 @@ a.workerDialog:hover {
     border-bottom: 1px solid var(--border);
     color: var(--text-2);
     font-size: 1.3em;
+    font-weight: 300;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -3444,17 +3458,8 @@ a.workerDialog:hover {
         margin: 10px;
     }
 
-    #progress_container>h3 {
-        display: none;
-        text-align: center;
-    }
-
     #achievements {
         justify-content: center;
-    }
-
-    #achievements > h3 {
-        text-align: center;
     }
 
     #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
