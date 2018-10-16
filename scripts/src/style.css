@@ -1757,7 +1757,6 @@ Rarities
 }
 
 .statHeading {
-    text-transform: uppercase;
     padding-bottom: 5px;
     margin-bottom: 5px;
     border-bottom: 2px solid var(--border);
