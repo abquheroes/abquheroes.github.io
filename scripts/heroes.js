@@ -219,6 +219,7 @@ class Hero {
         if (this.xp >= this.maxXP()) {
             this.xp -= this.maxXP();
             this.lvl += 1;
+            refreshProgress();
         }
     }
     unequip(slot) {

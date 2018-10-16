@@ -94,6 +94,7 @@ class Item{
             refreshRecipeMastery();
             initializeActionSlots();
             populateRecipe();
+            refreshProgress();
         }
         $("#rc"+this.id).html(this.count()+"/100");
     }
