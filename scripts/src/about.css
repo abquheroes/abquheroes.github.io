@@ -36,10 +36,6 @@ nav {
     font-size: 0.8em;
     text-decoration: none;
     text-transform: uppercase;
-    transition: background-color 0.2s ease-in-out;
-    -moz-transition: background-color 0.2s ease-in-out;
-    -o-transition: background-color 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 .back-to:hover {
@@ -97,10 +93,12 @@ nav {
 #cc-container .card-container {
     max-height: 0px;
     overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    
 }
 
 .user-card, .player-card, .asset-card {
@@ -162,10 +160,6 @@ nav {
 .external-link_inline {
     color: var(--text-3);
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .external-link_inline:hover {
@@ -243,10 +237,6 @@ nav {
     text-decoration: none;
     font-size: 0.9em;
     color: var(--text);
-    transition: background-color 0.2s ease-in-out;
-    -moz-transition: background-color 0.2s ease-in-out;
-    -o-transition: background-color 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 .asset-card .asset-link:hover {

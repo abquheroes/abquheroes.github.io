@@ -55,12 +55,12 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox {
-    transition: all 0.2s ease-in-out;
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
@@ -86,10 +86,6 @@ body {
     border-radius: 50%;
     background-color: var(--border-3);
     color: var(--text);
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
@@ -157,7 +153,6 @@ body {
 .game-content {
     display: flex;
     flex-wrap: wrap;
-    transition: all 0.2s ease-in-out;
 }
 
 .game-content .status, #right-side-content {
@@ -197,13 +192,13 @@ body {
 #workers-container, #materials-container, #settings-container {
     position: relative;
     max-height: 2500px;
+    margin-bottom: 15px;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    -webkit-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
     -o-transition: max-height 0.3s ease-in-out;
-    -moz-transition: max-height 0.3s ease-in-out;
-    -webkit-transition: max-height 0.3s ease-in-out;
-    margin-bottom: 15px;
+    transition: max-height 0.3s ease-in-out;
 }
 
 .height-collapse {
@@ -217,11 +212,11 @@ body {
     color: var(--text-3);
     font-family: monospace;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .arrow-rotate {
@@ -256,7 +251,6 @@ body {
     background-color: var(--bg);
     border-color: var(--border-3);
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
 }
 
 .workerSideBar.wsbActive:hover, .workerSideBar.wsbActive:hover .wsbLvl, .workerSideBar.wsbActive:hover .wsbCraft {
@@ -280,10 +274,9 @@ body {
     height: 30px;
 }
 
-.workerSideBar.wsbActive .wsbLvl{
+.workerSideBar.wsbActive .wsbLvl {
     background-color: var(--bg);
     border-color: var(--border-3);
-    transition: all 0.2s ease-in-out;
 }
 
 .wsbType {
@@ -301,7 +294,6 @@ body {
 
 .workerSideBar.wsbActive .wsbCraft {
     border-color: var(--border-3);
-    transition: all 0.2s ease-in-out;
 }
 
 .wsbCraft > img {
@@ -602,7 +594,10 @@ Rarities
     border-color: rgba(243, 6, 144, 0.25);
 }
 
-.inventoryItem.R0 > .inventoryItemName:before, .inventoryItem.R1 > .inventoryItemName:before, .inventoryItem.R2 > .inventoryItemName:before, .inventoryItem.R3 > .inventoryItemName:before {
+.inventoryItem.R0 > .inventoryItemName:before, 
+.inventoryItem.R1 > .inventoryItemName:before, 
+.inventoryItem.R2 > .inventoryItemName:before, 
+.inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
     top: 5px;
@@ -610,7 +605,6 @@ Rarities
     left: 5px;
     border-radius: 15px;
     padding: 5px;
-    transition: all 0.2s ease-in-out;
     opacity: 0;
     z-index: 10;
 }
@@ -676,11 +670,11 @@ Rarities
     text-transform: uppercase;
     font-size: 0.8em;
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .tablinks > div {
@@ -707,11 +701,11 @@ Rarities
     width: 0;
     height: 2px;
     background-color: var(--highlight);
-    transition: width 0.2s ease-in-out;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
     -ms-transition: width 0.2s ease-in-out;
     -o-transition: width 0.2s ease-in-out;
-    -moz-transition: width 0.2s ease-in-out;
-    -webkit-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
 }
 
 .tablinks:hover:after {
@@ -856,11 +850,6 @@ Rarities
     display: block;
     color: rgba(255, 0, 0, 0.5);
     text-decoration: none;
-    transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
@@ -1331,11 +1320,6 @@ Rarities
     background-color: var(--bg-2);
     padding: 10px 15px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .bpShopButton:hover {
@@ -1493,11 +1477,6 @@ Rarities
     color: var(--text-3);
     font-weight: normal;
     margin-left: 5px;
-    transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
     z-index: 10;
 }
 
@@ -2591,11 +2570,6 @@ footer a {
     padding: 15px;
     color: var(--text);
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
-    -ms-transition: background-color 0.2s ease-in-out;
-    -o-transition: background-color 0.2s ease-in-out;
-    -moz-transition: background-color 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
@@ -2616,11 +2590,6 @@ footer a:hover {
     margin-left: 5px;
     font-size: 1em;
     color: var(--text-3);
-    transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
 }
 
 #bottom-right a:hover > i {
@@ -2668,7 +2637,6 @@ footer a[href*="discord.gg"]:hover {
     pointer-events: none;
     z-index: 10;
     opacity: 0;
-    transition: all 0.2s ease-in-out;
 } 
 
 .tooltip:after {
@@ -2692,7 +2660,6 @@ footer a[href*="discord.gg"]:hover {
     z-index: 10;
     opacity: 0;
     transform: scale(0);
-    transition: all 0.2s ease-in-out;
 }
 
 .tooltip:hover:before, .tooltip:hover:after {
@@ -2948,7 +2915,7 @@ footer a[href*="discord.gg"]:hover {
     font-weight: normal;
 }
 
-#pfEmail>input, #pfPassword>input {
+#pfEmail > input, #pfPassword > input {
     width: 100%;
     padding: 10px 3px;
     background-color: var(--bg-2);
@@ -2956,11 +2923,6 @@ footer a[href*="discord.gg"]:hover {
     border: none;
     border: 1px solid var(--border);
     border-radius: 0;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:after, #pfPassword:after {
@@ -2970,11 +2932,6 @@ footer a[href*="discord.gg"]:hover {
     height: 2px;
     width: 0;
     background-color: var(--border-2);
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:hover:after, #pfPassword:hover:after, #pfEmail:focus-within:after, #pfPassword:focus-within:after {
@@ -3000,11 +2957,6 @@ footer a[href*="discord.gg"]:hover {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #deleteSaveButton:hover {
@@ -3084,11 +3036,6 @@ footer a[href*="discord.gg"]:hover {
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 a.workerDialog {
@@ -3132,7 +3079,6 @@ a.workerDialog:hover {
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
-    transition: all 0.2s ease-in-out;
 }
 
 .dialog:target .dialog_content {
@@ -3140,6 +3086,10 @@ a.workerDialog:hover {
 }
 
 .dialog:target ~ .game-content {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
     filter: blur(10px);
 }
 
@@ -3163,11 +3113,6 @@ a.workerDialog:hover {
     text-decoration: none;
     border-radius: 50%;
     z-index: 2;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .dialog_close:hover {
