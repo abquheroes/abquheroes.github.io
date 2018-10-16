@@ -81,6 +81,7 @@ const achivementStats = {
         save.commonsCrafted = this.commonsCrafted;
         save.totalItemsCrafted = this.totalItemsCrafted;
         save.totalFloorsBeaten = this.totalFloorsBeaten;
+        return save;
     },
     loadSave(save) {
         this.maxFloor = save.maxFloor;
