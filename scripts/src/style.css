@@ -1345,6 +1345,7 @@ Rarities
 
 .bpShopButton > img {
     margin-left: 5px;
+    pointer-events: none;
 }
 
 .bpShopName {
