@@ -47,7 +47,7 @@ function createSave() {
     saveFile["rs"] = ResourceManager.createSave();
     saveFile["w"] = WorkerManager.createSave();
     saveFile["se"] = seedCreateSave();
-    saveFile["ac"] = achivementStats.createSave();
+    saveFile["ac"] = achievementStats.createSave();
     saveFile["saveTime"] = Date.now();
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
     return JSON.stringify(saveFile);
@@ -75,7 +75,7 @@ function loadGame() {
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
     if (typeof loadGame["se"] !== "undefined") seedLoadSave(loadGame["se"]);
-    if (typeof loadGame["ac"] !== "undefined") achivementStats(loadGame["ac"]);
+    if (typeof loadGame["ac"] !== "undefined") achievementStats.loadSave(loadGame["ac"]);
     console.log("GAME LOADED");
     return true;
 }

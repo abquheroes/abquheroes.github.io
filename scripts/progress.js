@@ -34,7 +34,7 @@ const $statGoods = $("#statGoods");
 const $statGreats = $("#statGreats");
 const $statEpics = $("#statEpics");
 
-const achivementStats = {
+const achievementStats = {
     maxFloor : 0,
     timePlayed : 0,
     totalGoldEarned : 0,
