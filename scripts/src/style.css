@@ -55,7 +55,7 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox {
+#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox {
     transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     -webkit-transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -1713,23 +1713,6 @@ Rarities
     border-top: 1px solid var(--border)!important;
     width: 100%;
     margin: 0 -15px;
-}
-
-#highestFloor, #gameTime, #completeTime {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: .9em;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-}
-
-#completeTime {
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
 .progress-card-container, .stat-box-container {
@@ -3464,15 +3447,6 @@ a.workerDialog:hover {
     #progress_container>h3 {
         display: none;
         text-align: center;
-    }
-
-    #gameTime, #completeTime {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px;
-        width: 100%;
-        min-width: 250px;
     }
 
     #achievements {
