@@ -2166,7 +2166,7 @@ Rarities
     padding: 20px;
 }
 
-#dungeonHeroList {
+#dungeonHeroList, #dungeonMobList {
     display: flex;
     flex-wrap: wrap;
 }
@@ -2192,7 +2192,7 @@ Rarities
     flex-wrap: nowrap;
 }
 
-#drStatsHero {
+#drStatsHero, #drStatsMob {
     display: flex;
     flex-wrap: wrap;
 }
