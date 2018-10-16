@@ -21,5 +21,5 @@ function refreshProgress() {
     $pbHero.css('width', heroPercent+"%");
     const overallPercent = (recipeList.masteryCount()+WorkerManager.workerLevelCount()+HeroManager.heroLevelCount())/(recipeList.recipeCount()+WorkerManager.workerMaxLevelCount()+HeroManager.heroMaxLevelCount());
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
-    $pbOverall.css('width', overallPercent.toFixed(2)+"%");
+    $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
 }

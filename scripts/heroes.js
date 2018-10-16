@@ -427,6 +427,7 @@ function examineHero(ID) {
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
     const d4 = $("<div/>").addClass("heroExamineExp").html(`Exp: ${hero.xp}/${hero.maxXP()}`);
+    if (hero.lvl === 50) d4.hide();
     upperLeftDiv.append(d1,d2,d3,d4);
     const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
