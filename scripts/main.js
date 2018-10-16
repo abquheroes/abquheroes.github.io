@@ -58,7 +58,7 @@ openTab("recipesTab");
 
 function mainLoop() {
     const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
-    achivementStats.setTimePlayed(elapsedTime);
+    achievementStats.setTimePlayed(elapsedTime);
     saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();
     DungeonAssist.addTime(elapsedTime);

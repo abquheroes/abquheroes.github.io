@@ -121,22 +121,22 @@ const Inventory = {
         if (item.isMastered()) mod = 2;
         if (roll < miscLoadedValues.qualityCheck[3]*mod) {
             this.addToInventory(id,3,sellToggle);
-            achivementStats.craftedItem("Epic");
+            achievementStats.craftedItem("Epic");
             if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
             this.addToInventory(id,2,sellToggle);
-            achivementStats.craftedItem("Great");
+            achievementStats.craftedItem("Great");
             if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
             this.addToInventory(id,1,sellToggle);
-            achivementStats.craftedItem("Good");
+            achievementStats.craftedItem("Good");
             if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
         }
         else {
             this.addToInventory(id,0,sellToggle);
-            achivementStats.craftedItem("Common");
+            achievementStats.craftedItem("Common");
         }
     },
     removeFromInventory(id,rarity) {
@@ -166,7 +166,7 @@ const Inventory = {
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
-        achivementStats.gold(gold);
+        achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold);
     },
     listbyType(types) {
