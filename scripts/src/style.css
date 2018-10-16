@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -105,7 +105,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
+#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -124,30 +124,6 @@ body {
 #content, footer {
     padding: 0;
     user-select: none;
-}
-
-.lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle {
-    margin-bottom: 5px;
-    padding: 7px 10px;
-    width: 100%;
-    border: none;
-    border: 2px solid var(--border);
-    border-radius: 25px;
-    background-color: var(--bg);
-    color: var(--text);
-    font-size: 0.8em;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover, #autoSellToggle:hover {
-    background-color: var(--bg-2);
-}
-
-#autoSellToggle.yesAutoSell {
-    border-color: var(--green-light);
-    background-color: var(--green-dark);
 }
 
 .game-content {
@@ -365,53 +341,6 @@ body {
 .dungeonSideBarMemberHP {
     flex: 1;
     margin-left: 10px;
-}
-
-#inv-header {
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    z-index: 99;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-#sellPref {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    margin: 0 10px 10px;
-    min-height: 30px;
-}
-
-#sellPref>p {
-    margin: 0 0 5px 0;
-    width: 100%;
-    font-weight: bold;
-}
-
-#sell1, #sell10, #sellAll {
-    background-color: var(--bg-2);
-    border: 2px solid var(--border);
-    color: var(--text-3);
-    border-radius: 20px;
-    padding: 3px 5px;
-    margin: 0 3px;
-    flex-grow: 1;
-    cursor: pointer;
-}
-
-#sell1:hover, #sell10:hover, #sellAll:hover {
-    background-color: var(--bg-3);
-    border-color: var(--border-3);
-}
-
-#sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
-    color: var(--text-2);
-    border-color: var(--border-2);
 }
 
 #inventoryTab {
@@ -924,7 +853,6 @@ Rarities
     opacity: 0.9;
 }
 
-
 .ASautoEnabled:hover {
     opacity: 1;
 }
@@ -1165,10 +1093,6 @@ Rarities
     color: rgba(255,255,255,0.5);
 }
 
-.recipeRow.recipeRowDisable:nth-of-type(odd) {
-    background-color: rgba(255,255,255, 0.02);
-}
-
 .recipeRow.recipeRowDisable > div > img, 
 .recipeRow.recipeRowDisable > div > div > div > img {
     opacity: 0.5;
@@ -1350,16 +1274,16 @@ Rarities
     color: var(--text-3);
 }
 
-#workerList, #joblist, #upgradelist, #ticketShop {
+#workerList {
     display: flex;
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist, #progresslist, #ticketShop {
+#workerList, #progresslist {
     padding: 20px;
 }
 
-.Worker, .Upgrade, .TicketCard, .purchaseWorkerCard {
+.Worker, .purchaseWorkerCard {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1375,7 +1299,7 @@ Rarities
     color: #11dc82;
 }
 
-.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc, .TicketName{
+.WorkerImage, .WorkerName {
     text-align: center;
 }
 
@@ -1413,29 +1337,8 @@ Rarities
     margin-right: 5px;
 }
 
-.upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost, .TicketName {
+.WorkerDesc, .WorkerLvl {
     font-size: .9em;
-}
-
-.upgradeName > h3 {
-    margin: 10px 0;
-}
-
-.upgradeImage {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-}
-
-.upgradeImage > img {
-    width: 100%;
-}
-
-.upgradeDesc {
-    flex-grow: 1;
-    font-size: .9em;
-    color: var(--text-3);
-    margin-bottom: 10px;
 }
 
 .WorkerDetails {
@@ -1500,26 +1403,6 @@ Rarities
     padding: 5px;
 }
 
-.upgradeLvl {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    background: #25ca7e;
-    background: -moz-linear-gradient(-145deg, #25ca7e 0%, #1aaf78 50%, #0b9077 100%);
-    background: -webkit-linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
-    background: linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-radius: 50%;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
 .Worker .itemContributions {
     padding-bottom: 3px;
     color: var(--text-3);
@@ -1530,22 +1413,7 @@ Rarities
     width: 100%;
     border-bottom: 1px solid var(--border);
 }
-/*
-.Worker .itemSac:before {
-    display: block;
-    position: absolute;
-    top: -30px;
-    content: "Required Contributions";
-    padding-bottom: 3px;
-    color: var(--text-3);
-    font-size: .8em;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
-    border-bottom: 1px solid var(--border);
-}
-*/
+
 .Worker .itemSac {
     display: flex;
     flex-wrap: wrap;
@@ -1590,7 +1458,7 @@ Rarities
     margin-top: 10px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .TicketCard .buyTicket {
+.Worker .BuyWorker, .WorkerUpgrade {
     display: block;
     padding: 10px;
     border: none;
@@ -1602,7 +1470,7 @@ Rarities
     cursor: pointer;
 }
 
-.Upgrade .BuyUpgrade, .WorkerUpgrade, .TicketCard .buyTicket {
+.WorkerUpgrade {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1619,16 +1487,16 @@ Rarities
     margin-right: 1px;
 }
 
-.Worker .BuyWorker:hover, .WorkerUpgrade:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
+.Worker .BuyWorker:hover, .WorkerUpgrade:hover {
     background-color: var(--bg-3);
 }
 
-.BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
+.BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable {
     color: #c90000;
     background-color: rgb(56, 34, 39);
 }
 
-.BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover, .BuyUpgrade.upgradeDisable:hover {
+.BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover {
     color: #c90000;
     background-color: rgb(56, 34, 39);
     cursor: not-allowed;
@@ -1643,7 +1511,7 @@ Rarities
     z-index: 2;
 }
 
-.workerButtons>button {
+.workerButtons > button {
     position: relative;
     flex-grow: 1;
     min-width: 50%;
@@ -1681,7 +1549,7 @@ Rarities
     flex-grow: 1;
 }
 
-.progressRecipe, .progressWorker, .progressUpgrade, .progressHero, .progressOverall {
+.progressRecipe, .progressWorker, .progressHero, .progressOverall {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1754,11 +1622,6 @@ Rarities
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 2px solid var(--border);
-}
-
-.TicketCard .TicketName {
-    font-weight: bold;
-    font-size: 1em;
 }
 
 #heroContainer {
@@ -2855,23 +2718,7 @@ footer a[href*="discord.gg"]:hover {
     transform-origin: right;
 }
 
-.upgradeLvl.tooltip:before {
-    margin-top: -28px;
-    margin-right: -8px;
-}
-
-.upgradeLvl.tooltip:after {
-    font-weight: normal;
-    top: unset;
-    left: -45%;
-    right: -45%;
-    bottom: 120%;
-    margin-left: -5px;
-    margin-right: -5px;
-    z-index: 999;
-}
-
-.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
+.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2902,7 +2749,7 @@ footer a[href*="discord.gg"]:hover {
         margin-top: -37px;
     }
 
-    #workerList, #upgradelist, #progresslist {
+    #workerList, #progresslist {
         padding: 20px 0px 20px 20px;
     }
   }
@@ -3391,14 +3238,14 @@ a.workerDialog:hover {
         margin: 15px 0 0;
     }
 
-    #workerList, #joblist, #upgradelist, #progress_container {
+    #workerList, #progress_container {
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
         margin-right: 20px;
     }
 
-    .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+    .Worker, .progressRecipe, .progressWorker, .progressOverall {
         margin: 10px;
     }
 
@@ -3406,7 +3253,7 @@ a.workerDialog:hover {
         justify-content: center;
     }
 
-    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
