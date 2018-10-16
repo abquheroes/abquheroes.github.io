@@ -1627,7 +1627,7 @@ Rarities
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 10px -15px -15px;
+    margin: auto -15px -15px;
 }
 
 .Worker .BuyWorker {
