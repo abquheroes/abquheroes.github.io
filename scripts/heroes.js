@@ -169,6 +169,7 @@ class Hero {
         return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
     }
     equip(item,slot) {
+        console.log(item,slot);
         if (slot === 0) this.slot1 = item;
         if (slot === 1) this.slot2 = item;
         if (slot === 2) this.slot3 = item;
@@ -187,6 +188,9 @@ class Hero {
     slotTypesByNum(num) {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
         return slots[num];
+    }
+    getSlotTypes() {
+        return [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
     }
     slotTypeIcons(num) {
         let s = ""
@@ -271,6 +275,9 @@ class Hero {
         const invMaxHP = Inventory.getMaxHPByTypes(types);
         return invMaxPow > currentPow || invMaxHP > currentHP;
     }
+    canEquipType(type) {
+        return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type);
+    }
 }
 
 const HeroManager = {
@@ -313,13 +320,11 @@ const HeroManager = {
     },
     equipItem(containerID,heroID,slot) {
         const item = Inventory.containerToItem(containerID);
-        console.log(item,heroID,slot);
         const hero = this.idToHero(heroID);
         Inventory.removeContainerFromInventory(containerID);
         hero.unequip(slot);
-        console.log(hero.slot1);
+        console.log(item,slot);
         hero.equip(item,slot);
-        console.log(hero.slot1);
     },
     getSlotTypes(slot,heroID) {
         const hero = this.idToHero(heroID);
@@ -380,6 +385,21 @@ const HeroManager = {
     },
     heroMaxLevelCount() {
         return this.heroes.length*50;
+    },
+    slotsByItem(item) {
+        //return a list of heroes and the appropriate slot
+        const type = item.type;
+        const results = [];
+        this.heroes.filter(h=>h.canEquipType(type)).forEach(hero=> {
+            const hres = {}
+            hres.id = hero.id;
+            hres.canEquip = [];
+            hero.getSlotTypes().forEach(slot => {
+                hres.canEquip.push(slot.includes(type));
+            });
+            results.push(hres);
+        });
+        return results;
     }
 }
 
