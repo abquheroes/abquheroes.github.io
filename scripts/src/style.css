@@ -55,15 +55,15 @@
 
 /* Global */
 
-#ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .Worker .HireWorker, .WorkerUpgrade, .TicketCard .buyTicket, .heroOwnedCard, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .Upgrade, .TicketCard, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, #progress_container>h3, #achievements>h3, #progresslist, #workerList, #upgradelist, #progresslist, #ticketShop, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip {
-    transition: all 0.2s ease-in-out;
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall, #gameTime, #completeTime, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -86,10 +86,6 @@ body {
     border-radius: 50%;
     background-color: var(--border-3);
     color: var(--text);
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
@@ -99,27 +95,23 @@ body {
     animation: 0.5s 0.75s scale-in forwards;
 }
 
-.back-to-top:hover {
-    color: var(--highlight);
-}
-
 .show-button {
     opacity: 1;
 }
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, .lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle, footer, .Worker .BuyWorker, .Upgrade .BuyUpgrade, .WorkerUpgrade, .Worker .HireWorker, .upgradeName, .upgradeDesc, .TicketCard .buyTicket, #progresslist, #upgradelist, #workerList, #ticketShop, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
+#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
 
-.dialog_title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle {
     font-family: 'Roboto Slab', serif;
-    font-weight: 300;
+    font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .progress-desc, .statNormal, .MilestoneDescription {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -130,34 +122,9 @@ body {
     user-select: none;
 }
 
-.lm-btn, .dm-btn, .cp-btn, .cf-btn, #autoSellToggle {
-    margin-bottom: 5px;
-    padding: 7px 10px;
-    width: 100%;
-    border: none;
-    border: 2px solid var(--border);
-    border-radius: 25px;
-    background-color: var(--bg);
-    color: var(--text);
-    font-size: 0.8em;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.lm-btn:hover, .dm-btn:hover, .cp-btn:hover, .cf-btn:hover, #autoSellToggle:hover {
-    background-color: var(--bg-2);
-}
-
-#autoSellToggle.yesAutoSell {
-    border-color: var(--green-light);
-    background-color: var(--green-dark);
-}
-
 .game-content {
     display: flex;
     flex-wrap: wrap;
-    transition: all 0.2s ease-in-out;
 }
 
 .game-content .status, #right-side-content {
@@ -197,13 +164,13 @@ body {
 #workers-container, #materials-container, #settings-container {
     position: relative;
     max-height: 2500px;
+    margin-bottom: 15px;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    -webkit-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
     -ms-transition: max-height 0.3s ease-in-out;
     -o-transition: max-height 0.3s ease-in-out;
-    -moz-transition: max-height 0.3s ease-in-out;
-    -webkit-transition: max-height 0.3s ease-in-out;
-    margin-bottom: 15px;
+    transition: max-height 0.3s ease-in-out;
 }
 
 .height-collapse {
@@ -217,11 +184,11 @@ body {
     color: var(--text-3);
     font-family: monospace;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .arrow-rotate {
@@ -256,7 +223,6 @@ body {
     background-color: var(--bg);
     border-color: var(--border-3);
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
 }
 
 .workerSideBar.wsbActive:hover, .workerSideBar.wsbActive:hover .wsbLvl, .workerSideBar.wsbActive:hover .wsbCraft {
@@ -280,10 +246,9 @@ body {
     height: 30px;
 }
 
-.workerSideBar.wsbActive .wsbLvl{
+.workerSideBar.wsbActive .wsbLvl {
     background-color: var(--bg);
     border-color: var(--border-3);
-    transition: all 0.2s ease-in-out;
 }
 
 .wsbType {
@@ -301,7 +266,6 @@ body {
 
 .workerSideBar.wsbActive .wsbCraft {
     border-color: var(--border-3);
-    transition: all 0.2s ease-in-out;
 }
 
 .wsbCraft > img {
@@ -373,53 +337,6 @@ body {
 .dungeonSideBarMemberHP {
     flex: 1;
     margin-left: 10px;
-}
-
-#inv-header {
-    position: sticky;
-    top: 0;
-    background: var(--bg);
-    z-index: 99;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    -o-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-#sellPref {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    margin: 0 10px 10px;
-    min-height: 30px;
-}
-
-#sellPref>p {
-    margin: 0 0 5px 0;
-    width: 100%;
-    font-weight: bold;
-}
-
-#sell1, #sell10, #sellAll {
-    background-color: var(--bg-2);
-    border: 2px solid var(--border);
-    color: var(--text-3);
-    border-radius: 20px;
-    padding: 3px 5px;
-    margin: 0 3px;
-    flex-grow: 1;
-    cursor: pointer;
-}
-
-#sell1:hover, #sell10:hover, #sellAll:hover {
-    background-color: var(--bg-3);
-    border-color: var(--border-3);
-}
-
-#sell1.itemSellPrefSelected, #sell10.itemSellPrefSelected, #sellAll.itemSellPrefSelected {
-    color: var(--text-2);
-    border-color: var(--border-2);
 }
 
 #inventoryTab {
@@ -602,7 +519,10 @@ Rarities
     border-color: rgba(243, 6, 144, 0.25);
 }
 
-.inventoryItem.R0 > .inventoryItemName:before, .inventoryItem.R1 > .inventoryItemName:before, .inventoryItem.R2 > .inventoryItemName:before, .inventoryItem.R3 > .inventoryItemName:before {
+.inventoryItem.R0 > .inventoryItemName:before, 
+.inventoryItem.R1 > .inventoryItemName:before, 
+.inventoryItem.R2 > .inventoryItemName:before, 
+.inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
     top: 5px;
@@ -610,7 +530,6 @@ Rarities
     left: 5px;
     border-radius: 15px;
     padding: 5px;
-    transition: all 0.2s ease-in-out;
     opacity: 0;
     z-index: 10;
 }
@@ -676,11 +595,11 @@ Rarities
     text-transform: uppercase;
     font-size: 0.8em;
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
     -ms-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .tablinks > div {
@@ -707,11 +626,11 @@ Rarities
     width: 0;
     height: 2px;
     background-color: var(--highlight);
-    transition: width 0.2s ease-in-out;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
     -ms-transition: width 0.2s ease-in-out;
     -o-transition: width 0.2s ease-in-out;
-    -moz-transition: width 0.2s ease-in-out;
-    -webkit-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
 }
 
 .tablinks:hover:after {
@@ -856,11 +775,6 @@ Rarities
     display: block;
     color: rgba(255, 0, 0, 0.5);
     text-decoration: none;
-    transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
 }
 
 .ASCancel a:hover {
@@ -934,7 +848,6 @@ Rarities
     color: rgba(243, 6, 144, 1);
     opacity: 0.9;
 }
-
 
 .ASautoEnabled:hover {
     opacity: 1;
@@ -1176,10 +1089,6 @@ Rarities
     color: rgba(255,255,255,0.5);
 }
 
-.recipeRow.recipeRowDisable:nth-of-type(odd) {
-    background-color: rgba(255,255,255, 0.02);
-}
-
 .recipeRow.recipeRowDisable > div > img, 
 .recipeRow.recipeRowDisable > div > div > div > img {
     opacity: 0.5;
@@ -1331,11 +1240,6 @@ Rarities
     background-color: var(--bg-2);
     padding: 10px 15px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .bpShopButton:hover {
@@ -1345,6 +1249,7 @@ Rarities
 
 .bpShopButton > img {
     margin-left: 5px;
+    pointer-events: none;
 }
 
 .bpShopName {
@@ -1365,16 +1270,16 @@ Rarities
     color: var(--text-3);
 }
 
-#workerList, #joblist, #upgradelist, #ticketShop {
+#workerList {
     display: flex;
     flex-wrap: wrap;
 }
 
-#workerList, #upgradelist, #progresslist, #ticketShop {
+#workerList, #progresslist {
     padding: 20px;
 }
 
-.Worker, .Upgrade, .TicketCard, .purchaseWorkerCard {
+.Worker, .purchaseWorkerCard {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1390,7 +1295,7 @@ Rarities
     color: #11dc82;
 }
 
-.WorkerImage, .WorkerName, .upgradeName, .upgradeDesc, .TicketName{
+.WorkerImage, .WorkerName {
     text-align: center;
 }
 
@@ -1428,29 +1333,8 @@ Rarities
     margin-right: 5px;
 }
 
-.upgradeName, .upgradeLvl, .upgradeLvlDesc, .upgradeCost, .upgradeText, .WorkerDesc, .WorkerLvl, .InitialCost, .TicketName {
+.WorkerDesc, .WorkerLvl {
     font-size: .9em;
-}
-
-.upgradeName > h3 {
-    margin: 10px 0;
-}
-
-.upgradeImage {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-}
-
-.upgradeImage > img {
-    width: 100%;
-}
-
-.upgradeDesc {
-    flex-grow: 1;
-    font-size: .9em;
-    color: var(--text-3);
-    margin-bottom: 10px;
 }
 
 .WorkerDetails {
@@ -1492,11 +1376,6 @@ Rarities
     color: var(--text-3);
     font-weight: normal;
     margin-left: 5px;
-    transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
     z-index: 10;
 }
 
@@ -1520,26 +1399,6 @@ Rarities
     padding: 5px;
 }
 
-.upgradeLvl {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    background: #25ca7e;
-    background: -moz-linear-gradient(-145deg, #25ca7e 0%, #1aaf78 50%, #0b9077 100%);
-    background: -webkit-linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
-    background: linear-gradient(-145deg, #25ca7e 0%,#1aaf78 50%,#0b9077 100%);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-radius: 50%;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
 .Worker .itemContributions {
     padding-bottom: 3px;
     color: var(--text-3);
@@ -1550,29 +1409,14 @@ Rarities
     width: 100%;
     border-bottom: 1px solid var(--border);
 }
-/*
-.Worker .itemSac:before {
-    display: block;
-    position: absolute;
-    top: -30px;
-    content: "Required Contributions";
-    padding-bottom: 3px;
-    color: var(--text-3);
-    font-size: .8em;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
-    border-bottom: 1px solid var(--border);
-}
-*/
+
 .Worker .itemSac {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     justify-content: center;
     flex-direction: row;
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 .itemToSacDiv {
@@ -1610,7 +1454,7 @@ Rarities
     margin-top: 10px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .Upgrade .BuyUpgrade, .Worker .HireWorker, .TicketCard .buyTicket {
+.Worker .BuyWorker, .WorkerUpgrade {
     display: block;
     padding: 10px;
     border: none;
@@ -1622,7 +1466,7 @@ Rarities
     cursor: pointer;
 }
 
-.Upgrade .BuyUpgrade, .WorkerUpgrade, .TicketCard .buyTicket {
+.WorkerUpgrade {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1639,16 +1483,16 @@ Rarities
     margin-right: 1px;
 }
 
-.Worker .BuyWorker:hover, .WorkerUpgrade:hover, .Upgrade .BuyUpgrade:hover, .Worker .HireWorker:hover, .TicketCard .buyTicket:hover {
+.Worker .BuyWorker:hover, .WorkerUpgrade:hover {
     background-color: var(--bg-3);
 }
 
-.BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable, .BuyUpgrade.upgradeDisable {
+.BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable {
     color: #c90000;
     background-color: rgb(56, 34, 39);
 }
 
-.BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover, .BuyUpgrade.upgradeDisable:hover {
+.BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover {
     color: #c90000;
     background-color: rgb(56, 34, 39);
     cursor: not-allowed;
@@ -1663,7 +1507,7 @@ Rarities
     z-index: 2;
 }
 
-.workerButtons>button {
+.workerButtons > button {
     position: relative;
     flex-grow: 1;
     min-width: 50%;
@@ -1674,28 +1518,37 @@ Rarities
     flex-wrap: wrap;
 }
 
-#progress_container>h3 {
+#progress_container > .progress-section-title {
+    margin-top: 0;
+}
+
+.progress-section-title {
     display: block;
     text-align: left;
     width: 100%;
-    margin: 0;
-    padding: 0 0 10px 0;
+    padding: 0 5px 5px;
+    margin: 25px 0 10px;
+    border-bottom: 2px solid var(--border);
 }
 
-#progress_container>div>h2 {
+#progress_container > div > h2 {
     font-size: 1em;
     margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
 }
 
 .progress-desc {
     font-size: .9em;
+    text-align: center;
     color: var(--text-3);
     flex-grow: 1;
 }
 
-.progressRecipe, .progressWorker, .progressUpgrade, .progressHero, .progressOverall {
+.progressRecipe, .progressWorker, .progressHero, .progressOverall {
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     background-color: var(--bg);
     border: 1px solid var(--border);
@@ -1711,27 +1564,10 @@ Rarities
     bottom: 0;
     border-top: 1px solid var(--border)!important;
     width: 100%;
-    margin: 0 -15px;
+    margin: 0;
 }
 
-#highestFloor, #gameTime, #completeTime {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: .9em;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-}
-
-#completeTime {
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-.progress-card-container {
+.progress-card-container, .stat-box-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     grid-gap: 10px;
@@ -1751,6 +1587,29 @@ Rarities
     font-size: 2em;
 }
 
+.stat-box-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.statBox {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.statHeading {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--border);
+}
+
+.statNormal, .MilestoneDescription {
+    font-size: 0.9em;
+    color: var(--text-3);
+}
+
 .MilestoneTitle, .MilestoneDescription {
     margin: 0;
 }
@@ -1759,11 +1618,6 @@ Rarities
     padding-bottom: 5px;
     margin-bottom: 10px;
     border-bottom: 2px solid var(--border);
-}
-
-.TicketCard .TicketName {
-    font-weight: bold;
-    font-size: 1em;
 }
 
 #heroContainer {
@@ -2575,11 +2429,6 @@ footer a {
     padding: 15px;
     color: var(--text);
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
-    -ms-transition: background-color 0.2s ease-in-out;
-    -o-transition: background-color 0.2s ease-in-out;
-    -moz-transition: background-color 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s ease-in-out;
 }
 
 footer a:hover {
@@ -2600,11 +2449,6 @@ footer a:hover {
     margin-left: 5px;
     font-size: 1em;
     color: var(--text-3);
-    transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -webkit-transition: color 0.2s ease-in-out;
 }
 
 #bottom-right a:hover > i {
@@ -2652,7 +2496,6 @@ footer a[href*="discord.gg"]:hover {
     pointer-events: none;
     z-index: 10;
     opacity: 0;
-    transition: all 0.2s ease-in-out;
 } 
 
 .tooltip:after {
@@ -2676,7 +2519,6 @@ footer a[href*="discord.gg"]:hover {
     z-index: 10;
     opacity: 0;
     transform: scale(0);
-    transition: all 0.2s ease-in-out;
 }
 
 .tooltip:hover:before, .tooltip:hover:after {
@@ -2872,23 +2714,7 @@ footer a[href*="discord.gg"]:hover {
     transform-origin: right;
 }
 
-.upgradeLvl.tooltip:before {
-    margin-top: -28px;
-    margin-right: -8px;
-}
-
-.upgradeLvl.tooltip:after {
-    font-weight: normal;
-    top: unset;
-    left: -45%;
-    right: -45%;
-    bottom: 120%;
-    margin-left: -5px;
-    margin-right: -5px;
-    z-index: 999;
-}
-
-.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .BuyUpgrade.tooltip:after {
+.BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after {
     top: unset;
     left: -50%;
     right: -50%;
@@ -2919,7 +2745,7 @@ footer a[href*="discord.gg"]:hover {
         margin-top: -37px;
     }
 
-    #workerList, #upgradelist, #progresslist {
+    #workerList, #progresslist {
         padding: 20px 0px 20px 20px;
     }
   }
@@ -2932,7 +2758,7 @@ footer a[href*="discord.gg"]:hover {
     font-weight: normal;
 }
 
-#pfEmail>input, #pfPassword>input {
+#pfEmail > input, #pfPassword > input {
     width: 100%;
     padding: 10px 3px;
     background-color: var(--bg-2);
@@ -2940,11 +2766,6 @@ footer a[href*="discord.gg"]:hover {
     border: none;
     border: 1px solid var(--border);
     border-radius: 0;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:after, #pfPassword:after {
@@ -2954,11 +2775,6 @@ footer a[href*="discord.gg"]:hover {
     height: 2px;
     width: 0;
     background-color: var(--border-2);
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #pfEmail:hover:after, #pfPassword:hover:after, #pfEmail:focus-within:after, #pfPassword:focus-within:after {
@@ -2984,11 +2800,6 @@ footer a[href*="discord.gg"]:hover {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 #deleteSaveButton:hover {
@@ -3068,11 +2879,6 @@ footer a[href*="discord.gg"]:hover {
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 a.workerDialog {
@@ -3116,7 +2922,6 @@ a.workerDialog:hover {
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
-    transition: all 0.2s ease-in-out;
 }
 
 .dialog:target .dialog_content {
@@ -3124,6 +2929,10 @@ a.workerDialog:hover {
 }
 
 .dialog:target ~ .game-content {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
     filter: blur(10px);
 }
 
@@ -3147,11 +2956,6 @@ a.workerDialog:hover {
     text-decoration: none;
     border-radius: 50%;
     z-index: 2;
-    transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
 }
 
 .dialog_close:hover {
@@ -3166,6 +2970,7 @@ a.workerDialog:hover {
     border-bottom: 1px solid var(--border);
     color: var(--text-2);
     font-size: 1.3em;
+    font-weight: 300;
     text-transform: uppercase;
     text-align: center;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -3429,40 +3234,22 @@ a.workerDialog:hover {
         margin: 15px 0 0;
     }
 
-    #workerList, #joblist, #upgradelist, #progress_container {
+    #workerList, #progress_container {
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
         margin-right: 20px;
     }
 
-    .Worker, .Upgrade, .progressRecipe, .progressWorker, .progressUpgrade, .progressOverall {
+    .Worker, .progressRecipe, .progressWorker, .progressOverall {
         margin: 10px;
-    }
-
-    #progress_container>h3 {
-        display: none;
-        text-align: center;
-    }
-
-    #gameTime, #completeTime {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px;
-        width: 100%;
-        min-width: 250px;
     }
 
     #achievements {
         justify-content: center;
     }
 
-    #achievements > h3 {
-        text-align: center;
-    }
-
-    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #joblist::-webkit-scrollbar, #upgradelist::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
+    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
         height: 0;
         width: 0;
     }
@@ -3603,6 +3390,12 @@ a.workerDialog:hover {
     
 }
 */
+
+@media screen and (min-width: 1250px) {
+    .back-to-top:hover {
+        color: var(--highlight);
+    }
+}
 
 @media screen and (max-width: 1475px) {
     #workerList {
