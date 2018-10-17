@@ -9,6 +9,26 @@ $(document).on("click","#sortInventory",(e) => {
     Inventory.sortInventory();
 });
 
+$(document).on("click",".inventoryEquip",(e) => {
+    e.preventDefault();
+    const invID = $(e.target).attr("id");
+    gearEquipFromInventory(invID);
+})
+
+$(document).on("click","#closeEquipItem",(e) => {
+    e.preventDefault();
+    $(".tabcontent").hide();
+    $("#inventoryTab").show();
+})
+
+$(document).on("click",".heroEquipBlockEquipButton",(e) => {
+    const heroID = $(e.target).attr("hid");
+    const equippingTo = $(e.target).attr("sid");
+    HeroManager.equipItem(equipContainerTarget.containerID,heroID,equippingTo);
+    $(".tabcontent").hide();
+    $("#inventoryTab").show();
+})
+
 let containerid = 0;
 //let autoSellToggle = false;
 
@@ -21,12 +41,14 @@ class itemContainer {
         this.picName = this.item.itemPicName();
         this.rarity = rarity;
         this.containerID = containerid;
+        this.sharp = 0;
         containerid += 1;
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.rarity = this.rarity;
+        save.sharp = this.sharp;
         return save;
     }
     pow() {
@@ -78,6 +100,7 @@ const Inventory = {
         save.forEach((item,i) => {
             if (item === null) return;
             const container = new itemContainer(item.id,item.rarity);
+            container.sharp = item.sharp;
             this.inv[i] = container;
         });
     },
@@ -232,4 +255,47 @@ function refreshInventory() {
         $inventory.append(itemdiv);
     });
     $sideInventory.html(`${Inventory.inventoryCount()}/20`)
+}
+
+let equipContainerTarget = null;
+const $ietEquip = $("#ietEquip");
+const $ietHero = $("#ietHero");
+
+function gearEquipFromInventory(invID) {
+    $ietEquip.empty();
+    $ietHero.empty();
+    const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
+    equipContainerTarget = Inventory.inv[invID];
+    const item = equipContainerTarget.item;
+    console.log(item);
+    const itemdiv = $("<div/>").addClass("equipItem");
+    itemdiv.addClass("R"+item.rarity)
+    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",item.rarity).html(item.itemPicName());
+    const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
+    itemdiv.append(itemName,itemProps);
+    $ietEquip.html(itemdiv);
+    const heroBlocks = HeroManager.slotsByItem(item);
+    heroBlocks.forEach(hb=> {
+        const hero = HeroManager.idToHero(hb.id);
+        const d = $("<div/>").addClass("heroEquipBlock");
+        const d1 = $("<div/>").addClass("heroEquipBlockPic").html(hero.head);
+        const d2 = $("<div/>").addClass("heroEquipBlockName").html(hero.name);
+        const d3 = $("<div/>").addClass("heroEquipBlockEquips");
+        hb.canEquip.forEach((tf,i) => {
+            if (!tf) return;
+            const d4 = $("<div/>").addClass("heroEquipBlockEquip");
+            const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
+            const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
+            const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
+            const d4b = $("<div/>").addClass("heroEquipBlockEquipStat").html(relPow);
+            const d4c = $("<div/>").addClass("heroEquipBlockEquipStat").html(relHP);
+            const d4d = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("EQUIP");
+            d4.append(d4a,d4b,d4c,d4d);
+            d3.append(d4);
+        });
+        d.append(d1,d2,d3);
+        $ietHero.append(d);
+    });
+    $(".tabcontent").hide();
+    $("#inventoryEquipTab").show();
 }
