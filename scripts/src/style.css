@@ -107,12 +107,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .progress-desc, .statNormal, .MilestoneDescription {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -1221,7 +1221,6 @@ Rarities
 .bpShopTitle {
     width: 100%;
     text-align: center;
-    text-transform: uppercase;
     font-size: 0.9em;
     background-color: var(--bg-3);
     border-bottom: 1px solid var(--border);
@@ -1267,14 +1266,10 @@ Rarities
 .bpReq {
     width: 100%;
     padding: 10px;
+    font-size: 0.9em;
     text-align: center;
-    color: var(--text-3);
     background-color: var(--bg-2);
     border-top: 1px solid var(--border);
-}
-
-.bpReqHeading {
-    text-transform: uppercase;
 }
 
 .bpReqHeading:after {
@@ -1285,6 +1280,10 @@ Rarities
     height: 2px;
     width: 75%;
     background-color: var(--border-2);
+}
+
+.bpReqNeeded {
+    color: var(--text-3);
 }
 
 #workerList {

@@ -298,7 +298,7 @@ function refreshBlueprint(type) {
     }
     else {
         const d2 = $("<div/>").addClass('bpReq');
-        const d2a = $("<div/>").addClass('bpReqHeading').html("Requires");
+        const d2a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers");
         const d2b = $("<div/>").addClass('bpReqNeeded').html(needed);
         d2.append(d2a, d2b);
         d.append(d2);
