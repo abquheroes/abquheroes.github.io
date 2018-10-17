@@ -202,6 +202,7 @@ function populateRecipe(type) {
             const rr = $("#rr"+recipe.id);
             lastRow = "#rr"+recipe.id;
             rr.show();
+            rr.removeClass("recipeRowLast");
             if (alternate) rr.addClass("recipeRowHighlight");
             alternate = !alternate;
         });
@@ -281,8 +282,9 @@ function refreshBlueprint(type) {
     const d = $("<div/>").addClass('bpShop');
     const nextRecipe = recipeList.getNextBuyable(type);
     if (recipeList.moreRecipes(type)) {
+        const d1a = $("<div/>").addClass('bpShopTitle').html("Next Blueprint Unlock");
         const d1 = $("<div/>").addClass('bpShopName').html(nextRecipe.itemPicName());
-        d.append(d1);
+        d.append(d1a,d1);
     }
     else {
         return;
@@ -294,7 +296,10 @@ function refreshBlueprint(type) {
         d.append(b1);
     }
     else {
-        const d2 = $("<div/>").addClass('bpReq').html("REQUIRES:<br>" + needed);
+        const d2 = $("<div/>").addClass('bpReq');
+        const d2a = $("<div/>").addClass('bpReqHeading').html("Requires");
+        const d2b = $("<div/>").addClass('bpReqNeeded').html(needed);
+        d2.append(d2a, d2b);
         d.append(d2);
     }
     $blueprintUnlock.append(d);

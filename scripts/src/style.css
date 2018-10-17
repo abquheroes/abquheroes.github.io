@@ -1075,7 +1075,7 @@ Rarities
 }
 
 .recipeRowLast {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .recipeRowHighlight {
@@ -1208,44 +1208,39 @@ Rarities
 
 .bpShop {
     position: relative;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    justify-content: center;
     align-items: center;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    margin: 40px 15px 15px;
-    padding: 15px;
+    margin: 10px 15px 15px;
 }
 
-.bpShop:before {
-    content: "Next Blueprint Unlock";
-    position: absolute;
-    top: -25px;
-    left: -1px;
-    right: -1px;
+.bpShopTitle {
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
     font-size: 0.9em;
     background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: 5px 15px;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
-    -o-box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
-    -webkit-box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
 }
 
 .bpShopButton {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    border: 1px solid var(--border);
+    justify-content: center;
+    border-top: 1px solid var(--border);
     background-color: var(--bg-2);
     padding: 10px 15px;
+    width: 100%;
     cursor: pointer;
 }
 
 .bpShopButton:hover {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--bg-3);
 }
 
 .bpShopButton > img {
@@ -1254,9 +1249,11 @@ Rarities
 }
 
 .bpShopName {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    margin-right: 25px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 20px;
 }
 
 .bpShopName > img {
@@ -1268,7 +1265,26 @@ Rarities
 }
 
 .bpReq {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
     color: var(--text-3);
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+}
+
+.bpReqHeading {
+    text-transform: uppercase;
+}
+
+.bpReqHeading:after {
+    content: "";
+    position: relative;
+    display: block;
+    margin: 5px auto;
+    height: 2px;
+    width: 75%;
+    background-color: var(--border-2);
 }
 
 #workerList {
