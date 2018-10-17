@@ -211,6 +211,7 @@ function populateRecipe(type) {
         const rr = $("#rr"+recipe.id);
         lastRow = "#rr"+recipe.id;
         rr.show();
+        rr.removeClass("recipeRowLast");
         if (alternate) rr.addClass("recipeRowHighlight");
         alternate = !alternate;
     });
