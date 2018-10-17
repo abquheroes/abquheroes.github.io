@@ -23,7 +23,7 @@ $(document).on("click","#closeEquipItem",(e) => {
 
 $(document).on("click",".heroEquipBlockEquipButton",(e) => {
     const heroID = $(e.target).attr("hid");
-    const equippingTo = $(e.target).attr("sid");
+    const equippingTo = parseInt($(e.target).attr("sid"));
     HeroManager.equipItem(equipContainerTarget.containerID,heroID,equippingTo);
     $(".tabcontent").hide();
     $("#inventoryTab").show();

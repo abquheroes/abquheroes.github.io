@@ -169,6 +169,7 @@ class Hero {
         return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
     }
     equip(item,slot) {
+        console.log(item,slot);
         if (slot === 0) this.slot1 = item;
         if (slot === 1) this.slot2 = item;
         if (slot === 2) this.slot3 = item;
@@ -322,6 +323,7 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         Inventory.removeContainerFromInventory(containerID);
         hero.unequip(slot);
+        console.log(item,slot);
         hero.equip(item,slot);
     },
     getSlotTypes(slot,heroID) {
