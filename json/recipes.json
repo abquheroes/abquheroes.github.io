@@ -2,7 +2,7 @@
   {
     "id": "R0101",
     "name": "Club",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It may be crude, but it gets the job done.",
     "lvl": 1,
     "value": 6,
     "craftTime": 9258,
@@ -18,7 +18,7 @@
   {
     "id": "R0102",
     "name": "Maul",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "At last, we will have revenge.",
     "lvl": 2,
     "value": 72,
     "craftTime": 17226,
@@ -36,7 +36,7 @@
   {
     "id": "R0103",
     "name": "Brawler",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "For smashing faces and taking names.",
     "lvl": 3,
     "value": 518,
     "craftTime": 32027,
@@ -54,7 +54,7 @@
   {
     "id": "R0104",
     "name": "The Broominator",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "For sweeping sidewalks and clearing cobwebs.",
     "lvl": 4,
     "value": 3732,
     "craftTime": 59629,
@@ -72,7 +72,7 @@
   {
     "id": "R0105",
     "name": "Blackjack",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Hitting fifteen enemies is easy, but it really gets tricky deciding to hit on sixteen.",
     "lvl": 5,
     "value": 26870,
     "craftTime": 110944,
@@ -91,7 +91,7 @@
   {
     "id": "R0106",
     "name": "Bludgeon",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Perfect tool when you need the enemy to experience \"broke, blind, and bedlam.\"",
     "lvl": 6,
     "value": 106406,
     "craftTime": 206425,
@@ -108,7 +108,7 @@
   {
     "id": "R0107",
     "name": "Striped Club",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "When used as a scratching post, it brings out all the cats and kittens.",
     "lvl": 7,
     "value": 1025141,
     "craftTime": 282664,
@@ -127,7 +127,7 @@
   {
     "id": "R0108",
     "name": "Night Club",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
     "lvl": 8,
     "value": 4875124,
     "craftTime": 347373,
@@ -146,7 +146,7 @@
   {
     "id": "R0109",
     "name": "Fact Finder",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Also known in some circles as the Stick of Enhanced Interrogation.",
     "lvl": 9,
     "value": 21251125,
     "craftTime": 391307,
@@ -165,7 +165,7 @@
   {
     "id": "R0110",
     "name": "Knife Club",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It's the most exclusive Knife in town.",
     "lvl": 10,
     "value": 108215963,
     "craftTime": 514933,
@@ -184,7 +184,7 @@
   {
     "id": "R0201",
     "name": "Rage Maker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "If you want to see this axe in full display, tell your wife that your mother's cooking is better.",
     "lvl": 1,
     "value": 13,
     "craftTime": 13240,
@@ -202,7 +202,7 @@
   {
     "id": "R0202",
     "name": "Fury Bringer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Enthusiasts of this axe come from around the land to discuss cryptozoology and costume design.",
     "lvl": 2,
     "value": 52,
     "craftTime": 24476,
@@ -218,7 +218,7 @@
   {
     "id": "R0203",
     "name": "Vengeance",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This axe is fairly common, and is used mostly to settle grieveances.",
     "lvl": 3,
     "value": 673,
     "craftTime": 45772,
@@ -236,7 +236,7 @@
   {
     "id": "R0204",
     "name": "Pride",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Hard to know if this axe is noble or corrupt, but it looks really great.",
     "lvl": 4,
     "value": 4851,
     "craftTime": 85258,
@@ -254,7 +254,7 @@
   {
     "id": "R0205",
     "name": "Greedy Pickaxe",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
     "lvl": 5,
     "value": 34931,
     "craftTime": 144228,
@@ -273,7 +273,7 @@
   {
     "id": "R0206",
     "name": "Slothslayer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Sloths don't move very fast, but they are mean and will bite.",
     "lvl": 6,
     "value": 251503,
     "craftTime": 268352,
@@ -292,7 +292,7 @@
   {
     "id": "R0207",
     "name": "Lusty Handaxe",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lore states that it belonged to a famous Argonian Maid.",
     "lvl": 7,
     "value": 732976,
     "craftTime": 367463,
@@ -309,7 +309,7 @@
   {
     "id": "R0208",
     "name": "Envy",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Apply some venom the the edges of this axe, and you can turn your enemies green, with Envy. ",
     "lvl": 8,
     "value": 6337661,
     "craftTime": 451585,
@@ -328,7 +328,7 @@
   {
     "id": "R0209",
     "name": "Gluttonous Axe",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Gluttonous Axe is not very balanced, and probably should lose some weight around the belly.",
     "lvl": 9,
     "value": 27626462,
     "craftTime": 508699,
@@ -347,7 +347,7 @@
   {
     "id": "R0210",
     "name": "Wrath",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
     "lvl": 10,
     "value": 140680751,
     "craftTime": 669413,
@@ -366,7 +366,7 @@
   {
     "id": "R0301",
     "name": "Lonely Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "If this spear comes for you, there could be one less lonely adventurer, so be careful.",
     "lvl": 1,
     "value": 4,
     "craftTime": 7129,
@@ -382,7 +382,7 @@
   {
     "id": "R0302",
     "name": "Scary Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "While it started out as a member in a group of spears, Scary has gone on to become a real X-factor.",
     "lvl": 2,
     "value": 50,
     "craftTime": 13159,
@@ -400,7 +400,7 @@
   {
     "id": "R0303",
     "name": "Crazy Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Knowing too much about this weapon could lead to detrimental outcomes.  ",
     "lvl": 3,
     "value": 200,
     "craftTime": 24620,
@@ -416,7 +416,7 @@
   {
     "id": "R0304",
     "name": "Intimidating Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It really is the sincerest form of flattery.  ",
     "lvl": 4,
     "value": 2612,
     "craftTime": 45907,
@@ -434,7 +434,7 @@
   {
     "id": "R0305",
     "name": "Moody Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A well-balanced spear, so long as it takes it's medication.",
     "lvl": 5,
     "value": 18809,
     "craftTime": 77661,
@@ -453,7 +453,7 @@
   {
     "id": "R0306",
     "name": "Shadow Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "If you are going to use a spear, you would just enjoy it more if you knew no one else used it.",
     "lvl": 6,
     "value": 135424,
     "craftTime": 144497,
@@ -472,7 +472,7 @@
   {
     "id": "R0307",
     "name": "Lucky Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Sometimes being lucky is better than being good, but both are better than being alone.",
     "lvl": 7,
     "value": 717598,
     "craftTime": 197864,
@@ -491,7 +491,7 @@
   {
     "id": "R0308",
     "name": "Pickle Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A little salty, but it goes really well with tequila.",
     "lvl": 8,
     "value": 1876923,
     "craftTime": 243161,
@@ -508,7 +508,7 @@
   {
     "id": "R0309",
     "name": "Alien Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Use this spear to destroy your enemies -- not to study, not to bring back, but to wipe them out.",
     "lvl": 9,
     "value": 14875787,
     "craftTime": 273915,
@@ -527,7 +527,7 @@
   {
     "id": "R0310",
     "name": "Toxic Spear",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Caution: do not keep many of these in one place.  The last thing you want is a Toxic Community.",
     "lvl": 10,
     "value": 75751174,
     "craftTime": 360453,
@@ -546,7 +546,7 @@
   {
     "id": "R0401",
     "name": "Servant Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Customarily given by employers as a sign of gratitude and appreciation for years of service.",
     "lvl": 1,
     "value": 3,
     "craftTime": 5092,
@@ -562,7 +562,7 @@
   {
     "id": "R0402",
     "name": "Envoy Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This rod is given to foreign dignitaries, as a sign of friendship and respect.",
     "lvl": 2,
     "value": 36,
     "craftTime": 9475,
@@ -580,7 +580,7 @@
   {
     "id": "R0403",
     "name": "Actor Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
     "lvl": 3,
     "value": 259,
     "craftTime": 17615,
@@ -598,7 +598,7 @@
   {
     "id": "R0404",
     "name": "Officer Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Pranksters frequently put this rod in a gelatinous mold.  ",
     "lvl": 4,
     "value": 1866,
     "craftTime": 32796,
@@ -616,7 +616,7 @@
   {
     "id": "R0405",
     "name": "Manager Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It's not very functional or elegant, and it's output stinks.  Use it diligently.",
     "lvl": 5,
     "value": 13435,
     "craftTime": 61019,
@@ -635,7 +635,7 @@
   {
     "id": "R0406",
     "name": "Stewart Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
     "lvl": 6,
     "value": 53203,
     "craftTime": 113534,
@@ -651,8 +651,8 @@
   },
   {
     "id": "R0407",
-    "name": "Finnicky Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "name": "Finicky Rod",
+    "description": "It's very tricky to master and has a really confusing balance.",
     "lvl": 7,
     "value": 512570,
     "craftTime": 155465,
@@ -671,7 +671,7 @@
   {
     "id": "R0408",
     "name": "Funky Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Just as you hit an enemy, it's best to turn around and shout, \"Lay down the boogie!\"",
     "lvl": 8,
     "value": 2437562,
     "craftTime": 191055,
@@ -690,7 +690,7 @@
   {
     "id": "R0409",
     "name": "Flashy Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This rod appears to be very powerful, but just below the surface, there isn't much substance.",
     "lvl": 9,
     "value": 10625562,
     "craftTime": 215219,
@@ -709,7 +709,7 @@
   {
     "id": "R0410",
     "name": "Fishing Rod",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
     "lvl": 10,
     "value": 54107981,
     "craftTime": 283213,
@@ -728,7 +728,7 @@
   {
     "id": "R0501",
     "name": "Basic Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Interests include pumpkin spice, ugly boots, and yoga pants.",
     "lvl": 1,
     "value": 2,
     "craftTime": 2910,
@@ -744,7 +744,7 @@
   {
     "id": "R0502",
     "name": "Forest Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Yelling \"run\" while using this wand, no matter how hilarious, is a cheap attempt at a joke.",
     "lvl": 2,
     "value": 21,
     "craftTime": 5264,
@@ -762,7 +762,7 @@
   {
     "id": "R0503",
     "name": "Wind Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Wendy wondered when, or where, her wind wand wandered.",
     "lvl": 3,
     "value": 86,
     "craftTime": 10040,
@@ -778,7 +778,7 @@
   {
     "id": "R0504",
     "name": "Soul Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Crafting this wand will give you great power, but it may cost you everything.",
     "lvl": 4,
     "value": 1119,
     "craftTime": 18730,
@@ -796,7 +796,7 @@
   {
     "id": "R0505",
     "name": "Rain Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The secret is the hidden compartment which houses the silver iodide.",
     "lvl": 5,
     "value": 8061,
     "craftTime": 31836,
@@ -815,7 +815,7 @@
   {
     "id": "R0506",
     "name": "Frozen Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "If you can thaw a frozen wand, there may be no challenge you can't overcome.",
     "lvl": 6,
     "value": 58039,
     "craftTime": 59235,
@@ -834,7 +834,7 @@
   {
     "id": "R0507",
     "name": "Ocean Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It is similar to the Rain Wand, but has key elements that make it more powerful.",
     "lvl": 7,
     "value": 307542,
     "craftTime": 81112,
@@ -853,7 +853,7 @@
   {
     "id": "R0508",
     "name": "Thunder Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
     "lvl": 8,
     "value": 804396,
     "craftTime": 99681,
@@ -870,7 +870,7 @@
   {
     "id": "R0509",
     "name": "Hate Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Most wizards use this wand out of anger, which unsurprisingly leads to suffering.",
     "lvl": 9,
     "value": 6375337,
     "craftTime": 112288,
@@ -889,7 +889,7 @@
   {
     "id": "R0510",
     "name": "Love Wand",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
     "lvl": 10,
     "value": 32464788,
     "craftTime": 147763,
@@ -908,7 +908,7 @@
   {
     "id": "R0601",
     "name": "Earth Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It's a dirty staff, but someone has got to use it.",
     "lvl": 1,
     "value": 9,
     "craftTime": 8333,
@@ -926,7 +926,7 @@
   {
     "id": "R0602",
     "name": "Wind Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "If you spin the Wind Staff quickly over your head, you won't fly, but it will look really cool.",
     "lvl": 2,
     "value": 36,
     "craftTime": 15312,
@@ -942,7 +942,7 @@
   {
     "id": "R0603",
     "name": "Fire Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Street performers have been dazzling audiences for years using this special staff.",
     "lvl": 3,
     "value": 466,
     "craftTime": 28812,
@@ -960,7 +960,7 @@
   {
     "id": "R0604",
     "name": "September Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Better than the Month of May Staff, that's for sure.",
     "lvl": 4,
     "value": 3358,
     "craftTime": 53653,
@@ -978,7 +978,7 @@
   {
     "id": "R0605",
     "name": "Water Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
     "lvl": 5,
     "value": 24183,
     "craftTime": 95509,
@@ -997,7 +997,7 @@
   {
     "id": "R0606",
     "name": "Heart Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
     "lvl": 6,
     "value": 174117,
     "craftTime": 177704,
@@ -1016,7 +1016,7 @@
   {
     "id": "R0607",
     "name": "Planet Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "There aren't many of these to go around, so make sure you treat this one with care.",
     "lvl": 7,
     "value": 507445,
     "craftTime": 243336,
@@ -1033,7 +1033,7 @@
   {
     "id": "R0608",
     "name": "Lunar Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
     "lvl": 8,
     "value": 4387611,
     "craftTime": 299043,
@@ -1052,7 +1052,7 @@
   {
     "id": "R0609",
     "name": "Support Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Having somewhere between five and seven of these at all times is highly efficient.",
     "lvl": 9,
     "value": 19126012,
     "craftTime": 336864,
@@ -1071,7 +1071,7 @@
   {
     "id": "R0610",
     "name": "Janitorial Staff",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Janitorial Staves may be underappreciated, but befriend them early and often.",
     "lvl": 10,
     "value": 97394366,
     "craftTime": 443290,
@@ -1090,7 +1090,7 @@
   {
     "id": "R0701",
     "name": "Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Even the mighty oak starts as a simple acorn.",
     "lvl": 1,
     "value": 4,
     "craftTime": 6111,
@@ -1106,7 +1106,7 @@
   {
     "id": "R0702",
     "name": "Butter Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
     "lvl": 2,
     "value": 43,
     "craftTime": 11317,
@@ -1124,7 +1124,7 @@
   {
     "id": "R0703",
     "name": "Kitchen Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "I'm knifin around... cut, cut, cut, cut, cut.",
     "lvl": 3,
     "value": 310,
     "craftTime": 21084,
@@ -1142,7 +1142,7 @@
   {
     "id": "R0704",
     "name": "Chefs Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Also known in some circles as Everybody's Grudge.",
     "lvl": 4,
     "value": 2239,
     "craftTime": 39351,
@@ -1160,7 +1160,7 @@
   {
     "id": "R0705",
     "name": "Fishing Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Named for the common technique of \"Water Stabbing,\" which is the best way to catch a fish.",
     "lvl": 5,
     "value": 16122,
     "craftTime": 73223,
@@ -1178,8 +1178,8 @@
   },
   {
     "id": "R0706",
-    "name": "Thats Not A Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "name": "That's Not A Knife",
+    "description": "Sure, a talking dog and a duck who refuses to wear pants is fine, but the weapon is breaking immersion.",
     "lvl": 6,
     "value": 63843,
     "craftTime": 136240,
@@ -1196,7 +1196,7 @@
   {
     "id": "R0707",
     "name": "Thats A Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Some suggest that the original name is actually \"This Is A Knife\" -- they're wrong.",
     "lvl": 7,
     "value": 615084,
     "craftTime": 186558,
@@ -1215,7 +1215,7 @@
   {
     "id": "R0708",
     "name": "Club Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It's the most exclusive Club in town.",
     "lvl": 8,
     "value": 2925074,
     "craftTime": 229266,
@@ -1234,7 +1234,7 @@
   {
     "id": "R0709",
     "name": "Dark Knife",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "One popular urban legend mentions that this blade is involved in fowl play.",
     "lvl": 9,
     "value": 12750675,
     "craftTime": 258262,
@@ -1253,7 +1253,7 @@
   {
     "id": "R0710",
     "name": "The Bloopinator",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This magical knife can slay overlords and tyrants, but using it comes with a price.",
     "lvl": 10,
     "value": 64929577,
     "craftTime": 339856,
@@ -1272,7 +1272,7 @@
   {
     "id": "R0801",
     "name": "Shatterer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "You can't fire arrows through a force field.  So, don't try it.",
     "lvl": 1,
     "value": 11,
     "craftTime": 10184,
@@ -1290,7 +1290,7 @@
   {
     "id": "R0802",
     "name": "Fragmenter",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Fire at a spine to deconcatenate the discs.  Reversing this process may take time.",
     "lvl": 2,
     "value": 44,
     "craftTime": 18901,
@@ -1305,8 +1305,8 @@
   },
   {
     "id": "R0803",
-    "name": "Disintgrater",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "name": "Disintegrator",
+    "description": "This bow is unlicensed.  I'd stand back if I were you.",
     "lvl": 3,
     "value": 569,
     "craftTime": 35180,
@@ -1324,7 +1324,7 @@
   {
     "id": "R0804",
     "name": "Bone Breaker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "No frills way of incapacitating an enemy combatant.",
     "lvl": 4,
     "value": 4105,
     "craftTime": 65588,
@@ -1342,7 +1342,7 @@
   {
     "id": "R0805",
     "name": "Fracture Finder",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The perfect bow to use when precision is required.",
     "lvl": 5,
     "value": 29557,
     "craftTime": 111869,
@@ -1361,7 +1361,7 @@
   {
     "id": "R0806",
     "name": "Demolisher",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A versatile bow, it damages all enemies and can be a big problem if left unchecked.",
     "lvl": 6,
     "value": 212810,
     "craftTime": 208145,
@@ -1380,7 +1380,7 @@
   {
     "id": "R0807",
     "name": "Shocker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Able to shoot two arrows at once, but be extremely careful.",
     "lvl": 7,
     "value": 620211,
     "craftTime": 285019,
@@ -1397,7 +1397,7 @@
   {
     "id": "R0808",
     "name": "Stunner",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Don't anger Stunner, or it will open an eight million gold can of whoop and serve it to ya cold.",
     "lvl": 8,
     "value": 5362636,
     "craftTime": 350268,
@@ -1416,7 +1416,7 @@
   {
     "id": "R0809",
     "name": "Splinterer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The legends say the owner of this bow trained renaissance painters to be ninjas and eat pizza.",
     "lvl": 9,
     "value": 23376237,
     "craftTime": 394567,
@@ -1435,7 +1435,7 @@
   {
     "id": "R0810",
     "name": "Ruiner",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "I used to think arrow to the knee jokes were funny, but then I took an arrow to the knee.  Still not funny.",
     "lvl": 10,
     "value": 119037559,
     "craftTime": 519224,
@@ -1454,7 +1454,7 @@
   {
     "id": "R0901",
     "name": "Riding Crop",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Sometimes used as a weapon, more often it is utilized in horse racing.",
     "lvl": 1,
     "value": 5,
     "craftTime": 7407,
@@ -1470,7 +1470,7 @@
   {
     "id": "R0902",
     "name": "Bull Whip",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The favorite weapon of a world-class archaeologist.",
     "lvl": 2,
     "value": 57,
     "craftTime": 13638,
@@ -1488,7 +1488,7 @@
   {
     "id": "R0903",
     "name": "Snake Whip",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Given its name because of the shape it takes when coiled.",
     "lvl": 3,
     "value": 228,
     "craftTime": 25597,
@@ -1504,7 +1504,7 @@
   {
     "id": "R0904",
     "name": "Cool Whip",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This is a dish best served cold.",
     "lvl": 4,
     "value": 2985,
     "craftTime": 47693,
@@ -1522,7 +1522,7 @@
   {
     "id": "R0905",
     "name": "Readied Whip",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A few years ago, this weapon's production was halted due to a deadly gas explosion.",
     "lvl": 5,
     "value": 21496,
     "craftTime": 84897,
@@ -1541,7 +1541,7 @@
   {
     "id": "R0906",
     "name": "Quirt",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Quirts are used often for punishment rather than encouragement.",
     "lvl": 6,
     "value": 154771,
     "craftTime": 157960,
@@ -1559,8 +1559,8 @@
   },
   {
     "id": "R0907",
-    "name": "Qilibian",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "name": "Qilinbian",
+    "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
     "lvl": 7,
     "value": 820112,
     "craftTime": 216299,
@@ -1579,7 +1579,7 @@
   {
     "id": "R0908",
     "name": "Sjambok",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Traditionally made from hippopotamus or rhinoceros hides.",
     "lvl": 8,
     "value": 2145055,
     "craftTime": 265816,
@@ -1596,7 +1596,7 @@
   {
     "id": "R0909",
     "name": "Cat O Nine Tails",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "This whip's name is a bit of a misnomer -- it's made from fox fur.",
     "lvl": 9,
     "value": 17000900,
     "craftTime": 299435,
@@ -1615,7 +1615,7 @@
   {
     "id": "R0910",
     "name": "Shaped Whip",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
     "lvl": 10,
     "value": 86572770,
     "craftTime": 394036,
@@ -1634,7 +1634,7 @@
   {
     "id": "R1001",
     "name": "Meager Sword",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Use it.  Abuse it.  Lose it.  That's the Meager Sword Motto.",
     "lvl": 1,
     "value": 7,
     "craftTime": 22406,
@@ -1650,7 +1650,7 @@
   {
     "id": "R1002",
     "name": "Modest Sabre",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It may not look like much, but it does the job.  Eventually.",
     "lvl": 2,
     "value": 79,
     "craftTime": 41583,
@@ -1668,7 +1668,7 @@
   {
     "id": "R1003",
     "name": "Sailor Cutlass",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Because what new sailors need is a heavy object that sinks. ",
     "lvl": 3,
     "value": 569,
     "craftTime": 77397,
@@ -1686,7 +1686,7 @@
   {
     "id": "R1004",
     "name": "Salty Sword",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A weapon for the eternally angry and margarita fans alike.",
     "lvl": 4,
     "value": 4105,
     "craftTime": 144294,
@@ -1704,7 +1704,7 @@
   {
     "id": "R1005",
     "name": "Lakekeeper",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The Lakekeeper may be a bit rusty, but a little tetanus never hurt anyone.",
     "lvl": 5,
     "value": 16257,
     "craftTime": 268485,
@@ -1721,7 +1721,7 @@
   {
     "id": "R1006",
     "name": "Buzzblade",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Set this blade to stun, instead of kill, and have a blast.",
     "lvl": 6,
     "value": 212810,
     "craftTime": 499547,
@@ -1740,7 +1740,7 @@
   {
     "id": "R1007",
     "name": "Feverbreaker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "It's hard to have a fever when your head is missing.",
     "lvl": 7,
     "value": 1127655,
     "craftTime": 684046,
@@ -1759,7 +1759,7 @@
   {
     "id": "R1008",
     "name": "Balmungous",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Having two or three of these in a group will make a giant difference.",
     "lvl": 8,
     "value": 5362636,
     "craftTime": 840643,
@@ -1778,7 +1778,7 @@
   {
     "id": "R1009",
     "name": "Cannonballer",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "The favorite weapon of pirates and gunpowder enthusiasts.",
     "lvl": 9,
     "value": 23376237,
     "craftTime": 946962,
@@ -1797,7 +1797,7 @@
   {
     "id": "R1010",
     "name": "Jawstriker",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "A blow to the jaw from this blade will do serious, long lasting damage.",
     "lvl": 10,
     "value": 65470658,
     "craftTime": 1246139,
@@ -5215,7 +5215,7 @@
   },
   {
     "id": "R6410",
-    "name": "Gjallerhorn",
+    "name": "Gjallarhorn",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "lvl": 10,
     "value": 193151430,
