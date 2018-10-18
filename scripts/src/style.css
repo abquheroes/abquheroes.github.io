@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox, .tooltip:after {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem  {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -108,7 +108,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -341,11 +341,7 @@ body {
     margin-left: 10px;
 }
 
-#inventoryTab {
-    height: calc(100vh - 100px)
-}
-
-#sortInventory {
+#sortInventory, #closeEquipItem  {
     position: relative;
     display: inline-flex;
     margin: 10px 10px 0;
@@ -355,7 +351,7 @@ body {
     cursor: pointer;
 }
 
-#sortInventory:hover {
+#sortInventory:hover, #closeEquipItem:hover {
     background-color: var(--bg);
     border-color: var(--border-3);
 }
@@ -385,7 +381,7 @@ body {
     margin: 10px;
 }
 
-.inventoryItem {
+.inventoryItem, .equipItem {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -476,7 +472,7 @@ body {
     margin-top: auto;
 }
 
-.inventorySell, .inventoryEquip {
+.inventorySell, .inventoryEquip, .heroEquipBlockEquipButton {
     width: 85%;
     background-color: rgba(255,255,255,0.05);
     text-align: center;
@@ -486,12 +482,83 @@ body {
     cursor: pointer;
 }
 
-.inventorySell:hover, .inventoryEquip:hover {
+.inventorySell:hover, .inventoryEquip:hover, .heroEquipBlockEquipButton:hover {
     background-color: rgba(255,255,255,0.15);
 }
 
 .inventorySell {
     margin-bottom: 10px;
+}
+
+#inventoryEquipTab {
+    padding: 0 20px;
+}
+
+#closeEquipItem {
+    margin: 20px 0;
+}
+
+.equipItem {
+    display: inline-flex;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: unset;
+    min-height: 150px;
+}
+
+.equipItemProps {
+    margin-top: 15px;
+}
+
+#ietHero {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 15px;
+    text-align: center;
+}
+
+.heroEquipBlock {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.heroEquipBlockPic {
+    padding: 15px 15px 0;
+}
+
+.heroEquipBlockName {
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.heroEquipBlockName:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 75%;
+    margin: 10px auto;
+    background-color: var(--border);
+}
+
+.heroEquipBlockEquip + .heroEquipBlockEquip {
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid var(--border);
+}
+
+.heroEquipBlockEquipButton {
+    margin: 10px auto;
+}
+
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title {
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0 5px 5px;
+    margin: 0 0 10px;
+    border-bottom: 2px solid var(--border);
 }
 
 /* 
@@ -2121,16 +2188,6 @@ Rarities
     padding: 20px;
 }
 
-.dtsTopTitle, .dtsBotTitle {
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 10px;
-    padding: 0 10px 10px;
-}
-
-.dtsTopTitle > h3, .dtsBotTitle > h3 {
-    margin: 0;
-}
-
 #dungeonTeamButton {
     display: inline-flex;
     margin-top: 20px;
@@ -2356,8 +2413,6 @@ Rarities
 .rewardDiv:before, .eventMessage:before {
     position: relative;
     display: block;
-    padding: 5px 0;
-    border-bottom: 2px solid var(--border);
 }
 
 .eventMessage {
@@ -2368,7 +2423,10 @@ Rarities
 
 .eventMessage:before {
     content: "Dungeon Complete!";
-    margin-bottom: 10px;
+}
+
+.dungeonEventText {
+    padding: 0 5px;
 }
 
 .dungeonEventTime, .dungeonEventFloor{
