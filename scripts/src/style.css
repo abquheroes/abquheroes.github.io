@@ -502,8 +502,8 @@ body {
     display: inline-flex;
     padding: 20px;
     margin-bottom: 20px;
-    min-height: unset;
     min-height: 150px;
+    text-align: center;
 }
 
 .equipItemProps {
