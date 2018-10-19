@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem  {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm  {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -2098,7 +2098,7 @@ Rarities
     padding: 10px 20px;
 }
 
-#dungeonListContainer, #drStats {
+#dungeonListContainer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -2128,28 +2128,48 @@ Rarities
 }
 
 #drStats {
+    display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 #drStatsHero, #drStatsMob {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    grid-gap: 10px;
+    margin: 20px;
+    width: 100%;
 }
 
-.dsc {
+.dsc, .dsm {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     padding: 15px;
     min-width: 200px;
+    flex: 1;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
 }
 
 .dsm {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    padding: 15px;
-    min-width: 200px;
+    grid-column: 2;
+}
+
+.dsm + .dsm {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dsm + .dsm + .dsm {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dsm + .dsm + .dsm + .dsm {
+    grid-column: 1;
+    grid-row: 2;
 }
 
 #drLog {
