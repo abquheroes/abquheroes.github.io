@@ -2037,7 +2037,8 @@ Rarities
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
     border-bottom: 2px solid var(--border);
     overflow: hidden;
 }
@@ -2210,6 +2211,7 @@ Rarities
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    min-height: 100px;
     background-color: var(--bg-3);
 }
 
