@@ -1739,8 +1739,12 @@ Rarities
     min-height: 195px;
     text-align: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     margin: 1px;
+}
+
+.dungeonTeamName, .dungeonAvailableName {
+    text-transform: uppercase;
 }
 
 .heroOwnedCard, .buyNewHeroCard {
@@ -1846,7 +1850,7 @@ Rarities
     margin-bottom: 10px;
 }
 
-.heroExamineName:after, .heroExamineHeading:after {
+.heroExamineName:after, .heroExamineHeading:after, .dungeonTeamName:after, .dungeonAvailableName:after {
     content: "";
     display: block;
     height: 2px;
@@ -2247,12 +2251,31 @@ Rarities
 
 #dungeonTeamButton {
     display: inline-flex;
+    position: relative;
     margin-top: 20px;
     padding: 10px 20px;
     text-align: center;
+    text-transform: uppercase;
     cursor: pointer;
     border: 1px solid var(--green-light);
     background-color: var(--green-dark);
+}
+
+#dungeonTeamButton:not(.dungeonStartNotAvailable):after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #089e5f;
+    z-index: -1;
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+    animation: 1s button-active infinite;
 }
 
 #dungeonTeamButton:hover {
@@ -3148,6 +3171,17 @@ a.workerDialog:hover {
     }
     to {
         transform: scale(1);
+    }
+}
+
+@keyframes button-active {
+    0% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleY(1.5) scaleX(1.1);
     }
 }
 
