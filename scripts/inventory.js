@@ -289,7 +289,7 @@ function gearEquipFromInventory(invID) {
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
             const d4b = $("<div/>").addClass("heroEquipBlockEquipStat").html(relPow);
             const d4c = $("<div/>").addClass("heroEquipBlockEquipStat").html(relHP);
-            const d4d = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("EQUIP");
+            const d4d = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
             d4.append(d4a,d4b,d4c,d4d);
             d3.append(d4);
         });

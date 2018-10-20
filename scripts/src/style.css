@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -108,7 +108,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -399,6 +399,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 0.9em;
     flex-grow: 1;
     width: 100%;
     padding: 10px;
@@ -506,6 +507,10 @@ body {
     text-align: center;
 }
 
+.equipItemName {
+    font-size: 0.9em;
+}
+
 .equipItemProps {
     margin-top: 15px;
 }
@@ -531,7 +536,6 @@ body {
     margin-top: 10px;
     text-transform: uppercase;
     text-align: center;
-    font-weight: bold;
     font-size: 1.1em;
 }
 
@@ -709,6 +713,10 @@ Rarities
 
 .tabcontent {
     height: calc(100vh - 90px);
+    animation: 0.2s fade-in;
+}
+
+#dungeonRun {
     animation: 0.2s fade-in;
 }
 
@@ -1444,7 +1452,6 @@ Rarities
 .WorkerName {
     display: inline-flex;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 1.1em;
 }
 
@@ -1456,7 +1463,7 @@ Rarities
 
 .WorkerDesc {
     position: absolute;
-    top: 2.5px;
+    top: 3.5px;
     right: 5px;
     color: var(--text-3);
     font-weight: normal;
@@ -1835,7 +1842,6 @@ Rarities
     width: 100%;
     text-transform: uppercase;
     text-align: center;
-    font-weight: bold;
     font-size: 1.1em;
     margin-bottom: 10px;
 }
@@ -2028,9 +2034,12 @@ Rarities
 }
 
 #drArena {
+    display: flex;
+    flex-direction: column;
     position: relative;
     height: 300px;
     border-bottom: 2px solid var(--border);
+    overflow: hidden;
 }
 
 .bgContainer {
@@ -2093,11 +2102,11 @@ Rarities
 }
 
 #floorID {
-    background-color: rgba(0,0,0,0.50);
-    border: 1px solid rgba(255,255,255,0.10);
-    padding: 10px 20px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 black;
+    font-size: 1.5rem;
+    animation: 0.2s scale-in;
 }
-
 #dungeonListContainer {
     display: flex;
     justify-content: space-between;
@@ -2106,16 +2115,41 @@ Rarities
 }
 
 #dungeonHeroList, #dungeonMobList {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-gap: 3px;
 }
 
 #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
-    background-color: rgba(0,0,0,0.30);
-    border: 1px solid rgba(255,255,255,0.10);
     text-align: center;
-    margin: 0 5px;
-    padding: 10px 20px;
+    padding: 10px;
+    max-width: 94px;
+    filter: drop-shadow(0 0 5px black);
+}
+
+.dfcName, .dfmName {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dfm {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.dfm + .dfm {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.dfm + .dfm + .dfm {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dfm + .dfm + .dfm + .dfm {
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .dhc {
@@ -2131,14 +2165,15 @@ Rarities
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    min-height: 350px;
 }
 
 #drStatsHero, #drStatsMob {
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     grid-template-rows: repeat(2, minmax(150px, 1fr));
     grid-gap: 10px;
-    margin: 20px;
+    margin: 10px;
     width: 100%;
 }
 
@@ -2147,14 +2182,13 @@ Rarities
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    min-width: 200px;
-    flex: 1;
     background-color: var(--bg);
     border: 1px solid var(--border);
 }
 
 .dsm {
     grid-column: 2;
+    grid-row: 1;
 }
 
 .dsm + .dsm {
@@ -2287,11 +2321,23 @@ Rarities
     align-items: center;
     height: 23px;
     margin: 2px 0;
-    border: 1px solid rgb(100, 100, 100); /* default color when none is present */
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.apBarDiv {
+    background-color: rgb(39, 39, 39);
+}
+
+.actBarDiv {
+    background-color: rgb(15, 50, 70);
+    border-color: rgb(30, 117, 143);
 }
 
 .hpBarDiv, .dsbhpBarDiv {
-    border: 1px solid rgb(134, 0, 0);
+    background-color: rgb(43, 15, 15);
+    border-color: rgb(134, 0, 0);
 }
 
 .hpBarDiv {
@@ -2300,7 +2346,7 @@ Rarities
 
 .hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
     position: absolute;
-    left: 2px;
+    left: 8px;
     bottom: 2px;
     z-index: 1;
 }
@@ -2309,7 +2355,7 @@ Rarities
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
-    left: 20px;
+    left: 25px;
     bottom: 2px;
     white-space: pre;
     z-index: 2;
@@ -2319,11 +2365,19 @@ Rarities
     display: block;
     position: relative;
     height: 100%;
-    background-color: rgb(75, 75, 75); /* default color when none is present */
+    background-color: rgb(75, 75, 75);
 }
 
 .hpBarFill, .dsbhpBarFill {
     background-color: rgb(105, 2, 2);
+}
+
+.actBarFill {
+    background-color: rgb(36, 114, 160);
+}
+
+.apBarFill {
+    background-color: rgb(75, 75, 75);
 }
 
 #floorProgressBarContainer {
@@ -2714,13 +2768,12 @@ footer a[href*="discord.gg"]:hover {
     max-width: 85px;
 }
 
-
 .wsbLvl.tooltip:after {
     left: -1px;
     right: unset;
     width: 100px;
     bottom: 135%;
-    transform-origin: left 15px;
+    transform-origin: left 30px;
 }
 
 .wsbLvl.tooltip:before {  
@@ -2746,7 +2799,7 @@ footer a[href*="discord.gg"]:hover {
 
 .WorkerDesc.tooltip:hover:before {
     left: 0;
-    top: 90%;
+    top: 70%;
 }
 
 .WorkerDesc.tooltip:after {

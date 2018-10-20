@@ -266,10 +266,9 @@ function refreshWorkers() {
             const d1 = $("<div/>").addClass("WorkerImage").html(worker.pic);
         const workerNameProduction = $('<div/>').addClass("WorkerNameAndProduction");
             const d2 = $("<div/>").addClass("WorkerName").html(worker.name);
-                const d2a = $("<div/>").addClass("WorkerDesc tooltip").html("<i class='fas fa-info-circle'></i>").attr("data-tooltip", worker.description);
-            d2.append(d2a);
+            const d2a = $("<div/>").addClass("WorkerDesc tooltip").html("<i class='fas fa-info-circle'></i>").attr("data-tooltip", worker.description);
             const d3 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
-        workerNameProduction.append(d2, d3);
+        workerNameProduction.append(d2, d2a, d3);
         workerDetails.append(d1, workerNameProduction);
         const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
         const d5a = $("<div/>").addClass("itemContributions").html("Required Contributions"); 
