@@ -1972,7 +1972,7 @@ Rarities
 }
 
 .EHPEstat {
-    margin-left: 300px;
+    margin-left: 250px;
     flex: 1 50px;
 }
 
@@ -3144,7 +3144,7 @@ footer a[href*="discord.gg"]:hover {
 
 }
 
-/* Hover feedback fro back to top button on desktops */
+/* Hover feedback for back to top button on desktops */
 @media screen and (min-width: 1250px) {
     .back-to-top:hover {
         color: var(--highlight);
@@ -3188,10 +3188,6 @@ footer a[href*="discord.gg"]:hover {
 
     .EHPEname > img {
         height: 20px;
-    }
-
-    .EHPEstat {
-        margin-left: 250px;
     }
 }
 
