@@ -34,6 +34,7 @@ class Hero {
         this.image = '<img src="images/heroes/'+this.id+'.gif">';
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = false;
+        this.inDungeon = false;
     }
     createSave() {
         const save = {};
@@ -43,6 +44,7 @@ class Hero {
         save.hp = this.hp;
         save.ap = this.ap;
         save.act = this.act;
+        save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
         if (this.slot2 === null) save.slot2 = null;
@@ -64,6 +66,7 @@ class Hero {
         this.hp = save.hp;
         this.ap = save.ap;
         this.act = save.act;
+        this.inDungeon = save.inDungeon;
         if (save.slot1 !== null) this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
         if (save.slot2 !== null) this.slot2 = new itemContainer(save.slot2.id,save.slot2.rarity);
         if (save.slot3 !== null) this.slot3 = new itemContainer(save.slot3.id,save.slot3.rarity);
@@ -119,50 +122,16 @@ class Hero {
     alive() {
         return this.hp > 0;
     }
-    addTime(t) {
-        if (this.dead()) {
+    addTime(t, dungeonID) {
+        if (this.dead() || !this.inDungeon) {
             this.act = 0;
             this.ap = 0;
-            return false;
         }
         this.act += t;
         if (this.act >= this.actmax()) {
             this.act -= this.actmax();
-            return true;
+            CombatManager.heroAttack(this, dungeonID);
         }
-        return false;
-    }
-    attack(mobs) {
-        //takes a list of mobs and executes an attack
-        //this is just w/e right now...
-        const target = getTarget(mobs,this.target);
-        if (target === undefined) return;
-        const dmg = this.critical(this.getPow());
-        if (this.ap === this.apmax) {
-            target.takeDamage(DamageType.MAGIC,dmg*2);
-            this.ap = 0;
-        }
-        else {
-            this.ap += 1;
-            target.takeDamage(DamageType.PHYSICAL,dmg);
-        }
-    }
-    takeDamage(type,dmg) {
-        if (type === DamageType.PHYSICAL) {
-            dmg -= this.armor;
-            if (!this.dodge()) this.hp = Math.max(this.hp-dmg,0);
-        }
-        else {
-            this.hp = Math.max(this.hp-dmg,0);
-        }
-        refreshHPBar(this);
-    }
-    dodge() {
-        return this.dodgeChance > Math.floor(Math.random()*100) + 1;
-    }
-    critical(dmg) {
-        if (this.crit > Math.floor(Math.random()*100) + 1) dmg = dmg*this.critdmg
-        return dmg;
     }
     getEquipSlots() {
         //return an object with 
@@ -352,9 +321,8 @@ const HeroManager = {
     restBeat() {
         //heal up all non-current partying members by 1% of their maxhp
         this.heroes.forEach(hero => {
-            if (!party.hasMember(hero.id) || !DungeonAssist.isActive()) {
-                hero.healPercent(1);
-            }
+            if (hero.inDungeon) return;
+            hero.healPercent(1);
         });
     },
     relativePow(heroID,slot,pow) {

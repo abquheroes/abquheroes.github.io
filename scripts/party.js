@@ -1,51 +1,72 @@
+"use strict";
+
 class Party {
-    constructor () {
-        this.heroes = [];
+    constructor (heroID) {
+        this.heroID = heroID;
+        this.heroes = this.createHeroList();
     }
     createSave() {
-        return this.heroes;
+        const save = {};
+        save.heroID = this.heroID;
+        return save;
     }
-    loadSave(save) {
-        this.heroes = save;
+    createHeroList() {
+        console.log(this.heroID.heroID);
+        return this.heroID.map(h => HeroManager.idToHero(h));
     }
     hasMember(member) {
         return this.heroes.includes(member);
     }
-    addMember(member) {
-        if (this.heroes.length >= this.partySize()) return false;
-        this.heroes.push(member);
-    }
-    emptyPartySlots() {
-        return this.partySize()-this.heroes.length;
-    }
-    //tf is this for?
-    removeMemberLocation(location) {
-        this.heroes.splice(location, 1);
-    }
-    heroList() {
-        return this.heroes.map(id => HeroManager.idToHero(id))
-    }
-    validTeam() {
-        return this.heroes.length > 0 && this.alive();
-    }
     alive() {
-        return this.heroList().some((hero) => !hero.dead());
+        return this.heroes.some(hero => !hero.dead());
     }
     isDead() {
-        return this.heroList().every((hero) => hero.dead());
+        return this.heroes.every(hero => hero.dead());
     }
     addXP(xp) {
-        this.heroList().forEach(hero => {
+        this.heroes.forEach(hero => {
             hero.addXP(xp);
         });
     }
+    addTime(t, dungeonID) {
+        this.heroes.forEach(h=> {
+            h.addTime(t, dungeonID);
+        })
+    }
+}
+
+const PartyCreator = {
+    heroes : [],
+    emptyPartySlots() {
+        return this.partySize()-this.heroes.length;;
+    },
+    removeMember(slotNum) {
+        this.heroes.splice(slotNum,1);
+    },
+    addMember(heroID) {
+        if (this.emptyPartySlots() === 0) return false;
+        this.heroes.push(heroID);
+    },
+    clearMembers() {
+        this.heroes = [];
+    },
     partySize() {
         const heroesOwned = HeroManager.ownedHeroes().length;
         if (heroesOwned < 4) return 1;
         if (heroesOwned < 8) return 2;
         if (heroesOwned < 12) return 3;
         return 4;
+    },
+    validTeam() {
+        if (this.heroes.length === 0) return false;
+        const heroesReal = this.heroes.map(hid => HeroManager.idToHero(hid));
+        return heroesReal.some(h => h.alive());
+    },
+    lockParty() {
+        this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>h.inDungeon = true);
+        const party = new Party(this.heroes);
+        console.log(party);
+        this.heroes = [];
+        return party;
     }
 }
-
-let party = new Party();

@@ -36,7 +36,6 @@ function afterLoad() {
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();
-    loadCorrectDungeonScreen();
     populateRecipe("Knives");
     refreshProgress();
     setInterval(mainLoop, 10);
@@ -61,7 +60,7 @@ function mainLoop() {
     achievementStats.setTimePlayed(elapsedTime);
     saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();
-    DungeonAssist.addTime(elapsedTime);
+    DungeonManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
 }

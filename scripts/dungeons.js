@@ -2,40 +2,121 @@
 const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", TRIAL:"Trial", TREASURE:"Treasure", HEAL:"Heal"});
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 
-class Floor {
-    constructor (lvl) {
-        this.lvl = lvl;
-        this.icon = '<img src="images/DungeonIcons/combat_floor.png">'
-        this.monster = [MobManager.getMonster(lvl)];
-        if (lvl >= 100) this.monster.push(MobManager.getMonster(lvl));
-        if (lvl >= 200) this.monster.push(MobManager.getMonster(lvl));
-        if (lvl >= 300) this.monster.push(MobManager.getMonster(lvl));
-    }
-    isDead() {
-        return this.monster.every((mob) => mob.dead());
+class Dungeon {
+    constructor(id,party) {
+        this.id = id;
+        this.floorNum = 1;
+        this.party = party;
+        this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum)
+        this.dropList = [];
+        this.dungeonTime = 0;
     }
     createSave() {
         const save = {};
-        save.lvl = this.lvl;
-        save.monster = [];
-        this.monster.forEach(m=> {
-            save.monster.push(m.createSave());
+        save.id = this.id;
+        save.floorNum = this.floorNum;
+        save.party = this.party.createSave();
+        save.mobs = [];
+        this.mobs.forEach(m=>{
+            save.mobs.push(m.createSave());
         })
+        save.dropList = this.dropList;
+        save.dungeonTime = this.dungeonTime;
         return save;
     }
     loadSave(save) {
-        this.lvl = save.lvl
-        this.monster = [];
-        save.monster.forEach(m => {
-            const mobTemplate = MobManager.idToMob(m.id);
-            const mob = new Mob(save.lvl, mobTemplate);
-            mob.hp = m.hp;
-            mob.act = m.act;
-            mob.ap = m.ap;
-            this.monster.push(mob);
+        this.floorNum = save.floorNum;
+        this.mobs = [];
+        save.mobs.forEach(mobSave => {
+            const mobTemplate = MobManager.idToMob(mobSave.id);
+            const mob = new Mob(save.floorNum, mobTemplate);
+            mob.loadSave(mobSave);
         });
+        this.dropList = save.dropList;
+        this.dungeonTime = save.dungeonTime;
+    }
+    addTime(t) {
+        //add time to all combatants, if they're ready for combat they'll bounce back here.
+        this.dungeonTime += t;
+        this.party.addTime(t, this.id);
+        this.mobs.forEach(mob => {
+            mob.addTime(t, this.id);
+            if (mob.hp === 0) {
+                mob.rollDrops(this);
+            }
+        });
+        const newmobs = this.mobs.filter(m => m.hp > 0);
+        if (newmobs.length < this.mobs.length) floorStateChange(this.id);
+        this.mobs = this.mobs.filter(m => m.hp > 0);
+        if (this.party.isDead()) {
+            this.party.heroes.forEach(h=>h.inDungeon = false);
+            DungeonManager.dungeonView = null;
+            EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
+            DungeonManager.removeDungeon(this.id);
+            return;
+        }
+        if (this.mobs.length === 0) this.advanceFloor();
+    }
+    addDungeonDrop(drop,amt) {
+        const found = this.dropList.find(d => d.id === drop)
+        if (found === undefined) this.dropList.push({"id":drop,"amt":amt});
+        else found.amt += amt;
+    }
+    advanceFloor() {
+        this.floorNum += 1;
+        this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum);
+        floorStateChange(this.id);
+    }
+    heroInHere(heroID) {
+        return this.party.some(h=>h.id === heroID);
     }
 }
+
+const DungeonManager = {
+    dungeons : [],
+    dungeonCreatingID : null,
+    dungeonView : null,
+    createSave() {
+        const save = {};
+        save.dungeons = [];
+        this.dungeons.forEach(d => {
+            save.dungeons.push(d.createSave());
+        });
+        return save;
+    },
+    loadSave(save) {
+        console.log(save);
+        save.dungeons.forEach(d => {
+            const party = new Party(d.party.heroID);
+            const dungeon = new Dungeon(d.id,party);
+            dungeon.loadSave(d);
+            this.dungeons.push(dungeon);
+        });
+    },
+    addTime(t) {
+        this.dungeons.forEach(dungeon => {
+            dungeon.addTime(t);
+        });
+        if (this.dungeonView !== null) refreshDungeonFloorBars();
+    },
+    removeDungeon(id) {
+        this.dungeons = this.dungeons.filter(d => d.id !== id);
+    },
+    dungeonStatus(dungeonID) {
+        return this.dungeons.filter(d=>d.id === dungeonID).length > 0;
+    },
+    createDungeon() {
+        const party = PartyCreator.lockParty();
+        const dungeon = new Dungeon(this.dungeonCreatingID,party);
+        this.dungeons.push(dungeon);
+    },
+    dungeonByID(dungeonID) {
+        return this.dungeons.find(d => d.id === dungeonID);
+    },
+    getCurrentDungeon() {
+        return this.dungeonByID(this.dungeonView);
+    }
+};
 
 const dungeonIcons = {
     [FloorType.FIGHT] : '<img src="images/DungeonIcons/combat_floor.png" alt="Fight">',

@@ -37,11 +37,10 @@ function forceSave() {
 function createSave() {
     const saveFile = {}
     saveFile["as"] = actionSlotManager.createSave();
-    saveFile["da"] = DungeonAssist.createSave();
+    saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
     saveFile["h"] = HeroManager.createSave();
     saveFile["i"] = Inventory.createSave();
-    saveFile["p"] = party.createSave();
     saveFile["r"] = recipeList.createSave();
     saveFile["rf"] = recipeList.createFilterSave();
     saveFile["rs"] = ResourceManager.createSave();
@@ -65,18 +64,16 @@ function loadGame() {
     if (loadGame === null) return false;
     //aka there IS a file
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
-    if (typeof loadGame["da"] !== "undefined") DungeonAssist.loadSave(loadGame["da"]);
+    if (typeof loadGame["d"] !== "undefined") DungeonManager.loadSave(loadGame["d"]);
     if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);
     if (typeof loadGame["h"] !== "undefined") HeroManager.loadSave(loadGame["h"]);
     if (typeof loadGame["i"] !== "undefined") Inventory.loadSave(loadGame["i"]);
-    if (typeof loadGame["p"] !== "undefined") party.loadSave(loadGame["p"]);
     if (typeof loadGame["r"] !== "undefined") recipeList.loadSave(loadGame["r"]);
     if (typeof loadGame["rf"] !== "undefined") recipeList.loadRecipeFilterSave(loadGame["rf"]);
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
     if (typeof loadGame["se"] !== "undefined") seedLoadSave(loadGame["se"]);
     if (typeof loadGame["ac"] !== "undefined") achievementStats.loadSave(loadGame["ac"]);
-    console.log("GAME LOADED");
     return true;
 }
 
