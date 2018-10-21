@@ -2451,7 +2451,7 @@ Rarities
     background: var(--scheme-webkit);
 }
 
-/* Events */
+/* Events / Mail Content */
 
 #eventTab {
     position: relative;
@@ -2575,7 +2575,7 @@ Rarities
     padding: 3px;
 }
 
-/**/
+/* Footer Elements */
 
 footer {
     display: flex;
@@ -2635,7 +2635,6 @@ footer a[href*="discord.gg"]:hover {
     color: #fff;
 }
 
-
 #clearSave, #exportSave, #importSave, #cloudSave {
     position: relative;
 }
@@ -2647,13 +2646,6 @@ footer a[href*="discord.gg"]:hover {
 #clearSave:hover {
     background-color: #c90000;
     color: #fff;
-}
-
-#copyme {
-    display: block;
-    max-width: 220px;
-    max-height: 30px;
-    word-wrap: break-word;
 }
 
 /* Tooltips */
@@ -2859,7 +2851,7 @@ footer a[href*="discord.gg"]:hover {
     }
   }
 
-/* Playfab Dialog */
+/* Playfab and Save Dialogs */
 
 #pfLoginRegister>form>div>h2 {
     margin: 10px 0 3px 0;
@@ -2941,42 +2933,6 @@ footer a[href*="discord.gg"]:hover {
     margin-right: 5px;
 }
 
-/* Flex Tables */
-
-#flex-table {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    border: 1px solid var(--border);
-    text-align: center;
-}
-
-#flex-table .table-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-#flex-table .table-row:nth-of-type(odd) {
-    background-color: var(--bg-2);
-}
-
-#flex-table .table-row.header-row {
-    background: var(--border);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px 0;
-}
-
-#flex-table .table-row>div {
-    flex-grow: 1;
-    max-width: 50%;
-    padding: 3px 5px;
-}
-
 /* Dialogs */
 
 .dialog {
@@ -2988,27 +2944,6 @@ footer a[href*="discord.gg"]:hover {
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
-}
-
-a.workerDialog {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background: var(--border);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-radius: 50%;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-a.workerDialog:hover {
-    background: var(--blue-light);
 }
 
 .dialog:target {
@@ -3195,328 +3130,28 @@ a.workerDialog:hover {
     display: none;
 }
 
-@media screen and (min-width: 1120px) and (max-width: 1360px) {
-    #ActionSlots {
-        padding: 5px 5px 0 5px;
-        justify-content: center;
-    }
-
-    .ASBlock {
-        margin: 0 1px 3px 1px;
-    }
-}
-
-/* Temp Disable Mobile Block 
+/* Enables mobile notice on screens game is not supported on */
 @media screen and (max-width: 1100px) {
 
-    main {display: none;}
+    main {display: none!important;}
 
-    body:after {
-        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen.";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        padding: 25px;
-        background: var(--bg);
-        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        text-align: center;
-        text-shadow: 0 0 5px rgba(0,0,0,0.5);
-        border-top: 3px solid var(--highlight);
-        z-index: 9999;
-    }
-
-    */
-
-    /*
-    .game-content {
-        flex-direction: column;
-    }
-
-    .game-content .status, #right-side-content {
-        width: 100%;
-        height: auto;
-    }
-
-    .game-content .status {
-        position: relative;
-        flex-wrap: wrap;
-        flex-direction: row;
-        z-index: 2;
-        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -o-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-    }
-
-    #selection {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .lm-btn, .dm-btn {
-        border: none;
-        border-radius: 0;
-        height: 50px;
-    }
-
-    #view-selection {
-        display: none;
-    }
-
-    #right-side-content {
-        margin-bottom: 50px;
-        z-index: 2;
-        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -webkit-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -moz-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -o-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-    }
-
-    #game-logo {
-        height: 32px;
-        background-position: 15px center;
-        background-size: contain;
-        margin: 10px 0;
-    }
-
-    #side-content {
-        border-top: 1px solid var(--border);
-        padding: 0;
-        overflow: auto;
-    }
-
-    #resources-container {
-        display: flex;
-        text-align: center;
-        padding: 10px;
-        max-height: 100px;
-        overflow: auto;
-        z-index: 99;
-    }
-
-    #settings-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
-        display: none;
-    }
-
-    #side-content .heading {
-        display: none;
-    }
-
-    #side-content>div>div {
-        margin: 0 5px;
-    }
-
-    #side-content .resource {
-        margin: 0 5px;
-    }
-
-    #side-content .resource>span {
-        white-space: nowrap;
-    }
-
-    #herbResource {
-        position: relative;
-    }
-
-    #herbResource:after {
-        position: absolute;
-        display: inline-block;
-        top: 0;
-        right: -20px;
-        bottom: 0;
-        content: "";
-        background: transparent;
-        width: 1px;
-        pointer-events: none;
-    }
-
-    .game-content .game-wrapper {
-        max-width: 100%;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    #Actions>h1 {
-        margin: 15px 0 0;
-    }
-
-    #workerList, #progress_container {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        margin-right: 20px;
-    }
-
-    .Worker, .progressRecipe, .progressWorker, .progressOverall {
-        margin: 10px;
-    }
-
-    #achievements {
-        justify-content: center;
-    }
-
-    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
-        height: 0;
-        width: 0;
-    }
-
-    #ASTable {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        position: relative;
-        overflow-x: auto;
-        margin: 0;
-    }
-
-    #RecipeFilter {
-        padding: 0;
-        overflow: auto;
-        flex-wrap: nowrap;
-    }
-
-    #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
-        min-width: 40px;
-        max-width: 40px;
-        max-height: 40px;
-        border-bottom: none;
-    }
-
-    .recipeHeader {
-        display: none;
-    }
-    
-    .recipeRow {
-        position: relative;
-        flex-wrap: wrap;
-        border-bottom: 1px solid var(--border);
-    }
-    
-    .recipeName {
-        display: flex;
-        align-items: baseline;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .recipeName>img {
-        margin-left: 10px;
-    }
-    
-    .recipeName>a {
-        flex-grow: unset;
-        width: 100%;
-        height: 100%;
-        padding-left: 30px;
-        margin-left: -30px;
-    }
-
-    .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue {
-        padding: 0;
-        width: 100%;
-        min-width: 100px;
-        max-width: 120px;
-        text-align: center;
-    }
-    
-    .recipecostdiv {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 5px;
-        margin-left: 45%;
-        margin: 10px 0 5px 45%;
-    }
-
-    .indvCost.tooltip:hover:after {
-        margin-top: -15px;
-        right: 0;
-        bottom: 150%;
-        top: unset;
-    }
-    .indvCost.tooltip:hover:before {
-        margin-top: -10px;
-        margin-right: -12px;
-    }
-
-    .recipeTime:before, .recipeCount:before, .recipeValue:before {
-        display: inline-block;
-        position: relative;
-        margin-right: 5px;
-        margin-top: 15px;
-        margin: 10px 5px 10px 0;
-        pointer-events: none;
-    }
-
-    .recipeTime:before {
-        content: "Time:";
-    }
-
-    .recipeCount:before {
-        content: "Count:";
-    }
-
-    .recipeValue:before {
-        content: "Value:";
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        text-align: center;
-        width: 100%;
-        z-index: 3;
-    }
-
-    footer .tooltip:hover:before, footer .tooltip:hover:after {
-        display: none;
-    }
-
-    footer a {
-        max-width: 65px;
-        padding: 5px;
-    }
-
-    #bottom-left, #bottom-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #bottom-right a {
-        display: none;
-    }
-    
 }
-*/
 
+/* Disables mobile notice on screens game is supported on */
+@media screen and (min-width: 1100px) {
+
+    #mobile-content {display: none!important;}
+
+}
+
+/* Hover feedback fro back to top button on desktops */
 @media screen and (min-width: 1250px) {
     .back-to-top:hover {
         color: var(--highlight);
     }
 }
 
+/* Reduces content width of heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
     #workerList {
         padding: 5px;
@@ -3560,6 +3195,7 @@ a.workerDialog:hover {
     }
 }
 
+/* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
     #recipes-container {
         display: flex;
