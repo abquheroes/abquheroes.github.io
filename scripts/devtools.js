@@ -35,4 +35,7 @@ const devtools = {
         Inventory.addToInventory("R0201",0);
         Inventory.addToInventory("R0301",0);
     },
+    addItem(itemID, rarity) {
+        addToInventory(itemID,rarity,-1)
+    }
 }
