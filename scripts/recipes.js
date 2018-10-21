@@ -241,7 +241,7 @@ function initializeRecipes() {
     const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
     const htd6 = $('<div/>').addClass('recipeHeadTime').html("TIME");
     const htd7 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const htd8 = $('<div/>').addClass('recipeHeadCount').html("MASTER");
+    const htd8 = $('<div/>').addClass('recipeHeadCount').html("MASTERY");
     const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {

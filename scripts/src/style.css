@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, #sellPref, #sell1, #sell10, #sellAll, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .ProgressCard, .statBox {
+.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm  {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -80,20 +80,21 @@ body {
 
 .back-to-top {
     position: fixed;
-    z-index: 900;
     bottom: 2%;
     right: 1.5%;
     padding: 20px 25px;
     border-radius: 50%;
     background-color: var(--border-3);
     color: var(--text);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    transform: scale(0);
     opacity: 0;
+    transform: scale(0);
     animation: 0.5s 0.75s scale-in forwards;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -ms-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    z-index: 900;
 }
 
 .show-button {
@@ -107,7 +108,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -340,11 +341,7 @@ body {
     margin-left: 10px;
 }
 
-#inventoryTab {
-    height: calc(100vh - 100px)
-}
-
-#sortInventory {
+#sortInventory, #closeEquipItem  {
     position: relative;
     display: inline-flex;
     margin: 10px 10px 0;
@@ -354,7 +351,7 @@ body {
     cursor: pointer;
 }
 
-#sortInventory:hover {
+#sortInventory:hover, #closeEquipItem:hover {
     background-color: var(--bg);
     border-color: var(--border-3);
 }
@@ -384,7 +381,7 @@ body {
     margin: 10px;
 }
 
-.inventoryItem {
+.inventoryItem, .equipItem {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -402,6 +399,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 0.9em;
     flex-grow: 1;
     width: 100%;
     padding: 10px;
@@ -475,7 +473,7 @@ body {
     margin-top: auto;
 }
 
-.inventorySell, .inventoryEquip {
+.inventorySell, .inventoryEquip, .heroEquipBlockEquipButton {
     width: 85%;
     background-color: rgba(255,255,255,0.05);
     text-align: center;
@@ -485,12 +483,87 @@ body {
     cursor: pointer;
 }
 
-.inventorySell:hover, .inventoryEquip:hover {
+.inventorySell:hover, .inventoryEquip:hover, .heroEquipBlockEquipButton:hover {
     background-color: rgba(255,255,255,0.15);
 }
 
 .inventorySell {
     margin-bottom: 10px;
+}
+
+#inventoryEquipTab {
+    padding: 0 20px;
+}
+
+#closeEquipItem {
+    margin: 20px 0;
+}
+
+.equipItem {
+    display: inline-flex;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 150px;
+    text-align: center;
+}
+
+.equipItemName {
+    font-size: 0.9em;
+}
+
+.equipItemProps {
+    margin-top: 15px;
+}
+
+#ietHero {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.heroEquipBlock {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.heroEquipBlockPic {
+    padding: 15px 15px 0;
+}
+
+.heroEquipBlockName {
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.heroEquipBlockName:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 75%;
+    margin: 10px auto;
+    background-color: var(--border);
+}
+
+.heroEquipBlockEquip + .heroEquipBlockEquip {
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid var(--border);
+}
+
+.heroEquipBlockEquipButton {
+    margin: 10px auto;
+}
+
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title {
+    font-weight: normal;
+    font-size: 1rem;
+    padding: 0 5px 5px;
+    margin: 0 0 10px;
+    border-bottom: 2px solid var(--border);
 }
 
 /* 
@@ -640,6 +713,10 @@ Rarities
 
 .tabcontent {
     height: calc(100vh - 90px);
+    animation: 0.2s fade-in;
+}
+
+#dungeonRun {
     animation: 0.2s fade-in;
 }
 
@@ -1375,7 +1452,6 @@ Rarities
 .WorkerName {
     display: inline-flex;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 1.1em;
 }
 
@@ -1387,7 +1463,7 @@ Rarities
 
 .WorkerDesc {
     position: absolute;
-    top: 2.5px;
+    top: 3.5px;
     right: 5px;
     color: var(--text-3);
     font-weight: normal;
@@ -1663,8 +1739,12 @@ Rarities
     min-height: 195px;
     text-align: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
     margin: 1px;
+}
+
+.dungeonTeamName, .dungeonAvailableName {
+    text-transform: uppercase;
 }
 
 .heroOwnedCard, .buyNewHeroCard {
@@ -1766,12 +1846,11 @@ Rarities
     width: 100%;
     text-transform: uppercase;
     text-align: center;
-    font-weight: bold;
     font-size: 1.1em;
     margin-bottom: 10px;
 }
 
-.heroExamineName:after, .heroExamineHeading:after {
+.heroExamineName:after, .heroExamineHeading:after, .dungeonTeamName:after, .dungeonAvailableName:after {
     content: "";
     display: block;
     height: 2px;
@@ -1893,7 +1972,7 @@ Rarities
 }
 
 .EHPEstat {
-    margin-left: 300px;
+    margin-left: 250px;
     flex: 1 50px;
 }
 
@@ -1959,9 +2038,13 @@ Rarities
 }
 
 #drArena {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    height: 300px;
+    min-height: 300px;
+    max-height: 300px;
     border-bottom: 2px solid var(--border);
+    overflow: hidden;
 }
 
 .bgContainer {
@@ -2024,12 +2107,12 @@ Rarities
 }
 
 #floorID {
-    background-color: rgba(0,0,0,0.50);
-    border: 1px solid rgba(255,255,255,0.10);
-    padding: 10px 20px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 black;
+    font-size: 1.5rem;
+    animation: 0.2s scale-in;
 }
-
-#dungeonListContainer, #drStats {
+#dungeonListContainer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -2037,16 +2120,41 @@ Rarities
 }
 
 #dungeonHeroList, #dungeonMobList {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-gap: 3px;
 }
 
 #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
-    background-color: rgba(0,0,0,0.30);
-    border: 1px solid rgba(255,255,255,0.10);
     text-align: center;
-    margin: 0 5px;
-    padding: 10px 20px;
+    padding: 10px;
+    max-width: 94px;
+    filter: drop-shadow(0 0 5px black);
+}
+
+.dfcName, .dfmName {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dfm {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.dfm + .dfm {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.dfm + .dfm + .dfm {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dfm + .dfm + .dfm + .dfm {
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .dhc {
@@ -2059,34 +2167,55 @@ Rarities
 }
 
 #drStats {
+    display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
+    min-height: 350px;
 }
 
 #drStatsHero, #drStatsMob {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    grid-gap: 10px;
+    margin: 10px;
+    width: 100%;
 }
 
-.dsc {
+.dsc, .dsm {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: center;
     padding: 15px;
-    min-width: 200px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
 }
 
 .dsm {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    padding: 15px;
-    min-width: 200px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dsm + .dsm {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dsm + .dsm + .dsm {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dsm + .dsm + .dsm + .dsm {
+    grid-column: 1;
+    grid-row: 2;
 }
 
 #drLog {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    min-height: 100px;
     background-color: var(--bg-3);
 }
 
@@ -2120,24 +2249,33 @@ Rarities
     padding: 20px;
 }
 
-.dtsTopTitle, .dtsBotTitle {
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 10px;
-    padding: 0 10px 10px;
-}
-
-.dtsTopTitle > h3, .dtsBotTitle > h3 {
-    margin: 0;
-}
-
 #dungeonTeamButton {
     display: inline-flex;
+    position: relative;
     margin-top: 20px;
     padding: 10px 20px;
     text-align: center;
+    text-transform: uppercase;
     cursor: pointer;
     border: 1px solid var(--green-light);
     background-color: var(--green-dark);
+}
+
+#dungeonTeamButton:not(.dungeonStartNotAvailable):after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #089e5f;
+    z-index: -1;
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+    animation: 1s button-active infinite;
 }
 
 #dungeonTeamButton:hover {
@@ -2208,11 +2346,23 @@ Rarities
     align-items: center;
     height: 23px;
     margin: 2px 0;
-    border: 1px solid rgb(100, 100, 100); /* default color when none is present */
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.apBarDiv {
+    background-color: rgb(39, 39, 39);
+}
+
+.actBarDiv {
+    background-color: rgb(15, 50, 70);
+    border-color: rgb(30, 117, 143);
 }
 
 .hpBarDiv, .dsbhpBarDiv {
-    border: 1px solid rgb(134, 0, 0);
+    background-color: rgb(43, 15, 15);
+    border-color: rgb(134, 0, 0);
 }
 
 .hpBarDiv {
@@ -2221,7 +2371,7 @@ Rarities
 
 .hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
     position: absolute;
-    left: 2px;
+    left: 8px;
     bottom: 2px;
     z-index: 1;
 }
@@ -2230,7 +2380,7 @@ Rarities
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
-    left: 20px;
+    left: 25px;
     bottom: 2px;
     white-space: pre;
     z-index: 2;
@@ -2240,11 +2390,19 @@ Rarities
     display: block;
     position: relative;
     height: 100%;
-    background-color: rgb(75, 75, 75); /* default color when none is present */
+    background-color: rgb(75, 75, 75);
 }
 
 .hpBarFill, .dsbhpBarFill {
     background-color: rgb(105, 2, 2);
+}
+
+.actBarFill {
+    background-color: rgb(36, 114, 160);
+}
+
+.apBarFill {
+    background-color: rgb(75, 75, 75);
 }
 
 #floorProgressBarContainer {
@@ -2293,7 +2451,7 @@ Rarities
     background: var(--scheme-webkit);
 }
 
-/* Events */
+/* Events / Mail Content */
 
 #eventTab {
     position: relative;
@@ -2355,8 +2513,6 @@ Rarities
 .rewardDiv:before, .eventMessage:before {
     position: relative;
     display: block;
-    padding: 5px 0;
-    border-bottom: 2px solid var(--border);
 }
 
 .eventMessage {
@@ -2367,7 +2523,10 @@ Rarities
 
 .eventMessage:before {
     content: "Dungeon Complete!";
-    margin-bottom: 10px;
+}
+
+.dungeonEventText {
+    padding: 0 5px;
 }
 
 .dungeonEventTime, .dungeonEventFloor{
@@ -2416,7 +2575,7 @@ Rarities
     padding: 3px;
 }
 
-/**/
+/* Footer Elements */
 
 footer {
     display: flex;
@@ -2476,7 +2635,6 @@ footer a[href*="discord.gg"]:hover {
     color: #fff;
 }
 
-
 #clearSave, #exportSave, #importSave, #cloudSave {
     position: relative;
 }
@@ -2488,13 +2646,6 @@ footer a[href*="discord.gg"]:hover {
 #clearSave:hover {
     background-color: #c90000;
     color: #fff;
-}
-
-#copyme {
-    display: block;
-    max-width: 220px;
-    max-height: 30px;
-    word-wrap: break-word;
 }
 
 /* Tooltips */
@@ -2520,7 +2671,7 @@ footer a[href*="discord.gg"]:hover {
     right: -100%;
     bottom: 130%;
     content: attr(data-tooltip);
-    padding: 5px 10px;
+    padding: 7px 10px;
     background-color: #000;
     border-radius: 5px;
     color: #fff;
@@ -2634,13 +2785,12 @@ footer a[href*="discord.gg"]:hover {
     max-width: 85px;
 }
 
-
 .wsbLvl.tooltip:after {
     left: -1px;
     right: unset;
     width: 100px;
     bottom: 135%;
-    transform-origin: left 15px;
+    transform-origin: left 30px;
 }
 
 .wsbLvl.tooltip:before {  
@@ -2666,7 +2816,7 @@ footer a[href*="discord.gg"]:hover {
 
 .WorkerDesc.tooltip:hover:before {
     left: 0;
-    top: 90%;
+    top: 70%;
 }
 
 .WorkerDesc.tooltip:after {
@@ -2701,7 +2851,7 @@ footer a[href*="discord.gg"]:hover {
     }
   }
 
-/* Playfab Dialog */
+/* Playfab and Save Dialogs */
 
 #pfLoginRegister>form>div>h2 {
     margin: 10px 0 3px 0;
@@ -2783,42 +2933,6 @@ footer a[href*="discord.gg"]:hover {
     margin-right: 5px;
 }
 
-/* Flex Tables */
-
-#flex-table {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    border: 1px solid var(--border);
-    text-align: center;
-}
-
-#flex-table .table-row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-#flex-table .table-row:nth-of-type(odd) {
-    background-color: var(--bg-2);
-}
-
-#flex-table .table-row.header-row {
-    background: var(--border);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 5px 0;
-}
-
-#flex-table .table-row>div {
-    flex-grow: 1;
-    max-width: 50%;
-    padding: 3px 5px;
-}
-
 /* Dialogs */
 
 .dialog {
@@ -2830,27 +2944,6 @@ footer a[href*="discord.gg"]:hover {
     opacity: 0;
     pointer-events: none;
     z-index: 9999;
-}
-
-a.workerDialog {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
-    background: var(--border);
-    color: var(--text-2);
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-radius: 50%;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-a.workerDialog:hover {
-    background: var(--blue-light);
 }
 
 .dialog:target {
@@ -3016,6 +3109,17 @@ a.workerDialog:hover {
     }
 }
 
+@keyframes button-active {
+    0% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleY(1.5) scaleX(1.1);
+    }
+}
+
 /* Hide content while retaining the content's effects on elements, such as, its width and height. */
 .hidden {
     visibility: hidden;
@@ -3026,328 +3130,28 @@ a.workerDialog:hover {
     display: none;
 }
 
-@media screen and (min-width: 1120px) and (max-width: 1360px) {
-    #ActionSlots {
-        padding: 5px 5px 0 5px;
-        justify-content: center;
-    }
-
-    .ASBlock {
-        margin: 0 1px 3px 1px;
-    }
-}
-
-/* Temp Disable Mobile Block 
+/* Enables mobile notice on screens game is not supported on */
 @media screen and (max-width: 1100px) {
 
-    main {display: none;}
+    main {display: none!important;}
 
-    body:after {
-        content: "Sorry, this game is not available on a viewport of this size. Please try a device with a larger screen.";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        padding: 25px;
-        background: var(--bg);
-        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        text-align: center;
-        text-shadow: 0 0 5px rgba(0,0,0,0.5);
-        border-top: 3px solid var(--highlight);
-        z-index: 9999;
-    }
-
-    */
-
-    /*
-    .game-content {
-        flex-direction: column;
-    }
-
-    .game-content .status, #right-side-content {
-        width: 100%;
-        height: auto;
-    }
-
-    .game-content .status {
-        position: relative;
-        flex-wrap: wrap;
-        flex-direction: row;
-        z-index: 2;
-        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -webkit-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -moz-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-        -o-box-shadow: 0 5px 5px 0 rgba(0,0,0,0.10);
-    }
-
-    #selection {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .lm-btn, .dm-btn {
-        border: none;
-        border-radius: 0;
-        height: 50px;
-    }
-
-    #view-selection {
-        display: none;
-    }
-
-    #right-side-content {
-        margin-bottom: 50px;
-        z-index: 2;
-        box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -webkit-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -moz-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-        -o-box-shadow: 0 -5px 5px 0 rgba(0,0,0,0.10);
-    }
-
-    #game-logo {
-        height: 32px;
-        background-position: 15px center;
-        background-size: contain;
-        margin: 10px 0;
-    }
-
-    #side-content {
-        border-top: 1px solid var(--border);
-        padding: 0;
-        overflow: auto;
-    }
-
-    #resources-container {
-        display: flex;
-        text-align: center;
-        padding: 10px;
-        max-height: 100px;
-        overflow: auto;
-        z-index: 99;
-    }
-
-    #settings-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    #side-content .tooltip:hover:after, #side-content .tooltip:hover:before {
-        display: none;
-    }
-
-    #side-content .heading {
-        display: none;
-    }
-
-    #side-content>div>div {
-        margin: 0 5px;
-    }
-
-    #side-content .resource {
-        margin: 0 5px;
-    }
-
-    #side-content .resource>span {
-        white-space: nowrap;
-    }
-
-    #herbResource {
-        position: relative;
-    }
-
-    #herbResource:after {
-        position: absolute;
-        display: inline-block;
-        top: 0;
-        right: -20px;
-        bottom: 0;
-        content: "";
-        background: transparent;
-        width: 1px;
-        pointer-events: none;
-    }
-
-    .game-content .game-wrapper {
-        max-width: 100%;
-        padding-bottom: 10px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    #Actions>h1 {
-        margin: 15px 0 0;
-    }
-
-    #workerList, #progress_container {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        margin-right: 20px;
-    }
-
-    .Worker, .progressRecipe, .progressWorker, .progressOverall {
-        margin: 10px;
-    }
-
-    #achievements {
-        justify-content: center;
-    }
-
-    #ASTable::-webkit-scrollbar, #RecipeFilter::-webkit-scrollbar, #side-content::-webkit-scrollbar, #resources-container::-webkit-scrollbar, #workerList::-webkit-scrollbar, #progress_container::-webkit-scrollbar {
-        height: 0;
-        width: 0;
-    }
-
-    #ASTable {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        position: relative;
-        overflow-x: auto;
-        margin: 0;
-    }
-
-    #RecipeFilter {
-        padding: 0;
-        overflow: auto;
-        flex-wrap: nowrap;
-    }
-
-    #RecipeFilter a.recipeSelect,  #RecipeFilter a.recipeSelect.selected {
-        min-width: 40px;
-        max-width: 40px;
-        max-height: 40px;
-        border-bottom: none;
-    }
-
-    .recipeHeader {
-        display: none;
-    }
-    
-    .recipeRow {
-        position: relative;
-        flex-wrap: wrap;
-        border-bottom: 1px solid var(--border);
-    }
-    
-    .recipeName {
-        display: flex;
-        align-items: baseline;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .recipeName>img {
-        margin-left: 10px;
-    }
-    
-    .recipeName>a {
-        flex-grow: unset;
-        width: 100%;
-        height: 100%;
-        padding-left: 30px;
-        margin-left: -30px;
-    }
-
-    .recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadValue, .recipecostdiv, .recipeTime, .recipeCount, .recipeValue {
-        padding: 0;
-        width: 100%;
-        min-width: 100px;
-        max-width: 120px;
-        text-align: center;
-    }
-    
-    .recipecostdiv {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        width: 100%;
-        max-width: 200px;
-        margin-bottom: 5px;
-        margin-left: 45%;
-        margin: 10px 0 5px 45%;
-    }
-
-    .indvCost.tooltip:hover:after {
-        margin-top: -15px;
-        right: 0;
-        bottom: 150%;
-        top: unset;
-    }
-    .indvCost.tooltip:hover:before {
-        margin-top: -10px;
-        margin-right: -12px;
-    }
-
-    .recipeTime:before, .recipeCount:before, .recipeValue:before {
-        display: inline-block;
-        position: relative;
-        margin-right: 5px;
-        margin-top: 15px;
-        margin: 10px 5px 10px 0;
-        pointer-events: none;
-    }
-
-    .recipeTime:before {
-        content: "Time:";
-    }
-
-    .recipeCount:before {
-        content: "Count:";
-    }
-
-    .recipeValue:before {
-        content: "Value:";
-    }
-
-    footer {
-        position: fixed;
-        bottom: 0;
-        text-align: center;
-        width: 100%;
-        z-index: 3;
-    }
-
-    footer .tooltip:hover:before, footer .tooltip:hover:after {
-        display: none;
-    }
-
-    footer a {
-        max-width: 65px;
-        padding: 5px;
-    }
-
-    #bottom-left, #bottom-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #bottom-right a {
-        display: none;
-    }
-    
 }
-*/
 
+/* Disables mobile notice on screens game is supported on */
+@media screen and (min-width: 1100px) {
+
+    #mobile-content {display: none!important;}
+
+}
+
+/* Hover feedback for back to top button on desktops */
 @media screen and (min-width: 1250px) {
     .back-to-top:hover {
         color: var(--highlight);
     }
 }
 
+/* Reduces content width of heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
     #workerList {
         padding: 5px;
@@ -3385,12 +3189,9 @@ a.workerDialog:hover {
     .EHPEname > img {
         height: 20px;
     }
-
-    .EHPEstat {
-        margin-left: 250px;
-    }
 }
 
+/* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
     #recipes-container {
         display: flex;

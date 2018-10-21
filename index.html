@@ -116,17 +116,6 @@
                 </div>
             </div>
         </div>
-        <div id="dialogUnlock" class="dialog" role="dialog" aria-labelledby="titleUnlock" aria-describedby="descUnlock">
-                <div class="dialog_content">
-                    <div class="dialog_header">
-                        <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                        <h2 id="titleUnlock" class="dialog_title">New Recipe Unlocked!</h2>
-                    </div>
-                    <div class="dialog_body">
-                        <p id="descUnlock" class="dialog_description">You've unlocked a new recipe!</p>
-                    </div>
-                </div>
-        </div>
         <!-- End of Dialogs -->
         <section class="game-content">
             <div class="status">
@@ -157,7 +146,13 @@
                     <div id="sortInventory">Sort Inventory</div>
                     <div id="inventory"></div>
                 </div>
-                <div id="inventoryEquipTab" class="tabcontent"><div id="closeEquipItem">Close</div>Equipping Item <div id="ietEquip"></div>Possible Heroes:<div id="ietHero"></div></div>
+                <div id="inventoryEquipTab" class="tabcontent">
+                    <div id="closeEquipItem">Close</div>
+                    <div class="equipHeading">Equipping Item</div>
+                    <div id="ietEquip"></div>
+                    <div class="equipHeading">Possible Heroes</div>
+                    <div id="ietHero"></div>
+                </div>
                 <div id="recipesTab" class="tabcontent">
                     <div id="recipes-container">
                         <div id="RecipeFilter">
@@ -282,48 +277,48 @@
                             <h3 class="progress-section-title">Statistics</h3>
                             <div class="stat-box-container">
                                 <div class="statBox">
-                                    <div class="statHeading">Max Floor</div>
-                                    <div class="statNormal" id="statMaxFloor">Floor 100</div>
+                                    <div class="statHeading">Max Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloor">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Floors Beaten</div>
-                                    <div class="statNormal" id="statFloors">42</div>
+                                    <div class="statNormal" id="statFloors">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Gold Earned</div>
-                                    <div class="statNormal" id="statTotalGoldEarned">Floor 100</div>
+                                    <div class="statNormal" id="statTotalGoldEarned">?</div>
                                 </div>
                                 <div class="statBox">
-                                    <div class="statHeading">Total Items Craft</div>
-                                    <div class="statNormal" id="statTotalItems">42</div>
+                                    <div class="statHeading">Total Items Crafted</div>
+                                    <div class="statNormal" id="statTotalItems">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Commons Crafted</div>
-                                    <div class="statNormal" id="statCommons">42</div>
+                                    <div class="statNormal" id="statCommons">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Goods Crafted</div>
-                                    <div class="statNormal" id="statGoods">42</div>
+                                    <div class="statNormal" id="statGoods">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Greats Crafted</div>
-                                    <div class="statNormal" id="statGreats">42</div> 
+                                    <div class="statNormal" id="statGreats">?</div> 
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Epics Crafted</div>
-                                    <div class="statNormal" id="statEpics">42</div>
+                                    <div class="statNormal" id="statEpics">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Time Played</div>
-                                    <div class="statNormal" id="statTimePlayed">0 days, 0 hours, 0 mins, 0 secs</div>
+                                    <div class="statNormal" id="statTimePlayed">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Total Game Time</div>
-                                    <div class="statNormal" id="gameTime">10 minutes</div>
+                                    <div class="statNormal" id="gameTime">?</div>
                                 </div>
                                 <div class="statBox">
                                     <div class="statHeading">Completion Time</div>
-                                    <div class="statNormal"id="completeTime">10 minutes</div>
+                                    <div class="statNormal"id="completeTime">?</div>
                                 </div>
                             </div>         
 
@@ -348,7 +343,7 @@
                             </div>
                             <div class="progress-card-container" id="achieve3">
                                 <div class="ProgressCard">
-                                    <i class="fas fa-star MilestoneStar MilestoneStar"></i>
+                                    <i class="fas fa-star MilestoneStar"></i>
                                     <div class="ProgressDetails">
                                         <h3 class="MilestoneTitle">Floor 150</h3>
                                         <p class="MilestoneDescription">Reach Floor 150</p>
@@ -454,6 +449,20 @@
             </div>
         </section>
     </main>
+    <section id="mobile-content">
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-listing">
+                <li class="nav-item"><a href="/about.html"></a>About &amp; Crediting</li>
+                <li class="nav-item"><a href="/patchnotes/latest.html"></a>Release Notes</li>
+                <li class="nav-item"><a href="http://www.discord.gg/qGBAVNR"></a>Discord Server</li>
+            </ul>
+        </nav>
+        <div class="mobile-notice">
+            <h1 class="mobile-notice-headline">This game is not available on a viewport of this size.</h1>
+            <p class="mobile-notice-description">Thanks for checking us out, unfortunately, we don't support a screen of this size. Please visit us on your computer, laptop or on a device with a larger screen.</p>
+        </div>
+
+    </section>
 
 <script type="text/javascript" src="scripts/please-wait.min.js"></script>
 <script src="external/jquery/jquery.js"></script>

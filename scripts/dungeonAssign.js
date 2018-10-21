@@ -94,7 +94,7 @@ function refreshHeroSelect() {
         d.append(d1a);
     }
     $dtsTop.append(d);
-    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("LAUNCH DUNGEON");
+    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
     $dtsTop.append(dbutton);
     $dtsBottom.empty();

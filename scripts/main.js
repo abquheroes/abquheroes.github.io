@@ -42,16 +42,32 @@ function afterLoad() {
     loading_screen.finish();
 }
 
-const loadMessage = "Placeholder text for random load messages.";
+/* Load Message Selection */
+const loadMessages = [
+    "Spreading misinformation.",
+    "Rewriting all of the code.",
+    "Delaying Version 0.3.",
+    "Getting ducks in a row.",
+    "Increasing functionality by 19%.",
+    "Making bad puns.",
+    "Learning Javascript."
+];
+
+function selectLoadMessage() {
+    const randomNumber = Math.floor(Math.random()*loadMessages.length);
+    return loadMessages[randomNumber];
+}
 
 const loading_screen = pleaseWait({
     logo: "images/site-logo.png",
     backgroundColor: 'var(--bg)',
     loadingHtml: `
-    <div class="loadingMessage">${loadMessage}</div>
+    <div class="loadingMessage">${selectLoadMessage()}</div>
     <div class="spinner"></div>
     `
 });
+
+
 loadMisc(); //the others are loaded in order
 openTab("recipesTab");
 
