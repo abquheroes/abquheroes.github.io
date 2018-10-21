@@ -50,7 +50,15 @@ const loadMessages = [
     "Getting ducks in a row.",
     "Increasing functionality by 19%.",
     "Making bad puns.",
-    "Learning Javascript."
+    "Learning Javascript.",
+    "Translating Latin.",
+    "Temporarily reviewing accounts.",
+    "Recoloring sprites.",
+    "Hyping Elites.",
+    "Leaking outdated information.",
+    "Rebooting idea machine.",
+    "Sourcing locally grown lettuce.",
+    "Finding cute animal gifs."
 ];
 
 function selectLoadMessage() {
@@ -66,7 +74,6 @@ const loading_screen = pleaseWait({
     <div class="spinner"></div>
     `
 });
-
 
 loadMisc(); //the others are loaded in order
 openTab("recipesTab");
