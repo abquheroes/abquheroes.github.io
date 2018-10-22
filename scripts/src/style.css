@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer  {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer  {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -87,13 +87,13 @@ body {
     background-color: var(--border-3);
     color: var(--text);
     opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
     transform: scale(0);
+    -webkit-animation: 0.5s 0.75s scale-in forwards;
     animation: 0.5s 0.75s scale-in forwards;
-    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -ms-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
     z-index: 900;
 }
 
@@ -194,6 +194,10 @@ body {
 }
 
 .arrow-rotate {
+    -webkit-transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    -o-transform: rotateZ(180deg);
     transform: rotateZ(180deg);
 }
 
@@ -713,10 +717,12 @@ Rarities
 
 .tabcontent {
     height: calc(100vh - 90px);
+    -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }
 
 #dungeonRun {
+    -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }
 
@@ -773,6 +779,10 @@ Rarities
     white-space: pre;
     bottom: 3px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
     transform: translateX(-50%);
     background-color: rgba(0,0,0,0.15);
     border-radius: 15px;
@@ -1254,6 +1264,10 @@ Rarities
 }
 
 .indvCost.masteredMat > img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
@@ -2076,6 +2090,10 @@ Rarities
 }
 
 .dungeonContainer:hover .dungeonBackground {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -2093,6 +2111,7 @@ Rarities
 }
 
 #dungeonTeamSelect {
+    -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }
 
@@ -2158,12 +2177,14 @@ Rarities
 .bgContainer .layer4 {
     background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png');
     background-size: 500px;
+    -webkit-animation: 8s linear infinite gleam;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
     background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png');
     background-size: 500px;
+    -webkit-animation: 5s linear infinite gleam;
     animation: 5s linear infinite gleam;
 }
 
@@ -2185,6 +2206,7 @@ Rarities
     text-transform: uppercase;
     text-shadow: 3px 3px 0 black;
     font-size: 1.5rem;
+    -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
 }
 #dungeonListContainer {
@@ -2206,6 +2228,10 @@ Rarities
     text-align: center;
     padding: 10px;
     max-width: 94px;
+    -webkit-filter: drop-shadow(0 0 5px black);
+    -moz-filter: drop-shadow(0 0 5px black);
+    -ms-filter: drop-shadow(0 0 5px black);
+    -o-filter: drop-shadow(0 0 5px black);
     filter: drop-shadow(0 0 5px black);
 }
 
@@ -2351,7 +2377,12 @@ Rarities
     background: #089e5f;
     z-index: -1;
     opacity: 1;
+    -webkit-transform: scaleY(1) scaleX(1);
+    -moz-transform: scaleY(1) scaleX(1);
+    -ms-transform: scaleY(1) scaleX(1);
+    -o-transform: scaleY(1) scaleX(1);
     transform: scaleY(1) scaleX(1);
+    -webkit-animation: 1s button-active infinite;
     animation: 1s button-active infinite;
 }
 
@@ -2549,6 +2580,7 @@ Rarities
     background-color: rgba(162,21,0,1);
     color: var(--text-2);
     border-radius: 50%;
+    -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
 }
 
@@ -2735,6 +2767,10 @@ footer a[href*="discord.gg"]:hover {
     content: "";
     border: 8px solid transparent;
     border-bottom-color: black;
+    -webkit-transform: scale(0) rotate(180deg) translateX(50%);
+    -moz-transform: scale(0) rotate(180deg) translateX(50%);
+    -ms-transform: scale(0) rotate(180deg) translateX(50%);
+    -o-transform: scale(0) rotate(180deg) translateX(50%);
     transform: scale(0) rotate(180deg) translateX(50%);
     pointer-events: none;
     z-index: 10;
@@ -2756,6 +2792,10 @@ footer a[href*="discord.gg"]:hover {
     text-align: center;
     text-transform: none;
     word-wrap: break-word;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
     transform: scale(0);
     transform-origin: bottom center;
     pointer-events: none;
@@ -2765,18 +2805,30 @@ footer a[href*="discord.gg"]:hover {
 
 .tooltip:hover:after {
     opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
     transform: scale(1);
 }
 
 .tooltip:hover:before {
     top: -35%;
     opacity: 1;
+    -webkit-transform: rotate(180deg) translateX(50%);
+    -moz-transform: rotate(180deg) translateX(50%);
+    -ms-transform: rotate(180deg) translateX(50%);
+    -o-transform: rotate(180deg) translateX(50%);
     transform: rotate(180deg) translateX(50%);
 }
 
 .ASauto.tooltip:before {
     top: 2px;
     left: 105%;
+    -webkit-transform: scale(0) rotate(-90deg);
+    -moz-transform: scale(0) rotate(-90deg);
+    -ms-transform: scale(0) rotate(-90deg);
+    -o-transform: scale(0) rotate(-90deg);
     transform: scale(0) rotate(-90deg);
     transform-origin: bottom center;
 }
@@ -2791,6 +2843,10 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .ASauto.tooltip:hover:before {
+    -webkit-transform: scale(1) rotate(-90deg);
+    -moz-transform: scale(1) rotate(-90deg);
+    -ms-transform: scale(1) rotate(-90deg);
+    -o-transform: scale(1) rotate(-90deg);
     transform: scale(1) rotate(-90deg);
 }
 
@@ -2815,6 +2871,10 @@ footer a[href*="discord.gg"]:hover {
 } 
 
 .recipeDescription.tooltip:before {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
     transform: none;
     top: 135%;
     left: unset;
@@ -2888,6 +2948,10 @@ footer a[href*="discord.gg"]:hover {
 
 .WorkerDesc.tooltip:before {
     top: 125%;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
@@ -2975,9 +3039,9 @@ footer a[href*="discord.gg"]:hover {
     border: 1px solid var(--border);
     border-radius: 0;
     cursor: pointer;
-    appearance: none;
-    -moz-appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #deleteSaveButton:hover {
@@ -2993,6 +3057,7 @@ footer a[href*="discord.gg"]:hover {
     display: inline-block;
     padding: 0 15px;
     color: var(--highlight);
+    -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
 }
 
@@ -3032,6 +3097,10 @@ footer a[href*="discord.gg"]:hover {
     position: relative;
     margin: auto;
     top: 50%;
+    -webkit-transform: translateY(-50%) scale(0);
+    -moz-transform: translateY(-50%) scale(0);
+    -ms-transform: translateY(-50%) scale(0);
+    -o-transform: translateY(-50%) scale(0);
     transform: translateY(-50%) scale(0);
     width: 100%;
     max-width: 500px;
@@ -3039,21 +3108,26 @@ footer a[href*="discord.gg"]:hover {
     max-height: 400px;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    -ms-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
 }
 
 .dialog:target .dialog_content {
+    -webkit-transform: translateY(-50%) scale(1);
+    -moz-transform: translateY(-50%) scale(1);
+    -ms-transform: translateY(-50%) scale(1);
+    -o-transform: translateY(-50%) scale(1);
     transform: translateY(-50%) scale(1);
 }
 
 .dialog:target ~ .game-content {
     -webkit-filter: blur(10px);
     -moz-filter: blur(10px);
-    -o-filter: blur(10px);
     -ms-filter: blur(10px);
+    -o-filter: blur(10px);
     filter: blur(10px);
 }
 
@@ -3167,13 +3241,13 @@ footer a[href*="discord.gg"]:hover {
 
 @keyframes notification {
     0% {
-        transform: scale(1)
+        transform: scale(1);
     }
     50% {
-        transform: scale(.8)
+        transform: scale(.8);
     }
     100% {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 
