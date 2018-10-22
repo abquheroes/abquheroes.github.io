@@ -267,7 +267,6 @@ function gearEquipFromInventory(invID) {
     const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
     equipContainerTarget = Inventory.inv[invID];
     const item = equipContainerTarget.item;
-    console.log(item);
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+item.rarity)
     const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",item.rarity).html(item.itemPicName());

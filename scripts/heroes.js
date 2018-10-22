@@ -1,5 +1,7 @@
 "use strict";
 
+const $heroTab = $("#heroTab");
+
 const levelCurves = { 
     getLvlStats(lvl) {
         return {xp:this.xpCurve[lvl-1],hp:this.hpCurve[lvl-1],pow:this.powCurve[lvl-1]};
@@ -138,7 +140,6 @@ class Hero {
         return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
     }
     equip(item,slot) {
-        console.log(item,slot);
         if (slot === 0) this.slot1 = item;
         if (slot === 1) this.slot2 = item;
         if (slot === 2) this.slot3 = item;
@@ -188,12 +189,22 @@ class Hero {
         return hp;
     }
     addXP(xp) {
-        this.xp += xp;
-        if (this.xp >= this.maxXP()) {
-            this.xp -= this.maxXP();
-            this.lvl += 1;
-            refreshProgress();
+        if (this.xp === this.maxXP()) return;
+        this.xp = Math.min(this.xp + xp,this.maxXP());
+        if (this.xp !== this.maxXP()) $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
+        else {
+            $heroTab.addClass("hasEvent");
+
+            $(".heroExamineLvlButton").show();
+            $(".heroExamineExp").hide();
         }
+    }
+    levelup() {
+        this.lvl += 1;
+        this.xp = 0;
+        refreshProgress();
+        initializeHeroList();
+        examineHero(this.id);
     }
     unequip(slot) {
         if (Inventory.full()) {
@@ -253,6 +264,7 @@ const HeroManager = {
     heroes : [],
     heroOrder : [],
     healTime : 0,
+    heroView : null,
     addHero(hero) {
         this.heroes.push(hero);
     },
@@ -292,7 +304,6 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         Inventory.removeContainerFromInventory(containerID);
         hero.unequip(slot);
-        console.log(item,slot);
         hero.equip(item,slot);
     },
     getSlotTypes(slot,heroID) {
@@ -365,6 +376,9 @@ const HeroManager = {
             results.push(hres);
         });
         return results;
+    },
+    levelup(heroID) {
+        this.idToHero(heroID).levelup();
     }
 }
 
@@ -374,6 +388,7 @@ function initializeHeroList() {
     $heroList.empty();
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
+        if (hero.xp === hero.maxXP()) d.addClass("hasEvent");
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
         const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
         d.append(d1,d2);
@@ -385,13 +400,15 @@ function initializeHeroList() {
         const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero - <div class="buyHeroCost">${miscIcons.gold}${amt}</div>`);
         $heroList.append(b1);
     }
+    if (!HeroManager.heroes.some(h=>h.xp === h.maxXP())) $heroTab.removeClass("hasEvent");
 }
 
-function refreshHeroes() {
+/*function refreshHeroes() {
     $hiredHeroes.empty();
     for (let i=0;i<heroProgress.length;i++) {
         const hero = heroProgress[i];
-        const d = $("<div/>").addClass("heroOwnCard");
+        const d = $("<div/>").addClass("heroOwnCard").attr("id","hcl"+hero.id);
+        if (hero.xp === hero.maxXP()) d.addClass("hasEvent");
         const d1 = $("<div/>").addClass("heroOwnName").html(hero.name);
         const d2 = $("<div/>").addClass("heroOwneImage").html(hero.image);
         const d3 = $("<div/>").addClass('heroLvl').html("L"+hero.lvl + " (" +hero.xp +" xp)");
@@ -399,7 +416,7 @@ function refreshHeroes() {
         d.append(d1,d2,d3,d4)
         $hiredHeroes.append(d);
     }
-}
+}*/
 
 const $heroDetails = $("#heroDetails");
 const $heroGearSlots = $("#heroGearSlots");
@@ -413,8 +430,14 @@ function examineHero(ID) {
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
     const d4 = $("<div/>").addClass("heroExamineExp").html(`Exp: ${hero.xp}/${hero.maxXP()}`);
-    if (hero.lvl === 50) d4.hide();
-    upperLeftDiv.append(d1,d2,d3,d4);
+    const d4a = $("<div/>").addClass("heroExamineLvlButton").attr("heroID",hero.id).html("LEVEL UP");
+    if (hero.lvl === 50) {
+        d4.hide();
+        d4a.hide();
+    }
+    if (hero.xp === hero.maxXP()) d4.hide();
+    else d4a.hide();
+    upperLeftDiv.append(d1,d2,d3,d4,d4a);
     const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
@@ -521,6 +544,7 @@ $(document).on('click', "div.heroOwnedCard", (e) => {
     const ID = $(e.currentTarget).attr("data-value");
     $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
+    HeroManager.heroView = ID;
     examineHero(ID);
     clearExaminePossibleEquip();
 });
@@ -549,6 +573,12 @@ $(document).on('click', "div.EHPErow", (e) => {
 $(document).on('click', ".buyNewHeroCard", (e) => {
     e.preventDefault();
     HeroManager.purchaseHero();    
+})
+
+$(document).on('click', ".heroExamineLvlButton", (e) => {
+    e.preventDefault();
+    const heroID = $(e.currentTarget).attr("heroID");
+    HeroManager.levelup(heroID);
 })
 
 //global variable to hold where we're looking to equip to for the equipping shit.

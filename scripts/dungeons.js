@@ -43,6 +43,7 @@ class Dungeon {
             mob.addTime(t, this.id);
             if (mob.hp === 0) {
                 const drops = mob.rollDrops();
+                this.party.addXP(mob.lvl);
                 this.addDungeonDrop(drops);
             }
         });
@@ -91,7 +92,6 @@ const DungeonManager = {
         return save;
     },
     loadSave(save) {
-        console.log(save);
         save.dungeons.forEach(d => {
             const party = new Party(d.party.heroID);
             const dungeon = new Dungeon(d.id,party);

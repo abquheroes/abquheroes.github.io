@@ -296,7 +296,6 @@ function refreshBlueprint(type) {
     }
     const needed = recipeList.remainingReqs(type);
     if (needed.length === 0) {
-        console.log(nextRecipe.lvl);
         const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${miscIcons.gold}&nbsp;&nbsp;${miscLoadedValues.recipeBuy[nextRecipe.lvl-1]}`);
         d.append(b1);
     }
@@ -322,9 +321,7 @@ $(document).on('click', '.recipeSelect', (e) => {
     //click on a recipe filter
     e.preventDefault();
     const type = $(e.target).attr("id").substring(2);
-    console.log(recipeList.recipeNewFilter.length)
     recipeList.recipeNewFilter = recipeList.recipeNewFilter.filter(t => t !== type);
-    console.log(recipeList.recipeNewFilter.length)
     refreshRecipeFilters();
     populateRecipe(type);
 })

@@ -11,7 +11,6 @@ class Party {
         return save;
     }
     createHeroList() {
-        console.log(this.heroID.heroID);
         return this.heroID.map(h => HeroManager.idToHero(h));
     }
     hasMember(member) {
@@ -65,7 +64,7 @@ const PartyCreator = {
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>h.inDungeon = true);
         const party = new Party(this.heroes);
-        console.log(party);
+
         this.heroes = [];
         return party;
     }

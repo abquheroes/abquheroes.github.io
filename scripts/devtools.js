@@ -1,6 +1,5 @@
 const devtools = {
     godmode : function() {
-        console.log("this will probably take a minute, don't close...");
         recipeList.recipes.forEach(recipe => {
             recipe.owned = true;
             recipe.craftCount = 100;

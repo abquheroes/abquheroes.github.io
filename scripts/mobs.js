@@ -100,14 +100,11 @@ class Mob {
     rollDrops() {
         const mobDrops = [];
         if (this.drops === null) return mobDrops;
-        console.log(this.drops);
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
-            console.log(material, success, roll);
+
             if (success > roll) mobDrops.push(material);
         }
-        console.log(this.drops);
-        console.log(mobDrops);
         return mobDrops;
     }
     healCost() {

@@ -3,6 +3,7 @@
 function openTab(tabName) {
     // Declare all variables
     DungeonManager.dungeonView = null;
+    HeroManager.heroView = null;
     if (tabName === "heroesTab") {
         clearExaminePossibleEquip();
        $(".heroExamineEquipment").removeClass("hEEactive");
