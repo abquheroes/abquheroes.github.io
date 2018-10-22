@@ -282,7 +282,11 @@ function recipeCanCraft() {
 
 const $blueprintUnlock = $("#BlueprintUnlock");
 
+let cacheBlueprintType = null;
+
 function refreshBlueprint(type) {
+    type = type || cacheBlueprintType;
+    cacheBlueprintType = type;
     $blueprintUnlock.empty();
     const d = $("<div/>").addClass('bpShop');
     const nextRecipe = recipeList.getNextBuyable(type);
