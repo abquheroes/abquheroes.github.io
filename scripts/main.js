@@ -60,7 +60,8 @@ const loadMessages = [
     "Leaking outdated information.",
     "Rebooting idea machine.",
     "Sourcing locally grown lettuce.",
-    "Finding cute animal gifs."
+    "Finding cute animal gifs.",
+    "Lowering self esteem."
 ];
 
 function selectLoadMessage() {
