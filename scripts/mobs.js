@@ -36,19 +36,7 @@ class MobTemplate {
 let mobID = 0;
 class Mob {
     constructor (lvl,mobTemplate) {
-        console.log(mobTemplate);
         Object.assign(this, mobTemplate);
-        //this.name = mobTemplate.name;
-        //this.image = mobTemplate.image;
-        //this.head = mobTemplate.head;
-        //this.drops = mobTemplate.drops;
-        //this.actmaxnum = mobTemplate.act;
-        //this.armor = mobTemplate.armor;
-        //this.critdmg = mobTemplate.critdmg;
-        //this.dodge = mobTemplate.dodge;
-        //this.target = mobTemplate.target;
-        //this.apmax = mobTemplate.ap; -- REMOVE
-        //this.id = mobTemplate.id;
         this.lvl = lvl;
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
@@ -109,12 +97,18 @@ class Mob {
         this.rollDrops();
         party.addXP(this.lvl);
     }
-    rollDrops(dungeon) {
-        if (this.drops === null) return;
+    rollDrops() {
+        const mobDrops = [];
+        if (this.drops === null) return mobDrops;
+        console.log(this.drops);
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
-            if (success > roll) dungeon.addDungeonDrop(material,1);
+            console.log(material, success, roll);
+            if (success > roll) mobDrops.push(material);
         }
+        console.log(this.drops);
+        console.log(mobDrops);
+        return mobDrops;
     }
     healCost() {
         return 0;

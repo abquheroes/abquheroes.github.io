@@ -13,7 +13,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M101\" : 100}",
+    "drops": {
+      "M101": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -31,7 +33,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M102\" : 100}",
+    "drops": {
+      "M102": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -49,7 +53,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M103\" : 100}",
+    "drops": {
+      "M103": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -67,7 +73,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M104\" : 100}",
+    "drops": {
+      "M104": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -85,7 +93,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M105\" : 100}",
+    "drops": {
+      "M105": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -103,7 +113,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M106\" : 100}",
+    "drops": {
+      "M106": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -121,7 +133,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M107\" : 100}",
+    "drops": {
+      "M107": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -139,7 +153,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M108\" : 100}",
+    "drops": {
+      "M108": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -157,7 +173,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M109\" : 100}",
+    "drops": {
+      "M109": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -175,7 +193,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M110\" : 100}",
+    "drops": {
+      "M110": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   },
@@ -193,7 +213,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M201\" : 100}",
+    "drops": {
+      "M201": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -211,7 +233,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M202\" : 100}",
+    "drops": {
+      "M202": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -229,7 +253,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M203\" : 100}",
+    "drops": {
+      "M203": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -247,7 +273,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M204\" : 100}",
+    "drops": {
+      "M204": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -265,7 +293,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M205\" : 100}",
+    "drops": {
+      "M205": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -283,7 +313,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M206\" : 100}",
+    "drops": {
+      "M206": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -301,7 +333,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M207\" : 100}",
+    "drops": {
+      "M207": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -319,7 +353,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M208\" : 100}",
+    "drops": {
+      "M208": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -337,7 +373,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M209\" : 100}",
+    "drops": {
+      "M209": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -355,7 +393,9 @@
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
-    "drops": "{\"M210\" : 100}",
+    "drops": {
+      "M210": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   },
@@ -373,7 +413,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M301\" : 100}",
+    "drops": {
+      "M301": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -391,7 +433,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M302\" : 100}",
+    "drops": {
+      "M302": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -409,7 +453,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M303\" : 100}",
+    "drops": {
+      "M303": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -427,7 +473,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M304\" : 100}",
+    "drops": {
+      "M304": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -445,7 +493,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M305\" : 100}",
+    "drops": {
+      "M305": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -463,7 +513,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M306\" : 100}",
+    "drops": {
+      "M306": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -481,7 +533,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M307\" : 100}",
+    "drops": {
+      "M307": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -499,7 +553,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M308\" : 100}",
+    "drops": {
+      "M308": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -517,7 +573,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M309\" : 100}",
+    "drops": {
+      "M309": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -535,7 +593,9 @@
     "critdmg": 2,
     "dodge": 10,
     "target": "highhp",
-    "drops": "{\"M310\" : 100}",
+    "drops": {
+      "M310": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   },
@@ -553,7 +613,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M401\" : 100}",
+    "drops": {
+      "M401": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -571,7 +633,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M402\" : 100}",
+    "drops": {
+      "M402": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -589,7 +653,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M403\" : 100}",
+    "drops": {
+      "M403": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -607,7 +673,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M404\" : 100}",
+    "drops": {
+      "M404": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -625,7 +693,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M405\" : 100}",
+    "drops": {
+      "M405": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -643,7 +713,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M406\" : 100}",
+    "drops": {
+      "M406": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -661,7 +733,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M407\" : 100}",
+    "drops": {
+      "M407": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -679,7 +753,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M408\" : 100}",
+    "drops": {
+      "M408": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -697,7 +773,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M409\" : 100}",
+    "drops": {
+      "M409": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -715,7 +793,9 @@
     "critdmg": 1.6,
     "dodge": 0,
     "target": "first",
-    "drops": "{\"M410\" : 100}",
+    "drops": {
+      "M410": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   },
@@ -733,7 +813,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M501\" : 100}",
+    "drops": {
+      "M501": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -751,7 +833,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M502\" : 100}",
+    "drops": {
+      "M502": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -769,7 +853,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M503\" : 100}",
+    "drops": {
+      "M503": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -787,7 +873,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M504\" : 100}",
+    "drops": {
+      "M504": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -805,7 +893,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M505\" : 100}",
+    "drops": {
+      "M505": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -823,7 +913,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M506\" : 100}",
+    "drops": {
+      "M506": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -841,7 +933,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M507\" : 100}",
+    "drops": {
+      "M507": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -859,7 +953,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M508\" : 100}",
+    "drops": {
+      "M508": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -877,7 +973,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M509\" : 100}",
+    "drops": {
+      "M509": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -895,7 +993,9 @@
     "critdmg": 1.4,
     "dodge": 15,
     "target": "lowhp",
-    "drops": "{\"M510\" : 100}",
+    "drops": {
+      "M510": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   },
@@ -913,7 +1013,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M601\" : 100}",
+    "drops": {
+      "M601": 100
+    },
     "minFloor": 1,
     "maxFloor": 100
   },
@@ -931,7 +1033,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M602\" : 100}",
+    "drops": {
+      "M602": 100
+    },
     "minFloor": 80,
     "maxFloor": 200
   },
@@ -949,7 +1053,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M603\" : 100}",
+    "drops": {
+      "M603": 100
+    },
     "minFloor": 180,
     "maxFloor": 300
   },
@@ -967,7 +1073,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M604\" : 100}",
+    "drops": {
+      "M604": 100
+    },
     "minFloor": 280,
     "maxFloor": 400
   },
@@ -985,7 +1093,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M605\" : 100}",
+    "drops": {
+      "M605": 100
+    },
     "minFloor": 380,
     "maxFloor": 500
   },
@@ -1003,7 +1113,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M606\" : 100}",
+    "drops": {
+      "M606": 100
+    },
     "minFloor": 480,
     "maxFloor": 600
   },
@@ -1021,7 +1133,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M607\" : 100}",
+    "drops": {
+      "M607": 100
+    },
     "minFloor": 580,
     "maxFloor": 700
   },
@@ -1039,7 +1153,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M608\" : 100}",
+    "drops": {
+      "M608": 100
+    },
     "minFloor": 680,
     "maxFloor": 800
   },
@@ -1057,7 +1173,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M609\" : 100}",
+    "drops": {
+      "M609": 100
+    },
     "minFloor": 780,
     "maxFloor": 900
   },
@@ -1075,7 +1193,9 @@
     "critdmg": 1.5,
     "dodge": 5,
     "target": "first",
-    "drops": "{\"M610\" : 100}",
+    "drops": {
+      "M610": 100
+    },
     "minFloor": 880,
     "maxFloor": 10000
   }
