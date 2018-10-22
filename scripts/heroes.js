@@ -342,9 +342,6 @@ const HeroManager = {
         ResourceManager.deductMoney(amt);
         const heroID = this.heroOrder.shift();
         this.idToHero(heroID).owned = true;
-        if (this.heroes.filter(h=>h.owned).length === 4) party = new Party(2);
-        if (this.heroes.filter(h=>h.owned).length === 8) party = new Party(3);
-        if (this.heroes.filter(h=>h.owned).length === 12) party = new Party(4);
         initializeHeroList();
         refreshHeroSelect();
     },
