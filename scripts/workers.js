@@ -310,7 +310,7 @@ function refreshWorkers() {
         $workers.append(workerDiv)
     });
     const amt = miscLoadedValues.workerCost[WorkerManager.workers.filter(w=>w.owned).length]
-    if (WorkerManager.workers.some(w=>!w.owned && w.type==="standard") || recipeList.advancedWorkerUnlock()) return;
+    if (!WorkerManager.workers.some(w=>!w.owned && w.type==="standard") && !recipeList.advancedWorkerUnlock()) return;
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
     const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${amt}</div>`);
