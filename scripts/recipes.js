@@ -157,6 +157,7 @@ const recipeList = {
         ResourceManager.deductMoney(amt);
         item.owned = true;
         populateRecipe(item.type);
+        refreshWorkers();
     },
     ownAtLeastOneOrCanBuy(type) {
         let returnVal = true;
@@ -186,6 +187,9 @@ const recipeList = {
     },
     recipeCount() {
         return this.recipes.length;
+    },
+    advancedWorkerUnlock() {
+        return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
     }
 }
 

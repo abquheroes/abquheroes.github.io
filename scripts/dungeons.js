@@ -63,6 +63,7 @@ class Dungeon {
         else found.amt += amt;
     }
     advanceFloor() {
+        achievementStats.floorBeaten(this.floorNum);
         this.floorNum += 1;
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum);
         floorStateChange(this.id);

@@ -227,7 +227,7 @@ const WorkerManager = {
     },
     workerMaxLevelCount() {
         return this.workers.length*10;
-    }
+    },
 }
 
 const $workers = $('#workerList');
@@ -314,7 +314,8 @@ function refreshWorkers() {
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
     const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${amt}</div>`);
     pw.append(pw1,b1);
-    if (WorkerManager.workers.filter(w=>!w.owned).length === 0) pw.hide();
+    if (WorkerManager.workers.some(w=>!w.owned && w.type==="standard") || recipeList.advancedWorkerUnlock()) pw.show();
+    else pw.hide();
     $workers.append(pw);
 }
 
