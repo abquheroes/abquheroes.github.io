@@ -5,7 +5,7 @@ const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 class Dungeon {
     constructor(id,party) {
         this.id = id;
-        this.name = "Placeholder Palace"
+        this.name = "Groovy Grove"
         this.floorNum = 1;
         this.party = party;
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum)
