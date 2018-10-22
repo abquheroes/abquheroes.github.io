@@ -1806,11 +1806,13 @@ Rarities
 }
 
 .heroExamineLvlButton {
+    position: relative;
     background-color: var(--green-dark);
     border: 1px solid var(--green-light);
     margin-top: 5px;
     padding: 5px 15px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .heroExamineLvlButton:hover {
@@ -2336,7 +2338,7 @@ Rarities
     background-color: var(--green-dark);
 }
 
-#dungeonTeamButton:not(.dungeonStartNotAvailable):after {
+#dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
     display: block;
     position: absolute;
     top: 0;
