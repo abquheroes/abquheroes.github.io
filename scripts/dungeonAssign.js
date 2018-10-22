@@ -20,7 +20,6 @@ const $dtsBottom = $("#dtsBottom");
 const $daTop = $("#daTop");
 const $daBottom = $("#daBottom");
 
-const $DungeonSideBarStatus = $("#DungeonSideBarStatus");
 const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 
 const $dsd1 = $("#dsd1");
@@ -64,6 +63,7 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
         DungeonManager.createDungeon();
         DungeonManager.dungeonView = "d1";
         initiateDungeonFloor();
+        initializeSideBarDungeon();
         $dungeonTeamSelect.hide();
         $dungeonRun.show();
     }
@@ -108,15 +108,6 @@ function refreshHeroSelect() {
         }
     });
     $dtsBottom.append(d2);
-    /*//update the sidebar!
-    $DungeonSideBarTeam.empty();
-    PartyCreator.heroes.forEach(hero => {
-        const d3 = $("<div/>").addClass("dungeonSideBarMember");
-        const d3a = $("<div/>").addClass("dungeonSideBarMemberIcon").html(hero.head);
-        const d3b = $("<div/>").addClass("dungeonSideBarMemberHP").html(sidebarHP(hero));
-        d3.append(d3a,d3b);
-        $DungeonSideBarTeam.append(d3);
-    });*/
 }
 
 function refreshDungeonSelect() {
@@ -205,13 +196,28 @@ function refreshDungeonFloorBars() {
     });
 }
 
+function initializeSideBarDungeon() {
+    $DungeonSideBarTeam.empty();
+    DungeonManager.dungeons.forEach(dungeon => {
+        const d = $("<div/>").attr("id","DungeonSideBarStatus").html(dungeon.name);
+        dungeon.party.heroes.forEach(hero => {
+            const d3 = $("<div/>").addClass("dungeonSideBarMember");
+            const d3a = $("<div/>").addClass("dungeonSideBarMemberIcon").html(hero.head);
+            const d3b = $("<div/>").addClass("dungeonSideBarMemberHP").html(sidebarHP(hero));
+            d3.append(d3a,d3b);
+            d.append(d3);
+        });
+        $DungeonSideBarTeam.append(d);
+    })
+}
+
 function sidebarHP(hero) {
-    /*const hpPercent = hero.hp/hero.maxHP();
+    const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("dsbhpBarDiv").html(dungeonIcons[Stat.HP]);
     const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.id);
     const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.id).css('width', hpWidth);
-    return d1.append(d1a,s1);*/
+    return d1.append(d1a,s1);
 }
 
 function createHPBar(hero,tag) {

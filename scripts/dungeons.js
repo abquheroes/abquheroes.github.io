@@ -5,6 +5,7 @@ const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 class Dungeon {
     constructor(id,party) {
         this.id = id;
+        this.name = "Placeholder Palace"
         this.floorNum = 1;
         this.party = party;
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum)
@@ -57,6 +58,7 @@ class Dungeon {
             if (DungeonManager.dungeonView !== null) {
                 openTab("dungeonsTab");
             }
+            initializeSideBarDungeon();
             return;
         }
         if (this.mobs.length === 0) this.advanceFloor();
