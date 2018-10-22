@@ -194,9 +194,11 @@ class Hero {
         if (this.xp !== this.maxXP()) $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
         else {
             $heroTab.addClass("hasEvent");
-
-            $(".heroExamineLvlButton").show();
-            $(".heroExamineExp").hide();
+            initializeHeroList();
+            if (HeroManager.heroView === this.id) {
+                $(".heroExamineLvlButton").show();
+                $(".heroExamineExp").hide();
+            }
         }
     }
     levelup() {
