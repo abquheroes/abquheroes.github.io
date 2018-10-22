@@ -121,8 +121,8 @@ function refreshHeroSelect() {
 
 function refreshDungeonSelect() {
     //shows each dungeon so you can select that shit...
-    if (DungeonManager.dungeonStatus("d1")) $dsd1.html("In Progress");
-    else $dsd1.html("Idle");
+    if (DungeonManager.dungeonStatus("d1")) $dsd1.addClass("dungeonInProgress").html("In Progress");
+    else $dsd1.removeClass("dungeonInProgress").html("Idle");
 }
 
 function characterCard(prefix,dv,ID) {
