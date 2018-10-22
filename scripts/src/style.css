@@ -2171,15 +2171,16 @@ Rarities
 #dungeonListContainer {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    padding: 20px;
+    flex-wrap: nowrap;
+    margin-top: 65px;
 }
 
 #dungeonHeroList, #dungeonMobList {
     display: grid;
     grid-template-columns: repeat(4, minmax(50px, 1fr));
     grid-gap: 3px;
+    margin: 0 10px;
+    width: 100%;
 }
 
 #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
@@ -3306,5 +3307,45 @@ footer a[href*="discord.gg"]:hover {
         bottom: unset;
         margin-left: -166px;
         transform-origin: top;
+    }
+}
+
+@media screen and (min-width: 1775px) {
+    #dungeonHeroList, #dungeonMobList {
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        grid-gap: 10px;
+    }
+
+    #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
+        margin: 0 auto;
+    }
+
+    #drStats {
+        min-height: auto;
+    }
+
+    #drStatsHero, #drStatsMob {
+        grid-template-columns: repeat(4, minmax(75px, 1fr));
+        grid-template-rows: 150px;
+    }
+
+    .dsm {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .dsm + .dsm {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .dsm + .dsm + .dsm{
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .dsm + .dsm + .dsm + .dsm{
+        grid-column: 1;
+        grid-row: 1;
     }
 }
