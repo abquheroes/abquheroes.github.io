@@ -36,6 +36,6 @@ const devtools = {
         Inventory.addToInventory("R0301",0);
     },
     addItem(itemID, rarity) {
-        addToInventory(itemID,rarity,-1)
+        Inventory.addToInventory(itemID,rarity,-1)
     }
 }
