@@ -355,7 +355,7 @@ const HeroManager = {
         //return a list of heroes and the appropriate slot
         const type = item.type;
         const results = [];
-        this.heroes.filter(h=>h.canEquipType(type)).forEach(hero=> {
+        this.heroes.filter(h=>h.owned && h.canEquipType(type)).forEach(hero=> {
             const hres = {}
             hres.id = hero.id;
             hres.canEquip = [];

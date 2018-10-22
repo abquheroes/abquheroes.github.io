@@ -91,7 +91,7 @@ class Item{
     addCount() {
         this.craftCount += 1;
         if (this.craftCount === 100) {
-            refreshRecipeMastery();
+            refreshCraftCount();
             initializeActionSlots();
             populateRecipe();
             refreshProgress();
