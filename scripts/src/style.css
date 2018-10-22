@@ -1674,9 +1674,14 @@ Rarities
     border: 1px solid var(--border);
 }
 
+.ProgressCard.achieved > .MilestoneStar {
+    color: var(--highlight);
+}
+
 .ProgressCard > .MilestoneStar {
     margin: 0 25px;
     font-size: 2em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .stat-box-container {
