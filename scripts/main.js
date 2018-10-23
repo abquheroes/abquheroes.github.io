@@ -18,7 +18,8 @@ function afterLoad() {
         recipeList.idToItem("R0701").owned = true;
         HeroManager.idToHero("H203").owned = true;
         HeroManager.heroOrder.shift();
-        ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
+        EventManager.addEvent("E001");
+        //ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
         ItemType.forEach(type => recipeList.recipeNewFilter.push(type));
     }
     else {

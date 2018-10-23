@@ -1,87 +1,100 @@
 "use strict";
 
-const EventTypes = Object.freeze({DUNGEON:"DUNGEON",});
-
 const EventManager = {
     events : [],
+    eventDB : [],
+    seenEvents : [],
     eventNum : 0,
     createSave() {
-        const save = [];
+        const save = {};
+        save.events = [];
         this.events.forEach(e => {
-            save.push(e.createSave());
+            save.events.push(e.createSave());
         })
+        save.seenEvents = this.seenEvents;
+        console.log(save);
         return save;
     },
     loadSave(save) {
-        save.forEach(e => {
-            const event = new Event(e.type);
+        save.events.forEach(e => {
+            const eventTemplate = this.idToEventDB(e.id);
+            const event = new Event(eventTemplate);
             event.loadSave(e);
-            event.id = this.eventNum.toString();
+            event.eventNum = this.eventNum;
             this.eventNum += 1;
             this.events.push(event);
         });
+        this.seenEvents = save.seenEvents;
     },
-    addEvent(event) {
-        event.id = this.eventNum.toString();
+    loadEvent(props) {
+        this.eventDB.push(new EventTemplate(props));
+    },
+    idToEventDB(eventID) {
+        return this.eventDB.find(e => e.id === eventID);
+    },
+    eventNumToEvent(eventNum) {
+        return this.events.find(event => event.eventNum === eventNum);
+    },
+    addEvent(eventID) {
+        const eventTemplate = this.idToEventDB(eventID);
+        const event = new Event(eventTemplate);
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
+        this.events.push(event);
+        refreshEvents();
+    },
+    addEventDungeon(reward,time,floor) {
+        const eventTemplate = this.idToEventDB("E004");
+        const event = new Event(eventTemplate);
+        event.reward = reward;
+        event.time = time;
+        event.floor = floor;
+        event.eventNum = this.eventNum;
         this.eventNum += 1;
         this.events.push(event);
         refreshEvents();
     },
-    removeEvent(eventID) {
-        const event = this.idToEvent(eventID);
-        if (event.type === EventTypes.DUNGEON) ResourceManager.addDungeonDrops(event.reward);
-        else WorkerManager.gainWorker(event.type)
-        this.events = this.events.filter(event => !(event.id === eventID));
+    removeEvent(eventNum) {
+        console.log(eventNum);
+        const event = this.events.find(e => e.eventNum === eventNum);
+        if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
+        this.seenEvents.push(event.id);
+        this.events = this.events.filter(event => event.eventNum !== eventNum);
         refreshEvents();
     },
-    idToEvent(eventID) {
-        return this.events.find(event => event.id === eventID);
-    },
-    addEventDungeon(reward,time,floor) {
-        const event = new Event(EventTypes.DUNGEON);
-        event.reward = reward;
-        event.time = time;
-        event.floor = floor;
-        EventManager.addEvent(event)
-    },
-    addOnceEvent(eventID) {
-        const event = new Event(eventID);
-        EventManager.addEvent(event)
-    },
     hasEvents() {
-        return this.events.length > 0
+        return this.events.length > 0;
     }
 };
 
-class Event {
-    constructor(type) {
-        this.type = type;
-        if (this.type === EventTypes.DUNGEON) this.title = "Dungeon Reward";
+class EventTemplate {
+    constructor (props) {
+        Object.assign(this, props);
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
+    }
+}
+
+class Event {
+    constructor(props) {
+        this.reward = null;
+        this.time = null;
+        this.floor = null;
+        Object.assign(this, props);
     }
     createSave() {
         const save = {};
-        save.type = this.type;
+        save.id = this.id;
         save.reward = this.reward;
         save.time = this.time;
         save.floor = this.floor;
         return save;
     }
     loadSave(save) {
-        this.type = save.type;
+        console.log(save);
         this.reward = save.reward;
         this.time = save.time;
         this.floor = save.floor;
-    }
-    getText() {
-        const d = $("<div/>").addClass("dungeonEventText")
-        const d1 = $("<div/>").addClass("dungeonEventTimeHeading").html("Total Time:");
-        const d1a = $("<div/>").addClass("dungeonEventTime").html(msToTime(this.time));
-        const d2 = $("<div/>").addClass("dungeonEventFloorHeading").html("Floor Reached:");
-        const d2a = $("<div/>").addClass("dungeonEventFloor").html("Floor " + this.floor);
-        d1.append(d1a);
-        d2.append(d2a);
-        return d.append(d1,d2);
     }
 };
 
@@ -92,7 +105,7 @@ const $eventTab = $("#eventTab");
 function refreshEvents() {
     $eventList.empty();
     EventManager.events.forEach(event => {
-        const d1 = $("<div/>").addClass("eventList").attr("eventID",event.id).html(`${event.image} ${event.title}`);
+        const d1 = $("<div/>").addClass("eventList").attr("eventNum",event.eventNum).html(`${event.image} ${event.title}`);
         $eventList.append(d1);
     });
     $eventContent.empty();
@@ -121,22 +134,35 @@ $(document).on('click', "div.eventList", (e) => {
     e.preventDefault();
     $("div.eventList").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
-    const eventID = $(e.currentTarget).attr("eventID");
-    const event = EventManager.idToEvent(eventID);
+    const eventNum = parseInt($(e.currentTarget).attr("eventNum"));
+    const event = EventManager.eventNumToEvent(eventNum);
     $eventContent.empty();
-    const d = $("<div/>").addClass("eventMessage").html(event.getText());
-    if (event.type === EventTypes.DUNGEON) {
-        const d1 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
-        d.append(d1);
+    const d = $("<div/>").addClass("eventBody");
+    const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
+    const d2 = $("<div/>").addClass("eventMessage").html(event.message);
+    d.append(d1,d2);
+    if (event.time !== null) {
+        const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
+        const d4 = $("<div/>").addClass("eventTime").html(msToTime(event.time));
+        d.append(d3,d4);
     }
-    const d2 = $("<div/>").addClass("eventConfirm").attr("eventID",eventID).html("ACCEPT");
-    d.append(d2);
+    if (event.floor !== null) {
+        const d5 = $("<div/>").addClass("eventFloorHeading").html("Floor Reached:");
+        const d6 = $("<div/>").addClass("eventloor").html("Floor " + event.floor);
+        d.append(d5,d6);
+    }
+    if (event.reward !== null ) {
+        const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
+        d.append(d7);
+    }
+    const d8 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    d.append(d8);
     $eventContent.append(d);
 });
 
 $(document).on('click', "div.eventConfirm", (e) => {
     //gets rid of event, and adds to inventory if you need to
     e.preventDefault();
-    const eventID = $(e.currentTarget).attr("eventID");
+    const eventID = parseInt($(e.currentTarget).attr("eventID"));
     EventManager.removeEvent(eventID);
 })
