@@ -234,9 +234,6 @@ class Hero {
         if (this.slot5Type.includes(type)) return this.slot5;
         if (this.slot6Type.includes(type)) return this.slot6;
     }
-    dps() {
-        return round(this.getPow()/this.actmax(),2);
-    }
     healCost() {
         return this.maxHP()-this.hp;
     }
@@ -444,8 +441,8 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     upperRightDiv.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), msToSec(hero.actmax()), hero.dps(), hero.apmax, hero.armor, hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
-    const statName = ["HP","POW","ACT","DPS","AP","ARMOR","CRIT","CRDMG","DODGE"];
+    const stats = [hero.maxHP(),hero.getPow(), msToSec(hero.actmax()), hero.apmax, hero.armor, hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
+    const statName = ["MAX HP","POW","ACT","AP","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
     }
