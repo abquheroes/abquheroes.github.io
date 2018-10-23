@@ -144,6 +144,8 @@ const $drStatsMob = $("#drStatsMob");
 
 function floorStateChange(dungeonID) {
     if (dungeonID === DungeonManager.dungeonView) initiateDungeonFloor();
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    $("#DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorNum}`);
 }
 
 function initiateDungeonFloor() {
@@ -199,7 +201,9 @@ function refreshDungeonFloorBars() {
 function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
     DungeonManager.dungeons.forEach(dungeon => {
-        const d = $("<div/>").attr("id","DungeonSideBarStatus").html(dungeon.name);
+        const d = $("<div/>").addClass("dungeonGroup");
+        const d1 = $("<div/>").attr("id","DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorNum}`);
+        d.append(d1);
         dungeon.party.heroes.forEach(hero => {
             const d3 = $("<div/>").addClass("dungeonSideBarMember");
             const d3a = $("<div/>").addClass("dungeonSideBarMemberIcon").html(hero.head);
