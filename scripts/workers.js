@@ -307,7 +307,7 @@ function refreshWorkers() {
             const d6 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
             workerDiv.append(d6);
         }
-        $workers.append(workerDiv)
+        $workers.append(workerDiv);
     });
     const amt = miscLoadedValues.workerCost[WorkerManager.workers.filter(w=>w.owned).length]
     if (!WorkerManager.workers.some(w=>!w.owned && w.type==="standard") && !recipeList.advancedWorkerUnlock()) return;

@@ -26,5 +26,12 @@
     "author": "Adventure League",
     "message": "<p>Thanks to your efforts, our group made it back safe and sound! Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>",
     "type": "dungeon"
+  },
+  {
+    "id": "E005",
+    "title": "Letter from Abqu",
+    "author": "Abqu",
+    "message": "<p>I am in desperate need of new adventurers, for reasons I cannot disclose.</p><p>There are great rewards, but little time.</p><p>It is important you do not share this with anyone.</p><p>Ooops, ahem, sorry, that's for someone else.</p><p>Please don't tell anyone about this.</p><p>ABQU</p>",
+    "type": "letter"
   }
 ]

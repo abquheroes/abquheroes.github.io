@@ -90,4 +90,5 @@ function mainLoop() {
     DungeonManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
+    eventChecker();
 }

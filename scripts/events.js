@@ -12,7 +12,6 @@ const EventManager = {
             save.events.push(e.createSave());
         })
         save.seenEvents = this.seenEvents;
-        console.log(save);
         return save;
     },
     loadSave(save) {
@@ -42,6 +41,7 @@ const EventManager = {
         this.eventNum += 1;
         if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
         this.events.push(event);
+        if (!this.seenEvents.includes(eventID)) this.seenEvents.push(eventID);
         refreshEvents();
     },
     addEventDungeon(reward,time,floor) {
@@ -65,6 +65,9 @@ const EventManager = {
     },
     hasEvents() {
         return this.events.length > 0;
+    },
+    hasSeen(eventID) {
+        return this.seenEvents.includes(eventID);
     }
 };
 
@@ -166,3 +169,9 @@ $(document).on('click', "div.eventConfirm", (e) => {
     const eventID = parseInt($(e.currentTarget).attr("eventID"));
     EventManager.removeEvent(eventID);
 })
+
+function eventChecker() {
+    if (!EventManager.hasSeen("E002") && !WorkerManager.workers.some(w => w.type === "standard" && !w.owned)) EventManager.addEvent("E002");
+    if (!EventManager.hasSeen("E003") && WorkerManager.workers.some(w => w.type === "advanced" && w.owned)) EventManager.addEvent("E003");
+    if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
+}
