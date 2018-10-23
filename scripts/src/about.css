@@ -49,6 +49,7 @@ nav {
 }
 
 .header {
+    -webkit-animation: .75s scale-in;
     animation: .75s scale-in;
 }
 
@@ -76,6 +77,7 @@ nav {
     max-width: 150px;
     cursor: pointer;
     opacity: 0;
+    -webkit-animation: 1s 0.75s fade-in forwards;
     animation: 1s 0.75s fade-in forwards;
 }
 
@@ -107,10 +109,6 @@ nav {
     max-width: 350px;
     background-color: var(--bg);
     border: 1px solid var(--border);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
-    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
 }
 
 .user-card .user-pic {
@@ -264,15 +262,18 @@ nav {
 }
 
 .user-card, .player-card, .asset-card {
+    -webkit-animation: .7s scale-in;
     animation: .7s scale-in;
 }
 
 .user-pic, .player-pic {
+    -webkit-animation: .7s scale-in forwards;
     animation: .7s scale-in forwards;
     animation-delay: .2s;
 }
 
 .user-name, .user-title, .user-desc, .player-name, .player-title {
+    -webkit-animation: 0.7s fade-in forwards;
     animation: 0.7s fade-in forwards;
 }
 
