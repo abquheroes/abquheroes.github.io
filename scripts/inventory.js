@@ -286,10 +286,18 @@ function gearEquipFromInventory(invID) {
             const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
             const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
-            const d4b = $("<div/>").addClass("heroEquipBlockEquipStat").html(relPow);
+            const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
+            if (relPow > 0) d4b.html(miscIcons.pow + "&nbsp;+" + relPow);
+            else if (relPow < 0) d4b.html(miscIcons.pow + "&nbsp;" + relPow);
+            else d4b.hide();
             const d4c = $("<div/>").addClass("heroEquipBlockEquipStat").html(relHP);
-            const d4d = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
-            d4.append(d4a,d4b,d4c,d4d);
+            if (relHP > 0) d4c.html(miscIcons.hp + "&nbsp;+" + relHP);
+            else if (relHP < 0) d4c.html(miscIcons.hp + "&nbsp;" + relHP);
+            else d4c.hide();
+            const d4d = $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change");
+            if (relPow !== 0 || relHP !== 0) d4d.hide();
+            const d4e = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
+            d4.append(d4a,d4b,d4c,d4d,d4e);
             d3.append(d4);
         });
         d.append(d1,d2,d3);
