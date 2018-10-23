@@ -287,12 +287,12 @@ function gearEquipFromInventory(invID) {
             const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
             const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
-            if (relPow > 0) d4b.html(miscIcons.pow + "&nbsp;+" + relPow);
-            else if (relPow < 0) d4b.html(miscIcons.pow + "&nbsp;" + relPow);
+            if (relPow > 0) d4b.addClass("hebPositive").html(miscIcons.pow + "&nbsp;+" + relPow);
+            else if (relPow < 0) d4b.addClass("hebNegative").html(miscIcons.pow + "&nbsp;" + relPow);
             else d4b.hide();
             const d4c = $("<div/>").addClass("heroEquipBlockEquipStat").html(relHP);
-            if (relHP > 0) d4c.html(miscIcons.hp + "&nbsp;+" + relHP);
-            else if (relHP < 0) d4c.html(miscIcons.hp + "&nbsp;" + relHP);
+            if (relHP > 0) d4c.addClass("hebPositive").html(miscIcons.hp + "&nbsp;+" + relHP);
+            else if (relHP < 0) d4c.addClass("hebNegative").html(miscIcons.hp + "&nbsp;" + relHP);
             else d4c.hide();
             const d4d = $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change");
             if (relPow !== 0 || relHP !== 0) d4d.hide();
