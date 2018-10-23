@@ -27,21 +27,26 @@ function refreshProgress() {
     const achievePercent = (achieves*10).toFixed(2);
     $pbAchieve.css('width', achievePercent+"%");
     const overallPercent = (achieves+recipeList.masteryCount()+WorkerManager.workerLevelCount()+HeroManager.heroLevelCount())/(10+recipeList.recipeCount()+WorkerManager.workerMaxLevelCount()+HeroManager.heroMaxLevelCount());
+    if (overallPercent === 100 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
 }
 
 const $statMaxFloor = $("#statMaxFloor");
 const $statFloors = $("#statFloors");
-const $statTimePlayed = $("#statTimePlayed");
 const $statTotalGoldEarned = $("#statTotalGoldEarned");
 const $statTotalItems = $("#statTotalItems");
 const $statCommons = $("#statCommons");
 const $statGoods = $("#statGoods");
 const $statGreats = $("#statGreats");
 const $statEpics = $("#statEpics");
+const $statTimePlayed = $("#statTimePlayed");
+const $gameTime = $("#gameTime");
+const $completeTime = $("#completeTime");
 
 const achievementStats = {
+    startTime : 0,
+    endTime : -1,
     maxFloor : 0,
     timePlayed : 0,
     totalGoldEarned : 0,
@@ -55,11 +60,14 @@ const achievementStats = {
         this.totalFloorsBeaten += 1;
         this.maxFloor = Math.max(this.maxFloor,floor);
         $statMaxFloor.html("Floor " + this.maxFloor);
-        $statFloors.html(this.totalFloorsBeaten)
+        $statFloors.html(this.totalFloorsBeaten);
+        refreshProgress();
     },
     setTimePlayed(ms) {
         this.timePlayed += ms;
-        $statTimePlayed.html(timeSince(0,this.timePlayed));
+        $statTimePlayed.html(timeSince(this.startTime,Date.now()));
+        $gameTime.html(timeSince(0,this.timePlayed));
+        if (achievementStats.endTime > 0) $completeTime.html(timeSince(this.startTime,this.endTime));
     },
     craftedItem(rarity) {
         this.totalItemsCrafted += 1;
@@ -79,6 +87,8 @@ const achievementStats = {
     },
     createSave() {
         const save = {};
+        save.startTime = this.startTime;
+        save.endTime = this.endTime;
         save.maxFloor = this.maxFloor;
         save.timePlayed = this.timePlayed;
         save.totalGoldEarned = this.totalGoldEarned;
@@ -91,6 +101,8 @@ const achievementStats = {
         return save;
     },
     loadSave(save) {
+        this.startTime = save.startTime;
+        this.endTime = save.endTime;
         this.maxFloor = save.maxFloor;
         this.timePlayed = save.timePlayed;
         this.totalGoldEarned = save.totalGoldEarned;
